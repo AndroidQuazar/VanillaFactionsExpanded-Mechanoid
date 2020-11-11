@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_Recipe</defName>
+		<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
+		<items>
+			<li>StoneChunks</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>Steel</result>	
+		<yield>10</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	
+
+
+
+
+
+
+
+</Defs>

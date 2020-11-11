@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_Input</defName>
+		<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
+		<slot>1</slot>
+		<items>			
+			<li>StoneChunks</li>		
+			
+		
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	
+	
+
+	
+	
+</Defs>
