@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Mechanoid Component ====================-->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>VFE_ComponentMechanoid</defName>
+    <label>mechanoid component</label>
+    <description>Very advanced processors and nano-calculators most often used in creation of mechanoid-tech on urbworld mechanoid swarm foundries.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/VFE_ComponentMechanoid</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>350</MarketValue>
+      <Mass>0.8</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+  </ThingDef>
+  
+</Defs>

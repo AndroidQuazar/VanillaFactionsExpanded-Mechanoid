@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+      <SoundDef>
+    <defName>VFE_Shot_ChargeRailgun</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/ChargeRailgun_Shot</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>70</max>
+        </volumeRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  
+</Defs>
