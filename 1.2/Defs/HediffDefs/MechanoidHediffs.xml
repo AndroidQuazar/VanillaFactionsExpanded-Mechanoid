@@ -5,7 +5,7 @@
 		<defName>VFE_MechanoidUplink</defName>
 		<label>mechanoid uplink</label>
 		<description>mechanoid uplink</description>
-		<hediffClass>VFEM.Hediff_MechanoidUplink</hediffClass>
+		<hediffClass>VFEMech.Hediff_MechanoidUplink</hediffClass>
 		<stages>
 			<li>
 				<statFactors>

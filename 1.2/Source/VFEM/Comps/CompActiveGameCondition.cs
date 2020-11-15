@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace VFEM
+namespace VFEMech
 {
 	public class CompProperties_ActiveGameCondition : CompProperties
 	{

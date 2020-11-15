@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace VFEM
+namespace VFEMech
 {
     public class MechanoidUplink : Building
     {
@@ -19,7 +19,7 @@ namespace VFEM
         public override void Tick()
         {
             base.Tick();
-            foreach (var pawn in this.Map.mapPawns.AllPawns.Where(x => x.def.race.IsMechanoid))
+            foreach (var pawn in this.Map.mapPawns.AllPawns.Where(x => x.kindDef.HasModExtension<UplinkCompatible>() && x.Faction == this.Faction))
             {
                 if (!pawn.Dead && pawn.Spawned && pawn.Position.DistanceTo(this.Position) <= communicationRadius)
                 {

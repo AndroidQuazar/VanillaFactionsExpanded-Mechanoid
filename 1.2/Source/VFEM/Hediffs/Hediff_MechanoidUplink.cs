@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace VFEM
+namespace VFEMech
 {
     public class Hediff_MechanoidUplink : HediffWithComps
     {

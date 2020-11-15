@@ -8,10 +8,8 @@ using Verse;
 
 namespace VFEMech
 {
-    [DefOf]
-    public static class VFEMDefOf
+    public class UplinkCompatible : DefModExtension
     {
-        public static FactionDef VFE_Mechanoid;
-        public static HediffDef VFE_MechanoidUplink;
+
     }
 }

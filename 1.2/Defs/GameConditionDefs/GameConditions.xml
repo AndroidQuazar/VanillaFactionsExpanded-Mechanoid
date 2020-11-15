@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
 	<GameConditionDef>
 		<defName>VFE_ClimateAdjuster</defName>
-		<conditionClass>VFEM.GameCondition_ClimateAdjuster</conditionClass>
+		<conditionClass>VFEMech.GameCondition_ClimateAdjuster</conditionClass>
 		<label>climate adjuster</label>
 		<letterText>climate adjuster</letterText>
 		<description>climate adjuster</description>
@@ -14,7 +14,7 @@
 
 	<GameConditionDef>
 		<defName>VFE_EMIDynamo</defName>
-		<conditionClass>VFEM.GameCondition_EMIDynamo</conditionClass>
+		<conditionClass>VFEMech.GameCondition_EMIDynamo</conditionClass>
 		<label>EMI dynamo</label>
 		<letterText>EMI dynamo</letterText>
 		<description>EMI dynamo</description>

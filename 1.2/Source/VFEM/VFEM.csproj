@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\TrooperStorage - Copy.cs" />
+    <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
     <Compile Include="Comps\CompActiveGameCondition.cs" />
     <Compile Include="GameConditions\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_ClimateAdjuster.cs" />
     <Compile Include="Hediffs\Hediff_MechanoidUplink.cs" />
+    <Compile Include="UplinkCompatible.cs" />
     <Compile Include="VFEMDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

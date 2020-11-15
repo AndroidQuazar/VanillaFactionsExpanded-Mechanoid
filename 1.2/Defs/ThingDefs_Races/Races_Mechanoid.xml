@@ -26,6 +26,9 @@
     <defaultFactionType>VFE_Mechanoid</defaultFactionType>
     <aiAvoidCover>true</aiAvoidCover>
     <destroyGearOnDrop>true</destroyGearOnDrop>
+	<modExtensions>
+		<li Class="VFEMech.UplinkCompatible"></li>
+	</modExtensions>
   </PawnKindDef>
 
   <!-- Centipede -->

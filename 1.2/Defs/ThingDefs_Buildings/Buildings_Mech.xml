@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
 	<!-- Base -->
@@ -246,7 +246,7 @@
 		<defName>VFE_MechanoidUplink</defName>
 		<label>uplink module</label>
 		<description>An uplink module, directly connected to the mechanoid swarm. It is responsible for obtaining order updates from war programmers in orbit. It greatly enhances mechanoid capabilities in range, but destroying it will sever the connection with the fleet, greatly harming the mechanoid forces.  It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>VFEM.MechanoidUplink</thingClass>
+		<thingClass>VFEMech.MechanoidUplink</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidUplink</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -558,7 +558,7 @@
 			<ComponentSpacer>4</ComponentSpacer>
 		</killedLeavings>
 		<comps>
-			<li Class="VFEM.CompProperties_ActiveGameCondition">
+			<li Class="VFEMech.CompProperties_ActiveGameCondition">
 				<conditionDef>VFE_ClimateAdjuster</conditionDef>
 			</li>
 		</comps>
@@ -609,6 +609,9 @@
 				<explosiveDamageType>EMP</explosiveDamageType>
 				<explodeOnKilled>true</explodeOnKilled>
 			</li>
+			<li Class="VFEMech.CompProperties_ActiveGameCondition">
+				<conditionDef>VFE_EMIDynamo</conditionDef>
+			</li>
 		</comps>
 		<killedLeavings>
 			<ChunkSlagSteel>4</ChunkSlagSteel>
@@ -618,11 +621,6 @@
 			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 			<ComponentSpacer>3</ComponentSpacer>
 		</killedLeavings>
-		<comps>
-			<li Class="VFEM.CompProperties_ActiveGameCondition">
-				<conditionDef>VFE_EMIDynamo</conditionDef>
-			</li>
-		</comps>
 	</ThingDef>
 
 	<!-- Psychic Suppressor -->
@@ -669,7 +667,7 @@
 				<mote>Mote_PsychicConditionCauserEffect</mote>
 				<emissionInterval>150</emissionInterval>
 			</li>
-			<li Class="VFEM.CompProperties_ActiveGameCondition">
+			<li Class="VFEMech.CompProperties_ActiveGameCondition">
 				<conditionDef>PsychicSuppression</conditionDef>
 			</li>
 		</comps>
@@ -727,7 +725,7 @@
 				<mote>Mote_PsychicConditionCauserEffect</mote>
 				<emissionInterval>150</emissionInterval>
 			</li>
-			<li Class="VFEM.CompProperties_ActiveGameCondition">
+			<li Class="VFEMech.CompProperties_ActiveGameCondition">
 				<conditionDef>PsychicDrone</conditionDef>
 			</li>
 		</comps>
@@ -944,7 +942,7 @@
 		<defName>VFE_TrooperStorage</defName>
 		<label>trooper storage</label>
 		<description>A small-sized trooper transport bay, potentially filled with combat-ready mechanoids. It seems to be dormant at the moment, but any kind of damage done to the structure will most likely deploy defensive units. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>VFEMech.TrooperStorage</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidTrooperStorageModule</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -991,7 +989,7 @@
 		<defName>VFE_HullRepairModule</defName>
 		<label>hull repair module</label>
 		<description>A nanite container module capable of reinforcing the damaged hull of the ship. Unless destroyed, this module will constantly regenerate any damage done to other ship modules. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>VFEMech.HullRepairModule</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidHullRepairModule</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
