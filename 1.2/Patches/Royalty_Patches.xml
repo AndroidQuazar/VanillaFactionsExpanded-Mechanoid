@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Item Categories Stuff -->
+
+	<!-- Simple patches that remove some resource readouts for better visuals up in the top-left.-->
+	<Operation Class="PatchOperationRemove">
+		<success>Always</success>
+		<xpath>/Defs/ThingCategoryDef[defName = "FoodMeals"]/resourceReadoutRoot</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<success>Always</success>
+		<xpath>/Defs/ThingCategoryDef[defName = "FoodRaw"]/resourceReadoutRoot</xpath>
+	</Operation>
+	
+	<!-- Changes a few labels of base categories to better work with what RimCuisine planned.  Modded in stuff should work fine since its just the label that is changed.-->
+	<Operation Class="PatchOperationReplace">
+		<success>Always</success>
+		<xpath>/Defs/ThingCategoryDef[defName = "FoodRaw"]/label</xpath>
+		<value>
+			<label>raw ingredients</label>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<success>Always</success>
+		<xpath>/Defs/ThingCategoryDef[defName = "AnimalProductRaw"]/label</xpath>
+		<value>
+			<label>raw animal products</label>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<success>Always</success>
+		<xpath>/Defs/ThingCategoryDef[defName = "MeatRaw"]/label</xpath>
+		<value>
+			<label>raw meat</label>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<success>Always</success>
+		<xpath>/Defs/ThingCategoryDef[defName = "PlantFoodRaw"]/label</xpath>
+		<value>
+			<label>raw vegetarian</label>				
+		</value>
+	</Operation>
+	
+	<!--<Operation Class="PatchOperationReplace">
+		<success>Always</success>
+		<xpath>/Defs/ThingCategoryDef[defName = "PlantFoodRaw"]/parent |
+			   /Defs/ThingCategoryDef[defName = "MeatRaw"]/parent |
+			   /Defs/ThingCategoryDef[defName = "AnimalProductRaw"]/parent
+		</xpath>
+		<value>
+			<parent>RC2_RawIngredients</parent>			
+		</value>
+	</Operation>-->
+	
+	<!-- Added new category locations for vanilla crops, but they're still also in 'raw vegetarian' for modding compatibility reasons.-->
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>/Defs/ThingDef[defName = "RawPotatoes"]</xpath>
+		<value>
+			<thingCategories>
+				<li>RC2_VegetablesRaw</li>
+			</thingCategories>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>/Defs/ThingDef[defName = "RawFungus"]</xpath>
+		<value>
+			<thingCategories>
+				<li>RC2_VegetablesRaw</li>
+			</thingCategories>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>/Defs/ThingDef[defName = "RawRice"]</xpath>
+		<value>
+			<thingCategories>
+				<li>RC2_GrainsRaw</li>
+			</thingCategories>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>/Defs/ThingDef[defName = "RawAgave"]</xpath>
+		<value>
+			<thingCategories>
+				<li>RC2_FruitsRaw</li>
+			</thingCategories>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "RawCorn"]</xpath>
+		<value>
+			<thingCategories>
+				<li>RC2_GrainsRaw</li>
+			</thingCategories>				
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "RawBerries"]</xpath>
+		<value>
+			<thingCategories>
+				<li>RC2_FruitsRaw</li>
+			</thingCategories>				
+		</value>
+	</Operation>
+	
+	<!-- Biomes Stuff -->
+	
+	<!-- Patches in crops to wild biomes.  Crops with excessive .0000's represent plants that are growable
+		in that biome, but don't actually show up except possibly on super rare you-should-buy-a-lottery-ticket occasions. 
+		Having them all right here helps to make making changes easier and lets modders see what spawns/grows where. 
+		All plants have the 'must be wild to sow' tag in order to make this work properly, unless of course they're meant to be grown in any biome.-->
+	<Operation Class="PatchOperationSequence">
+  <success>Always</success>
+  <operations>
+    <li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "Tundra"]/wildPlants</xpath>
+      <value>
+        <RC2_PlantOats>0.0000000000000001</RC2_PlantOats>
+		<RC2_PlantBeet>0.0000000000000001</RC2_PlantBeet>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantSugarBeet>0.0000000000000001</RC2_PlantSugarBeet>
+		<RC2_PlantCarrot>0.07</RC2_PlantCarrot>
+		<RC2_PlantOnion>0.07</RC2_PlantOnion>
+		<RC2_PlantJuniper>0.1</RC2_PlantJuniper>
+		<RC2_PlantSugarMapleTree>0.015</RC2_PlantSugarMapleTree>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+		<RC2_PlantBarley>0.1</RC2_PlantBarley>
+		<RC2_PlantMushroom>0.07</RC2_PlantMushroom>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "BorealForest"]/wildPlants</xpath>
+      <value>
+        <RC2_PlantOats>0.0000000000000001</RC2_PlantOats>
+		<RC2_PlantBeet>0.0000000000000001</RC2_PlantBeet>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantSugarBeet>0.0000000000000001</RC2_PlantSugarBeet>
+		<RC2_PlantCarrot>0.07</RC2_PlantCarrot>
+		<RC2_PlantOnion>0.16</RC2_PlantOnion>
+		<RC2_PlantJuniper>0.25</RC2_PlantJuniper>
+		<RC2_PlantSugarMapleTree>0.035</RC2_PlantSugarMapleTree>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+		<RC2_PlantBarley>0.2</RC2_PlantBarley>
+		<RC2_PlantMushroom>0.16</RC2_PlantMushroom>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "ColdBog"]/wildPlants</xpath>
+      <value>
+        <RC2_PlantOats>0.0000000000000001</RC2_PlantOats>
+		<RC2_PlantBeet>0.0000000000000001</RC2_PlantBeet>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantSugarBeet>0.0000000000000001</RC2_PlantSugarBeet>
+		<RC2_PlantCarrot>0.03</RC2_PlantCarrot>
+		<RC2_PlantOnion>0.07</RC2_PlantOnion>
+		<RC2_PlantJuniper>0.07</RC2_PlantJuniper>
+		<RC2_PlantSugarMapleTree>0.03</RC2_PlantSugarMapleTree>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+		<RC2_PlantBarley>0.03</RC2_PlantBarley>
+		<RC2_PlantMushroom>0.1</RC2_PlantMushroom>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "TemperateForest"]/wildPlants</xpath>
+      <value>
+        <RC2_PlantOats>0.0000000000000001</RC2_PlantOats>
+		<RC2_PlantBeet>0.0000000000000001</RC2_PlantBeet>
+		<RC2_PlantSnapPeas>0.0000000000000001</RC2_PlantSnapPeas>
+		<RC2_PlantTomato>0.0000000000000001</RC2_PlantTomato>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantEggPlant>0.0000000000000001</RC2_PlantEggPlant>
+		<RC2_PlantSoybean>0.0000000000000001</RC2_PlantSoybean>
+		<RC2_PlantPumpkin>0.0000000000000001</RC2_PlantPumpkin>
+		<RC2_PlantSugarBeet>0.0000000000000001</RC2_PlantSugarBeet>
+		<RC2_PlantGrapes>0.0000000000000001</RC2_PlantGrapes>
+		<RC2_PlantCarrot>0.05</RC2_PlantCarrot>
+		<RC2_PlantOnion>0.05</RC2_PlantOnion>
+		<RC2_PlantMushroom>0.08</RC2_PlantMushroom>
+		<RC2_PlantAppletree>0.03</RC2_PlantAppletree>
+		<RC2_PlantPlumTree>0.03</RC2_PlantPlumTree>
+		<RC2_PlantPeachTree>0.03</RC2_PlantPeachTree>
+		<RC2_PlantPecanTree>0.025</RC2_PlantPecanTree>
+		<RC2_PlantCherryTree>0.01</RC2_PlantCherryTree>
+		<RC2_PlantFlax>0.05</RC2_PlantFlax>
+		<RC2_PlantWheat>.12</RC2_PlantWheat>
+		<RC2_PlantBeeTree>0.02</RC2_PlantBeeTree>
+		<RC2_PlantTruffles>0.01</RC2_PlantTruffles>
+		<RC2_PlantSugarMapleTree>0.035</RC2_PlantSugarMapleTree>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "TemperateSwamp"]/wildPlants</xpath>
+      <value>
+        <RC2_PlantOats>0.0000000000000001</RC2_PlantOats>
+		<RC2_PlantBeet>0.0000000000000001</RC2_PlantBeet>
+		<RC2_PlantSnapPeas>0.0000000000000001</RC2_PlantSnapPeas>
+		<RC2_PlantTomato>0.0000000000000001</RC2_PlantTomato>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantEggPlant>0.0000000000000001</RC2_PlantEggPlant>
+		<RC2_PlantSoybean>0.0000000000000001</RC2_PlantSoybean>
+		<RC2_PlantPumpkin>0.0000000000000001</RC2_PlantPumpkin>
+		<RC2_PlantSugarBeet>0.0000000000000001</RC2_PlantSugarBeet>
+		<RC2_PlantMelon>0.0000000000000001</RC2_PlantMelon>
+		<RC2_PlantPepper>0.0000000000000001</RC2_PlantPepper>
+		<RC2_PlantCarrot>0.04</RC2_PlantCarrot>
+		<RC2_PlantOnion>0.04</RC2_PlantOnion>
+		<RC2_PlantMushroom>0.1</RC2_PlantMushroom>
+		<RC2_PlantAppletree>0.02</RC2_PlantAppletree>
+		<RC2_PlantPlumTree>0.02</RC2_PlantPlumTree>
+		<RC2_PlantPeachTree>0.02</RC2_PlantPeachTree>
+		<RC2_PlantPecanTree>0.015</RC2_PlantPecanTree>
+		<RC2_PlantCherryTree>0.005</RC2_PlantCherryTree>
+		<RC2_PlantFlax>0.04</RC2_PlantFlax>
+		<RC2_PlantWheat>0.08</RC2_PlantWheat>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+		<RC2_PlantSugarMapleTree>0.035</RC2_PlantSugarMapleTree>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "TropicalRainforest"]/wildPlants</xpath>
+      <value>
+		<RC2_PlantCucumber>0.0000000000000001</RC2_PlantCucumber>
+		<RC2_PlantYam>0.0000000000000001</RC2_PlantYam>
+		<RC2_PlantEggPlant>0.0000000000000001</RC2_PlantEggPlant>
+		<RC2_PlantPepper>0.0000000000000001</RC2_PlantPepper>
+		<RC2_PlantSoybean>0.0000000000000001</RC2_PlantSoybean>
+		<RC2_PlantMelon>0.0000000000000001</RC2_PlantMelon>
+		<RC2_PlantPumpkin>0.0000000000000001</RC2_PlantPumpkin>
+		<RC2_PlantPineapple>0.0000000000000001</RC2_PlantPineapple>
+		<RC2_PlantTea>0.0000000000000001</RC2_PlantTea>
+		<RC2_PlantQuinoa>0.02</RC2_PlantQuinoa>
+		<RC2_PlantOnion>0.03</RC2_PlantOnion>
+		<RC2_PlantMushroom>0.05</RC2_PlantMushroom>
+		<RC2_PlantPlumTree>0.03</RC2_PlantPlumTree>
+		<RC2_PlantBreadfruitTree>0.03</RC2_PlantBreadfruitTree>
+		<RC2_PlantDurianTree>0.01</RC2_PlantDurianTree>
+		<RC2_PlantBananaTree>0.02</RC2_PlantBananaTree>
+		<RC2_PlantCoconutTree>0.02</RC2_PlantCoconutTree>
+		<Plant_TreeCocoa>0.01</Plant_TreeCocoa>
+		<RC2_PlantSugarcane>0.03</RC2_PlantSugarcane>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "TropicalSwamp"]/wildPlants</xpath>
+      <value>
+		<RC2_PlantCucumber>0.0000000000000001</RC2_PlantCucumber>
+		<RC2_PlantYam>0.0000000000000001</RC2_PlantYam>
+		<RC2_PlantEggPlant>0.0000000000000001</RC2_PlantEggPlant>
+		<RC2_PlantPepper>0.0000000000000001</RC2_PlantPepper>
+		<RC2_PlantSoybean>0.0000000000000001</RC2_PlantSoybean>
+		<RC2_PlantMelon>0.0000000000000001</RC2_PlantMelon>
+		<RC2_PlantPumpkin>0.0000000000000001</RC2_PlantPumpkin>
+		<RC2_PlantPineapple>0.0000000000000001</RC2_PlantPineapple>
+		<RC2_PlantTea>0.0000000000000001</RC2_PlantTea>
+		<RC2_PlantQuinoa>0.02</RC2_PlantQuinoa>
+		<RC2_PlantOnion>0.03</RC2_PlantOnion>
+		<RC2_PlantMushroom>0.05</RC2_PlantMushroom>
+		<RC2_PlantPlumTree>0.03</RC2_PlantPlumTree>
+		<RC2_PlantBreadfruitTree>0.03</RC2_PlantBreadfruitTree>
+		<RC2_PlantDurianTree>0.01</RC2_PlantDurianTree>
+		<RC2_PlantBananaTree>0.02</RC2_PlantBananaTree>
+		<RC2_PlantCoconutTree>0.02</RC2_PlantCoconutTree>
+		<Plant_TreeCocoa>0.01</Plant_TreeCocoa>
+		<RC2_PlantSugarcane>0.03</RC2_PlantSugarcane>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "AridShrubland"]/wildPlants</xpath>
+      <value>
+		<RC2_PlantSorghum>0.0000000000000001</RC2_PlantSorghum>
+		<RC2_PlantChickpeas>0.0000000000000001</RC2_PlantChickpeas>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantPumpkin>0.0000000000000001</RC2_PlantPumpkin>
+		<RC2_PlantAgave>0.0000000000000001</RC2_PlantAgave>
+		<RC2_PlantOnion>0.2</RC2_PlantOnion>
+		<RC2_PlantBarley>0.2</RC2_PlantBarley>
+		<RC2_PlantCactusFruit>0.3</RC2_PlantCactusFruit>
+		<RC2_PlantOrangeTree>0.05</RC2_PlantOrangeTree>
+		<RC2_PlantFlax>0.2</RC2_PlantFlax>
+		<RC2_PlantFigTree>0.05</RC2_PlantFigTree>
+		<RC2_PlantPomegranateTree>0.05</RC2_PlantPomegranateTree>
+		<RC2_PlantCoffee>0.1</RC2_PlantCoffee>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "Desert"]/wildPlants</xpath>
+      <value>
+		<RC2_PlantSorghum>0.0000000000000001</RC2_PlantSorghum>
+		<RC2_PlantChickpeas>0.0000000000000001</RC2_PlantChickpeas>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantPumpkin>0.0000000000000001</RC2_PlantPumpkin>
+		<RC2_PlantAgave>0.0000000000000001</RC2_PlantAgave>
+		<RC2_PlantOnion>0.2</RC2_PlantOnion>
+		<RC2_PlantBarley>0.2</RC2_PlantBarley>
+		<RC2_PlantCactusFruit>0.3</RC2_PlantCactusFruit>
+		<RC2_PlantOrangeTree>0.05</RC2_PlantOrangeTree>
+		<RC2_PlantFlax>0.2</RC2_PlantFlax>
+		<RC2_PlantFigTree>0.03</RC2_PlantFigTree>
+		<RC2_PlantPomegranateTree>0.03</RC2_PlantPomegranateTree>
+		<RC2_PlantCoffee>0.1</RC2_PlantCoffee>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/BiomeDef[defName = "ExtremeDesert"]/wildPlants</xpath>
+      <value>
+		<RC2_PlantSorghum>0.0000000000000001</RC2_PlantSorghum>
+		<RC2_PlantChickpeas>0.0000000000000001</RC2_PlantChickpeas>
+		<RC2_PlantAsparagus>0.0000000000000001</RC2_PlantAsparagus>
+		<RC2_PlantPumpkin>0.0000000000000001</RC2_PlantPumpkin>
+		<RC2_PlantAgave>0.0000000000000001</RC2_PlantAgave>
+		<RC2_PlantOnion>0.2</RC2_PlantOnion>
+		<RC2_PlantBarley>0.2</RC2_PlantBarley>
+		<RC2_PlantCactusFruit>0.3</RC2_PlantCactusFruit>
+		<RC2_PlantOrangeTree>0.05</RC2_PlantOrangeTree>
+		<RC2_PlantFlax>0.2</RC2_PlantFlax>
+		<RC2_PlantFigTree>0.05</RC2_PlantFigTree>
+		<RC2_PlantPomegranateTree>0.05</RC2_PlantPomegranateTree>
+		<RC2_PlantCoffee>0.1</RC2_PlantCoffee>
+		<RC2_PlantBeeTree>0.01</RC2_PlantBeeTree>
+      </value>
+    </li>
+  </operations>
+	</Operation>
+	
+	<!-- check for sow research prereqs for strawberries and if none, add one in -->
+	<Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+        <li Class="PatchOperationTest">
+            <xpath>/Defs/ThingDef[defName = "Plant_Strawberry"]/plant/sowResearchPrerequisites</xpath>
+            <success>Invert</success>
+        </li>
+        <li Class="PatchOperationAdd">
+           <xpath>/Defs/ThingDef[defName = "Plant_Strawberry"]/plant</xpath>
+			<value>
+				<sowResearchPrerequisites>
+					<li>RC2_BasicAgriculture</li>
+				</sowResearchPrerequisites>
+			</value>
+        </li>
+    </operations>
+</Operation>
+
+	 <!-- check for added thoughts for chocolate and if none, add them. -->
+	<Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+        <li Class="PatchOperationTest">
+            <xpath>/Defs/ThingDef[defName = "Chocolate"]/ingestible/specialThoughtAsIngredient</xpath>
+            <success>Invert</success>
+        </li>
+		<li Class="PatchOperationTest">
+            <xpath>/Defs/ThingDef[defName = "Chocolate"]/ingestible/tasteThought</xpath>
+            <success>Invert</success>
+        </li>
+        <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = "Chocolate"]/ingestible</xpath>
+			<value>
+				<specialThoughtAsIngredient>AteChocolateAsIngredient</specialThoughtAsIngredient>	
+				<tasteThought>AteChocolate</tasteThought>	
+			</value>
+        </li>
+    </operations>
+	</Operation>
+	
+	<!-- check for added thoughts for eating berries and if none, add them. -->
+	<Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+        <li Class="PatchOperationTest">
+            <xpath>/Defs/ThingDef[defName = "RawBerries"]/ingestible/specialThoughtAsIngredient</xpath>
+            <success>Invert</success>
+        </li>
+        <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = "RawBerries"]/ingestible</xpath>
+			<value>
+				<specialThoughtAsIngredient>AteUncommonAsIngredient</specialThoughtAsIngredient>		
+			</value>
+        </li>
+    </operations>
+	</Operation>
+	
+	<!-- check for added thoughts for eating agave and if none, add them. -->
+	<Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+        <li Class="PatchOperationTest">
+            <xpath>/Defs/ThingDef[defName = "RawAgave"]/ingestible/specialThoughtAsIngredient</xpath>
+            <success>Invert</success>
+        </li>
+        <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName = "RawAgave"]/ingestible</xpath>
+			<value>
+				<specialThoughtAsIngredient>AteRareAsIngredient</specialThoughtAsIngredient>		
+			</value>
+        </li>
+    </operations>
+	</Operation>
+
+	<!-- Recipes Stuff -->
+	
+	<!-- Add in processed ingredients to various recipe lists, as well as raw wheat to kibble.-->
+	<Operation Class="PatchOperationSequence">
+	 <success>Always</success>
+	<operations>
+    <li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/ingredients/li[1]/filter/categories</xpath>
+      <value>
+        <li>RC2_MeatProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/ingredients/li[2]/filter/categories</xpath>
+      <value>
+        <li>RC2_VegetablesProcessed</li>
+		<li>RC2_FruitProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/fixedIngredientFilter/categories</xpath>
+      <value>
+        <li>RC2_FoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/fixedIngredientFilter/categories</xpath>
+      <value>
+        <li>RC2_FoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/fixedIngredientFilter/thingDefs</xpath>
+      <value>
+        <li>RC2_RawWheat</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/ingredients/li[1]/filter/categories</xpath>
+      <value>
+        <li>RC2_MeatProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/ingredients/li[2]/filter/thingDefs</xpath>
+      <value>
+        <li>RC2_RawWheat</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/ingredients/li[2]/filter/categories</xpath>
+      <value>
+        <li>RC2_PlantFoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/ingredients/li[2]/filter/categories</xpath>
+      <value>
+        <li>RC2_PlantFoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/defaultIngredientFilter/categories</xpath>
+      <value>
+        <li>RC2_FoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/defaultIngredientFilter/categories</xpath>
+      <value>
+        <li>RC2_FoodProcessed</li>
+      </value>
+    </li>
+  </operations>
+	</Operation>
+	
+	
+	<!--Add in processed ingredients to the CoolMealBase def recipe list and default ingredient filter list.-->
+	<Operation Class="PatchOperationSequence">
+  <success>Always</success>
+  <operations>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[@Name = "CookMealBase"]/defaultIngredientFilter/categories</xpath>
+      <value>
+        <li>RC2_FoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[@Name = "CookMealBase"]/fixedIngredientFilter/categories</xpath>
+      <value>
+        <li>RC2_FoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[@Name = "CookMealBase"]/defaultIngredientFilter/disallowedThingDefs</xpath>
+      <value>
+        <li>RC2_RawSoybean</li>
+      </value>
+    </li>
+  </operations>
+</Operation>
+
+	<!--Add in disallowed categories filter, specifically for sweets to the CoolMealBase def.  Checks to see whether or not disallowedCategories is
+	  added or not by another mod and either adds it, or simply adds sweets to it if one exists.-->
+	<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/RecipeDef[@Name = "CookMealBase"]/fixedIngredientFilter/disallowedCategories</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/RecipeDef[@Name = "CookMealBase"]/fixedIngredientFilter</xpath>
+        <value>
+            <disallowedCategories>
+				<li>RC2_SweetsRaw</li>
+				<li>RC2_SweetsProcessed</li>
+			</disallowedCategories>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>/Defs/RecipeDef[@Name = "CookMealBase"]/fixedIngredientFilter/disallowedCategories</xpath>
+        <value>
+				<li>RC2_SweetsRaw</li>
+				<li>RC2_SweetsProcessed</li>
+        </value>
+    </match>
+</Operation>
+
+	<!--Add in disallowed categories filter, specifically for sweets to the kibble recipe def.  Checks to see whether or not disallowedCategories is
+	  added or not by another mod and either adds it, or simply adds sweets to it if one exists.-->
+	<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/fixedIngredientFilter/disallowedCategories</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/fixedIngredientFilter</xpath>
+        <value>
+            <disallowedCategories>
+				<li>RC2_SweetsRaw</li>
+				<li>RC2_SweetsProcessed</li>
+			</disallowedCategories>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>/Defs/RecipeDef[defName = "Make_Kibble"]/fixedIngredientFilter/disallowedCategories</xpath>
+        <value>
+				<li>RC2_SweetsRaw</li>
+				<li>RC2_SweetsProcessed</li>
+        </value>
+    </match>
+</Operation>
+
+	<!--Add in disallowed categories filter, specifically for sweets to the pemmican recipe def.  Checks to see whether or not disallowedCategories is
+	  added or not by another mod and either adds it, or simply adds sweets to it if one exists.-->
+<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/fixedIngredientFilter/disallowedCategories</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/fixedIngredientFilter</xpath>
+        <value>
+            <disallowedCategories>
+				<li>RC2_SweetsRaw</li>
+				<li>RC2_SweetsProcessed</li>
+			</disallowedCategories>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>/Defs/RecipeDef[defName = "Make_Pemmican"]/fixedIngredientFilter/disallowedCategories</xpath>
+        <value>
+				<li>RC2_SweetsRaw</li>
+				<li>RC2_SweetsProcessed</li>
+        </value>
+    </match>
+</Operation>
+
+	<!--Add in disallowed categories filter, specifically for sweets to the disallowed storage for the hopper def.  Checks to see whether or not disallowedCategories is
+	  added or not by another mod and either adds it, or simply adds sweets to it if one exists.-->
+<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName = "Hopper"]/building/fixedStorageSettings/filter/disallowedCategories</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Hopper"]/building/fixedStorageSettings/filter</xpath>
+        <value>
+            <disallowedCategories>
+				<li>RC2_SweetsRaw</li>
+			</disallowedCategories>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName = "Hopper"]/building/fixedStorageSettings/filter/disallowedCategories</xpath>
+        <value>
+				<li>RC2_SweetsRaw</li>
+        </value>
+    </match>
+</Operation>
+
+	<!--Adds in processed foods to the specific ingredient lists for various meals.  For example, it allows both raw and processed meat for fine meals, rather than simply raw meat as is in vanilla.-->
+	<Operation Class="PatchOperationSequence">
+  <success>Always</success>
+  <operations>
+    <li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "CookMealSimple"]/ingredients/li/filter/categories</xpath>
+      <value>
+        <li>RC2_FoodProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "CookMealFine"]/ingredients/li[1]/filter/categories</xpath>
+      <value>
+        <li>RC2_MeatProcessed</li>
+		<li>RC2_AnimalProductProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "CookMealFine"]/ingredients/li[2]/filter/categories</xpath>
+      <value>
+        <li>RC2_PlantFoodProcessed</li>
+		</value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "CookMealLavish"]/ingredients/li[1]/filter/categories</xpath>
+      <value>
+        <li>RC2_MeatProcessed</li>
+		<li>RC2_AnimalProductProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "CookMealLavish"]/ingredients/li[2]/filter/categories</xpath>
+      <value>
+        <li>RC2_PlantFoodProcessed</li>
+		</value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "CookMealSurvival"]/ingredients/li[1]/filter/categories</xpath>
+      <value>
+        <li>RC2_MeatProcessed</li>
+		<li>RC2_AnimalProductProcessed</li>
+      </value>
+    </li>
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/RecipeDef[defName = "CookMealSurvival"]/ingredients/li[2]/filter/categories</xpath>
+      <value>
+        <li>RC2_PlantFoodProcessed</li>
+		</value>
+    </li>
+  </operations>
+	</Operation>
+	
+	<!-- Trader Stuff -->
+	
+	<!--Adds in joy meals, joy drinks, processed foods and survival foods to various vanilla traders.  Lots of stuff here, not going into super detail about it.  Easy to change for balance purposes if need-be.-->
+	<Operation Class="PatchOperationSequence">
+  <success>Always</success>
+  <operations>
+	<!-- Neolithic Base -->
+    <li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Base_Neolithic_Standard"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodMealsJoy</categoryDef>
+		<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>100</min>
+          <max>300</max>
+        </totalPriceRange>
+			</li>	
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_DrinkMealsJoy</categoryDef>
+		<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>100</min>
+          <max>300</max>
+        </totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodProcessed</categoryDef>
+		<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>100</min>
+          <max>300</max>
+        </totalPriceRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+        <thingDef>RC2_Hardtack</thingDef>
+        <countRange>
+          <min>500</min>
+          <max>1000</max>
+        </countRange>
+      </li>
+	  <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>RC2_PickledVegetables</li>
+          <li>RC2_DriedMeat</li>
+		  <li>RC2_DriedFruit</li>
+        </thingDefs>
+		<countRange>
+          <min>100</min>
+          <max>500</max>
+        </countRange>
+      </li>
+	  </value>
+    </li>
+	<!--Outlander Base-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Base_Outlander_Standard"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>200</min>
+          <max>800</max>
+        </totalPriceRange>
+			</li>	
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_DrinkMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>200</min>
+          <max>800</max>
+        </totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodProcessed</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>200</min>
+          <max>800</max>
+        </totalPriceRange>
+			</li>
+	  </value>
+    </li>
+	<!--Orbital Bulk-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Orbital_BulkGoods"]/stockGenerators</xpath>
+      <value>
+		<li Class="StockGenerator_Category">
+	  <categoryDef>RC2_FoodMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>800</min>
+          <max>1500</max>
+        </totalPriceRange>
+			</li>	
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_DrinkMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>800</min>
+          <max>1500</max>
+        </totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodProcessed</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>800</min>
+          <max>1500</max>
+        </totalPriceRange>
+			</li>
+	  </value>
+    </li>
+	<!--Neolithic Bulk Caravan-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Caravan_Neolithic_BulkGoods"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodMealsJoy</categoryDef>
+		<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>100</min>
+          <max>200</max>
+        </totalPriceRange>
+			</li>	
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_DrinkMealsJoy</categoryDef>
+		<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>100</min>
+          <max>200</max>
+        </totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodProcessed</categoryDef>
+		<maxTechLevelGenerate>Neolithic</maxTechLevelGenerate>
+        <thingDefCountRange>
+          <min>-2</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>100</min>
+          <max>300</max>
+        </totalPriceRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+        <thingDef>RC2_Hardtack</thingDef>
+        <countRange>
+          <min>250</min>
+          <max>300</max>
+        </countRange>
+      </li>
+	  <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>RC2_PickledVegetables</li>
+          <li>RC2_DriedMeat</li>
+		  <li>RC2_DriedFruit</li>
+        </thingDefs>
+		<countRange>
+          <min>0</min>
+          <max>300</max>
+        </countRange>
+      </li>
+	  </value>
+    </li>
+	<!--Neolithic War Merchant Caravan-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Caravan_Neolithic_WarMerchant"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_SingleDef">
+        <thingDef>RC2_Hardtack</thingDef>
+        <countRange>
+          <min>100</min>
+          <max>200</max>
+        </countRange>
+      </li>
+	  <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>RC2_PickledVegetables</li>
+          <li>RC2_DriedMeat</li>
+		  <li>RC2_DriedFruit</li>
+        </thingDefs>
+		<countRange>
+          <min>0</min>
+          <max>100</max>
+        </countRange>
+      </li>
+	  </value>
+    </li>
+	<!--Neolithic War Merchant Caravan-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Caravan_Neolithic_Slaver"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_SingleDef">
+        <thingDef>RC2_Hardtack</thingDef>
+        <countRange>
+          <min>100</min>
+          <max>200</max>
+        </countRange>
+      </li>
+	  <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>RC2_PickledVegetables</li>
+          <li>RC2_DriedMeat</li>
+		  <li>RC2_DriedFruit</li>
+        </thingDefs>
+		<countRange>
+          <min>0</min>
+          <max>100</max>
+        </countRange>
+      </li>
+	  </value>
+    </li>
+	<!--Neolithic Shaman Caravan-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Caravan_Neolithic_ShamanMerchant"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_SingleDef">
+        <thingDef>RC2_Hardtack</thingDef>
+        <countRange>
+          <min>100</min>
+          <max>200</max>
+        </countRange>
+      </li>
+	  <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>RC2_PickledVegetables</li>
+          <li>RC2_DriedMeat</li>
+		  <li>RC2_DriedFruit</li>
+        </thingDefs>
+		<countRange>
+          <min>0</min>
+          <max>100</max>
+        </countRange>
+      </li>
+	  </value>
+    </li>
+	<!--Outlander Bulk Caravan-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>50</min>
+          <max>500</max>
+        </totalPriceRange>
+			</li>	
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_DrinkMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>50</min>
+          <max>500</max>
+        </totalPriceRange>
+			</li>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodProcessed</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>50</min>
+          <max>500</max>
+        </totalPriceRange>
+			</li>
+	  </value>
+	  </li>
+	  <!--Outlander Pirate Caravan-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Caravan_Outlander_Exotic"]/stockGenerators</xpath>
+      <value>
+		<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodProcessed</categoryDef>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>4</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>50</min>
+          <max>500</max>
+        </totalPriceRange>
+			</li>
+			</value>
+      </li>
+	  <!--Neolithic Standard Visitor-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Visitor_Neolithic_Standard"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_SingleDef">
+        <thingDef>RC2_Hardtack</thingDef>
+        <countRange>
+          <min>20</min>
+          <max>60</max>
+        </countRange>
+      </li>
+	  <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>RC2_PickledVegetables</li>
+          <li>RC2_DriedMeat</li>
+		  <li>RC2_DriedFruit</li>
+        </thingDefs>
+		<countRange>
+          <min>0</min>
+          <max>20</max>
+        </countRange>
+      </li>
+	  </value>
+    </li>
+	<!--Outlander Visitor-->
+	<li Class="PatchOperationAdd">
+      <xpath>/Defs/TraderKindDef[defName = "Visitor_Outlander_Standard"]/stockGenerators</xpath>
+      <value>
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_FoodMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>-50</min>
+          <max>50</max>
+        </totalPriceRange>
+			</li>	
+			<li Class="StockGenerator_Category">
+        <categoryDef>RC2_DrinkMealsJoy</categoryDef>
+        <thingDefCountRange>
+          <min>-1</min>
+          <max>2</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>-50</min>
+          <max>50</max>
+        </totalPriceRange>
+			</li>
+	  </value>
+	  </li>
+	</operations>
+	</Operation>
+	
+	
+	
+</Patch>
+

@@ -1,1739 +1,1762 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Base -->
+	<!-- Base -->
 
-  <ThingDef ParentName="BuildingBase" Name="VFE_MechShipPart" Abstract="True">
-    <pathCost>50</pathCost>
-    <blockWind>true</blockWind>
-    <thingClass>Building</thingClass>
-    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-    <passability>Impassable</passability>
-    <fillPercent>1.0</fillPercent>
-    <tickerType>Normal</tickerType>
-    <rotatable>true</rotatable>
-	<altitudeLayer>BuildingOnTop</altitudeLayer>
-    <selectable>true</selectable>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <drawerType>MapMeshOnly</drawerType>
-    <repairEffect>ConstructMetal</repairEffect>
-    <forceDebugSpawnable>true</forceDebugSpawnable>
-    <designationCategory>Ship</designationCategory>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
+	<ThingDef ParentName="BuildingBase" Name="VFE_MechShipPart" Abstract="True">
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<passability>Impassable</passability>
+		<fillPercent>1.0</fillPercent>
+		<tickerType>Normal</tickerType>
+		<rotatable>true</rotatable>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<selectable>true</selectable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<drawerType>MapMeshOnly</drawerType>
+		<repairEffect>ConstructMetal</repairEffect>
+		<forceDebugSpawnable>true</forceDebugSpawnable>
+		<designationCategory>Ship</designationCategory>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
 		<building>
 			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
 			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
 		</building>
-    <statBases>
-      <Flammability>0</Flammability>
-      <Beauty>-20</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-  </ThingDef>
-  
-    <!-- Engines -->
+		<statBases>
+			<Flammability>0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+	</ThingDef>
 
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidEngines</defName>
-    <label>Mechanoid ship engines</label>
-    <description>A set of Johnson Tanaka engines of a mechanoid vessel. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <size>(5,6)</size>
-    <rotatable>true</rotatable>
-    <statBases>
-      <MaxHitPoints>500</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <MarketValue>400</MarketValue>
-      <WorkToBuild>300</WorkToBuild>
-    </statBases>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidEngines</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(8,8)</drawSize>
-      <shadowData>
-        <volume>(5.1, 1.0, 5.3)</volume>
-      </shadowData>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_ShowExplosionRadius</li>
-    </placeWorkers>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>240</wickTicks>
-        <explosiveRadius>6.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <explodeOnKilled>true</explodeOnKilled>
-        <startWickHitPointsPercent>0.5</startWickHitPointsPercent>
-        <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Steel>120</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <ComponentSpacer>2</ComponentSpacer>
-      <Plasteel>60</Plasteel>
-	  <Uranium>60</Uranium>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Small Engines -->
+	<!-- Engines -->
 
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidEnginesSmall</defName>
-    <label>Small mechanoid ship engines</label>
-    <description>A set of small Johnson Tanaka engines of a mechanoid vessel. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <size>(2,5)</size>
-    <rotatable>true</rotatable>
-    <statBases>
-      <MaxHitPoints>500</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <MarketValue>400</MarketValue>
-      <WorkToBuild>300</WorkToBuild>
-    </statBases>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidSmallEngines</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(4,7)</drawSize>
-      <shadowData>
-        <volume>(2.1, 0.4, 4.3)</volume>
-      </shadowData>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_ShowExplosionRadius</li>
-    </placeWorkers>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>240</wickTicks>
-        <explosiveRadius>3.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <explodeOnKilled>true</explodeOnKilled>
-        <startWickHitPointsPercent>0.5</startWickHitPointsPercent>
-        <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>2</ChunkSlagSteel>
-      <Steel>40</Steel>
-      <ComponentIndustrial>2</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
-      <Plasteel>20</Plasteel>
-	  <Uranium>10</Uranium>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Heavy Beam -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidBeamHeavy</defName>
-    <label>heavy structural beam</label>
-    <description>A structural beam around which a ship is constructed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidHeavyStructuralBeam</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3.8,7.8)</drawSize>
-      <shadowData>
-        <volume>(2.04, 1.0, 5.75)</volume>
-      </shadowData>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>8000</WorkToBuild>
-      <MaxHitPoints>500</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(2,6)</size>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <uiIconScale>1.2</uiIconScale>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Steel>20</Steel>
-      <Plasteel>15</Plasteel>
-    </killedLeavings>
-  </ThingDef>
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidEngines</defName>
+		<label>Mechanoid ship engines</label>
+		<description>A set of Johnson Tanaka engines of a mechanoid vessel. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<size>(5,6)</size>
+		<rotatable>true</rotatable>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<MarketValue>400</MarketValue>
+			<WorkToBuild>300</WorkToBuild>
+		</statBases>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidEngines</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(8,8)</drawSize>
+			<shadowData>
+				<volume>(5.1, 1.0, 5.3)</volume>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_ShowExplosionRadius</li>
+		</placeWorkers>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>6.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<explodeOnKilled>true</explodeOnKilled>
+				<startWickHitPointsPercent>0.5</startWickHitPointsPercent>
+				<extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Steel>120</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+			<Plasteel>60</Plasteel>
+			<Uranium>60</Uranium>
+		</killedLeavings>
+	</ThingDef>
 
-    <!-- Light Beam -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidBeamLight</defName>
-    <label>light structural beam</label>
-    <description>A structural beam around which a ship is constructed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidLightStructuralBeam</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(2.8,7.8)</drawSize>
-      <shadowData>
-        <volume>(2.04, 1.0, 5.75)</volume>
-      </shadowData>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>8000</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(1,6)</size>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <uiIconScale>1.2</uiIconScale>
-    <killedLeavings>
-      <ChunkSlagSteel>4</ChunkSlagSteel>
-      <Steel>10</Steel>
-      <Plasteel>5</Plasteel>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Uplink Module -->
-	
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidUplink</defName>
-    <label>uplink module</label>
-    <description>An uplink module, directly connected to the mechanoid swarm. It is responsible for obtaining order updates from war programmers in orbit. It greatly enhances mechanoid capabilities in range, but destroying it will sever the connection with the fleet, greatly harming the mechanoid forces.  It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidUplink</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <shadowData>
-        <volume>(3.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,4)</size>
-    <designationCategory>Ship</designationCategory>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
-    </building>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <killedLeavings>
-      <ChunkSlagSteel>4</ChunkSlagSteel>
-      <Steel>100</Steel>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-      <ComponentSpacer>4</ComponentSpacer>
-      <Plasteel>20</Plasteel>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Reactor -->
-	
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidReactor</defName>
-    <label>reactor</label>
-    <description>A mechanoid power generation unit. The gigantic vanometric power core will run forever, extracting energy from quantum foam fluctuations. Despite the huge power output, effort has been made to stabilise it. If enough damage is dealt to the plasteel shell surrounding the core, a huge explosion will wipe out the local area. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidReactor</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(7,6)</drawSize>
-      <shadowData>
-        <volume>(4.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>true</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(5,4)</size>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-      <li>PlaceWorker_ShowExplosionRadius</li>
-    </placeWorkers>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
-    </building>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>1520</wickTicks>
-        <explosiveRadius>18.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <explodeOnKilled>true</explodeOnKilled>
-        <startWickHitPointsPercent>0.4</startWickHitPointsPercent>
-        <extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
-      </li>
-    </comps>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <killedLeavings>
-      <ChunkSlagSteel>5</ChunkSlagSteel>
-      <Steel>100</Steel>
-	  <Uranium>65</Uranium>
-      <ComponentIndustrial>4</ComponentIndustrial>
-      <ComponentSpacer>2</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
+	<!-- Small Engines -->
 
-    <!-- Terraformer -->
-	
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidTerraformer</defName>
-    <label>terraformer</label>
-    <description>An ultratech device of mass destruction, mechanoid terraformer harvests available oxygen and extracts toxic fumes in its place. Poison leaking into the ground around it slowly turns the planet into a barren wasteland. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidTerraformer</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <shadowData>
-        <volume>(3.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,4)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-      <li>PlaceWorker_ShowPlantHarmRadius</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <comps>
-      <li Class="CompProperties_PlantHarmRadius">
-        <radiusPerDayCurve>
-          <points>
-            <li>0  , 40</li>
-            <li>20 , 100</li>
-          </points>
-        </radiusPerDayCurve>
-      </li>
-      <li Class="CompProperties_ThrownMoteEmitter">
-        <mote>Mote_DustSlow</mote>
-        <offsetMin>(-2,0,-1.5)</offsetMin>
-        <offsetMax>(0,0,-2)</offsetMax>
-        <emissionInterval>520</emissionInterval>
-        <burstCount>35</burstCount>
-        <scale>1~2.5</scale>
-        <rotationRate>-30~30</rotationRate>
-        <velocityX>-50~50</velocityX>
-        <velocityY>0.5~1.8</velocityY>
-        <colorA>(0.25,0.4,0,0.9)</colorA>
-        <colorB>(0.4,0.55,0,0.6)</colorB>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>4</ChunkSlagSteel>
-      <Steel>80</Steel>
-      <ComponentIndustrial>2</ComponentIndustrial>
-      <ComponentSpacer>2</ComponentSpacer>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Heavy Machinery -->
-	
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_HeavyMachinery</defName>
-    <label>heavy machinery</label>
-    <description>A number of complex machinery, motors, support systems and other mysterious apparatus hidden underneath a thick layer of plasteel. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidHeavyMachinery</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <shadowData>
-        <volume>(3.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,4)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Plasteel>40</Plasteel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-      <ComponentSpacer>4</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Cargo Container -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_CargoContainer</defName>
-    <label>cargo container</label>
-    <description>A cargo module containing various raw resources often used by mechanoid swarms to fix existing units or construct new ones. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidCargoContainer</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5.5,4)</drawSize>
-      <shadowData><volume>(0.9, 1.0, 0.9)</volume></shadowData>
-      <damageData><rect>(0.5, 0.1, 5, 2.8)</rect></damageData>
-    </graphicData>
-    <rotatable>true</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,2)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Plasteel>65</Plasteel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-      <Steel>120</Steel>
-      <Gold>20</Gold>
-      <Uranium>40</Uranium>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Climate Adjuster -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_ClimateAdjuster</defName>
-    <label>climate adjuster</label>
-    <description>An ultratech ship-mounted device for controlling climate. Using chemicals and exotic fields to manipulate the atmosphere, it shifts the temperature in this region of the world. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidClimateAdjuster</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <shadowData>
-        <volume>(3.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,4)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <soundAmbient>WeatherAffecter_Ambience</soundAmbient>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Plasteel>40</Plasteel>
-      <Steel>30</Steel>
-      <Gold>10</Gold>
-      <ComponentIndustrial>2</ComponentIndustrial>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-      <ComponentSpacer>4</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- EMI Dynamo -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_EMIDynamo</defName>
-    <label>EMI dynamo</label>
-    <description>A massive, ship-mounted electromagnetic interference generator. It interferes with or shuts down electrical devices in nearby regions. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidEMIDynamo</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <shadowData>
-        <volume>(3.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,4)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <soundAmbient>EMIDynamo_Ambience</soundAmbient>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>9.9</explosiveRadius>
-        <explosiveDamageType>EMP</explosiveDamageType>
-        <explodeOnKilled>true</explodeOnKilled>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>4</ChunkSlagSteel>
-      <Plasteel>20</Plasteel>
-      <Steel>60</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-      <ComponentSpacer>3</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Psychic Suppressor -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_PsychicSuppressor</defName>
-    <label>psychic suppressor</label>
-    <description>A ship-mounted archotech device that generates a massive psychic suppression field tuned to a particular gender. People of that gender have their psychic activity suppressed, reducing their consciousness. The effect is modulated by an individual's psychic sensitivity. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidPsychicSuppressor</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <shadowData>
-        <volume>(3.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,4)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <comps>
-      <li Class="CompProperties_MoteEmitter">
-        <mote>Mote_PsychicConditionCauserEffect</mote>
-        <emissionInterval>150</emissionInterval>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Plasteel>40</Plasteel>
-      <Steel>80</Steel>
-      <ComponentIndustrial>2</ComponentIndustrial>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-      <ComponentSpacer>4</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Psychic Droner -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_PsychicDroner</defName>
-    <label>psychic droner</label>
-    <description>A ship-mounted archotech device transmitting the thoughts of a mad superintelligence. It generates a massive psychic drone tuned to one gender and affecting a whole region of the planet. People of that gender will be disturbed by the effect, reducing their mood and possibly driving them insane. The effect is modulated by an individual's psychic sensitivity. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidPsychicDroner</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(6,6)</drawSize>
-      <shadowData>
-        <volume>(3.76, 0.5, 3.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(4,4)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <comps>
-      <li Class="CompProperties_MoteEmitter">
-        <mote>Mote_PsychicConditionCauserEffect</mote>
-        <emissionInterval>150</emissionInterval>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>4</ChunkSlagSteel>
-      <Plasteel>20</Plasteel>
-      <Steel>40</Steel>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-      <ComponentSpacer>2</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Charge blaster cannon -->
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFE_Turret_ChargeBlasterCannon</defName>
-    <label>charge blaster cannon</label>
-    <description>A ship-mounted charge blaster point defense cannon. It is capable of laying suppressive fire over medium distance. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building_TurretGun</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidShipTurret_Base</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.3,1.3)</drawSize>
-      <drawOffset>(0,0,-0.11)</drawOffset>
-      <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
-      </damageData>
-      <shadowData>
-        <volume>(0.27,0.25,0.27)</volume>
-        <offset>(0,0,0)</offset>
-      </shadowData>
-    </graphicData>
-    <uiIconPath>Things/MechanoidShips/MechanoidShipTurret_ChargeBlaster_MenuIcon</uiIconPath>
-	<altitudeLayer>BuildingOnTop</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>10</Mass>
-      <ShootingAccuracyTurret>0.92</ShootingAccuracyTurret>
-      <Beauty>-25</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>240</wickTicks>
-        <explosiveRadius>3.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>2</ChunkSlagSteel>
-      <Steel>20</Steel>
-      <ComponentIndustrial>2</ComponentIndustrial>
-    </killedLeavings>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <hasTooltip>true</hasTooltip>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-		<combatPower>70</combatPower>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>VFE_Gun_ChargeBlasterCannon</turretGunDef>
-      <turretBurstCooldownTime>3.6</turretBurstCooldownTime>
-      <turretTopOffset>(0, 0.1)</turretTopOffset>
-    </building>
-    <designationCategory>Ship</designationCategory>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseWeaponTurret">
-    <defName>VFE_Gun_ChargeBlasterCannon</defName>
-    <label>charge blaster</label>
-    <description>A mechanoid-tech charge blaster.</description>
-    <graphicData>
-      <texPath>Things/MechanoidShips/ChargeBlasterCannon</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <uiIconScale>0.2</uiIconScale>
-    <statBases>
-      <AccuracyTouch>0.18</AccuracyTouch>
-      <AccuracyShort>0.26</AccuracyShort>
-      <AccuracyMedium>0.26</AccuracyMedium>
-      <AccuracyLong>0.18</AccuracyLong>
-      <RangedWeapon_Cooldown>7.4</RangedWeapon_Cooldown>
-      <DeteriorationRate>0</DeteriorationRate>
-      <Mass>10</Mass>
-      <Flammability>0</Flammability>
-    </statBases>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>Bullet_ChargeBlasterHeavy</defaultProjectile>
-        <range>26.9</range>
-        <soundCast>Shot_ChargeBlaster</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <burstShotCount>24</burstShotCount>
-        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
-      </li>
-    </verbs>
-  </ThingDef>
-  
-  
-    <!-- Charge lance cannon -->
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFE_Turret_ChargeLanceCannon</defName>
-    <label>charge lance cannon</label>
-    <description>A ship-mounted charge lance cannon. It fires a supercharged railgun projectile over a long distance. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building_TurretGun</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidShipTurret_Base</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.3,1.3)</drawSize>
-      <drawOffset>(0,0,-0.11)</drawOffset>
-      <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
-      </damageData>
-      <shadowData>
-        <volume>(0.27,0.25,0.27)</volume>
-        <offset>(0,0,0)</offset>
-      </shadowData>
-    </graphicData>
-    <uiIconPath>Things/MechanoidShips/MechanoidShipTurret_ChargeLance_MenuIcon</uiIconPath>
-	<altitudeLayer>BuildingOnTop</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>10</Mass>
-      <ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
-      <Beauty>-25</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>240</wickTicks>
-        <explosiveRadius>3.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>2</ChunkSlagSteel>
-      <Steel>10</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-    </killedLeavings>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <hasTooltip>true</hasTooltip>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-		<combatPower>70</combatPower>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>VFE_Gun_ChargeLanceCannon</turretGunDef>
-      <turretBurstCooldownTime>3.6</turretBurstCooldownTime>
-      <turretTopOffset>(0, 0.1)</turretTopOffset>
-    </building>
-    <designationCategory>Ship</designationCategory>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseWeaponTurret">
-    <defName>VFE_Gun_ChargeLanceCannon</defName>
-    <label>charge lance</label>
-    <description>A mechanoid-tech charge lance.</description>
-    <graphicData>
-      <texPath>Things/MechanoidShips/ChargeLanceCannon</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <uiIconScale>0.2</uiIconScale>
-    <statBases>
-      <AccuracyTouch>0.65</AccuracyTouch>
-      <AccuracyShort>0.85</AccuracyShort>
-      <AccuracyMedium>0.85</AccuracyMedium>
-      <AccuracyLong>0.75</AccuracyLong>
-      <RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
-      <DeteriorationRate>0</DeteriorationRate>
-      <Mass>10</Mass>
-      <Flammability>0</Flammability>
-    </statBases>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>Bullet_ChargeLance</defaultProjectile>
-        <range>29.9</range>
-        <soundCast>ChargeLance_Fire</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <burstShotCount>1</burstShotCount>
-      </li>
-    </verbs>
-  </ThingDef>
-  
-    <!-- Trooper Storage -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_TrooperStorage</defName>
-    <label>trooper storage</label>
-    <description>A small-sized trooper transport bay, potentially filled with combat-ready mechanoids. It seems to be dormant at the moment, but any kind of damage done to the structure will most likely deploy defensive units. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidTrooperStorageModule</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(4,4)</drawSize>
-      <shadowData>
-        <volume>(1.76, 0.5, 1.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>150</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(2,2)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>4</ChunkSlagSteel>
-      <Plasteel>10</Plasteel>
-      <Steel>30</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Hull Repair Module -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_HullRepairModule</defName>
-    <label>hull repair module</label>
-    <description>A nanite container module capable of reinforcing the damaged hull of the ship. Unless destroyed, this module will constantly regenerate any damage done to other ship modules. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidHullRepairModule</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(5,5)</drawSize>
-      <shadowData>
-        <volume>(1.76, 0.5, 1.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(3,3)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>5</ChunkSlagSteel>
-      <Steel>50</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentSpacer>2</ComponentSpacer>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Mechanoid Barrier -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MechanoidBarrier</defName>
-    <label>mechanoid barrier</label>
-    <description>A block of nearly impenetrable plasteel shield, usually used within the ship hull to protect the most vital apparatus. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidBarrier</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.2,1.2)</drawSize>
-      <shadowData>
-        <volume>(1, 0.2, 1)</volume>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <blockWind>false</blockWind>
-    <blockLight>false</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(1,1)</size>
-    <designationCategory>Ship</designationCategory>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <Plasteel>5</Plasteel>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Ship-mounted bullet shield -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_BulletShield</defName>
-    <label>ship-mounted bullet shield</label>
-    <description>A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to low angles, so it will block ground-level projectiles like bullets. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidShipBulletShield</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.3,1.3)</drawSize>
-      <shadowData>
-        <volume>(1, 0.2, 1)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <blockWind>false</blockWind>
-    <blockLight>false</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(1,1)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-      <li>PlaceWorker_ShowProjectileInterceptorRadius</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
-    </building>
-    <killedLeavings>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </killedLeavings>
-    <comps>
-      <li Class="CompProperties_ProjectileInterceptor">
-        <radius>20</radius>
-        <interceptGroundProjectiles>true</interceptGroundProjectiles>
-        <color>(0.4, 0.4, 0.4)</color>
-        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
-        <activeSound>BulletShield_Ambience</activeSound>
-        <disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
-        <chargeIntervalTicks>600000</chargeIntervalTicks>
-        <chargeDurationTicks>60000</chargeDurationTicks>
-      </li>
-	</comps>
-  </ThingDef>
-  
-    <!-- Ship-mounted mortar shield -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_MortarShield</defName>
-    <label>ship-mounted high shield</label>
-    <description>A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to high angles, so it will block mortar rounds. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidShipMortarShield</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.3,1.3)</drawSize>
-      <shadowData>
-        <volume>(1, 0.2, 1)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <blockWind>false</blockWind>
-    <blockLight>false</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(1,1)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-      <li>PlaceWorker_ShowProjectileInterceptorRadius</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
-    </building>
-    <killedLeavings>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </killedLeavings>
-    <comps>
-      <li Class="CompProperties_ProjectileInterceptor">
-        <radius>25</radius>
-        <interceptAirProjectiles>true</interceptAirProjectiles>
-        <color>(0.6, 0.6, 0.6)</color>
-        <reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
-        <activeSound>MortarShield_Ambience</activeSound>
-        <disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
-        <chargeIntervalTicks>600000</chargeIntervalTicks>
-        <chargeDurationTicks>60000</chargeDurationTicks>
-      </li>
-	</comps>
-  </ThingDef>
-  
-    <!-- Auto-mortar cannon -->
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFE_Turret_AutoMortarCannon</defName>
-    <label>auto-mortar cannon</label>
-    <description>A large, ship-mounted artillery piece, auto-mortar is capable of firing explosive shells over a long distance. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building_TurretGun</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidLargeShipTurret_Base</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(4,4)</drawSize>
-      <drawOffset>(0,0,-0.11)</drawOffset>
-      <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
-      </damageData>
-      <shadowData>
-        <volume>(1.27,0.25,1.27)</volume>
-        <offset>(0,0,0)</offset>
-      </shadowData>
-    </graphicData>
-    <size>(2,2)</size>
-    <uiIconPath>Things/MechanoidShips/MechanoidShipTurret_AutoMortar_MenuIcon</uiIconPath>
-	<altitudeLayer>BuildingOnTop</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>150</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>10</Mass>
-      <ShootingAccuracyTurret>0.84</ShootingAccuracyTurret>
-      <Beauty>-25</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>320</wickTicks>
-        <explosiveRadius>4.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>2</ChunkSlagSteel>
-      <Steel>30</Steel>
-      <ComponentIndustrial>2</ComponentIndustrial>
-    </killedLeavings>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <hasTooltip>true</hasTooltip>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <combatPower>240</combatPower>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>VFE_Gun_AutoMortarCannon</turretGunDef>
-      <turretBurstCooldownTime>12.6</turretBurstCooldownTime>
-      <turretBurstWarmupTime>4.0</turretBurstWarmupTime>
-      <turretTopDrawSize>2.5</turretTopDrawSize>
-      <turretTopOffset>(0, 0.1)</turretTopOffset>
-    </building>
-    <designationCategory>Ship</designationCategory>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseArtilleryWeapon">
-    <defName>VFE_Gun_AutoMortarCannon</defName>
-    <label>auto mortar cannon</label>
-    <description>A mechanoid-tech automatic mortar.</description>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidAutoMortar_Top</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <weaponTags>
-      <li>Artillery_BaseDestroyer</li>
-    </weaponTags>
-    <uiIconScale>0.8</uiIconScale>
-    <verbs>
-		<li>
-        <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>Bullet_Shell_HighExplosive</defaultProjectile>
-        <forcedMissRadius>8</forcedMissRadius>
-        <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-        <warmupTime>4</warmupTime>
-        <minRange>18.9</minRange>
-        <range>500</range>
-        <burstShotCount>1</burstShotCount>
-        <soundCast>Mortar_LaunchA</soundCast>
-        <soundCastTail>GunTail_Light</soundCastTail>
-        <muzzleFlashScale>16</muzzleFlashScale>
-        <requireLineOfSight>false</requireLineOfSight>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-	    </li>
-    </verbs>
-  </ThingDef>
-  
-    <!-- Inferno Launcher Artillery -->
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFE_Turret_InfernoLauncherArtillery</defName>
-    <label>inferno launcher artillery</label>
-    <description>A massive, triple barreled inferno launcher, usually mounted on spaceships to deal devastating damage to any organic matter onboard hostile crafts. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building_TurretGun</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidLargeShipTurret_Base</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(4,4)</drawSize>
-      <drawOffset>(0,0,-0.11)</drawOffset>
-      <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
-      </damageData>
-      <shadowData>
-        <volume>(1.27,0.25,1.27)</volume>
-        <offset>(0,0,0)</offset>
-      </shadowData>
-    </graphicData>
-    <size>(2,2)</size>
-    <uiIconPath>Things/MechanoidShips/MechanoidShipTurret_InfernoLauncher_MenuIcon</uiIconPath>
-	<altitudeLayer>BuildingOnTop</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>150</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>10</Mass>
-      <ShootingAccuracyTurret>0.84</ShootingAccuracyTurret>
-      <Beauty>-25</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>320</wickTicks>
-        <explosiveRadius>4.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>2</ChunkSlagSteel>
-      <Steel>20</Steel>
-      <Chemfuel>45</Chemfuel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-    </killedLeavings>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
-    <hasTooltip>true</hasTooltip>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <combatPower>240</combatPower>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>VFE_Gun_InfernoArtillery</turretGunDef>
-      <turretBurstCooldownTime>10</turretBurstCooldownTime>
-      <turretBurstWarmupTime>4.0</turretBurstWarmupTime>
-      <turretTopDrawSize>2.5</turretTopDrawSize>
-      <turretTopOffset>(0, 0.1)</turretTopOffset>
-    </building>
-    <designationCategory>Ship</designationCategory>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseArtilleryWeapon">
-    <defName>VFE_Gun_InfernoArtillery</defName>
-    <label>inferno artillery</label>
-    <description>A mechanoid-tech inferno artillery.</description>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidInfernoLauncher_Top</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <weaponTags>
-      <li>Artillery_BaseDestroyer</li>
-    </weaponTags>
-    <uiIconScale>0.8</uiIconScale>
-    <verbs>
-	     <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>Bullet_InfernoCannon</defaultProjectile>
-        <forcedMissRadius>6</forcedMissRadius>
-        <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-        <warmupTime>4</warmupTime>
-        <minRange>18.9</minRange>
-        <range>500</range>
-        <burstShotCount>3</burstShotCount>
-        <ticksBetweenBurstShots>16</ticksBetweenBurstShots>
-        <soundCast>InfernoCannon_Fire</soundCast>
-        <soundCastTail>GunTail_Light</soundCastTail>
-        <muzzleFlashScale>16</muzzleFlashScale>
-        <requireLineOfSight>false</requireLineOfSight>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-		</li>
-    </verbs>
-  </ThingDef>
-  
-    <!-- Charge Railgun -->
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFE_Turret_ChargeRailgun</defName>
-    <label>charge railgun</label>
-    <description>A large ship mounted railgun, often used to punch holes in hostile capital ships. This cannon has incredible range and fires charged explosive rounds, allowing it to deal devastating losses before the enemy even gets in range. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building_TurretGun</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidRailgunTurret_Base</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(7,7)</drawSize>
-      <drawOffset>(0,0,-0.11)</drawOffset>
-      <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
-      </damageData>
-      <shadowData>
-        <volume>(1.27,0.25,1.27)</volume>
-        <offset>(0,0,0)</offset>
-      </shadowData>
-    </graphicData>
-    <size>(5,5)</size>
-    <uiIconPath>Things/MechanoidShips/MechanoidShipTurret_ChargeRailgun_MenuIcon</uiIconPath>
-	<altitudeLayer>BuildingOnTop</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>250</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>30</Mass>
-      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
-      <Beauty>-25</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>320</wickTicks>
-        <explosiveRadius>7.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-      </li>
-    </comps>
-    <killedLeavings>
-      <ChunkSlagSteel>5</ChunkSlagSteel>
-      <Steel>40</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentSpacer>2</ComponentSpacer>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </killedLeavings>
-    <passability>Impassable</passability>
-    <fillPercent>0.8</fillPercent>
-    <hasTooltip>true</hasTooltip>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <turretTopDrawSize>7</turretTopDrawSize>
-      <turretTopOffset>(0, 0.1)</turretTopOffset>
-      <combatPower>650</combatPower>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>VFE_Gun_ChargeRailgun</turretGunDef>
-      <turretBurstCooldownTime>6</turretBurstCooldownTime>
-      <turretBurstWarmupTime>12</turretBurstWarmupTime>
-    </building>
-    <designationCategory>Ship</designationCategory>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseArtilleryWeapon">
-    <defName>VFE_Gun_ChargeRailgun</defName>
-    <label>charge railgun</label>
-    <description>A powerful, mechanoid-tech charge railgun.</description>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidRailgunTurret_Top</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <weaponTags>
-      <li>Artillery_BaseDestroyer</li>
-    </weaponTags>
-    <uiIconScale>1</uiIconScale>
-    <verbs>
-	     <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>VFE_Bullet_ChargeRailgun</defaultProjectile>
-        <forcedMissRadius>1</forcedMissRadius>
-        <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-        <warmupTime>4</warmupTime>
-        <minRange>24.9</minRange>
-        <range>500</range>
-        <burstShotCount>1</burstShotCount>
-        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
-        <soundCast>VFE_Shot_ChargeRailgun</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>16</muzzleFlashScale>
-        <requireLineOfSight>false</requireLineOfSight>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-		</li>
-    </verbs>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseBullet">
-    <defName>VFE_Bullet_ChargeRailgun</defName>
-    <label>charge railgun shot</label>
-    <graphicData>
-      <texPath>Things/Projectile/ChargeRailgunShot</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-	  <drawSize>4</drawSize>
-    </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
-    <projectile>
-      <damageDef>Bomb</damageDef>
-      <speed>76</speed>
-      <explosionRadius>8.4</explosionRadius >
-    </projectile>
-  </ThingDef>
-  
-    <!-- Orbital Bombardment Uplink -->
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFE_Turret_OrbitalBombardmentUplink</defName>
-    <label>orbital bombardment uplink</label>
-    <description>An uplink module connected to a local orbital strike satellite. It will light up any enemies in range for the orbital bombardment, however long realignment period makes it inefficient for longer encounters. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building_TurretGun</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidOrbitalBombardmentUplink_Base</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(5,5)</drawSize>
-      <drawOffset>(0,0,-0.11)</drawOffset>
-      <damageData>
-        <rect>(0.2,0.2,0.6,0.6)</rect>
-      </damageData>
-      <shadowData>
-        <volume>(1.27,0.25,1.27)</volume>
-        <offset>(0,0,0)</offset>
-      </shadowData>
-    </graphicData>
-    <size>(3,3)</size>
-    <uiIconPath>Things/MechanoidShips/MechanoidShipTurret_BombardmentTargeter_MenuIcon</uiIconPath>
-	<altitudeLayer>BuildingOnTop</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>20</Mass>
-      <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
-      <Beauty>-25</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <killedLeavings>
-      <ChunkSlagSteel>5</ChunkSlagSteel>
-      <Steel>20</Steel>
-      <Gold>20</Gold>
-      <ComponentIndustrial>2</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </killedLeavings>
-    <passability>Impassable</passability>
-    <fillPercent>0.8</fillPercent>
-    <hasTooltip>true</hasTooltip>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <turretTopDrawSize>5</turretTopDrawSize>
-      <turretTopOffset>(0, 0.1)</turretTopOffset>
-      <combatPower>650</combatPower>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>VFE_Gun_OrbitalBombardmentTargeter</turretGunDef>
-      <turretBurstCooldownTime>46</turretBurstCooldownTime>
-      <turretBurstWarmupTime>30</turretBurstWarmupTime>
-    </building>
-    <designationCategory>Ship</designationCategory>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseArtilleryWeapon">
-    <defName>VFE_Gun_OrbitalBombardmentTargeter</defName>
-    <label>orbital bombardment targeter</label>
-    <description>An antenna capable of summoning an orbital bombardment.</description>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidOrbitalBombardmentUplink_Top</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <weaponTags>
-      <li>Artillery_BaseDestroyer</li>
-    </weaponTags>
-    <uiIconScale>1</uiIconScale>
-    <verbs>
-	     <li>
-        <verbClass>Verb_Bombardment</verbClass>
-        <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-        <warmupTime>4</warmupTime>
-        <minRange>12.9</minRange>
-        <range>500</range>
-        <burstShotCount>1</burstShotCount>
-        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
-        <soundAiming>OrbitalTargeter_Aiming</soundAiming>
-        <soundCast>OrbitalTargeter_Fire</soundCast>
-        <soundCastTail>GunTail_Light</soundCastTail>
-        <muzzleFlashScale>0</muzzleFlashScale>
-        <requireLineOfSight>false</requireLineOfSight>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-		</li>
-    </verbs>
-  </ThingDef>
-  
-    <!-- Assembly Pod -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_AssemblyPod</defName>
-    <label>mechanoid assembly pod</label>
-    <description>A spaceship module containing a mechanoid factory. It is capable of transforming raw resources directly into different types of mechanoids, and it creates them continuously until destroyed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidAssemblyPod</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(5,5)</drawSize>
-      <shadowData>
-        <volume>(1.76, 0.5, 1.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(3,3)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Steel>40</Steel>
-      <Plasteel>35</Plasteel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentSpacer>2</ComponentSpacer>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Mechanoid Foundry -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_AssemblyFoundry</defName>
-    <label>mechanoid foundry</label>
-    <description>A spaceship module containing a large scale mechanoid foundry. It is capable of generating large squads of mechanoids at great speed, but it is incapable of constructing larger, more complex variants. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidFoundry</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(7,7)</drawSize>
-      <shadowData>
-        <volume>(1.76, 0.5, 1.66)</volume>
-        <offset>(0,0,-0.05)</offset>
-      </shadowData>
-    </graphicData>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(5,5)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>7</ChunkSlagSteel>
-      <Steel>10</Steel>
-      <Plasteel>45</Plasteel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <ComponentSpacer>3</ComponentSpacer>
-      <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
-    </killedLeavings>
-  </ThingDef>
-  
-    <!-- Cargo Hold -->
-  
-  <ThingDef ParentName="VFE_MechShipPart">
-    <defName>VFE_CargoHold</defName>
-    <label>cargo hold</label>
-    <description>A ship-based cargo module containing a vast amount of raw materials for the mechanoid ship to function properly. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/MechanoidShips/MechanoidCargoHold</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,8)</drawSize>
-      <shadowData><volume>(0.9, 1.0, 0.9)</volume></shadowData>
-      <damageData><rect>(0.5, 0.1, 5, 2.8)</rect></damageData>
-    </graphicData>
-    <rotatable>true</rotatable>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <statBases>
-      <WorkToBuild>16000</WorkToBuild>
-      <MaxHitPoints>300</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(3,6)</size>
-    <designationCategory>Ship</designationCategory>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <placeWorkers>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
-    </building>
-    <killedLeavings>
-      <ChunkSlagSteel>6</ChunkSlagSteel>
-      <Plasteel>65</Plasteel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-      <Steel>120</Steel>
-      <Gold>20</Gold>
-      <Uranium>40</Uranium>
-    </killedLeavings>
-  </ThingDef>
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidEnginesSmall</defName>
+		<label>Small mechanoid ship engines</label>
+		<description>A set of small Johnson Tanaka engines of a mechanoid vessel. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<size>(2,5)</size>
+		<rotatable>true</rotatable>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<MarketValue>400</MarketValue>
+			<WorkToBuild>300</WorkToBuild>
+		</statBases>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidSmallEngines</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4,7)</drawSize>
+			<shadowData>
+				<volume>(2.1, 0.4, 4.3)</volume>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_ShowExplosionRadius</li>
+		</placeWorkers>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<explodeOnKilled>true</explodeOnKilled>
+				<startWickHitPointsPercent>0.5</startWickHitPointsPercent>
+				<extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>2</ChunkSlagSteel>
+			<Steel>40</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Plasteel>20</Plasteel>
+			<Uranium>10</Uranium>
+		</killedLeavings>
+	</ThingDef>
 
-  
+	<!-- Heavy Beam -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidBeamHeavy</defName>
+		<label>heavy structural beam</label>
+		<description>A structural beam around which a ship is constructed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidHeavyStructuralBeam</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.8,7.8)</drawSize>
+			<shadowData>
+				<volume>(2.04, 1.0, 5.75)</volume>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>8000</WorkToBuild>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(2,6)</size>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<uiIconScale>1.2</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Steel>20</Steel>
+			<Plasteel>15</Plasteel>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Light Beam -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidBeamLight</defName>
+		<label>light structural beam</label>
+		<description>A structural beam around which a ship is constructed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidLightStructuralBeam</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2.8,7.8)</drawSize>
+			<shadowData>
+				<volume>(2.04, 1.0, 5.75)</volume>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>8000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(1,6)</size>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<uiIconScale>1.2</uiIconScale>
+		<killedLeavings>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<Steel>10</Steel>
+			<Plasteel>5</Plasteel>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Uplink Module -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidUplink</defName>
+		<label>uplink module</label>
+		<description>An uplink module, directly connected to the mechanoid swarm. It is responsible for obtaining order updates from war programmers in orbit. It greatly enhances mechanoid capabilities in range, but destroying it will sever the connection with the fleet, greatly harming the mechanoid forces.  It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>VFEM.MechanoidUplink</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidUplink</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<shadowData>
+				<volume>(3.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<killedLeavings>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<Steel>100</Steel>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Plasteel>20</Plasteel>
+		</killedLeavings>
+	</ThingDef>
+
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidReactor</defName>
+		<label>reactor</label>
+		<description>A mechanoid power generation unit. The gigantic vanometric power core will run forever, extracting energy from quantum foam fluctuations. Despite the huge power output, effort has been made to stabilise it. If enough damage is dealt to the plasteel shell surrounding the core, a huge explosion will wipe out the local area. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidReactor</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(7,6)</drawSize>
+			<shadowData>
+				<volume>(4.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>true</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(5,4)</size>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+			<li>PlaceWorker_ShowExplosionRadius</li>
+		</placeWorkers>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>1520</wickTicks>
+				<explosiveRadius>18.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<explodeOnKilled>true</explodeOnKilled>
+				<startWickHitPointsPercent>0.4</startWickHitPointsPercent>
+				<extraInspectStringKey>ExplosionOnDamageWarning</extraInspectStringKey>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<killedLeavings>
+			<ChunkSlagSteel>5</ChunkSlagSteel>
+			<Steel>100</Steel>
+			<Uranium>65</Uranium>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Terraformer -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidTerraformer</defName>
+		<label>terraformer</label>
+		<description>An ultratech device of mass destruction, mechanoid terraformer harvests available oxygen and extracts toxic fumes in its place. Poison leaking into the ground around it slowly turns the planet into a barren wasteland. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidTerraformer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<shadowData>
+				<volume>(3.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+			<li>PlaceWorker_ShowPlantHarmRadius</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_PlantHarmRadius">
+				<radiusPerDayCurve>
+					<points>
+						<li>0  , 40</li>
+						<li>20 , 100</li>
+					</points>
+				</radiusPerDayCurve>
+			</li>
+			<li Class="CompProperties_ThrownMoteEmitter">
+				<mote>Mote_DustSlow</mote>
+				<offsetMin>(-2,0,-1.5)</offsetMin>
+				<offsetMax>(0,0,-2)</offsetMax>
+				<emissionInterval>520</emissionInterval>
+				<burstCount>35</burstCount>
+				<scale>1~2.5</scale>
+				<rotationRate>-30~30</rotationRate>
+				<velocityX>-50~50</velocityX>
+				<velocityY>0.5~1.8</velocityY>
+				<colorA>(0.25,0.4,0,0.9)</colorA>
+				<colorB>(0.4,0.55,0,0.6)</colorB>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<Steel>80</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Heavy Machinery -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_HeavyMachinery</defName>
+		<label>heavy machinery</label>
+		<description>A number of complex machinery, motors, support systems and other mysterious apparatus hidden underneath a thick layer of plasteel. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidHeavyMachinery</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<shadowData>
+				<volume>(3.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Plasteel>40</Plasteel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Cargo Container -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_CargoContainer</defName>
+		<label>cargo container</label>
+		<description>A cargo module containing various raw resources often used by mechanoid swarms to fix existing units or construct new ones. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidCargoContainer</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5.5,4)</drawSize>
+			<shadowData>
+				<volume>(0.9, 1.0, 0.9)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.5, 0.1, 5, 2.8)</rect>
+			</damageData>
+		</graphicData>
+		<rotatable>true</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Plasteel>65</Plasteel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<Steel>120</Steel>
+			<Gold>20</Gold>
+			<Uranium>40</Uranium>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Climate Adjuster -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_ClimateAdjuster</defName>
+		<label>climate adjuster</label>
+		<description>An ultratech ship-mounted device for controlling climate. Using chemicals and exotic fields to manipulate the atmosphere, it shifts the temperature in this region of the world. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidClimateAdjuster</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<shadowData>
+				<volume>(3.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<soundAmbient>WeatherAffecter_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Plasteel>40</Plasteel>
+			<Steel>30</Steel>
+			<Gold>10</Gold>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+			<ComponentSpacer>4</ComponentSpacer>
+		</killedLeavings>
+		<comps>
+			<li Class="VFEM.CompProperties_ActiveGameCondition">
+				<conditionDef>VFE_ClimateAdjuster</conditionDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- EMI Dynamo -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_EMIDynamo</defName>
+		<label>EMI dynamo</label>
+		<description>A massive, ship-mounted electromagnetic interference generator. It interferes with or shuts down electrical devices in nearby regions. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidEMIDynamo</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<shadowData>
+				<volume>(3.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<soundAmbient>EMIDynamo_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>9.9</explosiveRadius>
+				<explosiveDamageType>EMP</explosiveDamageType>
+				<explodeOnKilled>true</explodeOnKilled>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<Plasteel>20</Plasteel>
+			<Steel>60</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+			<ComponentSpacer>3</ComponentSpacer>
+		</killedLeavings>
+		<comps>
+			<li Class="VFEM.CompProperties_ActiveGameCondition">
+				<conditionDef>VFE_EMIDynamo</conditionDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Psychic Suppressor -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_PsychicSuppressor</defName>
+		<label>psychic suppressor</label>
+		<description>A ship-mounted archotech device that generates a massive psychic suppression field tuned to a particular gender. People of that gender have their psychic activity suppressed, reducing their consciousness. The effect is modulated by an individual's psychic sensitivity. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidPsychicSuppressor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<shadowData>
+				<volume>(3.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_MoteEmitter">
+				<mote>Mote_PsychicConditionCauserEffect</mote>
+				<emissionInterval>150</emissionInterval>
+			</li>
+			<li Class="VFEM.CompProperties_ActiveGameCondition">
+				<conditionDef>PsychicSuppression</conditionDef>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Plasteel>40</Plasteel>
+			<Steel>80</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+			<ComponentSpacer>4</ComponentSpacer>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Psychic Droner -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_PsychicDroner</defName>
+		<label>psychic droner</label>
+		<description>A ship-mounted archotech device transmitting the thoughts of a mad superintelligence. It generates a massive psychic drone tuned to one gender and affecting a whole region of the planet. People of that gender will be disturbed by the effect, reducing their mood and possibly driving them insane. The effect is modulated by an individual's psychic sensitivity. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidPsychicDroner</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<shadowData>
+				<volume>(3.76, 0.5, 3.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_MoteEmitter">
+				<mote>Mote_PsychicConditionCauserEffect</mote>
+				<emissionInterval>150</emissionInterval>
+			</li>
+			<li Class="VFEM.CompProperties_ActiveGameCondition">
+				<conditionDef>PsychicDrone</conditionDef>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<Plasteel>20</Plasteel>
+			<Steel>40</Steel>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+			<ComponentSpacer>2</ComponentSpacer>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Charge blaster cannon -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_Turret_ChargeBlasterCannon</defName>
+		<label>charge blaster cannon</label>
+		<description>A ship-mounted charge blaster point defense cannon. It is capable of laying suppressive fire over medium distance. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidShipTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.3,1.3)</drawSize>
+			<drawOffset>(0,0,-0.11)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/MechanoidShips/MechanoidShipTurret_ChargeBlaster_MenuIcon</uiIconPath>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>10</Mass>
+			<ShootingAccuracyTurret>0.92</ShootingAccuracyTurret>
+			<Beauty>-25</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>2</ChunkSlagSteel>
+			<Steel>20</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</killedLeavings>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<combatPower>70</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>VFE_Gun_ChargeBlasterCannon</turretGunDef>
+			<turretBurstCooldownTime>3.6</turretBurstCooldownTime>
+			<turretTopOffset>(0, 0.1)</turretTopOffset>
+		</building>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>VFE_Gun_ChargeBlasterCannon</defName>
+		<label>charge blaster</label>
+		<description>A mechanoid-tech charge blaster.</description>
+		<graphicData>
+			<texPath>Things/MechanoidShips/ChargeBlasterCannon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconScale>0.2</uiIconScale>
+		<statBases>
+			<AccuracyTouch>0.18</AccuracyTouch>
+			<AccuracyShort>0.26</AccuracyShort>
+			<AccuracyMedium>0.26</AccuracyMedium>
+			<AccuracyLong>0.18</AccuracyLong>
+			<RangedWeapon_Cooldown>7.4</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>10</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_ChargeBlasterHeavy</defaultProjectile>
+				<range>26.9</range>
+				<soundCast>Shot_ChargeBlaster</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<burstShotCount>24</burstShotCount>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+			</li>
+		</verbs>
+	</ThingDef>
+
+
+	<!-- Charge lance cannon -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_Turret_ChargeLanceCannon</defName>
+		<label>charge lance cannon</label>
+		<description>A ship-mounted charge lance cannon. It fires a supercharged railgun projectile over a long distance. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidShipTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.3,1.3)</drawSize>
+			<drawOffset>(0,0,-0.11)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/MechanoidShips/MechanoidShipTurret_ChargeLance_MenuIcon</uiIconPath>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>10</Mass>
+			<ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
+			<Beauty>-25</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>2</ChunkSlagSteel>
+			<Steel>10</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</killedLeavings>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<combatPower>70</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>VFE_Gun_ChargeLanceCannon</turretGunDef>
+			<turretBurstCooldownTime>3.6</turretBurstCooldownTime>
+			<turretTopOffset>(0, 0.1)</turretTopOffset>
+		</building>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>VFE_Gun_ChargeLanceCannon</defName>
+		<label>charge lance</label>
+		<description>A mechanoid-tech charge lance.</description>
+		<graphicData>
+			<texPath>Things/MechanoidShips/ChargeLanceCannon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconScale>0.2</uiIconScale>
+		<statBases>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>10</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_ChargeLance</defaultProjectile>
+				<range>29.9</range>
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<burstShotCount>1</burstShotCount>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<!-- Trooper Storage -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_TrooperStorage</defName>
+		<label>trooper storage</label>
+		<description>A small-sized trooper transport bay, potentially filled with combat-ready mechanoids. It seems to be dormant at the moment, but any kind of damage done to the structure will most likely deploy defensive units. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidTrooperStorageModule</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+			<shadowData>
+				<volume>(1.76, 0.5, 1.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(2,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>4</ChunkSlagSteel>
+			<Plasteel>10</Plasteel>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<ComponentSpacer>1</ComponentSpacer>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Hull Repair Module -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_HullRepairModule</defName>
+		<label>hull repair module</label>
+		<description>A nanite container module capable of reinforcing the damaged hull of the ship. Unless destroyed, this module will constantly regenerate any damage done to other ship modules. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidHullRepairModule</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<shadowData>
+				<volume>(1.76, 0.5, 1.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(3,3)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>5</ChunkSlagSteel>
+			<Steel>50</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Mechanoid Barrier -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MechanoidBarrier</defName>
+		<label>mechanoid barrier</label>
+		<description>A block of nearly impenetrable plasteel shield, usually used within the ship hull to protect the most vital apparatus. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidBarrier</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.2,1.2)</drawSize>
+			<shadowData>
+				<volume>(1, 0.2, 1)</volume>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<blockWind>false</blockWind>
+		<blockLight>false</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<Plasteel>5</Plasteel>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Ship-mounted bullet shield -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_BulletShield</defName>
+		<label>ship-mounted bullet shield</label>
+		<description>A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to low angles, so it will block ground-level projectiles like bullets. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidShipBulletShield</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.3,1.3)</drawSize>
+			<shadowData>
+				<volume>(1, 0.2, 1)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<blockWind>false</blockWind>
+		<blockLight>false</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+			<li>PlaceWorker_ShowProjectileInterceptorRadius</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<killedLeavings>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</killedLeavings>
+		<comps>
+			<li Class="CompProperties_ProjectileInterceptor">
+				<radius>20</radius>
+				<interceptGroundProjectiles>true</interceptGroundProjectiles>
+				<color>(0.4, 0.4, 0.4)</color>
+				<reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+				<activeSound>BulletShield_Ambience</activeSound>
+				<disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
+				<chargeIntervalTicks>600000</chargeIntervalTicks>
+				<chargeDurationTicks>60000</chargeDurationTicks>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Ship-mounted mortar shield -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_MortarShield</defName>
+		<label>ship-mounted high shield</label>
+		<description>A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to high angles, so it will block mortar rounds. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidShipMortarShield</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.3,1.3)</drawSize>
+			<shadowData>
+				<volume>(1, 0.2, 1)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<blockWind>false</blockWind>
+		<blockLight>false</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+			<li>PlaceWorker_ShowProjectileInterceptorRadius</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<killedLeavings>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</killedLeavings>
+		<comps>
+			<li Class="CompProperties_ProjectileInterceptor">
+				<radius>25</radius>
+				<interceptAirProjectiles>true</interceptAirProjectiles>
+				<color>(0.6, 0.6, 0.6)</color>
+				<reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
+				<activeSound>MortarShield_Ambience</activeSound>
+				<disarmedByEmpForTicks>1080</disarmedByEmpForTicks>
+				<chargeIntervalTicks>600000</chargeIntervalTicks>
+				<chargeDurationTicks>60000</chargeDurationTicks>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Auto-mortar cannon -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_Turret_AutoMortarCannon</defName>
+		<label>auto-mortar cannon</label>
+		<description>A large, ship-mounted artillery piece, auto-mortar is capable of firing explosive shells over a long distance. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidLargeShipTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+			<drawOffset>(0,0,-0.11)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.27,0.25,1.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(2,2)</size>
+		<uiIconPath>Things/MechanoidShips/MechanoidShipTurret_AutoMortar_MenuIcon</uiIconPath>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>10</Mass>
+			<ShootingAccuracyTurret>0.84</ShootingAccuracyTurret>
+			<Beauty>-25</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>320</wickTicks>
+				<explosiveRadius>4.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>2</ChunkSlagSteel>
+			<Steel>30</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</killedLeavings>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<combatPower>240</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>VFE_Gun_AutoMortarCannon</turretGunDef>
+			<turretBurstCooldownTime>12.6</turretBurstCooldownTime>
+			<turretBurstWarmupTime>4.0</turretBurstWarmupTime>
+			<turretTopDrawSize>2.5</turretTopDrawSize>
+			<turretTopOffset>(0, 0.1)</turretTopOffset>
+		</building>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseArtilleryWeapon">
+		<defName>VFE_Gun_AutoMortarCannon</defName>
+		<label>auto mortar cannon</label>
+		<description>A mechanoid-tech automatic mortar.</description>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidAutoMortar_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<weaponTags>
+			<li>Artillery_BaseDestroyer</li>
+		</weaponTags>
+		<uiIconScale>0.8</uiIconScale>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_Shell_HighExplosive</defaultProjectile>
+				<forcedMissRadius>8</forcedMissRadius>
+				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+				<warmupTime>4</warmupTime>
+				<minRange>18.9</minRange>
+				<range>500</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Mortar_LaunchA</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>16</muzzleFlashScale>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<!-- Inferno Launcher Artillery -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_Turret_InfernoLauncherArtillery</defName>
+		<label>inferno launcher artillery</label>
+		<description>A massive, triple barreled inferno launcher, usually mounted on spaceships to deal devastating damage to any organic matter onboard hostile crafts. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidLargeShipTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+			<drawOffset>(0,0,-0.11)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.27,0.25,1.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(2,2)</size>
+		<uiIconPath>Things/MechanoidShips/MechanoidShipTurret_InfernoLauncher_MenuIcon</uiIconPath>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>10</Mass>
+			<ShootingAccuracyTurret>0.84</ShootingAccuracyTurret>
+			<Beauty>-25</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>320</wickTicks>
+				<explosiveRadius>4.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>2</ChunkSlagSteel>
+			<Steel>20</Steel>
+			<Chemfuel>45</Chemfuel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</killedLeavings>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<combatPower>240</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>VFE_Gun_InfernoArtillery</turretGunDef>
+			<turretBurstCooldownTime>10</turretBurstCooldownTime>
+			<turretBurstWarmupTime>4.0</turretBurstWarmupTime>
+			<turretTopDrawSize>2.5</turretTopDrawSize>
+			<turretTopOffset>(0, 0.1)</turretTopOffset>
+		</building>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseArtilleryWeapon">
+		<defName>VFE_Gun_InfernoArtillery</defName>
+		<label>inferno artillery</label>
+		<description>A mechanoid-tech inferno artillery.</description>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidInfernoLauncher_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<weaponTags>
+			<li>Artillery_BaseDestroyer</li>
+		</weaponTags>
+		<uiIconScale>0.8</uiIconScale>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_InfernoCannon</defaultProjectile>
+				<forcedMissRadius>6</forcedMissRadius>
+				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+				<warmupTime>4</warmupTime>
+				<minRange>18.9</minRange>
+				<range>500</range>
+				<burstShotCount>3</burstShotCount>
+				<ticksBetweenBurstShots>16</ticksBetweenBurstShots>
+				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>16</muzzleFlashScale>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<!-- Charge Railgun -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_Turret_ChargeRailgun</defName>
+		<label>charge railgun</label>
+		<description>A large ship mounted railgun, often used to punch holes in hostile capital ships. This cannon has incredible range and fires charged explosive rounds, allowing it to deal devastating losses before the enemy even gets in range. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidRailgunTurret_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<drawOffset>(0,0,-0.11)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.27,0.25,1.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(5,5)</size>
+		<uiIconPath>Things/MechanoidShips/MechanoidShipTurret_ChargeRailgun_MenuIcon</uiIconPath>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>30</Mass>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+			<Beauty>-25</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>320</wickTicks>
+				<explosiveRadius>7.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+			</li>
+		</comps>
+		<killedLeavings>
+			<ChunkSlagSteel>5</ChunkSlagSteel>
+			<Steel>40</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</killedLeavings>
+		<passability>Impassable</passability>
+		<fillPercent>0.8</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<turretTopDrawSize>7</turretTopDrawSize>
+			<turretTopOffset>(0, 0.1)</turretTopOffset>
+			<combatPower>650</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>VFE_Gun_ChargeRailgun</turretGunDef>
+			<turretBurstCooldownTime>6</turretBurstCooldownTime>
+			<turretBurstWarmupTime>12</turretBurstWarmupTime>
+		</building>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseArtilleryWeapon">
+		<defName>VFE_Gun_ChargeRailgun</defName>
+		<label>charge railgun</label>
+		<description>A powerful, mechanoid-tech charge railgun.</description>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidRailgunTurret_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<weaponTags>
+			<li>Artillery_BaseDestroyer</li>
+		</weaponTags>
+		<uiIconScale>1</uiIconScale>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>VFE_Bullet_ChargeRailgun</defaultProjectile>
+				<forcedMissRadius>1</forcedMissRadius>
+				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+				<warmupTime>4</warmupTime>
+				<minRange>24.9</minRange>
+				<range>500</range>
+				<burstShotCount>1</burstShotCount>
+				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+				<soundCast>VFE_Shot_ChargeRailgun</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>16</muzzleFlashScale>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFE_Bullet_ChargeRailgun</defName>
+		<label>charge railgun shot</label>
+		<graphicData>
+			<texPath>Things/Projectile/ChargeRailgunShot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>4</drawSize>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<speed>76</speed>
+			<explosionRadius>8.4</explosionRadius >
+		</projectile>
+	</ThingDef>
+
+	<!-- Orbital Bombardment Uplink -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_Turret_OrbitalBombardmentUplink</defName>
+		<label>orbital bombardment uplink</label>
+		<description>An uplink module connected to a local orbital strike satellite. It will light up any enemies in range for the orbital bombardment, however long realignment period makes it inefficient for longer encounters. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidOrbitalBombardmentUplink_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<drawOffset>(0,0,-0.11)</drawOffset>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(1.27,0.25,1.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(3,3)</size>
+		<uiIconPath>Things/MechanoidShips/MechanoidShipTurret_BombardmentTargeter_MenuIcon</uiIconPath>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>20</Mass>
+			<ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+			<Beauty>-25</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<killedLeavings>
+			<ChunkSlagSteel>5</ChunkSlagSteel>
+			<Steel>20</Steel>
+			<Gold>20</Gold>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<ComponentSpacer>1</ComponentSpacer>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</killedLeavings>
+		<passability>Impassable</passability>
+		<fillPercent>0.8</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<turretTopDrawSize>5</turretTopDrawSize>
+			<turretTopOffset>(0, 0.1)</turretTopOffset>
+			<combatPower>650</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>VFE_Gun_OrbitalBombardmentTargeter</turretGunDef>
+			<turretBurstCooldownTime>46</turretBurstCooldownTime>
+			<turretBurstWarmupTime>30</turretBurstWarmupTime>
+		</building>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseArtilleryWeapon">
+		<defName>VFE_Gun_OrbitalBombardmentTargeter</defName>
+		<label>orbital bombardment targeter</label>
+		<description>An antenna capable of summoning an orbital bombardment.</description>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidOrbitalBombardmentUplink_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<weaponTags>
+			<li>Artillery_BaseDestroyer</li>
+		</weaponTags>
+		<uiIconScale>1</uiIconScale>
+		<verbs>
+			<li>
+				<verbClass>Verb_Bombardment</verbClass>
+				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+				<warmupTime>4</warmupTime>
+				<minRange>12.9</minRange>
+				<range>500</range>
+				<burstShotCount>1</burstShotCount>
+				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+				<soundAiming>OrbitalTargeter_Aiming</soundAiming>
+				<soundCast>OrbitalTargeter_Fire</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>0</muzzleFlashScale>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<!-- Assembly Pod -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_AssemblyPod</defName>
+		<label>mechanoid assembly pod</label>
+		<description>A spaceship module containing a mechanoid factory. It is capable of transforming raw resources directly into different types of mechanoids, and it creates them continuously until destroyed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidAssemblyPod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<shadowData>
+				<volume>(1.76, 0.5, 1.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(3,3)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Steel>40</Steel>
+			<Plasteel>35</Plasteel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Mechanoid Foundry -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_AssemblyFoundry</defName>
+		<label>mechanoid foundry</label>
+		<description>A spaceship module containing a large scale mechanoid foundry. It is capable of generating large squads of mechanoids at great speed, but it is incapable of constructing larger, more complex variants. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidFoundry</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<shadowData>
+				<volume>(1.76, 0.5, 1.66)</volume>
+				<offset>(0,0,-0.05)</offset>
+			</shadowData>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(5,5)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>7</ChunkSlagSteel>
+			<Steel>10</Steel>
+			<Plasteel>45</Plasteel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
+		</killedLeavings>
+	</ThingDef>
+
+	<!-- Cargo Hold -->
+
+	<ThingDef ParentName="VFE_MechShipPart">
+		<defName>VFE_CargoHold</defName>
+		<label>cargo hold</label>
+		<description>A ship-based cargo module containing a vast amount of raw materials for the mechanoid ship to function properly. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/MechanoidShips/MechanoidCargoHold</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,8)</drawSize>
+			<shadowData>
+				<volume>(0.9, 1.0, 0.9)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.5, 0.1, 5, 2.8)</rect>
+			</damageData>
+		</graphicData>
+		<rotatable>true</rotatable>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>16000</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(3,6)</size>
+		<designationCategory>Ship</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<killedLeavings>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<Plasteel>65</Plasteel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<Steel>120</Steel>
+			<Gold>20</Gold>
+			<Uranium>40</Uranium>
+		</killedLeavings>
+	</ThingDef>
+
+
 </Defs>
