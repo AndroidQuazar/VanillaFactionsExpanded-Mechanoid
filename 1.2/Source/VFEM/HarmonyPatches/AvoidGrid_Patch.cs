@@ -41,7 +41,6 @@ namespace VFEMech
         {
             if (pawn.Faction?.def == VFEMDefOf.VFE_Mechanoid && (pawn.health?.hediffSet?.HasHediff(VFEMDefOf.VFE_MechanoidUplink) ?? false))
             {
-                Log.Message(pawn + " should use covers");
                 return false;
             }
             return pawn.kindDef.aiAvoidCover;
