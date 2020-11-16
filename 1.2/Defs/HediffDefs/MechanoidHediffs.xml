@@ -10,7 +10,7 @@
 			<li>
 				<statFactors>
 					<MoveSpeed>1.5</MoveSpeed>
-					<RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
 				</statFactors>
 			</li>
 		</stages>
