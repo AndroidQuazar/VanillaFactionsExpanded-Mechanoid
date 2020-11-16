@@ -7,10 +7,32 @@
 		<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
 		<slot>1</slot>
 		<items>			
-			<li>StoneChunks</li>		
+			<li>StoneChunks</li>	
 			
 		</items>							
 	</ItemProcessor.ItemAcceptedDef>
+	
+	
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_InputTwo</defName>
+		<building>VFEM_ElectronicsFabricationFactory_SteelExtractorTwo</building>
+		<slot>1</slot>
+		<items>			
+			<li>StoneChunks</li>	
+			
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_InputTwoSecond</defName>
+		<building>VFEM_ElectronicsFabricationFactory_SteelExtractorTwo</building>
+		<slot>2</slot>
+		<items>			
+			<li>MeatRaw</li>	
+			
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	
 	
 	<ItemProcessor.ItemAcceptedDef>
 		<defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler_Input</defName>

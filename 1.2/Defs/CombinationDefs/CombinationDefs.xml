@@ -18,6 +18,30 @@
 	</ItemProcessor.CombinationDef>
 	
 	<ItemProcessor.CombinationDef>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_ChunksRecipeTwo</defName>
+		<building>VFEM_ElectronicsFabricationFactory_SteelExtractorTwo</building>
+		<items>
+			<li>StoneChunks</li>
+		</items>	
+		<secondItems>
+			<li>MeatRaw</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>1</li>
+		</amount>
+		<result>Steel</result>	
+		<yield>200</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.5</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	
+	
+
+	
+	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_SteelRecipe</defName>
 		<building>VFEM_ElectronicsFabricationFactory_ComponentAssembler</building>
 		<items>
