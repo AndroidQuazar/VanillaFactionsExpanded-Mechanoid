@@ -39,12 +39,12 @@ namespace VFEMech
 
         public static bool AvoidCover(Pawn pawn)
         {
-            if (pawn.Faction.def == VFEMDefOf.VFE_Mechanoid && pawn.health.hediffSet.HasHediff(VFEMDefOf.VFE_MechanoidUplink))
+            if (pawn.Faction?.def == VFEMDefOf.VFE_Mechanoid && (pawn.health?.hediffSet?.HasHediff(VFEMDefOf.VFE_MechanoidUplink) ?? false))
             {
                 Log.Message(pawn + " should use covers");
                 return false;
             }
-            return true;
+            return pawn.kindDef.aiAvoidCover;
         }
     }
 }
