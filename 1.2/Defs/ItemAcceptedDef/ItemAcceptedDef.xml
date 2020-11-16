@@ -12,6 +12,16 @@
 		</items>							
 	</ItemProcessor.ItemAcceptedDef>
 	
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler_Input</defName>
+		<building>VFEM_ElectronicsFabricationFactory_ComponentAssembler</building>
+		<slot>1</slot>
+		<items>			
+			<li>Steel</li>		
+			
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	
 	
 
 	

@@ -17,6 +17,22 @@
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_SteelRecipe</defName>
+		<building>VFEM_ElectronicsFabricationFactory_ComponentAssembler</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<amount>
+			<li>12</li>
+		</amount>
+		<result>ComponentIndustrial</result>	
+		<yield>1</yield>
+		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
 	
 
 
