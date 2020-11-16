@@ -97,7 +97,8 @@
 		<totalSizeScale>1.15</totalSizeScale>
 		<tickFrameRate>2</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
-		<tickDamageRate>1</tickDamageRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
 		<minDistanceToAffect>2</minDistanceToAffect>
 	</VFECore.ExpandableProjectileDef>
 
