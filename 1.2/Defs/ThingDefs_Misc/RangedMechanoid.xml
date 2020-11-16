@@ -86,16 +86,17 @@
 		<projectile>
 			<damageDef>Flame</damageDef>
 			<speed>45</speed>
+			<damageAmountBase>2</damageAmountBase>
 		</projectile>
 		
 		<drawOffscreen>true</drawOffscreen>
-		<lifeTimeDuration>70</lifeTimeDuration>
-		<widthScaleFactor>0.75</widthScaleFactor>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>0.65</widthScaleFactor>
 		<heightScaleFactor>1</heightScaleFactor>
 		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
 		<totalSizeScale>1.15</totalSizeScale>
-		<tickFrameRate>3</tickFrameRate>
-		<finalTickFrameRate>9</finalTickFrameRate>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
 		<tickDamageRate>1</tickDamageRate>
 		<minDistanceToAffect>2</minDistanceToAffect>
 	</VFECore.ExpandableProjectileDef>
@@ -140,10 +141,9 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>VFE_Bullet_InfernoSpewer</defaultProjectile>
-				<forcedMissRadius>3.5</forcedMissRadius>
 				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
 				<warmupTime>1.25</warmupTime>
-				<range>26.9</range>
+				<range>14.9</range>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>InfernoCannon_Fire</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
