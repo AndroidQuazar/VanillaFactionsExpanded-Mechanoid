@@ -1,148 +1,156 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Light Charge Blaster -->
+	<!-- Light Charge Blaster -->
 
-  <ThingDef ParentName="BaseBullet">
-    <defName>VFE_Bullet_ChargeBlasterLight</defName>
-    <label>charge blaster shot</label>
-    <graphicData>
-      <texPath>Things/Projectile/Charge_Small</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-    </graphicData>
-    <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>15</damageAmountBase>
-      <speed>90</speed>
-    </projectile>
-  </ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFE_Bullet_ChargeBlasterLight</defName>
+		<label>charge blaster shot</label>
+		<graphicData>
+			<texPath>Things/Projectile/Charge_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<speed>90</speed>
+		</projectile>
+	</ThingDef>
 
-  <ThingDef Abstract="True" ParentName="BaseGunWithQuality" Name="VFE_Gun_ChargeBlasterLightBase">
-    <label>light charge blaster</label>
-    <description>Similar to the charge lance the charge blaster is a high-accuracy burst-fire energy weapon capable of precision marksmanship with relatively little recoil thanks to its shortened acceleration rail and stabilization gate.</description>
-    <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/MechanoidRifle</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <statBases>
-      <MarketValue>1000</MarketValue>
-      <Mass>16</Mass>
-      <AccuracyTouch>0.38</AccuracyTouch>
-      <AccuracyShort>0.56</AccuracyShort>
-      <AccuracyMedium>0.76</AccuracyMedium>
-      <AccuracyLong>0.38</AccuracyLong>
-      <RangedWeapon_Cooldown>4.4</RangedWeapon_Cooldown>
-    </statBases>
-    <techLevel>Spacer</techLevel>
-    <menuHidden>True</menuHidden>
-    <tradeability>None</tradeability>
-    <destroyOnDrop>true</destroyOnDrop>
-    <tools>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>11.7</power>
-        <cooldownTime>2.6</cooldownTime>
-      </li>
-    </tools>
-  </ThingDef>
+	<ThingDef Abstract="True" ParentName="BaseGunWithQuality" Name="VFE_Gun_ChargeBlasterLightBase">
+		<label>light charge blaster</label>
+		<description>Similar to the charge lance the charge blaster is a high-accuracy burst-fire energy weapon capable of precision marksmanship with relatively little recoil thanks to its shortened acceleration rail and stabilization gate.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/MechanoidRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>16</Mass>
+			<AccuracyTouch>0.38</AccuracyTouch>
+			<AccuracyShort>0.56</AccuracyShort>
+			<AccuracyMedium>0.76</AccuracyMedium>
+			<AccuracyLong>0.38</AccuracyLong>
+			<RangedWeapon_Cooldown>4.4</RangedWeapon_Cooldown>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<menuHidden>True</menuHidden>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11.7</power>
+				<cooldownTime>2.6</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
 
-  <ThingDef ParentName="VFE_Gun_ChargeBlasterLightBase">
-    <defName>VFE_Gun_ChargeBlasterLight</defName>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>VFE_Bullet_ChargeBlasterLight</defaultProjectile>
-        <warmupTime>1.25</warmupTime>
-        <range>16.9</range>
-        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-        <burstShotCount>4</burstShotCount>
-        <soundCast>Shot_ChargeBlaster</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-      </li>
-    </verbs>
-    <weaponTags>
-      <li>VFE_MechanoidGunShort</li>
-    </weaponTags>
-  </ThingDef>
+	<ThingDef ParentName="VFE_Gun_ChargeBlasterLightBase">
+		<defName>VFE_Gun_ChargeBlasterLight</defName>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VFE_Bullet_ChargeBlasterLight</defaultProjectile>
+				<warmupTime>1.25</warmupTime>
+				<range>16.9</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>4</burstShotCount>
+				<soundCast>Shot_ChargeBlaster</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<weaponTags>
+			<li>VFE_MechanoidGunShort</li>
+		</weaponTags>
+	</ThingDef>
 
-  <!-- Inferno Spewer -->
+	<!-- Inferno Spewer -->
 
-  <ThingDef ParentName="BaseBullet">
-    <defName>VFE_Bullet_InfernoSpewer</defName>
-    <label>inferno cannon shell</label>
-    <graphicData>
-      <texPath>Things/Projectile/LauncherShot</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-      <color>(254,189,58)</color>
-    </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
-    <projectile>
-      <damageDef>Flame</damageDef>
-      <!-- Use default damage from explosion def -->
-      <speed>45</speed>
-      <explosionRadius>2.4</explosionRadius >
-      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
-      <preExplosionSpawnChance>0.27</preExplosionSpawnChance>
-      <ai_IsIncendiary>true</ai_IsIncendiary>
-    </projectile>
-  </ThingDef>
 
-  <ThingDef Abstract="True" ParentName="BaseGunWithQuality" Name="VFE_Gun_InfernoSpewerBase">
-    <label>inferno spewer</label>
-    <description>A surprisingly lightweight flamethrower of mechanoid design, while idle the device seems cold as any other, but can immediately heat up to temperatures well above purely human technology. Two undermounted chemfuel tanks allow for an ammo capacity big enough for large plumes of liquid flame.</description>
-    <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/MechanoidFlamer</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <statBases>
-      <MarketValue>1400</MarketValue>
-      <Mass>18</Mass>
-      <RangedWeapon_Cooldown>8.4</RangedWeapon_Cooldown>
-    </statBases>
-    <techLevel>Spacer</techLevel>
-    <menuHidden>True</menuHidden>
-    <generateCommonality>0.5</generateCommonality>
-    <tradeability>None</tradeability>
-    <tools>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>11.7</power>
-        <cooldownTime>2.6</cooldownTime>
-      </li>
-    </tools>
-  </ThingDef>
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>VFE_Bullet_InfernoSpewer</defName>
+		<label>inferno cannon shell</label>
+		<thingClass>VFECore.FlamethrowProjectile</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Proj_InfernoSpewer</texPath>
+			<texPathFadeOut>Things/Projectile/Proj_InfernoSpewerFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<speed>45</speed>
+		</projectile>
+		
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>70</lifeTimeDuration>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>3</tickFrameRate>
+		<finalTickFrameRate>9</finalTickFrameRate>
+		<tickDamageRate>1</tickDamageRate>
+		<minDistanceToAffect>2</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
 
-  <ThingDef ParentName="VFE_Gun_InfernoSpewerBase">
-    <defName>VFE_Gun_InfernoSpewer</defName>
-    <weaponTags>
-      <li>VFE_MechanoidGunFlamer</li>
-    </weaponTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>VFE_Bullet_InfernoSpewer</defaultProjectile>
-        <forcedMissRadius>3.5</forcedMissRadius>
-        <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-        <warmupTime>1.25</warmupTime>
-        <range>26.9</range>
-        <burstShotCount>1</burstShotCount>
-        <soundCast>InfernoCannon_Fire</soundCast>
-        <soundCastTail>GunTail_Light</soundCastTail>
-        <muzzleFlashScale>14</muzzleFlashScale>
-      </li>
-    </verbs>
-  </ThingDef>
- 
+
+
+	<ThingDef Abstract="True" ParentName="BaseGunWithQuality" Name="VFE_Gun_InfernoSpewerBase">
+		<label>inferno spewer</label>
+		<description>A surprisingly lightweight flamethrower of mechanoid design, while idle the device seems cold as any other, but can immediately heat up to temperatures well above purely human technology. Two undermounted chemfuel tanks allow for an ammo capacity big enough for large plumes of liquid flame.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/MechanoidFlamer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1400</MarketValue>
+			<Mass>18</Mass>
+			<RangedWeapon_Cooldown>8.4</RangedWeapon_Cooldown>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<menuHidden>True</menuHidden>
+		<generateCommonality>0.5</generateCommonality>
+		<tradeability>None</tradeability>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11.7</power>
+				<cooldownTime>2.6</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="VFE_Gun_InfernoSpewerBase">
+		<defName>VFE_Gun_InfernoSpewer</defName>
+		<weaponTags>
+			<li>VFE_MechanoidGunFlamer</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VFE_Bullet_InfernoSpewer</defaultProjectile>
+				<forcedMissRadius>3.5</forcedMissRadius>
+				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+				<warmupTime>1.25</warmupTime>
+				<range>26.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+
 
 </Defs>

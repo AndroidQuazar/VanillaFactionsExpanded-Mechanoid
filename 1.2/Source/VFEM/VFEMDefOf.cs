@@ -13,5 +13,7 @@ namespace VFEMech
     {
         public static FactionDef VFE_Mechanoid;
         public static HediffDef VFE_MechanoidUplink;
+        public static ThingDef VFE_TrooperStorage;
+        public static JobDef VFEM_Disassemble;
     }
 }

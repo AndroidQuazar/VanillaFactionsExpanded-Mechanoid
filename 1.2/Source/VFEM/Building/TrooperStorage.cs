@@ -9,14 +9,18 @@ using Verse.AI.Group;
 
 namespace VFEMech
 {
-    public class TrooperStorage : Building
+    public class TrooperStorage : MechShipPart
     {
+        private bool troopersAreReleased;
         public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             base.PreApplyDamage(ref dinfo, out absorbed);
-            ReleaseTroopers();
+            if (CanSpawnTroopers)
+            {
+                ReleaseTroopers();
+            }
         }
-
+        public bool CanSpawnTroopers => !troopersAreReleased;
         public void ReleaseTroopers()
         {
             var faction = Find.FactionManager.FirstFactionOfDef(VFEMDefOf.VFE_Mechanoid);
@@ -26,11 +30,18 @@ namespace VFEMech
 			pawnGroupMakerParms.points = 800f;
 			pawnGroupMakerParms.groupKind = PawnGroupKindDefOf.Combat;
             var pawns = PawnGroupMakerUtility.GeneratePawns(pawnGroupMakerParms);
-			LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(faction), this.Map, pawns);
             foreach (var pawn in pawns)
             {
-                GenSpawn.Spawn(pawn, this.Position, this.Map);
+                GenPlace.TryPlaceThing(pawn, this.Position, this.Map, ThingPlaceMode.Near);
+                MechUtils.CreateOrAddToAssaultLord(pawn);
             }
+            troopersAreReleased = true;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref troopersAreReleased, "troopersAreReleased");
         }
     }
 }

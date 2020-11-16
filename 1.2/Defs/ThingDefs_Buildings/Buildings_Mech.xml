@@ -6,7 +6,7 @@
 	<ThingDef ParentName="BuildingBase" Name="VFE_MechShipPart" Abstract="True">
 		<pathCost>50</pathCost>
 		<blockWind>true</blockWind>
-		<thingClass>Building</thingClass>
+		<thingClass>VFEMech.MechShipPart</thingClass>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<passability>Impassable</passability>
 		<fillPercent>1.0</fillPercent>
@@ -150,7 +150,6 @@
 		<defName>VFE_MechanoidBeamHeavy</defName>
 		<label>heavy structural beam</label>
 		<description>A structural beam around which a ship is constructed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidHeavyStructuralBeam</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -198,7 +197,6 @@
 		<defName>VFE_MechanoidBeamLight</defName>
 		<label>light structural beam</label>
 		<description>A structural beam around which a ship is constructed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidLightStructuralBeam</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -291,7 +289,6 @@
 		<defName>VFE_MechanoidReactor</defName>
 		<label>reactor</label>
 		<description>A mechanoid power generation unit. The gigantic vanometric power core will run forever, extracting energy from quantum foam fluctuations. Despite the huge power output, effort has been made to stabilise it. If enough damage is dealt to the plasteel shell surrounding the core, a huge explosion will wipe out the local area. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidReactor</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -348,7 +345,6 @@
 		<defName>VFE_MechanoidTerraformer</defName>
 		<label>terraformer</label>
 		<description>An ultratech device of mass destruction, mechanoid terraformer harvests available oxygen and extracts toxic fumes in its place. Poison leaking into the ground around it slowly turns the planet into a barren wasteland. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidTerraformer</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -419,7 +415,6 @@
 		<defName>VFE_HeavyMachinery</defName>
 		<label>heavy machinery</label>
 		<description>A number of complex machinery, motors, support systems and other mysterious apparatus hidden underneath a thick layer of plasteel. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidHeavyMachinery</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -465,7 +460,6 @@
 		<defName>VFE_CargoContainer</defName>
 		<label>cargo container</label>
 		<description>A cargo module containing various raw resources often used by mechanoid swarms to fix existing units or construct new ones. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidCargoContainer</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -515,7 +509,6 @@
 		<defName>VFE_ClimateAdjuster</defName>
 		<label>climate adjuster</label>
 		<description>An ultratech ship-mounted device for controlling climate. Using chemicals and exotic fields to manipulate the atmosphere, it shifts the temperature in this region of the world. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidClimateAdjuster</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -570,7 +563,6 @@
 		<defName>VFE_EMIDynamo</defName>
 		<label>EMI dynamo</label>
 		<description>A massive, ship-mounted electromagnetic interference generator. It interferes with or shuts down electrical devices in nearby regions. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidEMIDynamo</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -629,7 +621,6 @@
 		<defName>VFE_PsychicSuppressor</defName>
 		<label>psychic suppressor</label>
 		<description>A ship-mounted archotech device that generates a massive psychic suppression field tuned to a particular gender. People of that gender have their psychic activity suppressed, reducing their consciousness. The effect is modulated by an individual's psychic sensitivity. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidPsychicSuppressor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -687,7 +678,6 @@
 		<defName>VFE_PsychicDroner</defName>
 		<label>psychic droner</label>
 		<description>A ship-mounted archotech device transmitting the thoughts of a mad superintelligence. It generates a massive psychic drone tuned to one gender and affecting a whole region of the planet. People of that gender will be disturbed by the effect, reducing their mood and possibly driving them insane. The effect is modulated by an individual's psychic sensitivity. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidPsychicDroner</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1036,7 +1026,6 @@
 		<defName>VFE_MechanoidBarrier</defName>
 		<label>mechanoid barrier</label>
 		<description>A block of nearly impenetrable plasteel shield, usually used within the ship hull to protect the most vital apparatus. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidBarrier</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1078,7 +1067,6 @@
 		<defName>VFE_BulletShield</defName>
 		<label>ship-mounted bullet shield</label>
 		<description>A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to low angles, so it will block ground-level projectiles like bullets. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidShipBulletShield</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1136,7 +1124,6 @@
 		<defName>VFE_MortarShield</defName>
 		<label>ship-mounted high shield</label>
 		<description>A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to high angles, so it will block mortar rounds. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidShipMortarShield</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1518,7 +1505,7 @@
 		<defName>VFE_Turret_OrbitalBombardmentUplink</defName>
 		<label>orbital bombardment uplink</label>
 		<description>An uplink module connected to a local orbital strike satellite. It will light up any enemies in range for the orbital bombardment, however long realignment period makes it inefficient for longer encounters. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building_TurretGun</thingClass>
+		<thingClass>VFEMech.Building_MechTurretGun</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidOrbitalBombardmentUplink_Base</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1614,7 +1601,6 @@
 		<defName>VFE_AssemblyPod</defName>
 		<label>mechanoid assembly pod</label>
 		<description>A spaceship module containing a mechanoid factory. It is capable of transforming raw resources directly into different types of mechanoids, and it creates them continuously until destroyed. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidAssemblyPod</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1647,6 +1633,20 @@
 			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
 			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
 		</building>
+		<comps>
+			<li Class="VFEMech.CompProperties_PawnProducer">
+				<pawnKindToProduceOneOf>
+					<li>VFE_Mech_Centipede</li>
+					<li>VFE_Mech_Inquisitor</li>
+					<li>VFE_Mech_Knight</li>
+					<li>VFE_Mech_Lancer</li>
+					<li>VFE_Mech_Pikeman</li>
+					<li>VFE_Mech_Scyther</li>
+				</pawnKindToProduceOneOf>
+				<tickSpawnIntervalRange>15000</tickSpawnIntervalRange> <!-- can be ranged, e.g 2000~6000 -->
+				<spawnCountRange>1</spawnCountRange> <!-- same, you can specify random spawn count each time -->
+			</li>
+		</comps>
 		<killedLeavings>
 			<ChunkSlagSteel>6</ChunkSlagSteel>
 			<Steel>40</Steel>
@@ -1663,7 +1663,6 @@
 		<defName>VFE_AssemblyFoundry</defName>
 		<label>mechanoid foundry</label>
 		<description>A spaceship module containing a large scale mechanoid foundry. It is capable of generating large squads of mechanoids at great speed, but it is incapable of constructing larger, more complex variants. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidFoundry</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1696,6 +1695,17 @@
 			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
 			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
 		</building>
+		<comps>
+			<li Class="VFEMech.CompProperties_PawnProducer">
+				<pawnKindToProduceOneOf>
+					<li>VFE_Mech_Knight</li>
+					<li>VFE_Mech_Lancer</li>
+					<li>VFE_Mech_Scyther</li>
+				</pawnKindToProduceOneOf>
+				<tickSpawnIntervalRange>15000</tickSpawnIntervalRange> <!-- can be ranged, e.g 2000~6000 -->
+				<spawnCountRange>6</spawnCountRange> <!-- same, you can specify random spawn count each time, e.g 6~12 -->
+			</li>
+		</comps>
 		<killedLeavings>
 			<ChunkSlagSteel>7</ChunkSlagSteel>
 			<Steel>10</Steel>
@@ -1712,7 +1722,7 @@
 		<defName>VFE_CargoHold</defName>
 		<label>cargo hold</label>
 		<description>A ship-based cargo module containing a vast amount of raw materials for the mechanoid ship to function properly. It can be destroyed to obtain valuable, exotic resources. This element is usually a part of a much larger ship.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>VFEMech.CargoHold</thingClass>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidCargoHold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>

@@ -8,7 +8,7 @@ using Verse;
 
 namespace VFEMech
 {
-    public class MechanoidUplink : Building
+    public class MechanoidUplink : MechShipPart
     {
         public float communicationRadius = 50f;
         public override void DrawExtraSelectionOverlays()

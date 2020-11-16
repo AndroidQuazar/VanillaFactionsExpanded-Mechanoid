@@ -41,14 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building\TrooperStorage - Copy.cs" />
+    <Compile Include="Building\MechShipPart.cs" />
+    <Compile Include="Building\HullRepairModule.cs" />
+    <Compile Include="Building\CargoHold.cs" />
+    <Compile Include="Building\Building_MechTurretGun.cs" />
     <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
+    <Compile Include="Comps\ShieldMechBubble.cs" />
+    <Compile Include="Comps\CompMechProducer.cs" />
     <Compile Include="Comps\CompActiveGameCondition.cs" />
+    <Compile Include="Damages\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_ClimateAdjuster.cs" />
+    <Compile Include="HarmonyPatches\HarmonyInit.cs" />
     <Compile Include="Hediffs\Hediff_MechanoidUplink.cs" />
-    <Compile Include="UplinkCompatible.cs" />
+    <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
+    <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
+    <Compile Include="ModExtensions\UplinkCompatible.cs" />
+    <Compile Include="Utils\MechUtils.cs" />
     <Compile Include="VFEMDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
