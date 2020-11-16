@@ -2,14 +2,80 @@
 <Defs> 
 
 	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_HeavyHopper</defName>
+		<label>heavy hopper</label>
+		<description>Holds resources for use by automated machines.</description>
+		<thingClass>Building_Storage</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Production/Hopper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<pathCost>42</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<building>
+			
+			<defaultStorageSettings>
+				<priority>Important</priority>
+				<filter>
+					<categories>
+						<li>FoodRaw</li>
+					</categories>
+					<disallowedThingDefs>
+						<li>Meat_Human</li>
+						<li>Meat_Megaspider</li>
+					</disallowedThingDefs>
+				</filter>
+			</defaultStorageSettings>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+		</building>
+		<inspectorTabs>
+			<li>ITab_Storage</li>
+		</inspectorTabs>
+		<castEdgeShadows>true</castEdgeShadows>
+		<statBases>
+			<WorkToBuild>300</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+			<Steel>15</Steel>
+		</costList>
+		<tickerType>Never</tickerType>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<designationCategory>Production</designationCategory>
+		<surfaceType>Item</surfaceType>
+		<placeWorkers>
+			<li>PlaceWorker_NextToHopperAccepter</li>
+		</placeWorkers>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>NutrientPaste</li>
+		</researchPrerequisites>
+		<uiIconPath>Things/Building/Production/Hopper_MenuIcon</uiIconPath>
+		<uiIconScale>0.85</uiIconScale>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor</defName>
 		<label>Steel Extractor</label>
-		<description>A large machine with a series of hammers, magnets, and foundries. Hammers pound rock chunks into dust, whereafter magnets collect metallic fragments before being dropped and melted into more pure, usable pieces. This machine has a notoriously low yield as most rock chunks have a negligible amount of extractable material. This machine can also be set to pound usable steel fragments from slag.\n\nPart of the Electronics Fabrication Factory automation chain.</description>
+		<description>A large machine with a series of hammers, magnets, and foundries. Hammers pound rock chunks into dust, whereafter magnets collect metallic fragments before being dropped and melted into more pure, usable pieces. This machine has a notoriously low yield as most rock chunks have a negligible amount of extractable material.\n\nPart of the Electronics Fabrication Factory automation chain.</description>
 		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
 		<graphicData>
-			<texPath>Things/Buildings/VFEM_TestFactory/VFEM_TestFactory</texPath>
+			<texPath>Things/Buildings/SteelExtractor/SteelExtractor</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,3)</drawSize>
+			<drawSize>(4,8)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -36,6 +102,7 @@
 		<neverMultiSelect>true</neverMultiSelect>
 		<uiIconScale>0.8</uiIconScale>
 		<fillPercent>0.5</fillPercent>
+
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
@@ -44,12 +111,12 @@
 			<Flammability>1.0</Flammability>
 		</statBases>
 		<tickerType>Rare</tickerType>
-		<size>(6,3)</size>
+		<size>(3,6)</size>
 		<designationCategory>Production</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
@@ -62,15 +129,29 @@
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
-				<buildingOnGraphic>Things/Buildings/VFEM_TestFactory/VFEM_TestFactory</buildingOnGraphic>
+				<buildingOnGraphic>Things/Buildings/SteelExtractor/SteelExtractor</buildingOnGraphic>
 				<numberOfInputs>1</numberOfInputs>
 				<acceptsNoneAsInput>false</acceptsNoneAsInput>
 				<isCategoryBuilding>true</isCategoryBuilding>
 				<transfersIngredientLists>false</transfersIngredientLists>
-				<isAutoMachine >true</isAutoMachine >
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
 				<noPowerDestroysProgress>true</noPowerDestroysProgress>
 				<rareTicksToDestroy>10</rareTicksToDestroy>				
 				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/VFEM_ExtractFromHoppers</bringIngredientsIcon>
+				
+				<inputSlots>
+					<li>(0,0,4)</li>
+					<li>(-1,0,4)</li>
+					<li>(1,0,4)</li>
+				</inputSlots>
+
+
 
 			</li>
 

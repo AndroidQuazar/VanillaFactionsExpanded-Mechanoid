@@ -2,7 +2,7 @@
 <Defs>
 
 	<ItemProcessor.CombinationDef>
-		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_Recipe</defName>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_ChunksRecipe</defName>
 		<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
 		<items>
 			<li>StoneChunks</li>
@@ -12,8 +12,9 @@
 		</amount>
 		<result>Steel</result>	
 		<yield>10</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
 	

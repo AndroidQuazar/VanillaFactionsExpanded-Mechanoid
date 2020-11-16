@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- Generic -->
+	
+	
+	<VFEM_BringIngredients>Extract Ingredients</VFEM_BringIngredients>
+	<VFEM_BringIngredientsDesc>Extract ingredients from adjacent hoppers to start the process</VFEM_BringIngredientsDesc>
+	
+
+	
+
+</LanguageData>
