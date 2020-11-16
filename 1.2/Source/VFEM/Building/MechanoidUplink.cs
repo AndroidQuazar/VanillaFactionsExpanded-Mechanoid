@@ -19,14 +19,14 @@ namespace VFEMech
         public override void Tick()
         {
             base.Tick();
-            foreach (var pawn in this.Map.mapPawns.AllPawns.Where(x => x.kindDef.HasModExtension<UplinkCompatible>() && x.Faction == this.Faction))
+            foreach (var pawn in this.Map.mapPawns.AllPawns.Where(x => x.kindDef.HasModExtension<UplinkCompatible>()))// && x.Faction == this.Faction))
             {
                 if (!pawn.Dead && pawn.Spawned && pawn.Position.DistanceTo(this.Position) <= communicationRadius)
                 {
                     var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VFEMDefOf.VFE_MechanoidUplink);
                     if (hediff == null)
                     {
-                        Log.Message("Adding hediff to " + pawn);
+                        Log.Message("Adding MechanoidUplink hediff to " + pawn);
                         var mechUplinkHediff = HediffMaker.MakeHediff(VFEMDefOf.VFE_MechanoidUplink, pawn) as Hediff_MechanoidUplink;
                         mechUplinkHediff.mechanoidUplink = this;
                         pawn.health.AddHediff(mechUplinkHediff);
