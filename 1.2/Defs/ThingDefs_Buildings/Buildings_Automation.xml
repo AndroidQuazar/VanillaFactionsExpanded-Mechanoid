@@ -160,97 +160,7 @@
 	</ThingDef>
 	
 	
-	<ThingDef ParentName="BuildingBase">
-		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractorTwo</defName>
-		<label>Steel Extractor 2.0</label>
-		<description>A large machine with a series of hammers, magnets, and foundries. Hammers pound rock chunks into dust, whereafter magnets collect metallic fragments before being dropped and melted into more pure, usable pieces. This machine has a notoriously low yield as most rock chunks have a negligible amount of extractable material.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
-		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-		<graphicData>
-			<texPath>Things/Buildings/SteelExtractor/SteelExtractor</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4,8)</drawSize>
-			<shaderType>CutoutComplex</shaderType>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-			</damageData>
-		</graphicData>
-		<thingCategories>
-			<li>BuildingsProduction</li>
-		</thingCategories>
-		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
-		</costList>
-		<building>
-			<wantsHopperAdjacent>true</wantsHopperAdjacent>
-			<buildingTags>
-				<li>Production</li>
-			</buildingTags>
-		</building>
-		<altitudeLayer>Building</altitudeLayer>
-		<rotatable>true</rotatable>
-		<neverMultiSelect>true</neverMultiSelect>
-		<uiIconScale>0.8</uiIconScale>
-		<fillPercent>0.5</fillPercent>
-
-		<useHitPoints>True</useHitPoints>
-		<statBases>
-			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
-			<MaxHitPoints>100</MaxHitPoints>
-			<Flammability>1.0</Flammability>
-		</statBases>
-		<tickerType>Rare</tickerType>
-		<size>(3,6)</size>
-		<designationCategory>Production</designationCategory>
-		<passability>PassThroughOnly</passability>
-		<pathCost>70</pathCost>
-		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
-		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
-		<comps>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
-			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="ItemProcessor.CompProperties_ItemProcessor">
-				<buildingOnGraphic>Things/Buildings/VFEM_TestFactory/VFEM_TestFactory</buildingOnGraphic>
-				<numberOfInputs>2</numberOfInputs>
-				<acceptsNoneAsInput>false</acceptsNoneAsInput>
-				<isCategoryBuilding>true</isCategoryBuilding>
-				<transfersIngredientLists>false</transfersIngredientLists>
-				<isAutoMachine>true</isAutoMachine>
-				<isAutoDropper>true</isAutoDropper>
-				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-				<noPowerDestroysProgress>true</noPowerDestroysProgress>
-				<rareTicksToDestroy>10</rareTicksToDestroy>				
-				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-
-				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-				<bringIngredientsIcon>UI/VFEM_ExtractFromHoppers</bringIngredientsIcon>
-				
-				<inputSlots>
-					<li>(0,0,4)</li>
-					<li>(-1,0,4)</li>
-					<li>(1,0,4)</li>
-				</inputSlots>
-
-
-
-			</li>
-
-		</comps>
-		<minifiedDef>MinifiedThing</minifiedDef>
-	</ThingDef>
+	
 	
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler</defName>
@@ -333,6 +243,97 @@
 				<inputSlots>
 					<li>(2,0,3)</li>
 					<li>(-2,0,3)</li>
+					<li>(2,0,-3)</li>
+					<li>(-2,0,-3)</li>
+				</inputSlots>
+
+
+
+			</li>
+
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</defName>
+		<label>Advanced Assembler</label>
+		<description>A wide factory module meant to inlay and program circuitry for high-end electronic devices. The exact inner workings of this module are somewhat enigmatic to non-spacer colonies, however the end result is of unquestionable quality.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/AdvancedAssembler/AdvancedAssembler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(8.75,7.5)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<building>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+		</building>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,6)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
+			<li>VCE_SoupCooking</li>
+		</researchPrerequisites>-->
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>100</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/AdvancedAssembler/AdvancedAssembler</buildingOnGraphic>
+				<numberOfInputs>4</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>				
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>				
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/VFEM_ExtractFromHoppers</bringIngredientsIcon>
+				
+				<inputSlots>
+					<li>(4,0,1)</li>
+					<li>(-4,0,1)</li>
 					<li>(2,0,-3)</li>
 					<li>(-2,0,-3)</li>
 				</inputSlots>
