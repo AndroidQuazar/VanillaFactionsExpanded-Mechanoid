@@ -53,7 +53,6 @@ namespace VFEMech
                         factoryFloors[___map] = new HashSet<IntVec3> { c };
                     }
                 }
-                Log.Message("Set");
             }
         }
     }
