@@ -29,7 +29,6 @@
 
   <!-- ================= Factory Path ================= -->
 
-
   <TerrainDef ParentName="TileMetalBase">
     <defName>VFE_FactoryPath</defName>
     <texturePath>Terrain/Surfaces/FactoryPath</texturePath>
@@ -49,7 +48,9 @@
     <researchPrerequisites>
       <li>Smithing</li>
     </researchPrerequisites>
+    <placeWorkers>
+      <li>VFEMech.PlaceWorker_OnFactoryFloor</li>
+    </placeWorkers>
   </TerrainDef>
-
   
 </Defs>

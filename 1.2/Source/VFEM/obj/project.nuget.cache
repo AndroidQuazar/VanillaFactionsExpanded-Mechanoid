@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V9nOs+QZ/T/NIN+Sl7NvdsXXQ7mJAbmvDl5kXaCMHaHI4NqQxApUyfXu9lVe9YCGrA4uaN0UsExSsuDIbWgPDQ==",
+  "dgSpecHash": "V5o/PFXVDpiozenCauJ6amwyyuntG0QDZh7+Ze1IIcaYIinAMDK6Gn0xIxYaYfNhqaJiJLeO3OpiqCzO8+0slA==",
   "success": true,
-  "projectFilePath": "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
+  "projectFilePath": "C:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.2.2753\\krafs.rimworld.ref.1.2.2753.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512"
