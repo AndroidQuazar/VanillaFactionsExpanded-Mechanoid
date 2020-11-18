@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef Abstract="True" Name="VFEM_ShipBase">
+        <description>A landed mechanoid ship.</description>
+        <worldObjectClass>Settlement</worldObjectClass>
+        <expandingIcon>true</expandingIcon>
+        <expandingIconPriority>10</expandingIconPriority>
+        <canBePlayerHome>false</canBePlayerHome>
+        <comps>
+            <li Class="WorldObjectCompProperties_Abandon" />
+            <li Class="WorldObjectCompProperties_TradeRequest" />
+            <li Class="WorldObjectCompProperties_FormCaravan" />
+            <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+            <li Class="WorldObjectCompProperties_EnterCooldown" />
+        </comps>
+    </WorldObjectDef>
+
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Frigate</defName>
+        <label>mechanoid frigate</label>
+        <description>Frigate is the small ship usually used for ground recon.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>300</raisesPresence>
+                <nameMaker>VFE_NamerShipFrigate</nameMaker>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Destroyer</defName>
+        <label>mechanoid destroyer</label>
+        <description>Destroyer is somewhat bigger than a frigate, but it lacks short-range defenses. It does however host a variety of different auto-mortars.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>800</raisesPresence>
+                <nameMaker>VFE_NamerShipDestroyer</nameMaker>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Cruiser</defName>
+        <label>mechanoid cruiser</label>
+        <description>Cruiser is a large sized vessel with both defensive and offensive capabilities.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>1600</raisesPresence>
+                <nameMaker>VFE_NamerShipCruiser</nameMaker>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Troopship</defName>
+        <label>mechanoid troopship</label>
+        <description>Troopship is a medium sized shuttle with a large assortment of different mech fabricators and trooper transports.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>2000</raisesPresence>
+                <nameMaker>VFE_NamerShipTroopship</nameMaker>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Carrier</defName>
+        <label>mechanoid carrier</label>
+        <description>The largest ship type in mechanoid arsenal, carrier is essentially described as a large mechanoid base of operations.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>3200</raisesPresence>
+                <nameMaker>VFE_NamerShipCarrier</nameMaker>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+</Defs>
