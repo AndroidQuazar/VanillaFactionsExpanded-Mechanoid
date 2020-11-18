@@ -45,6 +45,7 @@
     <Compile Include="Building\HullRepairModule.cs" />
     <Compile Include="Building\CargoHold.cs" />
     <Compile Include="Building\Building_MechTurretGun.cs" />
+    <Compile Include="Building\FactoryPath.cs" />
     <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
     <Compile Include="Comps\ShieldMechBubble.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="GameConditions\GameCondition_ClimateAdjuster.cs" />
     <Compile Include="HarmonyPatches\AvoidGrid_Patch.cs" />
     <Compile Include="HarmonyPatches\HarmonyInit.cs" />
+    <Compile Include="Hediffs\Hediff_FasterMovement.cs" />
     <Compile Include="Hediffs\Hediff_MechanoidUplink.cs" />
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />

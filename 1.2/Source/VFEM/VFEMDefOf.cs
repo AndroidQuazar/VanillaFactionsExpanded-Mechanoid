@@ -15,5 +15,7 @@ namespace VFEMech
         public static HediffDef VFE_MechanoidUplink;
         public static ThingDef VFE_TrooperStorage;
         public static JobDef VFEM_Disassemble;
+        public static ThingDef VFE_FactoryPath;
+        public static HediffDef VFE_FasterMovement;
     }
 }

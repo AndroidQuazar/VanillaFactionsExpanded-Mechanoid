@@ -30,7 +30,8 @@
     <defName>VFE_FactoryPath</defName>
     <label>factory path</label>
     <description>A designated, safe to traverse factory path. Increases the movement speed, but needs to be placed on the factory floor.</description>
-    <thingClass>Building</thingClass>
+    <thingClass>VFEMech.FactoryPath</thingClass>
+	<tickerType>Normal</tickerType>
     <category>Building</category>
     <graphicData>
       <texPath>Things/Buildings/Linked/FactoryPath_Atlas</texPath>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef>
+		<defName>VFE_FasterMovement</defName>
+		<label>faster movement bonus</label>
+		<description>faster movement bonus</description>
+		<hediffClass>VFEMech.Hediff_FasterMovement</hediffClass>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statFactors>
+					<MoveSpeed>10.05</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>
