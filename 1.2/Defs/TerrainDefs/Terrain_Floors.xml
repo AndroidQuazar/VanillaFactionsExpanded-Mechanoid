@@ -9,8 +9,10 @@
     <texturePath>Terrain/Surfaces/FactoryFloor</texturePath>
     <label>factory floor</label>
     <renderPrecedence>240</renderPrecedence>
+    <pathCost>5</pathCost>
     <designatorDropdown Inherit='False'/>
     <description>Reinforced steel tiles, capable of holding heavy, complex machinery in place. Not the prettiest to look at.</description>
+    <color>(0.369, 0.369, 0.369)</color>
     <statBases>
       <WorkToBuild>800</WorkToBuild>
       <Beauty>-2</Beauty>
@@ -24,62 +26,28 @@
     </researchPrerequisites>
   </TerrainDef>
   
+
   <!-- ================= Factory Path ================= -->
-  
-  <ThingDef ParentName="BuildingBase">
+
+  <TerrainDef ParentName="TileMetalBase">
     <defName>VFE_FactoryPath</defName>
+    <texturePath>Terrain/Surfaces/FactoryPath</texturePath>
     <label>factory path</label>
+    <renderPrecedence>250</renderPrecedence>
+    <pathCost>1</pathCost>
+    <designatorDropdown Inherit='False'/>
     <description>A designated, safe to traverse factory path. Increases the movement speed, but needs to be placed on the factory floor.</description>
-    <thingClass>VFEMech.FactoryPath</thingClass>
-	<tickerType>Normal</tickerType>
-    <category>Building</category>
-    <graphicData>
-      <texPath>Things/Buildings/Linked/FactoryPath_Atlas</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <damageData>
-        <rect>(0,0.35,1,0.3)</rect>
-      </damageData>
-      <linkType>CornerFiller</linkType>
-      <linkFlags>
-        <li>Custom1</li>
-        <li>Wall</li>
-      </linkFlags>
-    </graphicData>
-    <uiIconPath>Things/Buildings/Linked/FactoryPath_MenuIcon</uiIconPath>
-    <uiIconScale>0.7</uiIconScale>
-    <building>
-      <ai_chillDestination>false</ai_chillDestination>
-      <isInert>true</isInert>
-      <isEdifice>false</isEdifice>
-      <blueprintGraphicData>
-        <texPath>Things/Building/Linked/PowerConduit_Blueprint_Atlas</texPath>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>Conduits</altitudeLayer>
-    <passability>Standable</passability>
-    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <statBases>
-      <MaxHitPoints>80</MaxHitPoints>
-      <WorkToBuild>35</WorkToBuild>
-      <Flammability>0.7</Flammability>
+      <WorkToBuild>800</WorkToBuild>
       <Beauty>-2</Beauty>
+      <Cleanliness>0.2</Cleanliness>
     </statBases>
-    <placingDraggableDimensions>1</placingDraggableDimensions>
     <costList>
-      <Steel>1</Steel>
+      <Steel>3</Steel>
     </costList>
-    <rotatable>false</rotatable>
-    <selectable>true</selectable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>Power</designationCategory>
-    <constructEffect>ConstructMetal</constructEffect>
-    <clearBuildingArea>false</clearBuildingArea>
-    <designationHotKey>Misc1</designationHotKey>
     <researchPrerequisites>
       <li>Smithing</li>
     </researchPrerequisites>
-  </ThingDef>
+  </TerrainDef>
   
 </Defs>
