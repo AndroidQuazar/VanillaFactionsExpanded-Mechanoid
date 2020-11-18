@@ -13,7 +13,7 @@ namespace VFEMech
         public override void Tick()
         {
             base.Tick();
-            if (this.pawn.Map == null || this.pawn.Position.GetFirstThing(this.pawn.Map, VFEMDefOf.VFE_FactoryPath) == null)
+            if (this.pawn.Map == null || this.pawn.Position.GetTerrain(this.pawn.Map) != VFEMDefOf.VFE_FactoryPath)
             {
                 this.pawn.health.RemoveHediff(this);
             }

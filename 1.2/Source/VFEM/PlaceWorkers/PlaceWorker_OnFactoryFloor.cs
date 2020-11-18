@@ -14,7 +14,7 @@ namespace VFEMech
 		{
 			if (loc.GetTerrain(map) != VFEMDefOf.VFE_FactoryFloor)
 			{
-				return false;
+				return "VFEMech.MustPlaceOnFactoryFloor".Translate();
 			}
 			return true;
 		}

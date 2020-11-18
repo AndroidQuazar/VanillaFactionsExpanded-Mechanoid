@@ -48,6 +48,9 @@
     <researchPrerequisites>
       <li>Smithing</li>
     </researchPrerequisites>
+    <placeWorkers>
+      <li>VFEMech.PlaceWorker_OnFactoryFloor</li>
+    </placeWorkers>
   </TerrainDef>
   
 </Defs>

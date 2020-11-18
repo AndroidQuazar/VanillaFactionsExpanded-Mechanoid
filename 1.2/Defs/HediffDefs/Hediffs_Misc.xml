@@ -10,7 +10,7 @@
 			<li>
 				<becomeVisible>false</becomeVisible>
 				<statFactors>
-					<MoveSpeed>10.05</MoveSpeed>
+					<MoveSpeed>1.05</MoveSpeed>
 				</statFactors>
 			</li>
 		</stages>

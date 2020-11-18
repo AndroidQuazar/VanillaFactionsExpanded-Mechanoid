@@ -54,6 +54,7 @@
     <Compile Include="Damages\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_ClimateAdjuster.cs" />
+    <Compile Include="HarmonyPatches\Terrain_Patches.cs" />
     <Compile Include="HarmonyPatches\AvoidGrid_Patch.cs" />
     <Compile Include="HarmonyPatches\HarmonyInit.cs" />
     <Compile Include="Hediffs\Hediff_FasterMovement.cs" />
@@ -61,8 +62,9 @@
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
-    <Compile Include="PlaceWorkers\UplinkCompatible.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
     <Compile Include="Utils\MechUtils.cs" />
+    <Compile Include="MapComponent_MechWarfare.cs" />
     <Compile Include="VFEMDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
