@@ -61,6 +61,7 @@
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
+    <Compile Include="PlaceWorkers\UplinkCompatible.cs" />
     <Compile Include="Utils\MechUtils.cs" />
     <Compile Include="VFEMDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
