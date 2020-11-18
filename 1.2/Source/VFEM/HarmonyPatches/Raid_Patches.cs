@@ -20,21 +20,34 @@ namespace VFEM.HarmonyPatches
             [HarmonyTargetMethod]
             public static MethodBase TargetMethod() =>
                 typeof(PawnGroupMakerUtility).GetNestedTypes(AccessTools.all)
-                                          .First(t => t.GetMethods(AccessTools.all).Any(mi => mi.Name.Contains(nameof(PawnGroupMakerUtility.TryGetRandomFactionForCombatPawnGroup))))
-                                          .GetMethods(AccessTools.all).First(mi => mi.ReturnType == typeof(bool));
+                                          .First(t => t.GetMethods(AccessTools.all).Any(mi => mi.Name.Contains(nameof(PawnGroupMakerUtility.TryGetRandomFactionForCombatPawnGroup)) &&
+                                                                                              mi.GetParameters()[0].ParameterType == typeof(Faction))).GetMethods(AccessTools.all)
+                                          .First(mi => mi.ReturnType == typeof(bool));
 
             [HarmonyPrefix]
             public static bool Prefix(Faction f, ref bool __result)
             {
                 if (f.def == VFEMDefOf.VFE_Mechanoid)
-                {
                     if (MechUtils.MechPresence() <= 0)
                     {
                         __result = false;
                         return false;
                     }
-                }
+
                 return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(IncidentWorker_RaidEnemy), "TryResolveRaidFaction")]
+        private static class RaidEnemyResolveFaction_Patch
+        {
+            [HarmonyPrefix]
+            public static void Prefix(ref IncidentParms parms)
+            {
+                if (parms.faction is null)
+                    return;
+                if (parms.faction.def == VFEMDefOf.VFE_Mechanoid && MechUtils.MechPresence() <= 0)
+                    parms.faction = null;
             }
         }
 
