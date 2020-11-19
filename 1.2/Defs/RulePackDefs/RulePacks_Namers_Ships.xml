@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+  <!-- Mechanoid Frigate -->
+
+  <RulePackDef>
+    <defName>VFE_NamerShipFrigate</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
+
+        <li>[shiptype]->frigate</li>
+		
+        <li>maybe_letter(p=3)-></li>
+        <li>maybe_letter->[Letter]</li>
+        <li>maybe_letter->[Letter][Letter]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Mechanoid Destroyer -->
+
+  <RulePackDef>
+    <defName>VFE_NamerShipDestroyer</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
+
+        <li>[shiptype]->destroyer</li>
+		
+        <li>maybe_letter(p=3)-></li>
+        <li>maybe_letter->[Letter]</li>
+        <li>maybe_letter->[Letter][Letter]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Mechanoid Destroyer -->
+
+  <RulePackDef>
+    <defName>VFE_NamerShipCruiser</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
+
+        <li>[shiptype]->cruiser</li>
+		
+        <li>maybe_letter(p=3)-></li>
+        <li>maybe_letter->[Letter]</li>
+        <li>maybe_letter->[Letter][Letter]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Mechanoid Troopship -->
+
+  <RulePackDef>
+    <defName>VFE_NamerShipTroopship</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
+
+        <li>[shiptype]->troopship</li>
+		
+        <li>maybe_letter(p=3)-></li>
+        <li>maybe_letter->[Letter]</li>
+        <li>maybe_letter->[Letter][Letter]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <!-- Mechanoid Carrier -->
+
+  <RulePackDef>
+    <defName>VFE_NamerShipCarrier</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
+        <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
+
+        <li>[shiptype]->carrier</li>
+		
+        <li>maybe_letter(p=3)-></li>
+        <li>maybe_letter->[Letter]</li>
+        <li>maybe_letter->[Letter][Letter]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

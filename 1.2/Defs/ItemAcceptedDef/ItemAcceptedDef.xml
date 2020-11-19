@@ -12,28 +12,6 @@
 		</items>							
 	</ItemProcessor.ItemAcceptedDef>
 	
-	
-	<ItemProcessor.ItemAcceptedDef>
-		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_InputTwo</defName>
-		<building>VFEM_ElectronicsFabricationFactory_SteelExtractorTwo</building>
-		<slot>1</slot>
-		<items>			
-			<li>StoneChunks</li>	
-			
-		</items>							
-	</ItemProcessor.ItemAcceptedDef>
-	
-	<ItemProcessor.ItemAcceptedDef>
-		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_InputTwoSecond</defName>
-		<building>VFEM_ElectronicsFabricationFactory_SteelExtractorTwo</building>
-		<slot>2</slot>
-		<items>			
-			<li>MeatRaw</li>	
-			
-		</items>							
-	</ItemProcessor.ItemAcceptedDef>
-	
-	
 	<ItemProcessor.ItemAcceptedDef>
 		<defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler_Input</defName>
 		<building>VFEM_ElectronicsFabricationFactory_ComponentAssembler</building>
@@ -41,6 +19,39 @@
 		<items>			
 			<li>Steel</li>		
 			
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_Input</defName>
+		<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
+		<slot>1</slot>
+		<items>			
+			<li>Steel</li>					
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_InputTwo</defName>
+		<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
+		<slot>2</slot>
+		<items>			
+			<li>ComponentIndustrial</li>					
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_InputThree</defName>
+		<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
+		<slot>3</slot>
+		<items>			
+			<li>Gold</li>					
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_InputFour</defName>
+		<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
+		<slot>4</slot>
+		<items>			
+			<li>Plasteel</li>					
 		</items>							
 	</ItemProcessor.ItemAcceptedDef>
 	
