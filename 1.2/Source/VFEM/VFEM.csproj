@@ -60,7 +60,7 @@
     <Compile Include="Hediffs\Hediff_FasterMovement.cs" />
     <Compile Include="Hediffs\Hediff_MechanoidUplink.cs" />
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
-    <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings - Copy.cs" />
+    <Compile Include="JobGivers\JobGiver_DisassembleAnyNonMechBuildings.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
     <Compile Include="Pawns\Mech_Inquisitor.cs" />

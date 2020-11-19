@@ -14,7 +14,7 @@ namespace VFEMech
 		public float radius;
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			var allThings = pawn.Map.listerThings.AllThings.Where(x => x.Faction != pawn.Faction && x.def.building != null);
+			var allThings = pawn.Map.listerThings.AllThings.Where(x => x.Faction != null && x.Faction != pawn.Faction && x.def.building != null);
 			Predicate<Thing> validator = (Thing t) => pawn.CanReserve(t);
 			if (allThings.Any())
 			{

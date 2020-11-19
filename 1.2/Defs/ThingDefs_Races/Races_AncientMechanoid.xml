@@ -49,7 +49,7 @@
 		</tools>
 		<race>
 			<intelligence>ToolUser</intelligence>
-			<thinkTreeMain>VFE_Mech_Carpenter</thinkTreeMain>
+			<thinkTreeMain>VFE_Mech_AncientCarpenter</thinkTreeMain>
 			<deathActionWorkerClass>DeathActionWorker_BigExplosion</deathActionWorkerClass>
 			<body>Pikeman</body>
 			<baseBodySize>1.8</baseBodySize>
