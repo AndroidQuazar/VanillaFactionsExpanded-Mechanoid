@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Genetic Rim</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_MechanoidBioChipRecipe</defName>
+							<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
+							<items>
+								<li>Steel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentSpacer</li>
+							</secondItems>
+							<thirdItems>
+								<li>Plasteel</li>
+							</thirdItems>
+							<fourthItems>
+								<li>Gold</li>
+							</fourthItems>
+							<amount>
+								<li>600</li>
+								<li>3</li>
+								<li>250</li>
+								<li>15</li>
+							</amount>
+							<result>GR_MechanoidInterfaceChip</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+					</value>
+				</li>
+
+
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+
