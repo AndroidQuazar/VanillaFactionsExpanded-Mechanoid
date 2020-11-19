@@ -60,8 +60,11 @@
     <Compile Include="Hediffs\Hediff_FasterMovement.cs" />
     <Compile Include="Hediffs\Hediff_MechanoidUplink.cs" />
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
+    <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings - Copy.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
+    <Compile Include="Pawns\Mech_Inquisitor.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloorAndPath.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
     <Compile Include="Utils\MechUtils.cs" />
     <Compile Include="MapComponent_MechWarfare.cs" />

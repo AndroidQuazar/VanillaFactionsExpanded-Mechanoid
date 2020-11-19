@@ -157,6 +157,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
 	</ThingDef>
 	
 	

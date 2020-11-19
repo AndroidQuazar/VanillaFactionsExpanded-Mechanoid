@@ -20,7 +20,7 @@ namespace VFEMech
 			var traps = allThings.Where(x => x.def.building.isTrap);
 			if (traps.Any())
             {
-				var trap = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, traps, PathEndMode.OnCell, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
+				var trap = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, traps, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
 				if (trap != null)
                 {
 					Log.Message(pawn + " deconstructs " + trap);
