@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef ParentName="BasePawn" Name="VFE_Mechanoid" Abstract="True">
+	<ThingDef ParentName="BasePawn" Name="VFE_AdvancedMechanoid" Abstract="True">
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<statBases>
 			<PsychicSensitivity>0.5</PsychicSensitivity>
@@ -22,26 +22,26 @@
 		</race>
 	</ThingDef>
 
-	<PawnKindDef Name="VFE_MechanoidKind" Abstract="True">
+	<PawnKindDef Name="VFE_AdvancedMechanoidKind" Abstract="True">
 		<defaultFactionType>VFE_Mechanoid</defaultFactionType>
-		<aiAvoidCover>true</aiAvoidCover>
+		<aiAvoidCover>false</aiAvoidCover>
 		<destroyGearOnDrop>true</destroyGearOnDrop>
 		<modExtensions>
 			<li Class="VFEMech.UplinkCompatible"/>
 		</modExtensions>
 	</PawnKindDef>
 
-	<!-- Centipede -->
+	<!-- Advanced Centipede -->
 
-	<ThingDef ParentName="VFE_Mechanoid">
-		<defName>VFE_Mech_Centipede</defName>
-		<label>centipede</label>
+	<ThingDef ParentName="VFE_AdvancedMechanoid">
+		<defName>VFE_Mech_AdvancedCentipede</defName>
+		<label>advanced centipede</label>
 		<description>Heavy combat mechanoids that glide on dozens of tiny legs. Their heavy armor and firepower makes them very effective against bunched-up static defenders. They are somewhat vulnerable to mobile hit-and-run tactics. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
 		<statBases>
-			<MoveSpeed>1.9</MoveSpeed>
-			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.72</ArmorRating_Sharp>
-			<PsychicSensitivity>0.75</PsychicSensitivity>
+			<MoveSpeed>2.1</MoveSpeed>
+			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.82</ArmorRating_Sharp>
+			<PsychicSensitivity>0.85</PsychicSensitivity>
 		</statBases>
 		<tools>
 			<li>
@@ -76,20 +76,20 @@
 			<soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
 		</race>
 		<butcherProducts>
-			<Steel>30</Steel>
-			<Plasteel>10</Plasteel>
+			<Steel>40</Steel>
+			<Plasteel>20</Plasteel>
 		</butcherProducts>
 	</ThingDef>
 
-	<PawnKindDef ParentName="VFE_MechanoidKind">
-		<defName>VFE_Mech_Centipede</defName>
-		<label>centipede</label>
-		<race>VFE_Mech_Centipede</race>
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedCentipede</defName>
+		<label>advanced centipede</label>
+		<race>VFE_Mech_AdvancedCentipede</race>
 		<combatPower>400</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/MechanoidFaction/VFE_MechCentipede</texPath>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechCentipede</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>
 					<shadowData>
@@ -104,13 +104,13 @@
 		</weaponTags>
 	</PawnKindDef>
 
-	<!-- Walker (lancer/scyther) base -->
+	<!-- Advanced Walker (lancer/scyther) base -->
 
-	<ThingDef ParentName="VFE_Mechanoid" Name="VFE_MechanoidWalker" Abstract="True">
+	<ThingDef ParentName="VFE_AdvancedMechanoid" Name="VFE_AdvancedMechanoidWalker" Abstract="True">
 		<statBases>
-			<MoveSpeed>4.7</MoveSpeed>
-			<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+			<MoveSpeed>5.1</MoveSpeed>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
 		</statBases>
 		<race>
 			<intelligence>ToolUser</intelligence>
@@ -128,15 +128,15 @@
 			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>
 		</race>
 		<butcherProducts>
-			<Steel>15</Steel>
+			<Steel>25</Steel>
 		</butcherProducts>
 	</ThingDef>
 
-	<!-- Lancer - fast mid-range shooter -->
+	<!-- Advanced Lancer - fast mid-range shooter -->
 
-	<ThingDef ParentName="VFE_MechanoidWalker">
-		<defName>VFE_Mech_Lancer</defName>
-		<label>lancer</label>
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedLancer</defName>
+		<label>advanced lancer</label>
 		<description>Fast human-sized combat mechanoids built for medium and long-range combat. Their bodies are light, making them vulnerable targets at close range - especially in melee combat. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
 		<tools>
 			<li>
@@ -180,15 +180,15 @@
 		</race>
 	</ThingDef>
 
-	<PawnKindDef ParentName="VFE_MechanoidKind">
-		<defName>VFE_Mech_Lancer</defName>
-		<label>lancer</label>
-		<race>VFE_Mech_Lancer</race>
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedLancer</defName>
+		<label>advanced lancer</label>
+		<race>VFE_Mech_AdvancedLancer</race>
 		<combatPower>150</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/MechanoidFaction/VFE_MechLancer</texPath>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechLancer</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
 					<shadowData>
@@ -203,16 +203,16 @@
 		</weaponTags>
 	</PawnKindDef>
 
-	<!-- Knight - slow short-range shooter -->
+	<!-- Advanced Knight - slow short-range shooter -->
 
-	<ThingDef ParentName="VFE_MechanoidWalker">
-		<defName>VFE_Mech_Knight</defName>
-		<label>knight</label>
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedKnight</defName>
+		<label>advanced knight</label>
 		<description>A medium-speed bipedal mechanoid slightly larger than an average human designed to take damage from both ranged and melee combatants. Thick armored plating is only further emboldened by a logic-defying shield belt capable of stopping projectiles. Equipped with a mid-range, burst-fire charge rifle, the Knight is best fought off by long-range explosive salvo or mines.</description>
 		<statBases>
-			<MoveSpeed>4.4</MoveSpeed>
-			<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+			<MoveSpeed>4.7</MoveSpeed>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
 		</statBases>
 		<tools>
 			<li>
@@ -256,21 +256,21 @@
 		</race>
 		<comps>
 			<li Class="VFEMech.CompProperties_ShieldMechBubble">
-				<EnergyShieldRechargeRate>0.13</EnergyShieldRechargeRate>
-				<EnergyShieldEnergyMax>100</EnergyShieldEnergyMax>
+				<EnergyShieldRechargeRate>0.23</EnergyShieldRechargeRate>
+				<EnergyShieldEnergyMax>200</EnergyShieldEnergyMax>
 			</li>
 		</comps>
 	</ThingDef>
 
-	<PawnKindDef ParentName="VFE_MechanoidKind">
-		<defName>VFE_Mech_Knight</defName>
-		<label>knight</label>
-		<race>VFE_Mech_Knight</race>
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedKnight</defName>
+		<label>advanced knight</label>
+		<race>VFE_Mech_AdvancedKnight</race>
 		<combatPower>150</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/MechanoidFaction/VFE_MechKnight</texPath>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechKnight</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.6</drawSize>
 					<shadowData>
@@ -285,16 +285,16 @@
 		</weaponTags>
 	</PawnKindDef>
 
-	<!-- Inquisitor - armored short-range flamer -->
+	<!-- Advanced Inquisitor - armored short-range flamer -->
 
-	<ThingDef ParentName="VFE_MechanoidWalker">
-		<defName>VFE_Mech_Inquisitor</defName>
-		<label>inquisitor</label>
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedInquisitor</defName>
+		<label>advanced inquisitor</label>
 		<description>A lumbering, slow, superheavy mechanoid meant for area denial and bunker busting via flamethrower. While the plume of flame itself is short ranged, encountering an Inquisitor at close range is ill-advised, as the back-mounted chemfuel tanks are programmed to explode upon a system malfunction.</description>
 		<statBases>
-			<MoveSpeed>2.0</MoveSpeed>
-			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.78</ArmorRating_Sharp>
+			<MoveSpeed>2.3</MoveSpeed>
+			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.88</ArmorRating_Sharp>
 		</statBases>
 		<tools>
 			<li>
@@ -339,15 +339,15 @@
 		</race>
 	</ThingDef>
 
-	<PawnKindDef ParentName="VFE_MechanoidKind">
-		<defName>VFE_Mech_Inquisitor</defName>
-		<label>inquisitor</label>
-		<race>VFE_Mech_Inquisitor</race>
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedInquisitor</defName>
+		<label>advanced inquisitor</label>
+		<race>VFE_Mech_AdvancedInquisitor</race>
 		<combatPower>200</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/MechanoidFaction/VFE_Scorcher</texPath>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechInquisitor</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2</drawSize>
 					<shadowData>
@@ -363,11 +363,11 @@
 	</PawnKindDef>
 
 
-	<!-- Scyther - fast melee -->
+	<!-- Advanced Scyther - fast melee -->
 
-	<ThingDef ParentName="VFE_MechanoidWalker">
-		<defName>VFE_Mech_Scyther</defName>
-		<label>scyther</label>
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedScyther</defName>
+		<label>advanced scyther</label>
 		<description>Fast, spindly, human-sized combat mechanoids specializing in rapid approach and close-range combat. Their bodies are covered in points and blades, but they mostly use two arm blades to lop off limbs or gut their victims alive. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
 		<tools>
 			<li>
@@ -404,6 +404,9 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		<statBases>
+			<MoveSpeed>5.6</MoveSpeed>
+		</statBases>
 		<race>
 			<body>Scyther</body>
 			<baseHealthScale>1.32</baseHealthScale>
@@ -413,15 +416,15 @@
 		</race>
 	</ThingDef>
 
-	<PawnKindDef ParentName="VFE_MechanoidKind">
-		<defName>VFE_Mech_Scyther</defName>
-		<label>scyther</label>
-		<race>VFE_Mech_Scyther</race>
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedScyther</defName>
+		<label>advanced scyther</label>
+		<race>VFE_Mech_AdvancedScyther</race>
 		<combatPower>150</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/MechanoidFaction/VFE_MechScyther</texPath>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechScyther</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
 					<shadowData>
@@ -436,14 +439,14 @@
 		</weaponTags>
 	</PawnKindDef>
 
-	<!-- Pikeman - slow sniper weak at close range -->
+	<!-- Advanced Pikeman - slow sniper weak at close range -->
 
-	<ThingDef ParentName="VFE_MechanoidWalker">
-		<defName>VFE_Mech_Pikeman</defName>
-		<label>pikeman</label>
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedPikeman</defName>
+		<label>advanced pikeman</label>
 		<description>A clunky multi-legged combat mechanoid specialized as a long-range weapons platform. While effective at distance, it is weak in close-range fights and in melee combat. Veterans of mechanoid wars know that often, the safest place to be around a pikeman is touching it. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
 		<statBases>
-			<MoveSpeed>2.5</MoveSpeed>
+			<MoveSpeed>2.8</MoveSpeed>
 		</statBases>
 		<tools>
 			<li>
@@ -496,16 +499,16 @@
 		</race>
 	</ThingDef>
 
-	<PawnKindDef ParentName="VFE_MechanoidKind">
-		<defName>VFE_Mech_Pikeman</defName>
-		<label>pikeman</label>
-		<labelPlural>pikemen</labelPlural>
-		<race>VFE_Mech_Pikeman</race>
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedPikeman</defName>
+		<label>advanced pikeman</label>
+		<labelPlural>advanced pikemen</labelPlural>
+		<race>VFE_Mech_AdvancedPikeman</race>
 		<combatPower>110</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/MechanoidFaction/VFE_MechPikeman</texPath>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechPikeman</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.4</drawSize>
 					<shadowData>
@@ -521,16 +524,16 @@
 	</PawnKindDef>
 
 
-	<!-- Carpenter - slow deconstructor -->
+	<!-- Advanced Carpenter - slow deconstructor -->
 
-	<ThingDef ParentName="VFE_MechanoidWalker">
-		<defName>VFE_Mech_Carpenter</defName>
-		<label>carpenter</label>
-		<description>A swift, quadrupedal, beetle-like utility mechanoid meant to assemble and disassemble structures even in midst of heavy crossfire via a series of claws, blowtorches, and drills. Carpenter mechs analyze nearby structures for conflicting design parameters before skittering to dissemble them. Veterans from the mechanoid wars claim power plants and turrets that take days or even weeks to assemble to have vanished in minutes when approached by a carpenter. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedCarpenter</defName>
+		<label>advanced carpenter</label>
+		<description>A swift, quadrupedal, beetle-like utility mechanoid meant to assemble and disassemble structures even in midst of heavy crossfire via a series of claws, blowtorches, and drills. Carpenter mechs analyze nearby structures for conflicting design parameters before skittering to dissemble them. Veterans from the mechanoid wars claim power plants and turrets that take days or even weeks to assemble to have vanished in minutes when approached by a carpenter.</description>
 		<statBases>
-			<MoveSpeed>2.5</MoveSpeed>
-			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.92</ArmorRating_Sharp>
+			<MoveSpeed>2.8</MoveSpeed>
+			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1</ArmorRating_Sharp>
 			<PsychicSensitivity>0.75</PsychicSensitivity>
 		</statBases>
 		<tools>
@@ -587,20 +590,20 @@
 			</lifeStageAges>
 		</race>
 		<butcherProducts Inherit='False'>
-			<Steel>30</Steel>
-			<Plasteel>10</Plasteel>
+			<Steel>40</Steel>
+			<Plasteel>20</Plasteel>
 		</butcherProducts>
 	</ThingDef>
 
-	<PawnKindDef ParentName="VFE_MechanoidKind">
-		<defName>VFE_Mech_Carpenter</defName>
-		<label>carpenter</label>
-		<race>VFE_Mech_Carpenter</race>
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedCarpenter</defName>
+		<label>advanced carpenter</label>
+		<race>VFE_Mech_AdvancedCarpenter</race>
 		<combatPower>400</combatPower>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/MechanoidFaction/VFE_MechCarpenter</texPath>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedCarpenter</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3.4</drawSize>
 					<shadowData>
