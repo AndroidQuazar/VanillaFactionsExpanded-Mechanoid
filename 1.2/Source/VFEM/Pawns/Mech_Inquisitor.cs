@@ -13,7 +13,7 @@ namespace VFEMech
         public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             base.PreApplyDamage(ref dinfo, out absorbed);
-            if (dinfo.Weapon?.IsRangedWeapon ?? false && Rand.Chance(1f))
+            if (dinfo.Weapon?.IsRangedWeapon ?? false && Rand.Chance(0.02f))
             {
                 GenExplosion.DoExplosion(this.Position, this.Map, 10f, DamageDefOf.Bomb, dinfo.Instigator, 100);
                 this.Kill(dinfo);
