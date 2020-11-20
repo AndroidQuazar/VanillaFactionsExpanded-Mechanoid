@@ -4,7 +4,7 @@
 
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Alpha Biomes</li>
+			<li>Alpha Animals</li>
 		</mods>
 
 		<match Class="PatchOperationSequence">
@@ -33,24 +33,7 @@
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 
-						<ItemProcessor.CombinationDef>
-							<defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry_AB_Shell_Tar</defName>
-							<building>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</building>
-							<items>
-								<li>Steel</li>
-							</items>	
-							<secondItems>
-								<li>AB_AsphaltBucket</li>
-							</secondItems>
-							<amount>
-								<li>25</li>
-								<li>5</li>
-							</amount>
-							<result>AB_Shell_Tar</result>	
-							<yield>1</yield>		
-							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
-						</ItemProcessor.CombinationDef>
+						
 
 					</value>
 				</li>

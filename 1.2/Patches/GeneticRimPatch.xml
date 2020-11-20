@@ -45,8 +45,58 @@
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_GRCorpsesRecipe</defName>
+							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+							<items>
+								<li>GR_Corpses</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>VFEM_ProcessedMeat</result>	
+							<yield>30</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipe</defName>
+							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+							<items>
+								<li>CorpsesAnimal</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>GR_OrganicPulp</result>	
+							<yield>2</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipeFromHybrids</defName>
+							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+							<items>
+								<li>GR_Corpses</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>GR_OrganicPulp</result>	
+							<yield>2</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
 					</value>
 				</li>
+
+
 
 
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+	<!--======= Steel Extractor =======-->
+
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_ChunksRecipe</defName>
 		<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
@@ -16,37 +18,23 @@
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
-	
 	<ItemProcessor.CombinationDef>
-		<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_CorpsesRecipe</defName>
-		<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_SlagRecipe</defName>
+		<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
 		<items>
-			<li>Corpses</li>
+			<li>ChunkSlagSteel</li>
 		</items>	
 		<amount>
 			<li>1</li>
 		</amount>
-		<result>Chemfuel</result>	
+		<result>Steel</result>	
 		<yield>10</yield>
-		<isCategoryRecipe>true</isCategoryRecipe>
+		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
-	
-	<ItemProcessor.CombinationDef>
-		<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_WoodRecipe</defName>
-		<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
-		<items>
-			<li>WoodLog</li>
-		</items>	
-		<amount>
-			<li>10</li>
-		</amount>
-		<result>Chemfuel</result>	
-		<yield>10</yield>		
-		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
-	</ItemProcessor.CombinationDef>
+
+	<!--======= Component Assembler =======-->
 	
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler_SteelRecipe</defName>
@@ -59,13 +47,13 @@
 		</amount>
 		<result>ComponentIndustrial</result>	
 		<yield>1</yield>
-		
+
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
-	
-	
-	
+
+	<!--======= Advanced Assembler =======-->
+
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_StandardRecipe</defName>
 		<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
@@ -92,6 +80,41 @@
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
+
+	<!--======= Chemfuel Clarifier =======-->
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_CorpsesRecipe</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+		<items>
+			<li>Corpses</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>Chemfuel</result>	
+		<yield>10</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_WoodRecipe</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+		<items>
+			<li>WoodLog</li>
+		</items>	
+		<amount>
+			<li>10</li>
+		</amount>
+		<result>Chemfuel</result>	
+		<yield>10</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Mechanized Weaponsmith =======-->
 	
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_Revolver</defName>
@@ -102,19 +125,19 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-		
-		
+
+
 		<amount>
 			<li>30</li>
 			<li>2</li>
-			
+
 		</amount>
 		<result>Gun_Revolver</result>	
 		<yield>1</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
-	
+
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_Autopistol</defName>
 		<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
@@ -124,12 +147,12 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-		
-		
+
+
 		<amount>
 			<li>30</li>
 			<li>2</li>
-			
+
 		</amount>
 		<result>Gun_Autopistol</result>	
 		<yield>1</yield>		
@@ -145,12 +168,12 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-		
-		
+
+
 		<amount>
 			<li>60</li>
 			<li>3</li>
-			
+
 		</amount>
 		<result>Gun_PumpShotgun</result>	
 		<yield>1</yield>		
@@ -160,7 +183,7 @@
 
 
 
-<ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
 		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_AssaultRifle</defName>
 		<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
 		<items>
@@ -169,17 +192,762 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-		
-		
+
+
 		<amount>
 			<li>60</li>
 			<li>7</li>
-			
+
 		</amount>
 		<result>Gun_AssaultRifle</result>	
 		<yield>1</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
+	
+	<!--======= Artillery Foundry =======-->
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry_Shell_HighExplosive</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<secondItems>
+			<li>Chemfuel</li>
+		</secondItems>
+		<amount>
+			<li>25</li>
+			<li>15</li>
+		</amount>
+		<result>Shell_HighExplosive</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry_Shell_Incendiary</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<secondItems>
+			<li>Chemfuel</li>
+		</secondItems>
+		<amount>
+			<li>20</li>
+			<li>20</li>
+		</amount>
+		<result>Shell_Incendiary</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry_Shell_EMP</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<secondItems>
+			<li>ComponentIndustrial</li>
+		</secondItems>
+		<amount>
+			<li>25</li>
+			<li>2</li>
+		</amount>
+		<result>Shell_EMP</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Textile Recycler =======-->
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_TextileRecycler_ClothRecipe</defName>
+		<building>VFEM_WearablesAndTextileFactory_TextileRecycler</building>
+		<items>
+			<li>Apparel</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>Cloth</result>	
+		<yield>20</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_TextileRecycler_LeatherRecipe</defName>
+		<building>VFEM_WearablesAndTextileFactory_TextileRecycler</building>
+		<items>
+			<li>Apparel</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>Leather_Patch</result>	
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>UI/VFEM_PatchleatherIcon</resultSpecialIcon>
+		<yield>20</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Auto Loom =======-->
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_CowboyHat</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>25</li>
+		</amount>
+		<result>Apparel_CowboyHat</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_CowboyHat</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>25</li>
+		</amount>
+		<result>Apparel_CowboyHat</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_BowlerHat</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>20</li>
+		</amount>
+		<result>Apparel_BowlerHat</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_BowlerHat</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>20</li>
+		</amount>
+		<result>Apparel_BowlerHat</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Tuque</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>20</li>
+		</amount>
+		<result>Apparel_Tuque</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Tuque</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>20</li>
+		</amount>
+		<result>Apparel_Tuque</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Parka</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>80</li>
+		</amount>
+		<result>Apparel_Parka</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Parka</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>80</li>
+		</amount>
+		<result>Apparel_Parka</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Pants</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>40</li>
+		</amount>
+		<result>Apparel_Pants</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Pants</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>40</li>
+		</amount>
+		<result>Apparel_Pants</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_BasicShirt</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>40</li>
+		</amount>
+		<result>Apparel_BasicShirt</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_BasicShirt</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>40</li>
+		</amount>
+		<result>Apparel_BasicShirt</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_CollarShirt</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>45</li>
+		</amount>
+		<result>Apparel_CollarShirt</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_CollarShirt</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>45</li>
+		</amount>
+		<result>Apparel_CollarShirt</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Duster</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>80</li>
+		</amount>
+		<result>Apparel_Duster</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Duster</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>80</li>
+		</amount>
+		<result>Apparel_Duster</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Jacket</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Cloth</li>
+		</items>	
+		<amount>
+			<li>70</li>
+		</amount>
+		<result>Apparel_Jacket</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Cloth</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Jacket</defName>
+		<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+		<items>
+			<li>Leather_Patch</li>
+		</items>	
+		<amount>
+			<li>70</li>
+		</amount>
+		<result>Apparel_Jacket</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Leather_Patch</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Synthread Synthesizer =======-->
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_CowboyHat</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_CowboyHat</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>25</li>
+		</amount>
+		<result>Apparel_CowboyHat</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_BowlerHat</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_BowlerHat</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>20</li>
+		</amount>
+		<result>Apparel_BowlerHat</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Tuque</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_Tuque</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>20</li>
+		</amount>
+		<result>Apparel_Tuque</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Parka</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_Parka</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>80</li>
+		</amount>
+		<result>Apparel_Parka</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Pants</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_Pants</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>40</li>
+		</amount>
+		<result>Apparel_Pants</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_BasicShirt</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_BasicShirt</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>40</li>
+		</amount>
+		<result>Apparel_BasicShirt</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_CollarShirt</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_CollarShirt</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>45</li>
+		</amount>
+		<result>Apparel_CollarShirt</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Duster</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_Duster</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>80</li>
+		</amount>
+		<result>Apparel_Duster</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Jacket</defName>
+		<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+		<items>
+			<li>Apparel_Jacket</li>
+		</items>	
+		<secondItems>
+			<li>Plasteel</li>
+		</secondItems>
+		<amount>
+			<li>1</li>
+			<li>70</li>
+		</amount>
+		<result>Apparel_Jacket</result>	
+		<resultUsesStuffed>true</resultUsesStuffed>
+		<resultStuff>Synthread</resultStuff>
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Meat Grinder =======-->
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_CorpsesRecipe</defName>
+		<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+		<items>
+			<li>CorpsesAnimal</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>VFEM_ProcessedMeat</result>	
+		<yield>30</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Conveyor Oven =======-->
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_ProvisionsPackagingFactory_ConveyorOven_Kibble</defName>
+		<building>VFEM_ProvisionsPackagingFactory_ConveyorOven</building>
+		<items>
+			<li>FoodRaw</li>
+		</items>	
+		<amount>
+			<li>30</li>
+		</amount>
+		<result>Kibble</result>	
+		<yield>50</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_ProvisionsPackagingFactory_ConveyorOven_Meals</defName>
+		<building>VFEM_ProvisionsPackagingFactory_ConveyorOven</building>
+		<items>
+			<li>FoodRaw</li>
+		</items>	
+		<amount>
+			<li>12</li>
+		</amount>
+		<result>MealSurvivalPack</result>	
+		<yield>1</yield>
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>Things/Item/Meal/SurvivalPack</resultSpecialIcon>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Neutroamine Infuser =======-->
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MedicinalCompoundingFactory_NeutroamineInfuser_Meat</defName>
+		<building>VFEM_MedicinalCompoundingFactory_NeutroamineInfuser</building>
+		<items>
+			<li>MeatRaw</li>
+		</items>	
+		<amount>
+			<li>50</li>
+		</amount>
+		<result>Neutroamine</result>	
+		<yield>1</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+
+	<!--======= Medicine Granulator =======-->
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator_Medicine</defName>
+		<building>VFEM_MedicinalCompoundingFactory_MedicineGranulator</building>
+		<items>
+			<li>MedicineHerbal</li>
+		</items>	
+		<secondItems>
+			<li>Neutroamine</li>
+		</secondItems>
+		<thirdItems>
+			<li>Cloth</li>
+		</thirdItems>
+		<amount>
+			<li>1</li>
+			<li>1</li>
+			<li>3</li>
+		</amount>
+		<result>MedicineIndustrial</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator_WakeUp</defName>
+		<building>VFEM_MedicinalCompoundingFactory_MedicineGranulator</building>
+		<items>
+			<li>MedicineHerbal</li>
+		</items>	
+		<secondItems>
+			<li>Neutroamine</li>
+		</secondItems>
+		<thirdItems>
+			<li>PsychoidLeaves</li>
+		</thirdItems>
+		<amount>
+			<li>1</li>
+			<li>2</li>
+			<li>2</li>
+		</amount>
+		<result>WakeUp</result>	
+		<yield>3</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator_Penoxycyline</defName>
+		<building>VFEM_MedicinalCompoundingFactory_MedicineGranulator</building>
+		<items>
+			<li>MedicineHerbal</li>
+		</items>	
+		<secondItems>
+			<li>Neutroamine</li>
+		</secondItems>
+		<thirdItems>
+			<li>PsychoidLeaves</li>
+		</thirdItems>
+		<amount>
+			<li>1</li>
+			<li>2</li>
+			<li>2</li>
+		</amount>
+		<result>Penoxycyline</result>	
+		<yield>3</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<!--======= Drug Powderizer =======-->
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MedicinalCompoundingFactory_DrugPowderizer_Flake</defName>
+		<building>VFEM_MedicinalCompoundingFactory_DrugPowderizer</building>
+		<items>
+			<li>PsychoidLeaves</li>
+		</items>	
+		<amount>
+			<li>4</li>
+		</amount>
+		<result>Flake</result>	
+		<yield>1</yield>	
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>Things/Item/Drug/Yayo/Yayo_b</resultSpecialIcon>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MedicinalCompoundingFactory_DrugPowderizer_Yayo</defName>
+		<building>VFEM_MedicinalCompoundingFactory_DrugPowderizer</building>
+		<items>
+			<li>PsychoidLeaves</li>
+		</items>	
+		<amount>
+			<li>8</li>
+		</amount>
+		<result>Yayo</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	
 	
 </Defs>
