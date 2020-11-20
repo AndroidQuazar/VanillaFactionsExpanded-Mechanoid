@@ -18,6 +18,37 @@
 	</ItemProcessor.CombinationDef>
 	
 	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_CorpsesRecipe</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+		<items>
+			<li>Corpses</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>Chemfuel</result>	
+		<yield>10</yield>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_WoodRecipe</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+		<items>
+			<li>WoodLog</li>
+		</items>	
+		<amount>
+			<li>10</li>
+		</amount>
+		<result>Chemfuel</result>	
+		<yield>10</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler_SteelRecipe</defName>
 		<building>VFEM_ElectronicsFabricationFactory_ComponentAssembler</building>
 		<items>
@@ -32,6 +63,8 @@
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
+	
+	
 	
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_StandardRecipe</defName>
@@ -60,12 +93,93 @@
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_Revolver</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<secondItems>
+			<li>ComponentIndustrial</li>
+		</secondItems>
+		
+		
+		<amount>
+			<li>30</li>
+			<li>2</li>
+			
+		</amount>
+		<result>Gun_Revolver</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
 	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_Autopistol</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<secondItems>
+			<li>ComponentIndustrial</li>
+		</secondItems>
+		
+		
+		<amount>
+			<li>30</li>
+			<li>2</li>
+			
+		</amount>
+		<result>Gun_Autopistol</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_PumpShotgun</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<secondItems>
+			<li>ComponentIndustrial</li>
+		</secondItems>
+		
+		
+		<amount>
+			<li>60</li>
+			<li>3</li>
+			
+		</amount>
+		<result>Gun_PumpShotgun</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
 
 
 
-
-
-
-
+<ItemProcessor.CombinationDef>
+		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_AssaultRifle</defName>
+		<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+		<items>
+			<li>Steel</li>
+		</items>	
+		<secondItems>
+			<li>ComponentIndustrial</li>
+		</secondItems>
+		
+		
+		<amount>
+			<li>60</li>
+			<li>7</li>
+			
+		</amount>
+		<result>Gun_AssaultRifle</result>	
+		<yield>1</yield>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
 </Defs>
