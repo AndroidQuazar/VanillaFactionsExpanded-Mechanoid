@@ -15,7 +15,7 @@ namespace VFEMech
             base.PreApplyDamage(ref dinfo, out absorbed);
             if (dinfo.Weapon?.IsRangedWeapon ?? false && Rand.Chance(0.02f))
             {
-                GenExplosion.DoExplosion(this.Position, this.Map, 10f, DamageDefOf.Bomb, dinfo.Instigator, 100);
+                GenExplosion.DoExplosion(this.Position, this.Map, 5f, DamageDefOf.Bomb, dinfo.Instigator, 100);
                 this.Kill(dinfo);
             }
         }
