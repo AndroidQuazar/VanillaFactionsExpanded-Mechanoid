@@ -1223,7 +1223,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator</defName>
 		<label>Medicine Granulator</label>
-		<description>A machine capable of granulating via mill then pressing medical products into pills using a series of clamps and shaped presses. Also capable of manufacturing prefabricated health kits. Due to the rudimentary nature of this module, blockages are not uncommon, when blocked a pawn must come by to realign the presses before production can resume.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
+		<description>A machine capable of granulating via mill then pressing medical products into pills using a series of clamps and shaped presses. Also capable of manufacturing prefabricated health kits. While the pill pressing process does require additional materials not normally required, however yield is much more efficient. Requires occasional realignment from a construction-capable individual.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
 		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
 		<graphicData>
 			<texPath>Things/Buildings/MedicineGranulator/MedicineGranulator</texPath>
