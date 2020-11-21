@@ -49,7 +49,9 @@
     <pathCost>14</pathCost>
     <designationCategory>Power</designationCategory>
     <rotatable>false</rotatable>
-
+	<placeWorkers>
+      <li>VFEMech.PlaceWorker_OnPowerConduit</li>
+    </placeWorkers>
     <researchPrerequisites>
       <li>MicroelectronicsBasics</li>
     </researchPrerequisites>

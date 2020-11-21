@@ -54,6 +54,7 @@
     <Compile Include="Damages\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_ClimateAdjuster.cs" />
+    <Compile Include="HarmonyPatches\Power_Patches.cs" />
     <Compile Include="HarmonyPatches\Terrain_Patches.cs" />
     <Compile Include="HarmonyPatches\AvoidGrid_Patch.cs" />
     <Compile Include="HarmonyPatches\HarmonyInit.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
     <Compile Include="Pawns\Mech_Inquisitor.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnPowerConduit.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloorAndPath.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
     <Compile Include="Utils\MechUtils.cs" />
