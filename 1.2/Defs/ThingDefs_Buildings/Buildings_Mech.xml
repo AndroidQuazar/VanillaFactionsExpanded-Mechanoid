@@ -715,8 +715,8 @@
 				<mote>Mote_PsychicConditionCauserEffect</mote>
 				<emissionInterval>150</emissionInterval>
 			</li>
-			<li Class="VFEMech.CompProperties_ActiveGameCondition">
-				<conditionDef>PsychicDrone</conditionDef>
+			<li Class="VFEMech.CompProperties_ActiveGameCondition_PsychicEmanation">
+				<droneLevelIncreaseInterval>150000</droneLevelIncreaseInterval>
 			</li>
 		</comps>
 		<killedLeavings>

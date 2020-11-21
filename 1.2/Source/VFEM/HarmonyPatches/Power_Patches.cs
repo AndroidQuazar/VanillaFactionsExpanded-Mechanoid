@@ -12,7 +12,7 @@ using Verse.AI;
 
 namespace VFEMech
 {
-    [HarmonyPatch(typeof(PowerConnectionMaker), "PotentialConnectorsForTransmitter")]
+	[HarmonyPatch(typeof(PowerConnectionMaker), "PotentialConnectorsForTransmitter")]
     internal static class PotentialConnectorsForTransmitter_Patch
     {
         public static void Postfix(ref IEnumerable<CompPower> __result, CompPower b)
@@ -53,7 +53,6 @@ namespace VFEMech
 		{
 			if (__result == null)
             {
-				//var conduitPylons = map.listerThings.AllThings.Where(x => x.def == VFEMDefOf.VFE_ConduitPylon);
 				CellRect cellRect = CellRect.SingleCell(connectorPos).ExpandedBy(18).ClipInsideMap(map);
 				cellRect.ClipInsideMap(map);
 				float num = 999999f;
