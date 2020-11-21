@@ -6,13 +6,12 @@
 
   <TerrainDef ParentName="TileMetalBase">
     <defName>VFE_FactoryFloor</defName>
-    <texturePath>Terrain/Surfaces/FactoryFloor</texturePath>
+    <texturePath>Terrain/Surfaces/FactoryPath</texturePath>
     <label>factory floor</label>
     <renderPrecedence>240</renderPrecedence>
     <pathCost>5</pathCost>
     <designatorDropdown Inherit='False'/>
     <description>Reinforced steel tiles, capable of holding heavy, complex machinery in place. Not the prettiest to look at.</description>
-    <color>(0.369, 0.369, 0.369)</color>
     <statBases>
       <WorkToBuild>800</WorkToBuild>
       <Beauty>-2</Beauty>
@@ -31,12 +30,13 @@
 
   <TerrainDef ParentName="TileMetalBase">
     <defName>VFE_FactoryPath</defName>
-    <texturePath>Terrain/Surfaces/FactoryPath</texturePath>
+    <texturePath>Terrain/Surfaces/FactoryFloor</texturePath>
     <label>factory path</label>
     <renderPrecedence>250</renderPrecedence>
     <pathCost>1</pathCost>
     <designatorDropdown Inherit='False'/>
     <description>A designated, safe to traverse factory path. Increases the movement speed, but needs to be placed on the factory floor.</description>
+    <color>(0.369, 0.369, 0.369)</color>
     <statBases>
       <WorkToBuild>800</WorkToBuild>
       <Beauty>-2</Beauty>
