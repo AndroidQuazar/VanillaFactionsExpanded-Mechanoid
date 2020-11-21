@@ -51,5 +51,15 @@ namespace VFEM.HarmonyPatches
             }
         }
 
+        [HarmonyPatch(typeof(PawnGroupMaker), nameof(PawnGroupMaker.CanGenerateFrom))]
+        private static class GetRandomPawnGroupMaker_Patch
+        {
+            [HarmonyPostfix]
+            public static void Postfix(PawnGroupMaker __instance, PawnGroupMakerParms parms, ref bool __result)
+            {
+                if (__instance is PawnGroupMakerMech pgmm)
+                    __result &= pgmm.CanGenerate(parms);
+            }
+        }
     }
 }

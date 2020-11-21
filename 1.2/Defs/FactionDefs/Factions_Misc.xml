@@ -63,6 +63,21 @@
           <VFE_Mech_Knight>10</VFE_Mech_Knight>
         </options>
       </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- All types-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>32000</minimumPresence>
+        <maximumPresence>50000</maximumPresence>
+        <options>
+          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
+          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Pikeman>10</VFE_Mech_Pikeman>
+          <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>10</VFE_Mech_Knight>
+        </options>
+      </li>
     </pawnGroupMakers>
     <settlementTexturePath>World/WorldObjects/MechanoidShip</settlementTexturePath>
     <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>

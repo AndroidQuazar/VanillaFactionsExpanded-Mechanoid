@@ -64,6 +64,7 @@
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
     <Compile Include="ModExtensions\MechanoidBaseExtension.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
+    <Compile Include="PawnGroupMakerMech.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
     <Compile Include="Utils\MechUtils.cs" />
     <Compile Include="MapComponent_MechWarfare.cs" />
