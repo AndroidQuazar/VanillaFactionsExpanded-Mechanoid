@@ -7,7 +7,7 @@
 	<ThingDef ParentName="BaseMechanoidWalker">
 		<defName>VFE_Mech_AncientCarpenter</defName>
 		<label>carpenter</label>
-		<description>A swift, quadrupedal, beetle-like utility mechanoid meant to assemble and disassemble structures even in midst of heavy crossfire via a series of claws, blowtorches, and drills. Carpenter mechs analyze nearby structures for conflicting design parameters before skittering to dissemble them. Veterans from the mechanoid wars claim power plants and turrets that take days or even weeks to assemble to have vanished in minutes when approached by a carpenter.</description>
+		<description>A lurching, quadrupedal utility mechanoid with thick armor meant to absorb enemy fire while rapidly dissembling enemy fortifications using simple sledges and drills. Infantry present during the mechanoid wars were known to assemble decoy pillboxes or barricades as the carpenter mechanoids could not distinguish between them and structures being actively used.</description>
 		<statBases>
 			<MoveSpeed>2.5</MoveSpeed>
 			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>

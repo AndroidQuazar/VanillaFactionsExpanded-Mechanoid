@@ -36,7 +36,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoid">
 		<defName>VFE_Mech_AdvancedCentipede</defName>
 		<label>advanced centipede</label>
-		<description>Heavy combat mechanoids that glide on dozens of tiny legs. Their heavy armor and firepower makes them very effective against bunched-up static defenders. They are somewhat vulnerable to mobile hit-and-run tactics. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
+		<description>An even heavier, more armored version of the Centipede mechanoid propelled by hundreds of tiny legs as well . Unlike their more ancient and less advanced relatives this particular unit is much more intelligent and will seek cover before attempting to break lines of defense.</description>
 		<statBases>
 			<MoveSpeed>2.1</MoveSpeed>
 			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
@@ -100,7 +100,7 @@
 		</lifeStages>
 		<weaponMoney>9999~9999</weaponMoney>
 		<weaponTags>
-			<li>MechanoidGunHeavy</li>
+			<li>VFE_AdvMechanoidGunHeavy</li>
 		</weaponTags>
 	</PawnKindDef>
 
@@ -137,7 +137,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
 		<defName>VFE_Mech_AdvancedLancer</defName>
 		<label>advanced lancer</label>
-		<description>Fast human-sized combat mechanoids built for medium and long-range combat. Their bodies are light, making them vulnerable targets at close range - especially in melee combat. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
+		<description>A freshly manufactured and heavily upgraded long-range infantry mechanoid. Unlike their more ancient and less advanced relatives this particular unit is much more intelligent and will seek cover and prove to be a much more challenging opponent in melee combat.</description>
 		<tools>
 			<li>
 				<label>left fist</label>
@@ -199,7 +199,7 @@
 		</lifeStages>
 		<weaponMoney>9999~9999</weaponMoney>
 		<weaponTags>
-			<li>MechanoidGunMedium</li>
+			<li>VFE_AdvMechanoidGunMedium</li>
 		</weaponTags>
 	</PawnKindDef>
 
@@ -208,7 +208,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
 		<defName>VFE_Mech_AdvancedKnight</defName>
 		<label>advanced knight</label>
-		<description>A medium-speed bipedal mechanoid slightly larger than an average human designed to take damage from both ranged and melee combatants. Thick armored plating is only further emboldened by a logic-defying shield belt capable of stopping projectiles. Equipped with a mid-range, burst-fire charge rifle, the Knight is best fought off by long-range explosive salvo or mines.</description>
+		<description>One of two heavy infantry mechanoids equipped with multiple upgrades. This particular Knight variant appears to have an overclocked power cell, allowing quicker movement and a stronger energy shield. Like it’s unupgraded variant, the Knight comes equipped with a devastating burst-fire charge blaster, although its targeting module appears to be much more advanced.</description>
 		<statBases>
 			<MoveSpeed>4.7</MoveSpeed>
 			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
@@ -281,7 +281,7 @@
 		</lifeStages>
 		<weaponMoney>9999~9999</weaponMoney>
 		<weaponTags>
-			<li>VFE_MechanoidGunShort</li>
+			<li>VFE_AdvMechanoidGunShort</li>
 		</weaponTags>
 	</PawnKindDef>
 
@@ -290,7 +290,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
 		<defName>VFE_Mech_AdvancedInquisitor</defName>
 		<label>advanced inquisitor</label>
-		<description>A lumbering, slow, superheavy mechanoid meant for area denial and bunker busting via flamethrower. While the plume of flame itself is short ranged, encountering an Inquisitor at close range is ill-advised, as the back-mounted chemfuel tanks are programmed to explode upon a system malfunction.</description>
+		<description>One of two heavy infantry mechanoids equipped with multiple upgrades. Despite much larger chemfuel tanks this variant of the Inquisitor mech is somehow quicker than its counterpart. Less than a dozen encounters with this mechanoid have ever been reported and less than half of those have ended in victory. This Inquisitor not only rushes priority targets with plumes of fire but also is installed with a much more deadly explosive fail-safe system that both detonates the machine but also engulfs targets nearby in chemfuel fire.</description>
 		<statBases>
 			<MoveSpeed>2.3</MoveSpeed>
 			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
@@ -358,7 +358,7 @@
 		</lifeStages>
 		<weaponMoney>9999~9999</weaponMoney>
 		<weaponTags>
-			<li>VFE_MechanoidGunFlamer</li>
+			<li>VFE_AdvMechanoidGunFlamer</li>
 		</weaponTags>
 	</PawnKindDef>
 
@@ -368,7 +368,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
 		<defName>VFE_Mech_AdvancedScyther</defName>
 		<label>advanced scyther</label>
-		<description>Fast, spindly, human-sized combat mechanoids specializing in rapid approach and close-range combat. Their bodies are covered in points and blades, but they mostly use two arm blades to lop off limbs or gut their victims alive. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
+		<description>A dense, spindly and very intelligent scyther unit that appears to be freshly manufactured with additional upgrades. This unit appears to utilize anti-gravity properties to propel itself much quicker than its ancient versions, as well as superheat its bladed arm attachments to more readily cut through flesh and metal alike.</description>
 		<tools>
 			<li>
 				<label>left blade</label>
@@ -444,7 +444,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
 		<defName>VFE_Mech_AdvancedPikeman</defName>
 		<label>advanced pikeman</label>
-		<description>A clunky multi-legged combat mechanoid specialized as a long-range weapons platform. While effective at distance, it is weak in close-range fights and in melee combat. Veterans of mechanoid wars know that often, the safest place to be around a pikeman is touching it. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
+		<description>A multi-legged combat mechanoid specialized as a long-range weapons platform. This particular unit appears to have been upgraded with additional limbs for quicker movement as well as a layer of roach-like carapace plates for extra defense against melee combatants.</description>
 		<statBases>
 			<MoveSpeed>2.8</MoveSpeed>
 		</statBases>
@@ -519,7 +519,7 @@
 		</lifeStages>
 		<weaponMoney>9999~9999</weaponMoney>
 		<weaponTags>
-			<li>MechanoidGunLongRange</li>
+			<li>VFE_AdvMechanoidGunLongRange</li>
 		</weaponTags>
 	</PawnKindDef>
 
@@ -529,7 +529,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
 		<defName>VFE_Mech_AdvancedCarpenter</defName>
 		<label>advanced carpenter</label>
-		<description>A swift, quadrupedal, beetle-like utility mechanoid meant to assemble and disassemble structures even in midst of heavy crossfire via a series of claws, blowtorches, and drills. Carpenter mechs analyze nearby structures for conflicting design parameters before skittering to dissemble them. Veterans from the mechanoid wars claim power plants and turrets that take days or even weeks to assemble to have vanished in minutes when approached by a carpenter.</description>
+		<description>An upgraded version of the utility “Carpenter” mechanoid. Set apart from its prior iterations this version of the carpenter mechanoid not only moves faster but also utilizes plasma torches and omnitools to nearly instantly dissemble all risk-posing structures. Compounded with possibly the heaviest armor of all mechanoids this unit needs to be prioritized before reaching the enemy frontline. Finally, should this mechanoid detect that it is about to cease function an EMP shock is emitted that temporarily disables all nearby electronics in a last-ditch effort to break the frontline for its allies.</description>
 		<statBases>
 			<MoveSpeed>2.8</MoveSpeed>
 			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
