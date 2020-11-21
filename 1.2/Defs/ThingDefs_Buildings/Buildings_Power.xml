@@ -5,7 +5,7 @@
     <defName>VFE_ConduitPylon</defName>
     <label>conduit pylon</label>
     <graphicData>
-      <texPath>Things/Buildinga/PowerPylon/PowerPylon</texPath>
+      <texPath>Things/Buildings/PowerPylon/PowerPylon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.2, 0.3)</volume>
