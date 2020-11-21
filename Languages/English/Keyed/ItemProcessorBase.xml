@@ -7,5 +7,5 @@
 	<VFEM_BringIngredients>Extract Ingredients</VFEM_BringIngredients>
 	<VFEM_BringIngredientsDesc>Extract ingredients from adjacent hoppers to start the process</VFEM_BringIngredientsDesc>
 	<VFEMech.MustPlaceOnFactoryFloor>Must be placed directly on a factory floor.</VFEMech.MustPlaceOnFactoryFloor>
-
+	<VFEMech.MustPlaceOnPowerConduit>Must be placed directly on a power conduit.</VFEMech.MustPlaceOnPowerConduit>
 </LanguageData>

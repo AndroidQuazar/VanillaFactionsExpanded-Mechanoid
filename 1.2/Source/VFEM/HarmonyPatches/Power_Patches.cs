@@ -53,7 +53,7 @@ namespace VFEMech
 		{
 			if (__result == null)
             {
-				var conduitPylons = map.listerThings.AllThings.Where(x => x.def == VFEMDefOf.VFE_ConduitPylon);
+				//var conduitPylons = map.listerThings.AllThings.Where(x => x.def == VFEMDefOf.VFE_ConduitPylon);
 				CellRect cellRect = CellRect.SingleCell(connectorPos).ExpandedBy(18).ClipInsideMap(map);
 				cellRect.ClipInsideMap(map);
 				float num = 999999f;
@@ -70,7 +70,7 @@ namespace VFEMech
 						CompPower powerComp = transmitter.PowerComp;
 						if (powerComp != null && powerComp.TransmitsPowerNow && (transmitter.def.building == null || transmitter.def.building.allowWireConnection) 
 							&& (disallowedNets == null || !disallowedNets.Contains(powerComp.transNet))
-							&& conduitPylons.Where(x => x.Position.DistanceTo(transmitter.Position) <= 18).Any())
+							&& transmitter.Position.GetThingList(map).Where(x => x.def == VFEMDefOf.VFE_ConduitPylon).Any())
 						{
 							float num2 = (transmitter.Position - connectorPos).LengthHorizontalSquared;
 							if (num2 < num)
@@ -82,18 +82,6 @@ namespace VFEMech
 					}
 				}
 				__result = result;
-			}
-		}
-	}
-
-	[HarmonyPatch(typeof(PowerConnectionMaker), "TryConnectToAnyPowerNet")]
-	internal static class TryConnectToAnyPowerNet_Patch
-	{
-		public static void Postfix(CompPower pc, List<PowerNet> disallowedNets = null)
-		{
-			if (pc.connectParent == null && pc.parent.Spawned)
-			{
-				Log.Message("PC: " + pc);
 			}
 		}
 	}
