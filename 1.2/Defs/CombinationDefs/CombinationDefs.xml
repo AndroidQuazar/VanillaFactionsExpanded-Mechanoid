@@ -948,6 +948,87 @@
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
-	
+	<!--======= Masonry Saw =======-->
+
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Sandstone</defName>
+		<building>VFEM_MasonryAndMetallicsFactory_MasonrySaw</building>
+		<items>
+			<li>ChunkSandstone</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>BlocksSandstone</result>	
+		<yield>20</yield>
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>UI/VFEM_StoneBlocksSandstone</resultSpecialIcon>				
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Limestone</defName>
+		<building>VFEM_MasonryAndMetallicsFactory_MasonrySaw</building>
+		<items>
+			<li>ChunkLimestone</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>BlocksLimestone</result>	
+		<yield>20</yield>		
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>UI/VFEM_StoneBlocksLimestone</resultSpecialIcon>			
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Marble</defName>
+		<building>VFEM_MasonryAndMetallicsFactory_MasonrySaw</building>
+		<items>
+			<li>ChunkMarble</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>BlocksMarble</result>	
+		<yield>20</yield>		
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>UI/VFEM_StoneBlocksMarble</resultSpecialIcon>			
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Granite</defName>
+		<building>VFEM_MasonryAndMetallicsFactory_MasonrySaw</building>
+		<items>
+			<li>ChunkGranite</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>BlocksGranite</result>	
+		<yield>20</yield>		
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>UI/VFEM_StoneBlocksGranite</resultSpecialIcon>		
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Slate</defName>
+		<building>VFEM_MasonryAndMetallicsFactory_MasonrySaw</building>
+		<items>
+			<li>ChunkSlate</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>BlocksSlate</result>	
+		<yield>20</yield>		
+		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+		<resultSpecialIcon>UI/VFEM_StoneBlocksSlate</resultSpecialIcon>			
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
 	
 </Defs>
