@@ -5,7 +5,8 @@
     <defName>VFE_Supercomputer</defName>
     <label>supercomputer</label>
     <description>tbd</description>
-    <thingClass>Building</thingClass>
+    <thingClass>VFEMech.Supercomputer</thingClass>
+	<tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Buildings/ResearchComputer</texPath>
       <graphicClass>Graphic_Random</graphicClass>
@@ -26,7 +27,6 @@
       <Flammability>1.0</Flammability>
       <Beauty>-20</Beauty>
     </statBases>
-    <tickerType>Normal</tickerType>
     <canOverlapZones>false</canOverlapZones>
     <size>(2,2)</size>
 		<building>

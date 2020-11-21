@@ -9,8 +9,26 @@ using Verse.AI.Group;
 
 namespace VFEMech
 {
+    [StaticConstructorOnStartup]
     public static class MechUtils
     {
+        static MechUtils()
+        {
+            DefDatabase<ThingDef>.GetNamed("PsychicDroner", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 4));
+            DefDatabase<ThingDef>.GetNamed("PsychicSuppressor", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 4));
+            DefDatabase<ThingDef>.GetNamed("WeatherController", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 4));
+
+            DefDatabase<ThingDef>.GetNamed("SmokeSpewer", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 3));
+            DefDatabase<ThingDef>.GetNamed("ToxicSpewer", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 3));
+            DefDatabase<ThingDef>.GetNamed("SunBlocker", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 3));
+            DefDatabase<ThingDef>.GetNamed("EMIDynamo", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 3));
+            DefDatabase<ThingDef>.GetNamed("ClimateAdjuster", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 3));
+
+            DefDatabase<ThingDef>.GetNamed("Defoliator", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 2));
+            DefDatabase<ThingDef>.GetNamed("MechAssembler", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 2));
+
+            DefDatabase<ThingDef>.GetNamed("MechCapsule", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 1));
+        }
         public static void CreateOrAddToAssaultLord(Pawn pawn, Lord lord = null, bool canKidnap = false, bool canTimeoutOrFlee = false, bool sappers = false,
             bool useAvoidGridSmart = false, bool canSteal = false)
         {
