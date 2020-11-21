@@ -1438,7 +1438,7 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<building>
 			<turretTopDrawSize>7</turretTopDrawSize>
-			<turretTopOffset>(0, 0.1)</turretTopOffset>
+			<turretTopOffset>(0, 0.2)</turretTopOffset>
 			<combatPower>650</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>VFE_Gun_ChargeRailgun</turretGunDef>
@@ -1475,9 +1475,6 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>16</muzzleFlashScale>
 				<requireLineOfSight>false</requireLineOfSight>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
 			</li>
 		</verbs>
 	</ThingDef>

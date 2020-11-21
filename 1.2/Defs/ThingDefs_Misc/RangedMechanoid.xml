@@ -158,7 +158,7 @@
 	<ThingDef ParentName="VFE_Gun_ChargeBlasterLightBase">
 		<defName>VFE_Gun_AdvancedChargeBlasterLight</defName>
 		<label>advanced light charge blaster</label>
-		<description>Similar to the charge lance the charge blaster is a high-accuracy burst-fire energy weapon capable of precision marksmanship with relatively little recoil thanks to its shortened acceleration rail and stabilization gate.</description>
+		<description>A less unwieldy version of the mechanoid charge blaster, equivalent to the weight and size of a human heavy SMG. This burst fire charge weapon foregoes battery power in exchange for portability, as such the burst count and damage are both lower, however time between bursts is smaller.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/AdvancedMechanoidRifle</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -225,7 +225,7 @@
 
 	<ThingDef ParentName="VFE_Gun_InfernoSpewerBase">
 		<label>advanced inferno spewer</label>
-		<description>A surprisingly lightweight flamethrower of mechanoid design, while idle the device seems cold as any other, but can immediately heat up to temperatures well above purely human technology. Two undermounted chemfuel tanks allow for an ammo capacity big enough for large plumes of liquid flame.</description>
+		<description>A “bunker-busting” incendiary weapon that not only sets targets ablaze but actually superheats the air around hot enough to melt bone. While overall tank size is decreased the heat and damage potential of each plume of flame is significantly raised.</description>
 		<defName>VFE_Gun_AdvancedInfernoSpewer</defName>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/AdvancedMechanoidFlamer</texPath>
@@ -255,7 +255,7 @@
   <ThingDef ParentName="Gun_ChargeBlasterHeavyBase">
     <defName>VFE_Gun_AdvancedChargeBlasterHeavy</defName>
     <label>advanced heavy charge blaster</label>
-    <description>A pulse-charged rapid-fire blaster for area suppressive fire. Heavy cooling allows long, deadly bursts.</description>
+    <description>A version of the burst-fire charge blaster with a notably higher fire rate. Extra energy cells add weight to the weapon and accuracy does take a small hit due to increased recoil however enough advanced charge blasters result in a hail of fire anything less than Imperial frigates couldn’t endure.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/AdvancedChargeBlaster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -286,8 +286,8 @@
 	
   <ThingDef ParentName="Gun_InfernoCannonBase">
     <defName>VFE_Gun_AdvancedInfernoCannon</defName>
-    <label>advanced heavy charge blaster</label>
-    <description>A pulse-charged rapid-fire blaster for area suppressive fire. Heavy cooling allows long, deadly bursts.</description>
+    <label>advanced inferno cannon</label>
+    <description>A relatively small incendiary artillery platform at first used in urban warfare and sieges. Much like its mechanoid variant the inferno cannon actually deploys small explosive warheads that are known to shake the earth where they land and set targets ablaze.</description>
     <weaponTags>
       <li>VFE_AdvMechanoidGunHeavy</li>
     </weaponTags>
@@ -320,7 +320,7 @@
   <ThingDef ParentName="BaseGunWithQuality">
     <defName>VFE_Gun_AdvancedNeedle</defName>
     <label>advanced needle gun</label>
-    <description>A long-range weapon used by mechanoids. Named after its needle-like projectiles, it fires single shots with great accuracy. While it does less damage than charge weapons, it can reach over very long distances.</description>
+    <description>An advanced ultra long range kinetically propelled sniper weapon. While damage is not much higher than its lesser version, pros include an entire lack of recoil and unrivaled range. Soldiers of old claim to have had their vessels shot at from the ground while as high as the stratosphere, although these claims do not hold up to any level of scrutiny.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/AdvancedNeedlegun</texPath>
@@ -371,7 +371,7 @@
   <ThingDef ParentName="BaseGunWithQuality">
     <defName>VFE_Gun_AdvancedChargeLance</defName>
     <label>advanced charge lance</label>
-    <description>A pulse-charged rail-assisted lance weapon. It fires a single shot at high velocity, charging it with unstable energy as it leaves the acceleration rail.</description>
+    <description>A heavier version of the pulse-charged lance weapon. Often fielded by mechanoid marksmen, the advanced charge lance is similar to it’s predecessor but exchanges size and time to aim for a significant increase in firepower.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/AdvancedChargeLance</texPath>
