@@ -22,6 +22,21 @@
 							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_RedWoodRecipe</defName>
 							<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
 							<items>
+								<li>AB_MushroomWoodLog</li>
+							</items>	
+							<amount>
+								<li>10</li>
+							</amount>
+							<result>Chemfuel</result>	
+							<yield>10</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_MushroomWoodRecipe</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+							<items>
 								<li>GU_RedWood</li>
 							</items>	
 							<amount>
@@ -112,6 +127,109 @@
 							<yield>20</yield>		
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 							<resultSpecialIcon>UI/VFEM_StoneBlocksMudstone</resultSpecialIcon>			
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MasonryAndMetallicsFactory_PlasteelForge_Mudstone</defName>
+							<building>VFEM_MasonryAndMetallicsFactory_PlasteelForge</building>
+							<items>
+								<li>AB_BlocksMudstone</li>
+							</items>	
+							<secondItems>
+								<li>Chemfuel</li>
+							</secondItems>
+							<thirdItems>
+								<li>Steel</li>
+							</thirdItems>
+							<amount>
+								<li>20</li>
+								<li>20</li>
+								<li>20</li>
+							</amount>
+							<result>Plasteel</result>	
+							<yield>20</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MasonryAndMetallicsFactory_PlasteelForge_Obsidian</defName>
+							<building>VFEM_MasonryAndMetallicsFactory_PlasteelForge</building>
+							<items>
+								<li>AB_BlocksObsidian</li>
+							</items>	
+							<secondItems>
+								<li>Chemfuel</li>
+							</secondItems>
+							<thirdItems>
+								<li>Steel</li>
+							</thirdItems>
+							<amount>
+								<li>20</li>
+								<li>20</li>
+								<li>20</li>
+							</amount>
+							<result>Plasteel</result>	
+							<yield>20</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MasonryAndMetallicsFactory_PlasteelForge_Cragstone</defName>
+							<building>VFEM_MasonryAndMetallicsFactory_PlasteelForge</building>
+							<items>
+								<li>AB_BlocksCragstone</li>
+							</items>	
+							<secondItems>
+								<li>Chemfuel</li>
+							</secondItems>
+							<thirdItems>
+								<li>Steel</li>
+							</thirdItems>
+							<amount>
+								<li>20</li>
+								<li>20</li>
+								<li>20</li>
+							</amount>
+							<result>Plasteel</result>	
+							<yield>20</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MasonryAndMetallicsFactory_PlasteelForge_RoseQuartz</defName>
+							<building>VFEM_MasonryAndMetallicsFactory_PlasteelForge</building>
+							<items>
+								<li>GU_BlocksRoseQuartz</li>
+							</items>	
+							<secondItems>
+								<li>Chemfuel</li>
+							</secondItems>
+							<thirdItems>
+								<li>Steel</li>
+							</thirdItems>
+							<amount>
+								<li>20</li>
+								<li>20</li>
+								<li>20</li>
+							</amount>
+							<result>Plasteel</result>	
+							<yield>20</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_AlcyoniteRecipe</defName>
+							<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
+							<items>
+								<li>GU_ChunkRoseQuartz</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>AB_AlcyoniteChunk</result>	
+							<yield>10</yield>							
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>

@@ -86,14 +86,14 @@
 									<numberOfInputs>1</numberOfInputs>
 									<acceptsNoneAsInput>false</acceptsNoneAsInput>
 									<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-									<transfersIngredientLists>false</transfersIngredientLists>
+									<ignoresIngredientLists>false</ignoresIngredientLists>
 									<isAutoMachine>true</isAutoMachine>
 									<isAutoDropper>true</isAutoDropper>
 									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
 									<noPowerDestroysProgress>true</noPowerDestroysProgress>
 									<isMachinePausable>true</isMachinePausable>
 									<rareTicksToDestroy>10</rareTicksToDestroy>				
-									<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
 									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
 									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
 									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>

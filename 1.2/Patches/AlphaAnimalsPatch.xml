@@ -33,7 +33,23 @@
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 
-						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_SkyChunksRecipe</defName>
+							<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
+							<items>
+								<li>StoneChunks</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>AA_SkySteel</result>	
+							<yield>10</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+
 
 					</value>
 				</li>
