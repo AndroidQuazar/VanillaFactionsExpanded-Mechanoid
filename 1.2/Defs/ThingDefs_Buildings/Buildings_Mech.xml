@@ -658,8 +658,7 @@
 				<mote>Mote_PsychicConditionCauserEffect</mote>
 				<emissionInterval>150</emissionInterval>
 			</li>
-			<li Class="VFEMech.CompProperties_ActiveGameCondition">
-				<conditionDef>PsychicSuppression</conditionDef>
+			<li Class="VFEMech.CompProperties_ActiveGameCondition_PsychicSuppression">
 			</li>
 		</comps>
 		<killedLeavings>

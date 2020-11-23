@@ -49,6 +49,7 @@
     <Compile Include="Building\Supercomputer.cs" />
     <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
+    <Compile Include="Comps\CompActiveGameCondition_PsychicSuppression.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicEmanation.cs" />
     <Compile Include="Comps\ShieldMechBubble.cs" />
     <Compile Include="Comps\CompMechProducer.cs" />

@@ -60,7 +60,7 @@
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-						
+
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipe</defName>
 							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
@@ -76,7 +76,7 @@
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-						
+
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipeFromHybrids</defName>
 							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
@@ -91,6 +91,29 @@
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator_AgePills</defName>
+							<building>VFEM_MedicinalCompoundingFactory_MedicineGranulator</building>
+							<items>
+								<li>MedicineHerbal</li>
+							</items>	
+							<secondItems>
+								<li>Neutroamine</li>
+							</secondItems>
+							<thirdItems>
+								<li>PsychoidLeaves</li>
+							</thirdItems>
+							<amount>
+								<li>2</li>
+								<li>2</li>
+								<li>5</li>
+							</amount>
+							<result>GR_AgePills</result>	
+							<yield>2</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 
 					</value>
