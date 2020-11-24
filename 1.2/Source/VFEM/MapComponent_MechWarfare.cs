@@ -18,21 +18,21 @@ namespace VFEMech
         public override void MapComponentTick()
         {
             base.MapComponentTick();
-            if (TerrainPatches.factoryFloors.ContainsKey(map))
-            {
-                foreach (var cell in TerrainPatches.factoryFloors[map])
-                {
-                    foreach (var t in map.thingGrid.ThingsListAtFast(cell))
-                    {
-                        if (t is Pawn pawn && pawn.health.hediffSet.GetFirstHediffOfDef(VFEMDefOf.VFE_FasterMovement) == null)
-                        {
-                            var hediff = HediffMaker.MakeHediff(VFEMDefOf.VFE_FasterMovement, pawn);
-                            pawn.health.AddHediff(hediff);
-                            pawn.pather.ResetToCurrentPosition();
-                        }
-                    }
-                }
-            }
+            //if (TerrainPatches.factoryFloors.ContainsKey(map))
+            //{
+            //    foreach (var cell in TerrainPatches.factoryFloors[map])
+            //    {
+            //        foreach (var t in map.thingGrid.ThingsListAtFast(cell))
+            //        {
+            //            if (t is Pawn pawn && pawn.health.hediffSet.GetFirstHediffOfDef(VFEMDefOf.VFE_FasterMovement) == null)
+            //            {
+            //                var hediff = HediffMaker.MakeHediff(VFEMDefOf.VFE_FasterMovement, pawn);
+            //                pawn.health.AddHediff(hediff);
+            //                pawn.pather.ResetToCurrentPosition();
+            //            }
+            //        }
+            //    }
+            //}
         }
     }
 }
