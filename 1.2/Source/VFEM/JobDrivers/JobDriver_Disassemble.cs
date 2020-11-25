@@ -22,7 +22,7 @@ namespace VFEMech
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			yield return Toils_Goto.GotoThing(TargetIndex.A, (Target is Building_Trap) ? PathEndMode.OnCell : PathEndMode.Touch);
+			yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
 			Toil doWork = new Toil().FailOnDestroyedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
 			doWork.tickAction = delegate
 			{

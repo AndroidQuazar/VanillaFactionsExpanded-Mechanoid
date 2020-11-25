@@ -15,6 +15,19 @@ namespace VFEMech
 
         }
 
+        public override void FinalizeInit()
+        {
+            base.FinalizeInit();
+            TerrainPatches.factoryFloors[map] = new HashSet<IntVec3>();
+            foreach (var cell in map.AllCells)
+            {
+                if (cell.GetTerrain(map) == VFEMDefOf.VFE_FactoryPath)
+                {
+                    TerrainPatches.factoryFloors[map].Add(cell);
+                }
+            }
+        }
+
         public override void MapComponentTick()
         {
             base.MapComponentTick();
@@ -28,7 +41,6 @@ namespace VFEMech
                         {
                             var hediff = HediffMaker.MakeHediff(VFEMDefOf.VFE_FasterMovement, pawn);
                             pawn.health.AddHediff(hediff);
-                            pawn.pather.ResetToCurrentPosition();
                         }
                     }
                 }

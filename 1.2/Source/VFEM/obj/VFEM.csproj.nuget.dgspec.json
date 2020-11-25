@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {}
+    "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {}
   },
   "projects": {
-    "C:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {
+    "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
+        "projectUniqueName": "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
         "projectName": "VFEM",
-        "projectPath": "C:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
+        "projectPath": "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
         "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-        "outputPath": "C:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\obj\\",
+        "outputPath": "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

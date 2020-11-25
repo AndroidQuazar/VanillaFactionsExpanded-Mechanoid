@@ -18,5 +18,7 @@ namespace VFEMech
         public static TerrainDef VFE_FactoryPath;
         public static HediffDef VFE_FasterMovement;
         public static TerrainDef VFE_FactoryFloor;
+        public static ThingDef VFE_ConduitPylon;
+        public static ThingDef VFE_ComponentMechanoid;
     }
 }

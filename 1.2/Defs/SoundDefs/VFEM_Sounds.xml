@@ -21,5 +21,26 @@
     </subSounds>
   </SoundDef>
   
+  <SoundDef>
+    <defName>VFE_Supercomputer_Ambience</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStartSound>ScannerGroundPenetrating_Start</sustainStartSound>
+    <sustainStopSound>ScannerGroundPenetrating_Stop</sustainStopSound>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Interact/Work/Scanner/GroundPenetrating/ScannerGroundPenetrating_Ambience_Loop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>38</volumeRange>
+        <distRange>20~45</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
   
 </Defs>

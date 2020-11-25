@@ -658,8 +658,7 @@
 				<mote>Mote_PsychicConditionCauserEffect</mote>
 				<emissionInterval>150</emissionInterval>
 			</li>
-			<li Class="VFEMech.CompProperties_ActiveGameCondition">
-				<conditionDef>PsychicSuppression</conditionDef>
+			<li Class="VFEMech.CompProperties_ActiveGameCondition_PsychicSuppression">
 			</li>
 		</comps>
 		<killedLeavings>
@@ -715,8 +714,8 @@
 				<mote>Mote_PsychicConditionCauserEffect</mote>
 				<emissionInterval>150</emissionInterval>
 			</li>
-			<li Class="VFEMech.CompProperties_ActiveGameCondition">
-				<conditionDef>PsychicDrone</conditionDef>
+			<li Class="VFEMech.CompProperties_ActiveGameCondition_PsychicEmanation">
+				<droneLevelIncreaseInterval>150000</droneLevelIncreaseInterval>
 			</li>
 		</comps>
 		<killedLeavings>
@@ -1438,7 +1437,7 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<building>
 			<turretTopDrawSize>7</turretTopDrawSize>
-			<turretTopOffset>(0, 0.1)</turretTopOffset>
+			<turretTopOffset>(0, 0.2)</turretTopOffset>
 			<combatPower>650</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>VFE_Gun_ChargeRailgun</turretGunDef>
@@ -1475,9 +1474,6 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>16</muzzleFlashScale>
 				<requireLineOfSight>false</requireLineOfSight>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
 			</li>
 		</verbs>
 	</ThingDef>

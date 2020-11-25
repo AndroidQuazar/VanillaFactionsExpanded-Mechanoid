@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Cooking Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ThingDef ParentName="BuildingBase">
+							<defName>VFEM_ProvisionsPackagingFactory_Cannery</defName>
+							<label>Cannery</label>
+							<description>A medium-sized factory module that accepts food after being heated from a conveyor oven before sterilizing and canning it for use in later meals.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
+							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+							<graphicData>
+								<texPath>Things/Buildings/AutomatedCannery/AutomatedCannery</texPath>
+								<graphicClass>Graphic_Multi</graphicClass>
+								<drawSize>(6.5,5.5)</drawSize>
+								<shaderType>CutoutComplex</shaderType>
+								<damageData>
+									<cornerTL>Damage/Corner</cornerTL>
+									<cornerTR>Damage/Corner</cornerTR>
+									<cornerBL>Damage/Corner</cornerBL>
+									<cornerBR>Damage/Corner</cornerBR>
+								</damageData>
+							</graphicData>
+							<thingCategories>
+								<li>BuildingsProduction</li>
+							</thingCategories>
+							<costList>
+								<Steel>50</Steel>
+								<ComponentIndustrial>1</ComponentIndustrial>
+							</costList>
+							<building>
+								<wantsHopperAdjacent>true</wantsHopperAdjacent>
+								<buildingTags>
+									<li>Production</li>
+								</buildingTags>
+							</building>
+							<altitudeLayer>Building</altitudeLayer>
+							<rotatable>true</rotatable>
+							<neverMultiSelect>true</neverMultiSelect>
+							<uiIconScale>0.8</uiIconScale>
+							<fillPercent>0.5</fillPercent>
+							<placeWorkers>
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+							</placeWorkers>
+							<useHitPoints>True</useHitPoints>
+							<statBases>
+								<Mass>10</Mass>
+								<WorkToBuild>800</WorkToBuild>
+								<MaxHitPoints>100</MaxHitPoints>
+								<Flammability>1.0</Flammability>
+							</statBases>
+							<tickerType>Rare</tickerType>
+							<size>(5,4)</size>
+							<designationCategory>Production</designationCategory>
+							<passability>PassThroughOnly</passability>
+							<pathCost>70</pathCost>
+							<hasInteractionCell>True</hasInteractionCell>
+							<interactionCellOffset>(0,0,3)</interactionCellOffset>
+							<surfaceType>Item</surfaceType>
+							<!--<researchPrerequisites>
+								<li>VCE_SoupCooking</li>
+							</researchPrerequisites>-->
+							<comps>
+								<li Class="CompProperties_Power">
+									<compClass>CompPowerTrader</compClass>
+									<shortCircuitInRain>false</shortCircuitInRain>
+									<basePowerConsumption>100</basePowerConsumption>
+								</li>
+								<li Class="CompProperties_Flickable"/>
+								<li Class="ItemProcessor.CompProperties_ItemProcessor">
+									<buildingOnGraphic>Things/Buildings/AutomatedCannery/AutomatedCannery</buildingOnGraphic>
+									<numberOfInputs>1</numberOfInputs>
+									<acceptsNoneAsInput>false</acceptsNoneAsInput>
+									<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+									<ignoresIngredientLists>false</ignoresIngredientLists>
+									<isAutoMachine>true</isAutoMachine>
+									<isAutoDropper>true</isAutoDropper>
+									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+									<noPowerDestroysProgress>true</noPowerDestroysProgress>
+									<isMachinePausable>true</isMachinePausable>
+									<rareTicksToDestroy>10</rareTicksToDestroy>				
+									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
+									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+
+									<inputSlots>
+										<li>(-2,0,-2)</li>
+										<li>(2,0,-2)</li>
+
+									</inputSlots>
+
+
+
+								</li>
+
+							</comps>
+							<minifiedDef>MinifiedThing</minifiedDef>
+						</ThingDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_Cannery_Meats</defName>
+							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
+							<items>
+								<li>MeatRaw</li>
+							</items>	
+							<amount>
+								<li>20</li>
+							</amount>
+							<result>VCE_CannedMeat</result>	
+							<yield>20</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_Cannery_Produce</defName>
+							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
+							<items>
+								<li>PlantFoodRaw</li>
+							</items>	
+							<amount>
+								<li>20</li>
+							</amount>
+							<result>VCE_CannedProduce</result>	
+							<yield>20</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_Cannery_Eggs</defName>
+							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
+							<items>
+								<li>EggsUnfertilized</li>
+							</items>	
+							<amount>
+								<li>4</li>
+							</amount>
+							<result>VCE_CannedAP</result>	
+							<yield>20</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_Cannery_EggsFert</defName>
+							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
+							<items>
+								<li>EggsFertilized</li>
+							</items>	
+							<amount>
+								<li>4</li>
+							</amount>
+							<result>VCE_CannedAP</result>	
+							<yield>20</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Fishing Expanded</li>
+					</mods>
+
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<li Class="PatchOperationAdd"> 
+								<success>Always</success>
+								<xpath>/Defs</xpath>
+								<value>
+
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_ProvisionsPackagingFactory_Cannery_Fish</defName>
+										<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
+										<items>
+											<li>VCEF_RawFishCategory</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCE_CannedFish</result>	
+										<yield>20</yield>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+				
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Plants Expanded</li>
+					</mods>
+
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<li Class="PatchOperationAdd"> 
+								<success>Always</success>
+								<xpath>/Defs</xpath>
+								<value>
+
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_ProvisionsPackagingFactory_Cannery_Fruit</defName>
+										<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
+										<items>
+											<li>VCE_Fruit</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCE_CannedFruit</result>	
+										<yield>20</yield>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

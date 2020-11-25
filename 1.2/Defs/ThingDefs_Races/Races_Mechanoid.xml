@@ -291,6 +291,7 @@
 		<defName>VFE_Mech_Inquisitor</defName>
 		<label>inquisitor</label>
 		<description>A lumbering, slow, superheavy mechanoid meant for area denial and bunker busting via flamethrower. While the plume of flame itself is short ranged, encountering an Inquisitor at close range is ill-advised, as the back-mounted chemfuel tanks are programmed to explode upon a system malfunction.</description>
+		<thingClass>VFEMech.Mech_Inquisitor</thingClass>
 		<statBases>
 			<MoveSpeed>2.0</MoveSpeed>
 			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
@@ -332,7 +333,7 @@
 		<race>
 			<deathActionWorkerClass>VFEMech.DeathActionWorker_BigBombExplosion</deathActionWorkerClass>
 			<body>Lancer</body>
-			<baseHealthScale>0.72</baseHealthScale>
+			<baseHealthScale>1.4</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
@@ -526,12 +527,13 @@
 	<ThingDef ParentName="VFE_MechanoidWalker">
 		<defName>VFE_Mech_Carpenter</defName>
 		<label>carpenter</label>
-		<description>A swift, quadrupedal, beetle-like utility mechanoid meant to assemble and disassemble structures even in midst of heavy crossfire via a series of claws, blowtorches, and drills. Carpenter mechs analyze nearby structures for conflicting design parameters before skittering to dissemble them. Veterans from the mechanoid wars claim power plants and turrets that take days or even weeks to assemble to have vanished in minutes when approached by a carpenter.</description>
+		<description>A swift, quadrupedal, beetle-like utility mechanoid meant to assemble and disassemble structures even in midst of heavy crossfire via a series of claws, blowtorches, and drills. Carpenter mechs analyze nearby structures for conflicting design parameters before skittering to dissemble them. Veterans from the mechanoid wars claim power plants and turrets that take days or even weeks to assemble to have vanished in minutes when approached by a carpenter. This particular unit appears to be freshly manufactured and will operate more robustly.</description>
 		<statBases>
 			<MoveSpeed>2.5</MoveSpeed>
 			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.92</ArmorRating_Sharp>
 			<PsychicSensitivity>0.75</PsychicSensitivity>
+			<PawnTrapSpringChance>0</PawnTrapSpringChance>
 		</statBases>
 		<tools>
 			<li>
@@ -586,6 +588,10 @@
 				</li>
 			</lifeStageAges>
 		</race>
+		<butcherProducts Inherit='False'>
+			<Steel>30</Steel>
+			<Plasteel>10</Plasteel>
+		</butcherProducts>
 	</ThingDef>
 
 	<PawnKindDef ParentName="VFE_MechanoidKind">

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Genetic Rim</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_MechanoidBioChipRecipe</defName>
+							<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
+							<items>
+								<li>Steel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentSpacer</li>
+							</secondItems>
+							<thirdItems>
+								<li>Plasteel</li>
+							</thirdItems>
+							<fourthItems>
+								<li>Gold</li>
+							</fourthItems>
+							<amount>
+								<li>600</li>
+								<li>3</li>
+								<li>250</li>
+								<li>15</li>
+							</amount>
+							<result>GR_MechanoidInterfaceChip</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_GRCorpsesRecipe</defName>
+							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+							<items>
+								<li>GR_Corpses</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>VFEM_ProcessedMeat</result>	
+							<yield>30</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipe</defName>
+							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+							<items>
+								<li>CorpsesAnimal</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>GR_OrganicPulp</result>	
+							<yield>2</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipeFromHybrids</defName>
+							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+							<items>
+								<li>GR_Corpses</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>GR_OrganicPulp</result>	
+							<yield>2</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator_AgePills</defName>
+							<building>VFEM_MedicinalCompoundingFactory_MedicineGranulator</building>
+							<items>
+								<li>MedicineHerbal</li>
+							</items>	
+							<secondItems>
+								<li>Neutroamine</li>
+							</secondItems>
+							<thirdItems>
+								<li>PsychoidLeaves</li>
+							</thirdItems>
+							<amount>
+								<li>2</li>
+								<li>2</li>
+								<li>5</li>
+							</amount>
+							<result>GR_AgePills</result>	
+							<yield>2</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+					</value>
+				</li>
+
+
+
+
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

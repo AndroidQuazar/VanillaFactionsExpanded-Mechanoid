@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Animals</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_RedWoodRecipe</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+							<items>
+								<li>GU_RedWood</li>
+							</items>	
+							<amount>
+								<li>10</li>
+							</amount>
+							<result>Chemfuel</result>	
+							<yield>10</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_SkyChunksRecipe</defName>
+							<building>VFEM_ElectronicsFabricationFactory_SteelExtractor</building>
+							<items>
+								<li>StoneChunks</li>
+							</items>	
+							<amount>
+								<li>1</li>
+							</amount>
+							<result>AA_SkySteel</result>	
+							<yield>10</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+
+
+					</value>
+				</li>
+
+
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+
