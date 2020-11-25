@@ -68,6 +68,7 @@
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleAnyNonMechBuildings.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
+    <Compile Include="MechSettlement.cs" />
     <Compile Include="ModExtensions\MechanoidBaseExtension.cs" />
     <Compile Include="ModExtensions\MechanoidBaseIncidentExtension.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />

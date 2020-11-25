@@ -13,6 +13,9 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>1.0</baseChance>
     <minRefireDays>15</minRefireDays>
+    <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Frigate</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
     <modExtensions>
       <li Class="VFEMech.MechanoidBaseIncidentExtension">
         <baseToPlace>VFEM_Frigate</baseToPlace>
@@ -30,6 +33,9 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>1.0</baseChance>
     <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Destroyer</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
     <modExtensions>
       <li Class="VFEMech.MechanoidBaseIncidentExtension">
         <baseToPlace>VFEM_Destroyer</baseToPlace>
@@ -47,6 +53,9 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>1.0</baseChance>
     <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Cruiser</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
     <modExtensions>
       <li Class="VFEMech.MechanoidBaseIncidentExtension">
         <baseToPlace>VFEM_Cruiser</baseToPlace>
@@ -64,6 +73,9 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>1.0</baseChance>
     <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Troopship</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
     <modExtensions>
       <li Class="VFEMech.MechanoidBaseIncidentExtension">
         <baseToPlace>VFEM_Troopship</baseToPlace>
@@ -81,6 +93,9 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>1.0</baseChance>
     <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Carrier</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
     <modExtensions>
       <li Class="VFEMech.MechanoidBaseIncidentExtension">
         <baseToPlace>VFEM_Carrier</baseToPlace>

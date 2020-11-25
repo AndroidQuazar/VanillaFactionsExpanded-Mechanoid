@@ -9,8 +9,8 @@
     <pawnSingular>mechanoid</pawnSingular>
     <pawnsPlural>mechanoids</pawnsPlural>
     <listOrderPriority>75</listOrderPriority>
-    <requiredCountAtGameStart>0</requiredCountAtGameStart>
-    <maxCountAtGameStart>0</maxCountAtGameStart>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
     <settlementGenerationWeight>0</settlementGenerationWeight>
     <factionNameMaker>VFE_NamerFactionMechanoid</factionNameMaker>
     <factionIconPath>World/WorldObjects/Expanding/Sites/MechanoidBase</factionIconPath>
@@ -35,7 +35,7 @@
       </points>
     </raidLootValueFromPointsCurve>
     <humanlikeFaction>false</humanlikeFaction>
-    <hidden>false</hidden>
+    <hidden>true</hidden>
     <autoFlee>false</autoFlee>
     <canUseAvoidGrid>false</canUseAvoidGrid>
     <techLevel>Ultra</techLevel>
