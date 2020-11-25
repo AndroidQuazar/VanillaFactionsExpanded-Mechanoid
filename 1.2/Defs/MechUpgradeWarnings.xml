@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <VFEMech.MechUpgradeWarningDef>
+    <defName>firstWarning</defName>
+    <label>FIRST WARNING</label>
+    <description>The mechanoids are getting close to reaching critical mass before they receive an upgrade</description>
+    <presenceRequired>5000</presenceRequired>
+    <sendLetter>true</sendLetter>
+  </VFEMech.MechUpgradeWarningDef>
+</Defs>

@@ -24,8 +24,27 @@ namespace VFEMech
             settlement.Name = SettlementNameGenerator.GenerateSettlementName(settlement, objectDef.GetModExtension<MechanoidBaseExtension>().nameMaker);
             Find.WorldObjects.Add(settlement);
 
+            string letterLabel = this.def.letterLabel;
+            string letterText = this.def.letterText;
 
-            this.SendStandardLetter(def.letterLabel, this.def.letterText + "\n\n" + objectDef.description, def.letterDef, parms, settlement, faction.Name);
+            letterText += "\n\n" + objectDef.description;
+
+
+            this.SendStandardLetter(letterLabel, letterText, def.letterDef, parms, settlement, faction.Name);
+
+            int raisesPresence = objectDef.GetModExtension<MechanoidBaseExtension>().raisesPresence;
+            int presence       = MechUtils.MechPresence();
+            foreach (MechUpgradeWarningDef warningDef in DefDatabase<MechUpgradeWarningDef>.AllDefsListForReading)
+            {
+                if (presence >= warningDef.presenceRequired && (presence - raisesPresence) < warningDef.presenceRequired)
+                {
+                    Messages.Message(warningDef.description, MessageTypeDefOf.CautionInput);
+                    if (warningDef.sendLetter)
+                        Find.LetterStack.ReceiveLetter(warningDef.label, warningDef.description, LetterDefOf.NegativeEvent);
+                }
+            }
+
+
             return true;
         }
     }
