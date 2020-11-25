@@ -27,7 +27,6 @@
       <Flammability>0.5</Flammability>
       <Mass>5</Mass>
     </statBases>
-    <description>tbd</description>
     <drawerType>MapMeshAndRealTime</drawerType>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <fillPercent>0.15</fillPercent>
