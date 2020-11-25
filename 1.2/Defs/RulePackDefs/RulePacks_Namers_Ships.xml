@@ -14,7 +14,7 @@
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
 
-        <li>[shiptype]->frigate</li>
+        <li>shiptype->frigate</li>
 		
         <li>maybe_letter(p=3)-></li>
         <li>maybe_letter->[Letter]</li>
@@ -35,7 +35,7 @@
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
 
-        <li>[shiptype]->destroyer</li>
+        <li>shiptype->destroyer</li>
 		
         <li>maybe_letter(p=3)-></li>
         <li>maybe_letter->[Letter]</li>
@@ -56,7 +56,7 @@
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
 
-        <li>[shiptype]->cruiser</li>
+        <li>shiptype->cruiser</li>
 		
         <li>maybe_letter(p=3)-></li>
         <li>maybe_letter->[Letter]</li>
@@ -77,7 +77,7 @@
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
 
-        <li>[shiptype]->troopship</li>
+        <li>shiptype->troopship</li>
 		
         <li>maybe_letter(p=3)-></li>
         <li>maybe_letter->[Letter]</li>
@@ -98,7 +98,7 @@
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][maybe_letter]</li>
         <li>r_name->[shiptype] [maybe_letter][Digit][Digit][Digit][maybe_letter]</li>
 
-        <li>[shiptype]->carrier</li>
+        <li>shiptype->carrier</li>
 		
         <li>maybe_letter(p=3)-></li>
         <li>maybe_letter->[Letter]</li>

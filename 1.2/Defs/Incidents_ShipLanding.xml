@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- =========================== Good ============================-->
+
+  <IncidentDef>
+    <defName>VFEM_ShipLandFrigate</defName>
+    <label>ship landing frigate</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
+    <baseChance>1.0</baseChance>
+    <minRefireDays>15</minRefireDays>
+    <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Frigate</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
+    <modExtensions>
+      <li Class="VFEMech.MechanoidBaseIncidentExtension">
+        <baseToPlace>VFEM_Frigate</baseToPlace>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>VFEM_ShipLandDestroyer</defName>
+    <label>ship landing destroyer</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
+    <baseChance>1.0</baseChance>
+    <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Destroyer</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
+    <modExtensions>
+      <li Class="VFEMech.MechanoidBaseIncidentExtension">
+        <baseToPlace>VFEM_Destroyer</baseToPlace>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>VFEM_ShipLandCruiser</defName>
+    <label>ship landing cruiser</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
+    <baseChance>1.0</baseChance>
+    <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Cruiser</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
+    <modExtensions>
+      <li Class="VFEMech.MechanoidBaseIncidentExtension">
+        <baseToPlace>VFEM_Cruiser</baseToPlace>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>VFEM_ShipLandTroopship</defName>
+    <label>ship landing troopship</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
+    <baseChance>1.0</baseChance>
+    <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Troopship</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
+    <modExtensions>
+      <li Class="VFEMech.MechanoidBaseIncidentExtension">
+        <baseToPlace>VFEM_Troopship</baseToPlace>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>VFEM_ShipLandCarrier</defName>
+    <label>ship landing carrier</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
+    <baseChance>1.0</baseChance>
+    <minRefireDays>15</minRefireDays>
+        <letterDef>ThreatBig</letterDef>
+    <letterLabel>Ship Landed: Carrier</letterLabel>
+    <letterText>{0} sent a new ship to land on the planet.</letterText>
+    <modExtensions>
+      <li Class="VFEMech.MechanoidBaseIncidentExtension">
+        <baseToPlace>VFEM_Carrier</baseToPlace>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+</Defs>
