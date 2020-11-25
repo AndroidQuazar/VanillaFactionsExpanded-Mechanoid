@@ -24,6 +24,8 @@ namespace VFEMech
             settlement.Name = SettlementNameGenerator.GenerateSettlementName(settlement, objectDef.GetModExtension<MechanoidBaseExtension>().nameMaker);
             Find.WorldObjects.Add(settlement);
 
+
+            this.SendStandardLetter(def.letterLabel, this.def.letterText + "\n\n" + objectDef.description, def.letterDef, parms, settlement, faction.Name);
             return true;
         }
     }
