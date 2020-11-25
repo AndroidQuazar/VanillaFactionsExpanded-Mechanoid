@@ -91,7 +91,7 @@
     </placeWorkers>
     <designationHotKey>Misc2</designationHotKey>
     <researchPrerequisites>
-      <li>GunTurrets</li>
+      <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -220,7 +220,7 @@
       <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
     <researchPrerequisites>
-      <li>GunTurrets</li>
+      <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -349,7 +349,7 @@
       <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
     <researchPrerequisites>
-      <li>GunTurrets</li>
+      <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
   </ThingDef>
 
@@ -436,7 +436,7 @@
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
     <researchPrerequisites>
-      <li>Mortars</li>
+      <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
     <uiIconScale>1.1</uiIconScale>
   </ThingDef>

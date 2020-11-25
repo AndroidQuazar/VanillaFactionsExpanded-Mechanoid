@@ -47,13 +47,13 @@
     </comps>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <pathCost>14</pathCost>
-    <designationCategory>Power</designationCategory>
+    <designationCategory>VFE_Factory</designationCategory>
     <rotatable>false</rotatable>
 	<placeWorkers>
       <li>VFEMech.PlaceWorker_OnPowerConduit</li>
     </placeWorkers>
     <researchPrerequisites>
-      <li>MicroelectronicsBasics</li>
+      <li>VFE_FactoryBasics</li>
     </researchPrerequisites>
   </ThingDef>
 

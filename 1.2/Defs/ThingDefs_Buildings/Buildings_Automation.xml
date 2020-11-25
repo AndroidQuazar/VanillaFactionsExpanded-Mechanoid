@@ -3,7 +3,7 @@
 
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_HeavyHopper</defName>
-		<label>heavy hopper</label>
+		<label>factory hopper</label>
 		<description>Holds resources for use by automated machines.</description>
 		<thingClass>Building_Storage</thingClass>
 		<graphicData>
@@ -17,7 +17,7 @@
 				<cornerTR>Damage/Corner</cornerTR>
 			</damageData>
 		</graphicData>
-		<altitudeLayer>Building</altitudeLayer>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.5</fillPercent>
 		<pathCost>42</pathCost>
@@ -55,15 +55,15 @@
 		<tickerType>Never</tickerType>
 		<rotatable>true</rotatable>
 		<neverMultiSelect>true</neverMultiSelect>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<surfaceType>Item</surfaceType>
 		<!--<placeWorkers>
 			<li>PlaceWorker_NextToHopperAccepter</li>
 		</placeWorkers>-->
 		<constructEffect>ConstructMetal</constructEffect>
-		<researchPrerequisites>
-			<li>NutrientPaste</li>
-		</researchPrerequisites>
+    <researchPrerequisites>
+      <li>VFE_FactoryBasics</li>
+    </researchPrerequisites>
 		
 		<uiIconScale>0.85</uiIconScale>
 	</ThingDef>
@@ -77,7 +77,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/SteelExtractor/SteelExtractor</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4,8)</drawSize>
+			<drawSize>(5,8)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -116,7 +116,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(3,6)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -164,6 +164,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_ElectronicsFabricationFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 
@@ -177,7 +180,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/ComponentAssembler/ComponentAssembler</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(8.75,7)</drawSize>
+			<drawSize>(9,7)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -216,7 +219,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(7,5)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -264,6 +267,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_ElectronicsFabricationFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -274,7 +280,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/AdvancedAssembler/AdvancedAssembler</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(8.75,7.5)</drawSize>
+			<drawSize>(9,8)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -314,7 +320,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(7,6)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -362,6 +368,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_ElectronicsFabricationFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -372,7 +381,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/ChemfuelConverter/ChemfuelConverter</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(8.75,6)</drawSize>
+			<drawSize>(9,6)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -411,7 +420,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(7,4)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -454,6 +463,9 @@
 			</li>
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MunitionsandArmamentsFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -464,7 +476,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(8.75,8.75)</drawSize>
+			<drawSize>(9,9)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -503,7 +515,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(7,7)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -547,6 +559,9 @@
 			</li>
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MunitionsandArmamentsFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 
@@ -558,7 +573,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(8.75,7)</drawSize>
+			<drawSize>(9,7)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -597,7 +612,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(7,6)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -645,6 +660,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MunitionsandArmamentsFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_WearablesAndTextileFactory_TextileRecycler</defName>
@@ -654,7 +672,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/TextileRecycler/TextileRecycler</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4.5,8)</drawSize>
+			<drawSize>(5,8)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -693,7 +711,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(3,6)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -740,6 +758,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_WearablesandTextilesFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -750,7 +771,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/AutoLoom/AutoLoom</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(6.75,6.75)</drawSize>
+			<drawSize>(7,7)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -789,7 +810,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(5,5)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -836,6 +857,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_WearablesandTextilesFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -846,7 +870,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(6.5,6.5)</drawSize>
+			<drawSize>(7,7)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -885,7 +909,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(5,5)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -932,6 +956,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_WearablesandTextilesFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -942,7 +969,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/MeatGrinder/MeatGrinder</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4.5,8.5)</drawSize>
+			<drawSize>(5,9)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -981,7 +1008,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(3,7)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -1028,6 +1055,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_ProvisionsPackagingFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1038,7 +1068,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/ConveyorOven/ConveyorOven</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4.5,8)</drawSize>
+			<drawSize>(5,8)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -1077,7 +1107,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(3,6)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -1125,6 +1155,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_ProvisionsPackagingFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1135,7 +1168,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4.5,8.5)</drawSize>
+			<drawSize>(5,9)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -1174,7 +1207,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(3,7)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -1220,6 +1253,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MedicinalCompoundingFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1230,7 +1266,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/MedicineGranulator/MedicineGranulator</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(8.75,7.5)</drawSize>
+			<drawSize>(9,8)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -1270,7 +1306,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(7,6)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -1318,6 +1354,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MedicinalCompoundingFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1328,7 +1367,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/DrugPowderizer/DrugPowderizer</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4.5,8.5)</drawSize>
+			<drawSize>(5,9)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -1367,7 +1406,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(3,7)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -1413,6 +1452,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MedicinalCompoundingFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1423,7 +1465,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/AutomaticDrill/AutomaticDrill</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4.5,4.5)</drawSize>
+			<drawSize>(5,5)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -1488,7 +1530,7 @@
 			<li Class="CompProperties_Breakdownable"/>
 		</comps>
 
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<placeWorkers>
 			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
 		</placeWorkers>
@@ -1496,9 +1538,9 @@
 			<ai_chillDestination>false</ai_chillDestination>
 		</building>
 
-		<!--<researchPrerequisites>
-			<li>BiofuelRefining</li>
-		</researchPrerequisites>-->
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MasonryandMetallicsFactory</li>
+    </researchPrerequisites>
 
 	</ThingDef>
 	
@@ -1510,7 +1552,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/MasonrySaw/MasonrySaw</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4.5,6.5)</drawSize>
+			<drawSize>(5,7)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -1549,7 +1591,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(3,5)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -1595,6 +1637,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MasonryandMetallicsFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">
@@ -1605,7 +1650,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/PlasteelForge/PlasteelForge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(8.5,6.5)</drawSize>
+			<drawSize>(8,7)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -1644,7 +1689,7 @@
 		</statBases>
 		<tickerType>Rare</tickerType>
 		<size>(7,5)</size>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
@@ -1692,6 +1737,9 @@
 
 		</comps>
 		<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites Inherit='False'>
+      <li>VFE_MasonryandMetallicsFactory</li>
+    </researchPrerequisites>
 	</ThingDef>
 
 </Defs>

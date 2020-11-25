@@ -21,8 +21,9 @@
       <Steel>8</Steel>
     </costList>
     <researchPrerequisites>
-      <li>Smithing</li>
+      <li>VFE_FactoryBasics</li>
     </researchPrerequisites>
+    <designationCategory>VFE_Factory</designationCategory>
   </TerrainDef>
   
 
@@ -46,11 +47,12 @@
       <Steel>3</Steel>
     </costList>
     <researchPrerequisites>
-      <li>Smithing</li>
+      <li>VFE_FactoryBasics</li>
     </researchPrerequisites>
     <placeWorkers>
       <li>VFEMech.PlaceWorker_OnFactoryFloor</li>
     </placeWorkers>
+    <designationCategory>VFE_Factory</designationCategory>
   </TerrainDef>
   
 </Defs>
