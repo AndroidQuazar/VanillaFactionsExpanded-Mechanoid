@@ -60,9 +60,11 @@
     <Compile Include="HarmonyPatches\HarmonyInit.cs" />
     <Compile Include="Hediffs\Hediff_FasterMovement.cs" />
     <Compile Include="Hediffs\Hediff_MechanoidUplink.cs" />
+    <Compile Include="Incidents\MechLandIncidents.cs" />
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
     <Compile Include="ModExtensions\MechanoidBaseExtension.cs" />
+    <Compile Include="ModExtensions\MechanoidBaseIncidentExtension.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
     <Compile Include="PawnGroupMakerMech.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
