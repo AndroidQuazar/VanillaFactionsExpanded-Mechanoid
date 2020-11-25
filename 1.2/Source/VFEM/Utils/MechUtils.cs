@@ -12,6 +12,7 @@ namespace VFEMech
     [StaticConstructorOnStartup]
     public static class MechUtils
     {
+
         static MechUtils()
         {
             DefDatabase<ThingDef>.GetNamed("PsychicDroner", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 4));
@@ -29,8 +30,12 @@ namespace VFEMech
 
             DefDatabase<ThingDef>.GetNamed("MechCapsule", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 1));
         }
+
+        public static int MechPresence() => 
+            Find.World.worldObjects.Settlements.Sum(s => s.def.GetModExtension<MechanoidBaseExtension>()?.raisesPresence ?? 0);
+
         public static void CreateOrAddToAssaultLord(Pawn pawn, Lord lord = null, bool canKidnap = false, bool canTimeoutOrFlee = false, bool sappers = false,
-            bool useAvoidGridSmart = false, bool canSteal = false)
+                                                    bool useAvoidGridSmart = false, bool canSteal = false)
         {
             if (lord == null && pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction).Any((Pawn p) => p != pawn))
             {
