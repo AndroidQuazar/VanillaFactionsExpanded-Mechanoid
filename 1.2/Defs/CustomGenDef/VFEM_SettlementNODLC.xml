@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier1</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier1</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier2</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier2</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier3</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier3</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier4</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier4</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier5</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier5</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier6</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier6</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier7</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier7</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier8</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier8</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier9</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier9</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier10</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier10</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier11</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier11</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Carrier12</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Carrier12</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship1</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship1</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship2</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship2</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship3</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship3</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship4</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship4</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship5</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship5</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship6</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship6</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship7</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship7</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship8</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship8</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship9</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship9</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship10</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship10</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship11</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship11</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Troopship12</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Troopship12</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser1</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser1</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser2</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser2</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser3</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser3</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser4</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser4</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser5</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser5</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser6</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser6</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser7</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser7</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser8</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser8</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser9</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser9</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser10</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser10</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser11</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser11</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Cruiser12</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Cruiser12</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer1</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer1</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer2</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer2</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer3</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer3</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer4</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer4</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer5</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer5</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer6</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer6</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer7</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer7</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer8</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer8</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer9</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer9</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer10</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer10</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer11</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer11</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Destroyer12</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Destroyer12</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate1</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate1</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate2</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate2</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate3</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate3</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate4</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate4</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate5</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate5</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate6</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate6</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate7</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate7</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate8</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate8</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate9</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate9</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate10</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate10</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate11</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate11</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+
+  <KCSG.SettlementLayoutDef>
+    <defName>VFEM_Frigate12</defName>
+    <gridSize>(33,33)</gridSize>
+    <settlementSize>(33,33)</settlementSize>
+    <roomLayout>
+      <li>VFEM_Frigate12</li>
+    </roomLayout>
+  </KCSG.SettlementLayoutDef>
+</Defs>
