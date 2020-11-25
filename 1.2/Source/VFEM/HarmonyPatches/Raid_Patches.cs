@@ -49,6 +49,13 @@ namespace VFEM.HarmonyPatches
                 if (parms.faction.def == VFEMDefOf.VFE_Mechanoid && MechUtils.MechPresence() <= 0)
                     parms.faction = null;
             }
+
+            [HarmonyPostfix]
+            public static void Postfix(ref IncidentParms parms)
+            {
+                if (parms.faction.def == VFEMDefOf.VFE_Mechanoid)
+                    parms.points = MechUtils.MechPresence();
+            }
         }
 
         [HarmonyPatch(typeof(PawnGroupMaker), nameof(PawnGroupMaker.CanGenerateFrom))]
