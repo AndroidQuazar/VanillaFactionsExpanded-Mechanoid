@@ -870,7 +870,7 @@
 		<graphicData>
 			<texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(7,7)</drawSize>
+			<drawSize>(8,8)</drawSize>
 			<shaderType>CutoutComplex</shaderType>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
@@ -908,12 +908,12 @@
 			<Flammability>1.0</Flammability>
 		</statBases>
 		<tickerType>Rare</tickerType>
-		<size>(5,5)</size>
+		<size>(6,6)</size>
 		<designationCategory>VFE_Factory</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(-2,0,3)</interactionCellOffset>
+		<interactionCellOffset>(-2,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
@@ -945,8 +945,8 @@
 				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
 				<inputSlots>
-					<li>(2,0,-3)</li>
-					<li>(2,0,3)</li>
+					<li>(3,0,-3)</li>
+					<li>(3,0,4)</li>
 
 				</inputSlots>
 
