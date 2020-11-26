@@ -24,7 +24,7 @@
         <label>mechanoid frigate</label>
         <texture>World/WorldObjects/MechanoidShip</texture>
         <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipFrigate</expandingIconTexture>
-        <description>Frigate is the small ship usually used for ground recon.</description>
+        <description>Slightly increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
                 <raisesPresence>300</raisesPresence>
@@ -38,7 +38,7 @@
         <texture>World/WorldObjects/MechanoidShipDestroyerExpanding</texture>
         <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipDestroyer</expandingIconTexture>
         <label>mechanoid destroyer</label>
-        <description>Destroyer is somewhat bigger than a frigate, but it lacks short-range defenses. It does however host a variety of different auto-mortars.</description>
+        <description>Increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
                 <raisesPresence>800</raisesPresence>
@@ -52,7 +52,7 @@
         <texture>World/WorldObjects/MechanoidShipCruiserExpanding</texture>
         <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipCruiser</expandingIconTexture>
         <label>mechanoid cruiser</label>
-        <description>Cruiser is a large sized vessel with both defensive and offensive capabilities.</description>
+        <description>Greatly increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
                 <raisesPresence>1600</raisesPresence>
@@ -66,7 +66,7 @@
         <texture>World/WorldObjects/MechanoidShipTroopshipExpanding</texture>
         <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipTroopship</expandingIconTexture>
         <label>mechanoid troopship</label>
-        <description>Troopship is a medium sized shuttle with a large assortment of different mech fabricators and trooper transports.</description>
+        <description>Drastically increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
                 <raisesPresence>2000</raisesPresence>
@@ -80,7 +80,7 @@
         <texture>World/WorldObjects/MechanoidShip</texture>
         <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipCarrier</expandingIconTexture>
         <label>mechanoid carrier</label>
-        <description>The largest ship type in mechanoid arsenal, carrier is essentially described as a large mechanoid base of operations.</description>
+        <description>Tremendously increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
                 <raisesPresence>3200</raisesPresence>

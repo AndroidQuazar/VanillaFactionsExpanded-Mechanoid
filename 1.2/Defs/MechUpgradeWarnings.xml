@@ -3,9 +3,25 @@
 
   <VFEMech.MechUpgradeWarningDef>
     <defName>firstWarning</defName>
-    <label>FIRST WARNING</label>
-    <description>The mechanoids are getting close to reaching critical mass before they receive an upgrade</description>
-    <presenceRequired>5000</presenceRequired>
+    <label>Mechanoid upgrade warning</label>
+    <description>The mechanoids are closing to obtaining critical mass before they receive a hardware upgrade. Destroy their ships to stop them.</description>
+    <presenceRequired>3200</presenceRequired>
+    <sendLetter>true</sendLetter>
+  </VFEMech.MechUpgradeWarningDef>
+  
+  <VFEMech.MechUpgradeWarningDef>
+    <defName>secondWarning</defName>
+    <label>Mechanoid upgrade imminent</label>
+    <description>The mechanoids are going to obtain critical mass and receive a hardware upgrade soon if you don't destroy their ships.</description>
+    <presenceRequired>6400</presenceRequired>
+    <sendLetter>true</sendLetter>
+  </VFEMech.MechUpgradeWarningDef>
+  
+  <VFEMech.MechUpgradeWarningDef>
+    <defName>thirdWarning</defName>
+    <label>Mechanoid upgrade complete</label>
+    <description>The mechanoids obtained critical mass and received a hardware upgrade. Destroy mechanoid ships to lower their presence.</description>
+    <presenceRequired>9600</presenceRequired>
     <sendLetter>true</sendLetter>
   </VFEMech.MechUpgradeWarningDef>
 </Defs>

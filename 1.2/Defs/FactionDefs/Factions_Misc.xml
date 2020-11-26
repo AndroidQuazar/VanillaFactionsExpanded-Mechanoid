@@ -50,32 +50,134 @@
       </points>
     </maxPawnCostPerTotalPointsCurve>
     <pawnGroupMakers>
-      <li>
+      <li Class="VFEMech.PawnGroupMakerMech">
         <!-- All types-->
         <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
+          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Pikeman>5</VFE_Mech_Pikeman>
+          <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>10</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Heavy Weapons-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
+          <VFE_Mech_Lancer>3</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>3</VFE_Mech_Scyther>
+          <VFE_Mech_Pikeman>10</VFE_Mech_Pikeman>
+          <VFE_Mech_Inquisitor>3</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>3</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Infantry-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Inquisitor>5</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>10</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Anti-infantry-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Lancer>5</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>7</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li>
+        <!-- All types-->
+        <kindDef>Settlement</kindDef>
         <commonality>100</commonality>
         <options>
           <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
           <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
           <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
-          <VFE_Mech_Pikeman>10</VFE_Mech_Pikeman>
+          <VFE_Mech_Pikeman>5</VFE_Mech_Pikeman>
           <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
           <VFE_Mech_Knight>10</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li>
+        <!-- Vanilla-Only-->
+        <kindDef>Settlement</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
+          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Pikeman>5</VFE_Mech_Pikeman>
         </options>
       </li>
       <li Class="VFEMech.PawnGroupMakerMech">
         <!-- All types-->
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
-        <minimumPresence>32000</minimumPresence>
-        <maximumPresence>50000</maximumPresence>
+        <minimumPresence>9600</minimumPresence>
         <options>
-          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
-          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
-          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
-          <VFE_Mech_Pikeman>10</VFE_Mech_Pikeman>
-          <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
-          <VFE_Mech_Knight>10</VFE_Mech_Knight>
+          <VFE_Mech_AdvancedCentipede>10</VFE_Mech_AdvancedCentipede>
+          <VFE_Mech_AdvancedLancer>10</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>10</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedPikeman>10</VFE_Mech_AdvancedPikeman>
+          <VFE_Mech_AdvancedInquisitor>10</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>10</VFE_Mech_AdvancedKnight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Infantry-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>9600</minimumPresence>
+        <options>
+          <VFE_Mech_AdvancedLancer>10</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>10</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedInquisitor>5</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>10</VFE_Mech_AdvancedKnight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Heavy Weapons-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>9600</minimumPresence>
+        <options>
+          <VFE_Mech_AdvancedCentipede>10</VFE_Mech_AdvancedCentipede>
+          <VFE_Mech_AdvancedLancer>3</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>3</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedPikeman>10</VFE_Mech_AdvancedPikeman>
+          <VFE_Mech_AdvancedInquisitor>3</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>3</VFE_Mech_AdvancedKnight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- All kinds-->
+        <kindDef>Settlement</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>9600</minimumPresence>
+        <options>
+          <VFE_Mech_AdvancedCentipede>10</VFE_Mech_AdvancedCentipede>
+          <VFE_Mech_AdvancedLancer>10</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>10</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedPikeman>10</VFE_Mech_AdvancedPikeman>
+          <VFE_Mech_AdvancedInquisitor>10</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>10</VFE_Mech_AdvancedKnight>
         </options>
       </li>
     </pawnGroupMakers>
