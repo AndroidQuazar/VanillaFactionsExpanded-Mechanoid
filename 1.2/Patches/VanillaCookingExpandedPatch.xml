@@ -39,8 +39,10 @@
 								<li>BuildingsProduction</li>
 							</thingCategories>
 							<costList>
-								<Steel>50</Steel>
-								<ComponentIndustrial>1</ComponentIndustrial>
+								<Steel>400</Steel>
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>100</Plasteel>
+								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 							</costList>
 							<building>
 								<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -78,7 +80,7 @@
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
 									<shortCircuitInRain>false</shortCircuitInRain>
-									<basePowerConsumption>100</basePowerConsumption>
+									<basePowerConsumption>400</basePowerConsumption>
 								</li>
 								<li Class="CompProperties_Flickable"/>
 								<li Class="ItemProcessor.CompProperties_ItemProcessor">
