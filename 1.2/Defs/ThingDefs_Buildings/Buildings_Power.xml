@@ -4,6 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_ConduitPylon</defName>
     <label>conduit pylon</label>
+	<description>A small device that connects to power networks via conduit to extend the range at which electronics can connect to said conduits. Proper implementation can double the range at which electric current can be utilized.</description>
     <graphicData>
       <texPath>Things/Buildings/PowerPylon/PowerPylon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -26,7 +27,6 @@
       <Flammability>0.5</Flammability>
       <Mass>5</Mass>
     </statBases>
-    <description>tbd</description>
     <drawerType>MapMeshAndRealTime</drawerType>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <fillPercent>0.15</fillPercent>
