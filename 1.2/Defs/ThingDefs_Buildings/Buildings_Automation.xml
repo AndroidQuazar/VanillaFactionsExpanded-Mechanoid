@@ -49,7 +49,6 @@
 			<MaxHitPoints>100</MaxHitPoints>
 			<Flammability>0.5</Flammability>
 		</statBases>
-		<costList>
 			<Steel>15</Steel>
 		</costList>
 		<tickerType>Never</tickerType>
@@ -90,8 +89,9 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>450</Steel>
+			<ComponentIndustrial>10</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -129,7 +129,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>650</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -193,8 +193,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>550</Steel>
+			<Plasteel>120</Plasteel>
+			<ComponentIndustrial>16</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -293,8 +295,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>350</Steel>
+			<ComponentSpacer>8</ComponentSpacer>
+			<Gold>120</Gold>
+			<VFE_ComponentMechanoid>4</VFE_ComponentMechanoid>
 		</costList>
 		<placeWorkers>
 			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
@@ -333,7 +337,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>750</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -394,8 +398,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>400</Steel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+                        <Chemfuel>500</Chemfuel>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 		</costList>
 		<placeWorkers>
 			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
@@ -433,7 +439,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>300</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -489,8 +495,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>400</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 		</costList>
 		<placeWorkers>
 			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
@@ -528,7 +536,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>400</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -586,8 +594,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>350</Steel>
+			<Plasteel>250</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -625,7 +635,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -685,8 +695,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>400</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<Plasteel>30</Plasteel>
+                        <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -724,7 +736,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>450</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -784,8 +796,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>350</Steel>
+			<Component Spacer>2</ComponentSpacer>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -823,7 +837,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>425</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -883,8 +897,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Plasteel>400</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+			<Uranium>50</Uranium>
+			<VFE_ComponentMechanoid>4<VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -922,7 +938,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>800</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -982,8 +998,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>500</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<Silver>300</Silver>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -1021,7 +1039,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>400</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1081,8 +1099,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>350</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<Chemfuel>200</Chemfuel>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -1120,7 +1140,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1181,8 +1201,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>450</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<Neutroamine>100</Neutroamine>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -1220,7 +1242,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1279,8 +1301,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>400</Steel>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Neutroamine>300</Neutroamine>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 		</costList>
 		<placeWorkers>
 			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
@@ -1319,7 +1343,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>600</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1380,8 +1404,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Plasteel>300</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Steel>350</Steel>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -1419,7 +1445,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>550</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1494,14 +1520,16 @@
 		<tickerType>Normal</tickerType>
 		<size>(3,3)</size>
 		<costList>
-			<Steel>100</Steel>			
-			<ComponentIndustrial>3</ComponentIndustrial>
+			<Steel>450</Steel>			
+			<ComponentIndustrial>7</ComponentIndustrial>
+			<Plasteel>50</Plasteel>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 		</costList>
 		<uiIconScale>0.75</uiIconScale>
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>400</basePowerConsumption>
 				<shortCircuitInRain>false</shortCircuitInRain>
 			</li>
 			<li Class="CompProperties_Flickable"/>
@@ -1604,7 +1632,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1663,8 +1691,10 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<Steel>700</Steel>
+			<Plasteel>300</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+			<VFE_ComponentMechanoid>5</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -1702,7 +1732,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>800</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="ItemProcessor.CompProperties_ItemProcessor">
