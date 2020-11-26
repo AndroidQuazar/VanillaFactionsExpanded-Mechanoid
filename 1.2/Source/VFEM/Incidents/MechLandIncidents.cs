@@ -15,12 +15,27 @@ namespace VFEMech
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            WorldObjectDef objectDef = this.def.GetModExtension<MechanoidBaseIncidentExtension>().baseToPlace;
+            MechanoidBaseIncidentExtension incidentExtension = this.def.GetModExtension<MechanoidBaseIncidentExtension>();
+            WorldObjectDef objectDef = incidentExtension.baseToPlace;
 
             Settlement settlement = (Settlement)WorldObjectMaker.MakeWorldObject(objectDef);
             Faction faction = Find.FactionManager.FirstFactionOfDef(VFEMDefOf.VFE_Mechanoid);
             settlement.SetFaction(faction);
-            settlement.Tile = TileFinder.RandomSettlementTileFor(faction);
+
+            try
+            {
+                if (TileFinder.TryFindPassableTileWithTraversalDistance(Find.AnyPlayerHomeMap.Tile, incidentExtension.minDistance, incidentExtension.maxDistance, out int tile,
+                                                                        i => TileFinder.IsValidTileForNewSettlement(i)))
+                    settlement.Tile = tile;
+            }
+            catch
+            {
+                // ignored
+            }
+
+            if(settlement.Tile < 0)
+                settlement.Tile = TileFinder.RandomSettlementTileFor(faction);
+
             settlement.Name = SettlementNameGenerator.GenerateSettlementName(settlement, objectDef.GetModExtension<MechanoidBaseExtension>().nameMaker);
             Find.WorldObjects.Add(settlement);
 

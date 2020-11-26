@@ -19,6 +19,8 @@
     <modExtensions>
       <li Class="VFEMech.MechanoidBaseIncidentExtension">
         <baseToPlace>VFEM_Frigate</baseToPlace>
+        <minDistance>5</minDistance>
+        <maxDistance>20</maxDistance>
       </li>
     </modExtensions>
   </IncidentDef>

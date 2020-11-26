@@ -12,5 +12,7 @@ namespace VFEMech
     public class MechanoidBaseIncidentExtension : DefModExtension
     {
         public WorldObjectDef baseToPlace;
+        public int minDistance = 5;
+        public int maxDistance = 120;
     }
 }
