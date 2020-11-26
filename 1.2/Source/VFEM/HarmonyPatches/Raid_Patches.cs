@@ -53,7 +53,7 @@ namespace VFEM.HarmonyPatches
             [HarmonyPostfix]
             public static void Postfix(ref IncidentParms parms)
             {
-                if (parms.faction.def == VFEMDefOf.VFE_Mechanoid)
+                if (parms.faction?.def == VFEMDefOf.VFE_Mechanoid)
                     parms.points = MechUtils.MechPresence();
             }
         }
