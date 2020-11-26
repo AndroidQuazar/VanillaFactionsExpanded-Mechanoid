@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {}
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {}
   },
   "projects": {
-    "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
+        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
         "projectName": "VFEM",
-        "projectPath": "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
-        "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-        "outputPath": "c:\\GAMES\\Rimworld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\obj\\",
+        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\VFEM.csproj",
+        "packagesPath": "C:\\Users\\kylia\\.nuget\\packages\\",
+        "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaFactionsExpanded-Mechanoid\\1.2\\Source\\VFEM\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\Vova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kylia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

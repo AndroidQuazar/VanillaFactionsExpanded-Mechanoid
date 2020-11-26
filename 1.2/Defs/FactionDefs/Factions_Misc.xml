@@ -102,7 +102,7 @@
           <VFE_Mech_Knight>7</VFE_Mech_Knight>
         </options>
       </li>
-      <li>
+      <li Class="VFEMech.PawnGroupMakerMech">
         <!-- All types-->
         <kindDef>Settlement</kindDef>
         <commonality>100</commonality>
@@ -115,7 +115,7 @@
           <VFE_Mech_Knight>10</VFE_Mech_Knight>
         </options>
       </li>
-      <li>
+      <li Class="VFEMech.PawnGroupMakerMech">
         <!-- Vanilla-Only-->
         <kindDef>Settlement</kindDef>
         <commonality>100</commonality>

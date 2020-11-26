@@ -3,3 +3,8 @@ c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Deb
 c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csproj.CoreCompileInputs.cache
 c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csproj.CopyComplete
 c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Assemblies\VFEM.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.dll
