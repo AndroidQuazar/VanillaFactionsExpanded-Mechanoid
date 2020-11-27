@@ -2,7 +2,6 @@
 <Defs>
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier1</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -44,7 +43,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier2</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -86,7 +84,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier3</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -128,7 +125,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier4</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -170,7 +166,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier5</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -212,7 +207,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier6</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -254,7 +248,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier7</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -296,7 +289,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier8</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -338,7 +330,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier9</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -380,7 +371,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier10</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -422,7 +412,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier11</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -464,7 +453,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Carrier12</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -506,7 +494,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship1</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -548,7 +535,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship2</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -590,7 +576,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship3</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -632,7 +617,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship4</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -674,7 +658,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship5</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -716,7 +699,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship6</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -758,7 +740,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship7</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -800,7 +781,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship8</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -842,7 +822,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship9</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -884,7 +863,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship10</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -926,7 +904,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship11</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -968,7 +945,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Troopship12</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1010,7 +986,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser1</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1052,7 +1027,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser2</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1094,7 +1068,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser3</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1136,7 +1109,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser4</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1178,7 +1150,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser5</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1220,7 +1191,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser6</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1262,7 +1232,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser7</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1304,7 +1273,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser8</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1346,7 +1314,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser9</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1388,7 +1355,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser10</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1430,7 +1396,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser11</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1472,7 +1437,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Cruiser12</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1514,7 +1478,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer1</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1556,7 +1519,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer2</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1598,7 +1560,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer3</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1640,7 +1601,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer4</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1682,7 +1642,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer5</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1724,7 +1683,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer6</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1766,7 +1724,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer7</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1808,7 +1765,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer8</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1850,7 +1806,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer9</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1892,7 +1847,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer10</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1934,7 +1888,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer11</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1976,7 +1929,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Destroyer12</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2018,7 +1970,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate1</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2060,7 +2011,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate2</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2102,7 +2052,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate3</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2144,7 +2093,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate4</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2186,7 +2134,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate5</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2228,7 +2175,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate6</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2270,7 +2216,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate7</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2312,7 +2257,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate8</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2354,7 +2298,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate9</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2396,7 +2339,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate10</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2438,7 +2380,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate11</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2480,7 +2421,6 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_Frigate12</defName>
-    <roofOver>False</roofOver>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>

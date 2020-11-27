@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ScenarioDef Name="VFE_TheLoneScavenger">
@@ -10,66 +10,80 @@ Note: Since your starting character will lack some skills, this is a difficult s
     <scenario>
       <summary>A lone scrapper with a difficult choice. Difficult.</summary>
       <playerFaction>
-			<def>PlayerFaction</def>
-			<factionDef>PlayerColony</factionDef>
+        <def>PlayerFaction</def>
+        <factionDef>PlayerColony</factionDef>
       </playerFaction>
-		<parts>
-			<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
-				<def>ConfigPage_ConfigureStartingPawns</def>
-				<pawnCount>1</pawnCount>
-				<pawnChoiceCount>8</pawnChoiceCount>
-			</li>
-			<li Class="ScenPart_PlayerPawnsArriveMethod">
-				<def>PlayerPawnsArriveMethod</def>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>ComponentIndustrial</thingDef>
-				<count>20</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>ComponentSpacer</thingDef>
-				<count>6</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>MealSurvivalPack</thingDef>
-				<count>7</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>MedicineIndustrial</thingDef>
-				<count>15</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>Gun_BoltActionRifle</thingDef>
-			</li>
-			<li Class="ScenPart_StartingAnimal">
-				<def>StartingAnimal</def>
-				<count>1</count>
-				<bondToRandomPlayerPawnChance>1</bondToRandomPlayerPawnChance>
-			</li>
-			<li Class="ScenPart_ScatterThingsNearPlayerStart">
-				<def>ScatterThingsNearPlayerStart</def>
-				<thingDef>Steel</thingDef>
-				<count>450</count>
-			</li>
-			<li Class="ScenPart_ScatterThingsNearPlayerStart">
-				<def>ScatterThingsNearPlayerStart</def>
-				<thingDef>WoodLog</thingDef>
-				<count>300</count>
-			</li>
-			<li Class="ScenPart_GameStartDialog">
-				<def>GameStartDialog</def>
-				<text>Living from payday to payday, gathering valuable scrap around the planet and selling it to the highest bidder - usually junkyard owners, you never expected to come across something as valuable as a fully automated factory, utilising latest urbworld mechanoid tech.
+      <parts>
+        <li Class="KCSG.ScenPart_AddStartingStructure">
+          <def>VFEC_AddStartingStructure</def>
+          <structureLabel>An abandoned factory</structureLabel>
+          <nearMapCenter>True</nearMapCenter>
+          <unfogBuilding>True</unfogBuilding>
+          <chooseFrom>
+            <li>VFEM_Factory1</li>
+            <li>VFEM_Factory2</li>
+            <li>VFEM_Factory3</li>
+            <li>VFEM_Factory4</li>
+            <li>VFEM_Factory5</li>
+            <li>VFEM_Factory6</li>
+          </chooseFrom>
+        </li>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentSpacer</thingDef>
+          <count>6</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>7</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>15</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_BoltActionRifle</thingDef>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>1</count>
+          <bondToRandomPlayerPawnChance>1</bondToRandomPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>450</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Living from payday to payday, gathering valuable scrap around the planet and selling it to the highest bidder - usually junkyard owners, you never expected to come across something as valuable as a fully automated factory, utilising latest urbworld mechanoid tech.
 
 Now the choice is yours - will you disassemble it to not tempt so many raiders troubling these lands? Or will you bring the factory back to its former glory?
 </text>
-				<closeSound>GameStartSting</closeSound>
-			</li>
-		</parts>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+      </parts>
     </scenario>
   </ScenarioDef>
 
