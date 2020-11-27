@@ -581,7 +581,7 @@
     <graphicData>
       <texPath>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,7)</drawSize>
+      <drawSize>(9,8)</drawSize>
       <shaderType>CutoutComplex</shaderType>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
