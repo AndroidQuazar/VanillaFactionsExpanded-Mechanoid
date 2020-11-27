@@ -790,11 +790,9 @@
     </thingCategories>
     <costList>
       <Steel>350</Steel>
-      <Component Spacer=>
-        2
-        </ComponentSpacer>
-        <ComponentIndustrial>8</ComponentIndustrial>
-        <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+      <ComponentSpacer>2</ComponentSpacer>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
     </costList>
     <building>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -894,9 +892,7 @@
       <Plasteel>400</Plasteel>
       <ComponentSpacer>8</ComponentSpacer>
       <Uranium>50</Uranium>
-      <VFE_ComponentMechanoid>
-        4
-        <VFE_ComponentMechanoid>
+      <VFE_ComponentMechanoid>4</VFE_ComponentMechanoid>
     </costList>
     <building>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
@@ -1197,7 +1193,7 @@
       <Steel>450</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
       <Neutroamine>100</Neutroamine>
-      <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid
+      <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
     </costList>
     <building>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
