@@ -94,6 +94,7 @@
       <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -196,6 +197,7 @@
       <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -300,6 +302,7 @@
       <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
     </placeWorkers>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -402,6 +405,7 @@
       <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
     </placeWorkers>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -499,6 +503,7 @@
       <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
     </placeWorkers>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -595,6 +600,7 @@
       <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -695,6 +701,7 @@
       <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -795,6 +802,7 @@
       <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -895,6 +903,7 @@
       <VFE_ComponentMechanoid>4</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -995,6 +1004,7 @@
       <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -1095,6 +1105,7 @@
       <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -1196,6 +1207,7 @@
       <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -1298,6 +1310,7 @@
       <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
     </placeWorkers>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -1397,6 +1410,7 @@
       <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -1549,6 +1563,7 @@
       <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
     </placeWorkers>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <ai_chillDestination>false</ai_chillDestination>
     </building>
 
@@ -1583,6 +1598,7 @@
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
@@ -1682,6 +1698,7 @@
       <VFE_ComponentMechanoid>5</VFE_ComponentMechanoid>
     </costList>
     <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
         <li>Production</li>
