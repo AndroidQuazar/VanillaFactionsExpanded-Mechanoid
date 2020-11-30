@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Vanilla Factions Expanded - Mechanoids</name>
-	<author>Oskar Potocki, Kentington</author>
+	<author>Oskar Potocki, Kentington, Sarg Bjornson, erdelf, Kikohi, Chowder, Taranchuk</author>
 	<supportedVersions><li>1.2</li></supportedVersions>
 	<packageId>OskarPotocki.VFE.Mechanoid</packageId>
-	<description>placeholder yo
+	<description>Beta released 30/11/2020
+	
+	Copying, redistributing, uploading or sharing this mod will be reported as violation of intellectual property laws.
 </description>
     <modDependencies>
 		<li>
