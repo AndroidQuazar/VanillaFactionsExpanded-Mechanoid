@@ -9,8 +9,8 @@
     <thingClass>VFEMech.MissileSilo</thingClass>
     <graphicData>
       <texPath>Things/Buildings/LongRangeMissileLauncher/LongRangeMissileLauncher</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(4,5)</drawSize>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
     </graphicData>
     <size>(3,3)</size>
     <rotatable>false</rotatable>
@@ -20,12 +20,12 @@
     <fillPercent>1.0</fillPercent>
     <designationCategory>Misc</designationCategory>
     <canOverlapZones>false</canOverlapZones>
-    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <building>
       <hasFuelingPort>true</hasFuelingPort>
     </building>
     <statBases>
-      <MaxHitPoints>200</MaxHitPoints>
+      <MaxHitPoints>270</MaxHitPoints>
       <WorkToBuild>3000</WorkToBuild>
       <Flammability>0.5</Flammability>
     </statBases>
