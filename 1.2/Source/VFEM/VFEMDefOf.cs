@@ -20,5 +20,6 @@ namespace VFEMech
         public static TerrainDef VFE_FactoryFloor;
         public static ThingDef VFE_ConduitPylon;
         public static ThingDef VFE_ComponentMechanoid;
+        public static ThingDef VFEM_LongMote_DustPuff;
     }
 }
