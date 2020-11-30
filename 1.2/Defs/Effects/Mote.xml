@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="MoteBase">
+    <defName>VFEM_LongMote_DustPuff</defName>
+    <graphicData>
+      <texPath>Things/Mote/DustPuff</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>5</fadeInTime>
+      <solidTime>5</solidTime>
+      <fadeOutTime>8</fadeOutTime>
+    </mote>
+  </ThingDef>
+</Defs>

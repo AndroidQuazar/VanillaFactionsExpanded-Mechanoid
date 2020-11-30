@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <PawnsArrivalModeDef>
+    <defName>VFEM_MechShipArrival</defName>
+    <workerClass>VFEM.PawnsArrivalModeWorker_MechShipArrival</workerClass>
+    <textEnemy>A mechanoid ship from {0} landed nearby.</textEnemy>
+    <selectionWeightCurve>
+      <points>
+        <li>(100, 0)</li>
+        <li>(300, 0.2)</li>
+        <li>(700, 0.6)</li>
+      </points>
+    </selectionWeightCurve>
+  </PawnsArrivalModeDef>
+</Defs>
