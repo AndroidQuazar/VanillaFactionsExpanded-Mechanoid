@@ -33,8 +33,6 @@ namespace VFEMech
             IEnumerable<LocalTargetInfo> localTargetInfos = FindEnoughReservableThings(pawn, t.Position, th => defs.Contains(th.def)).
                 Select(th => new LocalTargetInfo(th));
 
-            Log.Message(string.Join(" | ", defs.Select(d => d.defName)));
-
             if (!localTargetInfos.Any())
                 return null;
 

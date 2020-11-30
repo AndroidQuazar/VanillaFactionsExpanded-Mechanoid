@@ -23,5 +23,7 @@ namespace VFEMech
         public static ThingDef VFEM_LongMote_DustPuff;
         public static ThingDef VFE_LongRangeMissileLauncher;
         public static JobDef VFEM_RefuelSilo;
+        public static ThingDef VFEM_MissileLeaving;
+        public static WorldObjectDef VFEM_TravelingMissile;
     }
 }
