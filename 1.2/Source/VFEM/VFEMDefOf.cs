@@ -21,5 +21,7 @@ namespace VFEMech
         public static ThingDef VFE_ConduitPylon;
         public static ThingDef VFE_ComponentMechanoid;
         public static ThingDef VFEM_LongMote_DustPuff;
+        public static ThingDef VFE_LongRangeMissileLauncher;
+        public static JobDef VFEM_RefuelSilo;
     }
 }

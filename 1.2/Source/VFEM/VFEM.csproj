@@ -69,6 +69,7 @@
     <Compile Include="Building\Supercomputer.cs" />
     <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
+    <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
     <Compile Include="LordJob_VFEMDefendBase.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicSuppression.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicEmanation.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleAnyNonMechBuildings.cs" />
     <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
+    <Compile Include="LongRangeMissile.cs" />
     <Compile Include="MechSettlement.cs" />
     <Compile Include="MechShipsRaid\DefModExtension_ShipsSpawnable.cs" />
     <Compile Include="MechShipsRaid\PawnsArrivalModeWorker_MechShipArrival.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="MapComponent_MechWarfare.cs" />
     <Compile Include="VFEMDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkGivers\WorkGiver_RefuelSilo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
@@ -121,5 +124,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
