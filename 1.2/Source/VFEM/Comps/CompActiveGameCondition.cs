@@ -25,7 +25,7 @@ namespace VFEMech
 		public GameCondition gameCondition;
 		public override void CompTick()
 		{
-			if (this.gameCondition == null)
+			if (this.gameCondition == null && this.parent?.Map != null)
             {
 
 				this.gameCondition = CreateConditionOn(this.parent.Map);
