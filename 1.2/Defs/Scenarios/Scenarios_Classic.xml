@@ -14,11 +14,18 @@ Note: Since your starting character will lack some skills, this is a difficult s
         <factionDef>PlayerColony</factionDef>
       </playerFaction>
       <parts>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+        </li>
         <li Class="KCSG.ScenPart_AddStartingStructure">
           <def>VFEC_AddStartingStructure</def>
           <structureLabel>An abandoned factory</structureLabel>
           <nearMapCenter>True</nearMapCenter>
-          <unfogBuilding>True</unfogBuilding>
           <chooseFrom>
             <li>VFEM_Factory1</li>
             <li>VFEM_Factory2</li>
@@ -27,14 +34,6 @@ Note: Since your starting character will lack some skills, this is a difficult s
             <li>VFEM_Factory5</li>
             <li>VFEM_Factory6</li>
           </chooseFrom>
-        </li>
-        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
-          <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>1</pawnCount>
-          <pawnChoiceCount>8</pawnChoiceCount>
-        </li>
-        <li Class="ScenPart_PlayerPawnsArriveMethod">
-          <def>PlayerPawnsArriveMethod</def>
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
@@ -60,8 +59,8 @@ Note: Since your starting character will lack some skills, this is a difficult s
           <def>StartingThing_Defined</def>
           <thingDef>Gun_BoltActionRifle</thingDef>
         </li>
-        <li Class="ScenPart_StartingAnimal">
-          <def>StartingAnimal</def>
+        <li Class="VFEM.ScenPart_StartingPackAnimal">
+          <def>VFEM_StartingPackAnimal</def>
           <count>1</count>
           <bondToRandomPlayerPawnChance>1</bondToRandomPlayerPawnChance>
         </li>
@@ -87,5 +86,12 @@ Now the choice is yours - will you disassemble it to not tempt so many raiders t
     </scenario>
   </ScenarioDef>
 
-
+  <ScenPartDef>
+    <defName>VFEM_StartingPackAnimal</defName>
+    <label>start with pack animal(s)</label>
+    <scenPartClass>VFEM.ScenPart_StartingPackAnimal</scenPartClass>
+    <category>StartingImportant</category>
+    <selectionWeight>1.0</selectionWeight>
+    <summaryPriority>305</summaryPriority>
+  </ScenPartDef>
 </Defs>

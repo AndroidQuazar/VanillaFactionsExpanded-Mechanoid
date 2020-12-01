@@ -106,6 +106,7 @@
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloorAndPath.cs" />
     <Compile Include="PawnGroupMakerMech.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
+    <Compile Include="ScenPart_StartingPackAnimal.cs" />
     <Compile Include="SymbolResolverShips.cs" />
     <Compile Include="Utils\MechUtils.cs" />
     <Compile Include="MapComponent_MechWarfare.cs" />
