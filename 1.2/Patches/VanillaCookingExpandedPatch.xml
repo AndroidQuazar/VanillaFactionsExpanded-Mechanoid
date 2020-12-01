@@ -26,7 +26,7 @@
 							<graphicData>
 								<texPath>Things/Buildings/AutomatedCannery/AutomatedCannery</texPath>
 								<graphicClass>Graphic_Multi</graphicClass>
-								<drawSize>(6.5,5.5)</drawSize>
+								<drawSize>(7,6)</drawSize>
 								<shaderType>CutoutComplex</shaderType>
 								<damageData>
 									<cornerTL>Damage/Corner</cornerTL>
