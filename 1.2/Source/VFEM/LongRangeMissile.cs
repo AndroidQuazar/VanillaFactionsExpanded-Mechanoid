@@ -11,6 +11,7 @@ namespace VFEMech
     using UnityEngine;
     using Verse;
     using Verse.AI.Group;
+    using Verse.Sound;
 
     public class MissileSilo : Building
     {
@@ -144,13 +145,13 @@ namespace VFEMech
 
             foreach (ThingDefCountClass tdcc in this.costList) 
                 tdcc.count = 0;
-
-            Messages.Message("FIRE", MessageTypeDefOf.PositiveEvent);
-
+            
             MissileLeaving obj = (MissileLeaving)SkyfallerMaker.MakeSkyfaller(VFEMDefOf.VFEM_MissileLeaving);
             obj.destinationTile = this.target.Tile;
             GenSpawn.Spawn(obj, this.TrueCenter().ToIntVec3(), this.Map);
             this.target = GlobalTargetInfo.Invalid;
+
+            SoundDefOf.ShipTakeoff.PlayOneShot(SoundInfo.OnCamera());
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
