@@ -22,6 +22,10 @@
     <fillPercent>0.5</fillPercent>
     <pathCost>42</pathCost>
     <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
     <building>
       <defaultStorageSettings>
         <priority>Important</priority>
@@ -44,9 +48,10 @@
     </inspectorTabs>
     <castEdgeShadows>true</castEdgeShadows>
     <statBases>
+      <Mass>10</Mass>
       <WorkToBuild>300</WorkToBuild>
       <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>0.5</Flammability>
+      <Flammability>0.3</Flammability>
     </statBases>
     <costList>
       <Steel>15</Steel>
@@ -99,8 +104,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/SteelExtractor/SteelExtractor_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -202,8 +211,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/ComponentAssembler/ComponentAssembler_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -307,8 +320,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/AdvancedAssembler/AdvancedAssembler_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -410,8 +427,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/ChemfuelConverter/ChemfuelConverter_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -508,8 +529,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -605,8 +630,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -706,8 +735,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/TextileRecycler/TextileRecycler_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -807,8 +840,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/AutoLoom/AutoLoom_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -908,8 +945,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -1009,8 +1050,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/MeatGrinder/MeatGrinder_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -1110,8 +1155,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/ConveyorOven/ConveyorOven_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -1212,8 +1261,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -1315,8 +1368,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/MedicineGranulator/MedicineGranulator_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -1415,8 +1472,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/DrugPowderizer/DrugPowderizer_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -1502,7 +1563,7 @@
     </graphicData>
     <castEdgeShadows>false</castEdgeShadows>
     <staticSunShadowHeight>0</staticSunShadowHeight>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
     <scatterableOnMapGen>false</scatterableOnMapGen>
@@ -1565,6 +1626,10 @@
     <building>
       <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <ai_chillDestination>false</ai_chillDestination>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/AutomaticDrill/AutomaticDrill_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
 
     <researchPrerequisites Inherit='False'>
@@ -1603,8 +1668,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/MasonrySaw/MasonrySaw_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>
@@ -1703,8 +1772,12 @@
       <buildingTags>
         <li>Production</li>
       </buildingTags>
+      <blueprintGraphicData>
+        <texPath>Things/Buildings/PlasteelForge/PlasteelForge_Blueprint</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+      </blueprintGraphicData>
     </building>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <rotatable>true</rotatable>
     <neverMultiSelect>true</neverMultiSelect>
     <uiIconScale>0.8</uiIconScale>

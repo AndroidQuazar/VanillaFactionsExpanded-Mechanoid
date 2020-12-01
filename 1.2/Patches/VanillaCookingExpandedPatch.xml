@@ -50,6 +50,10 @@
 								<buildingTags>
 									<li>Production</li>
 								</buildingTags>
+									<blueprintGraphicData>
+										<texPath>Things/Buildings/AutomatedCannery/AutomatedCannery_Blueprint</texPath>
+										<graphicClass>Graphic_Multi</graphicClass>
+									</blueprintGraphicData>
 							</building>
 							<altitudeLayer>Building</altitudeLayer>
 							<rotatable>true</rotatable>
