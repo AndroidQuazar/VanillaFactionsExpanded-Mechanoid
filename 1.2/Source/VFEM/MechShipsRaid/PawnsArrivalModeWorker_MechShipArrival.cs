@@ -38,7 +38,7 @@ namespace VFEM
             while (shre)
             {
                 rect = CellRect.CenteredOn(CellFinder.RandomNotEdgeCell(33, map), 33, 33);
-                if (rect.Cells.ToList().Any(i => !i.Walkable(map))) { }
+                if (rect.Cells.ToList().Any(i => !i.Walkable(map) || !i.GetTerrain(map).affordances.Contains(TerrainAffordanceDefOf.Medium))) { }
                 else return rect.CenterCell;
             }
             return IntVec3.Invalid;

@@ -116,7 +116,11 @@ namespace VFEM
             {
                 DropPodUtility.MakeDropPodAt(pods.ElementAt(i).Value, map, pods.ElementAt(i).Key);
             }
-            base.SpawnThreats(parms);
+
+            IncidentParms parms1 = parms;
+            RCellFinder.TryFindRandomCellNearWith(parms.spawnCenter, i => i.Walkable(map), map, out parms1.spawnCenter, 33, 40);
+
+            base.SpawnThreats(parms1);
             return null;
         }
 
@@ -152,7 +156,7 @@ namespace VFEM
             while (shre)
             {
                 rect = CellRect.CenteredOn(CellFinder.RandomNotEdgeCell(33, map), 33, 33);
-                if (rect.Cells.ToList().Any(i => !i.Walkable(map))) { }
+                if (rect.Cells.ToList().Any(i => !i.Walkable(map) || !i.GetTerrain(map).affordances.Contains(TerrainAffordanceDefOf.Medium))) { }
                 else return rect.CenterCell;
             }
             return IntVec3.Invalid;
