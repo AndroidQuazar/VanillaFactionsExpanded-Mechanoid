@@ -31,9 +31,9 @@ namespace VFEMech
         public override void MapComponentTick()
         {
             base.MapComponentTick();
-            if (TerrainPatches.factoryFloors.ContainsKey(map))
+            if (Find.TickManager.TicksGame % 10 == 0 && TerrainPatches.factoryFloors.TryGetValue(map, out HashSet<IntVec3> factoryFloors))
             {
-                foreach (var cell in TerrainPatches.factoryFloors[map])
+                foreach (var cell in factoryFloors)
                 {
                     foreach (var t in map.thingGrid.ThingsListAtFast(cell))
                     {

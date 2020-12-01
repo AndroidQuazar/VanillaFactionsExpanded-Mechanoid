@@ -13,7 +13,7 @@ namespace VFEMech
     {
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            var resourceDef = DefDatabase<ThingDef>.AllDefs.Where(x => x.IsStuff);
+            var resourceDef = DefDatabase<ThingDef>.AllDefs.Where(x => x.IsStuff && x.BaseMarketValue <= 10);
             var resource = ThingMaker.MakeThing(resourceDef.RandomElement());
             resource.stackCount = 130;
             var map = this.Map;
