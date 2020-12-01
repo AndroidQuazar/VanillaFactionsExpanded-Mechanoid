@@ -14,6 +14,7 @@
     </graphicData>
     <size>(3,3)</size>
     <rotatable>false</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <castEdgeShadows>true</castEdgeShadows>
