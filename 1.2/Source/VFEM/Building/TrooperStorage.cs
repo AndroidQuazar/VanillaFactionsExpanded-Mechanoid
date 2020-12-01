@@ -20,7 +20,7 @@ namespace VFEMech
                 ReleaseTroopers();
             }
         }
-        public bool CanSpawnTroopers => !troopersAreReleased;
+        public bool CanSpawnTroopers => !troopersAreReleased && this.Map != null;
         public void ReleaseTroopers()
         {
             var faction = Find.FactionManager.FirstFactionOfDef(VFEMDefOf.VFE_Mechanoid);

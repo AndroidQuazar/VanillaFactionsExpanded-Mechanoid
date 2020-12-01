@@ -65,7 +65,6 @@
     <Compile Include="Building\HullRepairModule.cs" />
     <Compile Include="Building\CargoHold.cs" />
     <Compile Include="Building\Building_MechTurretGun.cs" />
-    <Compile Include="Building\FactoryPath.cs" />
     <Compile Include="Building\Supercomputer.cs" />
     <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
