@@ -32,9 +32,10 @@ namespace VFEMech
         {
             if (mapPawns.TryGetValue(map, out MapPawns mapPawns2)) 
             {
-                if (mapPawns2.lastTickCheck + 60 > Find.TickManager.TicksAbs)
+                if (Find.TickManager.TicksAbs > mapPawns2.lastTickCheck + 60)
                 {
                     mapPawns2.pawns = map.mapPawns.AllPawns.Where(x => x.Faction == faction && x.kindDef.HasModExtension<UplinkCompatible>()).ToList();
+                    mapPawns2.lastTickCheck = Find.TickManager.TicksAbs;
                 }
                 return mapPawns2.pawns;
             }
@@ -57,7 +58,6 @@ namespace VFEMech
                         var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(VFEMDefOf.VFE_MechanoidUplink);
                         if (hediff == null)
                         {
-                            Log.Message("Adding MechanoidUplink hediff to " + pawn);
                             var mechUplinkHediff = HediffMaker.MakeHediff(VFEMDefOf.VFE_MechanoidUplink, pawn) as Hediff_MechanoidUplink;
                             mechUplinkHediff.mechanoidUplink = this;
                             pawn.health.AddHediff(mechUplinkHediff);
