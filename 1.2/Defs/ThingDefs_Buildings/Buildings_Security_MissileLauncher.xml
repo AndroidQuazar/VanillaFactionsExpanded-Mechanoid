@@ -63,56 +63,68 @@
       <shadowSize>(2, 2)</shadowSize>
       <anticipationSound>DropPod_Leaving</anticipationSound>
       <anticipationSoundTicks>-10</anticipationSoundTicks>
-      <ticksToImpactRange><min>-40</min><max>-15</max></ticksToImpactRange>
+      <ticksToImpactRange>
+        <min>-40</min>
+        <max>-15</max>
+      </ticksToImpactRange>
+      <speedCurve>
+        <points>
+          <li>0, 0</li>
+          <li>0.2, 0.1</li>
+          <li>0.4, 0.2</li>
+          <li>0.5, 0.7</li>
+          <li>1, 1</li>
+        </points>
+      </speedCurve>
     </skyfaller>
   </ThingDef>
 
   <!-->ThingDef ParentName="BuildingBase">
-    <defName>VFE_LongRangeMissile</defName>
-    <label>long range missile</label>
-    <description>tbd</description>
-    <graphicData>
-      <texPath>Things/Buildings/LongRangeMissile/LongRangeMissile</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2,2)</drawSize>
-    </graphicData>
-    <size>(1,1)</size>
-    <rotatable>false</rotatable>
-    <tickerType>Normal</tickerType>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <castEdgeShadows>false</castEdgeShadows>
-    <designationHotKey>Misc12</designationHotKey>
-    <fillPercent>0.5</fillPercent>
-    <designationCategory>Misc</designationCategory>
-    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <statBases>
-      <MaxHitPoints>250</MaxHitPoints>
-      <WorkToBuild>1600</WorkToBuild>
-      <Flammability>0.5</Flammability>
-    </statBases>
-    <costList>
-      <Plasteel>45</Plasteel>
-      <ComponentSpacer>3</ComponentSpacer>
-      <Uranium>45</Uranium>
-    </costList>
-    <comps>
-      <li Class="CompProperties_Transporter">
-        <restEffectiveness>0.8</restEffectiveness>
-      </li>
-      <li Class="VFEMech.CompProperties_CustomLaunchable">
-        <skyfallerLeaving>DropPodLeaving</skyfallerLeaving>
-      </li>
-    </comps>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_NeedsCustomFuelingPort</li>
-      <li>PlaceWorker_NotUnderRoof</li>
-    </placeWorkers>
-    <researchPrerequisites>
-      <li>VFE_AutomatedDefensiveMeasures</li>
-    </researchPrerequisites>
-    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
-    <uiIconScale>0.65</uiIconScale>
-  </ThingDef-->
+  <defName>VFE_LongRangeMissile</defName>
+  <label>long range missile</label>
+  <description>tbd</description>
+  <graphicData>
+    <texPath>Things/Buildings/LongRangeMissile/LongRangeMissile</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+    <drawSize>(2,2)</drawSize>
+  </graphicData>
+  <size>(1,1)</size>
+  <rotatable>false</rotatable>
+  <tickerType>Normal</tickerType>
+  <altitudeLayer>BuildingOnTop</altitudeLayer>
+  <passability>PassThroughOnly</passability>
+  <castEdgeShadows>false</castEdgeShadows>
+  <designationHotKey>Misc12</designationHotKey>
+  <fillPercent>0.5</fillPercent>
+  <designationCategory>Misc</designationCategory>
+  <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+  <statBases>
+    <MaxHitPoints>250</MaxHitPoints>
+    <WorkToBuild>1600</WorkToBuild>
+    <Flammability>0.5</Flammability>
+  </statBases>
+  <costList>
+    <Plasteel>45</Plasteel>
+    <ComponentSpacer>3</ComponentSpacer>
+    <Uranium>45</Uranium>
+  </costList>
+  <comps>
+    <li Class="CompProperties_Transporter">
+      <restEffectiveness>0.8</restEffectiveness>
+    </li>
+    <li Class="VFEMech.CompProperties_CustomLaunchable">
+      <skyfallerLeaving>DropPodLeaving</skyfallerLeaving>
+    </li>
+  </comps>
+  <placeWorkers>
+    <li>VFEMech.PlaceWorker_NeedsCustomFuelingPort</li>
+    <li>PlaceWorker_NotUnderRoof</li>
+  </placeWorkers>
+  <researchPrerequisites>
+    <li>VFE_AutomatedDefensiveMeasures</li>
+  </researchPrerequisites>
+  <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  <uiIconScale>0.65</uiIconScale>
+</ThingDef-->
 
 </Defs>

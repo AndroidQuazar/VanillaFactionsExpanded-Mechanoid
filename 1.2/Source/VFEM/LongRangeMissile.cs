@@ -220,7 +220,7 @@ namespace VFEMech
         }
     }
 
-    public class MissileLeaving : Skyfaller, IActiveDropPod, IThingHolder
+    public class MissileLeaving : Skyfaller, IActiveDropPod
     {
         public int destinationTile = -1;
 
@@ -243,7 +243,7 @@ namespace VFEMech
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            this.def.skyfaller.xPositionCurve = null;
+            this.angle = 0f;
         }
 
         public override void ExposeData()
@@ -252,7 +252,53 @@ namespace VFEMech
             Scribe_Values.Look(ref this.destinationTile, "destinationTile", 0);
             Scribe_Values.Look(ref this.alreadyLeft, "alreadyLeft", defaultValue: false);
         }
-        
+
+        public override void Tick()
+        {
+            base.Tick();
+
+            Vector3 drawPos = GetDrawPosForMotes();
+
+            if (this.Map == null || !drawPos.InBounds(Map))
+                return;
+
+
+
+            MoteMaker.ThrowSmoke(drawPos, Map, 2f);
+
+            MoteThrown heatGlow = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_HeatGlow);
+            heatGlow.Scale         = Rand.Range(4f, 6f) * 2f;
+            heatGlow.rotationRate  = Rand.Range(-3f, 3f);
+            heatGlow.exactPosition = drawPos;
+            heatGlow.SetVelocity(Rand.Range(0, 360), 0.12f);
+            GenSpawn.Spawn(heatGlow, drawPos.ToIntVec3(), Map);
+
+        }
+
+        private Vector3 GetDrawPosForMotes()
+        {
+            int ticksToImpactPrediction = this.ticksToImpact + GenTicks.TicksPerRealSecond/2;
+
+
+            float timeInAnim = (float) ticksToImpactPrediction / 220f;
+
+
+            float currentSpeed = def.skyfaller.speedCurve.Evaluate(timeInAnim) * this.def.skyfaller.speed;
+
+            switch (def.skyfaller.movementType)
+            {
+                case SkyfallerMovementType.Accelerate:
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+                case SkyfallerMovementType.ConstantSpeed:
+                    return SkyfallerDrawPosUtility.DrawPos_ConstantSpeed(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+                case SkyfallerMovementType.Decelerate:
+                    return SkyfallerDrawPosUtility.DrawPos_Decelerate(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+                default:
+                    Log.ErrorOnce("SkyfallerMovementType not handled: " + def.skyfaller.movementType, thingIDNumber ^ 0x7424EBC7);
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+            }
+        }
+
         protected override void LeaveMap()
         {
             if (this.alreadyLeft || !this.createWorldObject)
@@ -262,7 +308,7 @@ namespace VFEMech
             }
             if (this.destinationTile < 0)
             {
-                Log.Error("Drop pod left the map, but its destination tile is " + this.destinationTile);
+                Log.Error("Missile left the map, but its destination tile is " + this.destinationTile);
                 this.Destroy();
                 return;
             }
