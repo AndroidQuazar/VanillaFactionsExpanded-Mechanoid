@@ -79,6 +79,26 @@
     </skyfaller>
   </ThingDef>
 
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>VFEM_MissileIncoming</defName>
+    <label>missile (incoming)</label>
+    <thingClass>VFEMech.MissileIncoming</thingClass>
+    <graphicData>
+      <texPath>World/Skyfaller_LongRangeMissile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>1.9</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Accelerate</movementType>
+      <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
+      <shadowSize>(2, 2)</shadowSize>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <anticipationSoundTicks>100</anticipationSoundTicks>
+      <motesPerCell>0</motesPerCell>
+    </skyfaller>
+  </ThingDef>
+
   <!-->ThingDef ParentName="BuildingBase">
   <defName>VFE_LongRangeMissile</defName>
   <label>long range missile</label>

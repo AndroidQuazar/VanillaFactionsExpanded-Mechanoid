@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace VFEMech
 {
+    using System.Diagnostics;
+    using System.Reflection;
+    using HarmonyLib;
     using RimWorld;
     using RimWorld.Planet;
     using UnityEngine;
@@ -258,21 +261,21 @@ namespace VFEMech
         {
             base.Tick();
 
-            Vector3 drawPos = GetDrawPosForMotes();
+            Vector3 drawPos = this.GetDrawPosForMotes();
 
-            if (this.Map == null || !drawPos.InBounds(Map))
+            if (this.Map == null || !drawPos.InBounds(this.Map))
                 return;
 
 
 
-            MoteMaker.ThrowSmoke(drawPos, Map, 2f);
+            MoteMaker.ThrowSmoke(drawPos, this.Map, 2f);
 
             MoteThrown heatGlow = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_HeatGlow);
             heatGlow.Scale         = Rand.Range(4f, 6f) * 2f;
             heatGlow.rotationRate  = Rand.Range(-3f, 3f);
             heatGlow.exactPosition = drawPos;
             heatGlow.SetVelocity(Rand.Range(0, 360), 0.12f);
-            GenSpawn.Spawn(heatGlow, drawPos.ToIntVec3(), Map);
+            GenSpawn.Spawn(heatGlow, drawPos.ToIntVec3(), this.Map);
 
         }
 
@@ -284,19 +287,19 @@ namespace VFEMech
             float timeInAnim = (float) ticksToImpactPrediction / 220f;
 
 
-            float currentSpeed = def.skyfaller.speedCurve.Evaluate(timeInAnim) * this.def.skyfaller.speed;
+            float currentSpeed = this.def.skyfaller.speedCurve.Evaluate(timeInAnim) * this.def.skyfaller.speed;
 
-            switch (def.skyfaller.movementType)
+            switch (this.def.skyfaller.movementType)
             {
                 case SkyfallerMovementType.Accelerate:
-                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
                 case SkyfallerMovementType.ConstantSpeed:
-                    return SkyfallerDrawPosUtility.DrawPos_ConstantSpeed(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+                    return SkyfallerDrawPosUtility.DrawPos_ConstantSpeed(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
                 case SkyfallerMovementType.Decelerate:
-                    return SkyfallerDrawPosUtility.DrawPos_Decelerate(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+                    return SkyfallerDrawPosUtility.DrawPos_Decelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
                 default:
-                    Log.ErrorOnce("SkyfallerMovementType not handled: " + def.skyfaller.movementType, thingIDNumber ^ 0x7424EBC7);
-                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, angle, currentSpeed);
+                    Log.ErrorOnce("SkyfallerMovementType not handled: " + this.def.skyfaller.movementType, this.thingIDNumber ^ 0x7424EBC7);
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
             }
         }
 
@@ -413,8 +416,16 @@ namespace VFEMech
             this.arrived = true;
 
             WorldObject worldObject = Find.World.worldObjects.WorldObjectAt<WorldObject>(this.destinationTile);
-            worldObject?.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
-            worldObject?.Destroy();
+            if (worldObject is MapParent mp && mp.HasMap)
+            {
+                GenSpawn.Spawn(SkyfallerMaker.MakeSkyfaller(VFEMDefOf.VFEM_MissileIncoming), mp.Map.Center, mp.Map);
+            }
+            else
+            {
+                Find.World.grid[this.destinationTile].hilliness = Hilliness.Impassable;
+                worldObject?.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
+                worldObject?.Destroy();
+            }
             this.Destroy();
         }
 
@@ -426,4 +437,78 @@ namespace VFEMech
         public ThingOwner GetDirectlyHeldThings() => null;
     }
 
+    public class MissileIncoming : Skyfaller, IActiveDropPod
+    {
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            this.angle = 0f;
+        }
+
+        public ActiveDropPodInfo Contents
+        {
+            get => ((ActiveDropPod) this.innerContainer[0]).Contents;
+            set => ((ActiveDropPod) this.innerContainer[0]).Contents = value;
+        }
+
+        protected override void SpawnThings()
+        {
+        }
+
+        protected override void Impact()
+        {
+            IntVec3 loc = this.Map.Center;
+
+            //Find.CameraDriver.SetRootPosAndSize(rootPos: Find.CurrentMap.rememberedCameraPos.rootPos, rootSize: 50f);
+            //Find.CameraDriver.JumpToCurrentMapLoc(cell: loc);
+
+            int radius = Mathf.CeilToInt(this.Map.Size.x / 2f - 5f);
+
+            CellRect cells = CellRect.CenteredOn(loc, radius);
+
+            if (Find.CurrentMap == this.Map)
+                Find.CameraDriver.shaker.DoShake(mag: 20f);
+
+            Map?.Parent.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
+
+            AccessTools.FieldRef<MoteCounter, int> moteCount = AccessTools.FieldRefAccess<MoteCounter, int>(fieldName: "moteCount");
+
+            DamageInfo destroyInfo = new DamageInfo(DamageDefOf.Bomb, float.MaxValue, float.MaxValue, instigator: this);
+            DamageInfo damageInfo  = new DamageInfo(DamageDefOf.Bomb, 500,            1f,             instigator: this);
+
+
+            
+            int       x  = 0;
+            foreach (IntVec3 intVec3 in cells)
+            {
+                x++;
+                if (x % 50 == 0)
+                {
+                    moteCount(this.Map.moteCounter) = 0;
+                        Vector3 vc = intVec3.ToVector3();
+                    MoteMaker.ThrowMicroSparks(vc, this.Map);
+                    MoteMaker.ThrowHeatGlow(intVec3, this.Map, size: 3f);
+                    MoteMaker.ThrowFireGlow(intVec3, this.Map, size: 5f);
+                    MoteMaker.ThrowLightningGlow(vc, this.Map, size: 10f);
+                    MoteMaker.ThrowMetaPuff(vc, this.Map);
+                }
+                List<Thing> things = this.Map.thingGrid.ThingsListAtFast(intVec3);
+                
+                for (int i = 0; i < things.Count; i++)
+                {
+                    Thing thing = things[i];
+                    if (thing is Pawn || thing.def.IsEdifice() && !(thing.def.building?.isNaturalRock ?? false))
+                        thing.TakeDamage(damageInfo);
+                }
+            }
+
+            FloodFillerFog.FloodUnfog(loc, this.Map);
+            GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this);
+            this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
+            this.Map.TileInfo.hilliness = Hilliness.Impassable;
+
+
+            this.Destroy();
+        }
+    }
 }
