@@ -819,7 +819,7 @@
 		<result>MealSurvivalPack</result>	
 		<yield>1</yield>
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
-		<resultSpecialIcon>Things/Item/Meal/SurvivalPack</resultSpecialIcon>
+		<resultSpecialIcon>Things/Item/Meal/SurvivalPack/SurvivalPack_b</resultSpecialIcon>
 		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
