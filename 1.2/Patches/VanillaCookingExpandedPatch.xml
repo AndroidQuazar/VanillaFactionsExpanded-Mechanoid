@@ -45,6 +45,7 @@
 								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 							</costList>
 							<building>
+								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
 								<wantsHopperAdjacent>true</wantsHopperAdjacent>
 								<buildingTags>
 									<li>Production</li>
@@ -67,15 +68,13 @@
 							</statBases>
 							<tickerType>Rare</tickerType>
 							<size>(5,4)</size>
-							<designationCategory>Production</designationCategory>
+							<designationCategory>VFE_Factory</designationCategory>
 							<passability>PassThroughOnly</passability>
 							<pathCost>70</pathCost>
 							<hasInteractionCell>True</hasInteractionCell>
 							<interactionCellOffset>(0,0,3)</interactionCellOffset>
 							<surfaceType>Item</surfaceType>
-							<!--<researchPrerequisites>
-								<li>VCE_SoupCooking</li>
-							</researchPrerequisites>-->
+							
 							<comps>
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
@@ -113,6 +112,9 @@
 								</li>
 
 							</comps>
+							<researchPrerequisites Inherit='False'>
+							  <li>VFE_ProvisionsPackagingFactory</li>
+							</researchPrerequisites>
 							<minifiedDef>MinifiedThing</minifiedDef>
 						</ThingDef>
 
