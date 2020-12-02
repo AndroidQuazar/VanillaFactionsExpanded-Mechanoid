@@ -30,13 +30,7 @@
       <defaultStorageSettings>
         <priority>Important</priority>
         <filter>
-          <categories>
-            <li>FoodRaw</li>
-          </categories>
-          <disallowedThingDefs>
-            <li>Meat_Human</li>
-            <li>Meat_Megaspider</li>
-          </disallowedThingDefs>
+          
         </filter>
       </defaultStorageSettings>
       <buildingTags>
@@ -146,12 +140,12 @@
         <buildingOnGraphic>Things/Buildings/SteelExtractor/SteelExtractor</buildingOnGraphic>
         <numberOfInputs>1</numberOfInputs>
         <acceptsNoneAsInput>false</acceptsNoneAsInput>
-
         <transfersIngredientLists>false</transfersIngredientLists>
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
         <isMachinePausable>true</isMachinePausable>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <rareTicksToDestroy>10</rareTicksToDestroy>
@@ -246,7 +240,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>100</basePowerConsumption>
+        <basePowerConsumption>500</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -257,6 +251,7 @@
         <transfersIngredientLists>false</transfersIngredientLists>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <isMachinePausable>true</isMachinePausable>
@@ -363,6 +358,7 @@
         <transfersIngredientLists>false</transfersIngredientLists>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
@@ -473,6 +469,7 @@
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <isMachinePausable>true</isMachinePausable>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <rareTicksToDestroy>10</rareTicksToDestroy>
         <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
         <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
@@ -575,6 +572,7 @@
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <isMachinePausable>true</isMachinePausable>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <rareTicksToDestroy>10</rareTicksToDestroy>
         <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
         <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
@@ -678,6 +676,7 @@
         <isAutoDropper>true</isAutoDropper>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isMachinePausable>true</isMachinePausable>
         <rareTicksToDestroy>10</rareTicksToDestroy>
         <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
@@ -781,6 +780,7 @@
         <transfersIngredientLists>false</transfersIngredientLists>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <isMachinePausable>true</isMachinePausable>
@@ -889,6 +889,7 @@
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <isMachinePausable>true</isMachinePausable>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <rareTicksToDestroy>10</rareTicksToDestroy>
         <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
         <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
@@ -991,6 +992,7 @@
         <transfersIngredientLists>false</transfersIngredientLists>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <isMachinePausable>true</isMachinePausable>
@@ -1096,6 +1098,7 @@
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isMachinePausable>true</isMachinePausable>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
@@ -1197,7 +1200,7 @@
         <buildingOnGraphic>Things/Buildings/ConveyorOven/ConveyorOven</buildingOnGraphic>
         <numberOfInputs>1</numberOfInputs>
         <acceptsNoneAsInput>false</acceptsNoneAsInput>
-
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <transfersIngredientLists>false</transfersIngredientLists>
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isAutoMachine>true</isAutoMachine>
@@ -1311,6 +1314,7 @@
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
         <rareTicksToDestroy>10</rareTicksToDestroy>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
         <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
         <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
@@ -1411,6 +1415,7 @@
         <transfersIngredientLists>false</transfersIngredientLists>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
@@ -1518,6 +1523,7 @@
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isMachinePausable>true</isMachinePausable>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
@@ -1568,7 +1574,7 @@
     <blockWind>true</blockWind>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
+    <blockLight>false</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
@@ -1714,6 +1720,7 @@
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isMachinePausable>true</isMachinePausable>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>
@@ -1818,6 +1825,7 @@
         <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
         <isAutoMachine>true</isAutoMachine>
         <isAutoDropper>true</isAutoDropper>
+		<showFactoryProgressBar>true</showFactoryProgressBar>
         <isMachinePausable>true</isMachinePausable>
         <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
         <noPowerDestroysProgress>true</noPowerDestroysProgress>

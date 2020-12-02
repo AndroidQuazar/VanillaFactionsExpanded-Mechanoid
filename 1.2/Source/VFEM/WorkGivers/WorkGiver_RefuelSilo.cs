@@ -15,12 +15,9 @@ namespace VFEMech
         public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(VFEMDefOf.VFE_LongRangeMissileLauncher);
 
         public override PathEndMode PathEndMode => PathEndMode.Touch;
-
-        public virtual bool CanRefuelThing(Thing t) => 
-            t is MissileSilo silo && !silo.Satisfied;
-
-        public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false) => 
-            this.CanRefuelThing(t);
+        
+        public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false) =>
+            t is MissileSilo silo && !silo.Satisfied && silo.ThingsNeeded.Any(td => pawn.Map.listerThings.ThingsOfDef(td).Any(f => pawn.CanReserve(f)));
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {

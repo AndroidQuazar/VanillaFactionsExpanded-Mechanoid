@@ -94,6 +94,7 @@
 									<ignoresIngredientLists>false</ignoresIngredientLists>
 									<isAutoMachine>true</isAutoMachine>
 									<isAutoDropper>true</isAutoDropper>
+									<showFactoryProgressBar>true</showFactoryProgressBar>
 									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
 									<noPowerDestroysProgress>true</noPowerDestroysProgress>
 									<isMachinePausable>true</isMachinePausable>
