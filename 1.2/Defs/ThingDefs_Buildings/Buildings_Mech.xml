@@ -1355,10 +1355,10 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
-				<defaultProjectile>Bullet_InfernoCannon</defaultProjectile>
+				<defaultProjectile>VFE_Bullet_InfernoArtillery</defaultProjectile>
 				<forcedMissRadius>6</forcedMissRadius>
 				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-				<warmupTime>4</warmupTime>
+				<warmupTime>8</warmupTime>
 				<minRange>18.9</minRange>
 				<range>500</range>
 				<burstShotCount>3</burstShotCount>
@@ -1373,6 +1373,30 @@
 			</li>
 		</verbs>
 	</ThingDef>
+	
+  <!-- Inferno artillery shot -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFE_Bullet_InfernoArtillery</defName>
+    <label>inferno artillery shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <!-- Use default damage from explosion def -->
+      <speed>45</speed>
+      <flyOverhead>true</flyOverhead>
+      <explosionRadius>1.9</explosionRadius >
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.27</preExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+  </ThingDef>
 
 	<!-- Charge Railgun -->
 
@@ -1490,6 +1514,7 @@
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<speed>76</speed>
+			<flyOverhead>true</flyOverhead>
 			<explosionRadius>8.4</explosionRadius >
 		</projectile>
 	</ThingDef>
