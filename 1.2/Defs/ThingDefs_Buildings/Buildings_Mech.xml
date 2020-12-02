@@ -1760,6 +1760,44 @@
 			<Uranium>40</Uranium>
 		</killedLeavings>
 	</ThingDef>
+	
+	
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_MechLandingBeacon</defName>
+    <label>mechanoid landing beacon</label>
+    <description>This advanced, spacer tech beacon serves as a guide for a surface-bound mechanoid ship.</description>
+    <graphicData>
+      <texPath>Things/Buildings/Misc/MechanoidLandingBeacon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.25, 0.25, 0.25)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <fillPercent>0.15</fillPercent>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(30,180,234,0)</glowColor>
+      </li>
+    </comps>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <pathCost>20</pathCost>
+    <rotatable>false</rotatable>
+  </ThingDef>
 
 
 </Defs>

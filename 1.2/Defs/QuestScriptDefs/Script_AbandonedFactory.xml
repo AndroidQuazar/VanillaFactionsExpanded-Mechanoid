@@ -2,35 +2,35 @@
 <Defs>
 
   <QuestScriptDef>
-    <defName>OpportunitySite_BanditCamp</defName>
-    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <defName>VFE_OpportunitySite_AbandonedFactory</defName>
+    <rootSelectionWeight>0.35</rootSelectionWeight>
     <rootMinPoints>350</rootMinPoints>
-    <canGiveRoyalFavor>true</canGiveRoyalFavor>
-    <expireDaysRange>4~8</expireDaysRange>
+    <canGiveRoyalFavor>false</canGiveRoyalFavor>
+    <expireDaysRange>6~10</expireDaysRange>
     <questNameRules>
       <rulesStrings>
-        <li>questName->The [bandit] [camp]</li>
-        <li>questName->[bandit] [camp]</li>
-        <li>questName->[asker_nameDef] and the [camp]</li>
-        <li>camp->Camp</li>
-        <li>camp->Outpost</li>
-        <li>camp->Lair</li>
-        <li>camp->Encampment</li>
-        <li>bandit->Bandit</li>
-        <li>bandit->Raider</li>
-        <li>bandit->Outlaw</li>
-        <li>bandit->Desperado</li>
-        <li>bandit->Fugitive</li>
-        <li>bandit->Marauder</li>
-        <li>bandit->Robber</li>
-        <li>bandit->Brigand</li>
+        <li>questName->The [abandoned] [factory]</li>
+        <li>questName->[abandoned] [factory]</li>
+        <li>questName->[asker_nameDef] and the [abandoned] [factory]</li>
+        <li>abandoned->Abandoned</li>
+        <li>abandoned->Old</li>
+        <li>abandoned->Decomissioned</li>
+        <li>abandoned->Ruined</li>
+        <li>factory->Factory</li>
+        <li>factory->Production Line</li>
+        <li>factory->Automated Factory</li>
+        <li>factory->Manufacturing site</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. Apparently, [siteFaction_pawnsPlural] based in a nearby camp have been raiding their caravans. The camp is controlled by [siteFaction_name].
-\n[asker_nameDef] is asking us to destroy the camp, which means eliminating all enemies and turrets. [asker_label] says that [sitePart0_description].</li>
+        <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. Apparently, [siteFaction_pawnsPlural] based in a nearby abandoned factory have been raiding their caravans. The factory site is controlled by [siteFaction_name]. It can be a great opportunity to obtain factory elements and mechanoid components.
+\n[asker_nameDef] is asking us to eliminate the threat, and cares not about the fate of the old machine pieces. [asker_label] says that [sitePart0_description].</li>
       </rulesStrings>
+	  
+<!-- Things below I have not touched -->
+	  
+	  
     </questDescriptionRules>
     <root Class="QuestNode_Sequence">
       <nodes>

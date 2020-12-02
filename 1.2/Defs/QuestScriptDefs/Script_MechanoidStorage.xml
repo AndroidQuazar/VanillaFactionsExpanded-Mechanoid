@@ -1,36 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
   <QuestScriptDef>
-    <defName>OpportunitySite_DownedRefugee</defName>
-    <rootSelectionWeight>1</rootSelectionWeight>
+    <defName>VFE_OpportunitySite_MechanoidStoragePickup</defName>
+    <rootSelectionWeight>0.7</rootSelectionWeight>
     <rootMinPoints>0</rootMinPoints>
-    <rootIncreasesPopulation>true</rootIncreasesPopulation>
     <autoAccept>true</autoAccept>
     <questNameRules>
       <rulesStrings>
-        <li>questName->Saving [refugee_nameDef]</li>
-        <li>questName->The Rescue of [refugee_nameDef]</li>
-        <li>questName->[refugee_nameDef]'s Rescue</li>
-        <li>questName->[refugee_nameDef]'s Salvation</li>
+        <li>questName(priority=1)->[asker_nameDef]'s [intel] about Mechanoid [storage]</li>
+        <li>questName->Mechanoid [storage]</li>
+        <li>intel->Intel</li>
+        <li>intel->Clue</li>
+        <li>intel->Advice</li>
+        <li>intel->Information</li>
+        <li>storage->Storage Site</li>
+        <li>storage->Recycling Site</li>
+        <li>storage->Pick-up Coordinates</li>
+        <li>storage->Treasure</li>
+        <li>storage->Supplies</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
         <!-- No asker -->
-        <li>questDescription(askerIsNull==true)->[refugee_nameDef] contacts you and requests help. [refugee_pronoun] is wounded and unable to move.
-\n[refugee_nameDef] is a [refugee_age]-year-old [refugee_title]. [refugee_pronoun] promises to join you if you rescue [refugee_objective].
-\n[refugee_nameDef] says that [allSitePartsDescriptionsExceptFirst][pawnInvolvedInQuestInfo]</li>
-        
-        <!-- Faction leader asker -->
-        <li>questDescription(asker_factionLeader==True)->[asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], says that [asker_possessive] friend has been wounded while traveling. The victim is [refugee_nameIndef], a [refugee_age]-year-old [refugee_title].
-\n[asker_nameDef] has nobody to spare to rescue [refugee_nameDef], but says that if you can make it to [refugee_nameDef]'s position and rescue [refugee_objective], [refugee_pronoun] will join you.
-\n[asker_nameDef] says that [allSitePartsDescriptionsExceptFirst][pawnInvolvedInQuestInfo]</li>
+        <li>questDescription(askerIsNull==true)->We've intercepted encrypted communication about a large amount of raw resources worth [itemStashContentsValue] ready for collection not far from [map_definite]. The collection consists of:\n\n[itemStashContents]\n\nIt seems that mechanoids are guarding the location before the resources are picked up and shipped to orbit.</li>
 
-        <li>pawnInvolvedInQuestInfo(priority=1)->[refugee_pawnInvolvedInQuestInfo]</li>
-        <li>pawnInvolvedInQuestInfo-></li>
+        <!-- Faction leader asker -->
+        <li>questDescription(asker_factionLeader==True)->[asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], has informed us of a mechanoid resources [itemStashContentsValue] not far from us. The collection consists of:\n\n[itemStashContents]\n\n[asker_label] informs us that mechanoids are guarding the location before the resources are picked up and shipped to orbit.</li>
       </rulesStrings>
     </questDescriptionRules>
+	
+        <!-- Things below I have not touched -->
+		
     <root Class="QuestNode_Sequence">
       <nodes>
         <li Class="QuestNode_SubScript">
@@ -48,21 +49,24 @@
         </li>
         <li Class="QuestNode_GetMap" />
 
-        <li Class="QuestNode_RandomNode">
-          <nodes>
-            <li Class="QuestNode_Set">
-              <name>askerIsNull</name>
-              <value>true</value>
-              <selectionWeight>0.2</selectionWeight>
-            </li>
-            <li Class="QuestNode_GetPawn">
-              <storeAs>asker</storeAs>
-              <mustBeFactionLeader>true</mustBeFactionLeader>
-              <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
-              <hostileWeight>0.15</hostileWeight>
-              <selectionWeight>0.3</selectionWeight>
-            </li>
-          </nodes>
+        <li Class="QuestNode_IsSet">
+          <name>asker</name>
+          <elseNode Class="QuestNode_RandomNode">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>askerIsNull</name>
+                <value>true</value>
+                <selectionWeight>0.4</selectionWeight>
+              </li>
+              <li Class="QuestNode_GetPawn">
+                <storeAs>asker</storeAs>
+                <mustBeFactionLeader>true</mustBeFactionLeader>
+                <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+                <hostileWeight>0.15</hostileWeight>
+                <selectionWeight>0.6</selectionWeight>
+              </li>
+            </nodes>
+          </elseNode>
         </li>
 
         <li Class="QuestNode_GetSiteTile">
@@ -73,7 +77,7 @@
         <li Class="QuestNode_ViolentQuestsAllowed">
           <node Class="QuestNode_Set">
             <name>siteThreatChance</name>
-            <value>0.7</value>
+            <value>0.85</value>
           </node>
           <elseNode Class="QuestNode_Set">
             <name>siteThreatChance</name>
@@ -86,10 +90,10 @@
           <storeFactionAs>siteFaction</storeFactionAs>
           <sitePartsTags>
             <li>
-              <tag>DownedRefugee</tag>
+              <tag>ItemStash</tag>
             </li>
             <li>
-              <tag>DownedRefugeeQuestThreat</tag>
+              <tag>ItemStashQuestThreat</tag>
               <chance>$siteThreatChance</chance>
             </li>
           </sitePartsTags>
@@ -116,13 +120,13 @@
         <li Class="QuestNode_WorldObjectTimeout">
           <worldObject>$site</worldObject>
           <isQuestTimeout>true</isQuestTimeout>
-          <delayTicks>$(randInt(7,15)*60000)</delayTicks>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
           <inSignalDisable>site.MapGenerated</inSignalDisable>
           <node Class="QuestNode_Sequence">
             <nodes>
               <li Class="QuestNode_Letter">
                 <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
-                <text TKey="LetterTextQuestExpired">[refugee_nameDef]'s signal has been lost, and [refugee_pronoun] can no longer be rescued. The quest [resolvedQuestName] has expired.</text>
+                <text TKey="LetterTextQuestExpired">Intercepted communications indicate the item stash has been claimed by others. The quest [resolvedQuestName] has expired.</text>
               </li>
               <li Class="QuestNode_End">
                 <outcome>Fail</outcome>
@@ -131,15 +135,15 @@
           </node>
         </li>
 
-        <li Class="QuestNode_AddPawnReward">
-          <pawn>$refugee</pawn>
+        <li Class="QuestNode_AddItemsReward">
+          <items>$generatedItemStashThings</items>
           <inSignalChoiceUsed>site.MapGenerated</inSignalChoiceUsed>
-          <rewardDetailsHidden>true</rewardDetailsHidden>
         </li>
 
         <li Class="QuestNode_NoWorldObject">
           <worldObject>$site</worldObject>
-          <node Class="QuestNode_End" />
+          <node Class="QuestNode_End">
+          </node>
         </li>
       </nodes>
     </root>

@@ -1,34 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <QuestScriptDef>
-    <defName>OpportunitySite_ItemStash</defName>
-    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <defName>VFE_OpportunitySite_MechanoidShipLanding</defName>
+    <rootSelectionWeight>0.1</rootSelectionWeight>
     <rootMinPoints>0</rootMinPoints>
     <autoAccept>true</autoAccept>
     <questNameRules>
       <rulesStrings>
-        <li>questName(priority=1)->[asker_nameDef]'s [stash] of [treasure]</li>
-        <li>questName->[stash] of [treasure]</li>
-        <li>stash->Stash</li>
-        <li>stash->Cache</li>
-        <li>stash->Collection</li>
-        <li>stash->Shack</li>
-        <li>treasure->Treasure</li>
-        <li>treasure->Valuables</li>
-        <li>treasure->Fortune</li>
-        <li>treasure->Goodies</li>
-        <li>treasure->Supplies</li>
+        <li>questName(priority=1)->[asker_nameDef]'s [intel] about Mechanoid [landing]</li>
+        <li>questName->Mechanoid [landing]</li>
+        <li>intel->Intel</li>
+        <li>intel->Clue</li>
+        <li>intel->Advice</li>
+        <li>intel->Information</li>
+        <li>landing->Landing Zone</li>
+        <li>landing->Landing Pad</li>
+        <li>landing->Imminent Ship Touchdown</li>
+        <li>landing->Landing Site</li>
+        <li>landing->Ship Incoming</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
         <!-- No asker -->
-        <li>questDescription(askerIsNull==true)->We've intercepted messages about a collection of valuable items worth [itemStashContentsValue] not far from [map_definite]. The collection consists of:\n\n[itemStashContents]\n\nIt seems that [allSitePartsDescriptionsExceptFirst]</li>
+        <li>questDescription(askerIsNull==true)->We've obtained encrypted information about an incoming mechanoid ship, planning to touch down not far from [map_definite]. This ship's protocol does not allow for landing if the location contains hostiles. This site is guarded by mechanoid forces, but destroying four landing beacons will be enough to stop the ship from landing.\n\nFailing to do so will result in the mechanoid ship making it to the surface, increasing the mechanoid presence in the area.</li>
 
         <!-- Faction leader asker -->
-        <li>questDescription(asker_factionLeader==True)->[asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], has informed us of a collection of valuable items worth [itemStashContentsValue] not far from us. The collection consists of:\n\n[itemStashContents]\n\n[asker_label] says that [allSitePartsDescriptionsExceptFirst]</li>
+        <li>questDescription(asker_factionLeader==True)->[asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], has informed us of a mechanoid ship intending to land not too far from our area. This ship's protocol does not allow for landing if the location contains hostiles. This site is guarded by mechanoid forces, but destroying four landing beacons will be enough to stop the ship from landing.\n\nFailing to do so will result in the mechanoid ship making it to the surface, increasing the mechanoid presence in the area.</li>
       </rulesStrings>
     </questDescriptionRules>
+	
+        <!-- Things below I have not touched -->
+		
     <root Class="QuestNode_Sequence">
       <nodes>
         <li Class="QuestNode_SubScript">
