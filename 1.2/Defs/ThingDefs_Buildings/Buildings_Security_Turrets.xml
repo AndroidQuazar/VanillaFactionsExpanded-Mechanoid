@@ -5,7 +5,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_Turret_AutoChargeBlaster</defName>
     <label>charge blaster turret</label>
-    <description>A portable automatic turret. Requires steel to refurbish its barrel after heavy use. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+    <description>A burst-fire charge turret capable of concentrating fire on nearby enemy targets at medium ranges. Unarmored targets are unlikely to survive more than a few bursts.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
       <texPath>Things/Buildings/Security/TurretAutoMechTurret_Base</texPath>
@@ -135,7 +135,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_Turret_AutoChargeLance</defName>
     <label>charge lance turret</label>
-    <description>A portable automatic turret. Requires steel to refurbish its barrel after heavy use. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+    <description>A highly accurate, albeit slightly weaker version of the charge lance mounted on a simple-minded turret. Targets in power armor still must be cautious, as a single lucky shot is still more than capable of piercing through plasteel carapace.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
       <texPath>Things/Buildings/Security/TurretAutoMechTurret_Base</texPath>
@@ -264,7 +264,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_Turret_AutoInfernoCannon</defName>
     <label>inferno cannon turret</label>
-    <description>A portable automatic turret. Requires steel to refurbish its barrel after heavy use. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+    <description>A short range cannon capable of spewing streams of fire. These turrets are usually deployed in short-ranged urban warfare.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
       <texPath>Things/Buildings/Security/TurretAutoMechTurret_Base</texPath>
@@ -444,7 +444,7 @@
   <ThingDef ParentName="VFE_BaseAutomortarBuilding">
     <defName>VFE_Turret_AutoMortar</defName>
     <label>auto-mortar</label>
-    <description>A manned mortar that launches all kinds of shells. While it can inflict devastating damage, the mortar's inherent inaccuracy makes it more useful for attacking large fortifications than groups of enemies in the field.</description>
+    <description>An automatic mortar and range finder capable of processing simple coordinates and weather conditions to deliver a constant bombardment of pre-loaded mortar rounds.</description>
     <graphicData>
       <texPath>Things/Buildings/Security/TurretAutoMortar_Base</texPath>
     </graphicData>

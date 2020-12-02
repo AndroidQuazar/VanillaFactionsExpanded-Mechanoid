@@ -5,7 +5,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_LongRangeMissileLauncher</defName>
     <label>long range missile launcher</label>
-    <description>tbd</description>
+    <description>A compact and high-tech missile silo capable of launching devastating missiles several kilometers away. The amount of fuel input decides maximum missile range. Only one missile can be loaded at any one launcher at a time. Upon landing a blast is capable of completely leveling almost any structure and causes land nearby to become more-or-less an inhospitable crater.</description>
     <thingClass>VFEMech.MissileSilo</thingClass>
     <graphicData>
       <texPath>Things/Buildings/LongRangeMissileLauncher/LongRangeMissileLauncher</texPath>
