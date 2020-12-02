@@ -30,13 +30,7 @@
       <defaultStorageSettings>
         <priority>Important</priority>
         <filter>
-          <categories>
-            <li>FoodRaw</li>
-          </categories>
-          <disallowedThingDefs>
-            <li>Meat_Human</li>
-            <li>Meat_Megaspider</li>
-          </disallowedThingDefs>
+          
         </filter>
       </defaultStorageSettings>
       <buildingTags>
@@ -1568,7 +1562,7 @@
     <blockWind>true</blockWind>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <fillPercent>1</fillPercent>
-    <blockLight>true</blockLight>
+    <blockLight>false</blockLight>
     <canOverlapZones>false</canOverlapZones>
     <hasInteractionCell>True</hasInteractionCell>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
