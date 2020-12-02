@@ -35,7 +35,7 @@ namespace VFEMech
                     }
                     if (proj.IsFinished)
                     {
-                        Find.ResearchManager.FinishProject(proj);
+                        Find.ResearchManager.FinishProject(proj, doCompletionDialog: true);
                     }
                 }
             }
