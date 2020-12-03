@@ -44,7 +44,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>300</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>300</MaxHitPoints>
       <Flammability>0.3</Flammability>
     </statBases>
     <costList>
@@ -115,7 +115,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -130,6 +130,10 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>7</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
@@ -222,7 +226,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>300</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -330,7 +334,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>450</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -437,7 +441,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -452,6 +456,11 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>300</wickTicks>
+        <explosiveRadius>8.0</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
@@ -540,7 +549,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>300</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -645,7 +654,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>400</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -660,6 +669,11 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>300</wickTicks>
+        <explosiveRadius>8.0</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
@@ -751,7 +765,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -857,7 +871,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>300</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -963,7 +977,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>400</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1069,7 +1083,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>325</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1175,7 +1189,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1190,6 +1204,10 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
@@ -1281,7 +1299,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>400</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1387,7 +1405,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1494,7 +1512,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>325</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1692,7 +1710,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>350</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1797,7 +1815,7 @@
     <statBases>
       <Mass>10</Mass>
       <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>400</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
@@ -1812,6 +1830,10 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>9</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
