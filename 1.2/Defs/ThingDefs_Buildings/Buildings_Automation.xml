@@ -133,7 +133,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>650</basePowerConsumption>
+        <basePowerConsumption>750</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -455,7 +455,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>300</basePowerConsumption>
+        <basePowerConsumption>500</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -558,7 +558,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>400</basePowerConsumption>
+        <basePowerConsumption>700</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -663,7 +663,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>500</basePowerConsumption>
+        <basePowerConsumption>750</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -769,7 +769,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>450</basePowerConsumption>
+        <basePowerConsumption>650</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -875,7 +875,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>425</basePowerConsumption>
+        <basePowerConsumption>575</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -981,7 +981,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>800</basePowerConsumption>
+        <basePowerConsumption>900</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1087,7 +1087,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>400</basePowerConsumption>
+        <basePowerConsumption>625</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1193,7 +1193,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>500</basePowerConsumption>
+        <basePowerConsumption>650</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1299,7 +1299,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>500</basePowerConsumption>
+        <basePowerConsumption>750</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1405,7 +1405,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>600</basePowerConsumption>
+        <basePowerConsumption>725</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1512,7 +1512,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>550</basePowerConsumption>
+        <basePowerConsumption>675</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1596,7 +1596,7 @@
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>400</basePowerConsumption>
+        <basePowerConsumption>675</basePowerConsumption>
         <shortCircuitInRain>false</shortCircuitInRain>
       </li>
       <li Class="CompProperties_Flickable" />
@@ -1710,7 +1710,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>500</basePowerConsumption>
+        <basePowerConsumption>700</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -1815,7 +1815,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>800</basePowerConsumption>
+        <basePowerConsumption>825</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
