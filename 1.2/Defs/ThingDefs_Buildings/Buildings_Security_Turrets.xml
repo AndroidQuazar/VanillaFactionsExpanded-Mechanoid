@@ -490,10 +490,6 @@
       <combatPower>70</combatPower>   <!-- same as a scavenger -->
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>VFE_AutoMortar</turretGunDef>
-      <buildingTags>
-        <li>Artillery_BaseDestroyer</li>
-        <li>Artillery_MannedMortar</li>
-      </buildingTags>
     </building>
   <uiIconPath>Things/Buildings/Security/TurretAutoMortar_MenuIcon</uiIconPath>
   <uiIconScale>0.9</uiIconScale>
@@ -506,9 +502,6 @@
     <graphicData>
       <texPath>Things/Buildings/Security/TurretAutoMortar_Top</texPath>
     </graphicData>
-    <weaponTags>
-      <li>Artillery_BaseDestroyer</li>
-    </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
