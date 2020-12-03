@@ -5,7 +5,7 @@
 	<!-- Carpenter - slow deconstructor -->
 
 	<ThingDef ParentName="BaseMechanoidWalker">
-		<defName>VFE_Mech_AncientCarpenter</defName>
+		<defName>VFE_AncientMech_AncientCarpenter</defName>
 		<label>carpenter</label>
 		<description>A lurching, quadrupedal utility mechanoid with thick armor meant to absorb enemy fire while rapidly dissembling enemy fortifications using simple sledges and drills. Infantry present during the mechanoid wars were known to assemble decoy pillboxes or barricades as the carpenter mechanoids could not distinguish between them and structures being actively used.</description>
 		<statBases>
@@ -74,7 +74,7 @@
 	</ThingDef>
 
 	<PawnKindDef ParentName="BaseMechanoidKind">
-		<defName>VFE_Mech_AncientCarpenter</defName>
+		<defName>VFE_AncientMech_AncientCarpenter</defName>
 		<label>carpenter</label>
 		<race>VFE_Mech_AncientCarpenter</race>
 		<combatPower>400</combatPower>
