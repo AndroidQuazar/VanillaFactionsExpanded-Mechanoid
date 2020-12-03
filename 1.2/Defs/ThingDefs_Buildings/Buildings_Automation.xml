@@ -1665,8 +1665,9 @@
       <li>BuildingsProduction</li>
     </thingCategories>
     <costList>
-      <Steel>50</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>650</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <building>
       <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
