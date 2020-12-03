@@ -42,7 +42,8 @@
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>10</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Flickable">
+		</li>
       <li Class="CompProperties_Breakdownable"/>
     </comps>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>

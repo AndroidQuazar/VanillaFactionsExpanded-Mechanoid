@@ -77,7 +77,7 @@
     <Compile Include="Comps\ShieldMechBubble.cs" />
     <Compile Include="Comps\CompMechProducer.cs" />
     <Compile Include="Comps\CompActiveGameCondition.cs" />
-    <Compile Include="Damages\GameCondition_EMIDynamo.cs" />
+    <Compile Include="Damages\DeathActionWorker_BigBombExplosion.cs" />
     <Compile Include="GameConditions\GameCondition_EMIDynamo.cs" />
     <Compile Include="GameConditions\GameCondition_ClimateAdjuster.cs" />
     <Compile Include="HarmonyPatches\Power_Patches.cs" />
