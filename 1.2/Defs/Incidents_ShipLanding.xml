@@ -11,7 +11,7 @@
       <li>World</li>
     </targetTags>
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
-    <baseChance>1.0</baseChance>
+    <baseChance>0.3</baseChance>
     <minRefireDays>15</minRefireDays>
     <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Frigate</letterLabel>
@@ -33,7 +33,7 @@
       <li>World</li>
     </targetTags>
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
-    <baseChance>0.5</baseChance>
+    <baseChance>0.1</baseChance>
     <minRefireDays>15</minRefireDays>
         <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Destroyer</letterLabel>
@@ -55,7 +55,7 @@
       <li>World</li>
     </targetTags>
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
-    <baseChance>0.5</baseChance>
+    <baseChance>0.1</baseChance>
     <minRefireDays>15</minRefireDays>
         <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Cruiser</letterLabel>
@@ -77,7 +77,7 @@
       <li>World</li>
     </targetTags>
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
-    <baseChance>0.2</baseChance>
+    <baseChance>0.05</baseChance>
     <minRefireDays>15</minRefireDays>
         <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Troopship</letterLabel>
@@ -99,7 +99,7 @@
       <li>World</li>
     </targetTags>
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
-    <baseChance>0.05</baseChance>
+    <baseChance>0.02</baseChance>
     <minRefireDays>15</minRefireDays>
         <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Carrier</letterLabel>
