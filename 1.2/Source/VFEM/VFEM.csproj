@@ -69,6 +69,7 @@
     <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
     <Compile Include="HarmonyPatches\Explosion_Patch.cs" />
+    <Compile Include="HarmonyPatches\MechSpawn_Patch.cs" />
     <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
     <Compile Include="LordJob_VFEMDefendBase.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicSuppression.cs" />
