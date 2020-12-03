@@ -13,19 +13,29 @@ namespace VFEMech
 {
     public class Supercomputer : Building
     {
+        private CompPowerTrader compPower;
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            compPower = this.GetComp<CompPowerTrader>();
+        }
         public override void Tick()
         {
             base.Tick();
-            if (this.Faction == Faction.OfPlayer && Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
+            if (compPower.PowerOn && this.Faction == Faction.OfPlayer && Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
             {
                 var proj = Find.ResearchManager.currentProj;
                 if (proj != null)
                 {
                     FieldInfo fieldInfo = AccessTools.Field(typeof(ResearchManager), "progress");
-                    Dictionary<ResearchProjectDef, float> dictionary = fieldInfo.GetValue(Current.Game.researchManager) as Dictionary<ResearchProjectDef, float>;
+                    Dictionary<ResearchProjectDef, float> dictionary = fieldInfo.GetValue(Find.ResearchManager) as Dictionary<ResearchProjectDef, float>;
                     if (dictionary.ContainsKey(proj))
                     {
                         dictionary[proj] += 1f;
+                    }
+                    if (proj.IsFinished)
+                    {
+                        Find.ResearchManager.FinishProject(proj, doCompletionDialog: true);
                     }
                 }
             }
