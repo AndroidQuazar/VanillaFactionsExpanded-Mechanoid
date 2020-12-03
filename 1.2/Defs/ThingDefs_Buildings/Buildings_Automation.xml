@@ -811,7 +811,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_WearablesAndTextileFactory_AutoLoom</defName>
     <label>Auto Loom</label>
-    <description>A large machine that scans nearby textiles fed through two rollers, whereafter a series of clamps, shears, and needles stitch, weave, and sew basic clothing millimeters at a time. The user only must specify the type of clothing desired.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
+    <description>A large machine that scans nearby textiles fed through two rollers, whereafter a series of clamps, shears, and needles stitch, weave, and sew basic clothing millimeters at a time. The user only must specify the type of clothing desired from a preset template of options.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
       <texPath>Things/Buildings/AutoLoom/AutoLoom</texPath>
@@ -917,7 +917,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</defName>
     <label>Synthread Synthesizer</label>
-    <description>A high-tech machine that is barely understood by even the most intellectually inclined colonies. Complete with a series of meshpresses and plasma needles capable of atomically realigning basic materials resulting in new material indistinguishable from synthread. Rather than creating material itself, the machine is configured to modify existing clothing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
+    <description>A high-tech machine that is barely understood by even the most intellectually inclined colonies. Complete with a series of meshpresses and plasma needles capable of atomically realigning basic materials resulting in new material indistinguishable from synthread. Rather than creating material itself, the machine is configured to modify certain existing clothing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
       <texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer</texPath>
@@ -981,7 +981,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>900</basePowerConsumption>
+        <basePowerConsumption>950</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
