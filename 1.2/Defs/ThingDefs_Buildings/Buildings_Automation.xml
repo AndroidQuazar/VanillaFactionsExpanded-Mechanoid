@@ -130,6 +130,10 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>5</heatPerSecond>
+      </li>
       <li Class="CompProperties_Glower">
         <glowRadius>7</glowRadius>
         <glowColor>(255,150,100,0)</glowColor>
@@ -1204,6 +1208,10 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>5</heatPerSecond>
+      </li>
       <li Class="CompProperties_Glower">
         <glowRadius>6</glowRadius>
         <glowColor>(255,150,100,0)</glowColor>
@@ -1830,6 +1838,10 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>5</heatPerSecond>
+      </li>
       <li Class="CompProperties_Glower">
         <glowRadius>9</glowRadius>
         <glowColor>(255,150,100,0)</glowColor>
