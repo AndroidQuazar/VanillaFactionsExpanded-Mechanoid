@@ -67,7 +67,7 @@
 							<statBases>
 								<Mass>10</Mass>
 								<WorkToBuild>800</WorkToBuild>
-								<MaxHitPoints>100</MaxHitPoints>
+								<MaxHitPoints>300</MaxHitPoints>
 								<Flammability>1.0</Flammability>
 							</statBases>
 							<tickerType>Rare</tickerType>
@@ -83,7 +83,7 @@
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
 									<shortCircuitInRain>false</shortCircuitInRain>
-									<basePowerConsumption>400</basePowerConsumption>
+									<basePowerConsumption>500</basePowerConsumption>
 								</li>
 								<li Class="CompProperties_Flickable"/>
 								<li Class="ItemProcessor.CompProperties_ItemProcessor">
