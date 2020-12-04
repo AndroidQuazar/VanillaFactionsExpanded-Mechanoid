@@ -3,6 +3,7 @@
 
 	<ThingDef ParentName="BasePawn" Name="VFE_Mechanoid" Abstract="True">
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingClass>VFEMech.VFEMechanoid</thingClass>
 		<statBases>
 			<PsychicSensitivity>0.5</PsychicSensitivity>
 			<ToxicSensitivity>0</ToxicSensitivity>

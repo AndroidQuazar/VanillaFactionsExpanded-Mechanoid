@@ -102,6 +102,7 @@
     <Compile Include="ModExtensions\MechanoidBaseExtension.cs" />
     <Compile Include="ModExtensions\MechanoidBaseIncidentExtension.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
+    <Compile Include="Pawns\VFEMechanoid.cs" />
     <Compile Include="Pawns\Mech_Inquisitor.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnPowerConduit.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloorAndPath.cs" />
