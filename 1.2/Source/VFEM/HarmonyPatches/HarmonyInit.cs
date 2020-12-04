@@ -16,8 +16,9 @@ namespace VFEMech
 	{
 		static HarmonyInit()
 		{
-            int           range = 100;
+            int           range = 200;
             List<IntVec3> list  = new List<IntVec3>();
+
             for (int i = -range; i < range; i++)
             {
                 for (int j = -range; j < range; j++)
