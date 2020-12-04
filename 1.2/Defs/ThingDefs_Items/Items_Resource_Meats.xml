@@ -34,7 +34,7 @@
 	<ThingDef ParentName="VFEM_RawMeatBase">
 		<defName>VFEM_ProcessedMeat</defName>
 		<label>processed meat</label>
-		<description>Ground meat that has been processed automatically in a meat grinder.</description>
+		<description>A ground meat product that haphazardly includes the hide, bones, and fur of the creature in question. While the texture is a bit questionable the flavor is surprisingly acceptable.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/VFEM_ProcessedMeat</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
