@@ -1802,9 +1802,6 @@
       </damageData>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
-    <thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
     <statBases>
       <MaxHitPoints>75</MaxHitPoints>
       <WorkToBuild>800</WorkToBuild>

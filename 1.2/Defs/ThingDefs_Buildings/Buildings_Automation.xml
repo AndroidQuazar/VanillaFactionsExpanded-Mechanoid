@@ -460,11 +460,6 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>300</wickTicks>
-        <explosiveRadius>8.0</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>
@@ -673,11 +668,6 @@
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
     <comps>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>300</wickTicks>
-        <explosiveRadius>8.0</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>false</shortCircuitInRain>

@@ -6,6 +6,7 @@
     <rootSelectionWeight>0.8</rootSelectionWeight>
     <rootMinPoints>100</rootMinPoints>
     <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <expireDaysRange>2~6</expireDaysRange>
     <autoAccept>false</autoAccept>
     <questNameRules>
       <rulesStrings>

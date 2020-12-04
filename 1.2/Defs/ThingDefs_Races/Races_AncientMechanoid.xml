@@ -76,7 +76,7 @@
 	<PawnKindDef ParentName="BaseMechanoidKind">
 		<defName>VFE_AncientMech_AncientCarpenter</defName>
 		<label>carpenter</label>
-		<race>VFE_Mech_AncientCarpenter</race>
+		<race>VFE_AncientMech_AncientCarpenter</race>
 		<combatPower>400</combatPower>
 		<lifeStages>
 			<li>
