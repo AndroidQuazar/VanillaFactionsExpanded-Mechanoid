@@ -34,6 +34,9 @@
 		
     <root Class="QuestNode_Sequence">
       <nodes>
+		<li Class="VFEMech.QuestNode_MechPresenceConditional">
+			<anyShips>true</anyShips>
+		</li>
         <li Class="QuestNode_SubScript">
           <def>Util_RandomizePointsChallengeRating</def>
           <parms>
@@ -90,11 +93,7 @@
           <storeFactionAs>siteFaction</storeFactionAs>
           <sitePartsTags>
             <li>
-              <tag>ItemStash</tag>
-            </li>
-            <li>
-              <tag>ItemStashQuestThreat</tag>
-              <chance>$siteThreatChance</chance>
+              <tag>VFE_MechanoidStorage</tag>
             </li>
           </sitePartsTags>
         </li>

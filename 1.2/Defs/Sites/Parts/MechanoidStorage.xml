@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <SitePartDef>
+    <defName>VFE_MechanoidStorage</defName>
+    <label>mechanoid storage</label>
+    <description>Mechanoid storage.</description>
+    <workerClass>VFEMech.SitePartWorker_MechanoidStorage</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/QuestIcons/MechanoidStoragePickUp</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <tags>
+      <li>VFE_MechanoidStorage</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>VFE_MechanoidStorage</defName>
+    <linkWithSite>VFE_MechanoidStorage</linkWithSite>
+    <order>460</order>
+    <genStep Class="VFEMech.GenStep_MechanoidStorage">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+    </genStep>
+  </GenStepDef>
+
+</Defs>
