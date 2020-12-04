@@ -1684,6 +1684,7 @@
       <Steel>650</Steel>
       <ComponentIndustrial>6</ComponentIndustrial>
       <ComponentSpacer>1</ComponentSpacer>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
     </costList>
     <building>
       <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
