@@ -821,13 +821,18 @@
 	
 	<!--======= Conveyor Oven =======-->
 
+	
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ProvisionsPackagingFactory_ConveyorOven_Kibble</defName>
 		<building>VFEM_ProvisionsPackagingFactory_ConveyorOven</building>
 		<items>
-			<li>FoodRaw</li>
+			<li>MeatRaw</li>
 		</items>	
+		<secondItems>
+			<li>PlantFoodRaw</li>
+		</secondItems>
 		<amount>
+			<li>30</li>
 			<li>30</li>
 		</amount>
 		<result>Kibble</result>	
@@ -843,9 +848,13 @@
 		<defName>VFEM_ProvisionsPackagingFactory_ConveyorOven_Meals</defName>
 		<building>VFEM_ProvisionsPackagingFactory_ConveyorOven</building>
 		<items>
-			<li>FoodRaw</li>
+			<li>MeatRaw</li>
 		</items>	
+		<secondItems>
+			<li>PlantFoodRaw</li>
+		</secondItems>	
 		<amount>
+			<li>12</li>
 			<li>12</li>
 		</amount>
 		<result>MealSurvivalPack</result>	

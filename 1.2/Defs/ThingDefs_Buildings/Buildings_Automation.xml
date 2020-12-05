@@ -1215,7 +1215,7 @@
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
         <buildingOnGraphic>Things/Buildings/ConveyorOven/ConveyorOven</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
+        <numberOfInputs>2</numberOfInputs>
         <acceptsNoneAsInput>false</acceptsNoneAsInput>
 		<showFactoryProgressBar>true</showFactoryProgressBar>
         <transfersIngredientLists>false</transfersIngredientLists>
