@@ -31,7 +31,7 @@ namespace VFEM
                 {
                     this.animalKind = null;
                 }, MenuOptionPriority.Default, null, null, 0f, null, null));
-                foreach (PawnKindDef localKind2 in this.PossibleAnimals(false))
+                foreach (PawnKindDef localKind2 in this.PossibleAnimals())
                 {
                     PawnKindDef localKind = localKind2;
                     list.Add(new FloatMenuOption(localKind.LabelCap, delegate ()
@@ -43,23 +43,16 @@ namespace VFEM
             }
         }
 
-        private IEnumerable<PawnKindDef> PossibleAnimals(bool checkForTamer = true)
+        private IEnumerable<PawnKindDef> PossibleAnimals()
         {
             return from td in DefDatabase<PawnKindDef>.AllDefs
-                   where td.RaceProps.Animal && td.RaceProps.packAnimal && (!checkForTamer || ScenPart_StartingPackAnimal.CanKeepPetTame(td))
+                   where td.RaceProps.Animal && td.RaceProps.packAnimal
                    select td;
-        }
-
-        private static bool CanKeepPetTame(PawnKindDef def)
-        {
-            float level = (float)Find.GameInitData.startingAndOptionalPawns.Take(Find.GameInitData.startingPawnCount).MaxBy((Pawn c) => c.skills.GetSkill(SkillDefOf.Animals).Level).skills.GetSkill(SkillDefOf.Animals).Level;
-            float statValueAbstract = def.race.GetStatValueAbstract(StatDefOf.MinimumHandlingSkill, null);
-            return level >= statValueAbstract;
         }
 
         private IEnumerable<PawnKindDef> RandomPets()
         {
-            return from td in this.PossibleAnimals(true)
+            return from td in this.PossibleAnimals()
                    where td.RaceProps.petness > 0f
                    select td;
         }
@@ -95,7 +88,7 @@ namespace VFEM
             }
             else
             {
-                this.animalKind = this.PossibleAnimals(false).RandomElement<PawnKindDef>();
+                this.animalKind = this.PossibleAnimals().RandomElement<PawnKindDef>();
             }
             this.count = ScenPart_StartingPackAnimal.PetCountChances.RandomElementByWeight((Pair<int, float> pa) => pa.Second).First;
             this.bondToRandomPlayerPawnChance = 0f;

@@ -22,19 +22,6 @@ Note: Since your starting character will lack some skills, this is a difficult s
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
         </li>
-        <li Class="KCSG.ScenPart_AddStartingStructure">
-          <def>VFEC_AddStartingStructure</def>
-          <structureLabel>An abandoned factory</structureLabel>
-          <nearMapCenter>True</nearMapCenter>
-          <chooseFrom>
-            <li>VFEM_Factory1</li>
-            <li>VFEM_Factory2</li>
-            <li>VFEM_Factory3</li>
-            <li>VFEM_Factory4</li>
-            <li>VFEM_Factory5</li>
-            <li>VFEM_Factory6</li>
-          </chooseFrom>
-        </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>ComponentIndustrial</thingDef>
@@ -81,6 +68,21 @@ Note: Since your starting character will lack some skills, this is a difficult s
 Now the choice is yours - will you disassemble it to not tempt so many raiders troubling these lands? Or will you bring the factory back to its former glory?
 </text>
           <closeSound>GameStartSting</closeSound>
+        </li>
+        <li Class="KCSG.ScenPart_AddStartingStructure">
+          <def>VFEC_AddStartingStructure</def>
+          <structureLabel>An abandoned factory</structureLabel>
+          <nearMapCenter>True</nearMapCenter>
+          <chooseFrom>
+            <li>VFEM_Factory1</li>
+            <li>VFEM_Factory2</li>
+            <li>VFEM_Factory3</li>
+            <li>VFEM_Factory4</li>
+            <li>VFEM_Factory5</li>
+            <li>VFEM_Factory6</li>
+            <li>VFEM_Factory7</li>
+            <li>VFEM_Factory8</li>
+          </chooseFrom>
         </li>
       </parts>
     </scenario>

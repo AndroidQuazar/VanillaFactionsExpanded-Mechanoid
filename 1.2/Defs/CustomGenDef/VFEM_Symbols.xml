@@ -461,11 +461,41 @@
     <rotation>North</rotation>
     <symbol>VFEM_MedicinalCompoundingFactory_NeutroamineInfuser_North</symbol>
   </KCSG.SymbolDef>
-  
+
   <KCSG.SymbolDef>
     <defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator_North</defName>
     <thing>VFEM_MedicinalCompoundingFactory_MedicineGranulator</thing>
     <rotation>North</rotation>
     <symbol>VFEM_MedicinalCompoundingFactory_MedicineGranulator_North</symbol>
   </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_South</defName>
+    <thing>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</thing>
+    <rotation>South</rotation>
+    <symbol>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_South</symbol>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEM_ElectronicsFabricationFactory_SteelExtractor_North</defName>
+    <thing>VFEM_ElectronicsFabricationFactory_SteelExtractor</thing>
+    <rotation>North</rotation>
+    <symbol>VFEM_ElectronicsFabricationFactory_SteelExtractor_North</symbol>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_North</defName>
+    <thing>VFEM_ProvisionsPackagingFactory_MeatGrinder</thing>
+    <rotation>North</rotation>
+    <symbol>VFEM_ProvisionsPackagingFactory_MeatGrinder_North</symbol>
+  </KCSG.SymbolDef>
+
+  <KCSG.SymbolDef>
+    <defName>VFEM_ProvisionsPackagingFactory_ConveyorOven_South</defName>
+    <thing>VFEM_ProvisionsPackagingFactory_ConveyorOven</thing>
+    <rotation>South</rotation>
+    <symbol>VFEM_ProvisionsPackagingFactory_ConveyorOven_South</symbol>
+  </KCSG.SymbolDef>
+  
+  
 </Defs>
