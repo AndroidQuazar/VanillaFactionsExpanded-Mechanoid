@@ -36,7 +36,7 @@
             <clipPath>Interact/Work/Scanner/GroundPenetrating/ScannerGroundPenetrating_Ambience_Loop</clipPath>
           </li>
         </grains>
-        <volumeRange>38</volumeRange>
+        <volumeRange>14</volumeRange>
         <distRange>20~45</distRange>
       </li>
     </subSounds>

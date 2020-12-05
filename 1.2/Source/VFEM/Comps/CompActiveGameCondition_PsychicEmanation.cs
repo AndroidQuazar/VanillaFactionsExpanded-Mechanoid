@@ -56,7 +56,7 @@ namespace VFEMech
 		public override void CompTick()
 		{
 			base.CompTick();
-			if (this.gameCondition == null)
+			if (this.gameCondition == null && this.parent?.Map != null)
 			{
 				this.gameCondition = CreateConditionOn(this.parent.Map);
 			}

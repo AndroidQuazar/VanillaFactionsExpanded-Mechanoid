@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorldObjectDef>
+    <defName>VFEM_TravelingMissile</defName>
+    <label>missile</label>
+    <description>missile in flight.</description>
+    <worldObjectClass>VFEMech.TravelingMissile</worldObjectClass>
+    <texture>World/MapObject_LongRangeMissile</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>false</expandingIcon>
+  </WorldObjectDef>
+</Defs>

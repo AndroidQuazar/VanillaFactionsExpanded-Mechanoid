@@ -21,12 +21,12 @@
 						<ThingDef ParentName="BuildingBase">
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery</defName>
 							<label>Cannery</label>
-							<description>A medium-sized factory module that accepts food after being heated from a conveyor oven before sterilizing and canning it for use in later meals.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
+							<description>A medium-sized factory module that accepts raw food and steel to sterilize and can it, allowing it to last indefinitely.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
 							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
 							<graphicData>
 								<texPath>Things/Buildings/AutomatedCannery/AutomatedCannery</texPath>
 								<graphicClass>Graphic_Multi</graphicClass>
-								<drawSize>(6.5,5.5)</drawSize>
+								<drawSize>(7,6)</drawSize>
 								<shaderType>CutoutComplex</shaderType>
 								<damageData>
 									<cornerTL>Damage/Corner</cornerTL>
@@ -39,14 +39,21 @@
 								<li>BuildingsProduction</li>
 							</thingCategories>
 							<costList>
-								<Steel>50</Steel>
-								<ComponentIndustrial>1</ComponentIndustrial>
+								<Steel>400</Steel>
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>100</Plasteel>
+								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 							</costList>
 							<building>
+								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
 								<wantsHopperAdjacent>true</wantsHopperAdjacent>
 								<buildingTags>
 									<li>Production</li>
 								</buildingTags>
+									<blueprintGraphicData>
+										<texPath>Things/Buildings/AutomatedCannery/AutomatedCannery_Blueprint</texPath>
+										<graphicClass>Graphic_Multi</graphicClass>
+									</blueprintGraphicData>
 							</building>
 							<altitudeLayer>Building</altitudeLayer>
 							<rotatable>true</rotatable>
@@ -60,25 +67,23 @@
 							<statBases>
 								<Mass>10</Mass>
 								<WorkToBuild>800</WorkToBuild>
-								<MaxHitPoints>100</MaxHitPoints>
+								<MaxHitPoints>300</MaxHitPoints>
 								<Flammability>1.0</Flammability>
 							</statBases>
 							<tickerType>Rare</tickerType>
 							<size>(5,4)</size>
-							<designationCategory>Production</designationCategory>
+							<designationCategory>VFE_Factory</designationCategory>
 							<passability>PassThroughOnly</passability>
 							<pathCost>70</pathCost>
 							<hasInteractionCell>True</hasInteractionCell>
 							<interactionCellOffset>(0,0,3)</interactionCellOffset>
 							<surfaceType>Item</surfaceType>
-							<!--<researchPrerequisites>
-								<li>VCE_SoupCooking</li>
-							</researchPrerequisites>-->
+							
 							<comps>
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
 									<shortCircuitInRain>false</shortCircuitInRain>
-									<basePowerConsumption>100</basePowerConsumption>
+									<basePowerConsumption>500</basePowerConsumption>
 								</li>
 								<li Class="CompProperties_Flickable"/>
 								<li Class="ItemProcessor.CompProperties_ItemProcessor">
@@ -89,6 +94,7 @@
 									<ignoresIngredientLists>false</ignoresIngredientLists>
 									<isAutoMachine>true</isAutoMachine>
 									<isAutoDropper>true</isAutoDropper>
+									<showFactoryProgressBar>true</showFactoryProgressBar>
 									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
 									<noPowerDestroysProgress>true</noPowerDestroysProgress>
 									<isMachinePausable>true</isMachinePausable>
@@ -111,6 +117,9 @@
 								</li>
 
 							</comps>
+							<researchPrerequisites Inherit='False'>
+							  <li>VFE_ProvisionsPackagingFactory</li>
+							</researchPrerequisites>
 							<minifiedDef>MinifiedThing</minifiedDef>
 						</ThingDef>
 

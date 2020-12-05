@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <RaidStrategyDef ParentName="SiegeBase">
+    <defName>VFEM_MechShipArrival</defName>
+    <workerClass>VFEM.RaidStrategyWorker_MechShipRaid</workerClass>
+    <minPawns>2</minPawns>
+    <arriveModes>
+      <li>VFEM_MechShipArrival</li>
+    </arriveModes>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(300,  0)</li>
+        <li>(700,  2)</li>
+        <li>(1400, 3)</li>
+        <li>(2800, 5)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <letterLabelEnemy>Mechanoid ship</letterLabelEnemy>
+    <arrivalTextEnemy>Mechanoids that landed with it will attack immediately. The ship will lay covering fire and begin the siege as soon as possible.</arrivalTextEnemy>
+    <modExtensions>
+      <li Class="VFEM.DefModExtension_ShipsSpawnable">
+        <structureLayouts>
+          <li>VFEM_Frigate1</li>
+          <li>VFEM_Frigate2</li>
+          <li>VFEM_Frigate3</li>
+          <li>VFEM_Frigate4</li>
+          <li>VFEM_Frigate5</li>
+          <li>VFEM_Frigate6</li>
+          <li>VFEM_Frigate7</li>
+          <li>VFEM_Frigate8</li>
+          <li>VFEM_Frigate9</li>
+          <li>VFEM_Frigate10</li>
+          <li>VFEM_Frigate11</li>
+          <li>VFEM_Frigate12</li>
+          <li>VFEM_FrigateDLC1</li>
+          <li>VFEM_FrigateDLC2</li>
+          <li>VFEM_FrigateDLC3</li>
+          <li>VFEM_FrigateDLC4</li>
+          <li>VFEM_FrigateDLC5</li>
+          <li>VFEM_FrigateDLC6</li>
+          <li>VFEM_FrigateDLC7</li>
+          <li>VFEM_FrigateDLC8</li>
+          <li>VFEM_FrigateDLC9</li>
+          <li>VFEM_FrigateDLC10</li>
+          <li>VFEM_FrigateDLC11</li>
+          <li>VFEM_FrigateDLC12</li>
+          <li>VFEM_Destroyer1</li>
+          <li>VFEM_Destroyer2</li>
+          <li>VFEM_Destroyer3</li>
+          <li>VFEM_Destroyer4</li>
+          <li>VFEM_Destroyer5</li>
+          <li>VFEM_Destroyer6</li>
+          <li>VFEM_Destroyer7</li>
+          <li>VFEM_Destroyer8</li>
+          <li>VFEM_Destroyer9</li>
+          <li>VFEM_Destroyer10</li>
+          <li>VFEM_Destroyer11</li>
+          <li>VFEM_Destroyer12</li>
+          <li>VFEM_DestroyerDLC1</li>
+          <li>VFEM_DestroyerDLC2</li>
+          <li>VFEM_DestroyerDLC3</li>
+          <li>VFEM_DestroyerDLC4</li>
+          <li>VFEM_DestroyerDLC5</li>
+          <li>VFEM_DestroyerDLC6</li>
+          <li>VFEM_DestroyerDLC7</li>
+          <li>VFEM_DestroyerDLC8</li>
+          <li>VFEM_DestroyerDLC9</li>
+          <li>VFEM_DestroyerDLC10</li>
+          <li>VFEM_DestroyerDLC11</li>
+          <li>VFEM_DestroyerDLC12</li>
+          <li>VFEM_Cruiser1</li>
+          <li>VFEM_Cruiser2</li>
+          <li>VFEM_Cruiser3</li>
+          <li>VFEM_Cruiser4</li>
+          <li>VFEM_Cruiser5</li>
+          <li>VFEM_Cruiser6</li>
+          <li>VFEM_Cruiser7</li>
+          <li>VFEM_Cruiser8</li>
+          <li>VFEM_Cruiser9</li>
+          <li>VFEM_Cruiser10</li>
+          <li>VFEM_Cruiser11</li>
+          <li>VFEM_Cruiser12</li>
+          <li>VFEM_CruiserDLC1</li>
+          <li>VFEM_CruiserDLC2</li>
+          <li>VFEM_CruiserDLC3</li>
+          <li>VFEM_CruiserDLC4</li>
+          <li>VFEM_CruiserDLC5</li>
+          <li>VFEM_CruiserDLC6</li>
+          <li>VFEM_CruiserDLC7</li>
+          <li>VFEM_CruiserDLC8</li>
+          <li>VFEM_CruiserDLC9</li>
+          <li>VFEM_CruiserDLC10</li>
+          <li>VFEM_CruiserDLC11</li>
+          <li>VFEM_CruiserDLC12</li>
+        </structureLayouts>
+      </li>
+    </modExtensions>
+  </RaidStrategyDef>
+</Defs>

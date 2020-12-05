@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>VFE_OpportunitySite_MechanoidShipLanding</defName>
+    <rootSelectionWeight>0.1</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName(priority=1)->[asker_nameDef]'s [intel] about Mechanoid [landing]</li>
+        <li>questName->Mechanoid [landing]</li>
+        <li>intel->Intel</li>
+        <li>intel->Clue</li>
+        <li>intel->Advice</li>
+        <li>intel->Information</li>
+        <li>landing->Landing Zone</li>
+        <li>landing->Landing Pad</li>
+        <li>landing->Imminent Ship Touchdown</li>
+        <li>landing->Landing Site</li>
+        <li>landing->Ship Incoming</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <!-- No asker -->
+        <li>questDescription(askerIsNull==true)->We've obtained encrypted information about an incoming mechanoid ship, planning to touch down not far from [map_definite]. This ship's protocol does not allow for landing if the location contains hostiles. This site is guarded by mechanoid forces, but destroying four landing beacons will be enough to stop the ship from landing.\n\nFailing to do so will result in the mechanoid ship making it to the surface, increasing the mechanoid presence in the area.</li>
+
+        <!-- Faction leader asker -->
+        <li>questDescription(asker_factionLeader==True)->[asker_nameDef], [asker_faction_leaderTitle] of [asker_faction_name], has informed us of a mechanoid ship intending to land not too far from our area. This ship's protocol does not allow for landing if the location contains hostiles. This site is guarded by mechanoid forces, but destroying four landing beacons will be enough to stop the ship from landing.\n\nFailing to do so will result in the mechanoid ship making it to the surface, increasing the mechanoid presence in the area.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+	
+        <!-- Things below I have not touched -->
+		
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_IsSet">
+          <name>asker</name>
+          <elseNode Class="QuestNode_RandomNode">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>askerIsNull</name>
+                <value>true</value>
+                <selectionWeight>0.4</selectionWeight>
+              </li>
+              <li Class="QuestNode_GetPawn">
+                <storeAs>asker</storeAs>
+                <mustBeFactionLeader>true</mustBeFactionLeader>
+                <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+                <hostileWeight>0.15</hostileWeight>
+                <selectionWeight>0.6</selectionWeight>
+              </li>
+            </nodes>
+          </elseNode>
+        </li>
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <li Class="QuestNode_ViolentQuestsAllowed">
+          <node Class="QuestNode_Set">
+            <name>siteThreatChance</name>
+            <value>0.85</value>
+          </node>
+          <elseNode Class="QuestNode_Set">
+            <name>siteThreatChance</name>
+            <value>0</value>
+          </elseNode>
+        </li>
+
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>ItemStash</tag>
+            </li>
+            <li>
+              <tag>ItemStashQuestThreat</tag>
+              <chance>$siteThreatChance</chance>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+          </parms>
+        </li>
+        
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Intercepted communications indicate the item stash has been claimed by others. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_AddItemsReward">
+          <items>$generatedItemStashThings</items>
+          <inSignalChoiceUsed>site.MapGenerated</inSignalChoiceUsed>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End">
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

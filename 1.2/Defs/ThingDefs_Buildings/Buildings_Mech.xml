@@ -18,11 +18,14 @@
 		<drawerType>MapMeshOnly</drawerType>
 		<repairEffect>ConstructMetal</repairEffect>
 		<forceDebugSpawnable>true</forceDebugSpawnable>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory Inherit='False' />
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
 		</placeWorkers>
 		<building>
+			<buildingTags>
+				<li>VFE_MechanoidShip</li>
+			</buildingTags>
 			<soundAmbient>CrashedShipPart_Ambience</soundAmbient>
 			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
 		</building>
@@ -267,7 +270,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,4)</size>
-		<designationCategory>Ship</designationCategory>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
 		</placeWorkers>
@@ -367,7 +369,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,4)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -437,7 +438,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,4)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -484,7 +484,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,2)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -531,7 +530,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,4)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -585,7 +583,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,4)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -643,7 +640,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,4)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -699,7 +695,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(4,4)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -790,7 +785,7 @@
 			<turretBurstCooldownTime>3.6</turretBurstCooldownTime>
 			<turretTopOffset>(0, 0.1)</turretTopOffset>
 		</building>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory Inherit='False' />
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
@@ -890,7 +885,7 @@
 			<turretBurstCooldownTime>3.6</turretBurstCooldownTime>
 			<turretTopOffset>(0, 0.1)</turretTopOffset>
 		</building>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory Inherit='False' />
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
@@ -954,7 +949,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(2,2)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -1001,7 +995,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(3,3)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -1028,7 +1021,7 @@
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidBarrier</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.2,1.2)</drawSize>
+			<drawSize>(1.1,1.1)</drawSize>
 			<shadowData>
 				<volume>(1, 0.2, 1)</volume>
 			</shadowData>
@@ -1047,7 +1040,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(1,1)</size>
-		<designationCategory>Ship</designationCategory>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
 		</placeWorkers>
@@ -1064,7 +1056,7 @@
 
 	<ThingDef ParentName="VFE_MechShipPart">
 		<defName>VFE_BulletShield</defName>
-		<label>ship-mounted bullet shield</label>
+		<label>ship-mounted low shield</label>
 		<description>A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to low angles, so it will block ground-level projectiles like bullets. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield. This element is usually a part of a much larger ship.</description>
 		<graphicData>
 			<texPath>Things/MechanoidShips/MechanoidShipBulletShield</texPath>
@@ -1089,7 +1081,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(1,1)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
@@ -1146,7 +1137,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(1,1)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
@@ -1231,6 +1221,9 @@
 		<hasTooltip>true</hasTooltip>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<building>
+			<buildingTags>
+				<li>VFE_MechanoidShip</li>
+			</buildingTags>
 			<combatPower>240</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>VFE_Gun_AutoMortarCannon</turretGunDef>
@@ -1239,7 +1232,7 @@
 			<turretTopDrawSize>2.5</turretTopDrawSize>
 			<turretTopOffset>(0, 0.1)</turretTopOffset>
 		</building>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory Inherit='False' />
 	</ThingDef>
 
 	<ThingDef ParentName="BaseArtilleryWeapon">
@@ -1333,6 +1326,9 @@
 		<hasTooltip>true</hasTooltip>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<building>
+			<buildingTags>
+				<li>VFE_MechanoidShip</li>
+			</buildingTags>
 			<combatPower>240</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>VFE_Gun_InfernoArtillery</turretGunDef>
@@ -1341,7 +1337,7 @@
 			<turretTopDrawSize>2.5</turretTopDrawSize>
 			<turretTopOffset>(0, 0.1)</turretTopOffset>
 		</building>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory Inherit='False' />
 	</ThingDef>
 
 	<ThingDef ParentName="BaseArtilleryWeapon">
@@ -1359,10 +1355,10 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
-				<defaultProjectile>Bullet_InfernoCannon</defaultProjectile>
+				<defaultProjectile>VFE_Bullet_InfernoArtillery</defaultProjectile>
 				<forcedMissRadius>6</forcedMissRadius>
 				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-				<warmupTime>4</warmupTime>
+				<warmupTime>8</warmupTime>
 				<minRange>18.9</minRange>
 				<range>500</range>
 				<burstShotCount>3</burstShotCount>
@@ -1377,6 +1373,30 @@
 			</li>
 		</verbs>
 	</ThingDef>
+	
+  <!-- Inferno artillery shot -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFE_Bullet_InfernoArtillery</defName>
+    <label>inferno artillery shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <!-- Use default damage from explosion def -->
+      <speed>45</speed>
+      <flyOverhead>true</flyOverhead>
+      <explosionRadius>1.9</explosionRadius >
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.27</preExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+  </ThingDef>
 
 	<!-- Charge Railgun -->
 
@@ -1436,6 +1456,9 @@
 		<hasTooltip>true</hasTooltip>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<building>
+			<buildingTags>
+				<li>VFE_MechanoidShip</li>
+			</buildingTags>
 			<turretTopDrawSize>7</turretTopDrawSize>
 			<turretTopOffset>(0, 0.2)</turretTopOffset>
 			<combatPower>650</combatPower>
@@ -1444,7 +1467,7 @@
 			<turretBurstCooldownTime>6</turretBurstCooldownTime>
 			<turretBurstWarmupTime>12</turretBurstWarmupTime>
 		</building>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory Inherit='False' />
 	</ThingDef>
 
 	<ThingDef ParentName="BaseArtilleryWeapon">
@@ -1491,6 +1514,7 @@
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<speed>76</speed>
+			<flyOverhead>true</flyOverhead>
 			<explosionRadius>8.4</explosionRadius >
 		</projectile>
 	</ThingDef>
@@ -1547,6 +1571,9 @@
 		<hasTooltip>true</hasTooltip>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<building>
+			<buildingTags>
+				<li>VFE_MechanoidShip</li>
+			</buildingTags>
 			<turretTopDrawSize>5</turretTopDrawSize>
 			<turretTopOffset>(0, 0.1)</turretTopOffset>
 			<combatPower>650</combatPower>
@@ -1555,7 +1582,7 @@
 			<turretBurstCooldownTime>46</turretBurstCooldownTime>
 			<turretBurstWarmupTime>30</turretBurstWarmupTime>
 		</building>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory Inherit='False' />
 	</ThingDef>
 
 	<ThingDef ParentName="BaseArtilleryWeapon">
@@ -1619,7 +1646,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(3,3)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -1681,7 +1707,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(5,5)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -1743,7 +1768,6 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(3,6)</size>
-		<designationCategory>Ship</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
 			<li>PlaceWorker_NotUnderRoof</li>
@@ -1761,6 +1785,41 @@
 			<Uranium>40</Uranium>
 		</killedLeavings>
 	</ThingDef>
+	
+	
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_MechLandingBeacon</defName>
+    <label>mechanoid landing beacon</label>
+    <description>This advanced, spacer tech beacon serves as a guide for a surface-bound mechanoid ship.</description>
+    <graphicData>
+      <texPath>Things/Buildings/Misc/MechanoidLandingBeacon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.25, 0.25, 0.25)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <fillPercent>0.15</fillPercent>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(30,180,234,0)</glowColor>
+      </li>
+    </comps>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <pathCost>20</pathCost>
+    <rotatable>false</rotatable>
+  </ThingDef>
 
 
 </Defs>

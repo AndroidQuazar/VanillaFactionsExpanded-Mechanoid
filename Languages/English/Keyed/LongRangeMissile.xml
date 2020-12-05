@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<VFEM_SiloNoTarget>Currently no target</VFEM_SiloNoTarget>
+	<VFEM_SiloTargeting>Currently targeting {0} of {1}</VFEM_SiloTargeting>
+	<VFEM_SiloConditionsSatisfied>All resources present</VFEM_SiloConditionsSatisfied>
+	<VFEM_SiloConditionsUnsatisfied>Some resources missing</VFEM_SiloConditionsUnsatisfied>
+	<VFEM_SiloCountEntry>{0}: {1}/{2}</VFEM_SiloCountEntry>
+	<VFEM_SiloAimAtQuestSite>Location does not contain object big enough to target</VFEM_SiloAimAtQuestSite>
+</LanguageData>

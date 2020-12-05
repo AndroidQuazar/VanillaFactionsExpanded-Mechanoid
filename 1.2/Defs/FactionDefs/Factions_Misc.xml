@@ -4,14 +4,17 @@
 
   <FactionDef ParentName="FactionBase">
     <defName>VFE_Mechanoid</defName>
-	<label>mechanoid swarm</label>
+    <label>mechanoid swarm</label>
     <description>A large, orbit-bound swarm of mechanoid terraforming ships and combat vessels. Controlled remotely by human commanders in one of the core worlds, in the center of this mechanoid swarm lies a lair, where countless machines are constructed and deconstructed continuously to serve the greater cause.\n\nThey are not concerned with human rights and don't perceive inhabitants of this rimworld as anything but apes that need to be terminated for the terraforming project to continue.\n\nThis mechanoid swarm cannot be allied with.</description>
     <pawnSingular>mechanoid</pawnSingular>
     <pawnsPlural>mechanoids</pawnsPlural>
     <listOrderPriority>75</listOrderPriority>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
     <factionNameMaker>VFE_NamerFactionMechanoid</factionNameMaker>
     <factionIconPath>World/WorldObjects/Expanding/Sites/MechanoidBase</factionIconPath>
+    <canMakeRandomly>false</canMakeRandomly>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -32,7 +35,7 @@
       </points>
     </raidLootValueFromPointsCurve>
     <humanlikeFaction>false</humanlikeFaction>
-    <hidden>false</hidden>
+    <hidden>true</hidden>
     <autoFlee>false</autoFlee>
     <canUseAvoidGrid>false</canUseAvoidGrid>
     <techLevel>Ultra</techLevel>
@@ -47,24 +50,141 @@
       </points>
     </maxPawnCostPerTotalPointsCurve>
     <pawnGroupMakers>
-      <li>
+      <li Class="VFEMech.PawnGroupMakerMech">
         <!-- All types-->
         <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
+          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Pikeman>5</VFE_Mech_Pikeman>
+          <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>10</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Heavy Weapons-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
+          <VFE_Mech_Lancer>3</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>3</VFE_Mech_Scyther>
+          <VFE_Mech_Pikeman>10</VFE_Mech_Pikeman>
+          <VFE_Mech_Inquisitor>3</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>3</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Infantry-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Inquisitor>5</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>10</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Anti-infantry-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <maximumPresence>9600</maximumPresence>
+        <options>
+          <VFE_Mech_Lancer>5</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
+          <VFE_Mech_Knight>7</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- All types-->
+        <kindDef>Settlement</kindDef>
         <commonality>100</commonality>
         <options>
           <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
           <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
           <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
-          <VFE_Mech_Pikeman>10</VFE_Mech_Pikeman>
+          <VFE_Mech_Pikeman>5</VFE_Mech_Pikeman>
           <VFE_Mech_Inquisitor>10</VFE_Mech_Inquisitor>
           <VFE_Mech_Knight>10</VFE_Mech_Knight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Vanilla-Only-->
+        <kindDef>Settlement</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <VFE_Mech_Centipede>10</VFE_Mech_Centipede>
+          <VFE_Mech_Lancer>10</VFE_Mech_Lancer>
+          <VFE_Mech_Scyther>10</VFE_Mech_Scyther>
+          <VFE_Mech_Pikeman>5</VFE_Mech_Pikeman>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- All types-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>9600</minimumPresence>
+        <options>
+          <VFE_Mech_AdvancedCentipede>10</VFE_Mech_AdvancedCentipede>
+          <VFE_Mech_AdvancedLancer>10</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>10</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedPikeman>10</VFE_Mech_AdvancedPikeman>
+          <VFE_Mech_AdvancedInquisitor>10</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>10</VFE_Mech_AdvancedKnight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Infantry-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>9600</minimumPresence>
+        <options>
+          <VFE_Mech_AdvancedLancer>10</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>10</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedInquisitor>5</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>10</VFE_Mech_AdvancedKnight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- Heavy Weapons-->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>9600</minimumPresence>
+        <options>
+          <VFE_Mech_AdvancedCentipede>10</VFE_Mech_AdvancedCentipede>
+          <VFE_Mech_AdvancedLancer>3</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>3</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedPikeman>10</VFE_Mech_AdvancedPikeman>
+          <VFE_Mech_AdvancedInquisitor>3</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>3</VFE_Mech_AdvancedKnight>
+        </options>
+      </li>
+      <li Class="VFEMech.PawnGroupMakerMech">
+        <!-- All kinds-->
+        <kindDef>Settlement</kindDef>
+        <commonality>100</commonality>
+        <minimumPresence>9600</minimumPresence>
+        <options>
+          <VFE_Mech_AdvancedCentipede>10</VFE_Mech_AdvancedCentipede>
+          <VFE_Mech_AdvancedLancer>10</VFE_Mech_AdvancedLancer>
+          <VFE_Mech_AdvancedScyther>10</VFE_Mech_AdvancedScyther>
+          <VFE_Mech_AdvancedPikeman>10</VFE_Mech_AdvancedPikeman>
+          <VFE_Mech_AdvancedInquisitor>10</VFE_Mech_AdvancedInquisitor>
+          <VFE_Mech_AdvancedKnight>10</VFE_Mech_AdvancedKnight>
         </options>
       </li>
     </pawnGroupMakers>
     <settlementTexturePath>World/WorldObjects/MechanoidShip</settlementTexturePath>
     <allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
   </FactionDef>
-  
+
   <ThingSetMakerDef>
     <defName>VFE_MechanoidRaidLootMaker</defName>
     <root Class="ThingSetMaker_MarketValue">
@@ -74,7 +194,7 @@
             <li>Plasteel</li>
             <li>ComponentIndustrial</li>
             <li>ComponentSpacer</li>
-			<li>VFE_ComponentMechanoid</li>
+            <li>VFE_ComponentMechanoid</li>
           </thingDefs>
         </filter>
       </fixedParams>

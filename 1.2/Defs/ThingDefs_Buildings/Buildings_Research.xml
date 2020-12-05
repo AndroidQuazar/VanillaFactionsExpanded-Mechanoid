@@ -4,7 +4,7 @@
    <ThingDef ParentName="BuildingBase">
     <defName>VFE_Supercomputer</defName>
     <label>supercomputer</label>
-    <description>tbd</description>
+    <description>A series of electronic mechanoid components outfitted to mimic the processes of human computing technology. Those who wish to harness the power of this device only need to designate a topic of interest. No matter how vague or broad a subject, the machine will sync with other electronic information banks and via interplanetary data networks. After syncing the machine will translate gathered data into the users preferred language and estimated level of understanding.</description>
     <thingClass>VFEMech.Supercomputer</thingClass>
 	<tickerType>Normal</tickerType>
     <graphicData>
@@ -57,10 +57,10 @@
       <li Class="CompProperties_Breakdownable"/>
     </comps>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>Production</designationCategory>
+    <designationCategory>Misc</designationCategory>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
-      <li>Electricity</li>
+      <li>VFE_BasicDroneAssembly</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>

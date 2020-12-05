@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef Abstract="True" Name="VFEM_ShipBase">
+        <description>A landed mechanoid ship.</description>
+        <worldObjectClass>VFEMech.MechSettlement</worldObjectClass>
+        <expandingIcon>true</expandingIcon>
+        <texture>World/WorldObjects/MechanoidShip</texture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidBase</expandingIconTexture>
+        <expandingIconPriority>10</expandingIconPriority>
+        <canBePlayerHome>false</canBePlayerHome>
+        <comps>
+            <li Class="WorldObjectCompProperties_Abandon" />
+            <li Class="WorldObjectCompProperties_TradeRequest" />
+            <li Class="WorldObjectCompProperties_FormCaravan" />
+            <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+            <li Class="WorldObjectCompProperties_EnterCooldown" />
+        </comps>
+    </WorldObjectDef>
+
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Frigate</defName>
+        <label>mechanoid frigate</label>
+        <texture>World/WorldObjects/MechanoidShip</texture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipFrigate</expandingIconTexture>
+        <description>Slightly increases mechanoid presence.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>300</raisesPresence>
+                <nameMaker>VFE_NamerShipFrigate</nameMaker>
+            </li>
+            <li Class="KCSG.FactionSettlement">
+                <chooseFrom>
+                    <li>VFEM_Frigate1</li>
+                    <li>VFEM_Frigate2</li>
+                    <li>VFEM_Frigate3</li>
+                    <li>VFEM_Frigate4</li>
+                    <li>VFEM_Frigate5</li>
+                    <li>VFEM_Frigate6</li>
+                    <li>VFEM_Frigate7</li>
+                    <li>VFEM_Frigate8</li>
+                    <li>VFEM_Frigate9</li>
+                    <li>VFEM_Frigate10</li>
+                    <li>VFEM_Frigate11</li>
+                    <li>VFEM_Frigate12</li>
+                    <li>VFEM_FrigateDLC1</li>
+                    <li>VFEM_FrigateDLC2</li>
+                    <li>VFEM_FrigateDLC3</li>
+                    <li>VFEM_FrigateDLC4</li>
+                    <li>VFEM_FrigateDLC5</li>
+                    <li>VFEM_FrigateDLC6</li>
+                    <li>VFEM_FrigateDLC7</li>
+                    <li>VFEM_FrigateDLC8</li>
+                    <li>VFEM_FrigateDLC9</li>
+                    <li>VFEM_FrigateDLC10</li>
+                    <li>VFEM_FrigateDLC11</li>
+                    <li>VFEM_FrigateDLC12</li>
+                </chooseFrom>
+                <symbolResolver>vfem_ships</symbolResolver>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Destroyer</defName>
+        <texture>World/WorldObjects/MechanoidShipDestroyerExpanding</texture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipDestroyer</expandingIconTexture>
+        <label>mechanoid destroyer</label>
+        <description>Increases mechanoid presence.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>800</raisesPresence>
+                <nameMaker>VFE_NamerShipDestroyer</nameMaker>
+            </li>
+            <li Class="KCSG.FactionSettlement">
+                <chooseFrom>
+                    <li>VFEM_Destroyer1</li>
+                    <li>VFEM_Destroyer2</li>
+                    <li>VFEM_Destroyer3</li>
+                    <li>VFEM_Destroyer4</li>
+                    <li>VFEM_Destroyer5</li>
+                    <li>VFEM_Destroyer6</li>
+                    <li>VFEM_Destroyer7</li>
+                    <li>VFEM_Destroyer8</li>
+                    <li>VFEM_Destroyer9</li>
+                    <li>VFEM_Destroyer10</li>
+                    <li>VFEM_Destroyer11</li>
+                    <li>VFEM_Destroyer12</li>
+                    <li>VFEM_DestroyerDLC1</li>
+                    <li>VFEM_DestroyerDLC2</li>
+                    <li>VFEM_DestroyerDLC3</li>
+                    <li>VFEM_DestroyerDLC4</li>
+                    <li>VFEM_DestroyerDLC5</li>
+                    <li>VFEM_DestroyerDLC6</li>
+                    <li>VFEM_DestroyerDLC7</li>
+                    <li>VFEM_DestroyerDLC8</li>
+                    <li>VFEM_DestroyerDLC9</li>
+                    <li>VFEM_DestroyerDLC10</li>
+                    <li>VFEM_DestroyerDLC11</li>
+                    <li>VFEM_DestroyerDLC12</li>
+                </chooseFrom>
+                <symbolResolver>vfem_ships</symbolResolver>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Cruiser</defName>
+        <texture>World/WorldObjects/MechanoidShipCruiserExpanding</texture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipCruiser</expandingIconTexture>
+        <label>mechanoid cruiser</label>
+        <description>Greatly increases mechanoid presence.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>1600</raisesPresence>
+                <nameMaker>VFE_NamerShipCruiser</nameMaker>
+            </li>
+            <li Class="KCSG.FactionSettlement">
+                <chooseFrom>
+                    <li>VFEM_Cruiser1</li>
+                    <li>VFEM_Cruiser2</li>
+                    <li>VFEM_Cruiser3</li>
+                    <li>VFEM_Cruiser4</li>
+                    <li>VFEM_Cruiser5</li>
+                    <li>VFEM_Cruiser6</li>
+                    <li>VFEM_Cruiser7</li>
+                    <li>VFEM_Cruiser8</li>
+                    <li>VFEM_Cruiser9</li>
+                    <li>VFEM_Cruiser10</li>
+                    <li>VFEM_Cruiser11</li>
+                    <li>VFEM_Cruiser12</li>
+                    <li>VFEM_CruiserDLC1</li>
+                    <li>VFEM_CruiserDLC2</li>
+                    <li>VFEM_CruiserDLC3</li>
+                    <li>VFEM_CruiserDLC4</li>
+                    <li>VFEM_CruiserDLC5</li>
+                    <li>VFEM_CruiserDLC6</li>
+                    <li>VFEM_CruiserDLC7</li>
+                    <li>VFEM_CruiserDLC8</li>
+                    <li>VFEM_CruiserDLC9</li>
+                    <li>VFEM_CruiserDLC10</li>
+                    <li>VFEM_CruiserDLC11</li>
+                    <li>VFEM_CruiserDLC12</li>
+                </chooseFrom>
+                <symbolResolver>vfem_ships</symbolResolver>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Troopship</defName>
+        <texture>World/WorldObjects/MechanoidShipTroopshipExpanding</texture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipTroopship</expandingIconTexture>
+        <label>mechanoid troopship</label>
+        <description>Drastically increases mechanoid presence.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>2000</raisesPresence>
+                <nameMaker>VFE_NamerShipTroopship</nameMaker>
+            </li>
+            <li Class="KCSG.FactionSettlement">
+                <chooseFrom>
+                    <li>VFEM_Troopship1</li>
+                    <li>VFEM_Troopship2</li>
+                    <li>VFEM_Troopship3</li>
+                    <li>VFEM_Troopship4</li>
+                    <li>VFEM_Troopship5</li>
+                    <li>VFEM_Troopship6</li>
+                    <li>VFEM_Troopship7</li>
+                    <li>VFEM_Troopship8</li>
+                    <li>VFEM_Troopship9</li>
+                    <li>VFEM_Troopship10</li>
+                    <li>VFEM_Troopship11</li>
+                    <li>VFEM_Troopship12</li>
+                    <li>VFEM_TroopshipDLC1</li>
+                    <li>VFEM_TroopshipDLC2</li>
+                    <li>VFEM_TroopshipDLC3</li>
+                    <li>VFEM_TroopshipDLC4</li>
+                    <li>VFEM_TroopshipDLC5</li>
+                    <li>VFEM_TroopshipDLC6</li>
+                    <li>VFEM_TroopshipDLC7</li>
+                    <li>VFEM_TroopshipDLC8</li>
+                    <li>VFEM_TroopshipDLC9</li>
+                    <li>VFEM_TroopshipDLC10</li>
+                    <li>VFEM_TroopshipDLC11</li>
+                    <li>VFEM_TroopshipDLC12</li>
+                </chooseFrom>
+                <symbolResolver>vfem_ships</symbolResolver>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+
+    <WorldObjectDef ParentName="VFEM_ShipBase">
+        <defName>VFEM_Carrier</defName>
+        <texture>World/WorldObjects/MechanoidShip</texture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/MechanoidShipCarrier</expandingIconTexture>
+        <label>mechanoid carrier</label>
+        <description>Tremendously increases mechanoid presence.</description>
+        <modExtensions>
+            <li Class="VFEMech.MechanoidBaseExtension">
+                <raisesPresence>3200</raisesPresence>
+                <nameMaker>VFE_NamerShipCarrier</nameMaker>
+            </li>
+            <li Class="KCSG.FactionSettlement">
+                <chooseFrom>
+                    <li>VFEM_Carrier1</li>
+                    <li>VFEM_Carrier2</li>
+                    <li>VFEM_Carrier3</li>
+                    <li>VFEM_Carrier4</li>
+                    <li>VFEM_Carrier5</li>
+                    <li>VFEM_Carrier6</li>
+                    <li>VFEM_Carrier7</li>
+                    <li>VFEM_Carrier8</li>
+                    <li>VFEM_Carrier9</li>
+                    <li>VFEM_Carrier10</li>
+                    <li>VFEM_Carrier11</li>
+                    <li>VFEM_Carrier12</li>
+                    <li>VFEM_CarrierDLC1</li>
+                    <li>VFEM_CarrierDLC2</li>
+                    <li>VFEM_CarrierDLC3</li>
+                    <li>VFEM_CarrierDLC4</li>
+                    <li>VFEM_CarrierDLC5</li>
+                    <li>VFEM_CarrierDLC6</li>
+                    <li>VFEM_CarrierDLC7</li>
+                    <li>VFEM_CarrierDLC8</li>
+                    <li>VFEM_CarrierDLC9</li>
+                    <li>VFEM_CarrierDLC10</li>
+                    <li>VFEM_CarrierDLC11</li>
+                    <li>VFEM_CarrierDLC12</li>
+                </chooseFrom>
+                <symbolResolver>vfem_ships</symbolResolver>
+            </li>
+        </modExtensions>
+    </WorldObjectDef>
+</Defs>

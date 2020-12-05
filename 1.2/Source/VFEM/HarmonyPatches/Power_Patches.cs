@@ -33,7 +33,7 @@ namespace VFEMech
 						List<Thing> thingList = b.parent.Map.thingGrid.ThingsListAt(c);
 						for (int i = 0; i < thingList.Count; i++)
 						{
-							if (thingList[i].def.ConnectToPower && thingList[i].def == VFEMDefOf.VFE_ConduitPylon)
+							if (thingList[i].def.ConnectToPower && thingList[i].def == VFEMDefOf.VFE_ConduitPylon && thingList[i].TryGetComp<CompFlickable>().SwitchIsOn)
 							{
 								compPowers.Add(((Building)thingList[i]).PowerComp);
 							}
@@ -69,7 +69,7 @@ namespace VFEMech
 						CompPower powerComp = transmitter.PowerComp;
 						if (powerComp != null && powerComp.TransmitsPowerNow && (transmitter.def.building == null || transmitter.def.building.allowWireConnection) 
 							&& (disallowedNets == null || !disallowedNets.Contains(powerComp.transNet))
-							&& transmitter.Position.GetThingList(map).Where(x => x.def == VFEMDefOf.VFE_ConduitPylon).Any())
+							&& transmitter.Position.GetThingList(map).Where(x => x.def == VFEMDefOf.VFE_ConduitPylon && x.TryGetComp<CompFlickable>().SwitchIsOn).Any())
 						{
 							float num2 = (transmitter.Position - connectorPos).LengthHorizontalSquared;
 							if (num2 < num)
@@ -81,6 +81,66 @@ namespace VFEMech
 					}
 				}
 				__result = result;
+			}
+		}
+	}
+
+	[HarmonyPatch(typeof(CompPowerTrader), "PowerOn", MethodType.Setter)]
+	internal static class PowerOn_Patch
+	{
+		public static void Postfix(CompPowerTrader __instance)
+		{
+			if (__instance.parent.def == VFEMDefOf.VFE_ConduitPylon)
+			{
+				var transmitter = __instance.parent.Position.GetTransmitter(__instance.parent.Map);
+				CompPower powerComp = transmitter.PowerComp;
+				for (int num = powerComp.PowerNet.powerComps.Count - 1; num >= 0; num--)
+				{
+					var powerUser = powerComp.PowerNet.powerComps[num];
+					if (powerUser.parent.def != VFEMDefOf.VFE_ConduitPylon && powerUser.connectParent?.parent?.Position == __instance.parent.Position && powerUser.connectParent != null)
+					{
+						PowerConnectionMaker.DisconnectFromPowerNet(powerUser);
+						var flickableComp = powerUser.parent.TryGetComp<CompFlickable>();
+						if (flickableComp != null && !flickableComp.SwitchIsOn)
+						{
+							powerUser.parent.Map.overlayDrawer.DrawOverlay(powerUser.parent, OverlayTypes.PowerOff);
+						}
+						else if (FlickUtility.WantsToBeOn(powerUser.parent) && !powerUser.PowerOn)
+						{
+							powerUser.parent.Map.overlayDrawer.DrawOverlay(powerUser.parent, OverlayTypes.NeedsPower);
+						}
+						powerUser.PowerOn = false;
+						powerUser.parent.Map.powerNetManager.Notify_ConnectorWantsConnect(powerUser);
+						PowerConnectionMaker.TryConnectToAnyPowerNet(powerUser);
+					}
+				}
+				if (__instance.PowerOn)
+                {
+					CellRect cellRect = CellRect.SingleCell(__instance.parent.Position).ExpandedBy(18).ClipInsideMap(__instance.parent.Map);
+					cellRect.ClipInsideMap(__instance.parent.Map);
+					for (int i = cellRect.minZ; i <= cellRect.maxZ; i++)
+					{
+						for (int j = cellRect.minX; j <= cellRect.maxX; j++)
+						{
+							foreach (var building in new IntVec3(j, 0, i).GetThingList(__instance.parent.Map))
+							{
+								if (building.TryGetComp<CompPowerTrader>() is CompPowerTrader powerUser && !powerUser.PowerOn)
+								{
+									powerUser.parent.Map.mapDrawer.MapMeshDirty(powerUser.parent.Position, MapMeshFlag.PowerGrid, regenAdjacentCells: true, regenAdjacentSections: false);
+									if (powerUser.Props.transmitsPower)
+									{
+										powerUser.parent.Map.powerNetManager.Notify_TransmitterSpawned(powerUser);
+									}
+									if (powerUser.parent.def.ConnectToPower)
+									{
+										powerUser.parent.Map.powerNetManager.Notify_ConnectorWantsConnect(powerUser);
+									}
+									powerUser.SetUpPowerVars();
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

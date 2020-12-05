@@ -28,8 +28,28 @@
 				<li Class="PatchOperationRemove">		
 					<xpath>/Defs/ThingDef[defName = "VFE_MortarShield"]</xpath>
 				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_PsychicSuppressor"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_MechanoidUplink"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_MortarShield"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_PsychicDroner"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_EMIDynamo"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_ClimateAdjuster"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_BulletShield"]</xpath>
+				</li>
 			</operations>		
 		</nomatch>
 	</Operation>  
 </Patch>
-

@@ -14,7 +14,7 @@ namespace VFEMech
         public override void Tick()
         {
             base.Tick();
-            if (Find.TickManager.TicksGame % 600 == 0)
+            if (this.Map != null && Find.TickManager.TicksGame % 600 == 0)
             {
                 MoteMaker.MakeStaticMote(this.Position, this.Map, ThingDefOf.Mote_PsycastAreaEffect, 10f);
                 var buildings = this.Map.listerThings.AllThings.Where(x => x.def.building?.buildingTags?.Contains("VFE_MechanoidShip") ?? false && x.Position.DistanceTo(this.Position) <= 20f).ToList();

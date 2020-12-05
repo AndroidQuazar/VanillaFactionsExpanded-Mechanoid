@@ -3,6 +3,7 @@
 
 	<ThingDef ParentName="BasePawn" Name="VFE_AdvancedMechanoid" Abstract="True">
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingClass>VFEMech.VFEMechanoid</thingClass>
 		<statBases>
 			<PsychicSensitivity>0.5</PsychicSensitivity>
 			<ToxicSensitivity>0</ToxicSensitivity>
@@ -256,8 +257,8 @@
 		</race>
 		<comps>
 			<li Class="VFEMech.CompProperties_ShieldMechBubble">
-				<EnergyShieldRechargeRate>0.23</EnergyShieldRechargeRate>
-				<EnergyShieldEnergyMax>200</EnergyShieldEnergyMax>
+				<EnergyShieldRechargeRate>0.05</EnergyShieldRechargeRate>
+				<EnergyShieldEnergyMax>70</EnergyShieldEnergyMax>
 			</li>
 		</comps>
 	</ThingDef>

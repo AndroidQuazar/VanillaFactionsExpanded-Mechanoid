@@ -1,5 +1,0 @@
-c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Assemblies\VFEM.dll
-c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csprojAssemblyReference.cache
-c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csproj.CoreCompileInputs.cache
-c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.csproj.CopyComplete
-c:\GAMES\Rimworld\Mods\VanillaFactionsExpanded-Mechanoid\1.2\Source\VFEM\obj\Debug\VFEM.dll

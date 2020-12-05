@@ -8,7 +8,7 @@ using Verse;
 
 namespace VFEMech
 {
-    public class Mech_Inquisitor : Pawn
+    public class Mech_Inquisitor : VFEMechanoid
     {
         public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
