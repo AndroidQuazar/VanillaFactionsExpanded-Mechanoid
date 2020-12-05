@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VFEMechanoids</RootNamespace>
-    <AssemblyName>VFEMechanoids</AssemblyName>
+    <AssemblyName>VFEMechanoids-Machines</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mechanoids\AI\JobDrivers\JobDriver_AttachTurret.cs" />
+    <Compile Include="Mechanoids\AI\JobDrivers\JobDriver_Recharge.cs" />
     <Compile Include="Mechanoids\AI\JobDrivers\JobDriver_RepairMachine.cs" />
     <Compile Include="Mechanoids\AI\JobGivers\JobGiver_ReturnToStation.cs" />
     <Compile Include="Mechanoids\AI\JobGivers\JobGiver_Recharge.cs" />
@@ -82,9 +83,9 @@
     <Compile Include="Mechanoids\HarmonyPatches\HarmonyPatcher.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\MechanoidsAreCapable.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\MechanoidsCanBeDrafted.cs" />
-    <Compile Include="Mechanoids\HarmonyPatches\MechanoidsDoNotReserveBeds.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\MechanoidsObeyOrders.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\NoBioForMachines.cs" />
+    <Compile Include="Mechanoids\Needs\Need_Power.cs" />
     <Compile Include="Mechanoids\VFEMechanoids.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

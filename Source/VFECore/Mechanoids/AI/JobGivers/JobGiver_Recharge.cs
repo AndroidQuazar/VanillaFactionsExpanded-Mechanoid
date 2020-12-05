@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 using Verse;
 using Verse.AI;
 using VFE.Mechanoids;
+using VFE.Mechanoids.Needs;
 
 namespace VFE.Mechanoids.AI.JobGivers
 {
 	public class JobGiver_Recharge : ThinkNode_JobGiver
 	{
+		public static JobDef Recharge => DefDatabase<JobDef>.GetNamed("VFE_Mechanoids_Recharge");
+
 		private RestCategory minCategory=RestCategory.VeryTired;
 
 		private float maxLevelPercentage = 0.99f;
@@ -26,16 +29,16 @@ namespace VFE.Mechanoids.AI.JobGivers
 
 		public override float GetPriority(Pawn pawn)
 		{
-			Need_Rest rest = pawn.needs.rest;
-			if (rest == null)
+			Need_Power power = pawn.needs.TryGetNeed<Need_Power>();
+			if (power == null)
 			{
 				return 0f;
 			}
-			if ((int)rest.CurCategory < (int)minCategory)
+			if ((int)power.CurCategory < (int)minCategory)
 			{
 				return 0f;
 			}
-			if (rest.CurLevelPercentage > maxLevelPercentage)
+			if (power.CurLevelPercentage > maxLevelPercentage)
 			{
 				return 0f;
 			}
@@ -44,12 +47,12 @@ namespace VFE.Mechanoids.AI.JobGivers
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			Need_Rest rest = pawn.needs.rest;
-			if (rest == null || rest.CurLevelPercentage > maxLevelPercentage)
+			Need_Power power = pawn.needs.TryGetNeed<Need_Power>();
+			if (power == null || power.CurLevelPercentage > maxLevelPercentage)
 				return null;
-			if (pawn.CurJobDef != RimWorld.JobDefOf.LayDown && rest.CurCategory <= minCategory)
+			if (pawn.CurJobDef != Recharge && power.CurCategory <= minCategory)
 				return null;
-			return JobMaker.MakeJob(RimWorld.JobDefOf.LayDown, pawn.TryGetComp<CompMachine>().myBuilding);
+			return JobMaker.MakeJob(Recharge, pawn.TryGetComp<CompMachine>().myBuilding);
 		}
 	}
 }

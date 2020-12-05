@@ -8,23 +8,17 @@ using Verse;
 
 namespace VFE.Mechanoids.Buildings
 {
-    public class Building_BedMachine : Building_Bed
+    public class Building_BedMachine : Building
     {
-        public override IEnumerable<Gizmo> GetGizmos()
+        public Pawn occupant
         {
-            if (def.Minifiable && base.Faction == Faction.OfPlayer)
+            get
             {
-                yield return InstallationDesignatorDatabase.DesignatorFor(def);
-            }
-            if (AllComps.Count()>0)
-            {
-                for (int i = 0; i < AllComps.Count; i++)
+                if(this.TryGetComp<CompMachineChargingStation>()?.myPawn.Position==this.Position)
                 {
-                    foreach (Gizmo item in AllComps[i].CompGetGizmosExtra())
-                    {
-                        yield return item;
-                    }
+                    return this.TryGetComp<CompMachineChargingStation>().myPawn;
                 }
+                return null;
             }
         }
     }

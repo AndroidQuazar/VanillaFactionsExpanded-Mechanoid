@@ -35,7 +35,7 @@ namespace VFE.Mechanoids.AI.JobDrivers
             yield return waitForMachineToReturn;
             yield return Toils_General.Wait(240).FailOnDestroyedNullOrForbidden(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch)
                 .WithProgressBarToilDelay(TargetIndex.A);
-            yield return Toils_Jump.JumpIf(waitForMachineToReturn, () => ((Building_BedMachine)TargetA).GetCurOccupant(0) == null);
+            yield return Toils_Jump.JumpIf(waitForMachineToReturn, () => ((Building_BedMachine)TargetA).occupant == null);
             yield return Finalize(TargetIndex.A, TargetIndex.B);
         }
 

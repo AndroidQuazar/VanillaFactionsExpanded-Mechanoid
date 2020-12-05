@@ -42,7 +42,6 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
-	  <needsRest>true</needsRest>
     </race>
     <butcherProducts>
       <ComponentSpacer>1</ComponentSpacer>
@@ -64,7 +63,6 @@
         <bodyGraphicData>
           <texPath>Things/Automation/Autocleaner/Autocleaner</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2</drawSize>
           <shadowData>
             <volume>(0.6, 0.8, 0.6)</volume>
           </shadowData>
@@ -114,7 +112,6 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
-	  <needsRest>true</needsRest>
     </race>
     <butcherProducts>
       <ComponentSpacer>1</ComponentSpacer>
@@ -186,7 +183,6 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
-	  <needsRest>true</needsRest>
     </race>
     <butcherProducts>
       <ComponentSpacer>1</ComponentSpacer>
@@ -258,7 +254,6 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
-	  <needsRest>true</needsRest>
     </race>
     <butcherProducts>
       <ComponentSpacer>1</ComponentSpacer>
@@ -331,7 +326,6 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
-	  <needsRest>true</needsRest>
     </race>
     <butcherProducts>
       <ComponentSpacer>1</ComponentSpacer>
@@ -404,7 +398,6 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
-	  <needsRest>true</needsRest>
     </race>
     <butcherProducts>
       <ComponentSpacer>1</ComponentSpacer>

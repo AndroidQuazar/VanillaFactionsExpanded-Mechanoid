@@ -65,10 +65,6 @@
 		</allowedWorkTypes>
 		<extraChargingPower>1400</extraChargingPower>
 	  </li>
-      <li Class="CompProperties_AssignableToPawn">
-        <drawAssignmentOverlay>false</drawAssignmentOverlay>
-        <compClass>CompAssignableToPawn_Bed</compClass>
-      </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
     <researchPrerequisites>
@@ -142,10 +138,6 @@
 		</allowedWorkTypes>
 		<extraChargingPower>1600</extraChargingPower>
 	  </li>
-      <li Class="CompProperties_AssignableToPawn">
-        <drawAssignmentOverlay>false</drawAssignmentOverlay>
-        <compClass>CompAssignableToPawn_Bed</compClass>
-      </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
     <researchPrerequisites>
@@ -219,10 +211,6 @@
 		<extraChargingPower>1800</extraChargingPower>
 		<skillLevel>10</skillLevel>
 	  </li>
-      <li Class="CompProperties_AssignableToPawn">
-        <drawAssignmentOverlay>false</drawAssignmentOverlay>
-        <compClass>CompAssignableToPawn_Bed</compClass>
-      </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
     <researchPrerequisites>
@@ -295,10 +283,6 @@
 		<extraChargingPower>1200</extraChargingPower>
 		<spawnWithWeapon>Gun_ChargeLance</spawnWithWeapon>
 	  </li>
-      <li Class="CompProperties_AssignableToPawn">
-        <drawAssignmentOverlay>false</drawAssignmentOverlay>
-        <compClass>CompAssignableToPawn_Bed</compClass>
-      </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
     <researchPrerequisites>
@@ -370,10 +354,6 @@
 		</allowedWorkTypes>
 		<extraChargingPower>1600</extraChargingPower>
 	  </li>
-      <li Class="CompProperties_AssignableToPawn">
-        <drawAssignmentOverlay>false</drawAssignmentOverlay>
-        <compClass>CompAssignableToPawn_Bed</compClass>
-      </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
     <researchPrerequisites>
@@ -446,10 +426,6 @@
 		<extraChargingPower>1600</extraChargingPower>
 		<turret>true</turret>
 	  </li>
-      <li Class="CompProperties_AssignableToPawn">
-        <drawAssignmentOverlay>false</drawAssignmentOverlay>
-        <compClass>CompAssignableToPawn_Bed</compClass>
-      </li>
     </comps>
     <designationCategory>Furniture</designationCategory>
     <researchPrerequisites>

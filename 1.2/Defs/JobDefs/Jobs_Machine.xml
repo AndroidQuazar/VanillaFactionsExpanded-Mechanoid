@@ -16,5 +16,13 @@
     <suspendable>false</suspendable>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  
+  <JobDef>
+    <defName>VFE_Mechanoids_Recharge</defName>
+    <driverClass>VFE.Mechanoids.AI.JobDrivers.JobDriver_Recharge</driverClass>
+    <reportString>recharging.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 
 </Defs>

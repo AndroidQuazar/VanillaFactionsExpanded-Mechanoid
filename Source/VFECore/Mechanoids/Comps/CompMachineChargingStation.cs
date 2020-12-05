@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using VFE.Mechanoids.Buildings;
+using VFE.Mechanoids.Needs;
 using VFECore;
 
 namespace VFE.Mechanoids
@@ -61,6 +62,8 @@ namespace VFE.Mechanoids
                     myPawn.equipment.AddEquipment(thing);
                 }
             }
+            if(myPawn.needs.TryGetNeed<Need_Power>()==null)
+                typeof(Pawn_NeedsTracker).GetMethod("AddNeed", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(myPawn.needs, new object[] { DefDatabase<NeedDef>.GetNamed("VFE_Mechanoids_Power") });
             wantsRespawn = false;
         }
 
@@ -68,10 +71,10 @@ namespace VFE.Mechanoids
         {
             base.CompTickRare();
             Building_BedMachine bed = (Building_BedMachine)parent;
-            if(bed.GetCurOccupant(0)!=null)
+            if(bed.occupant!=null)
             {
                 parent.TryGetComp<CompPowerTrader>().powerOutputInt = 0 - parent.TryGetComp<CompPowerTrader>().Props.basePowerConsumption - Props.extraChargingPower;
-                if (myPawn.health.hediffSet.HasNaturallyHealingInjury())
+                if (myPawn.health.hediffSet.HasNaturallyHealingInjury() && bed.TryGetComp<CompPowerTrader>().PowerOn)
                 {
                     float num3 = 12f;
                 (from x in myPawn.health.hediffSet.GetHediffs<Hediff_Injury>()
