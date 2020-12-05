@@ -244,6 +244,7 @@ namespace VFEMech
             }
         }
 
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -439,10 +440,13 @@ namespace VFEMech
 
     public class MissileIncoming : Skyfaller, IActiveDropPod
     {
+        private int ticksToImpactMaxPrivate;
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.angle = 0f;
+            this.ticksToImpactMaxPrivate = (int) AccessTools.Field(typeof(Skyfaller), "ticksToImpactMax").GetValue(this);
         }
 
         public ActiveDropPodInfo Contents
@@ -453,6 +457,52 @@ namespace VFEMech
 
         protected override void SpawnThings()
         {
+        }
+
+        public override void Tick()
+        {
+            base.Tick();
+
+            Vector3 drawPos = this.GetDrawPosForMotes();
+
+            if (this.Map == null || !drawPos.InBounds(this.Map))
+                return;
+
+
+
+            MoteMaker.ThrowSmoke(drawPos, this.Map, 2f);
+
+            MoteThrown heatGlow = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_HeatGlow);
+            heatGlow.Scale = Rand.Range(4f, 6f) * 2f;
+            heatGlow.rotationRate = Rand.Range(-3f, 3f);
+            heatGlow.exactPosition = drawPos;
+            heatGlow.SetVelocity(Rand.Range(0, 360), 0.12f);
+            GenSpawn.Spawn(heatGlow, drawPos.ToIntVec3(), this.Map);
+
+        }
+
+        private Vector3 GetDrawPosForMotes()
+        {
+            int ticksToImpactPrediction = this.ticksToImpact - GenTicks.TicksPerRealSecond / 2;
+
+
+            float timeInAnim = 1 - ticksToImpactPrediction / this.ticksToImpactMaxPrivate;
+
+
+            float currentSpeed = (this.def.skyfaller.speedCurve?.Evaluate(timeInAnim) ?? 1) * this.def.skyfaller.speed;
+
+            switch (this.def.skyfaller.movementType)
+            {
+                case SkyfallerMovementType.Accelerate:
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+                case SkyfallerMovementType.ConstantSpeed:
+                    return SkyfallerDrawPosUtility.DrawPos_ConstantSpeed(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+                case SkyfallerMovementType.Decelerate:
+                    return SkyfallerDrawPosUtility.DrawPos_Decelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+                default:
+                    Log.ErrorOnce("SkyfallerMovementType not handled: " + this.def.skyfaller.movementType, this.thingIDNumber ^ 0x7424EBC7);
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+            }
         }
 
         protected override void Impact()
