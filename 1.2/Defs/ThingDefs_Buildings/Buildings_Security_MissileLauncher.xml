@@ -94,8 +94,8 @@
       <movementType>Accelerate</movementType>
       <shadow>Things/Skyfaller/SkyfallerShadowDropPod</shadow>
       <shadowSize>(2, 2)</shadowSize>
-      <anticipationSound>DropPod_Fall</anticipationSound>
-      <anticipationSoundTicks>100</anticipationSoundTicks>
+      <anticipationSound>VFE_LongRangeMissile_Incoming</anticipationSound>
+      <anticipationSoundTicks>200</anticipationSoundTicks>
       <motesPerCell>0</motesPerCell>
     </skyfaller>
   </ThingDef>

@@ -156,8 +156,6 @@ namespace VFEMech
             GenSpawn.Spawn(obj, this.TrueCenter().ToIntVec3(), this.Map);
             this.target = GlobalTargetInfo.Invalid;
 
-            SoundDefOf.ShipTakeoff.PlayOneShot(SoundInfo.OnCamera());
-
             this.opening = false;
             VFEMDefOf.VFE_LongRangeMissile_Launch.PlayOneShot(SoundInfo.InMap(this));
         }
@@ -503,8 +501,10 @@ namespace VFEMech
             base.SpawnSetup(map, respawningAfterLoad);
             this.angle = 0f;
             this.ticksToImpactMaxPrivate = (int) AccessTools.Field(typeof(Skyfaller), "ticksToImpactMax").GetValue(this);
-
-            VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(SoundInfo.InMap(this));
+            foreach (SubSoundDef subSound in VFEMDefOf.VFE_LongRangeMissile_Incoming.subSounds)
+            {
+                subSound.TryPlay(SoundInfo.OnCamera());
+            }
         }
 
         public ActiveDropPodInfo Contents
@@ -565,6 +565,8 @@ namespace VFEMech
 
         protected override void Impact()
         {
+            VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.PlayOneShotOnCamera();
+
             IntVec3 loc = this.Map.Center;
 
             //Find.CameraDriver.SetRootPosAndSize(rootPos: Find.CurrentMap.rememberedCameraPos.rootPos, rootSize: 50f);
@@ -574,8 +576,7 @@ namespace VFEMech
 
             CellRect cells = CellRect.CenteredOn(loc, radius);
 
-            if (Find.CurrentMap == this.Map)
-                Find.CameraDriver.shaker.DoShake(mag: 20f);
+            Find.CameraDriver.shaker.DoShake(mag: 20f);
 
             Map?.Parent.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
 
@@ -592,10 +593,10 @@ namespace VFEMech
                 if (x % 50 == 0)
                 {
                     moteCount(this.Map.moteCounter) = 0;
-                        Vector3 vc = intVec3.ToVector3();
-                    MoteMaker.ThrowMicroSparks(vc, this.Map);
-                    MoteMaker.ThrowHeatGlow(intVec3, this.Map, size: 3f);
-                    MoteMaker.ThrowFireGlow(intVec3, this.Map, size: 5f);
+                    Vector3 vc = intVec3.ToVector3();
+                    //MoteMaker.ThrowMicroSparks(vc, this.Map);
+                    //MoteMaker.ThrowHeatGlow(intVec3, this.Map, size: 3f);
+                    //MoteMaker.ThrowFireGlow(intVec3, this.Map, size: 5f);
                     MoteMaker.ThrowLightningGlow(vc, this.Map, size: 10f);
                     MoteMaker.ThrowMetaPuff(vc, this.Map);
                 }
@@ -610,6 +611,12 @@ namespace VFEMech
             }
 
             FloodFillerFog.FloodUnfog(loc, this.Map);
+
+            foreach (SubSoundDef subSound in VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.subSounds)
+            {
+                subSound.TryPlay(SoundInfo.OnCamera());
+            }
+
             GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this, explosionSound: VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap);
             this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
             this.Map.TileInfo.hilliness = Hilliness.Impassable;

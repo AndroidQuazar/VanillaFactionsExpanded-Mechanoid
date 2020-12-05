@@ -275,6 +275,7 @@
     <maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
+        <onCamera>True</onCamera>
         <grains>
           <li Class="AudioGrain_Clip">
             <clipPath>Buildings/LongRangeMissile_Incoming</clipPath>
@@ -292,6 +293,7 @@
     <maxSimultaneous>1</maxSimultaneous>  
     <subSounds>
       <li>
+        <onCamera>True</onCamera>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Buildings/LongRangeMissile_ExplosionOnMap</clipFolderPath>

@@ -219,9 +219,9 @@
 								<li>BuildingsProduction</li>
 							</thingCategories>
 							<costList>
-								<Steel>250</Steel>
-								<ComponentSpacer>1</ComponentSpacer>
-								<Plasteel>75</Plasteel>
+								<Steel>450</Steel>
+								<ComponentSpacer>2</ComponentSpacer>
+								<Plasteel>125</Plasteel>
 								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 							</costList>
 							<building>
@@ -263,7 +263,7 @@
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
 									<shortCircuitInRain>false</shortCircuitInRain>
-									<basePowerConsumption>500</basePowerConsumption>
+									<basePowerConsumption>425</basePowerConsumption>
 								</li>
 								<li Class="CompProperties_Flickable"/>
 								<li Class="ItemProcessor.CompProperties_ItemProcessor">
