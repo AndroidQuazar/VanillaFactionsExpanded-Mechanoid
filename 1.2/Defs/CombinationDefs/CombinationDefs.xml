@@ -974,7 +974,7 @@
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>Things/Item/Drug/Yayo/Yayo_b</resultSpecialIcon>		
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.08</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
 	<ItemProcessor.CombinationDef>
@@ -1006,7 +1006,7 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksSandstone</result>	
-		<yield>20</yield>
+		<yield>10</yield>
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>2000</maxTotalOutput>
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
@@ -1026,7 +1026,7 @@
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>2000</maxTotalOutput>
 		<result>BlocksLimestone</result>	
-		<yield>20</yield>		
+		<yield>10</yield>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksLimestone</resultSpecialIcon>			
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -1042,7 +1042,7 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksMarble</result>	
-		<yield>20</yield>	
+		<yield>10</yield>	
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>2000</maxTotalOutput>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
@@ -1060,7 +1060,7 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksGranite</result>	
-		<yield>20</yield>	
+		<yield>10</yield>	
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>2000</maxTotalOutput>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
@@ -1078,7 +1078,7 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksSlate</result>	
-		<yield>20</yield>	
+		<yield>10</yield>	
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>2000</maxTotalOutput>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
@@ -1102,7 +1102,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1127,7 +1127,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1152,7 +1152,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1177,7 +1177,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1203,7 +1203,7 @@
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>300</maxTotalOutput>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
