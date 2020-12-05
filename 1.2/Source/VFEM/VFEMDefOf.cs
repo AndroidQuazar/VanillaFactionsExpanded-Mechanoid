@@ -1,9 +1,4 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace VFEMech
@@ -27,5 +22,11 @@ namespace VFEMech
         public static ThingDef       VFEM_MissileIncoming;
         public static WorldObjectDef VFEM_TravelingMissile;
         public static ThingSetMakerDef VFEMech_MechanoidStorageContent;
+
+        public static SoundDef VFE_LongRangeMissile_ExplosionFar;
+        public static SoundDef VFE_LongRangeMissile_LaunchSiren;
+        public static SoundDef VFE_LongRangeMissile_Launch;
+        public static SoundDef VFE_LongRangeMissile_Incoming;
+        public static SoundDef VFE_LongRangeMissile_ExplosionOnMap;
     }
 }

@@ -144,6 +144,8 @@ namespace VFEMech
             this.costList = startCostList.ListFullCopy();
 
             this.opening = true;
+
+            VFEMDefOf.VFE_LongRangeMissile_LaunchSiren.PlayOneShot(SoundInfo.InMap(this));
         }
 
         public void Fire()
@@ -157,6 +159,7 @@ namespace VFEMech
             SoundDefOf.ShipTakeoff.PlayOneShot(SoundInfo.OnCamera());
 
             this.opening = false;
+            VFEMDefOf.VFE_LongRangeMissile_Launch.PlayOneShot(SoundInfo.InMap(this));
         }
 
         private       float doorProgress;
@@ -219,8 +222,9 @@ namespace VFEMech
                                                      Find.WorldTargeter.BeginTargeting_NewTemp(this.ConfigureNewTarget, false, onUpdate: () => GenDraw.DrawWorldRadiusRing(this.Map.Tile, 132), closeWorldTabWhenFinished: true);
                                                  },
                                         defaultLabel = "Aim",
-                                        disabled = this.opening
-                                    };
+                                        disabled = this.opening,
+                                        icon = ContentFinder<Texture2D>.Get("UI/MissileAim")
+            };
             yield return aimingGizmo;
 
             Command_Action fireGizmo = new Command_Action()
@@ -228,7 +232,8 @@ namespace VFEMech
                                            action = this.StartFire,
                                            disabled = !this.Satisfied,
                                            disabledReason = (this.TargetAcquired ? "VFEM_SiloConditionsUnsatisfied" : "VFEM_SiloNoTarget").Translate(),
-                                           defaultLabel = "Fire"
+                                           defaultLabel = "Fire",
+                                           icon = ContentFinder<Texture2D>.Get("UI/MissileLaunch")
                                        };
             yield return fireGizmo;
 
@@ -475,6 +480,7 @@ namespace VFEMech
             {
                 Find.World.grid[this.destinationTile].hilliness = Hilliness.Impassable;
                 worldObject?.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
+                VFEMDefOf.VFE_LongRangeMissile_ExplosionFar.PlayOneShot(SoundInfo.OnCamera());
                 worldObject?.Destroy();
             }
             this.Destroy();
@@ -497,6 +503,8 @@ namespace VFEMech
             base.SpawnSetup(map, respawningAfterLoad);
             this.angle = 0f;
             this.ticksToImpactMaxPrivate = (int) AccessTools.Field(typeof(Skyfaller), "ticksToImpactMax").GetValue(this);
+
+            VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(SoundInfo.InMap(this));
         }
 
         public ActiveDropPodInfo Contents
@@ -574,10 +582,9 @@ namespace VFEMech
             AccessTools.FieldRef<MoteCounter, int> moteCount = AccessTools.FieldRefAccess<MoteCounter, int>(fieldName: "moteCount");
 
             DamageInfo destroyInfo = new DamageInfo(DamageDefOf.Bomb, float.MaxValue, float.MaxValue, instigator: this);
-            DamageInfo damageInfo  = new DamageInfo(DamageDefOf.Bomb, 500,            1f,             instigator: this);
 
 
-            
+
             int       x  = 0;
             foreach (IntVec3 intVec3 in cells)
             {
@@ -598,12 +605,12 @@ namespace VFEMech
                 {
                     Thing thing = things[i];
                     if (thing is Pawn || thing.def.IsEdifice() && !(thing.def.building?.isNaturalRock ?? false))
-                        thing.TakeDamage(damageInfo);
+                        thing.TakeDamage(destroyInfo);
                 }
             }
 
             FloodFillerFog.FloodUnfog(loc, this.Map);
-            GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this);
+            GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this, explosionSound: VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap);
             this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
             this.Map.TileInfo.hilliness = Hilliness.Impassable;
 
