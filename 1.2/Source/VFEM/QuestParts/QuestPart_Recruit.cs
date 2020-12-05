@@ -33,60 +33,41 @@ namespace VFEMech
 			if (signal.tag == inSignal)
 			{
 				var remainingPawns = new List<Pawn>();
+				var recruitCandidatePawns = new List<Pawn>();
 				foreach (var p in site.Map.mapPawns.PawnsInFaction(site.Map.ParentFaction).Where(x => !x.Dead && x.RaceProps.Humanlike))
 				{
 					if (Rand.Chance(randomChance))
                     {
-						var letter = (ChoiceLetter_AcceptVisitors)LetterMaker.MakeLetter("LetterJoinOfferLabel".Translate(p.Named("PAWN"))
-							, "LetterJoinOfferTitle".Translate(p.Named("PAWN"))
-							, LetterDefOf.AcceptVisitors, null, quest);
-						letter.title = "LetterJoinOfferText".Translate(p.Named("PAWN"));
-						letter.pawns.Add(p);
+						var letter = (ChoiceLetter_AcceptVisitors)LetterMaker.MakeLetter("VFEMech.LetterJoinOfferLabel".Translate(p.Named("PAWN"))
+							, "VFEMech.LetterJoinOfferTitle".Translate(p.Named("PAWN"))
+							, VFEMDefOf.VFEMech_AcceptVisitors, null, quest);
+						letter.title = "VFEMech.LetterJoinOfferText".Translate(p.Named("PAWN"));
+						letter.pawn = p;
 						letter.quest = quest;
-						letter.acceptedSignal = QuestGen.GenerateNewSignal("Accepted");
 						letter.lookTargets = new LookTargets(p);
+						Log.Message("Should get " + letter + " - " + p);
 						Find.LetterStack.ReceiveLetter(letter);
-						Action action = delegate ()
-						{
-							quest.Letter(LetterDefOf.PositiveEvent, null, null, null, null, useColonistsFromCaravanArg: false, QuestPart.SignalListenMode.OngoingOnly, 
-								null, filterDeadPawnsFromLookTargets: false, label: "LetterLabelMessageRecruitSuccess".Translate() + ": " + p.LabelShortCap, 
-								text: "MessageRecruitJoinOfferAccepted".Translate(p.Named("RECRUITEE")));
-
-							//quest.SignalPass(null, null, null);
-						};
-						QuestGenUtility.RunInner(action, letter.acceptedSignal);
-
-						//
-						//if (p.Faction != Faction.OfPlayer)
-						//{
-						//	p.SetFaction(Faction.OfPlayer);
-						//}
-						//List<Quest> questsListForReading = Find.QuestManager.QuestsListForReading;
-						//for (int i = 0; i < questsListForReading.Count; i++)
-						//{
-						//	List<QuestPart> partsListForReading = questsListForReading[i].PartsListForReading;
-						//	for (int j = 0; j < partsListForReading.Count; j++)
-						//	{
-						//		QuestPart_ExtraFaction questPart_ExtraFaction = partsListForReading[j] as QuestPart_ExtraFaction;
-						//		if (questPart_ExtraFaction != null && questPart_ExtraFaction.affectedPawns.Contains(p))
-						//		{
-						//			questPart_ExtraFaction.affectedPawns.Remove(p);
-						//		}
-						//	}
-						//}
+						recruitCandidatePawns.Add(p);
 					}
 					else
                     {
 						remainingPawns.Add(p);
                     }
 				}
-
-				if (remainingPawns.Any())
-                {
-					Pawn pawn = remainingPawns.First();
-					LordJob_ExitMapBest lordJob = new LordJob_ExitMapBest(LocomotionUrgency.Walk, canDig: true, canDefendSelf: true);
-					LordMaker.MakeNewLord(pawn.Faction, lordJob, pawn.MapHeld, remainingPawns);
-				}
+				//foreach (var pawn in remainingPawns)
+				//{
+				//	if (pawn.GetLord() != null)
+				//	{
+				//		pawn.GetLord().ownedPawns.Remove(pawn);
+				//	}
+				//}
+				//
+				//if (remainingPawns.Any())
+				//{
+				//	Pawn pawn = remainingPawns.First();
+				//	LordJob_ExitMapBest lordJob = new LordJob_ExitMapBest(LocomotionUrgency.Walk, canDig: true, canDefendSelf: true);
+				//	LordMaker.MakeNewLord(pawn.Faction, lordJob, pawn.MapHeld, remainingPawns);
+				//}
 			}
 		}
 

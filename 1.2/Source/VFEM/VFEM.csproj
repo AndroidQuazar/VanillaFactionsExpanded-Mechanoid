@@ -72,8 +72,9 @@
     <Compile Include="GenSteps\GenStep_MechanoidStorage.cs" />
     <Compile Include="HarmonyPatches\Explosion_Patch.cs" />
     <Compile Include="HarmonyPatches\MechSpawn_Patch.cs" />
-    <Compile Include="HarmonyPatches\Terrain_Patches - Copy.cs" />
+    <Compile Include="HarmonyPatches\Patch_AffectRelationsOnAttacked.cs" />
     <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
+    <Compile Include="Letters\ChoiceLetter_AcceptVisitors.cs" />
     <Compile Include="LordJob_VFEMDefendBase.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicSuppression.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicEmanation.cs" />

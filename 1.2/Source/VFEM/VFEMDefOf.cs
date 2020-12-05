@@ -27,5 +27,7 @@ namespace VFEMech
         public static ThingDef       VFEM_MissileIncoming;
         public static WorldObjectDef VFEM_TravelingMissile;
         public static ThingSetMakerDef VFEMech_MechanoidStorageContent;
+        public static LetterDef VFEMech_AcceptVisitors;
+        public static SitePartDef VFE_MechanoidAttackParty;
     }
 }
