@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace VFEMech
 {
+    using System.Collections;
     using System.Diagnostics;
     using System.Reflection;
     using HarmonyLib;
@@ -16,6 +17,7 @@ namespace VFEMech
     using Verse.AI.Group;
     using Verse.Sound;
 
+    [StaticConstructorOnStartup]
     public class MissileSilo : Building
     {
         public GlobalTargetInfo target = GlobalTargetInfo.Invalid;
@@ -86,21 +88,15 @@ namespace VFEMech
         {
             StringBuilder sb = new StringBuilder(base.GetInspectString());
 
-            if (!this.TargetAcquired)
-            {
-                sb.AppendLine("VFEM_SiloNoTarget".Translate());
-            }
-            else
-            {
-                WorldObject target = this.target.WorldObject;
 
-                sb.AppendLine("VFEM_SiloTargeting".Translate(target.LabelCap, target.Faction.Name));
-                sb.AppendLine((this.Satisfied ? "VFEM_SiloConditionsSatisfied" : "VFEM_SiloConditionsUnsatisfied").Translate());
-                for (int i = 0; i < this.costList.Count; i++)
-                {
-                    ThingDefCountClass countClass = this.costList[i];
-                    sb.AppendLine("VFEM_SiloCountEntry".Translate(countClass.thingDef.LabelCap, this.delivered[i], countClass.count));
-                }
+            WorldObject target = this.target.WorldObject;
+            sb.AppendLine(this.TargetAcquired ? "VFEM_SiloTargeting".Translate(target.LabelCap, target.Faction.Name) : "VFEM_SiloNoTarget".Translate());
+
+            sb.AppendLine((this.Satisfied ? "VFEM_SiloConditionsSatisfied" : "VFEM_SiloConditionsUnsatisfied").Translate());
+            for (int i = 0; i < this.costList.Count; i++)
+            {
+                ThingDefCountClass countClass = this.costList[i];
+                sb.AppendLine("VFEM_SiloCountEntry".Translate(countClass.thingDef.LabelCap, this.delivered[i], countClass.count));
             }
 
             return sb.ToString().TrimEndNewlines();
@@ -135,19 +131,23 @@ namespace VFEMech
             return true;
         }
 
-        public void Fire()
+        private void StartFire()
         {
             if (!this.Satisfied)
                 return;
-
             for (int i = 0; i < this.costList.Count; i++)
             {
                 ThingDefCountClass entry = this.costList[i];
                 this.delivered[i] -= entry.count;
             }
 
-            foreach (ThingDefCountClass tdcc in this.costList) 
-                tdcc.count = 0;
+            this.costList = startCostList.ListFullCopy();
+
+            this.opening = true;
+        }
+
+        public void Fire()
+        {
             
             MissileLeaving obj = (MissileLeaving)SkyfallerMaker.MakeSkyfaller(VFEMDefOf.VFEM_MissileLeaving);
             obj.destinationTile = this.target.Tile;
@@ -155,6 +155,53 @@ namespace VFEMech
             this.target = GlobalTargetInfo.Invalid;
 
             SoundDefOf.ShipTakeoff.PlayOneShot(SoundInfo.OnCamera());
+
+            this.opening = false;
+        }
+
+        private       float doorProgress;
+        private const float doorOpeningTime = GenTicks.TicksPerRealSecond * 5;
+        private       bool opening;
+
+        private Graphic doorGraphic;
+
+        private Graphic DoorGraphic =>
+            doorGraphic ?? (this.doorGraphic = GraphicDatabase.Get<Graphic_Single>("Things/Buildings/LongRangeMissileLauncher/LongRangeMissileLauncherDoor_Mover", ShaderDatabase.Cutout,
+                                                                                   this.def.graphicData.drawSize / 3.35f, Color.white));
+
+        public override void Tick()
+        {
+            base.Tick();
+
+            switch (this.opening)
+            {
+                case true:
+                    if (this.doorProgress < 1f)
+                        this.doorProgress += 1f / doorOpeningTime;
+                    else
+                        this.Fire();
+                    break;
+                case false:
+                    if (this.doorProgress > 0f)
+                        this.doorProgress -= 1f / doorOpeningTime;
+                    break;
+            }
+        }
+
+        public override void Draw()
+        {
+            base.Draw();
+            DrawAt(DrawPos);
+        }
+
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            base.DrawAt(drawLoc, flip);
+
+            float progress = Mathf.Lerp(0.289f, 0.836f, this.doorProgress);
+
+            Graphics.DrawMesh(MeshPool.GridPlane(DoorGraphic.drawSize), drawLoc + Vector3.up * 0.1f + Vector3.forward * 0.011f - Vector3.left * progress, Rotation.AsQuat, DoorGraphic.MatAt(Rotation), 0);
+            Graphics.DrawMesh(MeshPool.GridPlaneFlip(DoorGraphic.drawSize), drawLoc + Vector3.up * 0.1f + Vector3.forward * 0.011f + Vector3.left * progress, Rotation.AsQuat, DoorGraphic.MatAt(Rotation), 0);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -171,13 +218,14 @@ namespace VFEMech
                                                      Find.WorldSelector.ClearSelection();
                                                      Find.WorldTargeter.BeginTargeting_NewTemp(this.ConfigureNewTarget, false, onUpdate: () => GenDraw.DrawWorldRadiusRing(this.Map.Tile, 132), closeWorldTabWhenFinished: true);
                                                  },
-                                        defaultLabel = "Aim"
+                                        defaultLabel = "Aim",
+                                        disabled = this.opening
                                     };
             yield return aimingGizmo;
 
             Command_Action fireGizmo = new Command_Action()
                                        {
-                                           action = this.Fire,
+                                           action = this.StartFire,
                                            disabled = !this.Satisfied,
                                            disabledReason = (this.TargetAcquired ? "VFEM_SiloConditionsUnsatisfied" : "VFEM_SiloNoTarget").Translate(),
                                            defaultLabel = "Fire"
@@ -221,6 +269,8 @@ namespace VFEMech
             Scribe_Collections.Look(ref this.costList, nameof(this.costList));
             Scribe_Collections.Look(ref this.delivered, nameof(this.delivered));
             Scribe_TargetInfo.Look(ref this.target, nameof(this.target));
+            Scribe_Values.Look(ref this.doorProgress, nameof(this.doorProgress));
+            Scribe_Values.Look(ref this.opening, nameof(this.opening));
         }
     }
 
