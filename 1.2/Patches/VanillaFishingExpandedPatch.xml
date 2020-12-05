@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Fishing Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ThingDef ParentName="BuildingBase">
+							<defName>VFEM_AquaponicsBasin</defName>
+							<label>aquaponics basin</label>
+							<description>A deep water filled basin capable of processing vegetable matter into an algae-like paste for continuous feeding of fish living within. Fish within live in optimal water conditions and temperature and therefore breed quite quickly. Matured fish will occasionally be deposited to a nearby output hopper.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; The Aquaponics basin is not part of any automation chain, it is an independent building.</description>
+							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+							<graphicData>
+								<texPath>Things/Buildings/AquaponicsBasin/AquaponicsBasin</texPath>
+								<graphicClass>Graphic_Multi</graphicClass>
+								<drawSize>(9,8)</drawSize>
+								<shaderType>CutoutComplex</shaderType>
+								<damageData>
+									<cornerTL>Damage/Corner</cornerTL>
+									<cornerTR>Damage/Corner</cornerTR>
+									<cornerBL>Damage/Corner</cornerBL>
+									<cornerBR>Damage/Corner</cornerBR>
+								</damageData>
+							</graphicData>
+							<thingCategories>
+								<li>BuildingsProduction</li>
+							</thingCategories>
+							<costList>
+								<Steel>300</Steel>
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>50</Plasteel>
+								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+							</costList>
+							<building>
+								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+								<wantsHopperAdjacent>true</wantsHopperAdjacent>
+								<buildingTags>
+									<li>Production</li>
+								</buildingTags>
+								<blueprintGraphicData>
+									<texPath>Things/Buildings/AquaponicsBasin/AquaponicsBasin_Blueprint</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+								</blueprintGraphicData>
+							</building>
+							<altitudeLayer>Building</altitudeLayer>
+							<rotatable>true</rotatable>
+							<neverMultiSelect>true</neverMultiSelect>
+							<uiIconScale>0.8</uiIconScale>
+							<fillPercent>0.5</fillPercent>
+							<placeWorkers>
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+							</placeWorkers>
+							<useHitPoints>True</useHitPoints>
+							<statBases>
+								<Mass>10</Mass>
+								<WorkToBuild>800</WorkToBuild>
+								<MaxHitPoints>300</MaxHitPoints>
+								<Flammability>1.0</Flammability>
+							</statBases>
+							<tickerType>Rare</tickerType>
+							<size>(7,6)</size>
+							<designationCategory>VFE_Factory</designationCategory>
+							<passability>PassThroughOnly</passability>
+							<pathCost>70</pathCost>
+							<hasInteractionCell>True</hasInteractionCell>
+							<interactionCellOffset>(4,0,1)</interactionCellOffset>
+							<surfaceType>Item</surfaceType>
+
+							<comps>
+								<li Class="CompProperties_Power">
+									<compClass>CompPowerTrader</compClass>
+									<shortCircuitInRain>false</shortCircuitInRain>
+									<basePowerConsumption>250</basePowerConsumption>
+								</li>
+								<li Class="CompProperties_Flickable"/>
+								<li Class="ItemProcessor.CompProperties_ItemProcessor">
+									<buildingOnGraphic>Things/Buildings/AquaponicsBasin/AquaponicsBasin</buildingOnGraphic>
+									<numberOfInputs>1</numberOfInputs>
+									<acceptsNoneAsInput>false</acceptsNoneAsInput>
+									<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+									<ignoresIngredientLists>true</ignoresIngredientLists>
+									<isAutoMachine>true</isAutoMachine>
+									<isAutoDropper>true</isAutoDropper>
+									<showFactoryProgressBar>true</showFactoryProgressBar>
+									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+									<noPowerDestroysProgress>true</noPowerDestroysProgress>
+									<isMachinePausable>true</isMachinePausable>
+									<rareTicksToDestroy>100</rareTicksToDestroy>				
+									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
+									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+
+									<inputSlots>
+										<li>(0,0,4)</li>
+
+									</inputSlots>
+
+
+
+								</li>
+
+							</comps>
+							<researchPrerequisites Inherit='False'>
+								<li>VFE_Aquaponics</li>
+							</researchPrerequisites>
+							<minifiedDef>MinifiedThing</minifiedDef>
+						</ThingDef>
+
+						<ResearchProjectDef>
+							<defName>VFE_Aquaponics</defName>
+							<label>aquaponics</label>
+							<description>Research a deep water filled basin capable of processing vegetable matter into an algae-like paste for continuous feeding of fish living within. Fish within live in optimal water conditions and temperature and therefore breed quite quickly. Matured fish will occasionally be deposited to a nearby output hopper.</description>
+							<baseCost>1000</baseCost>
+							<tab>VanillaExpanded</tab>
+							<techLevel>Industrial</techLevel>
+							<prerequisites>
+								<li>VFE_FactoryBasics</li>
+							</prerequisites>
+							<researchViewX>10.00</researchViewX>
+							<researchViewY>4.25</researchViewY>
+						</ResearchProjectDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_AquaponicsBasin_Anchovy</defName>
+							<building>VFEM_AquaponicsBasin</building>
+							<items>
+								<li>PlantFoodRaw</li>
+							</items>	
+							<amount>
+								<li>5</li>
+							</amount>
+							<result>VCEF_RawAnchovy</result>	
+							<yield>75</yield>
+							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+							<resultSpecialIcon>Things/Item/Resource/VCEF_Anchovies/VCEF_Anchovies_b</resultSpecialIcon>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>1000</maxTotalOutput>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_AquaponicsBasin_Trout</defName>
+							<building>VFEM_AquaponicsBasin</building>
+							<items>
+								<li>PlantFoodRaw</li>
+							</items>	
+							<amount>
+								<li>5</li>
+							</amount>
+							<result>VCEF_RawTrout</result>	
+							<yield>30</yield>
+							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+							<resultSpecialIcon>Things/Item/Resource/VCEF_Trout/VCEF_Trout_b</resultSpecialIcon>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+										
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_AquaponicsBasin_Salmon</defName>
+							<building>VFEM_AquaponicsBasin</building>
+							<items>
+								<li>PlantFoodRaw</li>
+							</items>	
+							<amount>
+								<li>5</li>
+							</amount>
+							<result>VCEF_RawSalmon</result>	
+							<yield>11</yield>
+							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+							<resultSpecialIcon>Things/Item/Resource/VCEF_Salmon/VCEF_Salmon_b</resultSpecialIcon>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>200</maxTotalOutput>
+							<isCategoryRecipe>true</isCategoryRecipe>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+					</value>
+				</li>
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

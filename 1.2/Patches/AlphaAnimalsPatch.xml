@@ -28,7 +28,9 @@
 								<li>10</li>
 							</amount>
 							<result>Chemfuel</result>	
-							<yield>10</yield>		
+							<yield>10</yield>	
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>1000</maxTotalOutput>							
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
@@ -42,6 +44,8 @@
 							<amount>
 								<li>1</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>AA_SkySteel</result>	
 							<yield>10</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
