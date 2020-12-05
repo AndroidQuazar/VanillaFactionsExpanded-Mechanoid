@@ -61,7 +61,7 @@ namespace VFEMech
 			PawnGroupMakerParms pawnGroupMakerParms = new PawnGroupMakerParms();
 			pawnGroupMakerParms.tile = map.Tile;
 			pawnGroupMakerParms.faction = mechFaction;
-			pawnGroupMakerParms.points = (map.Parent as Site).desiredThreatPoints;
+			pawnGroupMakerParms.points = MechUtils.MechPresence();
 			pawnGroupMakerParms.groupKind = PawnGroupKindDefOf.Combat;
 			var mechs = PawnGroupMakerUtility.GeneratePawns(pawnGroupMakerParms);
 
