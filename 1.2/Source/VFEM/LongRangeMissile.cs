@@ -501,8 +501,8 @@ namespace VFEMech
             base.SpawnSetup(map, respawningAfterLoad);
             this.angle = 0f;
             this.ticksToImpactMaxPrivate = (int) AccessTools.Field(typeof(Skyfaller), "ticksToImpactMax").GetValue(this);
-
-            VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(new TargetInfo(this.Position, this.Map));
+            if (Find.CurrentMap == this.Map)
+                VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(SoundInfo.OnCamera());
         }
 
         public ActiveDropPodInfo Contents
@@ -608,7 +608,8 @@ namespace VFEMech
             }
 
             FloodFillerFog.FloodUnfog(loc, this.Map);
-            VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.PlayOneShot(new TargetInfo(this.Position, this.Map));
+            if(Find.CurrentMap == this.Map)
+                VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.PlayOneShot(SoundInfo.OnCamera());
             GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this, explosionSound: VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap);
             this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
             this.Map.TileInfo.hilliness = Hilliness.Impassable;
