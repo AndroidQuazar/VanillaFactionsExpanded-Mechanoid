@@ -307,7 +307,7 @@
 						<ResearchProjectDef>
 							<defName>VFE_CheeseMaking</defName>
 							<label>industrial cheesemaking</label>
-							<description>Research a deep water filled basin capable of processing vegetable matter into an algae-like paste for continuous feeding of fish living within. Fish within live in optimal water conditions and temperature and therefore breed quite quickly. Matured fish will occasionally be deposited to a nearby output hopper.</description>
+							<description>Research a tank capable of rapidly heating milk until curds begin to form, then automatically straining and pressing them into multiple wheels of cheese at once. Nearby hoppers can hold enough milk to make several wheels and finished wheels will automatically be dispensed.</description>
 							<baseCost>1000</baseCost>
 							<tab>VanillaExpanded</tab>
 							<techLevel>Industrial</techLevel>
