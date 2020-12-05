@@ -16,6 +16,7 @@
     <rotatable>false</rotatable>
     <defaultPlacingRot>North</defaultPlacingRot>
     <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Normal</tickerType>
     <passability>Impassable</passability>
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>1.0</fillPercent>
@@ -72,7 +73,7 @@
           <li>0, 0</li>
           <li>0.2, 0.1</li>
           <li>0.4, 0.2</li>
-          <li>0.5, 0.7</li>
+          <li>0.5, 0.5</li>
           <li>1, 1</li>
         </points>
       </speedCurve>

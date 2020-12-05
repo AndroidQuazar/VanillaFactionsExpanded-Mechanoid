@@ -18,9 +18,11 @@
 					<xpath>/Defs</xpath>
 					<value>
 
+						<!--======= Cannery =======-->
+						
 						<ThingDef ParentName="BuildingBase">
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery</defName>
-							<label>Cannery</label>
+							<label>cannery</label>
 							<description>A medium-sized factory module that accepts raw food and steel to sterilize and can it, allowing it to last indefinitely.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
 							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
 							<graphicData>
@@ -121,7 +123,7 @@
 							  <li>VFE_ProvisionsPackagingFactory</li>
 							</researchPrerequisites>
 							<minifiedDef>MinifiedThing</minifiedDef>
-						</ThingDef>
+						</ThingDef>												
 
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery_Meats</defName>
@@ -134,6 +136,8 @@
 							</amount>
 							<result>VCE_CannedMeat</result>	
 							<yield>20</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -148,6 +152,8 @@
 							<amount>
 								<li>20</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>VCE_CannedProduce</result>	
 							<yield>20</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
@@ -164,6 +170,8 @@
 							<amount>
 								<li>4</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>VCE_CannedAP</result>	
 							<yield>20</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
@@ -179,11 +187,157 @@
 							<amount>
 								<li>4</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>VCE_CannedAP</result>	
 							<yield>20</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<!--======= Industrial Cheese Press =======-->
+						
+						<ThingDef ParentName="BuildingBase">
+							<defName>VFEM_IndustrialCheesePress</defName>
+							<label>industrial cheese press</label>
+							<description>A tank capable of rapidly heating milk until curds begin to form, then automatically strains and presses them into multiple wheels of cheese at once. Nearby hoppers can hold enough milk to make several wheels and finished wheels will automatically be dispensed. Quality cheeses can be forcibly aged more quickly than powerless aging methods.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; The Industrial Cheese Press basin is not part of any automation chain, it is an independent building.</description>
+							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+							<graphicData>
+								<texPath>Things/Buildings/IndustrialCheesePress/IndustrialCheesePress</texPath>
+								<graphicClass>Graphic_Multi</graphicClass>
+								<drawSize>(5,8)</drawSize>
+								<shaderType>CutoutComplex</shaderType>
+								<damageData>
+									<cornerTL>Damage/Corner</cornerTL>
+									<cornerTR>Damage/Corner</cornerTR>
+									<cornerBL>Damage/Corner</cornerBL>
+									<cornerBR>Damage/Corner</cornerBR>
+								</damageData>
+							</graphicData>
+							<thingCategories>
+								<li>BuildingsProduction</li>
+							</thingCategories>
+							<costList>
+								<Steel>250</Steel>
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>75</Plasteel>
+								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+							</costList>
+							<building>
+								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+								<wantsHopperAdjacent>true</wantsHopperAdjacent>
+								<buildingTags>
+									<li>Production</li>
+								</buildingTags>
+									<blueprintGraphicData>
+										<texPath>Things/Buildings/IndustrialCheesePress/IndustrialCheesePress_Blueprint</texPath>
+										<graphicClass>Graphic_Multi</graphicClass>
+									</blueprintGraphicData>
+							</building>
+							<altitudeLayer>Building</altitudeLayer>
+							<rotatable>true</rotatable>
+							<neverMultiSelect>true</neverMultiSelect>
+							<uiIconScale>0.8</uiIconScale>
+							<fillPercent>0.5</fillPercent>
+							<placeWorkers>
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+							</placeWorkers>
+							<useHitPoints>True</useHitPoints>
+							<statBases>
+								<Mass>10</Mass>
+								<WorkToBuild>800</WorkToBuild>
+								<MaxHitPoints>300</MaxHitPoints>
+								<Flammability>1.0</Flammability>
+							</statBases>
+							<tickerType>Rare</tickerType>
+							<size>(3,6)</size>
+							<designationCategory>VFE_Factory</designationCategory>
+							<passability>PassThroughOnly</passability>
+							<pathCost>70</pathCost>
+							<hasInteractionCell>True</hasInteractionCell>
+							<interactionCellOffset>(0,0,3)</interactionCellOffset>
+							<surfaceType>Item</surfaceType>
+							
+							<comps>
+								<li Class="CompProperties_Power">
+									<compClass>CompPowerTrader</compClass>
+									<shortCircuitInRain>false</shortCircuitInRain>
+									<basePowerConsumption>500</basePowerConsumption>
+								</li>
+								<li Class="CompProperties_Flickable"/>
+								<li Class="ItemProcessor.CompProperties_ItemProcessor">
+									<buildingOnGraphic>Things/Buildings/IndustrialCheesePress/IndustrialCheesePress</buildingOnGraphic>
+									<numberOfInputs>1</numberOfInputs>
+									<qualitySelector>true</qualitySelector>
+									<acceptsNoneAsInput>false</acceptsNoneAsInput>
+									<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+									<ignoresIngredientLists>false</ignoresIngredientLists>
+									<isAutoMachine>true</isAutoMachine>
+									<isAutoDropper>true</isAutoDropper>									
+									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+									<noPowerDestroysProgress>true</noPowerDestroysProgress>
+									<isMachinePausable>true</isMachinePausable>
+									<rareTicksToDestroy>10</rareTicksToDestroy>				
+									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
+									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+
+									<inputSlots>
+										<li>(-1,0,-2)</li>
+										<li>(0,0,-2)</li>
+										<li>(1,0,-2)</li>
+
+									</inputSlots>
+
+
+
+								</li>
+
+							</comps>
+							<researchPrerequisites Inherit='False'>
+							  <li>VFE_CheeseMaking</li>
+							</researchPrerequisites>
+							<minifiedDef>MinifiedThing</minifiedDef>
+						</ThingDef>
+						
+						<ResearchProjectDef>
+							<defName>VFE_CheeseMaking</defName>
+							<label>industrial cheesemaking</label>
+							<description>Research a tank capable of rapidly heating milk until curds begin to form, then automatically straining and pressing them into multiple wheels of cheese at once. Nearby hoppers can hold enough milk to make several wheels and finished wheels will automatically be dispensed.</description>
+							<baseCost>1000</baseCost>
+							<tab>VanillaExpanded</tab>
+							<techLevel>Industrial</techLevel>
+							<prerequisites>
+								<li>VFE_FactoryBasics</li>
+							</prerequisites>
+							<researchViewX>10.00</researchViewX>
+							<researchViewY>4.90</researchViewY>
+						</ResearchProjectDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCheesePress_NormalCheese</defName>
+							<building>VFEM_IndustrialCheesePress</building>
+							<items>
+								<li>Milk</li>
+							</items>	
+							<amount>
+								<li>50</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<result>VCE_Cheese</result>	
+							<yield>25</yield>							
+							<useQualityIncreasing>true</useQualityIncreasing>
+							<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
+							<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
+							<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
+							<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
+							<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
+							<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
+							<legendaryQualityAgeDaysThreshold>38</legendaryQualityAgeDaysThreshold>
 						</ItemProcessor.CombinationDef>
 
 					</value>
@@ -213,6 +367,8 @@
 										</amount>
 										<result>VCE_CannedFish</result>	
 										<yield>20</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
 										<isCategoryRecipe>true</isCategoryRecipe>
 										<useQualityIncreasing>false</useQualityIncreasing>
 										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -247,6 +403,8 @@
 										</amount>
 										<result>VCE_CannedFruit</result>	
 										<yield>20</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
 										<isCategoryRecipe>true</isCategoryRecipe>
 										<useQualityIncreasing>false</useQualityIncreasing>
 										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>

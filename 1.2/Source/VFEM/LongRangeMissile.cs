@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace VFEMech
 {
+    using System.Collections;
     using System.Diagnostics;
     using System.Reflection;
     using HarmonyLib;
@@ -16,6 +17,7 @@ namespace VFEMech
     using Verse.AI.Group;
     using Verse.Sound;
 
+    [StaticConstructorOnStartup]
     public class MissileSilo : Building
     {
         public GlobalTargetInfo target = GlobalTargetInfo.Invalid;
@@ -86,21 +88,15 @@ namespace VFEMech
         {
             StringBuilder sb = new StringBuilder(base.GetInspectString());
 
-            if (!this.TargetAcquired)
-            {
-                sb.AppendLine("VFEM_SiloNoTarget".Translate());
-            }
-            else
-            {
-                WorldObject target = this.target.WorldObject;
 
-                sb.AppendLine("VFEM_SiloTargeting".Translate(target.LabelCap, target.Faction.Name));
-                sb.AppendLine((this.Satisfied ? "VFEM_SiloConditionsSatisfied" : "VFEM_SiloConditionsUnsatisfied").Translate());
-                for (int i = 0; i < this.costList.Count; i++)
-                {
-                    ThingDefCountClass countClass = this.costList[i];
-                    sb.AppendLine("VFEM_SiloCountEntry".Translate(countClass.thingDef.LabelCap, this.delivered[i], countClass.count));
-                }
+            WorldObject target = this.target.WorldObject;
+            sb.AppendLine(this.TargetAcquired ? "VFEM_SiloTargeting".Translate(target.LabelCap, target.Faction.Name) : "VFEM_SiloNoTarget".Translate());
+
+            sb.AppendLine((this.Satisfied ? "VFEM_SiloConditionsSatisfied" : "VFEM_SiloConditionsUnsatisfied").Translate());
+            for (int i = 0; i < this.costList.Count; i++)
+            {
+                ThingDefCountClass countClass = this.costList[i];
+                sb.AppendLine("VFEM_SiloCountEntry".Translate(countClass.thingDef.LabelCap, this.delivered[i], countClass.count));
             }
 
             return sb.ToString().TrimEndNewlines();
@@ -135,19 +131,25 @@ namespace VFEMech
             return true;
         }
 
-        public void Fire()
+        private void StartFire()
         {
             if (!this.Satisfied)
                 return;
-
             for (int i = 0; i < this.costList.Count; i++)
             {
                 ThingDefCountClass entry = this.costList[i];
                 this.delivered[i] -= entry.count;
             }
 
-            foreach (ThingDefCountClass tdcc in this.costList) 
-                tdcc.count = 0;
+            this.costList = startCostList.ListFullCopy();
+
+            this.opening = true;
+
+            VFEMDefOf.VFE_LongRangeMissile_LaunchSiren.PlayOneShot(SoundInfo.InMap(this));
+        }
+
+        public void Fire()
+        {
             
             MissileLeaving obj = (MissileLeaving)SkyfallerMaker.MakeSkyfaller(VFEMDefOf.VFEM_MissileLeaving);
             obj.destinationTile = this.target.Tile;
@@ -155,6 +157,54 @@ namespace VFEMech
             this.target = GlobalTargetInfo.Invalid;
 
             SoundDefOf.ShipTakeoff.PlayOneShot(SoundInfo.OnCamera());
+
+            this.opening = false;
+            VFEMDefOf.VFE_LongRangeMissile_Launch.PlayOneShot(SoundInfo.InMap(this));
+        }
+
+        private       float doorProgress;
+        private const float doorOpeningTime = GenTicks.TicksPerRealSecond * 5;
+        private       bool opening;
+
+        private Graphic doorGraphic;
+
+        private Graphic DoorGraphic =>
+            doorGraphic ?? (this.doorGraphic = GraphicDatabase.Get<Graphic_Single>("Things/Buildings/LongRangeMissileLauncher/LongRangeMissileLauncherDoor_Mover", ShaderDatabase.Cutout,
+                                                                                   this.def.graphicData.drawSize / 3.35f, Color.white));
+
+        public override void Tick()
+        {
+            base.Tick();
+
+            switch (this.opening)
+            {
+                case true:
+                    if (this.doorProgress < 1f)
+                        this.doorProgress += 1f / doorOpeningTime;
+                    else
+                        this.Fire();
+                    break;
+                case false:
+                    if (this.doorProgress > 0f)
+                        this.doorProgress -= 1f / doorOpeningTime;
+                    break;
+            }
+        }
+
+        public override void Draw()
+        {
+            base.Draw();
+            DrawAt(DrawPos);
+        }
+
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            base.DrawAt(drawLoc, flip);
+
+            float progress = Mathf.Lerp(0.289f, 0.836f, this.doorProgress);
+
+            Graphics.DrawMesh(MeshPool.GridPlane(DoorGraphic.drawSize), drawLoc + Vector3.up * 0.1f + Vector3.forward * 0.011f - Vector3.left * progress, Rotation.AsQuat, DoorGraphic.MatAt(Rotation), 0);
+            Graphics.DrawMesh(MeshPool.GridPlaneFlip(DoorGraphic.drawSize), drawLoc + Vector3.up * 0.1f + Vector3.forward * 0.011f + Vector3.left * progress, Rotation.AsQuat, DoorGraphic.MatAt(Rotation), 0);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -171,16 +221,19 @@ namespace VFEMech
                                                      Find.WorldSelector.ClearSelection();
                                                      Find.WorldTargeter.BeginTargeting_NewTemp(this.ConfigureNewTarget, false, onUpdate: () => GenDraw.DrawWorldRadiusRing(this.Map.Tile, 132), closeWorldTabWhenFinished: true);
                                                  },
-                                        defaultLabel = "Aim"
-                                    };
+                                        defaultLabel = "Aim",
+                                        disabled = this.opening,
+                                        icon = ContentFinder<Texture2D>.Get("UI/MissileAim")
+            };
             yield return aimingGizmo;
 
             Command_Action fireGizmo = new Command_Action()
                                        {
-                                           action = this.Fire,
+                                           action = this.StartFire,
                                            disabled = !this.Satisfied,
                                            disabledReason = (this.TargetAcquired ? "VFEM_SiloConditionsUnsatisfied" : "VFEM_SiloNoTarget").Translate(),
-                                           defaultLabel = "Fire"
+                                           defaultLabel = "Fire",
+                                           icon = ContentFinder<Texture2D>.Get("UI/MissileLaunch")
                                        };
             yield return fireGizmo;
 
@@ -221,6 +274,8 @@ namespace VFEMech
             Scribe_Collections.Look(ref this.costList, nameof(this.costList));
             Scribe_Collections.Look(ref this.delivered, nameof(this.delivered));
             Scribe_TargetInfo.Look(ref this.target, nameof(this.target));
+            Scribe_Values.Look(ref this.doorProgress, nameof(this.doorProgress));
+            Scribe_Values.Look(ref this.opening, nameof(this.opening));
         }
     }
 
@@ -243,6 +298,7 @@ namespace VFEMech
                 ((ActiveDropPod) this.innerContainer[0]).Contents = value;
             }
         }
+
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -424,6 +480,7 @@ namespace VFEMech
             {
                 Find.World.grid[this.destinationTile].hilliness = Hilliness.Impassable;
                 worldObject?.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
+                VFEMDefOf.VFE_LongRangeMissile_ExplosionFar.PlayOneShot(SoundInfo.OnCamera());
                 worldObject?.Destroy();
             }
             this.Destroy();
@@ -439,10 +496,15 @@ namespace VFEMech
 
     public class MissileIncoming : Skyfaller, IActiveDropPod
     {
+        private int ticksToImpactMaxPrivate;
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.angle = 0f;
+            this.ticksToImpactMaxPrivate = (int) AccessTools.Field(typeof(Skyfaller), "ticksToImpactMax").GetValue(this);
+
+            VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(SoundInfo.InMap(this));
         }
 
         public ActiveDropPodInfo Contents
@@ -453,6 +515,52 @@ namespace VFEMech
 
         protected override void SpawnThings()
         {
+        }
+
+        public override void Tick()
+        {
+            base.Tick();
+
+            Vector3 drawPos = this.GetDrawPosForMotes();
+
+            if (this.Map == null || !drawPos.InBounds(this.Map))
+                return;
+
+
+
+            MoteMaker.ThrowSmoke(drawPos, this.Map, 2f);
+
+            MoteThrown heatGlow = (MoteThrown)ThingMaker.MakeThing(ThingDefOf.Mote_HeatGlow);
+            heatGlow.Scale = Rand.Range(4f, 6f) * 2f;
+            heatGlow.rotationRate = Rand.Range(-3f, 3f);
+            heatGlow.exactPosition = drawPos;
+            heatGlow.SetVelocity(Rand.Range(0, 360), 0.12f);
+            GenSpawn.Spawn(heatGlow, drawPos.ToIntVec3(), this.Map);
+
+        }
+
+        private Vector3 GetDrawPosForMotes()
+        {
+            int ticksToImpactPrediction = this.ticksToImpact - GenTicks.TicksPerRealSecond / 2;
+
+
+            float timeInAnim = 1 - ticksToImpactPrediction / this.ticksToImpactMaxPrivate;
+
+
+            float currentSpeed = (this.def.skyfaller.speedCurve?.Evaluate(timeInAnim) ?? 1) * this.def.skyfaller.speed;
+
+            switch (this.def.skyfaller.movementType)
+            {
+                case SkyfallerMovementType.Accelerate:
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+                case SkyfallerMovementType.ConstantSpeed:
+                    return SkyfallerDrawPosUtility.DrawPos_ConstantSpeed(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+                case SkyfallerMovementType.Decelerate:
+                    return SkyfallerDrawPosUtility.DrawPos_Decelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+                default:
+                    Log.ErrorOnce("SkyfallerMovementType not handled: " + this.def.skyfaller.movementType, this.thingIDNumber ^ 0x7424EBC7);
+                    return SkyfallerDrawPosUtility.DrawPos_Accelerate(base.DrawPos, ticksToImpactPrediction, this.angle, currentSpeed);
+            }
         }
 
         protected override void Impact()
@@ -474,10 +582,9 @@ namespace VFEMech
             AccessTools.FieldRef<MoteCounter, int> moteCount = AccessTools.FieldRefAccess<MoteCounter, int>(fieldName: "moteCount");
 
             DamageInfo destroyInfo = new DamageInfo(DamageDefOf.Bomb, float.MaxValue, float.MaxValue, instigator: this);
-            DamageInfo damageInfo  = new DamageInfo(DamageDefOf.Bomb, 500,            1f,             instigator: this);
 
 
-            
+
             int       x  = 0;
             foreach (IntVec3 intVec3 in cells)
             {
@@ -498,12 +605,12 @@ namespace VFEMech
                 {
                     Thing thing = things[i];
                     if (thing is Pawn || thing.def.IsEdifice() && !(thing.def.building?.isNaturalRock ?? false))
-                        thing.TakeDamage(damageInfo);
+                        thing.TakeDamage(destroyInfo);
                 }
             }
 
             FloodFillerFog.FloodUnfog(loc, this.Map);
-            GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this);
+            GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this, explosionSound: VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap);
             this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
             this.Map.TileInfo.hilliness = Hilliness.Impassable;
 

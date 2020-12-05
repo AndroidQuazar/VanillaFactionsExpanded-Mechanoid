@@ -146,7 +146,7 @@
 				<warmupTime>1.25</warmupTime>
 				<range>14.9</range>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCast>VFE_Shot_InfernoSpewer</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>14</muzzleFlashScale>
 			</li>
@@ -243,7 +243,7 @@
 				<warmupTime>1.25</warmupTime>
 				<range>19.9</range>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCast>VFE_Shot_InfernoSpewer</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>14</muzzleFlashScale>
 			</li>

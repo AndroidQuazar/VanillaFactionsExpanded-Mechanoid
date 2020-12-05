@@ -66,9 +66,9 @@
 				<li>
 					<def>MechanoidFullyFormed</def>
 					<minAge>0</minAge>
-					<soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
-					<soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
-					<soundCall>Pawn_Mech_Centipede_Call</soundCall>
+					<soundWounded>VFE_Pawn_AdvancedMech_Centipede_Wounded</soundWounded>
+					<soundDeath>VFE_Pawn_AdvancedMech_Centipede_Death</soundDeath>
+					<soundCall>VFE_Pawn_AdvancedMech_Centipede_Call</soundCall>
 				</li>
 			</lifeStageAges>
 			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>
@@ -121,9 +121,9 @@
 				<li>
 					<def>MechanoidFullyFormed</def>
 					<minAge>0</minAge>
-					<soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
-					<soundDeath>Pawn_Mech_Scyther_Death</soundDeath>
-					<soundCall>Pawn_Mech_Scyther_Call</soundCall>
+					<soundWounded>VFE_Pawn_AdvancedMech_Scyther_Wounded</soundWounded>
+					<soundDeath>VFE_Pawn_AdvancedMech_Scyther_Death</soundDeath>
+					<soundCall>VFE_Pawn_AdvancedMech_Scyther_Call</soundCall>
 				</li>
 			</lifeStageAges>
 			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>

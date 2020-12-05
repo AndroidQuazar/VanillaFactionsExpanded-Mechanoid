@@ -14,6 +14,8 @@
 		</amount>
 		<result>Steel</result>	
 		<yield>10</yield>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>300</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -29,7 +31,8 @@
 		</amount>
 		<result>Steel</result>	
 		<yield>10</yield>
-		
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>300</maxTotalOutput>		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
@@ -47,7 +50,8 @@
 		</amount>
 		<result>ComponentIndustrial</result>	
 		<yield>1</yield>
-
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>100</maxTotalOutput>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
@@ -76,7 +80,9 @@
 			<li>10</li>
 		</amount>
 		<result>ComponentSpacer</result>	
-		<yield>1</yield>		
+		<yield>1</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>100</maxTotalOutput>		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
@@ -94,6 +100,8 @@
 		</amount>
 		<result>Chemfuel</result>	
 		<yield>10</yield>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>1000</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -106,10 +114,12 @@
 			<li>WoodLog</li>
 		</items>	
 		<amount>
-			<li>10</li>
+			<li>20</li>
 		</amount>
 		<result>Chemfuel</result>	
-		<yield>10</yield>		
+		<yield>10</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>1000</maxTotalOutput>		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
@@ -125,12 +135,9 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-
-
 		<amount>
 			<li>30</li>
 			<li>2</li>
-
 		</amount>
 		<result>Gun_Revolver</result>	
 		<yield>1</yield>		
@@ -147,12 +154,9 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-
-
 		<amount>
 			<li>30</li>
 			<li>2</li>
-
 		</amount>
 		<result>Gun_Autopistol</result>	
 		<yield>1</yield>		
@@ -168,12 +172,9 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-
-
 		<amount>
 			<li>60</li>
 			<li>3</li>
-
 		</amount>
 		<result>Gun_PumpShotgun</result>	
 		<yield>1</yield>		
@@ -192,12 +193,9 @@
 		<secondItems>
 			<li>ComponentIndustrial</li>
 		</secondItems>
-
-
 		<amount>
 			<li>60</li>
 			<li>7</li>
-
 		</amount>
 		<result>Gun_AssaultRifle</result>	
 		<yield>1</yield>		
@@ -222,6 +220,8 @@
 		</amount>
 		<result>Shell_HighExplosive</result>	
 		<yield>1</yield>		
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>100</maxTotalOutput>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
@@ -238,6 +238,8 @@
 			<li>20</li>
 			<li>20</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>100</maxTotalOutput>
 		<result>Shell_Incendiary</result>	
 		<yield>1</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -256,6 +258,8 @@
 			<li>25</li>
 			<li>2</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>100</maxTotalOutput>
 		<result>Shell_EMP</result>	
 		<yield>1</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -275,6 +279,8 @@
 		</amount>
 		<result>Cloth</result>	
 		<yield>20</yield>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>1000</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -288,6 +294,8 @@
 		<amount>
 			<li>1</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>1000</maxTotalOutput>
 		<result>Leather_Patch</result>	
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_PatchleatherIcon</resultSpecialIcon>
@@ -785,6 +793,27 @@
 		<result>VFEM_ProcessedMeat</result>	
 		<isButcheryRecipe>true</isButcheryRecipe>
 		<efficiency>2</efficiency>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>2000</maxTotalOutput>
+		<isCategoryRecipe>true</isCategoryRecipe>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>
+	
+	<ItemProcessor.CombinationDef>
+		<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_HumanCorpsesRecipe</defName>
+		<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+		<items>
+			<li>CorpsesHumanlike</li>
+		</items>	
+		<amount>
+			<li>1</li>
+		</amount>
+		<result>Meat_Human</result>	
+		<isButcheryRecipe>true</isButcheryRecipe>
+		<efficiency>2</efficiency>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>2000</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -792,17 +821,24 @@
 	
 	<!--======= Conveyor Oven =======-->
 
+	
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_ProvisionsPackagingFactory_ConveyorOven_Kibble</defName>
 		<building>VFEM_ProvisionsPackagingFactory_ConveyorOven</building>
 		<items>
-			<li>FoodRaw</li>
+			<li>MeatRaw</li>
 		</items>	
+		<secondItems>
+			<li>PlantFoodRaw</li>
+		</secondItems>
 		<amount>
+			<li>30</li>
 			<li>30</li>
 		</amount>
 		<result>Kibble</result>	
 		<yield>50</yield>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>1000</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -812,13 +848,19 @@
 		<defName>VFEM_ProvisionsPackagingFactory_ConveyorOven_Meals</defName>
 		<building>VFEM_ProvisionsPackagingFactory_ConveyorOven</building>
 		<items>
-			<li>FoodRaw</li>
+			<li>MeatRaw</li>
 		</items>	
+		<secondItems>
+			<li>PlantFoodRaw</li>
+		</secondItems>	
 		<amount>
+			<li>12</li>
 			<li>12</li>
 		</amount>
 		<result>MealSurvivalPack</result>	
 		<yield>1</yield>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>100</maxTotalOutput>
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>Things/Item/Meal/SurvivalPack/SurvivalPack_b</resultSpecialIcon>
 		<isCategoryRecipe>true</isCategoryRecipe>
@@ -839,6 +881,8 @@
 		</amount>
 		<result>Neutroamine</result>	
 		<yield>1</yield>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>500</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -863,6 +907,8 @@
 			<li>1</li>
 			<li>3</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>100</maxTotalOutput>
 		<result>MedicineIndustrial</result>	
 		<yield>1</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -886,6 +932,8 @@
 			<li>2</li>
 			<li>2</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>500</maxTotalOutput>
 		<result>WakeUp</result>	
 		<yield>3</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -909,6 +957,8 @@
 			<li>2</li>
 			<li>2</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>500</maxTotalOutput>
 		<result>Penoxycyline</result>	
 		<yield>3</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -928,10 +978,12 @@
 		</amount>
 		<result>Flake</result>	
 		<yield>1</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>500</maxTotalOutput>
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>Things/Item/Drug/Yayo/Yayo_b</resultSpecialIcon>		
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.08</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
 	<ItemProcessor.CombinationDef>
@@ -944,7 +996,9 @@
 			<li>8</li>
 		</amount>
 		<result>Yayo</result>	
-		<yield>1</yield>		
+		<yield>1</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>500</maxTotalOutput>		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
@@ -961,7 +1015,9 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksSandstone</result>	
-		<yield>20</yield>
+		<yield>10</yield>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>2000</maxTotalOutput>
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksSandstone</resultSpecialIcon>				
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -976,8 +1032,10 @@
 		<amount>
 			<li>1</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>2000</maxTotalOutput>
 		<result>BlocksLimestone</result>	
-		<yield>20</yield>		
+		<yield>10</yield>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksLimestone</resultSpecialIcon>			
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -993,7 +1051,9 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksMarble</result>	
-		<yield>20</yield>		
+		<yield>10</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>2000</maxTotalOutput>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksMarble</resultSpecialIcon>			
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -1009,7 +1069,9 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksGranite</result>	
-		<yield>20</yield>		
+		<yield>10</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>2000</maxTotalOutput>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksGranite</resultSpecialIcon>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -1025,7 +1087,9 @@
 			<li>1</li>
 		</amount>
 		<result>BlocksSlate</result>	
-		<yield>20</yield>		
+		<yield>10</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>2000</maxTotalOutput>		
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksSlate</resultSpecialIcon>			
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -1047,12 +1111,14 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
 		<result>Plasteel</result>	
-		<yield>20</yield>		
+		<yield>20</yield>	
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>300</maxTotalOutput>		
 		<useQualityIncreasing>false</useQualityIncreasing>
 		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
@@ -1070,10 +1136,12 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>300</maxTotalOutput>
 		<result>Plasteel</result>	
 		<yield>20</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -1093,10 +1161,12 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>300</maxTotalOutput>
 		<result>Plasteel</result>	
 		<yield>20</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -1116,10 +1186,12 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>300</maxTotalOutput>
 		<result>Plasteel</result>	
 		<yield>20</yield>		
 		<useQualityIncreasing>false</useQualityIncreasing>
@@ -1137,8 +1209,10 @@
 		<thirdItems>
 			<li>Steel</li>
 		</thirdItems>
+		<outputLimitControlled>true</outputLimitControlled>
+		<maxTotalOutput>300</maxTotalOutput>
 		<amount>
-			<li>20</li>
+			<li>10</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>

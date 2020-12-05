@@ -3,7 +3,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_HeavyHopper</defName>
-    <label>factory hopper</label>
+    <label>Factory hopper</label>
     <description>Holds resources for use by automated machines.</description>
     <thingClass>Building_Storage</thingClass>
     <graphicData>
@@ -69,7 +69,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_ElectronicsFabricationFactory_SteelExtractor</defName>
-    <label>Steel Extractor</label>
+    <label>Steel extractor</label>
     <description>A large machine with a series of hammers, magnets, and foundries. Hammers pound rock chunks into dust, whereafter magnets collect metallic fragments before being dropped and melted into more pure, usable pieces. This machine has a notoriously low yield as most rock chunks have a negligible amount of extractable material.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -183,7 +183,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler</defName>
-    <label>Component Assembler</label>
+    <label>Component assembler</label>
     <description>An absurdly large machine composed of a series of foundries and casting molds. Overall, the machine is capable of fabricating any basic electronic or mechanical component with ease.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -290,7 +290,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</defName>
-    <label>Advanced Assembler</label>
+    <label>Advanced assembler</label>
     <description>A wide factory module meant to inlay and program circuitry for high-end electronic devices. The exact inner workings of this module are somewhat enigmatic to non-spacer colonies, however the end result is of unquestionable quality.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -398,7 +398,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</defName>
-    <label>Chemfuel Clarifier</label>
+    <label>Chemfuel clarifier</label>
     <description>A rather crude machine capable of melting organics via acid into usable chemfuel. Attached hoppers will accept nearby corpses or wood matter, rapidly decompose them, then melt in a singular large vat before dispensing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -501,7 +501,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</defName>
-    <label>Mechanized Weaponsmith</label>
+    <label>Mechanized weaponsmith</label>
     <description>A very large machine with many moving parts, able to accept steel, components, and cloth forward via belt system and slowly assemble them into basic weaponry. The machine is capable of making rudimentary light arms at a normal quality, although this process is very time and power consuming.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -606,7 +606,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</defName>
-    <label>Artillery Foundry</label>
+    <label>Artillery foundry</label>
     <description>A machine capable of accepting pieces used in assembly of large-calibre ballistic shells. Can create a variety of shells selectable by the manufacturer. \n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -712,7 +712,7 @@
   </ThingDef>
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_WearablesAndTextileFactory_TextileRecycler</defName>
-    <label>Textile Recycler</label>
+    <label>Textile recycler</label>
     <description>A machine capable of quickly orienting, shredding, and sorting pieces of clothing into usable reclaimed pieces or cloth. Nowhere near fully efficient but very useful for reclaiming otherwise useless materials.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -818,7 +818,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_WearablesAndTextileFactory_AutoLoom</defName>
-    <label>Auto Loom</label>
+    <label>Auto loom</label>
     <description>A large machine that scans nearby textiles fed through two rollers, whereafter a series of clamps, shears, and needles stitch, weave, and sew basic clothing millimeters at a time. The user only must specify the type of clothing desired from a preset template of options.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -924,7 +924,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</defName>
-    <label>Synthread Synthesizer</label>
+    <label>Synthread synthesizer</label>
     <description>A high-tech machine that is barely understood by even the most intellectually inclined colonies. Complete with a series of meshpresses and plasma needles capable of atomically realigning basic materials resulting in new material indistinguishable from synthread. Rather than creating material itself, the machine is configured to modify certain existing clothing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -1030,8 +1030,8 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_ProvisionsPackagingFactory_MeatGrinder</defName>
-    <label>Meat Grinder</label>
-    <description>A medium-sized but intimidating machine, corpses are pulled in via clamps before being weighed, analyzed and crudely torn apart. Flesh chunks are then ground into a finely processed and surprisingly flavorful but perplexing meat. This process is very efficient and results in slower but higher meat yield than normal butchering. Due to the all-encompassing nature of the process the machine will not yield any leather or skin from the corpses insert.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
+    <label>Meat grinder</label>
+    <description>A medium-sized but intimidating machine, corpses are pulled in via clamps before being weighed, analyzed and crudely torn apart. Flesh chunks are then ground into a finely processed and surprisingly flavorful but perplexing meat. Due to the all-encompassing nature of the process the machine will yield double the meat but not yield any leather or skin from the corpses inserted. Furthermore while the machine will butcher insectoid and human corpses it will not convert their flesh into processed meat.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
       <texPath>Things/Buildings/MeatGrinder/MeatGrinder</texPath>
@@ -1136,7 +1136,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_ProvisionsPackagingFactory_ConveyorOven</defName>
-    <label>Conveyor Oven</label>
+    <label>Conveyor oven</label>
     <description>A very long industrial-sized oven with a central conveyor belt and vacuum system, capable of accepting nearby raw food from attached hoppers and processing it. Basic packaged meals and dried goods can easily be produced.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -1161,6 +1161,7 @@
       <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
     </costList>
     <building>
+		<isMealSource>true</isMealSource>
       <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
       <wantsHopperAdjacent>true</wantsHopperAdjacent>
       <buildingTags>
@@ -1214,7 +1215,7 @@
       <li Class="CompProperties_Flickable" />
       <li Class="ItemProcessor.CompProperties_ItemProcessor">
         <buildingOnGraphic>Things/Buildings/ConveyorOven/ConveyorOven</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
+        <numberOfInputs>2</numberOfInputs>
         <acceptsNoneAsInput>false</acceptsNoneAsInput>
 		<showFactoryProgressBar>true</showFactoryProgressBar>
         <transfersIngredientLists>false</transfersIngredientLists>
@@ -1250,7 +1251,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MedicinalCompoundingFactory_NeutroamineInfuser</defName>
-    <label>Neutroamine Infuser</label>
+    <label>Neutroamine infuser</label>
     <description>A large industrial vat meant for making the ever-elusive neutroamine precursor product. While the exact recipe for the product is generally a trade secret the end result from this machine is a thick glycerol made from rendered fat very similar to neutroamine and fully capable of being made into further products.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -1355,7 +1356,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator</defName>
-    <label>Medicine Granulator</label>
+    <label>Medicine granulator</label>
     <description>A machine capable of granulating via mill then pressing medical products into pills using a series of clamps and shaped presses. Also capable of manufacturing prefabricated health kits.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -1463,7 +1464,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MedicinalCompoundingFactory_DrugPowderizer</defName>
-    <label>Drug Powderizer</label>
+    <label>Drug powderizer</label>
     <description>A small machine meant to finely process and powderize psychoid leaf extract, then package it for later use or selling.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -1568,8 +1569,8 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MasonryAndMetallicsFactory_AutomaticDrill</defName>
-    <label>Automatic Drill</label>
-    <description>A larger but surface-level automated version of the deep drill. This basic yet powerful drill can mine and extract rock chunks for further processing without human input. Will not antagonize insect hives. The drill will not produce rock chunks if it detects other rock chunks surrounding it and waiting for retrieval.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
+    <label>Automatic drill</label>
+    <description>A larger but surface-level automated version of the deep drill. This basic yet powerful drill can mine and extract rock chunks for further processing without human input. Will not antagonize insect hives. The drill will not produce a rock chunk if it detects other one already waiting for retrieval.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
     <thingClass>Building</thingClass>
     <graphicData>
       <texPath>Things/Buildings/AutomaticDrill/AutomaticDrill</texPath>
@@ -1662,7 +1663,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw</defName>
-    <label>Masonry Saw</label>
+    <label>Masonry saw</label>
     <description>A cumbersome and very loud factory, essentially a series of clasps, chisels, and saws meant to hold rock chunks in place to be cut and lightly smoothed into stackable bricks.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>
@@ -1767,7 +1768,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEM_MasonryAndMetallicsFactory_PlasteelForge</defName>
-    <label>Plasteel Forge</label>
+    <label>Plasteel forge</label>
     <description>A somewhat high-tech and little understood factory module, capable of combining steel, powdered stone bricks, and chemfuel into plasteel. The exact formula and methodology of plasteel refining is usually locked away by militaristic forge worlds but the product this machine outputs is a close enough replication.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
     <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
     <graphicData>

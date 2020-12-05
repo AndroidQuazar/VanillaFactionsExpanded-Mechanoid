@@ -19,7 +19,7 @@
 					<value>
 
 						<ItemProcessor.CombinationDef>
-							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_RedWoodRecipe</defName>
+							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_MushroomWoodRecipe</defName>
 							<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
 							<items>
 								<li>AB_MushroomWoodLog</li>
@@ -28,13 +28,15 @@
 								<li>10</li>
 							</amount>
 							<result>Chemfuel</result>	
-							<yield>10</yield>		
+							<yield>10</yield>	
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>1000</maxTotalOutput>							
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-						
+
 						<ItemProcessor.CombinationDef>
-							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_MushroomWoodRecipe</defName>
+							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_RedWoodRecipe</defName>
 							<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
 							<items>
 								<li>GU_RedWood</li>
@@ -43,10 +45,13 @@
 								<li>10</li>
 							</amount>
 							<result>Chemfuel</result>	
-							<yield>10</yield>		
+							<yield>10</yield>	
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>1000</maxTotalOutput>							
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
+
 
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry_AB_Shell_Tar</defName>
@@ -61,6 +66,8 @@
 								<li>25</li>
 								<li>5</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>100</maxTotalOutput>
 							<result>AB_Shell_Tar</result>	
 							<yield>1</yield>		
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -75,6 +82,8 @@
 							<amount>
 								<li>1</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>2000</maxTotalOutput>
 							<result>GU_BlocksRoseQuartz</result>	
 							<yield>20</yield>		
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
@@ -91,6 +100,8 @@
 							<amount>
 								<li>1</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>2000</maxTotalOutput>
 							<result>AB_BlocksCragstone</result>	
 							<yield>20</yield>		
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
@@ -108,7 +119,9 @@
 								<li>1</li>
 							</amount>
 							<result>AB_BlocksObsidian</result>	
-							<yield>20</yield>		
+							<yield>20</yield>	
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>2000</maxTotalOutput>							
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 							<resultSpecialIcon>UI/VFEM_StoneBlocksObsidian</resultSpecialIcon>			
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -123,6 +136,8 @@
 							<amount>
 								<li>1</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>2000</maxTotalOutput>
 							<result>AB_BlocksMudstone</result>	
 							<yield>20</yield>		
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
@@ -148,6 +163,8 @@
 								<li>20</li>
 								<li>20</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>Plasteel</result>	
 							<yield>20</yield>		
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -170,6 +187,8 @@
 								<li>20</li>
 								<li>20</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>Plasteel</result>	
 							<yield>20</yield>		
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -192,6 +211,8 @@
 								<li>20</li>
 								<li>20</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>Plasteel</result>	
 							<yield>20</yield>		
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -209,6 +230,8 @@
 							<thirdItems>
 								<li>Steel</li>
 							</thirdItems>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<amount>
 								<li>20</li>
 								<li>20</li>
@@ -228,6 +251,8 @@
 							<amount>
 								<li>1</li>
 							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
 							<result>AB_AlcyoniteChunk</result>	
 							<yield>10</yield>							
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -235,6 +260,80 @@
 						</ItemProcessor.CombinationDef>
 
 					</value>
+				</li>
+
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Fishing Expanded</li>
+					</mods>
+
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<li Class="PatchOperationAdd"> 
+								<success>Always</success>
+								<xpath>/Defs</xpath>
+								<value>
+
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_BloodLeech</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>5</li>
+										</amount>
+										<result>VCEF_BloodLeech</result>	
+										<yield>75</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>1000</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_SpiderFish</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>5</li>
+										</amount>
+										<result>VCEF_Spiderfish</result>	
+										<yield>30</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+
+
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_Sturgeon</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>5</li>
+										</amount>
+										<result>VCEF_Sturgeon</result>	
+										<yield>11</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>200</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+
+								</value>
+							</li>
+						</operations>
+					</match>
 				</li>
 
 

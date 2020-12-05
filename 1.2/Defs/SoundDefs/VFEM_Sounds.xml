@@ -42,5 +42,267 @@
     </subSounds>
   </SoundDef>
   
+  <SoundDef>
+    <defName>VFE_Shot_InfernoSpewer</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>4</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Things/InfernoSpewer</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>40.58823~40.58823</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Centipede_Wounded</defName>  
+    <context>MapOnly</context>  
+    <maxVoices>1</maxVoices>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedMechanoid_Centipede_Pain</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>      
+        <pitchRange>0.9541177~1.068824</pitchRange>      
+        <repeatMode>NeverTwice</repeatMode>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Centipede_Death</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedMechanoid_Centipede_Death</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>      
+        <pitchRange>0.9311765~1.045882</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Centipede_Call</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedMechanoid_Centipede_Calls</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>      
+        <pitchRange>0.9311765~1.045882</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Scyther_Wounded</defName>  
+    <context>MapOnly</context>  
+    <maxVoices>1</maxVoices>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedScyther_Pain</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>      
+        <pitchRange>0.9541177~1.068824</pitchRange>      
+        <repeatMode>NeverTwice</repeatMode>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Scyther_Death</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedScyther_Death</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>      
+        <pitchRange>0.9311765~1.045882</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Scyther_Call</defName>  
+    <context>MapOnly</context>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedScyther_Calls</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>20~20</volumeRange>      
+        <pitchRange>0.9311765~1.045882</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Pikeman_Wounded</defName>
+    <context>MapOnly</context>
+    <maxVoices>1</maxVoices>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedScyther_Pain</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~20</volumeRange>
+        <pitchRange>0.6~0.65</pitchRange>
+        <repeatMode>NeverTwice</repeatMode>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Pikeman_Death</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedScyther_Death</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~20</volumeRange>
+        <pitchRange>0.6~0.65</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>VFE_Pawn_AdvancedMech_Pikeman_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Pawn/Mechanoid/AdvancedScyther_Calls</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20~20</volumeRange>
+        <pitchRange>0.6~0.65</pitchRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFE_LongRangeMissile_ExplosionFar</defName>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/LongRangeMissile_ExplosionFar</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFE_LongRangeMissile_LaunchSiren</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/LongRangeMissile_LaunchSiren</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFE_LongRangeMissile_Launch</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/LongRangeMissile_Launch</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFE_LongRangeMissile_Incoming</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Buildings/LongRangeMissile_Incoming</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>VFE_LongRangeMissile_ExplosionOnMap</defName>  
+    <context>MapOnly</context> 
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Buildings/LongRangeMissile_ExplosionOnMap</clipFolderPath>
+          </li>
+        </grains>      
+        <volumeRange>80~80</volumeRange>      
+        <pitchRange>0.8516304~1.254348</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  
   
 </Defs>
