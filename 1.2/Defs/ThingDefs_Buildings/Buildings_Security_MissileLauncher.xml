@@ -16,6 +16,7 @@
     <rotatable>false</rotatable>
     <defaultPlacingRot>North</defaultPlacingRot>
     <altitudeLayer>Building</altitudeLayer>
+    <tickerType>Normal</tickerType>
     <passability>Impassable</passability>
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>1.0</fillPercent>
