@@ -39,10 +39,10 @@
 								<li>BuildingsProduction</li>
 							</thingCategories>
 							<costList>
-								<Steel>300</Steel>
-								<ComponentSpacer>1</ComponentSpacer>
-								<Plasteel>50</Plasteel>
-								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+								<Steel>575</Steel>
+								<ComponentSpacer>4</ComponentSpacer>
+								<Plasteel>300</Plasteel>
+								<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 							</costList>
 							<building>
 								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
@@ -83,7 +83,7 @@
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
 									<shortCircuitInRain>false</shortCircuitInRain>
-									<basePowerConsumption>250</basePowerConsumption>
+									<basePowerConsumption>725</basePowerConsumption>
 								</li>
 								<li Class="CompProperties_Flickable"/>
 								<li Class="ItemProcessor.CompProperties_ItemProcessor">
