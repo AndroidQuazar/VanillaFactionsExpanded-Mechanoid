@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>VFE_Mechanoids_RepairMachine</defName>
+    <label>repair machine</label>
+    <giverClass>VFE.Mechanoids.AI.WorkGivers.WorkGiver_RepairMachine</giverClass>
+    <workType>Hauling</workType>
+    <verb>repair</verb>
+    <gerund>repairing</gerund>
+    <priorityInType>140</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>VFE_Mechanoids_AttachTurret</defName>
+    <label>attach turret</label>
+    <giverClass>VFE.Mechanoids.AI.WorkGivers.WorkGiver_AttachTurret</giverClass>
+    <workType>Hauling</workType>
+    <verb>attach turret to</verb>
+    <gerund>attaching turret to</gerund>
+    <priorityInType>141</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>
