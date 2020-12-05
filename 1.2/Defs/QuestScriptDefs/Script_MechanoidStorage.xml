@@ -36,6 +36,10 @@
       <nodes>
 		<li Class="VFEMech.QuestNode_MechPresenceConditional">
 			<anyShips>true</anyShips>
+			<!-- you can have two another parameters, keep anyShips if you just want if at least 1 ship is present
+				<minMechPresence>1</minMechPresence>
+				<maxMechPresence>1</maxMechPresence>
+			--> 
 		</li>
         <li Class="QuestNode_SubScript">
           <def>Util_RandomizePointsChallengeRating</def>
