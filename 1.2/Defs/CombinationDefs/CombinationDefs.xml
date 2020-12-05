@@ -832,8 +832,8 @@
 			<li>PlantFoodRaw</li>
 		</secondItems>
 		<amount>
-			<li>30</li>
-			<li>30</li>
+			<li>20</li>
+			<li>20</li>
 		</amount>
 		<result>Kibble</result>	
 		<yield>50</yield>
@@ -854,8 +854,8 @@
 			<li>PlantFoodRaw</li>
 		</secondItems>	
 		<amount>
-			<li>12</li>
-			<li>12</li>
+			<li>6</li>
+			<li>6</li>
 		</amount>
 		<result>MealSurvivalPack</result>	
 		<yield>1</yield>
