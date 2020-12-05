@@ -502,7 +502,7 @@ namespace VFEMech
             this.angle = 0f;
             this.ticksToImpactMaxPrivate = (int) AccessTools.Field(typeof(Skyfaller), "ticksToImpactMax").GetValue(this);
 
-            VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(SoundInfo.InMap(this));
+            VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(new TargetInfo(this.Position, this.Map));
         }
 
         public ActiveDropPodInfo Contents
@@ -590,10 +590,10 @@ namespace VFEMech
                 if (x % 50 == 0)
                 {
                     moteCount(this.Map.moteCounter) = 0;
-                        Vector3 vc = intVec3.ToVector3();
-                    MoteMaker.ThrowMicroSparks(vc, this.Map);
-                    MoteMaker.ThrowHeatGlow(intVec3, this.Map, size: 3f);
-                    MoteMaker.ThrowFireGlow(intVec3, this.Map, size: 5f);
+                    Vector3 vc = intVec3.ToVector3();
+                    //MoteMaker.ThrowMicroSparks(vc, this.Map);
+                    //MoteMaker.ThrowHeatGlow(intVec3, this.Map, size: 3f);
+                    //MoteMaker.ThrowFireGlow(intVec3, this.Map, size: 5f);
                     MoteMaker.ThrowLightningGlow(vc, this.Map, size: 10f);
                     MoteMaker.ThrowMetaPuff(vc, this.Map);
                 }
@@ -608,6 +608,7 @@ namespace VFEMech
             }
 
             FloodFillerFog.FloodUnfog(loc, this.Map);
+            VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.PlayOneShot(new TargetInfo(this.Position, this.Map));
             GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this, explosionSound: VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap);
             this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
             this.Map.TileInfo.hilliness = Hilliness.Impassable;
