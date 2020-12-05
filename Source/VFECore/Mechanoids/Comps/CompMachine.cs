@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace VFE.Mechanoids
 {
     class CompMachine : CompDependsOnBuilding
     {
-        ThingDef turretAttached = null;
+        public ThingDef turretAttached = null;
 
         public override void OnBuildingDestroyed()
         {
@@ -39,7 +40,7 @@ namespace VFE.Mechanoids
                 ((Pawn)parent).equipment.DestroyAllEquipment();
             }
             turretAttached = turret;
-            Thing turretThing = ThingMaker.MakeThing(turret);
+            Thing turretThing = ThingMaker.MakeThing(turret.building.turretGunDef);
             ((Pawn)parent).equipment.AddEquipment((ThingWithComps)turretThing);
         }
 

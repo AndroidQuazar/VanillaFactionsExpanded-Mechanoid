@@ -48,7 +48,7 @@ namespace VFE.Mechanoids.AI.JobDrivers
                 Thing thing = curJob.GetTarget(buildingIndex).Thing;
 				foreach (ThingCountClass toDestroy in toil.actor.CurJob.placedThings)
 					toDestroy.thing.Destroy();
-                thing.TryGetComp<CompMachineChargingStation>().myPawn.TryGetComp<CompMachine>().AttachTurret(thing.TryGetComp<CompMachineChargingStation>().turretToInstall.building.turretGunDef);
+                thing.TryGetComp<CompMachineChargingStation>().myPawn.TryGetComp<CompMachine>().AttachTurret(thing.TryGetComp<CompMachineChargingStation>().turretToInstall);
                 thing.TryGetComp<CompMachineChargingStation>().wantsRest = false;
                 thing.TryGetComp<CompMachineChargingStation>().turretToInstall = null;
             };

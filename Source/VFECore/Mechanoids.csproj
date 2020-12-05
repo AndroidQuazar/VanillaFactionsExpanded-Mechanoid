@@ -81,8 +81,11 @@
     <Compile Include="Mechanoids\Comps\CompProperties_Machine.cs" />
     <Compile Include="Mechanoids\Comps\CompProperties_MachineChargingStation.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\HarmonyPatcher.cs" />
+    <Compile Include="Mechanoids\HarmonyPatches\MobileTurretsShowTurrets.cs" />
+    <Compile Include="Mechanoids\HarmonyPatches\RenderTurretCentered.cs" />
+    <Compile Include="Mechanoids\HarmonyPatches\MachinesCannotJoinCaravans.cs" />
+    <Compile Include="Mechanoids\HarmonyPatches\MachinesDie.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\MechanoidsAreCapable.cs" />
-    <Compile Include="Mechanoids\HarmonyPatches\MechanoidsCanBeDrafted.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\MechanoidsObeyOrders.cs" />
     <Compile Include="Mechanoids\HarmonyPatches\NoBioForMachines.cs" />
     <Compile Include="Mechanoids\Needs\Need_Power.cs" />

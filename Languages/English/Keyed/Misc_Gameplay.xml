@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<LanguageData>
-
-  <VFEMechForceRecharge>Force Recharge</VFEMechForceRecharge>
-  <VFEMechForceRechargeDesc>Order the associated machine to return to this platform for charging, regardless of its current battery level</VFEMechForceRechargeDesc>
-  <VFEMechAttachTurret>Attach Turret</VFEMechAttachTurret>
-  <VFEMechAttachTurretDesc>Construct a turret atop this mobile platform.</VFEMechAttachTurretDesc>
-  
-</LanguageData>

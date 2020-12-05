@@ -276,7 +276,7 @@
         <bodyGraphicData>
           <texPath>Things/Automation/CombatMechanoid/CombatMechanoid</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2</drawSize>
+          <drawSize>1.5</drawSize>
           <shadowData>
             <volume>(0.6, 0.8, 0.6)</volume>
           </shadowData>
@@ -348,7 +348,7 @@
         <bodyGraphicData>
           <texPath>Things/Automation/RiotMechanoid/RiotMechanoid</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2</drawSize>
+          <drawSize>1.5</drawSize>
           <shadowData>
             <volume>(0.6, 0.8, 0.6)</volume>
           </shadowData>

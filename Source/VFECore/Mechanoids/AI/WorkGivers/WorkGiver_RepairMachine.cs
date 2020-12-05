@@ -23,6 +23,7 @@ namespace VFE.Mechanoids.AI.WorkGivers
                 List<Thing> thingsOfThisType = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, t.Position, new IntRange(thingNeeded.count, thingNeeded.count), (Thing thing) => thing.def == thingNeeded.thingDef);
                 if (thingsOfThisType == null)
                 {
+                    JobFailReason.Is("VFEMechNoResources".Translate());
                     return false;
                 }
             }

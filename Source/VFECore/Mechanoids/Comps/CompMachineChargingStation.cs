@@ -14,7 +14,7 @@ namespace VFE.Mechanoids
     public class CompMachineChargingStation : CompPawnDependsOn
     {
         public bool wantsRespawn=false; //Used to determine whether a rebuild job is desired
-        public bool wantsRest = false; //Used to force a machine to return to base, for healing or upgrading
+        public bool wantsRest = false; //Used to force a machine to return to base, for healing or recharging
         public ThingDef turretToInstall = null; //Used to specify a turret to put on the mobile turret
 
         public new CompProperties_MachineChargingStation Props
@@ -37,10 +37,14 @@ namespace VFE.Mechanoids
         public override void SpawnMyPawn()
         {
             base.SpawnMyPawn();
-            myPawn.story = new Pawn_StoryTracker(myPawn);
-            myPawn.skills = new Pawn_SkillTracker(myPawn);
-            myPawn.workSettings = new Pawn_WorkSettings(myPawn);
-            myPawn.relations = new Pawn_RelationsTracker(myPawn);
+            if(myPawn.story==null)
+                myPawn.story = new Pawn_StoryTracker(myPawn);
+            if(myPawn.skills==null)
+                myPawn.skills = new Pawn_SkillTracker(myPawn);
+            if(myPawn.workSettings==null)
+                myPawn.workSettings = new Pawn_WorkSettings(myPawn);
+            if(myPawn.relations==null)
+                myPawn.relations = new Pawn_RelationsTracker(myPawn);
             DefMap<WorkTypeDef,int> priorities = new DefMap<WorkTypeDef, int>();
             priorities.SetAll(0);
             typeof(Pawn_WorkSettings).GetField("priorities", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(myPawn.workSettings,priorities);
@@ -55,7 +59,8 @@ namespace VFE.Mechanoids
             }
             if(myPawn.TryGetComp<CompMachine>().Props.violent)
             {
-                myPawn.drafter = new Pawn_DraftController(myPawn);
+                if(myPawn.drafter==null)
+                    myPawn.drafter = new Pawn_DraftController(myPawn);
                 if(Props.spawnWithWeapon!=null)
                 {
                     ThingWithComps thing = (ThingWithComps)ThingMaker.MakeThing(Props.spawnWithWeapon);
@@ -132,7 +137,7 @@ namespace VFE.Mechanoids
                             {
                                 turretToInstall = thing;
                                 wantsRest = true;
-                            });
+                            },thing.building.turretGunDef);
                             options.Add(opt);
                         }
                         Find.WindowStack.Add(new FloatMenu(options));
@@ -142,6 +147,38 @@ namespace VFE.Mechanoids
             }
 
             return gizmos;
+        }
+
+        public override string CompInspectStringExtra()
+        {
+            StringBuilder builder = new StringBuilder(base.CompInspectStringExtra());
+            if(myPawn==null || myPawn.Dead || !myPawn.Spawned)
+            {
+                bool comma = false;
+                string resources = "VFEMechReconstruct".Translate()+" ";
+                foreach(ThingDefCountClass resource in Props.pawnToSpawn.race.butcherProducts)
+                {
+                    if (comma)
+                        resources += ", ";
+                    comma = true;
+                    resources += resource.thingDef.label + " x" + resource.count;
+                }
+                builder.AppendLine(resources);
+            }
+            if(turretToInstall!=null)
+            {
+                bool comma = false;
+                string resources = "VFEMechTurretResources".Translate()+" ";
+                foreach (ThingDefCountClass resource in turretToInstall.costList)
+                {
+                    if (comma)
+                        resources += ", ";
+                    comma = true;
+                    resources += resource.thingDef.label + " x" + resource.count;
+                }
+                builder.AppendLine(resources);
+            }
+            return builder.ToString().Trim();
         }
     }
 }

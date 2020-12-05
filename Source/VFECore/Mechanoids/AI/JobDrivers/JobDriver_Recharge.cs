@@ -11,15 +11,18 @@ using VFE.Mechanoids.Needs;
 
 namespace VFE.Mechanoids.AI.JobDrivers
 {
+	[StaticConstructorOnStartup]
 	public class JobDriver_Recharge : JobDriver
 	{
 		public const TargetIndex BedOrRestSpotIndex = TargetIndex.A;
+		public static ThingDef MoteRecharge = ThingDef.Named("VFE_Mechanoids_Mote_Recharge");
+		public static ThingDef MoteRepair = ThingDef.Named("VFE_Mechanoids_Mote_Repair");
 
 		public Building_BedMachine Bed => (Building_BedMachine)job.GetTarget(TargetIndex.A).Thing;
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
 		{
-			if (job.GetTarget(TargetIndex.A).HasThing && !pawn.Reserve(Bed, job, 1, 0, null, errorOnFailed))
+			if (!job.GetTarget(TargetIndex.A).HasThing)
 			{
 				return false;
 			}
@@ -76,10 +79,10 @@ namespace VFE.Mechanoids.AI.JobDrivers
 
 					if (actor2.IsHashIntervalTick(100) && !actor2.Position.Fogged(actor2.Map))
 					{
-						MoteMaker.ThrowMetaIcon(actor2.Position, actor2.Map, ThingDefOf.Mote_SleepZ); //TODO change to lightning bolt
+						MoteMaker.ThrowMetaIcon(actor2.Position, actor2.Map, MoteRecharge);
 						if (actor2.health.hediffSet.GetNaturallyHealingInjuredParts().Any())
 						{
-							MoteMaker.ThrowMetaIcon(actor2.Position, actor2.Map, ThingDefOf.Mote_HealingCross); //TODO change to wrench
+							MoteMaker.ThrowMetaIcon(actor2.Position, actor2.Map, MoteRepair);
 						}
 					}
 				}
@@ -91,12 +94,12 @@ namespace VFE.Mechanoids.AI.JobDrivers
 			layDown.AddFinishAction(delegate
 			{
 				Pawn actor = layDown.actor;
-				if (layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury())
+				if (layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null)
 				{
 					actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().wantsRest = false;
 				}
 			});
-			layDown.FailOn(() => layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury());
+			layDown.FailOn(() => layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && layDown.actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null);
 			layDown.defaultCompleteMode = ToilCompleteMode.Never;
 			return layDown;
 		}

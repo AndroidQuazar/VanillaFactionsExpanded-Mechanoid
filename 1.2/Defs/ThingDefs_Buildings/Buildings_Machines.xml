@@ -27,7 +27,7 @@
     <rotatable>false</rotatable>
     <fillPercent>0.1</fillPercent>
     <thingCategories>
-      <li>BuildingsFurniture</li>
+      <li>BuildingsProduction</li>
     </thingCategories>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -48,7 +48,7 @@
     <costList>
       <Steel>30</Steel>
 	  <Plasteel>20</Plasteel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 	  <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -66,9 +66,9 @@
 		<extraChargingPower>1400</extraChargingPower>
 	  </li>
     </comps>
-    <designationCategory>Furniture</designationCategory>
+    <designationCategory>VFE_Factory</designationCategory>
     <researchPrerequisites>
-      <li>Electricity</li>
+      <li>VFE_BasicDroneAssembly</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
@@ -100,7 +100,7 @@
     <rotatable>false</rotatable>
     <fillPercent>0.1</fillPercent>
     <thingCategories>
-      <li>BuildingsFurniture</li>
+      <li>BuildingsProduction</li>
     </thingCategories>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -121,7 +121,7 @@
     <costList>
       <Steel>45</Steel>
 	  <Plasteel>20</Plasteel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 	  <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -139,9 +139,9 @@
 		<extraChargingPower>1600</extraChargingPower>
 	  </li>
     </comps>
-    <designationCategory>Furniture</designationCategory>
+    <designationCategory>VFE_Factory</designationCategory>
     <researchPrerequisites>
-      <li>Electricity</li>
+      <li>VFE_BasicDroneAssembly</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
@@ -173,7 +173,7 @@
     <rotatable>false</rotatable>
     <fillPercent>0.1</fillPercent>
     <thingCategories>
-      <li>BuildingsFurniture</li>
+      <li>BuildingsProduction</li>
     </thingCategories>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -193,7 +193,7 @@
     </building>
     <costList>
       <Steel>45</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 	  <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -212,9 +212,9 @@
 		<skillLevel>10</skillLevel>
 	  </li>
     </comps>
-    <designationCategory>Furniture</designationCategory>
+    <designationCategory>VFE_Factory</designationCategory>
     <researchPrerequisites>
-      <li>Electricity</li>
+      <li>VFE_BasicDroneAssembly</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
@@ -246,7 +246,7 @@
     <rotatable>false</rotatable>
     <fillPercent>0.1</fillPercent>
     <thingCategories>
-      <li>BuildingsFurniture</li>
+      <li>BuildingsProduction</li>
     </thingCategories>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -266,6 +266,7 @@
     </building>
     <costList>
       <Plasteel>45</Plasteel>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentIndustrial>2</ComponentIndustrial>
 	  <ComponentSpacer>2</ComponentSpacer>
     </costList>
@@ -284,9 +285,9 @@
 		<spawnWithWeapon>Gun_ChargeLance</spawnWithWeapon>
 	  </li>
     </comps>
-    <designationCategory>Furniture</designationCategory>
+    <designationCategory>VFE_Factory</designationCategory>
     <researchPrerequisites>
-      <li>Electricity</li>
+      <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
@@ -318,7 +319,7 @@
     <rotatable>false</rotatable>
     <fillPercent>0.1</fillPercent>
     <thingCategories>
-      <li>BuildingsFurniture</li>
+      <li>BuildingsProduction</li>
     </thingCategories>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -338,6 +339,7 @@
     </building>
     <costList>
       <Plasteel>65</Plasteel>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentIndustrial>4</ComponentIndustrial>
 	  <ComponentSpacer>1</ComponentSpacer>
     </costList>
@@ -355,9 +357,9 @@
 		<extraChargingPower>1600</extraChargingPower>
 	  </li>
     </comps>
-    <designationCategory>Furniture</designationCategory>
+    <designationCategory>VFE_Factory</designationCategory>
     <researchPrerequisites>
-      <li>Electricity</li>
+      <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
@@ -389,7 +391,7 @@
     <rotatable>false</rotatable>
     <fillPercent>0.1</fillPercent>
     <thingCategories>
-      <li>BuildingsFurniture</li>
+      <li>BuildingsProduction</li>
     </thingCategories>
     <statBases>
       <WorkToBuild>1000</WorkToBuild>
@@ -409,6 +411,7 @@
     </building>
     <costList>
       <Plasteel>65</Plasteel>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentIndustrial>4</ComponentIndustrial>
 	  <ComponentSpacer>1</ComponentSpacer>
     </costList>
@@ -427,9 +430,9 @@
 		<turret>true</turret>
 	  </li>
     </comps>
-    <designationCategory>Furniture</designationCategory>
+    <designationCategory>VFE_Factory</designationCategory>
     <researchPrerequisites>
-      <li>Electricity</li>
+      <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>

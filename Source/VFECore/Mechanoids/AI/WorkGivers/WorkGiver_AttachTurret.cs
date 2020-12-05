@@ -17,12 +17,19 @@ namespace VFE.Mechanoids.AI.WorkGivers
         {
             if (t.TryGetComp<CompMachineChargingStation>() == null || t.TryGetComp<CompMachineChargingStation>().turretToInstall==null)
                 return false;
+            Pawn myPawn = t.TryGetComp<CompMachineChargingStation>().myPawn;
+            if (myPawn==null || myPawn.Dead || !myPawn.Spawned)
+            {
+                JobFailReason.Is("VFEMechNoTurret".Translate());
+                return false;
+            }
             List<ThingDefCountClass> products = t.TryGetComp<CompMachineChargingStation>().turretToInstall.costList;
             foreach (ThingDefCountClass thingNeeded in products)
             {
                 List<Thing> thingsOfThisType = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, t.Position, new IntRange(thingNeeded.count, thingNeeded.count), (Thing thing) => thing.def == thingNeeded.thingDef);
                 if (thingsOfThisType == null)
                 {
+                    JobFailReason.Is("VFEMechNoResources".Translate());
                     return false;
                 }
             }
