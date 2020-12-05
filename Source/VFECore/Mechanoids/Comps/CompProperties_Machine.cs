@@ -10,6 +10,7 @@ namespace VFE.Mechanoids
     public class CompProperties_Machine : CompProperties
     {
         public bool violent = false;
+        public float hoursActive = 24;
 
         public CompProperties_Machine()
         {

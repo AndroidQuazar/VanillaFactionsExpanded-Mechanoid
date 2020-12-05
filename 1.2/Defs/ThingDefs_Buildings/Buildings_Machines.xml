@@ -64,6 +64,7 @@
 			<li>Cleaning</li>
 		</allowedWorkTypes>
 		<extraChargingPower>1400</extraChargingPower>
+		<hoursToRecharge>24</hoursToRecharge>
 	  </li>
     </comps>
     <designationCategory>VFE_Factory</designationCategory>
@@ -137,6 +138,7 @@
 			<li>Hauling</li>
 		</allowedWorkTypes>
 		<extraChargingPower>1600</extraChargingPower>
+		<hoursToRecharge>6</hoursToRecharge>
 	  </li>
     </comps>
     <designationCategory>VFE_Factory</designationCategory>
@@ -210,6 +212,7 @@
 		</allowedWorkTypes>
 		<extraChargingPower>1800</extraChargingPower>
 		<skillLevel>10</skillLevel>
+		<hoursToRecharge>24</hoursToRecharge>
 	  </li>
     </comps>
     <designationCategory>VFE_Factory</designationCategory>
@@ -283,6 +286,7 @@
 		</allowedWorkTypes>
 		<extraChargingPower>1200</extraChargingPower>
 		<spawnWithWeapon>Gun_ChargeLance</spawnWithWeapon>
+		<hoursToRecharge>24</hoursToRecharge>
 	  </li>
     </comps>
     <designationCategory>VFE_Factory</designationCategory>
@@ -355,6 +359,7 @@
 		<allowedWorkTypes>
 		</allowedWorkTypes>
 		<extraChargingPower>1600</extraChargingPower>
+		<hoursToRecharge>24</hoursToRecharge>
 	  </li>
     </comps>
     <designationCategory>VFE_Factory</designationCategory>
@@ -428,6 +433,7 @@
 		</allowedWorkTypes>
 		<extraChargingPower>1600</extraChargingPower>
 		<turret>true</turret>
+		<hoursToRecharge>24</hoursToRecharge>
 	  </li>
     </comps>
     <designationCategory>VFE_Factory</designationCategory>
@@ -435,5 +441,130 @@
       <li>VFE_AutomatedDefensiveMeasures</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_Autosower</defName>
+    <label>autosower</label>
+    <description>An extremely large, slow moving trough-like structure mounted on a series of wheels. Undermounted sprinklers and piston-driven dibblers allow rapid planting of a very wide variety of crops. This machine in particular is programmed to move in a pre-defined direction and distance.</description>
+    <thingClass>VFE.Mechanoids.Buildings.Building_AutoSower</thingClass>
+    <graphicData>
+      <texPath>Things/Automation/AutoSower/AutoSower</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,2)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <costList>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	  <ComponentIndustrial>4</ComponentIndustrial>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+      <sowTag>Ground</sowTag>
+    </building>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.8</uiIconScale>
+    <fillPercent>0.5</fillPercent>
+    <placeWorkers>
+      <li>VFE.Mechanoids.PlaceWorkers.PlaceWorker_AutoPlant</li>
+    </placeWorkers>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <Mass>10</Mass>
+      <WorkToBuild>800</WorkToBuild>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(7,2)</size>
+    <designationCategory>VFE_Factory</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>600</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <researchPrerequisites>
+      <li>VFE_BasicDroneAssembly</li>
+    </researchPrerequisites>
+	<drawerType>RealtimeOnly</drawerType>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_Autoharvester</defName>
+    <label>autoharvester</label>
+    <description>An extremely large, slow moving arched structure mounted on a series of wheels. Undermounted trowels and scythes allow swift harvesting of both crops and lumber alike. This machine in particular is programmed to move in a pre-defined direction and distance.</description>
+    <thingClass>VFE.Mechanoids.Buildings.Building_AutoHarvester</thingClass>
+    <graphicData>
+      <texPath>Things/Automation/Autoharvester/AutoHarvester</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(7,2)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>6</ComponentSpacer>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>Production</li>
+      </buildingTags>
+    </building>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.8</uiIconScale>
+    <fillPercent>0.5</fillPercent>
+    <placeWorkers>
+      <li>VFE.Mechanoids.PlaceWorkers.PlaceWorker_AutoPlant</li>
+    </placeWorkers>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <Mass>10</Mass>
+      <WorkToBuild>800</WorkToBuild>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(7,2)</size>
+    <designationCategory>VFE_Factory</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <basePowerConsumption>600</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <researchPrerequisites>
+      <li>VFE_BasicDroneAssembly</li>
+    </researchPrerequisites>
+	<drawerType>RealtimeOnly</drawerType>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
   </ThingDef>
 </Defs>

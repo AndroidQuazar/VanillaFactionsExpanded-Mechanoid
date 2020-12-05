@@ -16,6 +16,7 @@ namespace VFE.Mechanoids
         public bool wantsRespawn=false; //Used to determine whether a rebuild job is desired
         public bool wantsRest = false; //Used to force a machine to return to base, for healing or recharging
         public ThingDef turretToInstall = null; //Used to specify a turret to put on the mobile turret
+        public Area allowedArea = null;
 
         public new CompProperties_MachineChargingStation Props
         {
@@ -69,6 +70,7 @@ namespace VFE.Mechanoids
             }
             if(myPawn.needs.TryGetNeed<Need_Power>()==null)
                 typeof(Pawn_NeedsTracker).GetMethod("AddNeed", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(myPawn.needs, new object[] { DefDatabase<NeedDef>.GetNamed("VFE_Mechanoids_Power") });
+            myPawn.playerSettings.AreaRestriction = allowedArea;
             wantsRespawn = false;
         }
 
@@ -107,6 +109,7 @@ namespace VFE.Mechanoids
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref wantsRest, "wantsRest");
             Scribe_Defs.Look<ThingDef>(ref turretToInstall, "turretToInstall");
+            Scribe_References.Look<Area>(ref allowedArea, "allowedArea");
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -145,6 +148,22 @@ namespace VFE.Mechanoids
                 };
                 gizmos.Add(attachTurret);
             }
+
+            Command_Action setArea = new Command_Action
+            {
+                defaultLabel = "VFEMechSetArea".Translate(),
+                defaultDesc = "VFEMechSetAreaDesc".Translate(),
+                action = delegate
+                {
+                    AreaUtility.MakeAllowedAreaListFloatMenu(delegate(Area area)
+                    {
+                        this.allowedArea = area;
+                        if (myPawn != null && myPawn.Spawned && !myPawn.Dead)
+                            myPawn.playerSettings.AreaRestriction = area;
+                    }, true, true, parent.Map);
+                }
+            };
+            gizmos.Add(setArea);
 
             return gizmos;
         }

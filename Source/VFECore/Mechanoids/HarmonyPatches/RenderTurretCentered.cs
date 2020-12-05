@@ -33,6 +33,11 @@ namespace VFE.Mechanoids.HarmonyPatches
         {
             if(replaced)
             {
+                if(!(pawn.stances.curStance is Stance_Busy && ((Stance_Busy)pawn.stances.curStance).focusTarg.IsValid))
+                {
+                    aimAngle = pawn.TryGetComp<CompMachine>().turretAngle;
+                }
+
                 if (pawn.Rotation == Rot4.South)
                     drawLoc -= new Vector3(0, 0, -0.33f);
                 else if (pawn.Rotation == Rot4.North)

@@ -20,7 +20,7 @@ namespace VFE.Mechanoids.AI.JobGivers
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if(pawn.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().wantsRest)
+			if(pawn.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().wantsRest && pawn.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompPowerTrader>().PowerOn)
 				return JobMaker.MakeJob(JobGiver_Recharge.Recharge, pawn.TryGetComp<CompMachine>().myBuilding);
 			return null;
 		}

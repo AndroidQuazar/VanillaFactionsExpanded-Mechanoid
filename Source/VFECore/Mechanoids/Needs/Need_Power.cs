@@ -14,7 +14,11 @@ namespace VFE.Mechanoids.Needs
 
 		private float RestFallFactor => pawn.health.hediffSet.RestFallFactor;
 
-		public RestCategory CurCategory
+		bool Enabled => pawn.TryGetComp<CompMachine>() != null;
+
+        public override bool ShowOnNeedList => Enabled;
+
+        public RestCategory CurCategory
 		{
 			get
 			{
@@ -38,19 +42,7 @@ namespace VFE.Mechanoids.Needs
 		{
 			get
 			{
-				switch (CurCategory)
-				{
-					case RestCategory.Rested:
-						return 1.58333332E-05f * RestFallFactor;
-					case RestCategory.Tired:
-						return 1.58333332E-05f * RestFallFactor * 0.7f;
-					case RestCategory.VeryTired:
-						return 1.58333332E-05f * RestFallFactor * 0.3f;
-					case RestCategory.Exhausted:
-						return 1.58333332E-05f * RestFallFactor * 0.6f;
-					default:
-						return 999f;
-				}
+				return 1 / pawn.TryGetComp<CompMachine>().Props.hoursActive / 2500;
 			}
 		}
 
@@ -83,7 +75,7 @@ namespace VFE.Mechanoids.Needs
 
 		public override void NeedInterval()
 		{
-			if (!IsFrozen)
+			if (Enabled && !IsFrozen)
 			{
 				if (Resting)
 				{
@@ -91,7 +83,7 @@ namespace VFE.Mechanoids.Needs
 					num *= pawn.GetStatValue(StatDefOf.RestRateMultiplier);
 					if (num > 0f)
 					{
-						CurLevel += 0.005714286f * num;
+						CurLevel += 1 / pawn.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().Props.hoursToRecharge / 2500 * num * 150f;
 					}
 				}
 				else
@@ -103,7 +95,7 @@ namespace VFE.Mechanoids.Needs
 
 		public void TickResting(float restEffectiveness)
 		{
-			if (!(restEffectiveness <= 0f))
+			if (Enabled && !(restEffectiveness <= 0f))
 			{
 				lastRestTick = Find.TickManager.TicksGame;
 			}

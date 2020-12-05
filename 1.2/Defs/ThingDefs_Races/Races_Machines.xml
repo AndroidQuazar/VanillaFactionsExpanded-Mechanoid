@@ -49,6 +49,7 @@
     </butcherProducts>
 	<comps>
       <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<hoursActive>72</hoursActive>
       </li>
 	</comps>
   </ThingDef>
@@ -119,6 +120,7 @@
     </butcherProducts>
 	<comps>
       <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<hoursActive>72</hoursActive>
       </li>
 	</comps>
   </ThingDef>
@@ -190,6 +192,7 @@
     </butcherProducts>
 	<comps>
       <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<hoursActive>24</hoursActive>
       </li>
 	</comps>
   </ThingDef>
@@ -262,6 +265,7 @@
 	<comps>
       <li Class="VFE.Mechanoids.CompProperties_Machine">
 		<violent>true</violent>
+		<hoursActive>48</hoursActive>
       </li>
 	</comps>
   </ThingDef>
@@ -334,6 +338,7 @@
 	<comps>
       <li Class="VFE.Mechanoids.CompProperties_Machine">
 		<violent>true</violent>
+		<hoursActive>72</hoursActive>
       </li>
 	</comps>
   </ThingDef>
@@ -406,6 +411,7 @@
 	<comps>
       <li Class="VFE.Mechanoids.CompProperties_Machine">
 		<violent>true</violent>
+		<hoursActive>24</hoursActive>
       </li>
 	</comps>
   </ThingDef>

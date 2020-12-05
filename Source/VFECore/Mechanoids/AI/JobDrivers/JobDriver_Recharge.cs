@@ -75,7 +75,7 @@ namespace VFE.Mechanoids.AI.JobDrivers
 
 				if (building_Bed.TryGetComp<CompPowerTrader>().PowerOn)
 				{
-					actor2.needs.TryGetNeed<Need_Power>().TickResting(2f); //TODO change to individual values from document
+					actor2.needs.TryGetNeed<Need_Power>().TickResting(1f);
 
 					if (actor2.IsHashIntervalTick(100) && !actor2.Position.Fogged(actor2.Map))
 					{
@@ -86,6 +86,7 @@ namespace VFE.Mechanoids.AI.JobDrivers
 						}
 					}
 				}
+				actor2.Rotation = Rot4.South;
 				if (actor2.IsHashIntervalTick(211))
 				{
 					actor2.jobs.CheckForJobOverride();
@@ -94,12 +95,13 @@ namespace VFE.Mechanoids.AI.JobDrivers
 			layDown.AddFinishAction(delegate
 			{
 				Pawn actor = layDown.actor;
-				if (layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null)
+				if ((layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null))
 				{
 					actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().wantsRest = false;
 				}
 			});
-			layDown.FailOn(() => layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && layDown.actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null);
+			layDown.handlingFacing = true;
+			layDown.FailOn(() => !layDown.actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompPowerTrader>().PowerOn || (layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && layDown.actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null));
 			layDown.defaultCompleteMode = ToilCompleteMode.Never;
 			return layDown;
 		}

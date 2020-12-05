@@ -12,6 +12,8 @@ namespace VFE.Mechanoids
     class CompMachine : CompDependsOnBuilding
     {
         public ThingDef turretAttached = null;
+        public float turretAngle = 0f; //Purely cosmetic, don't need to save it
+        public float turretAnglePerFrame = 0.1f;
 
         public override void OnBuildingDestroyed()
         {
@@ -48,6 +50,21 @@ namespace VFE.Mechanoids
         {
             base.PostExposeData();
             Scribe_Defs.Look<ThingDef>(ref turretAttached, "turretAttached");
+        }
+
+        public override void CompTick()
+        {
+            base.CompTick();
+            if(turretAttached!=null)
+            {
+                turretAngle += turretAnglePerFrame;
+            }
+        }
+
+        public override void CompTickRare()
+        {
+            base.CompTickRare();
+            turretAnglePerFrame = Rand.Range(-0.5f, 0.5f);
         }
     }
 }

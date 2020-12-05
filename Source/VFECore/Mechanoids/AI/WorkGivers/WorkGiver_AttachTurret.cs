@@ -33,7 +33,7 @@ namespace VFE.Mechanoids.AI.WorkGivers
                     return false;
                 }
             }
-            return true;
+            return pawn.CanReserveAndReach(t,PathEndMode.OnCell,Danger.Deadly,ignoreOtherReservations:forced);
         }
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {

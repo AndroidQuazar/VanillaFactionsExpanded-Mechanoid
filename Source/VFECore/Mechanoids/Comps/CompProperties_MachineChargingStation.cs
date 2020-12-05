@@ -16,6 +16,7 @@ namespace VFE.Mechanoids
         public float extraChargingPower;
         public ThingDef spawnWithWeapon = null;
         public bool turret = false;
+        public float hoursToRecharge = 24;
 
         public CompProperties_MachineChargingStation()
         {
