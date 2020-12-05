@@ -156,8 +156,6 @@ namespace VFEMech
             GenSpawn.Spawn(obj, this.TrueCenter().ToIntVec3(), this.Map);
             this.target = GlobalTargetInfo.Invalid;
 
-            SoundDefOf.ShipTakeoff.PlayOneShot(SoundInfo.OnCamera());
-
             this.opening = false;
             VFEMDefOf.VFE_LongRangeMissile_Launch.PlayOneShot(SoundInfo.InMap(this));
         }
