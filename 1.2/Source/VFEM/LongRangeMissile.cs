@@ -501,8 +501,10 @@ namespace VFEMech
             base.SpawnSetup(map, respawningAfterLoad);
             this.angle = 0f;
             this.ticksToImpactMaxPrivate = (int) AccessTools.Field(typeof(Skyfaller), "ticksToImpactMax").GetValue(this);
-            if (Find.CurrentMap == this.Map)
-                VFEMDefOf.VFE_LongRangeMissile_Incoming.PlayOneShot(SoundInfo.OnCamera());
+            foreach (SubSoundDef subSound in VFEMDefOf.VFE_LongRangeMissile_Incoming.subSounds)
+            {
+                subSound.TryPlay(SoundInfo.OnCamera());
+            }
         }
 
         public ActiveDropPodInfo Contents
@@ -563,6 +565,8 @@ namespace VFEMech
 
         protected override void Impact()
         {
+            VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.PlayOneShotOnCamera();
+
             IntVec3 loc = this.Map.Center;
 
             //Find.CameraDriver.SetRootPosAndSize(rootPos: Find.CurrentMap.rememberedCameraPos.rootPos, rootSize: 50f);
@@ -572,8 +576,7 @@ namespace VFEMech
 
             CellRect cells = CellRect.CenteredOn(loc, radius);
 
-            if (Find.CurrentMap == this.Map)
-                Find.CameraDriver.shaker.DoShake(mag: 20f);
+            Find.CameraDriver.shaker.DoShake(mag: 20f);
 
             Map?.Parent.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
 
@@ -608,8 +611,12 @@ namespace VFEMech
             }
 
             FloodFillerFog.FloodUnfog(loc, this.Map);
-            if(Find.CurrentMap == this.Map)
-                VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.PlayOneShot(SoundInfo.OnCamera());
+
+            foreach (SubSoundDef subSound in VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap.subSounds)
+            {
+                subSound.TryPlay(SoundInfo.OnCamera());
+            }
+
             GenExplosion.DoExplosion(loc, this.Map, radius, DamageDefOf.Bomb, damAmount: 500, applyDamageToExplosionCellsNeighbors: true, chanceToStartFire: 1f, instigator: this, explosionSound: VFEMDefOf.VFE_LongRangeMissile_ExplosionOnMap);
             this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
             this.Map.TileInfo.hilliness = Hilliness.Impassable;
