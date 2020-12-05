@@ -33,26 +33,37 @@ namespace VFEMech
 			if (signal.tag == inSignal)
 			{
 				var remainingPawns = new List<Pawn>();
-				var recruitCandidatePawns = new List<Pawn>();
-				foreach (var p in site.Map.mapPawns.PawnsInFaction(site.Map.ParentFaction).Where(x => !x.Dead && x.RaceProps.Humanlike))
+				var recruitCandidatePawns = site.Map.mapPawns.PawnsInFaction(site.Map.ParentFaction).Where(x => !x.Dead && x.RaceProps.Humanlike).InRandomOrder().ToList();
+				var pawnsToRecruit = new List<Pawn>();
+				var firstPawnRecruit = recruitCandidatePawns.FirstOrDefault();
+				if (firstPawnRecruit != null)
+                {
+					pawnsToRecruit.Add(firstPawnRecruit);
+					recruitCandidatePawns.Remove(firstPawnRecruit);
+				}
+				foreach (var p in recruitCandidatePawns)
 				{
 					if (Rand.Chance(randomChance))
                     {
-						var letter = (ChoiceLetter_AcceptVisitors)LetterMaker.MakeLetter("VFEMech.LetterJoinOfferLabel".Translate(p.Named("PAWN"))
-							, "VFEMech.LetterJoinOfferTitle".Translate(p.Named("PAWN"))
-							, VFEMDefOf.VFEMech_AcceptVisitors, null, quest);
-						letter.title = "VFEMech.LetterJoinOfferText".Translate(p.Named("PAWN"));
-						letter.pawn = p;
-						letter.quest = quest;
-						letter.lookTargets = new LookTargets(p);
-						Log.Message("Should get " + letter + " - " + p);
-						Find.LetterStack.ReceiveLetter(letter);
-						recruitCandidatePawns.Add(p);
+						pawnsToRecruit.Add(p);
 					}
 					else
                     {
 						remainingPawns.Add(p);
                     }
+				}
+
+				foreach (var p in pawnsToRecruit)
+                {
+					var letter = (ChoiceLetter_AcceptVisitors)LetterMaker.MakeLetter("VFEMech.LetterJoinOfferLabel".Translate(p.Named("PAWN"))
+					, "VFEMech.LetterJoinOfferTitle".Translate(p.Named("PAWN"))
+					, VFEMDefOf.VFEMech_AcceptVisitors, null, quest);
+					letter.title = "VFEMech.LetterJoinOfferText".Translate(p.Named("PAWN"));
+					letter.pawn = p;
+					letter.quest = quest;
+					letter.lookTargets = new LookTargets(p);
+					Log.Message("Should get " + letter + " - " + p);
+					Find.LetterStack.ReceiveLetter(letter);
 				}
 				//foreach (var pawn in remainingPawns)
 				//{

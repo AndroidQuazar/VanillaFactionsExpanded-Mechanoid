@@ -24,6 +24,7 @@ namespace VFEMech
         public static ThingSetMakerDef VFEMech_MechanoidStorageContent;
         public static LetterDef VFEMech_AcceptVisitors;
         public static SitePartDef VFE_MechanoidAttackParty;
+        public static ThingDef VFE_MechLandingBeacon;
 
         public static SoundDef VFE_LongRangeMissile_ExplosionFar;
         public static SoundDef VFE_LongRangeMissile_LaunchSiren;

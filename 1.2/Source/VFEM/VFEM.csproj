@@ -68,6 +68,7 @@
     <Compile Include="Building\Supercomputer.cs" />
     <Compile Include="Building\TrooperStorage.cs" />
     <Compile Include="Building\MechanoidUplink.cs" />
+    <Compile Include="GenSteps\GenStep_MechanoidShipLanding.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidAttackParty.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidStorage.cs" />
     <Compile Include="HarmonyPatches\Explosion_Patch.cs" />
@@ -113,9 +114,12 @@
     <Compile Include="PawnGroupMakerMech.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
     <Compile Include="QuestNodes\QuestNode_MechPresenceConditional.cs" />
+    <Compile Include="QuestNodes\QuestNode_ConvertSiteToMechShip.cs" />
     <Compile Include="QuestNodes\QuestNode_Recruit.cs" />
+    <Compile Include="QuestParts\QuestPart_ConvertSiteToMechShip.cs" />
     <Compile Include="QuestParts\QuestPart_Recruit.cs" />
     <Compile Include="ScenPart_StartingPackAnimal.cs" />
+    <Compile Include="Sites\SitePartWorker_MechanoidShipLanding.cs" />
     <Compile Include="Sites\SitePartWorker_MechanoidAttackParty.cs" />
     <Compile Include="Sites\SitePartWorker_MechanoidStorage.cs" />
     <Compile Include="SymbolResolverShips.cs" />

@@ -15,10 +15,14 @@ namespace VFEMech
         {
 
         }
-
         private bool mechAttackQuestIsActive;
         private List<Pawn> mechanoidsFromAttackParty;
-        private List<string> mechQuestTags;
+
+        private bool mechLandPadsIsActive;
+        private List<Thing> mechLandPads;
+
+        private List<string> mechAttackQuestTags;
+        private List<string> mechLandPadsQuestTags;
         public override void FinalizeInit()
         {
             base.FinalizeInit();
@@ -54,10 +58,21 @@ namespace VFEMech
             {
                 if (!OnePawnIsLive(mechanoidsFromAttackParty))
                 {
-                    QuestUtility.SendQuestTargetSignals(mechQuestTags, "AllMechsDefeated");
+                    QuestUtility.SendQuestTargetSignals(mechAttackQuestTags, "AllMechsDefeated");
                     mechAttackQuestIsActive = false;
                     mechanoidsFromAttackParty = null;
-                    mechQuestTags = null;
+                    mechAttackQuestTags = null;
+                }
+            }
+
+            if (mechLandPadsIsActive)
+            {
+                if (!OneThingIsNotDestroyedLive(mechLandPads))
+                {
+                    QuestUtility.SendQuestTargetSignals(mechLandPadsQuestTags, "AllMechBeaconsDestroyed");
+                    mechLandPadsIsActive = false;
+                    mechLandPads = null;
+                    mechLandPadsQuestTags = null;
                 }
             }
         }
@@ -66,7 +81,14 @@ namespace VFEMech
         {
             mechAttackQuestIsActive = true;
             mechanoidsFromAttackParty = pawns;
-            mechQuestTags = site.questTags;
+            mechAttackQuestTags = site.questTags;
+        }
+
+        public void RegisterMechLandingSite(List<Thing> mechLandPads, Site site)
+        {
+            this.mechLandPadsIsActive = true;
+            this.mechLandPads = mechLandPads;
+            mechLandPadsQuestTags = site.questTags;
         }
 
         public bool OnePawnIsLive(List<Pawn> pawns)
@@ -81,12 +103,28 @@ namespace VFEMech
             return false;
         }
 
+        public bool OneThingIsNotDestroyedLive(List<Thing> things)
+        {
+            foreach (var thing in things)
+            {
+                if (thing.Spawned && !thing.Destroyed)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref mechAttackQuestIsActive, "mechAttackQuestIsActive");
             Scribe_Collections.Look(ref mechanoidsFromAttackParty, "mechanoidsFromAttackParty", LookMode.Reference);
-            Scribe_Collections.Look(ref mechQuestTags, "mechQuestTags", LookMode.Value);
+            Scribe_Collections.Look(ref mechAttackQuestTags, "mechAttackQuestTags", LookMode.Value);
+
+            Scribe_Values.Look(ref mechLandPadsIsActive, "mechLandPadsIsActive");
+            Scribe_Collections.Look(ref mechLandPads, "mechLandPads", LookMode.Reference);
+            Scribe_Collections.Look(ref mechLandPadsQuestTags, "mechLandPadsQuestTags", LookMode.Value);
         }
     }
 }
