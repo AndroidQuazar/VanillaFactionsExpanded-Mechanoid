@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_AutocleanerBase</defName>
+    <thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+    <label>autocleaner charging station</label>
+    <description>A station for assembling and recharging autocleaners.</description>
+    <graphicData>
+      <texPath>Things/Automation/AutocleanerChargingStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.1</fillPercent>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <costList>
+      <Steel>30</Steel>
+	  <Plasteel>20</Plasteel>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+		<pawnToSpawn>VFE_Mechanoids_Autocleaner</pawnToSpawn>
+		<allowedWorkTypes>
+			<li>Cleaning</li>
+		</allowedWorkTypes>
+		<extraChargingPower>1400</extraChargingPower>
+	  </li>
+    </comps>
+    <designationCategory>VFE_Factory</designationCategory>
+    <researchPrerequisites>
+      <li>VFE_BasicDroneAssembly</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_AutohaulerBase</defName>
+    <thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+    <label>autohauler charging station</label>
+    <description>A station for assembling and recharging autohaulers.</description>
+    <graphicData>
+      <texPath>Things/Automation/AutohaulerChargingStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.1</fillPercent>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <costList>
+      <Steel>45</Steel>
+	  <Plasteel>20</Plasteel>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+	  <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+		<pawnToSpawn>VFE_Mechanoids_Autohauler</pawnToSpawn>
+		<allowedWorkTypes>
+			<li>Hauling</li>
+		</allowedWorkTypes>
+		<extraChargingPower>1600</extraChargingPower>
+	  </li>
+    </comps>
+    <designationCategory>VFE_Factory</designationCategory>
+    <researchPrerequisites>
+      <li>VFE_BasicDroneAssembly</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_AutominerBase</defName>
+    <thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+    <label>autominer charging station</label>
+    <description>A station for assembling and recharging autominers.</description>
+    <graphicData>
+      <texPath>Things/Automation/AutominerChargingStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.1</fillPercent>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <costList>
+      <Steel>45</Steel>
+      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+		<pawnToSpawn>VFE_Mechanoids_Autominer</pawnToSpawn>
+		<allowedWorkTypes>
+			<li>Mining</li>
+		</allowedWorkTypes>
+		<extraChargingPower>1800</extraChargingPower>
+		<skillLevel>10</skillLevel>
+	  </li>
+    </comps>
+    <designationCategory>VFE_Factory</designationCategory>
+    <researchPrerequisites>
+      <li>VFE_BasicDroneAssembly</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_CombatBase</defName>
+    <thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+    <label>combat mechanoid charging station</label>
+    <description>A station for assembling and recharging combat mechanoids.</description>
+    <graphicData>
+      <texPath>Things/Automation/CombatMechanoidChargingStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.1</fillPercent>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <costList>
+      <Plasteel>45</Plasteel>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentIndustrial>2</ComponentIndustrial>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+		<pawnToSpawn>VFE_Mechanoids_Combat</pawnToSpawn>
+		<allowedWorkTypes>
+		</allowedWorkTypes>
+		<extraChargingPower>1200</extraChargingPower>
+		<spawnWithWeapon>Gun_ChargeLance</spawnWithWeapon>
+	  </li>
+    </comps>
+    <designationCategory>VFE_Factory</designationCategory>
+    <researchPrerequisites>
+      <li>VFE_AutomatedDefensiveMeasures</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_RiotBase</defName>
+    <thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+    <label>riot mechanoid charging station</label>
+    <description>A station for assembling and recharging riot mechanoids.</description>
+    <graphicData>
+      <texPath>Things/Automation/RiotMechanoidChargingStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.1</fillPercent>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <costList>
+      <Plasteel>65</Plasteel>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentIndustrial>4</ComponentIndustrial>
+	  <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+		<pawnToSpawn>VFE_Mechanoids_Riot</pawnToSpawn>
+		<allowedWorkTypes>
+		</allowedWorkTypes>
+		<extraChargingPower>1600</extraChargingPower>
+	  </li>
+    </comps>
+    <designationCategory>VFE_Factory</designationCategory>
+    <researchPrerequisites>
+      <li>VFE_AutomatedDefensiveMeasures</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_Mechanoids_TurretBase</defName>
+    <thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+    <label>mobile turret charging station</label>
+    <description>A station for assembling and recharging mobile turrets.</description>
+    <graphicData>
+      <texPath>Things/Automation/MobileTurretChargingStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.1</fillPercent>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <ai_chillDestination>false</ai_chillDestination>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+    </building>
+    <costList>
+      <Plasteel>65</Plasteel>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentIndustrial>4</ComponentIndustrial>
+	  <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+	  <li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+		<pawnToSpawn>VFE_Mechanoids_Turret</pawnToSpawn>
+		<allowedWorkTypes>
+		</allowedWorkTypes>
+		<extraChargingPower>1600</extraChargingPower>
+		<turret>true</turret>
+	  </li>
+    </comps>
+    <designationCategory>VFE_Factory</designationCategory>
+    <researchPrerequisites>
+      <li>VFE_AutomatedDefensiveMeasures</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+</Defs>
