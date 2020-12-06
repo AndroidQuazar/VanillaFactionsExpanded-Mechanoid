@@ -280,7 +280,7 @@
         <bodyGraphicData>
           <texPath>Things/Automation/CombatMechanoid/CombatMechanoid</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
+          <drawSize>1.8</drawSize>
           <shadowData>
             <volume>(0.6, 0.8, 0.6)</volume>
           </shadowData>

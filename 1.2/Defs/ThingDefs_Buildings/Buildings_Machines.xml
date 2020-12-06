@@ -285,7 +285,7 @@
 		<allowedWorkTypes>
 		</allowedWorkTypes>
 		<extraChargingPower>1200</extraChargingPower>
-		<spawnWithWeapon>Gun_ChargeLance</spawnWithWeapon>
+		<spawnWithWeapon>VFE_Gun_CombatMechanoidGun</spawnWithWeapon>
 		<hoursToRecharge>24</hoursToRecharge>
 	  </li>
     </comps>
