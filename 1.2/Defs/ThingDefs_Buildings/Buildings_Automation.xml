@@ -1,1884 +1,1969 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_HeavyHopper</defName>
-    <label>Factory hopper</label>
-    <description>Holds resources for use by automated machines.</description>
-    <thingClass>Building_Storage</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/FactoryHoppers/FactoryHopper</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1.05,1.05)</drawSize>
-      <damageData>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_HeavyHopper</defName>
+		<label>Factory hopper</label>
+		<description>Holds resources for use by automated machines.</description>
+		<thingClass>Building_Storage</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/FactoryHoppers/FactoryHopper</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1.05,1.05)</drawSize>
+			<damageData>
 
-        <rect>(0.05,0.1,0.9,0.9)</rect>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-      </damageData>
-    </graphicData>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <fillPercent>0.5</fillPercent>
-    <pathCost>42</pathCost>
-    <canOverlapZones>false</canOverlapZones>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <building>
-      <defaultStorageSettings>
-        <priority>Important</priority>
-        <filter>
-          
-        </filter>
-      </defaultStorageSettings>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-    </building>
-    <inspectorTabs>
-      <li>ITab_Storage</li>
-    </inspectorTabs>
-    <castEdgeShadows>true</castEdgeShadows>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>300</WorkToBuild>
-      <MaxHitPoints>300</MaxHitPoints>
-      <Flammability>0.3</Flammability>
-    </statBases>
-    <costList>
-      <Steel>15</Steel>
-    </costList>
-    <tickerType>Never</tickerType>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <designationCategory>VFE_Factory</designationCategory>
-    <surfaceType>Item</surfaceType>
-    <!--<placeWorkers>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<pathCost>42</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<building>
+			<defaultStorageSettings>
+				<priority>Important</priority>
+				<filter>
+
+				</filter>
+			</defaultStorageSettings>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+		</building>
+		<inspectorTabs>
+			<li>ITab_Storage</li>
+		</inspectorTabs>
+		<castEdgeShadows>true</castEdgeShadows>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>300</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>0.3</Flammability>
+		</statBases>
+		<costList>
+			<Steel>15</Steel>
+		</costList>
+		<tickerType>Never</tickerType>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<designationCategory>VFE_Factory</designationCategory>
+		<surfaceType>Item</surfaceType>
+		<!--<placeWorkers>
 			<li>PlaceWorker_NextToHopperAccepter</li>
 		</placeWorkers>-->
-    <constructEffect>ConstructMetal</constructEffect>
-    <researchPrerequisites>
-      <li>VFE_FactoryBasics</li>
-    </researchPrerequisites>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_FactoryBasics</li>
+		</researchPrerequisites>
 
-    <uiIconScale>0.85</uiIconScale>
-  </ThingDef>
+		<uiIconScale>0.85</uiIconScale>
+	</ThingDef>
 
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_ElectronicsFabricationFactory_SteelExtractor</defName>
-    <label>Steel extractor</label>
-    <description>A large machine with a series of hammers, magnets, and foundries. Hammers pound rock chunks into dust, whereafter magnets collect metallic fragments before being dropped and melted into more pure, usable pieces. This machine has a notoriously low yield as most rock chunks have a negligible amount of extractable material.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/SteelExtractor/SteelExtractor</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,8)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>450</Steel>
-      <ComponentIndustrial>10</ComponentIndustrial>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/SteelExtractor/SteelExtractor_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(3,6)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,-3)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_ElectronicsFabricationFactory_SteelExtractor</defName>
+		<label>Steel extractor</label>
+		<description>A large machine with a series of hammers, magnets, and foundries. Hammers pound rock chunks into dust, whereafter magnets collect metallic fragments before being dropped and melted into more pure, usable pieces. This machine has a notoriously low yield as most rock chunks have a negligible amount of extractable material.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/SteelExtractor/SteelExtractor</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>450</Steel>
+			<ComponentIndustrial>10</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/SteelExtractor/SteelExtractor_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(3,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>5</heatPerSecond>
-      </li>
-      <li Class="CompProperties_Glower">
-        <glowRadius>7</glowRadius>
-        <glowColor>(255,150,100,0)</glowColor>
-      </li>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>750</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/SteelExtractor/SteelExtractor</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-        <isMachinePausable>true</isMachinePausable>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>5</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>7</glowRadius>
+				<glowColor>(255,150,100,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>750</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/SteelExtractor/SteelExtractor</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isMachinePausable>true</isMachinePausable>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,4)</li>
-          <li>(-1,0,4)</li>
-          <li>(1,0,4)</li>
-        </inputSlots>
-
-
-      </li>
-
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_ElectronicsFabricationFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+				<inputSlots>
+					<li>(0,0,4)</li>
+					<li>(-1,0,4)</li>
+					<li>(1,0,4)</li>
+				</inputSlots>
 
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler</defName>
-    <label>Component assembler</label>
-    <description>An absurdly large machine composed of a series of foundries and casting molds. Overall, the machine is capable of fabricating any basic electronic or mechanical component with ease.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/ComponentAssembler/ComponentAssembler</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,7)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>550</Steel>
-      <Plasteel>120</Plasteel>
-      <ComponentIndustrial>16</ComponentIndustrial>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/ComponentAssembler/ComponentAssembler_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>300</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(7,5)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,3)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+			</li>
+
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_ElectronicsFabricationFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_ElectronicsFabricationFactory_ComponentAssembler</defName>
+		<label>Component assembler</label>
+		<description>An absurdly large machine composed of a series of foundries and casting molds. Overall, the machine is capable of fabricating any basic electronic or mechanical component with ease.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/ComponentAssembler/ComponentAssembler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,7)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>550</Steel>
+			<Plasteel>120</Plasteel>
+			<ComponentIndustrial>16</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/ComponentAssembler/ComponentAssembler_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,5)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,3)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>500</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/ComponentAssembler/ComponentAssembler</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>500</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/ComponentAssembler/ComponentAssembler</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(2,0,3)</li>
-          <li>(-2,0,3)</li>
-          <li>(2,0,-3)</li>
-          <li>(-2,0,-3)</li>
-        </inputSlots>
+				<inputSlots>
+					<li>(2,0,3)</li>
+					<li>(-2,0,3)</li>
+					<li>(2,0,-3)</li>
+					<li>(-2,0,-3)</li>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_ElectronicsFabricationFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_ElectronicsFabricationFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</defName>
-    <label>Advanced assembler</label>
-    <description>A wide factory module meant to inlay and program circuitry for high-end electronic devices. The exact inner workings of this module are somewhat enigmatic to non-spacer colonies, however the end result is of unquestionable quality.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/AdvancedAssembler/AdvancedAssembler</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,8)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>350</Steel>
-      <ComponentSpacer>8</ComponentSpacer>
-      <Gold>120</Gold>
-      <VFE_ComponentMechanoid>4</VFE_ComponentMechanoid>
-    </costList>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/AdvancedAssembler/AdvancedAssembler_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</defName>
+		<label>Advanced assembler</label>
+		<description>A wide factory module meant to inlay and program circuitry for high-end electronic devices. The exact inner workings of this module are somewhat enigmatic to non-spacer colonies, however the end result is of unquestionable quality.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Electronics Fabrication Factory chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/AdvancedAssembler/AdvancedAssembler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>350</Steel>
+			<ComponentSpacer>8</ComponentSpacer>
+			<Gold>120</Gold>
+			<VFE_ComponentMechanoid>4</VFE_ComponentMechanoid>
+		</costList>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/AdvancedAssembler/AdvancedAssembler_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
 
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>450</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(7,6)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>450</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>750</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/AdvancedAssembler/AdvancedAssembler</buildingOnGraphic>
-        <numberOfInputs>4</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>750</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/AdvancedAssembler/AdvancedAssembler</buildingOnGraphic>
+				<numberOfInputs>4</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(4,0,1)</li>
-          <li>(-4,0,1)</li>
-          <li>(2,0,-3)</li>
-          <li>(-2,0,-3)</li>
-        </inputSlots>
+				<inputSlots>
+					<li>(4,0,1)</li>
+					<li>(-4,0,1)</li>
+					<li>(2,0,-3)</li>
+					<li>(-2,0,-3)</li>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_ElectronicsFabricationFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_ElectronicsFabricationFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</defName>
-    <label>Chemfuel clarifier</label>
-    <description>A rather crude machine capable of melting organics via acid into usable chemfuel. Attached hoppers will accept nearby corpses or wood matter, rapidly decompose them, then melt in a singular large vat before dispensing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/ChemfuelConverter/ChemfuelConverter</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,6)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>400</Steel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-      <Chemfuel>500</Chemfuel>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </costList>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/ChemfuelConverter/ChemfuelConverter_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(7,4)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(-2,0,3)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</defName>
+		<label>Chemfuel clarifier</label>
+		<description>A rather crude machine capable of melting organics via acid into usable chemfuel. Attached hoppers will accept nearby corpses or wood matter, rapidly decompose them, then melt in a singular large vat before dispensing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/ChemfuelConverter/ChemfuelConverter</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,6)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>400</Steel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<Chemfuel>500</Chemfuel>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</costList>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/ChemfuelConverter/ChemfuelConverter_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,4)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(-2,0,3)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>500</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/ChemfuelConverter/ChemfuelConverter</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
-        <inputSlots>
-          <li>(4,0,0)</li>
-          <li>(4,0,1)</li>
-          <li>(4,0,2)</li>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>500</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/ChemfuelConverter/ChemfuelConverter</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+				<inputSlots>
+					<li>(4,0,0)</li>
+					<li>(4,0,1)</li>
+					<li>(4,0,2)</li>
 
-        </inputSlots>
-      </li>
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MunitionsandArmamentsFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+				</inputSlots>
+			</li>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MunitionsandArmamentsFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</defName>
-    <label>Mechanized weaponsmith</label>
-    <description>A very large machine with many moving parts, able to accept steel, components, and cloth forward via belt system and slowly assemble them into basic weaponry. The machine is capable of making rudimentary light arms at a normal quality, although this process is very time and power consuming.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,9)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>400</Steel>
-      <ComponentIndustrial>8</ComponentIndustrial>
-      <ComponentSpacer>2</ComponentSpacer>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </costList>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>300</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(7,7)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</defName>
+		<label>Mechanized weaponsmith</label>
+		<description>A very large machine with many moving parts, able to accept steel, components, and cloth forward via belt system and slowly assemble them into basic weaponry. The machine is capable of making rudimentary light arms at a normal quality, although this process is very time and power consuming.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,9)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>400</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<ComponentSpacer>2</ComponentSpacer>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,7)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>700</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith</buildingOnGraphic>
-        <numberOfInputs>2</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
-        <inputSlots>
-          <li>(0,0,-4)</li>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>700</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/MechanizedWeaponsmith/MechanizedWeaponsmith</buildingOnGraphic>
+				<numberOfInputs>2</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+				<inputSlots>
+					<li>(0,0,-4)</li>
 
-          <li>(4,0,-1)</li>
-          <li>(-4,0,-1)</li>
+					<li>(4,0,-1)</li>
+					<li>(-4,0,-1)</li>
 
-        </inputSlots>
-      </li>
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MunitionsandArmamentsFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+				</inputSlots>
+			</li>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MunitionsandArmamentsFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</defName>
-    <label>Artillery foundry</label>
-    <description>A machine capable of accepting pieces used in assembly of large-calibre ballistic shells. Can create a variety of shells selectable by the manufacturer. \n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,8)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>350</Steel>
-      <Plasteel>250</Plasteel>
-      <ComponentSpacer>3</ComponentSpacer>
-      <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(7,6)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MunitionsAndArmamentFactory_ArtilleryFoundry</defName>
+		<label>Artillery foundry</label>
+		<description>A machine capable of accepting pieces used in assembly of large-calibre ballistic shells. Can create a variety of shells selectable by the manufacturer. \n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Munitions and Armament Factory (M.A.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>350</Steel>
+			<Plasteel>250</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>750</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry</buildingOnGraphic>
-        <numberOfInputs>2</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isMachinePausable>true</isMachinePausable>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>750</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/ArtilleryFoundry/ArtilleryFoundry</buildingOnGraphic>
+				<numberOfInputs>2</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isMachinePausable>true</isMachinePausable>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
+				<inputSlots>
 
-          <li>(0,0,-3)</li>
-          <li>(4,0,0)</li>
-          <li>(-4,0,0)</li>
-        </inputSlots>
+					<li>(0,0,-3)</li>
+					<li>(4,0,0)</li>
+					<li>(-4,0,0)</li>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MunitionsandArmamentsFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_WearablesAndTextileFactory_TextileRecycler</defName>
-    <label>Textile recycler</label>
-    <description>A machine capable of quickly orienting, shredding, and sorting pieces of clothing into usable reclaimed pieces or cloth. Nowhere near fully efficient but very useful for reclaiming otherwise useless materials.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/TextileRecycler/TextileRecycler</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,8)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>400</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <Plasteel>30</Plasteel>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/TextileRecycler/TextileRecycler_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(3,6)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MunitionsandArmamentsFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_WearablesAndTextileFactory_TextileRecycler</defName>
+		<label>Textile recycler</label>
+		<description>A machine capable of quickly orienting, shredding, and sorting pieces of clothing into usable reclaimed pieces or cloth. Nowhere near fully efficient but very useful for reclaiming otherwise useless materials.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/TextileRecycler/TextileRecycler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>400</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<Plasteel>30</Plasteel>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/TextileRecycler/TextileRecycler_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(3,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>650</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/TextileRecycler/TextileRecycler</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>650</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/TextileRecycler/TextileRecycler</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,-3)</li>
-          <li>(-1,0,-3)</li>
-          <li>(1,0,-3)</li>
-        </inputSlots>
+				<inputSlots>
+					<li>(0,0,-3)</li>
+					<li>(-1,0,-3)</li>
+					<li>(1,0,-3)</li>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_WearablesandTextilesFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_WearablesandTextilesFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_WearablesAndTextileFactory_AutoLoom</defName>
-    <label>Auto loom</label>
-    <description>A large machine that scans nearby textiles fed through two rollers, whereafter a series of clamps, shears, and needles stitch, weave, and sew basic clothing millimeters at a time. The user only must specify the type of clothing desired from a preset template of options.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/AutoLoom/AutoLoom</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(7,7)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>350</Steel>
-      <ComponentSpacer>2</ComponentSpacer>
-      <ComponentIndustrial>8</ComponentIndustrial>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/AutoLoom/AutoLoom_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>300</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(5,5)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,3)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_WearablesAndTextileFactory_AutoLoom</defName>
+		<label>Auto loom</label>
+		<description>A large machine that scans nearby textiles fed through two rollers, whereafter a series of clamps, shears, and needles stitch, weave, and sew basic clothing millimeters at a time. The user only must specify the type of clothing desired from a preset template of options.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/AutoLoom/AutoLoom</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(7,7)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>350</Steel>
+			<ComponentSpacer>2</ComponentSpacer>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/AutoLoom/AutoLoom_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(5,5)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,3)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>575</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/AutoLoom/AutoLoom</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>575</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/AutoLoom/AutoLoom</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(2,0,-3)</li>
-          <li>(-2,0,-3)</li>
+				<inputSlots>
+					<li>(2,0,-3)</li>
+					<li>(-2,0,-3)</li>
 
-        </inputSlots>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_WearablesandTextilesFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_WearablesandTextilesFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</defName>
-    <label>Synthread synthesizer</label>
-    <description>A high-tech machine that is barely understood by even the most intellectually inclined colonies. Complete with a series of meshpresses and plasma needles capable of atomically realigning basic materials resulting in new material indistinguishable from synthread. Rather than creating material itself, the machine is configured to modify certain existing clothing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(8,8)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Plasteel>400</Plasteel>
-      <ComponentSpacer>8</ComponentSpacer>
-      <Uranium>50</Uranium>
-      <VFE_ComponentMechanoid>4</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(6,6)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(-2,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</defName>
+		<label>Synthread synthesizer</label>
+		<description>A high-tech machine that is barely understood by even the most intellectually inclined colonies. Complete with a series of meshpresses and plasma needles capable of atomically realigning basic materials resulting in new material indistinguishable from synthread. Rather than creating material itself, the machine is configured to modify certain existing clothing.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Wearables and Textile Factory (W.T.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(8,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Plasteel>400</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+			<Uranium>50</Uranium>
+			<VFE_ComponentMechanoid>4</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(6,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(-2,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>950</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer</buildingOnGraphic>
-        <numberOfInputs>2</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>950</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/SynthreadSynthesizer/SynthreadSynthesizer</buildingOnGraphic>
+				<numberOfInputs>2</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(3,0,-3)</li>
-          <li>(3,0,4)</li>
+				<inputSlots>
+					<li>(3,0,-3)</li>
+					<li>(3,0,4)</li>
 
-        </inputSlots>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_WearablesandTextilesFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_WearablesandTextilesFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_ProvisionsPackagingFactory_MeatGrinder</defName>
-    <label>Meat grinder</label>
-    <description>A medium-sized but intimidating machine, corpses are pulled in via clamps before being weighed, analyzed and crudely torn apart. Flesh chunks are then ground into a finely processed and surprisingly flavorful but perplexing meat. Due to the all-encompassing nature of the process the machine will yield double the meat but not yield any leather or skin from the corpses inserted. Furthermore while the machine will butcher insectoid and human corpses it will not convert their flesh into processed meat.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/MeatGrinder/MeatGrinder</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,9)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>500</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <Silver>300</Silver>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/MeatGrinder/MeatGrinder_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>325</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(3,7)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder</defName>
+		<label>Meat grinder</label>
+		<description>A medium-sized but intimidating machine, corpses are pulled in via clamps before being weighed, analyzed and crudely torn apart. Flesh chunks are then ground into a finely processed and surprisingly flavorful but perplexing meat. Due to the all-encompassing nature of the process the machine will yield double the meat but not yield any leather or skin from the corpses inserted. Furthermore while the machine will butcher insectoid and human corpses it will not convert their flesh into processed meat.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/MeatGrinder/MeatGrinder</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,9)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>500</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<Silver>300</Silver>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/MeatGrinder/MeatGrinder_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>325</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(3,7)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>625</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/MeatGrinder/MeatGrinder</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isMachinePausable>true</isMachinePausable>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>625</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/MeatGrinder/MeatGrinder</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isMachinePausable>true</isMachinePausable>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,-4)</li>
-          <li>(-1,0,-4)</li>
-          <li>(1,0,-4)</li>
-        </inputSlots>
+				<inputSlots>
+					<li>(0,0,-4)</li>
+					<li>(-1,0,-4)</li>
+					<li>(1,0,-4)</li>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_ProvisionsPackagingFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_ProvisionsPackagingFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_ProvisionsPackagingFactory_ConveyorOven</defName>
-    <label>Conveyor oven</label>
-    <description>A very long industrial-sized oven with a central conveyor belt and vacuum system, capable of accepting nearby raw food from attached hoppers and processing it. Basic packaged meals and dried goods can easily be produced.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/ConveyorOven/ConveyorOven</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,8)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>350</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
-      <Chemfuel>200</Chemfuel>
-      <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-		<isMealSource>true</isMealSource>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/ConveyorOven/ConveyorOven_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(3,6)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,-3)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_ProvisionsPackagingFactory_ConveyorOven</defName>
+		<label>Conveyor oven</label>
+		<description>A very long industrial-sized oven with a central conveyor belt and vacuum system, capable of accepting nearby raw food from attached hoppers and processing it. Basic packaged meals and dried goods can easily be produced.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/ConveyorOven/ConveyorOven</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>350</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<Chemfuel>200</Chemfuel>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<isMealSource>true</isMealSource>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/ConveyorOven/ConveyorOven_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(3,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>5</heatPerSecond>
-      </li>
-      <li Class="CompProperties_Glower">
-        <glowRadius>6</glowRadius>
-        <glowColor>(255,150,100,0)</glowColor>
-      </li>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>650</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/ConveyorOven/ConveyorOven</buildingOnGraphic>
-        <numberOfInputs>2</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-        <isMachinePausable>true</isMachinePausable>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>5</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(255,150,100,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>650</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/ConveyorOven/ConveyorOven</buildingOnGraphic>
+				<numberOfInputs>2</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isMachinePausable>true</isMachinePausable>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,4)</li>
-          <li>(-1,0,4)</li>
-          <li>(1,0,4)</li>
-        </inputSlots>
+				<inputSlots>
+					<li>(0,0,4)</li>
+					<li>(-1,0,4)</li>
+					<li>(1,0,4)</li>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_ProvisionsPackagingFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_ProvisionsPackagingFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MedicinalCompoundingFactory_NeutroamineInfuser</defName>
-    <label>Neutroamine infuser</label>
-    <description>A large industrial vat meant for making the ever-elusive neutroamine precursor product. While the exact recipe for the product is generally a trade secret the end result from this machine is a thick glycerol made from rendered fat very similar to neutroamine and fully capable of being made into further products.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,9)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>450</Steel>
-      <ComponentIndustrial>8</ComponentIndustrial>
-      <Neutroamine>100</Neutroamine>
-      <VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(3,7)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MedicinalCompoundingFactory_NeutroamineInfuser</defName>
+		<label>Neutroamine infuser</label>
+		<description>A large industrial vat meant for making the ever-elusive neutroamine precursor product. While the exact recipe for the product is generally a trade secret the end result from this machine is a thick glycerol made from rendered fat very similar to neutroamine and fully capable of being made into further products.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,9)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>450</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<Neutroamine>100</Neutroamine>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(3,7)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>750</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-        <isMachinePausable>true</isMachinePausable>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>750</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/NeutroamineInfuser/NeutroamineInfuser</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<isMachinePausable>true</isMachinePausable>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,-4)</li>
+				<inputSlots>
+					<li>(0,0,-4)</li>
 
-        </inputSlots>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MedicinalCompoundingFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MedicinalCompoundingFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator</defName>
-    <label>Medicine granulator</label>
-    <description>A machine capable of granulating via mill then pressing medical products into pills using a series of clamps and shaped presses. Also capable of manufacturing prefabricated health kits.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/MedicineGranulator/MedicineGranulator</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,8)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>400</Steel>
-      <ComponentSpacer>4</ComponentSpacer>
-      <Neutroamine>300</Neutroamine>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </costList>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/MedicineGranulator/MedicineGranulator_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator</defName>
+		<label>Medicine granulator</label>
+		<description>A machine capable of granulating via mill then pressing medical products into pills using a series of clamps and shaped presses. Also capable of manufacturing prefabricated health kits.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/MedicineGranulator/MedicineGranulator</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>400</Steel>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Neutroamine>300</Neutroamine>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</costList>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/MedicineGranulator/MedicineGranulator_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
 
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(7,6)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>725</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/MedicineGranulator/MedicineGranulator</buildingOnGraphic>
-        <numberOfInputs>3</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <isMachinePausable>true</isMachinePausable>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>725</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/MedicineGranulator/MedicineGranulator</buildingOnGraphic>
+				<numberOfInputs>3</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,-3)</li>
-          <li>(-2,0,-3)</li>
-          <li>(2,0,-3)</li>
+				<inputSlots>
+					<li>(0,0,-3)</li>
+					<li>(-2,0,-3)</li>
+					<li>(2,0,-3)</li>
 
-        </inputSlots>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MedicinalCompoundingFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MedicinalCompoundingFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MedicinalCompoundingFactory_DrugPowderizer</defName>
-    <label>Drug powderizer</label>
-    <description>A small machine meant to finely process and powderize psychoid leaf extract, then package it for later use or selling.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/DrugPowderizer/DrugPowderizer</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,9)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Plasteel>300</Plasteel>
-      <ComponentSpacer>5</ComponentSpacer>
-      <Steel>350</Steel>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/DrugPowderizer/DrugPowderizer_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>325</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(3,7)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,4)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MedicinalCompoundingFactory_DrugPowderizer</defName>
+		<label>Drug powderizer</label>
+		<description>A small machine meant to finely process and powderize psychoid leaf extract, then package it for later use or selling.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Medicinal Compounding Factory (M.C.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/DrugPowderizer/DrugPowderizer</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,9)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Plasteel>300</Plasteel>
+			<ComponentSpacer>5</ComponentSpacer>
+			<Steel>350</Steel>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/DrugPowderizer/DrugPowderizer_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>325</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(3,7)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>675</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/DrugPowderizer/DrugPowderizer</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isMachinePausable>true</isMachinePausable>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>675</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/DrugPowderizer/DrugPowderizer</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isMachinePausable>true</isMachinePausable>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,-4)</li>
+				<inputSlots>
+					<li>(0,0,-4)</li>
 
-        </inputSlots>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MedicinalCompoundingFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MedicinalCompoundingFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MasonryAndMetallicsFactory_AutomaticDrill</defName>
-    <label>Automatic drill</label>
-    <description>A larger but surface-level automated version of the deep drill. This basic yet powerful drill can mine and extract rock chunks for further processing without human input. Will not antagonize insect hives. The drill will not produce a rock chunk if it detects other one already waiting for retrieval.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/AutomaticDrill/AutomaticDrill</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,5)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <castEdgeShadows>false</castEdgeShadows>
-    <staticSunShadowHeight>0</staticSunShadowHeight>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <scatterableOnMapGen>false</scatterableOnMapGen>
-    <fillPercent>1</fillPercent>
-    <blockLight>false</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
-    <statBases>
-      <MaxHitPoints>400</MaxHitPoints>
-      <WorkToBuild>2000</WorkToBuild>
-      <Flammability>1.0</Flammability>
-      <Beauty>-20</Beauty>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <size>(3,3)</size>
-    <costList>
-      <Steel>450</Steel>
-      <ComponentIndustrial>7</ComponentIndustrial>
-      <Plasteel>50</Plasteel>
-      <VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
-    </costList>
-    <uiIconScale>0.75</uiIconScale>
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>675</basePowerConsumption>
-        <shortCircuitInRain>false</shortCircuitInRain>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="VanillaFurnitureExpanded.CompProperties_RockSpawner">
-        <requiresPower>true</requiresPower>
-        <requiresFuel>true</requiresFuel>
-        <spawnCount>1</spawnCount>
-        <spawnIntervalRange>
-          <min>5000</min>
-          <max>5000</max>
-        </spawnIntervalRange>
-        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
-        <showMessageIfOwned>false</showMessageIfOwned>
-      </li>
-      <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>5.0</fuelConsumptionRate>
-        <fuelCapacity>75.0</fuelCapacity>
-        <fuelFilter>
-          <thingDefs>
-            <li>Steel</li>
-          </thingDefs>
-        </fuelFilter>
-        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-      </li>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MasonryAndMetallicsFactory_AutomaticDrill</defName>
+		<label>Automatic drill</label>
+		<description>A larger but surface-level automated version of the deep drill. This basic yet powerful drill can mine and extract rock chunks for further processing without human input. Will not antagonize insect hives. The drill will not produce a rock chunk if it detects other one already waiting for retrieval.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/AutomaticDrill/AutomaticDrill</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>false</castEdgeShadows>
+		<staticSunShadowHeight>0</staticSunShadowHeight>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+		<fillPercent>1</fillPercent>
+		<blockLight>false</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-2)</interactionCellOffset>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(3,3)</size>
+		<costList>
+			<Steel>450</Steel>
+			<ComponentIndustrial>7</ComponentIndustrial>
+			<Plasteel>50</Plasteel>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<uiIconScale>0.75</uiIconScale>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>675</basePowerConsumption>
+				<shortCircuitInRain>false</shortCircuitInRain>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="VanillaFurnitureExpanded.CompProperties_RockSpawner">
+				<requiresPower>true</requiresPower>
+				<requiresFuel>true</requiresFuel>
+				<spawnCount>1</spawnCount>
+				<spawnIntervalRange>
+					<min>5000</min>
+					<max>5000</max>
+				</spawnIntervalRange>
+				<writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+				<showMessageIfOwned>false</showMessageIfOwned>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>5.0</fuelConsumptionRate>
+				<fuelCapacity>75.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</fuelFilter>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
 
-      <li Class="CompProperties_Breakdownable" />
-    </comps>
+			<li Class="CompProperties_Breakdownable" />
+		</comps>
 
-    <designationCategory>VFE_Factory</designationCategory>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <ai_chillDestination>false</ai_chillDestination>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/AutomaticDrill/AutomaticDrill_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
+		<designationCategory>VFE_Factory</designationCategory>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<ai_chillDestination>false</ai_chillDestination>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/AutomaticDrill/AutomaticDrill_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
 
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MasonryandMetallicsFactory</li>
-    </researchPrerequisites>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MasonryandMetallicsFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
 
-  </ThingDef>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw</defName>
-    <label>Masonry saw</label>
-    <description>A cumbersome and very loud factory, essentially a series of clasps, chisels, and saws meant to hold rock chunks in place to be cut and lightly smoothed into stackable bricks.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/MasonrySaw/MasonrySaw</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(5,7)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>650</Steel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-      <ComponentSpacer>1</ComponentSpacer>
-      <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/MasonrySaw/MasonrySaw_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>350</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(3,5)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,3)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw</defName>
+		<label>Masonry saw</label>
+		<description>A cumbersome and very loud factory, essentially a series of clasps, chisels, and saws meant to hold rock chunks in place to be cut and lightly smoothed into stackable bricks.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/MasonrySaw/MasonrySaw</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,7)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>650</Steel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<ComponentSpacer>1</ComponentSpacer>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/MasonrySaw/MasonrySaw_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(3,5)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,3)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>700</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/MasonrySaw/MasonrySaw</buildingOnGraphic>
-        <numberOfInputs>1</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isMachinePausable>true</isMachinePausable>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>700</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/MasonrySaw/MasonrySaw</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isMachinePausable>true</isMachinePausable>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,-3)</li>
+				<inputSlots>
+					<li>(0,0,-3)</li>
 
-        </inputSlots>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MasonryandMetallicsFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MasonryandMetallicsFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VFEM_MasonryAndMetallicsFactory_PlasteelForge</defName>
-    <label>Plasteel forge</label>
-    <description>A somewhat high-tech and little understood factory module, capable of combining steel, powdered stone bricks, and chemfuel into plasteel. The exact formula and methodology of plasteel refining is usually locked away by militaristic forge worlds but the product this machine outputs is a close enough replication.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
-    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
-    <graphicData>
-      <texPath>Things/Buildings/PlasteelForge/PlasteelForge</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(9,7)</drawSize>
-      <shaderType>CutoutComplex</shaderType>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <thingCategories>
-      <li>BuildingsProduction</li>
-    </thingCategories>
-    <costList>
-      <Steel>700</Steel>
-      <Plasteel>300</Plasteel>
-      <ComponentSpacer>10</ComponentSpacer>
-      <VFE_ComponentMechanoid>5</VFE_ComponentMechanoid>
-    </costList>
-    <building>
-      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
-      <wantsHopperAdjacent>true</wantsHopperAdjacent>
-      <buildingTags>
-        <li>Production</li>
-      </buildingTags>
-      <blueprintGraphicData>
-        <texPath>Things/Buildings/PlasteelForge/PlasteelForge_Blueprint</texPath>
-		<graphicClass>Graphic_Multi</graphicClass>
-      </blueprintGraphicData>
-    </building>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <rotatable>true</rotatable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <uiIconScale>0.8</uiIconScale>
-    <fillPercent>0.5</fillPercent>
-    <placeWorkers>
-      <li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-    </placeWorkers>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <Mass>10</Mass>
-      <WorkToBuild>800</WorkToBuild>
-      <MaxHitPoints>400</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <size>(7,5)</size>
-    <designationCategory>VFE_Factory</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,3)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <!--<researchPrerequisites>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_MasonryAndMetallicsFactory_PlasteelForge</defName>
+		<label>Plasteel forge</label>
+		<description>A somewhat high-tech and little understood factory module, capable of combining steel, powdered stone bricks, and chemfuel into plasteel. The exact formula and methodology of plasteel refining is usually locked away by militaristic forge worlds but the product this machine outputs is a close enough replication.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/PlasteelForge/PlasteelForge</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,7)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>700</Steel>
+			<Plasteel>300</Plasteel>
+			<ComponentSpacer>10</ComponentSpacer>
+			<VFE_ComponentMechanoid>5</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/PlasteelForge/PlasteelForge_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,5)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,3)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<!--<researchPrerequisites>
 			<li>VCE_SoupCooking</li>
 		</researchPrerequisites>-->
-    <comps>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>5</heatPerSecond>
-      </li>
-      <li Class="CompProperties_Glower">
-        <glowRadius>9</glowRadius>
-        <glowColor>(255,150,100,0)</glowColor>
-      </li>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>false</shortCircuitInRain>
-        <basePowerConsumption>825</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Flickable" />
-      <li Class="ItemProcessor.CompProperties_ItemProcessor">
-        <buildingOnGraphic>Things/Buildings/PlasteelForge/PlasteelForge</buildingOnGraphic>
-        <numberOfInputs>3</numberOfInputs>
-        <acceptsNoneAsInput>false</acceptsNoneAsInput>
-        <transfersIngredientLists>false</transfersIngredientLists>
-        <isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
-        <isAutoMachine>true</isAutoMachine>
-        <isAutoDropper>true</isAutoDropper>
-		<showFactoryProgressBar>true</showFactoryProgressBar>
-        <isMachinePausable>true</isMachinePausable>
-        <isCompletelyAutoMachine>true</isCompletelyAutoMachine>
-        <noPowerDestroysProgress>true</noPowerDestroysProgress>
-        <rareTicksToDestroy>10</rareTicksToDestroy>
-        <destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
-        <chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
-        <InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
-        <bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
-        <bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
-        <bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+		<comps>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>5</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>9</glowRadius>
+				<glowColor>(255,150,100,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>825</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/PlasteelForge/PlasteelForge</buildingOnGraphic>
+				<numberOfInputs>3</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<transfersIngredientLists>false</transfersIngredientLists>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isMachinePausable>true</isMachinePausable>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>10</rareTicksToDestroy>
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
 
-        <inputSlots>
-          <li>(0,0,-3)</li>
-          <li>(4,0,0)</li>
-          <li>(-4,0,0)</li>
+				<inputSlots>
+					<li>(0,0,-3)</li>
+					<li>(4,0,0)</li>
+					<li>(-4,0,0)</li>
 
-        </inputSlots>
+				</inputSlots>
 
 
-      </li>
+			</li>
 
-    </comps>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <researchPrerequisites Inherit='False'>
-      <li>VFE_MasonryandMetallicsFactory</li>
-    </researchPrerequisites>
-  </ThingDef>
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_MasonryandMetallicsFactory</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
 
 </Defs>

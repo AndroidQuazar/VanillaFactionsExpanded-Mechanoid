@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Brewing Expanded - Coffees and Teas</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<!--======= Industrial Coffee Roaster =======-->
+
+						<ThingDef ParentName="BuildingBase">
+							<defName>VFEM_IndustrialCoffeeRoaster</defName>
+							<label>industrial coffee roaster</label>
+							<description>An industrial-sized oven that deeply roasts coffee beans before dispensing them to a quern that grinds them into grounds. Boiling water is then forced and filtered through the grounds into a mass amount of coffee. Nearby hoppers can also hold other products for processing a number of coffee-related drinks.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; The Industrial Coffee Roaster is not part of any automation chain, it is an independent building.</description>
+							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+							<graphicData>
+								<texPath>Things/Buildings/IndustrialCoffeeRoaster/IndustrialCoffeeRoaster</texPath>
+								<graphicClass>Graphic_Multi</graphicClass>
+								<drawSize>(5,8)</drawSize>
+								<shaderType>CutoutComplex</shaderType>
+								<damageData>
+									<cornerTL>Damage/Corner</cornerTL>
+									<cornerTR>Damage/Corner</cornerTR>
+									<cornerBL>Damage/Corner</cornerBL>
+									<cornerBR>Damage/Corner</cornerBR>
+								</damageData>
+							</graphicData>
+							<thingCategories>
+								<li>BuildingsProduction</li>
+							</thingCategories>
+							<costList>
+								<Steel>400</Steel>
+								<ComponentSpacer>1</ComponentSpacer>
+								<Plasteel>100</Plasteel>
+								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+							</costList>
+							<building>
+								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+								<wantsHopperAdjacent>true</wantsHopperAdjacent>
+								<buildingTags>
+									<li>Production</li>
+								</buildingTags>
+								<blueprintGraphicData>
+									<texPath>Things/Buildings/IndustrialCoffeeRoaster/IndustrialCoffeeRoaster_Blueprint</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+								</blueprintGraphicData>
+							</building>
+							<altitudeLayer>Building</altitudeLayer>
+							<rotatable>true</rotatable>
+							<neverMultiSelect>true</neverMultiSelect>
+							<uiIconScale>0.8</uiIconScale>
+							<fillPercent>0.5</fillPercent>
+							<placeWorkers>
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+							</placeWorkers>
+							<useHitPoints>True</useHitPoints>
+							<statBases>
+								<Mass>10</Mass>
+								<WorkToBuild>800</WorkToBuild>
+								<MaxHitPoints>300</MaxHitPoints>
+								<Flammability>1.0</Flammability>
+							</statBases>
+							<tickerType>Rare</tickerType>
+							<size>(3,6)</size>
+							<designationCategory>VFE_Factory</designationCategory>
+							<passability>PassThroughOnly</passability>
+							<pathCost>70</pathCost>
+							<hasInteractionCell>True</hasInteractionCell>
+							<interactionCellOffset>(0,0,4)</interactionCellOffset>
+							<surfaceType>Item</surfaceType>
+
+							<comps>
+								<li Class="CompProperties_Power">
+									<compClass>CompPowerTrader</compClass>
+									<shortCircuitInRain>false</shortCircuitInRain>
+									<basePowerConsumption>500</basePowerConsumption>
+								</li>
+								<li Class="CompProperties_Flickable"/>
+								<li Class="ItemProcessor.CompProperties_ItemProcessor">
+									<buildingOnGraphic>Things/Buildings/IndustrialCoffeeRoaster/IndustrialCoffeeRoaster</buildingOnGraphic>
+									<numberOfInputs>2</numberOfInputs>
+									<acceptsNoneAsInput>false</acceptsNoneAsInput>
+									<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+									<ignoresIngredientLists>false</ignoresIngredientLists>
+									<isAutoMachine>true</isAutoMachine>
+									<isAutoDropper>true</isAutoDropper>
+									<showFactoryProgressBar>true</showFactoryProgressBar>
+									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+									<noPowerDestroysProgress>true</noPowerDestroysProgress>
+									<isMachinePausable>true</isMachinePausable>
+									<rareTicksToDestroy>10</rareTicksToDestroy>				
+									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
+									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+
+									<inputSlots>
+										<li>(-1,0,-3)</li>
+										<li>(0,0,-3)</li>
+										<li>(1,0,-3)</li>
+
+									</inputSlots>
+
+
+
+								</li>
+
+							</comps>
+							<researchPrerequisites Inherit='False'>
+								<li>VFE_IndustrialRoasting</li>
+							</researchPrerequisites>
+							<minifiedDef>MinifiedThing</minifiedDef>
+							<modExtensions>
+								<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+									<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+								</li>
+							</modExtensions>
+						</ThingDef>												
+
+
+
+						<ResearchProjectDef>
+							<defName>VFE_IndustrialRoasting</defName>
+							<label>industrial roasting</label>
+							<description>Research an industrial-sized oven that deeply roasts coffee beans before dispensing them to a quern that grinds them into grounds. Boiling water is then forced and filtered through the grounds into a mass amount of coffee. Nearby hoppers can also hold other products for processing a number of coffee-related drinks.</description>
+							<baseCost>1000</baseCost>
+							<tab>VanillaExpanded</tab>
+							<techLevel>Industrial</techLevel>
+							<prerequisites>
+								<li>VFE_FactoryBasics</li>
+							</prerequisites>
+							<researchViewX>11.00</researchViewX>
+							<researchViewY>4.90</researchViewY>
+						</ResearchProjectDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_FastCoffee</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawCoffee</li>
+							</items>	
+							<secondItems>
+								<li>VBE_RawCoffee</li>
+							</secondItems>
+							<amount>
+								<li>12</li>
+								<li>13</li>
+							</amount>
+							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+							<resultSpecialIcon>Things/Items/Drinks/VBE_Coffee/VBE_Coffee_b</resultSpecialIcon>
+							<result>VBE_HotCoffee</result>	
+							<yield>5</yield>														
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_FastTea</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawTea</li>
+							</items>	
+							<secondItems>
+								<li>VBE_RawTea</li>
+							</secondItems>
+							<amount>
+								<li>12</li>
+								<li>13</li>
+							</amount>							
+							<result>VBE_Tea</result>	
+							<yield>5</yield>														
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_LatteCoffee</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawCoffee</li>
+							</items>	
+							<secondItems>
+								<li>Milk</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>10</li>
+							</amount>							
+							<result>VBE_LatteCoffee</result>	
+							<yield>10</yield>														
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_MochaCoffee</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawCoffee</li>
+							</items>	
+							<secondItems>
+								<li>Chocolate</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>3</li>
+							</amount>							
+							<result>VBE_MochaCoffee</result>	
+							<yield>10</yield>														
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_IrishCoffee</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawCoffee</li>
+							</items>	
+							<secondItems>
+								<li>VBE_Whiskey</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>5</li>
+							</amount>							
+							<result>VBE_IrishCoffee</result>	
+							<yield>10</yield>														
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_CannibalCoffee</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawCoffee</li>
+							</items>	
+							<secondItems>
+								<li>Meat_Human</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>20</li>
+							</amount>							
+							<result>VBE_CannibalCoffee</result>	
+							<yield>10</yield>		
+							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+							<resultSpecialIcon>Things/Items/Drinks/VBE_HumanCoffee/VBE_HumanCoffee_b</resultSpecialIcon>							
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_BlackTea</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawTea</li>
+							</items>	
+							<secondItems>
+								<li>Milk</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>10</li>
+							</amount>							
+							<result>VBE_BlackTea</result>	
+							<yield>10</yield>														
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_YuenYeung</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawTea</li>
+							</items>	
+							<secondItems>
+								<li>VBE_RawCoffee</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>50</li>
+							</amount>							
+							<result>VBE_Yuenyeung</result>	
+							<yield>10</yield>														
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_IndustrialCoffeeRoaster_Kombucha</defName>
+							<building>VFEM_IndustrialCoffeeRoaster</building>
+							<items>
+								<li>VBE_RawTea</li>
+							</items>	
+							<secondItems>
+								<li>RawFungus</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>10</li>
+							</amount>							
+							<result>VBE_Kombucha</result>	
+							<yield>10</yield>	
+							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
+							<resultSpecialIcon>Things/Items/Drinks/VBE_KombuchaTea/VBE_KombuchaTea_b</resultSpecialIcon>								
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+
+
+
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Cooking Expanded</li>
+					</mods>
+
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<li Class="PatchOperationAdd"> 
+								<success>Always</success>
+								<xpath>/Defs</xpath>
+								<value>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_MintCoffee</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawCoffee</li>
+										</items>	
+										<secondItems>
+											<li>VBE_MintLeaves</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>3</li>
+										</amount>							
+										<result>VBE_MintCoffee</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_DalgonaCoffee</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawCoffee</li>
+										</items>	
+										<secondItems>
+											<li>VCE_RawSugar</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>3</li>
+										</amount>							
+										<result>VBE_DalgonaCoffee</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_GreenTea</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawTea</li>
+										</items>	
+										<secondItems>
+											<li>VCE_RawSugar</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>3</li>
+										</amount>							
+										<result>VBE_GreenTea</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_MintTea</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawTea</li>
+										</items>	
+										<secondItems>
+											<li>VBE_MintLeaves</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>3</li>
+										</amount>							
+										<result>VBE_MintTea</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_MasalaChai</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawTea</li>
+										</items>	
+										<secondItems>
+											<li>VCE_RawSpices</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>3</li>
+										</amount>							
+										<result>VBE_MasalaChai</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_NoonChai</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawTea</li>
+										</items>	
+										<secondItems>
+											<li>VCE_Salt</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>3</li>
+										</amount>							
+										<result>VBE_NoonChai</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+				
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Plants Expanded</li>
+					</mods>
+
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<li Class="PatchOperationAdd"> 
+								<success>Always</success>
+								<xpath>/Defs</xpath>
+								<value>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_LemonCoffee</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawCoffee</li>
+										</items>	
+										<secondItems>
+											<li>VCE_RawLemon</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>10</li>
+										</amount>							
+										<result>VBE_LemonCoffee</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_LemonTea</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawTea</li>
+										</items>	
+										<secondItems>
+											<li>VCE_RawLemon</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>10</li>
+										</amount>							
+										<result>VBE_LemonTea</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_IndustrialCoffeeRoaster_EarlGreyTea</defName>
+										<building>VFEM_IndustrialCoffeeRoaster</building>
+										<items>
+											<li>VBE_RawTea</li>
+										</items>	
+										<secondItems>
+											<li>VCE_RawOrange</li>
+										</secondItems>
+										<amount>
+											<li>50</li>
+											<li>10</li>
+										</amount>							
+										<result>VBE_EarlGreyTea</result>	
+										<yield>10</yield>														
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.05</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

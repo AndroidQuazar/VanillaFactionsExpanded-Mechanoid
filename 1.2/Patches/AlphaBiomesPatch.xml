@@ -275,6 +275,24 @@
 								<xpath>/Defs</xpath>
 								<value>
 
+								<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_AbyssalEel</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_AbyssalEel</result>	
+										<yield>24</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+
 									<ItemProcessor.CombinationDef>
 										<defName>VFEM_AquaponicsBasin_BloodLeech</defName>
 										<building>VFEM_AquaponicsBasin</building>
@@ -282,12 +300,251 @@
 											<li>PlantFoodRaw</li>
 										</items>	
 										<amount>
-											<li>5</li>
+											<li>20</li>
 										</amount>
 										<result>VCEF_BloodLeech</result>	
-										<yield>75</yield>
+										<yield>120</yield>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>1000</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_BorealSardine</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_BorealSardine</result>	
+										<yield>120</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>1000</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_DuskySprat</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_DuskySprat</result>	
+										<yield>120</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>1000</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_ForsakenAnglerfish</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_ForsakenAnglerfish</result>	
+										<yield>24</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_FrigidSwimmer</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_FrigidSwimmer</result>	
+										<yield>15</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>200</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_GiantPolarPrawn</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_GiantPolarPrawn</result>	
+										<yield>24</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_HabdakLongfin</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_HabdakLongfin</result>	
+										<yield>5</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>100</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_Jellyfungus</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_Jellyfungus</result>	
+										<yield>24</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_MudSplasherCarp</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_MudSplasherCarp</result>	
+										<yield>24</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_MutantFlatfish</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_MutantFlatfish</result>	
+										<yield>40</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>500</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_OcularFish</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_OcularFish</result>	
+										<yield>18</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_PinkBlobfish</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_PinkBlobfish</result>	
+										<yield>24</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_PropaneBag</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_PropaneBag</result>	
+										<yield>120</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>1000</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_ShadowFry</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_ShadowFry</result>	
+										<yield>60</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>500</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_Slimefish</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_Slimefish</result>	
+										<yield>5</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>100</maxTotalOutput>
 										<isCategoryRecipe>true</isCategoryRecipe>
 										<useQualityIncreasing>false</useQualityIncreasing>
 										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
@@ -300,10 +557,27 @@
 											<li>PlantFoodRaw</li>
 										</items>	
 										<amount>
-											<li>5</li>
+											<li>20</li>
 										</amount>
 										<result>VCEF_Spiderfish</result>	
-										<yield>30</yield>
+										<yield>24</yield>
+										<outputLimitControlled>true</outputLimitControlled>
+										<maxTotalOutput>300</maxTotalOutput>
+										<isCategoryRecipe>true</isCategoryRecipe>
+										<useQualityIncreasing>false</useQualityIncreasing>
+										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+									</ItemProcessor.CombinationDef>
+									<ItemProcessor.CombinationDef>
+										<defName>VFEM_AquaponicsBasin_Spinyfish</defName>
+										<building>VFEM_AquaponicsBasin</building>
+										<items>
+											<li>PlantFoodRaw</li>
+										</items>	
+										<amount>
+											<li>20</li>
+										</amount>
+										<result>VCEF_Spinyfish</result>	
+										<yield>20</yield>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
 										<isCategoryRecipe>true</isCategoryRecipe>
@@ -319,12 +593,12 @@
 											<li>PlantFoodRaw</li>
 										</items>	
 										<amount>
-											<li>5</li>
+											<li>20</li>
 										</amount>
 										<result>VCEF_Sturgeon</result>	
-										<yield>11</yield>
+										<yield>6</yield>
 										<outputLimitControlled>true</outputLimitControlled>
-										<maxTotalOutput>200</maxTotalOutput>
+										<maxTotalOutput>100</maxTotalOutput>
 										<isCategoryRecipe>true</isCategoryRecipe>
 										<useQualityIncreasing>false</useQualityIncreasing>
 										<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
