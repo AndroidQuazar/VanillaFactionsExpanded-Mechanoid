@@ -62,7 +62,8 @@
           <storeAs>sitePartDefs</storeAs>
           <storeFactionAs>siteFaction</storeFactionAs>
           <sitePartsTags>
-            <li><tag>BanditCamp</tag></li>
+            <li><tag>VFEV_AbandonedFactory</tag></li>
+            <li><tag>KCSG_EnnemiesPresence</tag></li>
           </sitePartsTags>
           <mustBeHostileToFactionOf>$asker</mustBeHostileToFactionOf>
         </li>

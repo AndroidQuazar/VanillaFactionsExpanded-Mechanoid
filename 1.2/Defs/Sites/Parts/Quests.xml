@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>VFEV_AbandonedFactory</defName>
+    <label>abandoned factory</label>
+    <description>An abandoned factory.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/QuestIcons/AbandonedFactory</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <tags>
+      <li>VFEV_AbandonedFactory</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>VFEV_AbandonedFactory</defName>
+    <linkWithSite>VFEV_AbandonedFactory</linkWithSite>
+    <order>460</order>
+    <genStep Class="KCSG.GenStep_CustomStructureGen">
+      <structureLayoutDefs>
+        <li>VFEM_Factory1</li>
+        <li>VFEM_Factory2</li>
+        <li>VFEM_Factory3</li>
+        <li>VFEM_Factory4</li>
+        <li>VFEM_Factory5</li>
+        <li>VFEM_Factory6</li>
+        <li>VFEM_Factory7</li>
+        <li>VFEM_Factory8</li>
+      </structureLayoutDefs>
+    </genStep>
+  </GenStepDef>
+</Defs>
