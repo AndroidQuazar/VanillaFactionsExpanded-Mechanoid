@@ -497,5 +497,9 @@
     <symbol>VFEM_ProvisionsPackagingFactory_ConveyorOven_South</symbol>
   </KCSG.SymbolDef>
   
-  
+  <KCSG.SymbolDef>
+    <defName>VFE_Supercomputer</defName>
+    <thing>VFE_Supercomputer</thing>
+    <symbol>VFE_Supercomputer</symbol>
+  </KCSG.SymbolDef>
 </Defs>
