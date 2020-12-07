@@ -44,6 +44,7 @@
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentSpacer>1</ComponentSpacer>
       <Plasteel>10</Plasteel>
     </butcherProducts>
@@ -115,6 +116,7 @@
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentSpacer>1</ComponentSpacer>
       <Steel>25</Steel>
     </butcherProducts>
@@ -187,6 +189,7 @@
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentSpacer>1</ComponentSpacer>
       <Plasteel>15</Plasteel>
     </butcherProducts>
@@ -259,6 +262,7 @@
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentSpacer>1</ComponentSpacer>
       <Plasteel>25</Plasteel>
     </butcherProducts>
@@ -332,6 +336,7 @@
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
       <ComponentSpacer>1</ComponentSpacer>
       <Plasteel>45</Plasteel>
     </butcherProducts>
@@ -353,7 +358,7 @@
         <bodyGraphicData>
           <texPath>Things/Automation/RiotMechanoid/RiotMechanoid</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
+          <drawSize>1.6</drawSize>
           <shadowData>
             <volume>(0.6, 0.8, 0.6)</volume>
           </shadowData>
@@ -405,8 +410,9 @@
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
     </race>
     <butcherProducts>
-      <ComponentSpacer>1</ComponentSpacer>
-      <Plasteel>25</Plasteel>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>55</Plasteel>
     </butcherProducts>
 	<comps>
       <li Class="VFE.Mechanoids.CompProperties_Machine">

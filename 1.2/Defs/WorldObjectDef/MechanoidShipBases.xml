@@ -70,7 +70,7 @@
         <description>Increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
-                <raisesPresence>800</raisesPresence>
+                <raisesPresence>450</raisesPresence>
                 <nameMaker>VFE_NamerShipDestroyer</nameMaker>
             </li>
             <li Class="KCSG.FactionSettlement">
@@ -113,7 +113,7 @@
         <description>Greatly increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
-                <raisesPresence>1600</raisesPresence>
+                <raisesPresence>600</raisesPresence>
                 <nameMaker>VFE_NamerShipCruiser</nameMaker>
             </li>
             <li Class="KCSG.FactionSettlement">
@@ -156,7 +156,7 @@
         <description>Drastically increases mechanoid presence.</description>
         <modExtensions>
             <li Class="VFEMech.MechanoidBaseExtension">
-                <raisesPresence>2000</raisesPresence>
+                <raisesPresence>1200</raisesPresence>
                 <nameMaker>VFE_NamerShipTroopship</nameMaker>
             </li>
             <li Class="KCSG.FactionSettlement">

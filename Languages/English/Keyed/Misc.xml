@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-	<VFEMech.LetterJoinOfferTitle></VFEMech.LetterJoinOfferTitle>
-	<VFEMech.LetterJoinOfferLabel></VFEMech.LetterJoinOfferLabel>
-	<VFEMech.LetterJoinOfferText></VFEMech.LetterJoinOfferText>
+	<VFEMech.LetterJoinOfferTitle>Defender joins</VFEMech.LetterJoinOfferTitle>
+	<VFEMech.LetterJoinOfferLabel>Defender joins.</VFEMech.LetterJoinOfferLabel>
+	<VFEMech.LetterJoinOfferText>One of the defenders has decided to join your faction.</VFEMech.LetterJoinOfferText>
 </LanguageData>
