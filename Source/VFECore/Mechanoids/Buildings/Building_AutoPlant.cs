@@ -10,6 +10,7 @@ using Verse.Sound;
 
 namespace VFE.Mechanoids.Buildings
 {
+    [StaticConstructorOnStartup]
     class Building_AutoPlant : Building
     {
         public int range = 7;
@@ -18,6 +19,10 @@ namespace VFE.Mechanoids.Buildings
 
         static float speedPerTick = 0.001f;
         protected bool blockedByTree = false;
+
+        static Graphic baseGraphic = GraphicDatabase.Get(typeof(Graphic_Multi), "Things/Buildings/MachineryBases/AutoMachineryBase", ShaderDatabase.Cutout, new Vector2(7, 2), Color.white, Color.white);
+
+        Sustainer sustainer;
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
@@ -35,7 +40,7 @@ namespace VFE.Mechanoids.Buildings
                 };
                 command_Action.defaultLabel = "VFEMechLowerRange".Translate();
                 command_Action.defaultDesc = "VFEMechLowerRangeDesc".Translate();
-                command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
+                command_Action.icon = ContentFinder<Texture2D>.Get("UI/DecreaseArea");
                 gizmos.Add(command_Action);
             }
 
@@ -50,7 +55,7 @@ namespace VFE.Mechanoids.Buildings
                 };
                 command_Action2.defaultLabel = "VFEMechRaiseRange".Translate();
                 command_Action2.defaultDesc = "VFEMechRaiseRangeDesc".Translate();
-                command_Action2.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
+                command_Action2.icon = ContentFinder<Texture2D>.Get("UI/IncreaseArea");
                 gizmos.Add(command_Action2);
             }
 
@@ -59,13 +64,15 @@ namespace VFE.Mechanoids.Buildings
             {
                 initiate.defaultLabel = "VFEMechStopMachine".Translate();
                 initiate.defaultDesc = "VFEMechStopMachineDesc".Translate();
+                initiate.icon = ContentFinder<Texture2D>.Get("UI/MachineryOff");
             }
             else
             {
                 initiate.defaultLabel = "VFEMechStartMachine".Translate();
                 initiate.defaultDesc = "VFEMechStartMachineDesc".Translate();
+                initiate.icon = ContentFinder<Texture2D>.Get("UI/MachineryOn");
             }
-            initiate.toggleAction = delegate { running = !running; };
+            initiate.toggleAction = delegate { running = !running;  if (running) { StartSustainer(); } };
             initiate.isActive = ()=>running;
             gizmos.Add(initiate);
 
@@ -81,7 +88,8 @@ namespace VFE.Mechanoids.Buildings
             {
                 if (running)
                 {
-                    powerComp.powerOutputInt = powerComp.Props.basePowerConsumption+2300;
+                    sustainer.Maintain();
+                    powerComp.powerOutputInt = -powerComp.Props.basePowerConsumption-2300;
                     bool shouldCheck = false;
                     if (offset == 0)
                         shouldCheck = true;
@@ -107,12 +115,13 @@ namespace VFE.Mechanoids.Buildings
                 }
                 else if (offset > 0)
                 {
+                    sustainer.Maintain();
                     offset -= speedPerTick;
                     if (offset < 0)
                         offset = 0;
                 }
                 else
-                    powerComp.powerOutputInt = powerComp.Props.basePowerConsumption;
+                    powerComp.powerOutputInt = -powerComp.Props.basePowerConsumption;
             }
         }
 
@@ -191,6 +200,7 @@ namespace VFE.Mechanoids.Buildings
         public override void Draw()
         {
             base.Draw();
+            baseGraphic.Draw(base.DrawPos, this.Rotation, this);
         }
 
         protected virtual void DoWorkOnCell(IntVec3 cell)
@@ -204,6 +214,14 @@ namespace VFE.Mechanoids.Buildings
             Scribe_Values.Look<int>(ref range, "range");
             Scribe_Values.Look<bool>(ref running, "running");
             Scribe_Values.Look<float>(ref offset, "offset");
+        }
+
+        void StartSustainer()
+        {
+            if (sustainer != null)
+                sustainer.End();
+            SoundInfo soundInfo = SoundInfo.InMap(this);
+            sustainer = SoundDef.Named("GeothermalPlant_Ambience").TrySpawnSustainer(soundInfo);
         }
     }
 }

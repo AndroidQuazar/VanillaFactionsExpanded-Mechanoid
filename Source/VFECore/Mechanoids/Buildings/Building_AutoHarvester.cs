@@ -21,7 +21,7 @@ namespace VFE.Mechanoids.Buildings
                 if(t is Plant)
                 {
                     Plant plant = (Plant)t;
-                    if(plant.HarvestableNow)
+                    if(plant.HarvestableNow || plant.def.blockWind)
                     {
                         toHarvest.Add(plant);
                     }

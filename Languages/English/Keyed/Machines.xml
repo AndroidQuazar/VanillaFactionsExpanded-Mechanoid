@@ -11,5 +11,13 @@
   <VFEMechNoTurret>No active mobile turret</VFEMechNoTurret>
   <VFEMechReconstruct>Needed to rebuild machine:</VFEMechReconstruct>
   <VFEMechTurretResources>Needed to construct turret:</VFEMechTurretResources>
+  <VFEMechLowerRange>Reduce range</VFEMechLowerRange>
+  <VFEMechLowerRangeDesc>Reduce the number of tiles this machine will travel.</VFEMechLowerRangeDesc>
+  <VFEMechRaiseRange>Increase range</VFEMechRaiseRange>
+  <VFEMechRaiseRangeDesc>Increase the number of tiles this machine will travel.</VFEMechRaiseRangeDesc>
+  <VFEMechStopMachine>Stop machine</VFEMechStopMachine>
+  <VFEMechStopMachineDesc>Stop this machine's progress and force it to return to base.</VFEMechStopMachineDesc>
+  <VFEMechStartMachine>Start machine</VFEMechStartMachine>
+  <VFEMechStartMachineDesc>Start this machine.</VFEMechStartMachineDesc>
   
 </LanguageData>
