@@ -4,7 +4,7 @@
   <ThingDef ParentName="MoteBase">
     <defName>VFE_Mechanoids_Mote_Repair</defName>
     <graphicData>
-      <texPath>Things/Mote/HealingCross</texPath>
+      <texPath>UI/Overlays/FixingWrench</texPath>
     </graphicData>
     <altitudeLayer>MetaOverlays</altitudeLayer>
     <mote>

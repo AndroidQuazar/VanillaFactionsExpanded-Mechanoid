@@ -27,7 +27,7 @@ namespace VFE.Mechanoids.Buildings
             List<Thing> thingList = cell.GetThingList(this.Map);
             foreach(Thing t in thingList)
             {
-                if (t!=this && (t.def.plant != null || t.def.BlocksPlanting()))
+                if (t!=this && ((t.def.plant != null && t.def.plant.harvestedThingDef!=null)|| t.def.BlocksPlanting()))
                     return;
             }
             if (plantToPlant.plant.interferesWithRoof && cell.Roofed(this.Map))

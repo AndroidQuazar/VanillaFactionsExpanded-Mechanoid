@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using VFE.Mechanoids.Buildings;
 using VFE.Mechanoids.Needs;
@@ -155,13 +156,14 @@ namespace VFE.Mechanoids
                 defaultDesc = "VFEMechSetAreaDesc".Translate(),
                 action = delegate
                 {
-                    AreaUtility.MakeAllowedAreaListFloatMenu(delegate(Area area)
+                    AreaUtility.MakeAllowedAreaListFloatMenu(delegate (Area area)
                     {
                         this.allowedArea = area;
                         if (myPawn != null && myPawn.Spawned && !myPawn.Dead)
                             myPawn.playerSettings.AreaRestriction = area;
                     }, true, true, parent.Map);
-                }
+                },
+                icon = ContentFinder<Texture2D>.Get("UI/SelectZone")
             };
             gizmos.Add(setArea);
 
