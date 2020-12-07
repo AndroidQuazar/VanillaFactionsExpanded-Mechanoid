@@ -1966,4 +1966,115 @@
 		</modExtensions>
 	</ThingDef>
 
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_VersatileAssembler</defName>
+		<label>versatile assembler</label>
+		<description>A large robotic factory assembly built with advanced programmability in mind. The versatile assembler can be modified to craft almost anything, from electronics to simple consumer goods.\n\nNOTE: this factory is used to host recipes from other mods that don't fit in any of the other modules.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; The Versatile assembler is not part of any automation chain, it is an independent building.</description>
+		<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+		<graphicData>
+			<texPath>Things/Buildings/VersatileAssembler/VersatileAssembler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(9,8)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>575</Steel>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Plasteel>300</Plasteel>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<building>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+			<blueprintGraphicData>
+				<texPath>Things/Buildings/VersatileAssembler/VersatileAssembler_Blueprint</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>true</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<placeWorkers>
+			<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+		</placeWorkers>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>10</Mass>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<size>(7,6)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,4)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>500</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/VersatileAssembler/VersatileAssembler</buildingOnGraphic>
+				<numberOfInputs>3</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+				<ignoresIngredientLists>true</ignoresIngredientLists>
+				<isAutoMachine>true</isAutoMachine>
+				<isAutoDropper>true</isAutoDropper>
+				<showFactoryProgressBar>true</showFactoryProgressBar>
+				<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<isMachinePausable>true</isMachinePausable>
+				<rareTicksToDestroy>100</rareTicksToDestroy>				
+				<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
+				<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+				<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+				<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+				<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+
+				<inputSlots>
+					<li>(0,0,-3)</li>
+					<li>(4,0,0)</li>
+					<li>(-4,0,0)</li>
+
+				</inputSlots>
+
+
+
+			</li>
+
+		</comps>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_FactoryBasics</li>
+		</researchPrerequisites>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<modExtensions>
+			<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
 </Defs>
