@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Defs>
+<Patch>
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/TraderKindDef[defName="Caravan_Outlander_BulkGoods"]/stockGenerators</xpath>
     <value>
@@ -19,4 +19,4 @@
       </li>
     </value>
   </Operation>
-</Defs>
+</Patch>
