@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Rimatomics</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_VersatileAssembler_UraniumPellets</defName>
+							<building>VFEM_VersatileAssembler</building>
+							<items>
+								<li>Uranium</li>
+							</items>	
+							<secondItems>
+								<li>Uranium</li>
+							</secondItems>
+							<thirdItems>
+								<li>Uranium</li>
+							</thirdItems>
+							<amount>
+								<li>3</li>
+								<li>3</li>
+								<li>4</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<result>UraniumPellets</result>	
+							<yield>30</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_VersatileAssembler_FuelRods</defName>
+							<building>VFEM_VersatileAssembler</building>
+							<items>
+								<li>UraniumPellets</li>
+							</items>	
+							<secondItems>
+								<li>Steel</li>
+							</secondItems>
+							<thirdItems>
+								<li>Silver</li>
+							</thirdItems>
+							<amount>
+								<li>100</li>
+								<li>15</li>
+								<li>10</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>50</maxTotalOutput>
+							<result>FuelRods</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_VersatileAssembler_MOXFuelRods</defName>
+							<building>VFEM_VersatileAssembler</building>
+							<items>
+								<li>DepletedUraniumPellets</li>
+							</items>	
+							<secondItems>
+								<li>Steel</li>
+							</secondItems>
+							<thirdItems>
+								<li>Plutonium</li>
+							</thirdItems>
+							<amount>
+								<li>99</li>
+								<li>15</li>
+								<li>20</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>50</maxTotalOutput>
+							<result>FuelRodsMOX</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+
+
+					</value>
+				</li>
+
+
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+
