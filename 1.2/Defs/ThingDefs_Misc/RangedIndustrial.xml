@@ -40,7 +40,7 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-    <weaponTags Inherity='False'>
+    <weaponTags Inherit='False'>
       <li>IndustrialGunCombatMechanoid</li>
     </weaponTags>
     <tools>
