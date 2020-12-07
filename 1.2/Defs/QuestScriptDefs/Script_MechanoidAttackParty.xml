@@ -115,7 +115,7 @@
 						<nodes>
 							<li Class="QuestNode_Letter">
 								<label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
-								<text TKey="LetterTextQuestExpired"> signal has been lost, and can no longer be rescued. The quest [resolvedQuestName] has expired.</text>
+								<text TKey="LetterTextQuestExpired"> The outpost has fallen to the mechanoid attack force. The quest [resolvedQuestName] has expired.</text>
 							</li>
 							<li Class="QuestNode_End">
 								<outcome>Fail</outcome>
@@ -135,8 +135,8 @@
 					<node Class="QuestNode_Sequence">
 						<nodes>
 							<li Class="QuestNode_Letter">
-								<label TKey="LetterLabelMechsAreDefeated">MechsAreDefeated</label>
-								<text TKey="LetterTextMechsAreDefeated">MechsAreDefeated.</text>
+								<label TKey="LetterLabelMechsAreDefeated">Mechanoids defeated</label>
+								<text TKey="LetterTextMechsAreDefeated">All mechanoids in the area have been defeated.</text>
 							</li>
 							<li Class="VFEMech.QuestNode_Recruit">
 								<inSignal>site.AllMechsDefeated</inSignal>

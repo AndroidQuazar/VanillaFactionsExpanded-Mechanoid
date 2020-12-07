@@ -129,7 +129,7 @@
             <nodes>
               <li Class="QuestNode_Letter">
                 <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
-                <text TKey="LetterTextQuestExpired">Intercepted communications indicate the item stash has been claimed by others. The quest [resolvedQuestName] has expired.</text>
+                <text TKey="LetterTextQuestExpired">Intercepted communications indicate the item stash has been uplifted to orbit. The quest [resolvedQuestName] has expired.</text>
               </li>
               <li Class="QuestNode_End">
                 <outcome>Fail</outcome>

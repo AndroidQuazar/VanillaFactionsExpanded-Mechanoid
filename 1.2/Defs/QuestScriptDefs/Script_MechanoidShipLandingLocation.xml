@@ -126,8 +126,8 @@
 					<node Class="QuestNode_Sequence">
 						<nodes>
 							<li Class="QuestNode_Letter">
-								<label TKey="LetterLabelAllMechBeaconsDestroyed">AllMechBeaconsDestroyed</label>
-								<text TKey="LetterTextAllMechBeaconsDestroyed">AllMechBeaconsDestroyed.</text>
+								<label TKey="LetterLabelAllMechBeaconsDestroyed">Landing beacons Destroyed</label>
+								<text TKey="LetterTextAllMechBeaconsDestroyed">All landing beacons have been destroyed.</text>
 							</li>
 						</nodes>
 					</node>
@@ -148,7 +148,7 @@
 							<li Class="VFEMech.QuestNode_ConvertSiteToMechShip"></li>
 							<li Class="QuestNode_Letter">
 								<label TKey="LetterLabelQuestExpired">Quest expired (failed to destroy beacons 1 ): [resolvedQuestName]</label>
-								<text TKey="LetterTextQuestExpired">Intercepted communications indicate the item stash has been claimed by others. The quest [resolvedQuestName] has expired.</text>
+								<text TKey="LetterTextQuestExpired">The mechanoid ship has landed. The quest [resolvedQuestName] has expired.</text>
 							</li>
 							<li Class="QuestNode_End">
 								<outcome>Fail</outcome>
@@ -167,7 +167,7 @@
 							<li Class="VFEMech.QuestNode_ConvertSiteToMechShip"></li>
 							<li Class="QuestNode_Letter">
 								<label TKey="LetterLabelQuestExpired">Quest expired (failed to destroy beacons 2): [resolvedQuestName]</label>
-								<text TKey="LetterTextQuestExpired">Intercepted communications indicate the item stash has been claimed by others. The quest [resolvedQuestName] has expired.</text>
+								<text TKey="LetterTextQuestExpired">The mechanoid ship has landed. The quest [resolvedQuestName] has expired.</text>
 							</li>
 							
 							<li Class="QuestNode_End">
