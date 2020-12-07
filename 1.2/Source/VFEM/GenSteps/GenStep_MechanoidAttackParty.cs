@@ -101,7 +101,7 @@ namespace VFEMech
 			var z_average = z_Averages.ElementAt(z_Averages.Count() / 2).Position.z;
 			var middleCell = new IntVec3(x_average, 0, z_average);
 
-			LordMaker.MakeNewLord(faction, new LordJob_DefendBase(faction, middleCell), map, defenders);
+			LordMaker.MakeNewLord(faction, new LordJob_DefendPoint(middleCell, 12, false, false), map, defenders);
 
 			var mechWarfare = map.GetComponent<MapComponent_MechWarfare>();
 			mechWarfare.RegisterMechanoidAttackParty(map.mapPawns.PawnsInFaction(mechFaction), map.Parent as Site);
