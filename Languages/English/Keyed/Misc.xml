@@ -2,5 +2,5 @@
 <LanguageData>
 	<VFEMech.LetterJoinOfferTitle>Join offer: {PAWN_nameDef}</VFEMech.LetterJoinOfferTitle>
 	<VFEMech.LetterJoinOfferLabel>As a sign of trust and appreciation, {PAWN_nameDef} believes that {PAWN_pronoun} can be a valuable help in your colony. {PAWN_pronoun} wishes to join you permanently.</VFEMech.LetterJoinOfferLabel>
-	<VFEMech.LetterJoinOfferText>One of the defenders, {PAWN_nameDef}, wishes to join your faction.</VFEMech.LetterJoinOfferText>
+	<VFEMech.LetterJoinOfferText>{PAWN_nameDef} wishes to join.</VFEMech.LetterJoinOfferText>
 </LanguageData>
