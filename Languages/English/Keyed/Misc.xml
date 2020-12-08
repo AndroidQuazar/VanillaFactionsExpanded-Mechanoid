@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-	<VFEMech.LetterJoinOfferTitle>Join offer: {PAWN_nameDef}</VFEMech.LetterJoinOfferTitle>
-	<VFEMech.LetterJoinOfferLabel>As a sign of trust and appreciation, {PAWN_nameDef} believes that {PAWN_pronoun} can be a valuable help in your colony. {PAWN_pronoun} wishes to join you permanently.</VFEMech.LetterJoinOfferLabel>
-	<VFEMech.LetterJoinOfferText>{PAWN_nameDef} wishes to join.</VFEMech.LetterJoinOfferText>
+	<VFEMech.LetterJoinOfferTitle>{PAWN_nameDef} wishes to join.</VFEMech.LetterJoinOfferTitle>
+	<VFEMech.LetterJoinOfferLabel>Join offer: {PAWN_nameDef}</VFEMech.LetterJoinOfferLabel>
+	<VFEMech.LetterJoinOfferText>As a sign of trust and appreciation, {PAWN_nameDef} believes that {PAWN_pronoun} can be a valuable help in your colony. {PAWN_pronoun} wishes to join you permanently.</VFEMech.LetterJoinOfferText>
 </LanguageData>
