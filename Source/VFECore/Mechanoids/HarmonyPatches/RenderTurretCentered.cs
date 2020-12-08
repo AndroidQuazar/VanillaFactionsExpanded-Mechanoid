@@ -15,18 +15,29 @@ namespace VFE.Mechanoids.HarmonyPatches
     public static class RenderTurretCentered
     {
         static bool replaced = false;
-        static FieldInfo pawnField = typeof(PawnRenderer).GetField("pawn", BindingFlags.NonPublic | BindingFlags.Instance);
         static Pawn pawn;
+        static CompMachine machine;
         static Mesh plane20Flip = MeshMakerPlanes.NewPlaneMesh(2f, flipped: true);
+
+        static Vector3 south = new Vector3(0, 0, -0.33f);
+        static Vector3 north = new Vector3(0, -1, -0.22f);
+        static Vector3 east = new Vector3(0.2f, 0f, -0.22f);
+        static Vector3 west = new Vector3(-0.2f, 0, -0.22f);
 
         public static bool Prefix(PawnRenderer __instance)
         {
-            pawn = (Pawn)pawnField.GetValue(__instance);
-            if (pawn.TryGetComp<CompMachine>()?.turretAttached != null)
-                replaced = true;
-            else
-                replaced = false;
-            return !replaced;
+            machine = CompMachine.cachedMachines[__instance];
+            if (machine != null)
+            {
+                pawn = CompMachine.cachedPawns[machine];
+                if (machine.turretAttached != null)
+                    replaced = true;
+                else
+                    replaced = false;
+                return !replaced;
+            }
+            replaced = false;
+            return true;
         }
 
         public static void Postfix(PawnRenderer __instance, Thing eq, Vector3 drawLoc, float aimAngle)
@@ -35,17 +46,17 @@ namespace VFE.Mechanoids.HarmonyPatches
             {
                 if(!(pawn.stances.curStance is Stance_Busy && ((Stance_Busy)pawn.stances.curStance).focusTarg.IsValid))
                 {
-                    aimAngle = pawn.TryGetComp<CompMachine>().turretAngle;
+                    aimAngle = machine.turretAngle;
                 }
 
                 if (pawn.Rotation == Rot4.South)
-                    drawLoc -= new Vector3(0, 0, -0.33f);
+                    drawLoc -= south;
                 else if (pawn.Rotation == Rot4.North)
-                    drawLoc -= new Vector3(0, -1, -0.22f);
+                    drawLoc -= north;
                 else if (pawn.Rotation == Rot4.East)
-                    drawLoc -= new Vector3(0.2f, 0f, -0.22f);
+                    drawLoc -= east;
                 else if (pawn.Rotation == Rot4.West)
-                    drawLoc -= new Vector3(-0.2f, 0, -0.22f);
+                    drawLoc -= west;
 
                 Mesh mesh = null;
                 float num = aimAngle - 90f;

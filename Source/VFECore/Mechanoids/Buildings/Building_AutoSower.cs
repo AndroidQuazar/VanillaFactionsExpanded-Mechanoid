@@ -25,11 +25,16 @@ namespace VFE.Mechanoids.Buildings
         {
             base.DoWorkOnCell(cell);
             List<Thing> thingList = cell.GetThingList(this.Map);
+            List<Thing> toDestroy = new List<Thing>();
             foreach(Thing t in thingList)
             {
-                if (t!=this && ((t.def.plant != null && t.def.plant.harvestedThingDef!=null)|| t.def.BlocksPlanting()))
+                if (t.def.plant != null && t.def.plant.harvestedThingDef == null)
+                    toDestroy.Add(t);
+                else if (t != this && ((t.def.plant != null && t.def.plant.harvestedThingDef != null) || t.def.BlocksPlanting(true)))
                     return;
             }
+            foreach (Thing t in toDestroy)
+                t.Kill();
             if (plantToPlant.plant.interferesWithRoof && cell.Roofed(this.Map))
                 return;
             Thing otherPlant = PlantUtility.AdjacentSowBlocker(plantToPlant, cell, this.Map);

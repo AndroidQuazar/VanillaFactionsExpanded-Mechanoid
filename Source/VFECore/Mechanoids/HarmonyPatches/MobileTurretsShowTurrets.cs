@@ -13,12 +13,10 @@ namespace VFE.Mechanoids.HarmonyPatches
     [HarmonyPatch(typeof(PawnRenderer), "CarryWeaponOpenly")]
     public static class MobileTurretsShowTurrets
     {
-        static FieldInfo pawnField = typeof(PawnRenderer).GetField("pawn", BindingFlags.NonPublic | BindingFlags.Instance);
 
         public static void Postfix(PawnRenderer __instance, ref bool __result)
         {
-            Pawn pawn = (Pawn)pawnField.GetValue(__instance);
-            if (pawn.TryGetComp<CompMachine>()?.turretAttached!=null)
+            if (CompMachine.cachedMachines.ContainsKey(__instance)&&CompMachine.cachedMachines[__instance].turretAttached!=null)
             {
                 __result=true;
             }

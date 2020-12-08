@@ -21,7 +21,7 @@ namespace VFE.Mechanoids.Buildings
                 if(t is Plant)
                 {
                     Plant plant = (Plant)t;
-                    if(plant.HarvestableNow || plant.def.blockWind)
+                    if(plant.HarvestableNow || plant.def.plant.interferesWithRoof)
                     {
                         toHarvest.Add(plant);
                     }
@@ -35,9 +35,9 @@ namespace VFE.Mechanoids.Buildings
                     Thing thing = ThingMaker.MakeThing(plant.def.plant.harvestedThingDef);
                     thing.stackCount = num;
                     GenPlace.TryPlaceThing(thing, cell, this.Map, ThingPlaceMode.Near);
-                    plant.def.plant.soundHarvestFinish.PlayOneShot(this);
-                    plant.PlantCollected();
                 }
+                plant.def.plant.soundHarvestFinish.PlayOneShot(this);
+                plant.PlantCollected();
             }
         }
     }
