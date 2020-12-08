@@ -3,4 +3,8 @@
 	<VFEMech.LetterJoinOfferTitle>{PAWN_nameDef} wishes to join.</VFEMech.LetterJoinOfferTitle>
 	<VFEMech.LetterJoinOfferLabel>Join offer: {PAWN_nameDef}</VFEMech.LetterJoinOfferLabel>
 	<VFEMech.LetterJoinOfferText>As a sign of trust and appreciation, {PAWN_nameDef} believes that {PAWN_pronoun} can be a valuable help in your colony. {PAWN_pronoun} wishes to join you permanently.</VFEMech.LetterJoinOfferText>
+
+	<VFEMech.RaidWarningTitle>{FACTION_name} is approaching</VFEMech.RaidWarningTitle>
+	<VFEMech.RaidWarningText>{FACTION_name} PLACEHOLDER {1}</VFEMech.RaidWarningText>
+	
 </LanguageData>

@@ -14,15 +14,17 @@ namespace VFEMech
 		public float radius;
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			var allThings = pawn.Map.listerThings.AllThings.Where(x => x.Faction != null && x.Faction != pawn.Faction && x.def.building != null);
-			Predicate<Thing> validator = (Thing t) => pawn.CanReserve(t);
-			if (allThings.Any())
-			{
-				var thing = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, allThings, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
-				if (thing != null)
+			if (pawn.GetComp<CompCanBeDormant>().Awake)
+            {
+				var allThings = pawn.Map.listerThings.AllThings.Where(x => x.Faction != null && x.Faction != pawn.Faction && x.def.building != null);
+				Predicate<Thing> validator = (Thing t) => pawn.CanReserve(t);
+				if (allThings.Any())
 				{
-					Log.Message(pawn + " deconstructs " + thing);
-					return JobMaker.MakeJob(VFEMDefOf.VFEM_Disassemble, thing);
+					var thing = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, allThings, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
+					if (thing != null)
+					{
+						return JobMaker.MakeJob(VFEMDefOf.VFEM_Disassemble, thing);
+					}
 				}
 			}
 			return null;
