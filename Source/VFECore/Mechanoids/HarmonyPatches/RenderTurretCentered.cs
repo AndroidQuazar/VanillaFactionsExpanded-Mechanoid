@@ -26,15 +26,18 @@ namespace VFE.Mechanoids.HarmonyPatches
 
         public static bool Prefix(PawnRenderer __instance)
         {
-            machine = CompMachine.cachedMachines[__instance];
-            if (machine != null)
+            if (CompMachine.cachedMachines.ContainsKey(__instance))
             {
-                pawn = CompMachine.cachedPawns[machine];
-                if (machine.turretAttached != null)
-                    replaced = true;
-                else
-                    replaced = false;
-                return !replaced;
+                machine = CompMachine.cachedMachines[__instance];
+                if (machine != null)
+                {
+                    pawn = CompMachine.cachedPawns[machine];
+                    if (machine.turretAttached != null)
+                        replaced = true;
+                    else
+                        replaced = false;
+                    return !replaced;
+                }
             }
             replaced = false;
             return true;
