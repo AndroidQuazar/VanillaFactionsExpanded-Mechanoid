@@ -135,7 +135,7 @@ namespace VFE.Mechanoids
                     defaultDesc = "VFEMechAttachTurretDesc".Translate(),
                     action = delegate {
                         List<FloatMenuOption> options = new List<FloatMenuOption>();
-                        foreach(ThingDef thing in DefDatabase<ThingDef>.AllDefs.Where(t=>t.building!=null&&t.building.turretGunDef!=null&&t.costList!=null))
+                        foreach(ThingDef thing in DefDatabase<ThingDef>.AllDefs.Where(t=>t.building!=null&&t.building.turretGunDef!=null&&t.costList!=null&&t.GetCompProperties<CompProperties_Mannable>()==null&&t.size.x<=3&&t.size.z<=3))
                         {
                             FloatMenuOption opt = new FloatMenuOption(thing.label, delegate
                             {

@@ -15,6 +15,9 @@ namespace VFE.Mechanoids
         public float turretAngle = 0f; //Purely cosmetic, don't need to save it
         public float turretAnglePerFrame = 0.1f;
 
+        public static Dictionary<PawnRenderer, CompMachine> cachedMachines = new Dictionary<PawnRenderer, CompMachine>();
+        public static Dictionary<CompMachine, Pawn> cachedPawns = new Dictionary<CompMachine, Pawn>();
+
         public override void OnBuildingDestroyed()
         {
             base.OnBuildingDestroyed();
@@ -65,6 +68,20 @@ namespace VFE.Mechanoids
         {
             base.CompTickRare();
             turretAnglePerFrame = Rand.Range(-0.5f, 0.5f);
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            cachedMachines.Add(((Pawn)parent).Drawer.renderer, this);
+            cachedPawns.Add(this, (Pawn)parent);
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            base.PostDeSpawn(map);
+            cachedMachines.Remove(((Pawn)parent).Drawer.renderer);
+            cachedPawns.Remove(this);
         }
     }
 }

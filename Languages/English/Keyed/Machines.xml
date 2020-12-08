@@ -19,5 +19,8 @@
   <VFEMechStopMachineDesc>Stop this machine's progress and force it to return to base.</VFEMechStopMachineDesc>
   <VFEMechStartMachine>Start machine</VFEMechStartMachine>
   <VFEMechStartMachineDesc>Start this machine.</VFEMechStartMachineDesc>
+  <VFEMechMachineHitObstacle>Machine has run into an obstacle!</VFEMechMachineHitObstacle>
+  <VFEMechSetArea>Set area</VFEMechSetArea>
+  <VFEMechSetAreaDesc>Set the allowed area for all of this platform's associated machines.</VFEMechSetAreaDesc>
   
 </LanguageData>

@@ -24,6 +24,8 @@ namespace VFE.Mechanoids.Buildings
 
         Sustainer sustainer;
 
+        static CompPowerTrader powerComp = null;
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             List<Gizmo> gizmos = new List<Gizmo>();
@@ -83,7 +85,6 @@ namespace VFE.Mechanoids.Buildings
         {
             base.Tick();
 
-            CompPowerTrader powerComp = this.TryGetComp<CompPowerTrader>();
             if (powerComp.PowerOn)
             {
                 if (running)
@@ -222,6 +223,12 @@ namespace VFE.Mechanoids.Buildings
                 sustainer.End();
             SoundInfo soundInfo = SoundInfo.InMap(this);
             sustainer = SoundDef.Named("GeothermalPlant_Ambience").TrySpawnSustainer(soundInfo);
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            powerComp = this.TryGetComp<CompPowerTrader>();
         }
     }
 }

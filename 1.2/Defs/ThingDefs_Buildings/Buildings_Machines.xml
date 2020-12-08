@@ -504,6 +504,7 @@
     </researchPrerequisites>
 	<drawerType>RealtimeOnly</drawerType>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+	<drawOffscreen>true</drawOffscreen>
   </ThingDef>
   
   <ThingDef ParentName="BuildingBase">
@@ -566,5 +567,6 @@
     </researchPrerequisites>
 	<drawerType>RealtimeOnly</drawerType>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+	<drawOffscreen>true</drawOffscreen>
   </ThingDef>
 </Defs>

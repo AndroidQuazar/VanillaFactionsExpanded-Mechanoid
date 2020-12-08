@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   
-  <ThingDef ParentName="BaseMechanoid">
+  <ThingDef ParentName="BaseMechanoid" Name="BaseVFEMachine" Abstract="True">
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Autocleaner</defName>
     <label>autocleaner</label>
     <description>A medium speed, simple-minded, wheeled drone with large scrubbers and an intricate vacuum chamber system. When used in tandem the aforementioned tools result in a drone capable of quickly cleaning up a range of messes, be they wet or dry. Waste collected during cleaning is incinerated within shortly after while the drone is charging.</description>
@@ -72,7 +75,7 @@
     </lifeStages>
   </PawnKindDef>
   
-  <ThingDef ParentName="BaseMechanoid">
+  <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Autohauler</defName>
     <label>autohauler</label>
     <description>A multi-wheeled, simple-minded drone capable of lifting many times its weight with a hydraulic claw, while slow to move it is quite energy efficient compared to most drones.</description>
@@ -144,7 +147,7 @@
     </lifeStages>
   </PawnKindDef>
 
-  <ThingDef ParentName="BaseMechanoid">
+  <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Autominer</defName>
     <label>autominer</label>
     <description>A fortified, treaded machine with an oversized drill arm and a series of shovel units. This unit moves fast and is able to swiftly cut through rock and stone alike, however its battery life leaves something to be desired. Mined material is not hauled.</description>
@@ -216,7 +219,7 @@
     </lifeStages>
   </PawnKindDef>
 
-  <ThingDef ParentName="BaseMechanoid">
+  <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Combat</defName>
     <label>combat mechanoid</label>
     <description>Needs description.</description>
@@ -289,7 +292,7 @@
     </lifeStages>
   </PawnKindDef>
   
-  <ThingDef ParentName="BaseMechanoid">
+  <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Riot</defName>
     <label>riot mechanoid</label>
     <description>Needs description.</description>
@@ -362,7 +365,7 @@
     </lifeStages>
   </PawnKindDef>
   
-  <ThingDef ParentName="BaseMechanoid">
+  <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Turret</defName>
     <label>mobile turret</label>
     <description>Needs description.</description>
