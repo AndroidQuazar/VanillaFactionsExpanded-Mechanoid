@@ -9,10 +9,10 @@
     </arriveModes>
     <selectionWeightPerPointsCurve>
       <points>
-        <li>(300,  0)</li>
-        <li>(700,  2)</li>
-        <li>(1400, 3)</li>
-        <li>(2800, 5)</li>
+        <li>(700,  0)</li>
+	<li>(900,  1)</li>
+        <li>(1400, 2)</li>
+        <li>(2800, 4)</li>
       </points>
     </selectionWeightPerPointsCurve>
     <letterLabelEnemy>Mechanoid ship</letterLabelEnemy>
