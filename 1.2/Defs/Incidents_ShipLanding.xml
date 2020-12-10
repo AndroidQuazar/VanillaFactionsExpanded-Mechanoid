@@ -12,7 +12,7 @@
     </targetTags>
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>0.3</baseChance>
-    <minRefireDays>15</minRefireDays>
+    <minRefireDays>0</minRefireDays>
     <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Frigate</letterLabel>
     <letterText>{0} sent a new ship to land on the planet.\n\nA small ship often used for ground recon operations. It has minimal defenses. When destroyed, mechanoid presence on the surface will be lowered.\n\nIf it's left operational, it will contribute to the size of mechanoid attack parties.</letterText>
@@ -100,7 +100,7 @@
     </targetTags>
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>0.02</baseChance>
-    <minRefireDays>60</minRefireDays>
+    <minRefireDays>120</minRefireDays>
         <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Carrier</letterLabel>
     <letterText>{0} sent a new ship to land on the planet.\n\nCarrier is the biggest ship in the mechanoid hive, heavily defended and with numerous means of producing new, combat-ready mechanoid units. When destroyed, mechanoid presence on the surface will be lowered.\n\nIf it's left operational, it will contribute to the size of mechanoid attack parties.</letterText>
