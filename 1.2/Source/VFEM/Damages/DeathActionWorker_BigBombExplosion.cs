@@ -16,8 +16,7 @@ namespace VFEMech
 
 		public override void PawnDied(Corpse corpse)
 		{
-			GenExplosion.DoExplosion(radius: (corpse.InnerPawn.ageTracker.CurLifeStageIndex == 0) ? 1.9f : ((corpse.InnerPawn.ageTracker.CurLifeStageIndex != 1) ? 4.9f : 2.9f), 
-				center: corpse.Position, map: corpse.Map, damType: DamageDefOf.Bomb, instigator: corpse.InnerPawn);
+			GenExplosion.DoExplosion(radius: 4f, center: corpse.Position, map: corpse.Map, damType: DamageDefOf.Bomb, instigator: corpse.InnerPawn);
 		}
 	}
 }
