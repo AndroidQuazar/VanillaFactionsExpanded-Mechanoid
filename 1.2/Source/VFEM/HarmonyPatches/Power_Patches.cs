@@ -90,7 +90,7 @@ namespace VFEMech
 	{
 		public static void Postfix(CompPowerTrader __instance)
 		{
-			if (__instance.parent.def == VFEMDefOf.VFE_ConduitPylon)
+			if (__instance.parent.def == VFEMDefOf.VFE_ConduitPylon && __instance.parent.Map != null)
 			{
 				var transmitter = __instance.parent.Position.GetTransmitter(__instance.parent.Map);
 				CompPower powerComp = transmitter.PowerComp;
