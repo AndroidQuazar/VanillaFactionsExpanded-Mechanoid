@@ -24,7 +24,7 @@ namespace VFEMech
 
 		public string inSignalRemovePawn;
 
-		public float randomChance = 1f;
+		public float recruitChance = 1f;
 
 		public Site site;
 		public override void Notify_QuestSignalReceived(Signal signal)
@@ -43,7 +43,7 @@ namespace VFEMech
 				}
 				foreach (var p in recruitCandidatePawns)
 				{
-					if (Rand.Chance(randomChance))
+					if (Rand.Chance(recruitChance))
                     {
 						pawnsToRecruit.Add(p);
 					}
@@ -86,7 +86,7 @@ namespace VFEMech
 		{
 			base.ExposeData();
 			Scribe_Values.Look(ref inSignal, "inSignal");
-			Scribe_Values.Look(ref randomChance, "randomChance");
+			Scribe_Values.Look(ref recruitChance, "recruitChance");
 			Scribe_References.Look(ref site, "site");
 			Scribe_Values.Look(ref sendStandardLetter, "sendStandardLetter", defaultValue: true);
 			Scribe_Values.Look(ref leaveOnCleanup, "leaveOnCleanup", defaultValue: false);

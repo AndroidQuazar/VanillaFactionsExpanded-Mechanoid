@@ -140,7 +140,7 @@
 							</li>
 							<li Class="VFEMech.QuestNode_Recruit">
 								<inSignal>site.AllMechsDefeated</inSignal>
-								<randomChance>0.5</randomChance>
+								<recruitChance>0.25</recruitChance>
 							</li>
 						</nodes>
 					</node>

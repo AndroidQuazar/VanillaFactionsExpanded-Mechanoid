@@ -24,7 +24,7 @@ namespace VFEMech
 
 		public SlateRef<bool?> leaveOnCleanup;
 
-		public SlateRef<float?> randomChance;
+		public SlateRef<float?> recruitChance;
 
 		protected override bool TestRunInt(Slate slate)
 		{
@@ -40,7 +40,7 @@ namespace VFEMech
 			questPart_Recruit.sendStandardLetter = (sendStandardLetter.GetValue(slate) ?? questPart_Recruit.sendStandardLetter);
 			questPart_Recruit.leaveOnCleanup = (leaveOnCleanup.GetValue(slate) ?? questPart_Recruit.leaveOnCleanup);
 			questPart_Recruit.inSignalRemovePawn = inSignalRemovePawn.GetValue(slate);
-			questPart_Recruit.randomChance = randomChance.GetValue(slate) ?? questPart_Recruit.randomChance;
+			questPart_Recruit.recruitChance = recruitChance.GetValue(slate) ?? questPart_Recruit.recruitChance;
 			QuestGen.quest.AddPart(questPart_Recruit);
 		}
 	}
