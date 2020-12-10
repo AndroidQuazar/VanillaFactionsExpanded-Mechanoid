@@ -216,7 +216,7 @@
 					<naturallGoodwillForAllFactions>-100~-100</naturallGoodwillForAllFactions>
 					<disableThreatsAtPopulationCount>1</disableThreatsAtPopulationCount>
 					<allDamagesMultiplier>2</allDamagesMultiplier>
-					<raidWarningRange>60~80</raidWarningRange>
+					<raidWarningRange>30000</raidWarningRange>
 					<goodIncidents>
 						<li>ResourcePodCrash</li>
 						<li>PsychicSoothe</li>
