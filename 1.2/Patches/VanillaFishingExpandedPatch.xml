@@ -295,7 +295,10 @@
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-						<ItemProcessor.CombinationDef>
+						
+						<!--WAAAAAAY too much money!-->
+						
+						<!--<ItemProcessor.CombinationDef>
 							<defName>VFEM_AquaponicsBasin_Goldfish</defName>
 							<building>VFEM_AquaponicsBasin</building>
 							<items>
@@ -313,7 +316,7 @@
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
-						</ItemProcessor.CombinationDef>
+						</ItemProcessor.CombinationDef>-->
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_AquaponicsBasin_Guppy</defName>
 							<building>VFEM_AquaponicsBasin</building>
