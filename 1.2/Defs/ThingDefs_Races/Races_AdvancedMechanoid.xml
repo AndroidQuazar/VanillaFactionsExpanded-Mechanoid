@@ -37,7 +37,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoid">
 		<defName>VFE_Mech_AdvancedCentipede</defName>
 		<label>advanced centipede</label>
-		<description>An even heavier, more armored version of the Centipede mechanoid propelled by hundreds of tiny legs as well . Unlike their more ancient and less advanced relatives this particular unit is much more intelligent and will seek cover before attempting to break lines of defense.</description>
+		<description>An even heavier, more armored version of the Centipede mechanoid propelled by hundreds of tiny legs as well. Unlike their more ancient and less advanced relatives this particular unit is much more intelligent and will seek cover before attempting to break lines of defense.</description>
 		<statBases>
 			<MoveSpeed>2.1</MoveSpeed>
 			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>

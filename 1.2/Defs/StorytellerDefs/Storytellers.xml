@@ -4,7 +4,7 @@
 	<StorytellerDef ParentName="BaseStoryteller">
 		<defName>VFEMech-IgorInvader</defName>
 		<label>Igor Invader</label>
-		<description>Igor Invader holds no regard for boring stories about thriving colonies. The only story worth telling is the one of combat. He will send raids every two or three days, rewarding players for dealing with them swiftly, and punishing player for any losses. This storyteller doubles all damage types.</description>
+		<description>Igor Invader holds no regard for boring stories about thriving colonies. The only story worth telling is the one of combat. He will send raids every two or three days, rewarding players for dealing with them swiftly, and punishing player for any losses. This storyteller doubles all damage types, but also warns you about upcoming raids 12 hours before they happen.</description>
 		<portraitLarge>UI/HeroArt/Storytellers/IgorInvader</portraitLarge>
 		<portraitTiny>UI/HeroArt/Storytellers/IgorInvaderTiny</portraitTiny>
 		<listOrder>95</listOrder>
