@@ -90,7 +90,7 @@
 		<costList>
 			<Steel>450</Steel>
 			<ComponentIndustrial>10</ComponentIndustrial>
-			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+			<VFE_ComponentMechanoid>3</VFE_ComponentMechanoid>
 		</costList>
 		<building>
 			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
