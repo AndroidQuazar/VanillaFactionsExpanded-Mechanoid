@@ -225,7 +225,7 @@
   <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Combat</defName>
     <label>combat mechanoid</label>
-    <description>A simple minded ranged combat drone slightly smaller than a normal human. Patrols designated areas analyzing for nearby threats and will autonomously engage them..</description>
+    <description>A simple minded ranged combat drone slightly smaller than a normal human. Patrols designated areas analyzing for nearby threats and will autonomously engage them.</description>
     <statBases>
       <MoveSpeed>1.9</MoveSpeed>
       <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
@@ -299,7 +299,7 @@
   <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Riot</defName>
     <label>riot mechanoid</label>
-    <description>A simple minded melee combat drone slightly smaller than a normal human. Patrols designated areas analyzing for nearby threats and will autonomously engage them..</description>
+    <description>A simple minded melee combat drone slightly smaller than a normal human. Patrols designated areas analyzing for nearby threats and will autonomously engage them.</description>
     <statBases>
       <MoveSpeed>1.9</MoveSpeed>
       <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
