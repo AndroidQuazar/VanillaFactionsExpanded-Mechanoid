@@ -95,6 +95,7 @@
     <Compile Include="JobDrivers\JobDriver_Recharge.cs" />
     <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
     <Compile Include="JobDrivers\JobDriver_RepairMachine.cs" />
+    <Compile Include="JobGivers\ThinkNode_ConditionalHasPower.cs" />
     <Compile Include="JobGivers\JobGiver_Recharge.cs" />
     <Compile Include="JobGivers\JobGiver_ReturnToStation.cs" />
     <Compile Include="JobGivers\JobGiver_ReturnToStationIdle.cs" />

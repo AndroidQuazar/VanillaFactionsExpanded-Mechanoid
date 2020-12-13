@@ -8,12 +8,12 @@ using Verse;
 using Verse.AI;
 using VFE.Mechanoids;
 using VFE.Mechanoids.Needs;
+using VFEMech;
 
 namespace VFE.Mechanoids.AI.JobGivers
 {
 	public class JobGiver_Recharge : ThinkNode_JobGiver
 	{
-		public static JobDef Recharge => DefDatabase<JobDef>.GetNamed("VFE_Mechanoids_Recharge");
 
 		private RestCategory minCategory=RestCategory.VeryTired;
 
@@ -50,9 +50,24 @@ namespace VFE.Mechanoids.AI.JobGivers
 			Need_Power power = pawn.needs.TryGetNeed<Need_Power>();
 			if (power == null || power.CurLevelPercentage > maxLevelPercentage)
 				return null;
-			if (pawn.CurJobDef != Recharge && power.CurCategory <= minCategory)
+			if (pawn.CurJobDef != VFEMDefOf.VFE_Mechanoids_Recharge && power.CurCategory <= minCategory)
 				return null;
-			return JobMaker.MakeJob(Recharge, pawn.TryGetComp<CompMachine>().myBuilding);
+			var building = pawn.TryGetComp<CompMachine>().myBuilding;
+			if (building.TryGetComp<CompPowerTrader>().PowerOn)
+            {
+				return JobMaker.MakeJob(VFEMDefOf.VFE_Mechanoids_Recharge, building);
+			}
+			else
+            {
+				if (pawn.Position != building.Position)
+                {
+					return JobMaker.MakeJob(VFEMDefOf.VFE_Mechanoids_Recharge, building);
+				}
+				else
+                {
+					return JobMaker.MakeJob(JobDefOf.Wait, 60);
+				}
+			}
 		}
 	}
 }

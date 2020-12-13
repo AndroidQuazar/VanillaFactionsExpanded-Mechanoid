@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using VFE.Mechanoids.Needs;
 using VFECore;
 
 namespace VFE.Mechanoids
@@ -75,6 +76,11 @@ namespace VFE.Mechanoids
             base.PostSpawnSetup(respawningAfterLoad);
             cachedMachines.Add(((Pawn)parent).Drawer.renderer, this);
             cachedPawns.Add(this, (Pawn)parent);
+            var machine = this.parent as Pawn;
+            if (!respawningAfterLoad)
+            {
+                machine.needs.TryGetNeed<Need_Power>().CurLevel = 0;
+            }
         }
 
         public override void PostDeSpawn(Map map)

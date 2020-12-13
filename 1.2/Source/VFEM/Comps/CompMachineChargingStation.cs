@@ -133,9 +133,23 @@ namespace VFE.Mechanoids
                 {
                     defaultLabel = "VFEMechAttachTurret".Translate(),
                     defaultDesc = "VFEMechAttachTurretDesc".Translate(),
+                    icon = ContentFinder<Texture2D>.Get("UI/AttachTurret"),
                     action = delegate {
                         List<FloatMenuOption> options = new List<FloatMenuOption>();
-                        foreach(ThingDef thing in DefDatabase<ThingDef>.AllDefs.Where(t=>t.building!=null&&t.building.turretGunDef!=null&&t.costList!=null&&t.GetCompProperties<CompProperties_Mannable>()==null&&t.size.x<=3&&t.size.z<=3))
+                        foreach (var b in Props.blackListTurretGuns)
+                        {
+                            Log.Message("Blacklist: " + b);
+                        }
+                        foreach(ThingDef thing in DefDatabase<ThingDef>.AllDefs.Where(t=>
+                        !Props.blackListTurretGuns.Contains(t.defName)
+                        &&t.building!=null
+                        &&t.building.turretGunDef!=null
+                        &&t.costList!=null
+                        &&t.GetCompProperties<CompProperties_Mannable>()==null
+                        &&t.size.x<=3
+                        &&t.size.z<=3
+                        
+                        ))
                         {
                             FloatMenuOption opt = new FloatMenuOption(thing.label, delegate
                             {
