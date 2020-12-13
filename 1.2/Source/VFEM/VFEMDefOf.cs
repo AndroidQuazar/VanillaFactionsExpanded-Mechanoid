@@ -31,5 +31,8 @@ namespace VFEMech
         public static SoundDef VFE_LongRangeMissile_Launch;
         public static SoundDef VFE_LongRangeMissile_Incoming;
         public static SoundDef VFE_LongRangeMissile_ExplosionOnMap;
+
+        public static JobDef VFE_Mechanoids_Recharge;
+
     }
 }

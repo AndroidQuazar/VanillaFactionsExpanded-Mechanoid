@@ -23,7 +23,6 @@ namespace VFEMech
 				var trap = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, traps, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
 				if (trap != null)
                 {
-					Log.Message(pawn + " deconstructs " + trap);
 					return JobMaker.MakeJob(VFEMDefOf.VFEM_Disassemble, trap);
                 }
             }
@@ -34,7 +33,6 @@ namespace VFEMech
 				var turret = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, turrets, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
 				if (turret != null)
 				{
-					Log.Message(pawn + " deconstructs " + turret);
 					return JobMaker.MakeJob(VFEMDefOf.VFEM_Disassemble, turret);
 				}
 			}
@@ -45,7 +43,6 @@ namespace VFEMech
 				var powerGenerator = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, powerGenerators, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
 				if (powerGenerator != null)
 				{
-					Log.Message(pawn + " deconstructs " + powerGenerator);
 					return JobMaker.MakeJob(VFEMDefOf.VFEM_Disassemble, powerGenerator);
 				}
 			}
@@ -56,7 +53,6 @@ namespace VFEMech
 				var wall = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, walls, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassAllDestroyableThings), radius, validator);
 				if (wall != null)
 				{
-					Log.Message(pawn + " deconstructs " + wall);
 					return JobMaker.MakeJob(VFEMDefOf.VFEM_Disassemble, wall);
 				}
 			}

@@ -14,9 +14,10 @@ namespace VFE.Mechanoids.Buildings
         {
             get
             {
-                if(this.TryGetComp<CompMachineChargingStation>()?.myPawn?.Position==this.Position)
+                Pawn pawn = this.TryGetComp<CompMachineChargingStation>()?.myPawn;
+                if (pawn?.Position == this.Position)
                 {
-                    return this.TryGetComp<CompMachineChargingStation>().myPawn;
+                    return pawn;
                 }
                 return null;
             }
