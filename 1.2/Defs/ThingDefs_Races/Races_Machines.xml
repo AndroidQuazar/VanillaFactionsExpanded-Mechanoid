@@ -79,7 +79,7 @@
   <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Autohauler</defName>
     <label>autohauler</label>
-    <description>A multi-wheeled, simple-minded drone capable of lifting many times its weight with a hydraulic claw, while slow to move it is quite energy efficient compared to most drones.</description>
+    <description>A treaded, simple-minded drone capable of lifting many times its weight with a hydraulic claw, while slow to move it is quite energy efficient compared to most drones.</description>
     <statBases>
       <MoveSpeed>1.9</MoveSpeed>
       <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
@@ -152,7 +152,7 @@
   <ThingDef ParentName="BaseVFEMachine">
     <defName>VFE_Mechanoids_Autominer</defName>
     <label>autominer</label>
-    <description>A fortified, treaded machine with an oversized drill arm and a series of shovel units. This unit moves fast and is able to swiftly cut through rock and stone alike, however its battery life leaves something to be desired. Mined material is not hauled.</description>
+    <description>A fortified, four-wheeled machine with an oversized drill arm and a series of shovel units. This unit moves fast and is able to swiftly cut through rock and stone alike, however its battery life leaves something to be desired. Mined material is not hauled.</description>
     <statBases>
       <MoveSpeed>1.9</MoveSpeed>
       <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
