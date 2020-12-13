@@ -357,25 +357,6 @@
       </li>
     </subSounds>
   </SoundDef>
-
-<SoundDef>
-    <defName>MechanoidFactoryHighTechAmbiance</defName>
-    <sustain>True</sustain>
-    <context>MapOnly</context>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <muteWhenPaused>True</muteWhenPaused>
-        <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>Buildings/MechanoidFactoryHighTech</clipPath>
-          </li>
-        </grains>
-        <volumeRange>25</volumeRange>
-        <distRange>10~30</distRange>
-      </li>
-    </subSounds>
-  </SoundDef>
   
   
   
