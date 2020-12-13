@@ -472,6 +472,14 @@ namespace VFEMech
             WorldObject worldObject = Find.World.worldObjects.WorldObjectAt<WorldObject>(this.destinationTile);
             if (worldObject is MapParent mp && mp.HasMap)
             {
+                List<Thing> at = mp.Map.thingGrid.ThingsListAt(mp.Map.Center);
+                for (int i = 0; i < at.Count; i++)
+                {
+                    Thing thing = at[i];
+                    if (thing.def.IsEdifice())
+                        thing.Destroy();
+                }
+
                 GenSpawn.Spawn(SkyfallerMaker.MakeSkyfaller(VFEMDefOf.VFEM_MissileIncoming), mp.Map.Center, mp.Map);
             }
             else
@@ -480,6 +488,10 @@ namespace VFEMech
                 worldObject?.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -200);
                 VFEMDefOf.VFE_LongRangeMissile_ExplosionFar.PlayOneShot(SoundInfo.OnCamera());
                 worldObject?.Destroy();
+                Find.World.grid.StandardizeTileData();
+                Find.World.pathGrid.RecalculateAllPerceivedPathCosts();
+                Find.World.pathGrid.RecalculatePerceivedMovementDifficultyAt(this.destinationTile);
+                Find.World.renderer.SetDirty<WorldLayer_Hills>();
             }
             this.Destroy();
         }
@@ -621,6 +633,10 @@ namespace VFEMech
             this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerQuadrum);
             this.Map.TileInfo.hilliness = Hilliness.Impassable;
 
+            Find.World.grid.StandardizeTileData();
+            Find.World.pathGrid.RecalculateAllPerceivedPathCosts();
+            Find.World.pathGrid.RecalculatePerceivedMovementDifficultyAt(this.Map.Tile);
+            Find.World.renderer.SetDirty<WorldLayer_Hills>();
 
             this.Destroy();
         }
