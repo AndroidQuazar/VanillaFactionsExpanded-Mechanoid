@@ -24,7 +24,7 @@ namespace VFE.Mechanoids.Buildings
 
         Sustainer sustainer;
 
-        static CompPowerTrader powerComp = null;
+        private CompPowerTrader powerComp = null;
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
@@ -90,7 +90,7 @@ namespace VFE.Mechanoids.Buildings
                 if (running)
                 {
                     sustainer.Maintain();
-                    powerComp.powerOutputInt = -powerComp.Props.basePowerConsumption-2300;
+                    powerComp.powerOutputInt = -1900;
                     bool shouldCheck = false;
                     if (offset == 0)
                         shouldCheck = true;
