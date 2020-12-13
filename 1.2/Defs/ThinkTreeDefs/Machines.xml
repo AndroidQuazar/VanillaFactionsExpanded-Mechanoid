@@ -71,7 +71,7 @@
 							<tagToGive>Idle</tagToGive>
 							<subNodes>              
 								<!-- Wander -->
-								<li Class="JobGiver_WanderAnywhere">
+								<li Class="JobGiver_WanderColony">
 									<maxDanger>None</maxDanger>
 								</li>
 							</subNodes>
