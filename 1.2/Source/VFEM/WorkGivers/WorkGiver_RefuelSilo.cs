@@ -23,15 +23,14 @@ namespace VFEMech
         {
             Job job = JobMaker.MakeJob(VFEMDefOf.VFEM_RefuelSilo, t);
 
-            MissileSilo silo = t as MissileSilo;
-            if (silo == null)
-                return null;
+            if (!(t is MissileSilo silo))
+                return JobMaker.MakeJob(JobDefOf.Vomit);
             List<ThingDef> defs = silo.ThingsNeeded;
-            IEnumerable<LocalTargetInfo> localTargetInfos = FindEnoughReservableThings(pawn, t.Position, th => defs.Contains(th.def)).
+            IEnumerable<LocalTargetInfo> localTargetInfos = FindEnoughReservableThings(pawn, pawn.Position, th => defs.Contains(th.def)).
                 Select(th => new LocalTargetInfo(th));
 
             if (!localTargetInfos.Any())
-                return null;
+                return JobMaker.MakeJob(JobDefOf.Vomit);
 
 
 
