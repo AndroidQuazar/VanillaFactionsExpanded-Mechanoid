@@ -19,9 +19,7 @@
               <tagToGive>Idle</tagToGive>
               <subNodes>              
                 <!-- Wander -->
-                <li Class="JobGiver_WanderColony">
-                  <maxDanger>None</maxDanger>
-                </li>
+				<li Class="VFE.Mechanoids.AI.JobGivers.JobGiver_ReturnToStationIdle"/>
               </subNodes>
             </li>
           </subNodes>
@@ -68,7 +66,7 @@
                 <!-- Wander -->
                 <li Class="JobGiver_WanderColony">
                   <maxDanger>None</maxDanger>
-                </li>
+				</li>
               </subNodes>
             </li>
           </subNodes>

@@ -72,6 +72,7 @@
     <Compile Include="Mechanoids\AI\JobDrivers\JobDriver_AttachTurret.cs" />
     <Compile Include="Mechanoids\AI\JobDrivers\JobDriver_Recharge.cs" />
     <Compile Include="Mechanoids\AI\JobDrivers\JobDriver_RepairMachine.cs" />
+    <Compile Include="Mechanoids\AI\JobGivers\JobGiver_ReturnToStationIdle.cs" />
     <Compile Include="Mechanoids\AI\JobGivers\JobGiver_ReturnToStation.cs" />
     <Compile Include="Mechanoids\AI\JobGivers\JobGiver_Recharge.cs" />
     <Compile Include="Mechanoids\AI\WorkGivers\WorkGiver_AttachTurret.cs" />
