@@ -35,38 +35,15 @@ namespace VFE.Mechanoids.HarmonyPatches
         }
     }
 
-
-    [HarmonyPatch(typeof(ForbidUtility), "CaresAboutForbidden")]
-    public static class CaresAboutForbidden_Patch
-    {
-        public static void Postfix(bool __result, Pawn pawn, bool cellTarget)
-        {
-            if (!__result)
-            {
-            }
-        }
-    }
-
     [HarmonyPatch(typeof(WanderUtility), "GetColonyWanderRoot")]
     public static class GetColonyWanderRoot_Patch
-    {
-        public static void Postfix(IntVec3 __result, Pawn pawn)
-        {
-            if (pawn.RaceProps.IsMechanoid)
-            {
-                pawn.Map.debugDrawer.FlashCell(__result);
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(RCellFinder), "RandomWanderDestFor")]
-    public static class RandomWanderDestFor_Patch
     {
         public static void Postfix(ref IntVec3 __result, Pawn pawn, IntVec3 root, float radius, Func<Pawn, IntVec3, IntVec3, bool> validator, Danger maxDanger)
         {
             if (pawn.RaceProps.IsMechanoid && pawn.Faction == Faction.OfPlayer && __result.IsForbidden(pawn) && pawn.playerSettings.AreaRestriction.ActiveCells.Count() > 0)
             {
-                __result = pawn.playerSettings.AreaRestriction.ActiveCells.OrderBy(x => x.DistanceTo(pawn.Position)).Take(10).RandomElement();
+                __result = pawn.playerSettings.AreaRestriction.ActiveCells.OrderBy(x => x.DistanceTo(pawn.Position))
+                    .Where(x => x.Walkable(pawn.Map) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.Deadly)).Take(10).RandomElement();
             }
         }
     }
