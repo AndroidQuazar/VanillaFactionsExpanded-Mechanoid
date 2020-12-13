@@ -697,7 +697,6 @@
         <wickTicks>240</wickTicks>
         <explosiveRadius>12</explosiveRadius>
         <explosiveDamageType>Bomb</explosiveDamageType>
-        <chanceNeverExplodeFromDamage>0.01</chanceNeverExplodeFromDamage>
       </li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
