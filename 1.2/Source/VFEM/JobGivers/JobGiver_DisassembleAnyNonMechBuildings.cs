@@ -27,6 +27,12 @@ namespace VFEMech
 					}
 				}
 			}
+			else
+            {
+				Job job = JobMaker.MakeJob(JobDefOf.LayDown, pawn.Position);
+				job.forceSleep = true;
+				return job;
+			}
 			return null;
 		}
 	}
