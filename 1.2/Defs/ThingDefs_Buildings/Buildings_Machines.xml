@@ -435,8 +435,12 @@
 		<turret>true</turret>
 		<hoursToRecharge>24</hoursToRecharge>
 		<blackListTurretGuns>
-			<li>Gun_MiniTurret</li>
-			<li>Gun_TurretSniper</li>
+			<li>HEL_Laser</li>
+			<li>Tesla_Coil_Arc_Discharger</li>
+			<li>ADS_Dish</li>
+			<li>Railgun_Cannon</li>
+			<li>Obelisk_Laser</li>
+			<li>Marauder_Railgun</li>		
 		</blackListTurretGuns>
 	  </li>
     </comps>
