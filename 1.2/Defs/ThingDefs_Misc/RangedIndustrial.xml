@@ -44,7 +44,6 @@
       <li>IndustrialGunCombatMechanoid</li>
     </weaponTags>
     <thingCategories Inherit='False' />
-    <weaponTags Inherit='False' />
     <tools>
       <li>
         <label>stock</label>
