@@ -19,7 +19,12 @@ namespace VFE.Mechanoids.AI.JobGivers
 			{
 				return JobMaker.MakeJob(JobDefOf.Goto, buildingPosition);
 			}
-			else return JobMaker.MakeJob(JobDefOf.Wait, 60);
+			else
+            {
+				pawn.Rotation = Rot4.South;
+				return JobMaker.MakeJob(JobDefOf.Wait, 60);
+			}
+
 		}
 	}
 }

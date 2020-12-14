@@ -65,6 +65,7 @@ namespace VFE.Mechanoids.AI.JobGivers
 				}
 				else
                 {
+					pawn.Rotation = Rot4.South;
 					return JobMaker.MakeJob(JobDefOf.Wait, 60);
 				}
 			}
