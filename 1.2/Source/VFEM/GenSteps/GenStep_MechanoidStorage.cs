@@ -54,7 +54,6 @@ namespace VFEMech
 
 				foreach (var t in list)
 			    {
-					Log.Message(t + " - " + t.MarketValue);
 					GenPlace.TryPlaceThing(t, spawnCenter, map, ThingPlaceMode.Near);
 			    }
 

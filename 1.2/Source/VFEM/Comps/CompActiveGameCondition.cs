@@ -23,18 +23,25 @@ namespace VFEMech
 		public GameConditionDef ConditionDef => Props.conditionDef;
 
 		public GameCondition gameCondition;
-		public override void CompTick()
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+			if (this.gameCondition == null && this.parent?.Map != null)
+			{
+				this.gameCondition = CreateConditionOn(this.parent.Map);
+			}
+		}
+        public override void CompTick()
 		{
 			if (this.gameCondition == null && this.parent?.Map != null)
             {
-
 				this.gameCondition = CreateConditionOn(this.parent.Map);
             }
 		}
 
 		protected GameCondition CreateConditionOn(Map map)
 		{
-			Log.Message("Creating " + ConditionDef);
 			GameCondition gameCondition = GameConditionMaker.MakeCondition(ConditionDef);
 			gameCondition.Permanent = true;
 			gameCondition.conditionCauser = parent;

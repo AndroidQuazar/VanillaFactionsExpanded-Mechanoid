@@ -21,7 +21,6 @@ namespace VFEMech
 			do
 			{
 				thingDef = RandomMechanoidStorageContentsDef();
-				Log.Message(num + " - " + thingDef + " - " + parms.totalMarketValueRange);
 				Thing thing = ThingMaker.MakeThing(thingDef);
 				int num2 = Rand.Range(20, 75);
 				if (num2 > thing.def.stackLimit)

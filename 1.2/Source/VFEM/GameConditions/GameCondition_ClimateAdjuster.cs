@@ -13,10 +13,9 @@ namespace VFEMech
 		public float currentOffset = -20f;
 		public override float TemperatureOffset()
 		{
-			Log.Message("TEST: " + currentOffset);
-			return GameConditionUtility.LerpInOutValue(this, GenDate.TicksPerDay, currentOffset);
+			return GameConditionUtility.LerpInOutValue(this, TransitionTicks, currentOffset);
 		}
-
+        public override int TransitionTicks => 6000;
         public override void GameConditionTick()
         {
             base.GameConditionTick();

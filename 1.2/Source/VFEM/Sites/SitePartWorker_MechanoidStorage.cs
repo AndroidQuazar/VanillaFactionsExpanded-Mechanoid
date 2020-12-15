@@ -36,7 +36,6 @@ namespace VFEMech
             {
                 float x = slate.Get("points", 0f);
                 ThingSetMakerParams parms = default(ThingSetMakerParams);
-                Log.Message("Points: " + x);
                 parms.totalMarketValueRange = new FloatRange(0.7f, 1.3f) * QuestTuning.PointsToRewardMarketValueCurve.Evaluate(x);
                 list = VFEMDefOf.VFEMech_MechanoidStorageContent.root.Generate(parms);
             }
