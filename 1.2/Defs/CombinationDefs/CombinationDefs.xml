@@ -99,7 +99,8 @@
 			<li>1</li>
 		</amount>
 		<result>Chemfuel</result>	
-		<yield>10</yield>
+		<isButcheryRecipe>true</isButcheryRecipe>
+		<efficiency>0.5</efficiency>
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>1000</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
