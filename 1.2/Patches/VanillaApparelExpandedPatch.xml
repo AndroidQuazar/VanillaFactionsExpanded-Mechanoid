@@ -32,7 +32,7 @@
 							<resultStuff>Cloth</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Apron</defName>
@@ -48,7 +48,7 @@
 							<resultStuff>Leather_Patch</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Hoodie</defName>
@@ -64,7 +64,7 @@
 							<resultStuff>Cloth</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Hoodie</defName>
@@ -80,7 +80,7 @@
 							<resultStuff>Leather_Patch</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_FleeceShirt</defName>
@@ -96,7 +96,7 @@
 							<resultStuff>Cloth</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_FleeceShirt</defName>
@@ -112,7 +112,7 @@
 							<resultStuff>Leather_Patch</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Jeans</defName>
@@ -128,7 +128,7 @@
 							<resultStuff>Cloth</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Jeans</defName>
@@ -144,7 +144,7 @@
 							<resultStuff>Leather_Patch</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Jumpsuit</defName>
@@ -160,7 +160,7 @@
 							<resultStuff>Cloth</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Jumpsuit</defName>
@@ -176,7 +176,7 @@
 							<resultStuff>Leather_Patch</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 
 
@@ -198,7 +198,7 @@
 							<resultStuff>Synthread</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						
 						<ItemProcessor.CombinationDef>
@@ -219,7 +219,7 @@
 							<resultStuff>Synthread</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						
 						<ItemProcessor.CombinationDef>
@@ -240,7 +240,7 @@
 							<resultStuff>Synthread</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						
 						<ItemProcessor.CombinationDef>
@@ -261,7 +261,7 @@
 							<resultStuff>Synthread</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						
 						<ItemProcessor.CombinationDef>
@@ -282,7 +282,7 @@
 							<resultStuff>Synthread</resultStuff>
 							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 
 
