@@ -19,6 +19,7 @@ namespace VFE.Mechanoids
         public ThingDef turretToInstall = null; //Used to specify a turret to put on the mobile turret
         public Area allowedArea = null;
 
+        public static List<CompMachineChargingStation> cachedChargingStations = new List<CompMachineChargingStation>();
         public new CompProperties_MachineChargingStation Props
         {
             get
@@ -30,6 +31,7 @@ namespace VFE.Mechanoids
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+            cachedChargingStations.Add(this);
             if (!respawningAfterLoad)
                 SpawnMyPawn();
             else
@@ -167,9 +169,18 @@ namespace VFE.Mechanoids
                 {
                     AreaUtility.MakeAllowedAreaListFloatMenu(delegate (Area area)
                     {
-                        this.allowedArea = area;
-                        if (myPawn != null && myPawn.Spawned && !myPawn.Dead)
-                            myPawn.playerSettings.AreaRestriction = area;
+                        foreach (var t in Find.Selector.SelectedObjects)
+                        {
+                            if (t is ThingWithComps thing && thing.TryGetComp<CompMachineChargingStation>() is CompMachineChargingStation comp)
+                            {
+                                comp.allowedArea = area;
+                                if (comp.myPawn != null && comp.myPawn.Spawned && !comp.myPawn.Dead)
+                                {
+                                    comp.myPawn.playerSettings.AreaRestriction = area;
+                                }
+                            }
+                        }
+
                     }, true, true, parent.Map);
                 },
                 icon = ContentFinder<Texture2D>.Get("UI/SelectZone")

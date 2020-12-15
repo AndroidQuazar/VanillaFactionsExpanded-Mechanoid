@@ -11,22 +11,25 @@ namespace VFE.Mechanoids.AI.WorkGivers
 {
     class WorkGiver_AttachTurret : WorkGiver_Scanner
     {
-        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial);
+        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForGroup(ThingRequestGroup.Undefined);
         public override PathEndMode PathEndMode => PathEndMode.Touch;
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            if (t.TryGetComp<CompMachineChargingStation>() == null || t.TryGetComp<CompMachineChargingStation>().turretToInstall==null)
+            var comp = t.TryGetComp<CompMachineChargingStation>();
+            if (comp == null || comp.turretToInstall==null)
                 return false;
-            Pawn myPawn = t.TryGetComp<CompMachineChargingStation>().myPawn;
+
+            Pawn myPawn = comp.myPawn;
             if (myPawn==null || myPawn.Dead || !myPawn.Spawned)
             {
                 JobFailReason.Is("VFEMechNoTurret".Translate());
                 return false;
             }
-            List<ThingDefCountClass> products = t.TryGetComp<CompMachineChargingStation>().turretToInstall.costList;
+            List<ThingDefCountClass> products = comp.turretToInstall.costList;
             foreach (ThingDefCountClass thingNeeded in products)
             {
-                List<Thing> thingsOfThisType = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, t.Position, new IntRange(thingNeeded.count, thingNeeded.count), (Thing thing) => thing.def == thingNeeded.thingDef);
+                List<Thing> thingsOfThisType = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, t.Position, new IntRange(thingNeeded.count, thingNeeded.count),
+                    (Thing thing) => thing.def == thingNeeded.thingDef);
                 if (thingsOfThisType == null)
                 {
                     JobFailReason.Is("VFEMechNoResources".Translate());
@@ -67,6 +70,17 @@ namespace VFE.Mechanoids.AI.WorkGivers
             job.targetQueueB = toGrab.Select((Thing f) => new LocalTargetInfo(f)).ToList();
             job.countQueue = toGrabCount.ToList();
             return job;
+        }
+
+        public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
+        {
+            foreach (CompMachineChargingStation compMachineChargingStation in CompMachineChargingStation.cachedChargingStations)
+            {
+                if (compMachineChargingStation.parent.Map == pawn.Map)
+                {
+                    yield return compMachineChargingStation.parent;
+                }
+            }
         }
     }
 }
