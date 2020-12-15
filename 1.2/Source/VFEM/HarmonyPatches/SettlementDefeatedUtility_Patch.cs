@@ -9,6 +9,7 @@ namespace VFEM.HarmonyPatches
     using VFEMech;
 
     [HarmonyPatch(typeof(SettlementDefeatUtility), "IsDefeated")]
+    [HarmonyAfter("vanillaexpanded.achievements")]
     internal static class SettlementDefeatedUtility_Patch
     {
         [HarmonyPostfix]

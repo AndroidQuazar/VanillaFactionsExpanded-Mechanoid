@@ -126,9 +126,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>
@@ -246,9 +244,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -359,9 +355,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -471,9 +465,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(-2,0,3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -579,9 +571,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -689,9 +679,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
@@ -805,9 +793,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -916,9 +902,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1027,9 +1011,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(-2,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1138,9 +1120,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1250,9 +1230,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>
@@ -1369,9 +1347,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1480,9 +1456,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1592,9 +1566,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,4)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1659,6 +1631,7 @@
 				<cornerBR>Damage/Corner</cornerBR>
 			</damageData>
 		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
 		<castEdgeShadows>false</castEdgeShadows>
 		<staticSunShadowHeight>0</staticSunShadowHeight>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
@@ -1675,6 +1648,7 @@
 			<WorkToBuild>2000</WorkToBuild>
 			<Flammability>1.0</Flammability>
 			<Beauty>-20</Beauty>
+			<Mass>10</Mass>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(3,3)</size>
@@ -1729,7 +1703,9 @@
 				<graphicClass>Graphic_Multi</graphicClass>
 			</blueprintGraphicData>
 		</building>
-
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
 		<researchPrerequisites Inherit='False'>
 			<li>VFE_MasonryandMetallicsFactory</li>
 		</researchPrerequisites>
@@ -1801,9 +1777,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1911,9 +1885,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,3)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<!--<researchPrerequisites>
-			<li>VCE_SoupCooking</li>
-		</researchPrerequisites>-->
+		
 		<comps>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>

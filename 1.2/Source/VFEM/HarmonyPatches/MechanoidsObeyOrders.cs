@@ -35,7 +35,7 @@ namespace VFE.Mechanoids.HarmonyPatches
         }
     }
 
-    [HarmonyPatch(typeof(WanderUtility), "GetColonyWanderRoot")]
+	[HarmonyPatch(typeof(WanderUtility), "GetColonyWanderRoot")]
     public static class GetColonyWanderRoot_Patch
     {
         public static void Postfix(ref IntVec3 __result, Pawn pawn)

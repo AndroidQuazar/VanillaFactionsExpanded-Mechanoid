@@ -30,7 +30,7 @@ namespace VFEMech
 				var2 = new List<CellRect>();
 				MapGenerator.SetVar("UsedRects", var2);
 			}
-			Log.Message(map.ParentFaction + " - " + map + " - " + map.ParentFaction.PlayerRelationKind);
+
 			Faction faction = map.ParentFaction;
 			ResolveParams resolveParams = default(ResolveParams);
 			resolveParams.rect = GetOutpostRect(var, var2, map);
@@ -39,7 +39,6 @@ namespace VFEMech
 			resolveParams.edgeDefenseTurretsCount = Rand.RangeInclusive(0, 1);
 			resolveParams.edgeDefenseMortarsCount = 0;
 			resolveParams.settlementPawnGroupPoints = defaultPawnGroupPointsRange.RandomInRange;
-			Log.Message("resolveParams.settlementPawnGroupPoints: " + resolveParams.settlementPawnGroupPoints);
 			RimWorld.BaseGen.BaseGen.globalSettings.map = map;
 			RimWorld.BaseGen.BaseGen.globalSettings.minBuildings = 1;
 			RimWorld.BaseGen.BaseGen.globalSettings.minBarracks = 1;

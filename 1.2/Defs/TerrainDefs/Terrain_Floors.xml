@@ -34,7 +34,7 @@
     <texturePath>Terrain/Surfaces/FactoryFloor</texturePath>
     <label>factory path</label>
     <renderPrecedence>250</renderPrecedence>
-    <pathCost>1</pathCost>
+    <pathCost>-1</pathCost>
     <designatorDropdown Inherit='False'/>
     <description>A designated, safe to traverse factory path. Increases the movement speed, but needs to be placed on the factory floor.</description>
     <color>(0.369, 0.369, 0.369)</color>

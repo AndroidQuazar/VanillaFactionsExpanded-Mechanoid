@@ -62,7 +62,6 @@ namespace VFEMech
 					letter.pawn = p;
 					letter.quest = quest;
 					letter.lookTargets = new LookTargets(p);
-					Log.Message("Should get " + letter + " - " + p);
 					Find.LetterStack.ReceiveLetter(letter);
 				}
 				//foreach (var pawn in remainingPawns)

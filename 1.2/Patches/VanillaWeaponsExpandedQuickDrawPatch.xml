@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Weapons Expanded - Quickdraw</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_BullpupRifle</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+							<items>
+								<li>Plasteel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentIndustrial</li>
+							</secondItems>
+							<amount>
+								<li>45</li>
+								<li>7</li>
+							</amount>
+							<result>VWE_Gun_BullpupRifle</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_Gun_PDW</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+							<items>
+								<li>Plasteel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentIndustrial</li>
+							</secondItems>
+							<amount>
+								<li>50</li>
+								<li>4</li>
+							</amount>
+							<result>VWE_Gun_PDW</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+
+
+					</value>
+				</li>
+
+
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

@@ -11,11 +11,14 @@ namespace VFEMech
     public class Hediff_MechanoidUplink : HediffWithComps
     {
         public MechanoidUplink mechanoidUplink;
-
         public override void Tick()
         {
             base.Tick();
-            if (this.pawn.Position.DistanceTo(mechanoidUplink.Position) > mechanoidUplink.communicationRadius)
+            if (mechanoidUplink != null && this.pawn.Position.DistanceTo(mechanoidUplink.Position) > mechanoidUplink.communicationRadius)
+            {
+                this.pawn.health.RemoveHediff(this);
+            }
+            if (mechanoidUplink == null)
             {
                 this.pawn.health.RemoveHediff(this);
             }

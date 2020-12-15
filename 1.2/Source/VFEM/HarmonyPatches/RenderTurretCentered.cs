@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using VFEMech;
 
 namespace VFE.Mechanoids.HarmonyPatches
 {
@@ -17,8 +18,6 @@ namespace VFE.Mechanoids.HarmonyPatches
         static bool replaced = false;
         static Pawn pawn;
         static CompMachine machine;
-        static Mesh plane20Flip = MeshMakerPlanes.NewPlaneMesh(2f, flipped: true);
-
         static Vector3 south = new Vector3(0, 0, -0.33f);
         static Vector3 north = new Vector3(0, -1, -0.22f);
         static Vector3 east = new Vector3(0.2f, 0f, -0.22f);
@@ -70,7 +69,7 @@ namespace VFE.Mechanoids.HarmonyPatches
                 }
                 else if (aimAngle > 200f && aimAngle < 340f)
                 {
-                    mesh = plane20Flip;
+                    mesh = MechUtils.plane20Flip;
                     num -= 180f;
                     num -= eq.def.equippedAngleOffset;
                 }
