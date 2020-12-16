@@ -23,7 +23,6 @@ namespace VFEMech
         public static WorldObjectDef VFEM_TravelingMissile;
         public static ThingSetMakerDef VFEMech_MechanoidStorageContent;
         public static LetterDef VFEMech_AcceptVisitors;
-        public static SitePartDef VFE_MechanoidAttackParty;
         public static ThingDef VFE_MechLandingBeacon;
 
         public static SoundDef VFE_LongRangeMissile_ExplosionFar;
@@ -31,6 +30,10 @@ namespace VFEMech
         public static SoundDef VFE_LongRangeMissile_Launch;
         public static SoundDef VFE_LongRangeMissile_Incoming;
         public static SoundDef VFE_LongRangeMissile_ExplosionOnMap;
+
+        public static SitePartDef VFE_MechanoidAttackParty;
+        public static SitePartDef VFE_MechanoidShipLanding;
+        public static SitePartDef VFE_MechanoidStorage;
 
         public static JobDef VFE_Mechanoids_Recharge;
 
