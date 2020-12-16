@@ -82,6 +82,7 @@
     <Compile Include="HarmonyPatches\Explosion_Patch.cs" />
     <Compile Include="HarmonyPatches\MachinesCannotJoinCaravans.cs" />
     <Compile Include="HarmonyPatches\MachinesDie.cs" />
+    <Compile Include="HarmonyPatches\MapExposeData_Patch.cs" />
     <Compile Include="HarmonyPatches\MechanoidsAreCapable.cs" />
     <Compile Include="HarmonyPatches\MechanoidsCanBeDrafted.cs" />
     <Compile Include="HarmonyPatches\MechanoidsDoNotReserveBeds.cs" />
