@@ -1,17 +1,14 @@
 ﻿using KCSG;
 using RimWorld;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using Verse.AI.Group;
 using VFEMech;
 
 namespace VFEM
 {
-    class RaidStrategyWorker_MechShipRaid : RaidStrategyWorker_Siege
+    internal class RaidStrategyWorker_MechShipRaid : RaidStrategyWorker_Siege
     {
         public struct TTIR
         {
@@ -23,7 +20,7 @@ namespace VFEM
 
         public override bool CanUseWith(IncidentParms parms, PawnGroupKindDef groupKind)
         {
-            return parms.points >= this.MinimumPoints(parms.faction, groupKind) && parms.faction.def.defName == "VFE_Mechanoid" && MechUtils.MechPresence() > 0 && this.FindRect((Map)parms.target) != IntVec3.Invalid;
+            return parms.points >= this.MinimumPoints(parms.faction, groupKind) && parms.faction.def.defName == "VFE_Mechanoid" && MechUtils.MechPresence() > 0 && this.FindRect((Map)parms.target, 50) != IntVec3.Invalid;
         }
 
         public override List<Pawn> SpawnThreats(IncidentParms parms)
@@ -84,11 +81,12 @@ namespace VFEM
 
                         faller.defName = temp.thingDef.defName;
                         string label = structureLayoutDef.defName.Remove(0, 5).Replace("DLC", "");
-                        label.Remove(label.Length-1, 1);
+                        label.Remove(label.Length - 1, 1);
                         faller.label = label + " (incoming)";
                         faller.size = new IntVec2(thing.def.size.x, thing.def.size.z);
                         faller.skyfaller.shadowSize = new UnityEngine.Vector2((float)(thing.def.size.x + 1), (float)(thing.def.size.z + 1));
-                        faller.skyfaller.ticksToImpactRange = new IntRange(250, 250);
+                        faller.skyfaller.ticksToImpactRange = new IntRange(150, 150);
+                        faller.skyfaller.movementType = SkyfallerMovementType.Decelerate;
 
                         ttir.faller = faller;
                         ttir.toSpawn = thing;
@@ -129,7 +127,7 @@ namespace VFEM
             VFEM_Skyfaller skyfaller2 = (VFEM_Skyfaller)SkyfallerMaker.MakeSkyfaller(skyfaller);
             if (innerThing != null && !skyfaller2.innerContainer.TryAdd(innerThing, true))
             {
-                Log.Error("Could not add " + innerThing.ToStringSafe<Thing>() + " to a skyfaller.", false);
+                Log.Error("Could not add " + innerThing.ToStringSafe<Thing>() + " to a VFEM_Skyfaller.", false);
                 innerThing.Destroy(DestroyMode.Vanish);
             }
             skyfaller2.rot = rot;
@@ -149,15 +147,18 @@ namespace VFEM
             return new LordJob_AssistColony(parms.faction, fallbackLocation);
         }
 
-        public IntVec3 FindRect(Map map)
+        public IntVec3 FindRect(Map map, int maxTries)
         {
             CellRect rect;
             bool shre = true;
+            int c = 0;
             while (shre)
             {
                 rect = CellRect.CenteredOn(CellFinder.RandomNotEdgeCell(33, map), 33, 33);
                 if (rect.Cells.ToList().Any(i => !i.Walkable(map) || !i.GetTerrain(map).affordances.Contains(TerrainAffordanceDefOf.Medium))) { }
                 else return rect.CenterCell;
+                if (c > maxTries) return IntVec3.Invalid;
+                c++;
             }
             return IntVec3.Invalid;
         }

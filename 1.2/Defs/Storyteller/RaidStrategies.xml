@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <RaidStrategyDef ParentName="SiegeBase">
-    <defName>VFEM_MechShipArrival</defName>
+    <defName>VFEM_StrategyMechShipArrival</defName>
     <workerClass>VFEM.RaidStrategyWorker_MechShipRaid</workerClass>
     <minPawns>2</minPawns>
     <arriveModes>
@@ -9,10 +9,9 @@
     </arriveModes>
     <selectionWeightPerPointsCurve>
       <points>
-        <li>(700,  0)</li>
-	<li>(900,  1)</li>
-        <li>(1400, 2)</li>
-        <li>(2800, 4)</li>
+        <li>(100, 0)</li>
+        <li>(300, 0.2)</li>
+        <li>(700, 0.6)</li>
       </points>
     </selectionWeightPerPointsCurve>
     <letterLabelEnemy>Mechanoid ship</letterLabelEnemy>

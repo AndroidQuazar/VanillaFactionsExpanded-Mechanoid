@@ -186,7 +186,7 @@
           <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
         </li>
       </lifeStageAges>
-      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
@@ -259,7 +259,7 @@
           <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
         </li>
       </lifeStageAges>
-      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
@@ -333,7 +333,7 @@
           <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
         </li>
       </lifeStageAges>
-      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
@@ -407,7 +407,7 @@
           <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
         </li>
       </lifeStageAges>
-      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>

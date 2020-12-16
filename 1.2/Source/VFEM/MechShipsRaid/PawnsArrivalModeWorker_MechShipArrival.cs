@@ -26,20 +26,23 @@ namespace VFEM
         public override bool TryResolveRaidSpawnCenter(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            parms.spawnCenter = this.FindRect(map);
+            parms.spawnCenter = this.FindRect(map, 100);
             parms.spawnRotation = Rot4.Random;
             return true;
         }
 
-        public IntVec3 FindRect(Map map)
+        public IntVec3 FindRect(Map map, int maxTries)
         {
             CellRect rect;
             bool shre = true;
+            int c = 0;
             while (shre)
             {
                 rect = CellRect.CenteredOn(CellFinder.RandomNotEdgeCell(33, map), 33, 33);
                 if (rect.Cells.ToList().Any(i => !i.Walkable(map) || !i.GetTerrain(map).affordances.Contains(TerrainAffordanceDefOf.Medium))) { }
                 else return rect.CenterCell;
+                if (c > maxTries) return CellFinder.RandomNotEdgeCell(33, map);
+                c++;
             }
             return IntVec3.Invalid;
         }

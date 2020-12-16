@@ -47,7 +47,7 @@
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<result>AA_SkySteel</result>	
-							<yield>10</yield>
+							<yield>5</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>

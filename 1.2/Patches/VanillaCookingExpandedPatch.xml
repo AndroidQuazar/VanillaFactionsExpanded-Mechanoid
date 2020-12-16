@@ -23,7 +23,7 @@
 						<ThingDef ParentName="BuildingBase">
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery</defName>
 							<label>cannery</label>
-							<description>A medium-sized factory module that accepts raw food and steel to sterilize and can it, allowing it to last indefinitely.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
+							<description>A medium-sized factory module that accepts raw food before vaccuum packing and sealing it tightly, allowing it to last indefinitely. Does not require additional steel after creation.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Provisions Packaging Factory (P.P.F.) chain.</description>
 							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
 							<graphicData>
 								<texPath>Things/Buildings/AutomatedCannery/AutomatedCannery</texPath>

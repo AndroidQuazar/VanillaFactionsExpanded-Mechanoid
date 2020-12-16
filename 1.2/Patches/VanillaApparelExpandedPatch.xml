@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Apparel Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Apron</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Cloth</li>
+							</items>	
+							<amount>
+								<li>55</li>
+							</amount>
+							<result>VAE_Apparel_Apron</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Cloth</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Apron</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Leather_Patch</li>
+							</items>	
+							<amount>
+								<li>55</li>
+							</amount>
+							<result>VAE_Apparel_Apron</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Leather_Patch</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Hoodie</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Cloth</li>
+							</items>	
+							<amount>
+								<li>70</li>
+							</amount>
+							<result>VAE_Apparel_Hoodie</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Cloth</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Hoodie</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Leather_Patch</li>
+							</items>	
+							<amount>
+								<li>70</li>
+							</amount>
+							<result>VAE_Apparel_Hoodie</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Leather_Patch</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_FleeceShirt</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Cloth</li>
+							</items>	
+							<amount>
+								<li>45</li>
+							</amount>
+							<result>VAE_Apparel_FleeceShirt</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Cloth</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_FleeceShirt</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Leather_Patch</li>
+							</items>	
+							<amount>
+								<li>45</li>
+							</amount>
+							<result>VAE_Apparel_FleeceShirt</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Leather_Patch</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Jeans</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Cloth</li>
+							</items>	
+							<amount>
+								<li>55</li>
+							</amount>
+							<result>VAE_Apparel_Jeans</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Cloth</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Jeans</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Leather_Patch</li>
+							</items>	
+							<amount>
+								<li>55</li>
+							</amount>
+							<result>VAE_Apparel_Jeans</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Leather_Patch</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Cloth_Apparel_Jumpsuit</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Cloth</li>
+							</items>	
+							<amount>
+								<li>80</li>
+							</amount>
+							<result>VAE_Apparel_Jumpsuit</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Cloth</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_AutoLoom_Leather_Apparel_Jumpsuit</defName>
+							<building>VFEM_WearablesAndTextileFactory_AutoLoom</building>
+							<items>
+								<li>Leather_Patch</li>
+							</items>	
+							<amount>
+								<li>80</li>
+							</amount>
+							<result>VAE_Apparel_Jumpsuit</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Leather_Patch</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Apron</defName>
+							<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+							<items>
+								<li>VAE_Apparel_Apron</li>
+							</items>	
+							<secondItems>
+								<li>Plasteel</li>
+							</secondItems>
+							<amount>
+								<li>1</li>
+								<li>55</li>
+							</amount>
+							<result>VAE_Apparel_Apron</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Synthread</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Hoodie</defName>
+							<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+							<items>
+								<li>VAE_Apparel_Hoodie</li>
+							</items>	
+							<secondItems>
+								<li>Plasteel</li>
+							</secondItems>
+							<amount>
+								<li>1</li>
+								<li>70</li>
+							</amount>
+							<result>VAE_Apparel_Hoodie</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Synthread</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_FleeceShirt</defName>
+							<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+							<items>
+								<li>VAE_Apparel_FleeceShirt</li>
+							</items>	
+							<secondItems>
+								<li>Plasteel</li>
+							</secondItems>
+							<amount>
+								<li>1</li>
+								<li>45</li>
+							</amount>
+							<result>VAE_Apparel_FleeceShirt</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Synthread</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Jeans</defName>
+							<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+							<items>
+								<li>VAE_Apparel_Jeans</li>
+							</items>	
+							<secondItems>
+								<li>Plasteel</li>
+							</secondItems>
+							<amount>
+								<li>1</li>
+								<li>55</li>
+							</amount>
+							<result>VAE_Apparel_Jeans</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Synthread</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer_Apparel_Jumpsuit</defName>
+							<building>VFEM_WearablesAndTextileFactory_SynthreadSynthesizer</building>
+							<items>
+								<li>VAE_Apparel_Jumpsuit</li>
+							</items>	
+							<secondItems>
+								<li>Plasteel</li>
+							</secondItems>
+							<amount>
+								<li>1</li>
+								<li>80</li>
+							</amount>
+							<result>VAE_Apparel_Jumpsuit</result>	
+							<resultUsesStuffed>true</resultUsesStuffed>
+							<resultStuff>Synthread</resultStuff>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.33</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+
+
+					</value>
+				</li>
+
+
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+
