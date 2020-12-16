@@ -5,6 +5,6 @@
 	<VFEMech.LetterJoinOfferText>As a sign of trust and appreciation, {PAWN_nameDef} believes that {PAWN_pronoun} can be a valuable help in your colony. {PAWN_pronoun} wishes to join you permanently.</VFEMech.LetterJoinOfferText>
 
 	<VFEMech.RaidWarningTitle>Raid imminent: {FACTION_name}</VFEMech.RaidWarningTitle>
-	<VFEMech.RaidWarningText>{FACTION_name} PLACEHOLDER {1}</VFEMech.RaidWarningText>
+	<VFEMech.RaidWarningText>{FACTION_name} will raid you within the upcoming 12 hours. {1}</VFEMech.RaidWarningText>
 	
 </LanguageData>
