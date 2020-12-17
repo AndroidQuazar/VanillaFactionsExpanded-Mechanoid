@@ -134,6 +134,7 @@
     <Compile Include="ModExtensions\MechanoidBaseIncidentExtension.cs" />
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
     <Compile Include="Needs\Need_Power.cs" />
+    <Compile Include="Pawns\Machine.cs" />
     <Compile Include="Pawns\VFEMechanoid.cs" />
     <Compile Include="Pawns\Mech_Inquisitor.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_AutoPlant.cs" />

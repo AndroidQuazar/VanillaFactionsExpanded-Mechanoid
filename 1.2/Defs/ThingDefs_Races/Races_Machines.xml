@@ -2,6 +2,7 @@
 <Defs>
   
   <ThingDef ParentName="BaseMechanoid" Name="BaseVFEMachine" Abstract="True">
+	<thingClass>VFEMech.Machine</thingClass>
   </ThingDef>
   
   <ThingDef ParentName="BaseVFEMachine">
