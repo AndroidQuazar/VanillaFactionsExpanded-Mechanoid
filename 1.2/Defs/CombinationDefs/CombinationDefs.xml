@@ -1001,7 +1001,7 @@
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>500</maxTotalOutput>		
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
 	<!--======= Masonry Saw =======-->
@@ -1022,7 +1022,7 @@
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksSandstone</resultSpecialIcon>				
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Limestone</defName>
@@ -1040,7 +1040,7 @@
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksLimestone</resultSpecialIcon>			
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Marble</defName>
@@ -1058,7 +1058,7 @@
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksMarble</resultSpecialIcon>			
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Granite</defName>
@@ -1076,7 +1076,7 @@
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksGranite</resultSpecialIcon>		
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	<ItemProcessor.CombinationDef>
 		<defName>VFEM_MasonryAndMetallicsFactory_MasonrySaw_Slate</defName>
@@ -1094,7 +1094,7 @@
 		<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 		<resultSpecialIcon>UI/VFEM_StoneBlocksSlate</resultSpecialIcon>			
 		<useQualityIncreasing>false</useQualityIncreasing>
-		<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>0.2</singleTimeIfNotQualityIncreasing>
 	</ItemProcessor.CombinationDef>
 	
 	<!--======= Plasteel Forge =======-->
@@ -1112,7 +1112,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>10</li>
+			<li>5</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1137,7 +1137,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>10</li>
+			<li>5</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1162,7 +1162,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>10</li>
+			<li>5</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1187,7 +1187,7 @@
 			<li>Steel</li>
 		</thirdItems>
 		<amount>
-			<li>10</li>
+			<li>5</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
@@ -1213,7 +1213,7 @@
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>300</maxTotalOutput>
 		<amount>
-			<li>10</li>
+			<li>5</li>
 			<li>20</li>
 			<li>20</li>
 		</amount>
