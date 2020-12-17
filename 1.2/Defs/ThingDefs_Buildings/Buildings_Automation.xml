@@ -43,7 +43,7 @@
 		<castEdgeShadows>true</castEdgeShadows>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>300</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>0.3</Flammability>
 		</statBases>
@@ -64,6 +64,7 @@
 		</researchPrerequisites>
 
 		<uiIconScale>0.85</uiIconScale>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 
@@ -114,7 +115,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -181,6 +182,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 
@@ -232,7 +234,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -292,6 +294,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -343,7 +346,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>450</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -403,6 +406,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -453,7 +457,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -509,6 +513,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -559,7 +564,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -616,6 +621,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 
@@ -667,7 +673,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -732,6 +738,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_WearablesAndTextileFactory_TextileRecycler</defName>
@@ -781,7 +788,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -840,6 +847,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -890,7 +898,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -949,6 +957,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -999,7 +1008,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1058,6 +1067,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1108,7 +1118,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>325</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1167,6 +1177,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1218,7 +1229,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1285,6 +1296,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1335,7 +1347,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1393,6 +1405,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1444,7 +1457,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1504,6 +1517,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1554,7 +1568,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>325</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1612,6 +1626,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1645,7 +1660,7 @@
 		<interactionCellOffset>(0,0,-2)</interactionCellOffset>
 		<statBases>
 			<MaxHitPoints>400</MaxHitPoints>
-			<WorkToBuild>2000</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<Flammability>1.0</Flammability>
 			<Beauty>-20</Beauty>
 			<Mass>10</Mass>
@@ -1714,7 +1729,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
-
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1765,7 +1780,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1823,6 +1838,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1873,7 +1889,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1941,6 +1957,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1991,7 +2008,7 @@
 		<useHitPoints>True</useHitPoints>
 		<statBases>
 			<Mass>10</Mass>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -2052,6 +2069,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 </Defs>
