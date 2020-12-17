@@ -738,6 +738,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_WearablesAndTextileFactory_TextileRecycler</defName>
@@ -956,6 +957,7 @@
 				<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 			</li>
 		</modExtensions>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
