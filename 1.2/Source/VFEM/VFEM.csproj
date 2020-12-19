@@ -93,6 +93,7 @@
     <Compile Include="HarmonyPatches\Patch_AffectRelationsOnAttacked.cs" />
     <Compile Include="HarmonyPatches\RenderTurretCentered.cs" />
     <Compile Include="HarmonyPatches\ShouldRemoveMapNow_Patch.cs" />
+    <Compile Include="HarmonyPatches\Thing_Patch.cs" />
     <Compile Include="JobDrivers\JobDriver_AttachTurret.cs" />
     <Compile Include="JobDrivers\JobDriver_Recharge.cs" />
     <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
