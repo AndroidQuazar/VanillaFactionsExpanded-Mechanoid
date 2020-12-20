@@ -11,6 +11,10 @@ namespace VFEMech
 {
     public class MechShipPart : Building
     {
+        public override bool ClaimableBy(Faction by)
+        {
+            return false;
+        }
         public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             base.PreApplyDamage(ref dinfo, out absorbed);
