@@ -12,8 +12,17 @@ namespace VFE.Mechanoids.Needs
     {
 		private int lastRestTick = -999;
 		private float RestFallFactor => pawn.health.hediffSet.RestFallFactor;
-		bool Enabled => CompMachine.cachedMachinesPawns[pawn] != null;
-
+		bool Enabled
+        {
+			get
+            {
+				if (CompMachine.cachedMachinesPawns.TryGetValue(pawn, out CompMachine comp))
+                {
+					return comp != null;
+                }
+				return false;
+            }
+        }
         public override bool ShowOnNeedList => Enabled;
 
         public RestCategory CurCategory
