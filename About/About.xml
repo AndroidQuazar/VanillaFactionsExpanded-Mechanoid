@@ -4,9 +4,14 @@
 	<author>Oskar Potocki, Kentington, Sarg Bjornson, erdelf, Kikohi, Chowder, Taranchuk</author>
 	<supportedVersions><li>1.2</li></supportedVersions>
 	<packageId>OskarPotocki.VFE.Mechanoid</packageId>
-	<description>Beta released 30/11/2020
-	
-	Copying, redistributing, uploading or sharing this mod will be reported as violation of intellectual property laws.
+	<description>One of the first mods I ever came up with, and one that took the longest to design, draw, code and deliver, Vanilla Factions Expanded - Mechanoids is a mod unlike any other. A group of talented modders came together to make sure this mod is not only full of new interesting content, but also provides something to make the game a bit more dynamic.
+
+We have improved on the Custom Settlement Generation code to provide you with semi-random spaceships that Mechanoids can use to wreak havoc on the planet’s surface. Thanks to a lot of cooperation from some of the most famous modders out there, we were able to provide you with not just a new faction, but a unique mechanic of Total War, which makes the faction stronger the more ships land on the planet. We were also able to give you a little Factorio love letter in the form of fully automated machines that produce various items in the game, automatically. Did I mention it’s all happening automatically?
+
+New buildable mechanoids can fill various roles around your colony, from cleaning and hauling to base defense. With supercomputers, you can now automate research, Autosowers and Autoharvesters on the other hand will allow you to begin your farming enterprise with no need for physical labor.
+
+New quests, new events, new starting scenario, a storyteller, it’s all waiting for you. Merry Christmas!
+
 </description>
     <modDependencies>
 		<li>
