@@ -30,9 +30,7 @@ namespace VFE.Mechanoids.AI.WorkGivers
                 List<ThingDefCountClass> products = comp.turretToInstall.costList;
                 foreach (ThingDefCountClass thingNeeded in products)
                 {
-                    List<Thing> thingsOfThisType = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, t.Position, new IntRange(thingNeeded.count, thingNeeded.count),
-                        (Thing thing) => thing.def == thingNeeded.thingDef);
-                    if (thingsOfThisType == null)
+                    if (!pawn.Map.itemAvailability.ThingsAvailableAnywhere(thingNeeded, pawn))
                     {
                         JobFailReason.Is("VFEMechNoResources".Translate());
                         return false;
