@@ -17,7 +17,7 @@ namespace VFE.Mechanoids.HarmonyPatches
 		{
 			List<Gizmo> list = new List<Gizmo>();
 			list.AddRange(__result);
-			if (__instance.RaceProps.IsMechanoid && __instance.Faction == Faction.OfPlayer && __instance.drafter != null)
+			if (__instance.RaceProps.IsMechanoid && __instance.Faction == Faction.OfPlayer && __instance.drafter != null && CompMachine.cachedMachines.ContainsKey(__instance.Drawer.renderer))
 			{
 				IEnumerable<Gizmo> collection = (IEnumerable<Gizmo>)typeof(Pawn_DraftController).GetMethod("GetGizmos", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(__instance.drafter, new object[0]);
 				list.AddRange(collection);
