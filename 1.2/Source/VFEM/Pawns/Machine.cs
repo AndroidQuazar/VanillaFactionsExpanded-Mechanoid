@@ -13,7 +13,7 @@ namespace VFEMech
         public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.PostApplyDamage(dinfo, totalDamageDealt);
-            if (!this.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation) || this.health.capacities.CapableOf(PawnCapacityDefOf.Moving))
+            if (!this.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation) || !this.health.capacities.CapableOf(PawnCapacityDefOf.Moving))
             {
                 this.Kill(dinfo);
             }
