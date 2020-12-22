@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using Verse.AI;
+using VFE.Mechanoids.Buildings;
 
 namespace VFE.Mechanoids.AI.WorkGivers
 {
@@ -15,28 +16,31 @@ namespace VFE.Mechanoids.AI.WorkGivers
         public override PathEndMode PathEndMode => PathEndMode.Touch;
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            var comp = t.TryGetComp<CompMachineChargingStation>();
-            if (comp == null || comp.turretToInstall==null)
-                return false;
+            if (CompMachineChargingStation.cachedChargingStationsDict.TryGetValue(t, out CompMachineChargingStation comp)) 
+            {
+                if (comp == null || comp.turretToInstall == null)
+                    return false;
 
-            Pawn myPawn = comp.myPawn;
-            if (myPawn==null || myPawn.Dead || !myPawn.Spawned)
-            {
-                JobFailReason.Is("VFEMechNoTurret".Translate());
-                return false;
-            }
-            List<ThingDefCountClass> products = comp.turretToInstall.costList;
-            foreach (ThingDefCountClass thingNeeded in products)
-            {
-                List<Thing> thingsOfThisType = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, t.Position, new IntRange(thingNeeded.count, thingNeeded.count),
-                    (Thing thing) => thing.def == thingNeeded.thingDef);
-                if (thingsOfThisType == null)
+                Pawn myPawn = comp.myPawn;
+                if (myPawn == null || myPawn.Dead || !myPawn.Spawned)
                 {
-                    JobFailReason.Is("VFEMechNoResources".Translate());
+                    JobFailReason.Is("VFEMechNoTurret".Translate());
                     return false;
                 }
+                List<ThingDefCountClass> products = comp.turretToInstall.costList;
+                foreach (ThingDefCountClass thingNeeded in products)
+                {
+                    List<Thing> thingsOfThisType = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, t.Position, new IntRange(thingNeeded.count, thingNeeded.count),
+                        (Thing thing) => thing.def == thingNeeded.thingDef);
+                    if (thingsOfThisType == null)
+                    {
+                        JobFailReason.Is("VFEMechNoResources".Translate());
+                        return false;
+                    }
+                }
+                return pawn.CanReserveAndReach(t, PathEndMode.OnCell, Danger.Deadly, ignoreOtherReservations: forced);
             }
-            return pawn.CanReserveAndReach(t,PathEndMode.OnCell,Danger.Deadly,ignoreOtherReservations:forced);
+            return false;
         }
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {

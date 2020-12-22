@@ -8,13 +8,11 @@ using Verse;
 
 namespace VFE.Mechanoids.Needs
 {
-    class Need_Power : Need
+    public class Need_Power : Need
     {
 		private int lastRestTick = -999;
-
 		private float RestFallFactor => pawn.health.hediffSet.RestFallFactor;
-
-		bool Enabled => pawn.TryGetComp<CompMachine>() != null;
+		bool Enabled => CompMachine.cachedMachinesPawns[pawn] != null;
 
         public override bool ShowOnNeedList => Enabled;
 
@@ -42,7 +40,7 @@ namespace VFE.Mechanoids.Needs
 		{
 			get
 			{
-				return 1 / pawn.TryGetComp<CompMachine>().Props.hoursActive / 2500;
+				return 1 / CompMachine.cachedMachinesPawns[pawn].Props.hoursActive / 2500;
 			}
 		}
 
@@ -83,7 +81,7 @@ namespace VFE.Mechanoids.Needs
 					num *= pawn.GetStatValue(StatDefOf.RestRateMultiplier);
 					if (num > 0f)
 					{
-						CurLevel += 1 / pawn.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().Props.hoursToRecharge / 2500 * num * 150f;
+						CurLevel += 1 / CompMachine.cachedMachinesPawns[pawn].myBuilding.TryGetComp<CompMachineChargingStation>().Props.hoursToRecharge / 2500 * num * 150f;
 					}
 				}
 				else

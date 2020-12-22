@@ -92,6 +92,7 @@
     <Compile Include="HarmonyPatches\NoBioForMachines.cs" />
     <Compile Include="HarmonyPatches\Patch_AffectRelationsOnAttacked.cs" />
     <Compile Include="HarmonyPatches\PickUpAndHaul_Patch.cs" />
+    <Compile Include="HarmonyPatches\Need_Patches.cs" />
     <Compile Include="HarmonyPatches\RenderTurretCentered.cs" />
     <Compile Include="HarmonyPatches\ShouldRemoveMapNow_Patch.cs" />
     <Compile Include="HarmonyPatches\Thing_Patch.cs" />

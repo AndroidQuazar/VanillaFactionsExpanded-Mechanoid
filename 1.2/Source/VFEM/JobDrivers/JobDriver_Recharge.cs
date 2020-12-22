@@ -18,8 +18,70 @@ namespace VFE.Mechanoids.AI.JobDrivers
 		public static ThingDef MoteRecharge = ThingDef.Named("VFE_Mechanoids_Mote_Recharge");
 		public static ThingDef MoteRepair = ThingDef.Named("VFE_Mechanoids_Mote_Repair");
 
-		public Building_BedMachine Bed => (Building_BedMachine)job.GetTarget(TargetIndex.A).Thing;
+		private Building_BedMachine bed;
+		public Building_BedMachine Bed
+		{
+			get
+            {
+				if (bed == null)
+                {
+					bed = (Building_BedMachine)job.GetTarget(TargetIndex.A).Thing;
+                }
+				return bed;
+            }
+		}
 
+		private CompPowerTrader compPowerTrader;
+		public CompPowerTrader BedCompPowerTrader
+		{
+			get
+			{
+				if (compPowerTrader == null)
+				{
+					compPowerTrader = Bed.TryGetComp<CompPowerTrader>();
+				}
+				return compPowerTrader;
+			}
+		}
+
+		private Need_Power pawnNeed_Power;
+		public Need_Power PawnNeed_Power
+		{
+			get
+			{
+				if (pawnNeed_Power == null)
+				{
+					pawnNeed_Power = pawn.needs.TryGetNeed<Need_Power>();
+				}
+				return pawnNeed_Power;
+			}
+		}
+
+		private CompPowerTrader myBuildingCompPowerTrader;
+		public CompPowerTrader MyBuildingCompPowerTrader
+		{
+			get
+			{
+				if (myBuildingCompPowerTrader == null)
+				{
+					this.myBuildingCompPowerTrader = CompMachine.cachedMachinesPawns[pawn].myBuilding.TryGetComp<CompPowerTrader>();
+				}
+				return myBuildingCompPowerTrader;
+			}
+		}
+
+		private CompMachineChargingStation myBuildingCompMachineChargingStation;
+		public CompMachineChargingStation MyBuildingCompMachineChargingStation
+		{
+			get
+			{
+				if (myBuildingCompMachineChargingStation == null)
+				{
+					this.myBuildingCompMachineChargingStation = CompMachine.cachedMachinesPawns[pawn].myBuilding.TryGetComp<CompMachineChargingStation>();
+				}
+				return myBuildingCompMachineChargingStation;
+			}
+		}
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
 		{
 			if (!job.GetTarget(TargetIndex.A).HasThing)
@@ -57,37 +119,38 @@ namespace VFE.Mechanoids.AI.JobDrivers
 			return false;
 		}
 
-		public static Toil LayDown(TargetIndex bedOrRestSpotIndex) //Largely C&P'ed from vanilla LayDown toil
+		public Toil LayDown(TargetIndex bedOrRestSpotIndex) //Largely C&P'ed from vanilla LayDown toil
 		{
 			Toil layDown = new Toil();
 			layDown.initAction = delegate
 			{
 				Pawn actor3 = layDown.actor;
+				Job curJob = actor3.CurJob;
 				actor3.pather.StopDead();
-				actor3.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().CompTickRare();
+				MyBuildingCompMachineChargingStation.CompTickRare();
 			};
 			layDown.tickAction = delegate
 			{
 				Pawn actor2 = layDown.actor;
 				Job curJob = actor2.CurJob;
 				JobDriver curDriver2 = actor2.jobs.curDriver;
-				Building_BedMachine building_Bed = (Building_BedMachine)curJob.GetTarget(bedOrRestSpotIndex).Thing;
-
-				if (building_Bed.TryGetComp<CompPowerTrader>().PowerOn)
+				if (BedCompPowerTrader.PowerOn)
 				{
-					actor2.needs.TryGetNeed<Need_Power>().TickResting(1f);
-
-					if (actor2.IsHashIntervalTick(100) && !actor2.Position.Fogged(actor2.Map))
+					PawnNeed_Power.TickResting(1f);
+					if (actor2.IsHashIntervalTick(300) && !actor2.Position.Fogged(actor2.Map))
 					{
-						MoteMaker.ThrowMetaIcon(actor2.Position, actor2.Map, MoteRecharge);
 						if (actor2.health.hediffSet.GetNaturallyHealingInjuredParts().Any())
 						{
 							MoteMaker.ThrowMetaIcon(actor2.Position, actor2.Map, MoteRepair);
 						}
+						else
+                        {
+							MoteMaker.ThrowMetaIcon(actor2.Position, actor2.Map, MoteRecharge);
+                        }
 					}
 				}
 				actor2.Rotation = Rot4.South;
-				if (actor2.IsHashIntervalTick(211))
+				if (actor2.IsHashIntervalTick(300))
 				{
 					actor2.jobs.CheckForJobOverride();
 				}
@@ -95,13 +158,14 @@ namespace VFE.Mechanoids.AI.JobDrivers
 			layDown.AddFinishAction(delegate
 			{
 				Pawn actor = layDown.actor;
-				if ((layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null))
+				if ((PawnNeed_Power.CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && MyBuildingCompMachineChargingStation.turretToInstall==null))
 				{
-					actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().wantsRest = false;
+					MyBuildingCompMachineChargingStation.wantsRest = false;
 				}
 			});
 			layDown.handlingFacing = true;
-			layDown.FailOn(() => !layDown.actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompPowerTrader>().PowerOn || (layDown.actor.needs.TryGetNeed<Need_Power>().CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && layDown.actor.TryGetComp<CompMachine>().myBuilding.TryGetComp<CompMachineChargingStation>().turretToInstall==null));
+			layDown.FailOn(() => !MyBuildingCompPowerTrader.PowerOn || (PawnNeed_Power.CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && MyBuildingCompMachineChargingStation.turretToInstall==null));
+
 			layDown.defaultCompleteMode = ToilCompleteMode.Never;
 			return layDown;
 		}

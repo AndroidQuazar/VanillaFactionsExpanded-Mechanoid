@@ -37,6 +37,7 @@ namespace VFEMech
         public static SitePartDef VFE_MechanoidStorage;
 
         public static JobDef VFE_Mechanoids_Recharge;
+        public static NeedDef VFE_Mechanoids_Power;
 
     }
 }

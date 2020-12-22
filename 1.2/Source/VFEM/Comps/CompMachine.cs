@@ -18,6 +18,7 @@ namespace VFE.Mechanoids
 
         public static Dictionary<PawnRenderer, CompMachine> cachedMachines = new Dictionary<PawnRenderer, CompMachine>();
         public static Dictionary<CompMachine, Pawn> cachedPawns = new Dictionary<CompMachine, Pawn>();
+        public static Dictionary<Pawn, CompMachine> cachedMachinesPawns = new Dictionary<Pawn, CompMachine>();
 
         public override void OnBuildingDestroyed()
         {
@@ -76,6 +77,7 @@ namespace VFE.Mechanoids
             base.PostSpawnSetup(respawningAfterLoad);
             cachedMachines.Add(((Pawn)parent).Drawer.renderer, this);
             cachedPawns.Add(this, (Pawn)parent);
+            cachedMachinesPawns.Add((Pawn)parent, this);
             var machine = this.parent as Pawn;
             if (!respawningAfterLoad)
             {
@@ -88,6 +90,7 @@ namespace VFE.Mechanoids
             base.PostDeSpawn(map);
             cachedMachines.Remove(((Pawn)parent).Drawer.renderer);
             cachedPawns.Remove(this);
+            cachedMachinesPawns.Remove((Pawn)parent);
         }
     }
 }

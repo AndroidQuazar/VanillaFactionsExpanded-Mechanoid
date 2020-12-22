@@ -20,6 +20,8 @@ namespace VFE.Mechanoids
         public Area allowedArea = null;
 
         public static List<CompMachineChargingStation> cachedChargingStations = new List<CompMachineChargingStation>();
+        public static Dictionary<Thing, CompMachineChargingStation> cachedChargingStationsDict = new Dictionary<Thing, CompMachineChargingStation>();
+
         public new CompProperties_MachineChargingStation Props
         {
             get
@@ -32,10 +34,18 @@ namespace VFE.Mechanoids
         {
             base.PostSpawnSetup(respawningAfterLoad);
             cachedChargingStations.Add(this);
+            cachedChargingStationsDict.Add(this.parent, this);
             if (!respawningAfterLoad)
                 SpawnMyPawn();
             else
                 CheckWantsRespawn();
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            base.PostDeSpawn(map);
+            cachedChargingStations.Remove(this);
+            cachedChargingStationsDict.Remove(this.parent);
         }
 
         public override void SpawnMyPawn()
