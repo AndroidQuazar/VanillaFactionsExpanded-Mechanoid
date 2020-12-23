@@ -248,7 +248,7 @@
     <race>
       <intelligence>ToolUser</intelligence>
       <thinkTreeMain>VFE_Mechanoids_ViolentMachine</thinkTreeMain>
-      <body>MechanicalCentipede</body>
+      <body>Lancer</body>
       <baseBodySize>1</baseBodySize>
       <baseHealthScale>4</baseHealthScale>
       <lifeStageAges>
@@ -309,20 +309,32 @@
     </statBases>
     <tools>
       <li>
-        <label>head</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>27</power>
-        <cooldownTime>2.6</cooldownTime>
-        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<label>blade</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>16.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
       </li>
+			<li>
+				<label>shield</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>20.0</power>
+				<cooldownTime>3</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+	  
     </tools>
     <race>
       <intelligence>ToolUser</intelligence>
       <thinkTreeMain>VFE_Mechanoids_ViolentMachine</thinkTreeMain>
-      <body>MechanicalCentipede</body>
+      <body>Lancer</body>
       <baseBodySize>1</baseBodySize>
       <baseHealthScale>4</baseHealthScale>
       <lifeStageAges>
