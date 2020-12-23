@@ -61,7 +61,7 @@ namespace VFEMech
 
             this.SendStandardLetter(letterLabel, letterText, def.letterDef, parms, settlement, faction.Name);
 
-            int raisesPresence = objectDef.GetModExtension<MechanoidBaseExtension>().raisesPresence;
+            int raisesPresence = (int)objectDef.GetModExtension<MechanoidBaseExtension>().raisesPresence;
             int presence       = MechUtils.MechPresence();
             foreach (MechUpgradeWarningDef warningDef in DefDatabase<MechUpgradeWarningDef>.AllDefsListForReading)
             {

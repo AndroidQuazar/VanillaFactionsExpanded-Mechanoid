@@ -11,7 +11,7 @@ namespace VFEMech
 
     public class MechanoidBaseExtension : DefModExtension
     {
-        public int raisesPresence;
+        public float raisesPresence;
         public RulePackDef nameMaker;
 
         public override IEnumerable<string> ConfigErrors()

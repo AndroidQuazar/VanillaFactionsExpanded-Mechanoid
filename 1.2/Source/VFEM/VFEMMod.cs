@@ -9,6 +9,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using VFEMech;
 
 namespace VFEM
 {
@@ -25,12 +26,19 @@ namespace VFEM
             var mechShips = DefDatabase<IncidentDef>.AllDefsListForReading.Where(x => x.defName.StartsWith("VFEM_ShipLand"));
             foreach (var mechShip in mechShips)
             {
-                if (settings.mechShipStates == null) settings.mechShipStates = new Dictionary<string, float>();
                 if (!settings.mechShipStates.ContainsKey(mechShip.defName))
                 {
                     settings.mechShipStates[mechShip.defName] = mechShip.baseChance;
                 }
+                var def = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShip.defName);
+                MechanoidBaseIncidentExtension incidentExtension = def.GetModExtension<MechanoidBaseIncidentExtension>();
+                if (!settings.mechShipPresences.ContainsKey(incidentExtension.baseToPlace.defName))
+                {
+                    var presence = incidentExtension.baseToPlace.GetModExtension<MechanoidBaseExtension>().raisesPresence;
+                    settings.mechShipPresences[incidentExtension.baseToPlace.defName] = presence;
+                }
             }
+
             settings.DoSettingsWindowContents(inRect);
         }
 
@@ -58,6 +66,11 @@ namespace VFEM
             {
                 var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipState.Key);
                 defToAlter.baseChance = mechShipState.Value;
+            }
+            foreach (var mechShipPresence in MechShipsMod.settings.mechShipPresences)
+            {
+                var defToAlter = DefDatabase<WorldObjectDef>.GetNamedSilentFail(mechShipPresence.Key);
+                defToAlter.GetModExtension<MechanoidBaseExtension>().raisesPresence = mechShipPresence.Value;
             }
         }
     }
