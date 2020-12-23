@@ -22,7 +22,7 @@ namespace VFEM
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
-            var mechShips = DefDatabase<IncidentDef>.AllDefsListForReading.Where(x => x.defName.StartsWith("VFEM_"));
+            var mechShips = DefDatabase<IncidentDef>.AllDefsListForReading.Where(x => x.defName.StartsWith("VFEM_ShipLand"));
             foreach (var mechShip in mechShips)
             {
                 if (settings.mechShipStates == null) settings.mechShipStates = new Dictionary<string, float>();
