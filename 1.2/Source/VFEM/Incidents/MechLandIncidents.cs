@@ -13,6 +13,16 @@ namespace VFEMech
 
     public class IncidentWorker_ShipLanding : IncidentWorker
     {
+
+        protected override bool CanFireNowSub(IncidentParms parms)
+        {
+            MechanoidBaseIncidentExtension incidentExtension = this.def.GetModExtension<MechanoidBaseIncidentExtension>();
+            if (incidentExtension != null && incidentExtension.minimumColonistCount > 0)
+            {
+                return PawnsFinder.AllMaps_FreeColonistsSpawned.Count >= incidentExtension.minimumColonistCount;
+            }
+            return base.CanFireNowSub(parms);
+        }
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             MechanoidBaseIncidentExtension incidentExtension = this.def.GetModExtension<MechanoidBaseIncidentExtension>();

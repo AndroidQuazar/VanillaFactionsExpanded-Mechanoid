@@ -160,6 +160,8 @@
     <Compile Include="MapComponent_MechWarfare.cs" />
     <Compile Include="VFEMDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VFEMMod.cs" />
+    <Compile Include="VFEMSettings.cs" />
     <Compile Include="WorkGivers\WorkGiver_AttachTurret.cs" />
     <Compile Include="WorkGivers\WorkGiver_RefuelSilo.cs" />
     <Compile Include="WorkGivers\WorkGiver_RepairMachine.cs" />

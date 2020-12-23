@@ -21,6 +21,7 @@
         <baseToPlace>VFEM_Frigate</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
+		<minimumColonistCount>5</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -43,6 +44,7 @@
         <baseToPlace>VFEM_Destroyer</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
+		<minimumColonistCount>5</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -65,6 +67,7 @@
         <baseToPlace>VFEM_Cruiser</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
+		<minimumColonistCount>1</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -87,6 +90,7 @@
         <baseToPlace>VFEM_Troopship</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>120</maxDistance>
+		<minimumColonistCount>5</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -109,6 +113,7 @@
         <baseToPlace>VFEM_Carrier</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>120</maxDistance>
+		<minimumColonistCount>5</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
