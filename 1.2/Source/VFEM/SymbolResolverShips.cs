@@ -14,15 +14,6 @@ namespace VFEM
         {
             Map map = BaseGen.globalSettings.map;
             Faction faction = rp.faction ?? Find.FactionManager.RandomEnemyFaction(false, false, true, TechLevel.Undefined);
-            SettlementLayoutDef lDef = FactionSettlement.temp;
-
-            List<CellRect> gridRects = KCSG_Utilities.GetRects(rp.rect, lDef, map, out rp.rect);
-            FactionSettlement.tempRectList = gridRects;
-
-            foreach (IntVec3 c in rp.rect)
-            {
-                if (map.fogGrid.IsFogged(c)) map.fogGrid.Unfog(c);
-            }
 
             Lord singlePawnLord = rp.singlePawnLord ?? LordMaker.MakeNewLord(faction, new VFEM.LordJob_VFEMDefendBase(faction, rp.rect.CenterCell), map, null);
             TraverseParms traverseParms = TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false);
@@ -43,25 +34,18 @@ namespace VFEM
             }
             if (faction.def.pawnGroupMakers.Any(pgm => pgm.kindDef == PawnGroupKindDefOf.Settlement)) BaseGen.symbolStack.Push("pawnGroup", resolveParams, null);
 
+            foreach (IntVec3 c in rp.rect)
+            {
+                if (map.fogGrid.IsFogged(c)) map.fogGrid.Unfog(c);
+            }
+
             ResolveParams rp2 = rp;
             rp2.faction = faction;
-            BaseGen.symbolStack.Push("kcsg_roomsgen", rp2, null);
+            BaseGen.symbolStack.Push("kcsg_roomsgenfromstructure", rp2, null);
 
-            if (lDef.clearEverything)
+            foreach (IntVec3 c in rp.rect)
             {
-                foreach (IntVec3 c in rp.rect)
-                {
-                    c.GetThingList(map).ToList().FindAll(tt => tt.def.passability == Traversability.Impassable).ForEach((t) => t.DeSpawn());    
-                    map.roofGrid.SetRoof(c, null);   
-                }
-                map.roofGrid.RoofGridUpdate();    
-            }
-            else
-            {
-                foreach (IntVec3 c in rp.rect)
-                {
-                    c.GetThingList(map).ToList().FindAll(t1 => t1.def.category == ThingCategory.Filth || t1.def.category == ThingCategory.Item).ForEach((t) => t.DeSpawn());
-                }
+                c.GetThingList(map).ToList().FindAll(t1 => t1.def.category == ThingCategory.Filth || t1.def.category == ThingCategory.Item).ForEach((t) => t.DeSpawn());
             }
         }
     }

@@ -2,6 +2,7 @@
 <Defs>
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC1</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -43,6 +44,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC2</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -84,6 +86,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC3</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -125,6 +128,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC4</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -166,6 +170,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC5</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -207,6 +212,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC6</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -248,6 +254,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC7</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -289,6 +296,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC8</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -330,6 +338,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC9</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -371,6 +380,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC10</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -412,6 +422,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC11</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -453,6 +464,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CarrierDLC12</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -494,6 +506,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC1</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -535,6 +548,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC2</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -576,6 +590,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC3</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -617,6 +632,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC4</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -658,6 +674,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC5</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -699,6 +716,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC6</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -740,6 +758,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC7</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -781,6 +800,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC8</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -822,6 +842,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC9</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -863,6 +884,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC10</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -904,6 +926,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC11</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -945,6 +968,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_TroopshipDLC12</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -986,6 +1010,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC1</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1027,6 +1052,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC2</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1068,6 +1094,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC3</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1109,6 +1136,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC4</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1150,6 +1178,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC5</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1191,6 +1220,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC6</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1232,6 +1262,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC7</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1273,6 +1304,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC8</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1314,6 +1346,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC9</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1355,6 +1388,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC10</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1396,6 +1430,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC11</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1437,6 +1472,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_CruiserDLC12</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1478,6 +1514,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC1</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1519,6 +1556,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC2</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1560,6 +1598,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC3</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1601,6 +1640,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC4</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1642,6 +1682,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC5</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1683,6 +1724,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC6</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1724,6 +1766,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC7</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1765,6 +1808,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC8</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1806,6 +1850,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC9</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1847,6 +1892,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC10</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1888,6 +1934,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC11</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1929,6 +1976,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_DestroyerDLC12</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -1970,6 +2018,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC1</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2011,6 +2060,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC2</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2052,6 +2102,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC3</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2093,6 +2144,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC4</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2134,6 +2186,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC5</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2175,6 +2228,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC6</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2216,6 +2270,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC7</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2257,6 +2312,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC8</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2298,6 +2354,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC9</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2339,6 +2396,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC10</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2380,6 +2438,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC11</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
@@ -2421,6 +2480,7 @@
 
   <KCSG.StructureLayoutDef>
     <defName>VFEM_FrigateDLC12</defName>
+    <requireRoyalty>True</requireRoyalty>
     <layouts>
       <li>
         <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
