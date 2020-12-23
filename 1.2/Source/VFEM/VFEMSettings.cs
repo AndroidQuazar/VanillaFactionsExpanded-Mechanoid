@@ -44,15 +44,22 @@ namespace VFEM
             for (int num = keys.Count - 1; num >= 0; num--)
             {
                 var incidentDef = DefDatabase<IncidentDef>.GetNamedSilentFail(keys[num]);
-                listingStandard.Label("VFEMech.AdjustIncidentChanceLabel".Translate(incidentDef.label) + mechShipStates[keys[num]]);
-                mechShipStates[keys[num]] = listingStandard.Slider(mechShipStates[keys[num]], 0f, 5f);
+                if (incidentDef != null)
+                {
+                    listingStandard.Label("VFEMech.AdjustIncidentChanceLabel".Translate(incidentDef.label) + mechShipStates[keys[num]]);
+                    mechShipStates[keys[num]] = listingStandard.Slider(mechShipStates[keys[num]], 0f, 5f);
+                }
             }
 
             for (int num = keys2.Count - 1; num >= 0; num--)
             {
                 var worldObjectDef = DefDatabase<WorldObjectDef>.GetNamedSilentFail(keys2[num]);
-                listingStandard.Label("VFEMech.AdjustMechPresenceLabel".Translate(worldObjectDef.label) + mechShipPresences[keys2[num]]);
-                mechShipPresences[keys2[num]] = listingStandard.Slider(mechShipPresences[keys2[num]], 0f, 5000f);
+                if (worldObjectDef != null)
+                {
+                    listingStandard.Label("VFEMech.AdjustMechPresenceLabel".Translate(worldObjectDef.label) + mechShipPresences[keys2[num]]);
+                    mechShipPresences[keys2[num]] = listingStandard.Slider(mechShipPresences[keys2[num]], 0f, 5000f);
+                }
+
             }
             listingStandard.End();
             Widgets.EndScrollView();
@@ -62,4 +69,3 @@ namespace VFEM
 
     }
 }
-

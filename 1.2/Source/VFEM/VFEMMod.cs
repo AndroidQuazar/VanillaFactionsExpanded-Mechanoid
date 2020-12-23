@@ -24,8 +24,17 @@ namespace VFEM
         {
             base.DoSettingsWindowContents(inRect);
             var mechShips = DefDatabase<IncidentDef>.AllDefsListForReading.Where(x => x.defName.StartsWith("VFEM_ShipLand"));
+
             foreach (var mechShip in mechShips)
             {
+                if (settings.mechShipStates is null)
+                {
+                    settings.mechShipStates = new Dictionary<string, float>();
+                }
+                if (settings.mechShipPresences is null)
+                {
+                    settings.mechShipPresences = new Dictionary<string, float>();
+                }
                 if (!settings.mechShipStates.ContainsKey(mechShip.defName))
                 {
                     settings.mechShipStates[mechShip.defName] = mechShip.baseChance;
@@ -62,15 +71,29 @@ namespace VFEM
         }
         public static void DoDefsAlter()
         {
+            if (MechShipsMod.settings.mechShipStates is null)
+            {
+                MechShipsMod.settings.mechShipStates = new Dictionary<string, float>();
+            }
             foreach (var mechShipState in MechShipsMod.settings.mechShipStates)
             {
                 var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipState.Key);
-                defToAlter.baseChance = mechShipState.Value;
+                if (defToAlter != null)
+                {
+                    defToAlter.baseChance = mechShipState.Value;
+                }
+            }
+            if (MechShipsMod.settings.mechShipPresences is null)
+            {
+                MechShipsMod.settings.mechShipPresences = new Dictionary<string, float>();
             }
             foreach (var mechShipPresence in MechShipsMod.settings.mechShipPresences)
             {
                 var defToAlter = DefDatabase<WorldObjectDef>.GetNamedSilentFail(mechShipPresence.Key);
-                defToAlter.GetModExtension<MechanoidBaseExtension>().raisesPresence = mechShipPresence.Value;
+                if (defToAlter != null)
+                {
+                    defToAlter.GetModExtension<MechanoidBaseExtension>().raisesPresence = mechShipPresence.Value;
+                }
             }
         }
     }
