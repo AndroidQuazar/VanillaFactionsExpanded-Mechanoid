@@ -440,7 +440,15 @@
 			<li>ADS_Dish</li>
 			<li>Railgun_Cannon</li>
 			<li>Obelisk_Laser</li>
-			<li>Marauder_Railgun</li>		
+			<li>Marauder_Railgun</li>
+			<li>ShipTurret_LaserTop</li>
+			<li>ShipTurret_PlasmaTop</li>
+			<li>ShipTurret_KineticTop</li>
+			<li>ShipTurret_LaserTop_Large</li>
+			<li>ShipTurret_PlasmaTop_Large</li>
+			<li>ShipTurret_KineticTop_Large</li>
+			<li>ShipTurret_ACITop</li>
+			<li>ShipTurret_ACIITop</li>
 		</blackListTurretGuns>
 	  </li>
     </comps>
