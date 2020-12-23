@@ -15,6 +15,8 @@ namespace VFEM
     class mechShipsSettings : ModSettings
     {
         public Dictionary<string, float> mechShipStates = new Dictionary<string, float>();
+
+        public bool totalWarIsDisabled;
         public override void ExposeData()
         {
             base.ExposeData();
@@ -32,6 +34,7 @@ namespace VFEM
             Widgets.BeginScrollView(rect, ref scrollPosition, rect2, true);
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(rect2);
+            listingStandard.CheckboxLabeled("Disable Total War mechanic", ref totalWarIsDisabled);
             for (int num = keys.Count - 1; num >= 0; num--)
             {
                 var def = DefDatabase<IncidentDef>.GetNamedSilentFail(keys[num]);

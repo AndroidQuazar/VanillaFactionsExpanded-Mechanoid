@@ -9,13 +9,17 @@ namespace VFEMech
     using RimWorld;
     using RimWorld.Planet;
     using Verse;
-
+    using VFEM;
 
     public class IncidentWorker_ShipLanding : IncidentWorker
     {
 
         protected override bool CanFireNowSub(IncidentParms parms)
         {
+            if (MechShipsMod.settings.totalWarIsDisabled)
+            {
+                return false;
+            }
             MechanoidBaseIncidentExtension incidentExtension = this.def.GetModExtension<MechanoidBaseIncidentExtension>();
             if (incidentExtension != null && incidentExtension.minimumColonistCount > 0)
             {

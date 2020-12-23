@@ -12,10 +12,10 @@ using Verse.AI;
 
 namespace VFEM
 {
-    class mechShipsMod : Mod
+    class MechShipsMod : Mod
     {
         public static mechShipsSettings settings;
-        public mechShipsMod(ModContentPack pack) : base(pack)
+        public MechShipsMod(ModContentPack pack) : base(pack)
         {
             settings = GetSettings<mechShipsSettings>();
         }
@@ -54,7 +54,7 @@ namespace VFEM
         }
         public static void DoDefsAlter()
         {
-            foreach (var mechShipState in mechShipsMod.settings.mechShipStates)
+            foreach (var mechShipState in MechShipsMod.settings.mechShipStates)
             {
                 var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipState.Key);
                 defToAlter.baseChance = mechShipState.Value;
