@@ -20,7 +20,7 @@ namespace VFEMech
     }
     public class MechanoidUplink : MechShipPart
     {
-        public float communicationRadius = 50f;
+        public float communicationRadius = 40f;
         public override void DrawExtraSelectionOverlays()
         {
             base.DrawExtraSelectionOverlays();
