@@ -151,6 +151,7 @@
     <Compile Include="QuestParts\QuestPart_ConvertSiteToMechShip.cs" />
     <Compile Include="QuestParts\QuestPart_Recruit.cs" />
     <Compile Include="ScenPart_StartingPackAnimal.cs" />
+    <Compile Include="SettingsHelper.cs" />
     <Compile Include="Sites\SitePartWorker_MechanoidShipLanding.cs" />
     <Compile Include="Sites\SitePartWorker_MechanoidAttackParty.cs" />
     <Compile Include="Sites\SitePartWorker_MechanoidStorage.cs" />

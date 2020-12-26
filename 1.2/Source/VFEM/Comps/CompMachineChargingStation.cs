@@ -6,9 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 using VFE.Mechanoids.Buildings;
 using VFE.Mechanoids.Needs;
 using VFECore;
+using VFEMech;
 
 namespace VFE.Mechanoids
 {
@@ -130,13 +132,26 @@ namespace VFE.Mechanoids
             List<Gizmo> gizmos = new List<Gizmo>();
             gizmos.AddRange(base.CompGetGizmosExtra());
 
-            Command_Toggle forceRest = new Command_Toggle
+            Command_Action forceRest = new Command_Action
             {
                 defaultLabel = "VFEMechForceRecharge".Translate(),
                 defaultDesc = "VFEMechForceRechargeDesc".Translate(),
-                toggleAction = delegate { wantsRest = !wantsRest; turretToInstall = null; }
+                icon = ContentFinder<Texture2D>.Get("UI/ForceRecharge"),
+                action = delegate 
+                {
+                    foreach (var t in Find.Selector.SelectedObjects)
+                    {
+                        if (t is ThingWithComps thing && thing.TryGetComp<CompMachineChargingStation>() is CompMachineChargingStation comp)
+                        {
+                            comp.turretToInstall = null;
+                            Job job = JobMaker.MakeJob(VFEMDefOf.VFE_Mechanoids_Recharge, comp.parent);
+                            comp.myPawn.jobs.TryTakeOrderedJob(job);
+                            Log.Message(comp.myPawn + " taking " + job);
+                        }
+                    }
+                }
             };
-            forceRest.isActive = delegate { return wantsRest; };
+            forceRest.disabled = (myPawn.CurJobDef == VFEMDefOf.VFE_Mechanoids_Recharge);
             gizmos.Add(forceRest);
 
             if (Props.turret)

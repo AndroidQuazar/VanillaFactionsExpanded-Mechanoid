@@ -27,17 +27,17 @@ namespace VFEM
 
             foreach (var mechShip in mechShips)
             {
-                if (settings.mechShipStates is null)
+                if (settings.mechShipIncidentChances is null)
                 {
-                    settings.mechShipStates = new Dictionary<string, float>();
+                    settings.mechShipIncidentChances = new Dictionary<string, float>();
                 }
                 if (settings.mechShipPresences is null)
                 {
-                    settings.mechShipPresences = new Dictionary<string, float>();
+                    settings.mechShipPresences = new Dictionary<string, int>();
                 }
-                if (!settings.mechShipStates.ContainsKey(mechShip.defName))
+                if (!settings.mechShipIncidentChances.ContainsKey(mechShip.defName))
                 {
-                    settings.mechShipStates[mechShip.defName] = mechShip.baseChance;
+                    settings.mechShipIncidentChances[mechShip.defName] = mechShip.baseChance;
                 }
                 var def = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShip.defName);
                 MechanoidBaseIncidentExtension incidentExtension = def.GetModExtension<MechanoidBaseIncidentExtension>();
@@ -45,6 +45,15 @@ namespace VFEM
                 {
                     var presence = incidentExtension.baseToPlace.GetModExtension<MechanoidBaseExtension>().raisesPresence;
                     settings.mechShipPresences[incidentExtension.baseToPlace.defName] = presence;
+                }
+
+                if (!settings.mechShipColonistCount.ContainsKey(def.defName))
+                {
+                    settings.mechShipColonistCount[def.defName] = incidentExtension.minimumColonistCount;
+                }
+                if (!settings.mechShipDistances.ContainsKey(def.defName))
+                {
+                    settings.mechShipDistances[def.defName] = incidentExtension.maxDistance;
                 }
             }
 
@@ -71,11 +80,11 @@ namespace VFEM
         }
         public static void DoDefsAlter()
         {
-            if (MechShipsMod.settings.mechShipStates is null)
+            if (MechShipsMod.settings.mechShipIncidentChances is null)
             {
-                MechShipsMod.settings.mechShipStates = new Dictionary<string, float>();
+                MechShipsMod.settings.mechShipIncidentChances = new Dictionary<string, float>();
             }
-            foreach (var mechShipState in MechShipsMod.settings.mechShipStates)
+            foreach (var mechShipState in MechShipsMod.settings.mechShipIncidentChances)
             {
                 var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipState.Key);
                 if (defToAlter != null)
@@ -85,7 +94,7 @@ namespace VFEM
             }
             if (MechShipsMod.settings.mechShipPresences is null)
             {
-                MechShipsMod.settings.mechShipPresences = new Dictionary<string, float>();
+                MechShipsMod.settings.mechShipPresences = new Dictionary<string, int>();
             }
             foreach (var mechShipPresence in MechShipsMod.settings.mechShipPresences)
             {
@@ -93,6 +102,32 @@ namespace VFEM
                 if (defToAlter != null)
                 {
                     defToAlter.GetModExtension<MechanoidBaseExtension>().raisesPresence = mechShipPresence.Value;
+                }
+            }
+            if (MechShipsMod.settings.mechShipColonistCount is null)
+            {
+                MechShipsMod.settings.mechShipColonistCount = new Dictionary<string, int>();
+            }
+            foreach (var mechShipColonistCount in MechShipsMod.settings.mechShipColonistCount)
+            {
+                var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipColonistCount.Key);
+                if (defToAlter != null)
+                {
+                    MechanoidBaseIncidentExtension incidentExtension = defToAlter.GetModExtension<MechanoidBaseIncidentExtension>();
+                    incidentExtension.minimumColonistCount = mechShipColonistCount.Value;
+                }
+            }
+            if (MechShipsMod.settings.mechShipDistances is null)
+            {
+                MechShipsMod.settings.mechShipDistances = new Dictionary<string, int>();
+            }
+            foreach (var mechShipMaxDistance in MechShipsMod.settings.mechShipDistances)
+            {
+                var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipMaxDistance.Key);
+                if (defToAlter != null)
+                {
+                    MechanoidBaseIncidentExtension incidentExtension = defToAlter.GetModExtension<MechanoidBaseIncidentExtension>();
+                    incidentExtension.maxDistance = mechShipMaxDistance.Value;
                 }
             }
         }
