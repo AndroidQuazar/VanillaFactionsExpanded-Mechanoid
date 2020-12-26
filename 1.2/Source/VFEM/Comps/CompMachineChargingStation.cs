@@ -17,6 +17,7 @@ namespace VFE.Mechanoids
     public class CompMachineChargingStation : CompPawnDependsOn
     {
         public bool wantsRespawn=false; //Used to determine whether a rebuild job is desired
+        public bool forceStay = false;
         public bool wantsRest = false; //Used to force a machine to return to base, for healing or recharging
         public ThingDef turretToInstall = null; //Used to specify a turret to put on the mobile turret
         public Area allowedArea = null;
@@ -123,6 +124,7 @@ namespace VFE.Mechanoids
         {
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref wantsRest, "wantsRest");
+            Scribe_Values.Look<bool>(ref forceStay, "forceStay");
             Scribe_Defs.Look<ThingDef>(ref turretToInstall, "turretToInstall");
             Scribe_References.Look<Area>(ref allowedArea, "allowedArea");
         }
@@ -132,26 +134,37 @@ namespace VFE.Mechanoids
             List<Gizmo> gizmos = new List<Gizmo>();
             gizmos.AddRange(base.CompGetGizmosExtra());
 
-            Command_Action forceRest = new Command_Action
+            Command_Toggle forceRest = new Command_Toggle
             {
                 defaultLabel = "VFEMechForceRecharge".Translate(),
                 defaultDesc = "VFEMechForceRechargeDesc".Translate(),
                 icon = ContentFinder<Texture2D>.Get("UI/ForceRecharge"),
-                action = delegate 
+                toggleAction = delegate 
                 {
                     foreach (var t in Find.Selector.SelectedObjects)
                     {
                         if (t is ThingWithComps thing && thing.TryGetComp<CompMachineChargingStation>() is CompMachineChargingStation comp)
                         {
-                            comp.turretToInstall = null;
-                            Job job = JobMaker.MakeJob(VFEMDefOf.VFE_Mechanoids_Recharge, comp.parent);
-                            comp.myPawn.jobs.TryTakeOrderedJob(job);
-                            Log.Message(comp.myPawn + " taking " + job);
+                            if (comp.forceStay)
+                            {
+                                comp.wantsRest = false;
+                                comp.forceStay = false;
+                            }
+                            else
+                            {
+                                comp.wantsRest = true;
+                                comp.forceStay = true;
+                                comp.turretToInstall = null;
+                                Job job = JobMaker.MakeJob(VFEMDefOf.VFE_Mechanoids_Recharge, comp.parent);
+                                comp.myPawn.jobs.StopAll();
+                                Log.Message(comp.myPawn + " taking " + job + " - " + comp.parent);
+                                comp.myPawn.jobs.TryTakeOrderedJob(job);
+                            }
                         }
                     }
                 }
             };
-            forceRest.disabled = (myPawn.CurJobDef == VFEMDefOf.VFE_Mechanoids_Recharge);
+            forceRest.isActive = delegate { return forceStay; };
             gizmos.Add(forceRest);
 
             if (Props.turret)

@@ -150,7 +150,7 @@ namespace VFE.Mechanoids.AI.JobDrivers
 					}
 				}
 				actor2.Rotation = Rot4.South;
-				if (actor2.IsHashIntervalTick(300))
+				if (!MyBuildingCompMachineChargingStation.forceStay && actor2.IsHashIntervalTick(300))
 				{
 					actor2.jobs.CheckForJobOverride();
 				}
@@ -164,10 +164,12 @@ namespace VFE.Mechanoids.AI.JobDrivers
 				}
 			});
 			layDown.handlingFacing = true;
-			layDown.FailOn(() => !MyBuildingCompPowerTrader.PowerOn || (PawnNeed_Power.CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && MyBuildingCompMachineChargingStation.turretToInstall==null));
+			layDown.FailOn(() => !MyBuildingCompMachineChargingStation.forceStay && (!MyBuildingCompPowerTrader.PowerOn || 
+				(PawnNeed_Power.CurLevelPercentage > 0.99f && !layDown.actor.health.hediffSet.HasNaturallyHealingInjury() && MyBuildingCompMachineChargingStation.turretToInstall==null)));
 
 			layDown.defaultCompleteMode = ToilCompleteMode.Never;
 			return layDown;
 		}
 	}
 }
+
