@@ -56,7 +56,6 @@ namespace VFEM
                     settings.mechShipDistances[def.defName] = incidentExtension.maxDistance;
                 }
             }
-
             settings.DoSettingsWindowContents(inRect);
         }
 
@@ -128,6 +127,18 @@ namespace VFEM
                 {
                     MechanoidBaseIncidentExtension incidentExtension = defToAlter.GetModExtension<MechanoidBaseIncidentExtension>();
                     incidentExtension.maxDistance = mechShipMaxDistance.Value;
+                }
+            }
+
+            if (MechShipsMod.settings.totalWarIsDisabled)
+            {
+                foreach (var mechShipMaxDistance in MechShipsMod.settings.mechShipDistances)
+                {
+                    var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipMaxDistance.Key);
+                    if (defToAlter != null)
+                    {
+                        defToAlter.baseChance = 0f;
+                    }
                 }
             }
         }

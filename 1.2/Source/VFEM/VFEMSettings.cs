@@ -24,6 +24,7 @@ namespace VFEM
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref totalWarIsDisabled, "totalWarIsDisabled");
             Scribe_Collections.Look(ref mechShipIncidentChances, "mechShipStates", LookMode.Value, LookMode.Value, ref mechShipKeys, ref floatValues);
             Scribe_Collections.Look(ref mechShipPresences, "mechShipPresences", LookMode.Value, LookMode.Value, ref mechShipKeys2, ref intValues2);
             Scribe_Collections.Look(ref mechShipColonistCount, "mechShipColonistCount", LookMode.Value, LookMode.Value, ref mechShipKeys3, ref intValues3);
