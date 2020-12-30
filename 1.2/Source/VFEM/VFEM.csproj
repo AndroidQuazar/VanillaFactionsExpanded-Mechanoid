@@ -173,6 +173,7 @@
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.0.4</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
