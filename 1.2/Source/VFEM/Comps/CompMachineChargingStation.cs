@@ -54,7 +54,7 @@ namespace VFE.Mechanoids
                 SpawnMyPawn();
             else
                 CheckWantsRespawn();
-            if (this.myPawn.Position == this.parent.Position && this.myPawn.needs.TryGetNeed<Need_Power>().CurLevel >= 0.99f)
+            if (this.myPawn != null && this.myPawn.Position == this.parent.Position && this.myPawn.needs.TryGetNeed<Need_Power>().CurLevel >= 0.99f)
             {
                 this.StopEnergyDrain();
             }
