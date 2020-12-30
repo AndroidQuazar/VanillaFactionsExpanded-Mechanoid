@@ -10,7 +10,7 @@ using VFECore;
 
 namespace VFE.Mechanoids
 {
-    class CompMachine : CompDependsOnBuilding
+    public class CompMachine : CompDependsOnBuilding
     {
         public ThingDef turretAttached = null;
         public float turretAngle = 0f; //Purely cosmetic, don't need to save it

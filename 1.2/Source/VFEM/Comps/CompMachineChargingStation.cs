@@ -21,10 +21,22 @@ namespace VFE.Mechanoids
         public bool wantsRest = false; //Used to force a machine to return to base, for healing or recharging
         public ThingDef turretToInstall = null; //Used to specify a turret to put on the mobile turret
         public Area allowedArea = null;
+        public bool energyDrainMode = true;
 
         public static List<CompMachineChargingStation> cachedChargingStations = new List<CompMachineChargingStation>();
         public static Dictionary<Thing, CompMachineChargingStation> cachedChargingStationsDict = new Dictionary<Thing, CompMachineChargingStation>();
-
+        private CompPowerTrader compPower;
+        public CompPowerTrader PowerComp
+        {
+            get
+            {
+                if (compPower is null) 
+                {
+                    compPower = parent.TryGetComp<CompPowerTrader>();
+                }
+                return compPower;
+            }
+        }
         public new CompProperties_MachineChargingStation Props
         {
             get
@@ -42,6 +54,10 @@ namespace VFE.Mechanoids
                 SpawnMyPawn();
             else
                 CheckWantsRespawn();
+            if (this.myPawn.Position == this.parent.Position && this.myPawn.needs.TryGetNeed<Need_Power>().CurLevel >= 0.99f)
+            {
+                this.StopEnergyDrain();
+            }
         }
 
         public override void PostDeSpawn(Map map)
@@ -90,13 +106,17 @@ namespace VFE.Mechanoids
             wantsRespawn = false;
         }
 
+
         public override void CompTickRare()
         {
             base.CompTickRare();
             Building_BedMachine bed = (Building_BedMachine)parent;
             if(bed.occupant!=null)
             {
-                parent.TryGetComp<CompPowerTrader>().powerOutputInt = 0 - parent.TryGetComp<CompPowerTrader>().Props.basePowerConsumption - Props.extraChargingPower;
+                if (this.energyDrainMode)
+                {
+                    PowerComp.powerOutputInt = 0 - PowerComp.Props.basePowerConsumption - Props.extraChargingPower;
+                }
                 if (myPawn.health.hediffSet.HasNaturallyHealingInjury() && bed.TryGetComp<CompPowerTrader>().PowerOn)
                 {
                     float num3 = 12f;
@@ -105,9 +125,9 @@ namespace VFE.Mechanoids
                  select x).RandomElement().Heal(num3 * myPawn.HealthScale * 0.01f);
                 }
             }
-            else
+            else if (this.energyDrainMode)
             {
-                parent.TryGetComp<CompPowerTrader>().powerOutputInt = 0 - parent.TryGetComp<CompPowerTrader>().Props.basePowerConsumption;
+                PowerComp.powerOutputInt = 0 - PowerComp.Props.basePowerConsumption;
             }
             CheckWantsRespawn();
         }
@@ -125,10 +145,28 @@ namespace VFE.Mechanoids
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref wantsRest, "wantsRest");
             Scribe_Values.Look<bool>(ref forceStay, "forceStay");
+            Scribe_Values.Look<bool>(ref energyDrainMode, "energyDrainMode", true);
             Scribe_Defs.Look<ThingDef>(ref turretToInstall, "turretToInstall");
             Scribe_References.Look<Area>(ref allowedArea, "allowedArea");
         }
 
+        public void StopEnergyDrain()
+        {
+            if (myPawn.needs.TryGetNeed<Need_Power>().CurLevel >= 0.99f)
+            {
+                PowerComp.powerOutputInt = -1;
+                this.energyDrainMode = false;
+            }
+        }
+
+        public void StartEnergyDrain()
+        {
+            if (myPawn.needs.TryGetNeed<Need_Power>().CurLevel < 0.99f)
+            {
+                this.energyDrainMode = true;
+                PowerComp.powerOutputInt = -PowerComp.Props.basePowerConsumption;
+            }
+        }
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             List<Gizmo> gizmos = new List<Gizmo>();

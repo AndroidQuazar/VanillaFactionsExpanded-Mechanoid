@@ -12,16 +12,40 @@ namespace VFE.Mechanoids.Needs
     {
 		private int lastRestTick = -999;
 		private float RestFallFactor => pawn.health.hediffSet.RestFallFactor;
+
+		private CompMachine compMachine;
+
+		public CompMachine MachineComp
+        {
+			get
+            {
+				if (compMachine is null && CompMachine.cachedMachinesPawns.TryGetValue(pawn, out CompMachine comp))
+                {
+					compMachine = comp;
+				}
+				return compMachine;
+            }
+        }
+
+		private CompMachineChargingStation compChargingMachine;
+
+		public CompMachineChargingStation ChargingStationComp
+		{
+			get
+			{
+				if (compChargingMachine is null)
+				{
+					compChargingMachine = MachineComp.myBuilding.TryGetComp<CompMachineChargingStation>();
+				}
+				return compChargingMachine;
+			}
+		}
 		bool Enabled
         {
 			get
             {
-				if (CompMachine.cachedMachinesPawns.TryGetValue(pawn, out CompMachine comp))
-                {
-					return comp != null;
-                }
-				return false;
-            }
+				return MachineComp != null;
+			}
         }
         public override bool ShowOnNeedList => Enabled;
 
@@ -49,7 +73,7 @@ namespace VFE.Mechanoids.Needs
 		{
 			get
 			{
-				return 1 / CompMachine.cachedMachinesPawns[pawn].Props.hoursActive / 2500;
+				return 1 / MachineComp.Props.hoursActive / 2500;
 			}
 		}
 
@@ -82,6 +106,22 @@ namespace VFE.Mechanoids.Needs
 
 		public override void NeedInterval()
 		{
+			if (this.pawn.Position == ChargingStationComp.parent.Position)
+			{
+				if (this.CurLevel >= 0.99f && ChargingStationComp.energyDrainMode)
+				{
+					ChargingStationComp.StopEnergyDrain();
+				}
+				else if (this.CurLevel < 0.99f && !ChargingStationComp.energyDrainMode)
+				{
+					ChargingStationComp.StartEnergyDrain();
+				}
+			}
+			else if (this.CurLevel < 0.99f && !ChargingStationComp.energyDrainMode)
+			{
+				ChargingStationComp.StartEnergyDrain();
+			}
+
 			if (Enabled && !IsFrozen)
 			{
 				if (Resting)
@@ -90,12 +130,15 @@ namespace VFE.Mechanoids.Needs
 					num *= pawn.GetStatValue(StatDefOf.RestRateMultiplier);
 					if (num > 0f)
 					{
-						CurLevel += 1 / CompMachine.cachedMachinesPawns[pawn].myBuilding.TryGetComp<CompMachineChargingStation>().Props.hoursToRecharge / 2500 * num * 150f;
+						CurLevel += 1 / ChargingStationComp.Props.hoursToRecharge / 2500 * num * 150f;
 					}
 				}
 				else
 				{
-					CurLevel -= RestFallPerTick * 150f;
+					if (this.pawn.Position != ChargingStationComp.parent.Position)
+                    {
+						CurLevel -= RestFallPerTick * 150f;
+                    }
 				}
 			}
 		}
