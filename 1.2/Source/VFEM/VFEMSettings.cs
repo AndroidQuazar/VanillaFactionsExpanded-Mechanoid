@@ -18,6 +18,9 @@ namespace VFEM
         public Dictionary<string, int> mechShipPresences = new Dictionary<string, int>();
         public Dictionary<string, int> mechShipColonistCount = new Dictionary<string, int>();
         public Dictionary<string, int> mechShipDistances = new Dictionary<string, int>();
+        public const float VFEM_factorySpeedMultiplierBase = 1;
+        public float VFEM_factorySpeedMultiplier = VFEM_factorySpeedMultiplierBase;
+
 
 
         public bool totalWarIsDisabled;
@@ -29,6 +32,8 @@ namespace VFEM
             Scribe_Collections.Look(ref mechShipPresences, "mechShipPresences", LookMode.Value, LookMode.Value, ref mechShipKeys2, ref intValues2);
             Scribe_Collections.Look(ref mechShipColonistCount, "mechShipColonistCount", LookMode.Value, LookMode.Value, ref mechShipKeys3, ref intValues3);
             Scribe_Collections.Look(ref mechShipDistances, "mechShipDistances", LookMode.Value, LookMode.Value, ref mechShipKeys4, ref intValues4);
+            Scribe_Values.Look(ref VFEM_factorySpeedMultiplier, "VFEM_factorySpeedMultiplier", VFEM_factorySpeedMultiplierBase, true);
+
         }
 
         private List<string> mechShipKeys;
@@ -51,7 +56,7 @@ namespace VFEM
             var keys4 = mechShipDistances.Keys.ToList().OrderByDescending(x => x).ToList();
 
             Rect rect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
-            Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30));
+            Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30)+100);
             Widgets.BeginScrollView(rect, ref scrollPosition, rect2, true);
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(rect2);
@@ -104,6 +109,9 @@ namespace VFEM
                     mechShipDistances[keys4[num]] = maximumDistance;
                 }
             }
+            listingStandard.GapLine();
+            listingStandard.Label("VFEM_factorySpeedMultiplier".Translate() + ": " + VFEM_factorySpeedMultiplier, -1, "VFEM_factorySpeedMultiplierTooltip".Translate());
+            VFEM_factorySpeedMultiplier = listingStandard.Slider(VFEM_factorySpeedMultiplier, 0.1f, 5f);
             listingStandard.GapLine();
 
             listingStandard.End();

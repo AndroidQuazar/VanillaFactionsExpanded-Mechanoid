@@ -881,7 +881,7 @@
 			<li>50</li>
 		</amount>
 		<result>Neutroamine</result>	
-		<yield>1</yield>
+		<yield>3</yield>
 		<outputLimitControlled>true</outputLimitControlled>
 		<maxTotalOutput>500</maxTotalOutput>
 		<isCategoryRecipe>true</isCategoryRecipe>
