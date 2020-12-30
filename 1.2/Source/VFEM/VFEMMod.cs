@@ -13,12 +13,12 @@ using VFEMech;
 
 namespace VFEM
 {
-    class MechShipsMod : Mod
+    public class MechShipsMod : Mod
     {
-        public static mechShipsSettings settings;
+        public static MechShipsSettings settings;
         public MechShipsMod(ModContentPack pack) : base(pack)
         {
-            settings = GetSettings<mechShipsSettings>();
+            settings = GetSettings<MechShipsSettings>();
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {
