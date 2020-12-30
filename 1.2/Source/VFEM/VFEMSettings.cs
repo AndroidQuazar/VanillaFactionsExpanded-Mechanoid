@@ -12,7 +12,7 @@ using Verse.AI;
 
 namespace VFEM
 {
-    class mechShipsSettings : ModSettings
+    public class MechShipsSettings : ModSettings
     {
         public Dictionary<string, float> mechShipIncidentChances = new Dictionary<string, float>();
         public Dictionary<string, int> mechShipPresences = new Dictionary<string, int>();
@@ -56,7 +56,7 @@ namespace VFEM
             var keys4 = mechShipDistances.Keys.ToList().OrderByDescending(x => x).ToList();
 
             Rect rect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
-            Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30)+100);
+            Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30) +100);
             Widgets.BeginScrollView(rect, ref scrollPosition, rect2, true);
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(rect2);
@@ -111,7 +111,7 @@ namespace VFEM
             }
             listingStandard.GapLine();
             listingStandard.Label("VFEM_factorySpeedMultiplier".Translate() + ": " + VFEM_factorySpeedMultiplier, -1, "VFEM_factorySpeedMultiplierTooltip".Translate());
-            VFEM_factorySpeedMultiplier = listingStandard.Slider(VFEM_factorySpeedMultiplier, 0.1f, 5f);
+            VFEM_factorySpeedMultiplier = (float)Math.Round(listingStandard.Slider(VFEM_factorySpeedMultiplier, 0.1f, 5f),2);
             listingStandard.GapLine();
 
             listingStandard.End();
