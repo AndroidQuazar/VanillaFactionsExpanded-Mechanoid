@@ -17,7 +17,7 @@ namespace VFEMech
         public override PathEndMode PathEndMode => PathEndMode.Touch;
         
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false) =>
-            t is MissileSilo silo && !silo.Satisfied && silo.ThingsNeeded.Any(td => pawn.Map.listerThings.ThingsOfDef(td).Any(f => pawn.CanReserve(f)));
+            t is MissileSilo silo && !silo.Satisfied && silo.ThingsNeeded.Any(td => pawn.Map.listerThings.ThingsOfDef(td).Any(f => !f.IsForbidden(pawn) && pawn.CanReserve(f)));
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
