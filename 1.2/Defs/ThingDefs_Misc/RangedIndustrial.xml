@@ -43,6 +43,7 @@
     <weaponTags Inherit='False'>
       <li>IndustrialGunCombatMechanoid</li>
     </weaponTags>
+	<tradeTags Inherit='False' />
     <thingCategories Inherit='False' />
     <tools>
       <li>
