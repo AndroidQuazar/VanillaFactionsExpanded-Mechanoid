@@ -35,7 +35,7 @@ namespace VFE.Mechanoids.Needs
 			{
 				if (compChargingMachine is null)
 				{
-					compChargingMachine = MachineComp.myBuilding.TryGetComp<CompMachineChargingStation>();
+					compChargingMachine = MachineComp?.myBuilding?.TryGetComp<CompMachineChargingStation>();
 				}
 				return compChargingMachine;
 			}
