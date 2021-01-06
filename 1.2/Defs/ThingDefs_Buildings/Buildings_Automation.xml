@@ -42,7 +42,7 @@
 		</inspectorTabs>
 		<castEdgeShadows>true</castEdgeShadows>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>0.3</Flammability>
@@ -114,7 +114,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -233,7 +233,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -345,7 +345,7 @@
 
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>450</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -456,7 +456,7 @@
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -563,7 +563,7 @@
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -672,7 +672,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -787,7 +787,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -897,7 +897,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1007,7 +1007,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1117,7 +1117,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>325</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1228,7 +1228,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1346,7 +1346,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1456,7 +1456,7 @@
 
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1567,7 +1567,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>325</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1663,7 +1663,7 @@
 			<WorkToBuild>15000</WorkToBuild>
 			<Flammability>1.0</Flammability>
 			<Beauty>-20</Beauty>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<size>(3,3)</size>
@@ -1779,7 +1779,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -1888,7 +1888,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>400</MaxHitPoints>
 			<Flammability>1.0</Flammability>
@@ -2007,7 +2007,7 @@
 		</placeWorkers>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<Mass>10</Mass>
+			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>1.0</Flammability>

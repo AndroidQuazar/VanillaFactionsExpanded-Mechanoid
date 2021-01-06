@@ -26,7 +26,12 @@
       <WorkToBuild>3800</WorkToBuild>
       <Flammability>1.0</Flammability>
       <Beauty>-20</Beauty>
+	  <Mass>28</Mass>
     </statBases>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<minifiedDef>MinifiedThing</minifiedDef>
     <canOverlapZones>false</canOverlapZones>
     <size>(2,2)</size>
 		<building>
