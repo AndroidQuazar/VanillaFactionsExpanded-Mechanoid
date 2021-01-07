@@ -15,7 +15,7 @@ namespace VFE.Mechanoids.HarmonyPatches
     {
         public static void Postfix(ref List<Pawn> __result)
         {
-            __result = __result.Where(pawn => pawn.TryGetComp<CompMachine>() == null).ToList();
+            __result = __result.Where(pawn => !CompMachine.cachedMachines.TryGetValue(pawn.Drawer.renderer, out CompMachine value)).ToList();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using System.Reflection;
 
 namespace VFE.Mechanoids.HarmonyPatches
 {
@@ -13,9 +14,10 @@ namespace VFE.Mechanoids.HarmonyPatches
     [HarmonyPatch("IsVisible", MethodType.Getter)]
     public static class NoBioForMachines
     {
+        static PropertyInfo propertyInfo = typeof(ITab_Pawn_Character).GetProperty("PawnToShowInfoAbout", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         public static void Postfix(ITab_Pawn_Character __instance, ref bool __result)
         {
-            Pawn pawn=(Pawn)typeof(ITab_Pawn_Character).GetProperty("PawnToShowInfoAbout", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(__instance);
+            Pawn pawn= (Pawn)propertyInfo.GetValue(__instance);
             if (pawn.RaceProps.IsMechanoid)
                 __result = false;
         }
