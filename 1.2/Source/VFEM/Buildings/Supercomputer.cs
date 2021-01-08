@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using Verse.AI.Group;
+using VFEM;
 
 namespace VFEMech
 {
@@ -31,7 +32,7 @@ namespace VFEMech
                     Dictionary<ResearchProjectDef, float> dictionary = fieldInfo.GetValue(Find.ResearchManager) as Dictionary<ResearchProjectDef, float>;
                     if (dictionary.ContainsKey(proj))
                     {
-                        dictionary[proj] += 1f;
+                        dictionary[proj] += MechShipsMod.settings.VFEM_SuperComputerResearchPointYield;
                     }
                     if (proj.IsFinished)
                     {

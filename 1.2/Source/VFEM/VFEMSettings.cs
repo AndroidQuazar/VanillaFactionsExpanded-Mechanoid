@@ -20,6 +20,7 @@ namespace VFEM
         public Dictionary<string, int> mechShipDistances = new Dictionary<string, int>();
         public const float VFEM_factorySpeedMultiplierBase = 1;
         public float VFEM_factorySpeedMultiplier = VFEM_factorySpeedMultiplierBase;
+        public float VFEM_SuperComputerResearchPointYield = 1f;
 
 
 
@@ -33,6 +34,7 @@ namespace VFEM
             Scribe_Collections.Look(ref mechShipColonistCount, "mechShipColonistCount", LookMode.Value, LookMode.Value, ref mechShipKeys3, ref intValues3);
             Scribe_Collections.Look(ref mechShipDistances, "mechShipDistances", LookMode.Value, LookMode.Value, ref mechShipKeys4, ref intValues4);
             Scribe_Values.Look(ref VFEM_factorySpeedMultiplier, "VFEM_factorySpeedMultiplier", VFEM_factorySpeedMultiplierBase, true);
+            Scribe_Values.Look(ref VFEM_SuperComputerResearchPointYield, "VFEM_SuperComputerResearchPointYield", 1f, true);
 
         }
 
@@ -113,7 +115,8 @@ namespace VFEM
             listingStandard.Label("VFEM_factorySpeedMultiplier".Translate() + ": " + VFEM_factorySpeedMultiplier, -1, "VFEM_factorySpeedMultiplierTooltip".Translate());
             VFEM_factorySpeedMultiplier = (float)Math.Round(listingStandard.Slider(VFEM_factorySpeedMultiplier, 0.1f, 5f),2);
             listingStandard.GapLine();
-
+            listingStandard.SliderLabeled("VFEM_SuperComputerResearchPointYield".Translate(), ref VFEM_SuperComputerResearchPointYield, VFEM_SuperComputerResearchPointYield.ToStringDecimalIfSmall(), 1f, 100f);
+            listingStandard.GapLine();
             listingStandard.End();
             Widgets.EndScrollView();
             base.Write();
