@@ -13,7 +13,6 @@ namespace VFEMech
     [StaticConstructorOnStartup]
     public static class MechUtils
     {
-        public static Mesh plane20Flip = MeshMakerPlanes.NewPlaneMesh(2f, flipped: true);
         static MechUtils()
         {
             DefDatabase<ThingDef>.GetNamed("PsychicDroner", false)?.killedLeavings.Add(new ThingDefCountClass(VFEMDefOf.VFE_ComponentMechanoid, 4));
