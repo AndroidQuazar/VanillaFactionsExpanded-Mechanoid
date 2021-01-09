@@ -88,7 +88,6 @@
     <Compile Include="LordJob_VFEMDefendBase.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicSuppression.cs" />
     <Compile Include="Comps\CompActiveGameCondition_PsychicEmanation.cs" />
-    <Compile Include="Comps\ShieldMechBubble.cs" />
     <Compile Include="Comps\CompMechProducer.cs" />
     <Compile Include="Comps\CompActiveGameCondition.cs" />
     <Compile Include="Damages\DeathActionWorker_BigBombExplosion.cs" />
