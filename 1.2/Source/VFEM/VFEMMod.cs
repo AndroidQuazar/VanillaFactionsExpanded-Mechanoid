@@ -38,7 +38,6 @@ namespace VFEM
                 if (!settings.mechShipIncidentChances.ContainsKey(mechShip.defName))
                 {
                     settings.mechShipIncidentChances[mechShip.defName] = mechShip.baseChance;
-                    mechShip.baseChance                                = 0;
                 }
                 var def = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShip.defName);
                 MechanoidBaseIncidentExtension incidentExtension = def.GetModExtension<MechanoidBaseIncidentExtension>();
@@ -87,10 +86,12 @@ namespace VFEM
             }
             foreach (var mechShipState in MechShipsMod.settings.mechShipIncidentChances)
             {
+
+
                 var defToAlter = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShipState.Key);
                 if (defToAlter != null)
                 {
-                    defToAlter.baseChance = mechShipState.Value;
+                    defToAlter.baseChance = 0;
                 }
             }
             if (MechShipsMod.settings.mechShipPresences is null)
