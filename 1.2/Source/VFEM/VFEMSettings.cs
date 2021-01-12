@@ -23,6 +23,7 @@ namespace VFEM
         public float VFEM_factorySpeedMultiplier = VFEM_factorySpeedMultiplierBase;
         public float VFEM_SuperComputerResearchPointYield = 1f;
 
+        public IntRange mechShipTimeInterval = new IntRange(GenDate.TicksPerQuadrum/2, GenDate.TicksPerQuadrum);
 
 
         public bool totalWarIsDisabled;
@@ -37,6 +38,11 @@ namespace VFEM
             Scribe_Values.Look(ref VFEM_factorySpeedMultiplier, "VFEM_factorySpeedMultiplier", VFEM_factorySpeedMultiplierBase, true);
             Scribe_Values.Look(ref VFEM_SuperComputerResearchPointYield, "VFEM_SuperComputerResearchPointYield", 1f, true);
 
+            int mechShipTimeIntervalMax = this.mechShipTimeInterval.max;
+            int mechShipTimeIntervalMin = this.mechShipTimeInterval.min;
+            Scribe_Values.Look(ref mechShipTimeIntervalMax, "VFEM_" + nameof(mechShipTimeIntervalMax));
+            Scribe_Values.Look(ref mechShipTimeIntervalMin, "VFEM_" + nameof(mechShipTimeIntervalMin));
+            this.mechShipTimeInterval = new IntRange(mechShipTimeIntervalMin, mechShipTimeIntervalMax);
         }
 
         private List<string> mechShipKeys;
@@ -65,6 +71,17 @@ namespace VFEM
             listingStandard.Begin(rect2);
             listingStandard.CheckboxLabeled("VFEMech.DisableTotalWarMechanic".Translate(), ref totalWarIsDisabled);
             listingStandard.GapLine();
+            listingStandard.Label("VFEMech.AdjustIncidentTimeInterval".Translate());
+            
+            listingStandard.Label($"{this.mechShipTimeInterval.min.ToStringTicksToPeriodVerbose(false)} - {this.mechShipTimeInterval.max.ToStringTicksToPeriodVerbose(false)}");
+            listingStandard.IntRange(ref this.mechShipTimeInterval, GenDate.TicksPerDay, GenDate.TicksPerYear);
+
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+                this.mechShipTimeInterval = new IntRange(GenDate.TicksPerQuadrum / 2, GenDate.TicksPerQuadrum);
+            }
+
+            listingStandard.GapLine();
             listingStandard.Label("VFEMech.AdjustIncidentChanceLabel".Translate());
             for (int num = keys.Count - 1; num >= 0; num--)
             {
@@ -76,15 +93,16 @@ namespace VFEM
                     mechShipIncidentChances[keys[num]] = incidentChance;
                 }
             }
+
             if (listingStandard.ButtonText("Reset".Translate()))
             {
-                IncidentDef.Named("VFEM_ShipLandFrigate").baseChance = 0.1f;
-                IncidentDef.Named("VFEM_ShipLandDestroyer").baseChance = 0.1f;
-                IncidentDef.Named("VFEM_ShipLandCruiser").baseChance = 0.07f;
-                IncidentDef.Named("VFEM_ShipLandTroopship").baseChance = 0.05f;
-                IncidentDef.Named("VFEM_ShipLandCarrier").baseChance = 0.02f;
-                mechShipIncidentChances.Clear();
+                this.mechShipIncidentChances["VFEM_ShipLandFrigate"]   = 0.1f;
+                this.mechShipIncidentChances["VFEM_ShipLandDestroyer"] = 0.1f;
+                this.mechShipIncidentChances["VFEM_ShipLandCruiser"]   = 0.07f;
+                this.mechShipIncidentChances["VFEM_ShipLandTroopship"] = 0.05f;
+                this.mechShipIncidentChances["VFEM_ShipLandCarrier"]   = 0.02f;
             }
+
             listingStandard.GapLine();
             listingStandard.Label("VFEMech.AdjustMechPresenceLabel".Translate());
             for (int num = keys2.Count - 1; num >= 0; num--)

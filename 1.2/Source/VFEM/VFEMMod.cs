@@ -38,6 +38,7 @@ namespace VFEM
                 if (!settings.mechShipIncidentChances.ContainsKey(mechShip.defName))
                 {
                     settings.mechShipIncidentChances[mechShip.defName] = mechShip.baseChance;
+                    mechShip.baseChance                                = 0;
                 }
                 var def = DefDatabase<IncidentDef>.GetNamedSilentFail(mechShip.defName);
                 MechanoidBaseIncidentExtension incidentExtension = def.GetModExtension<MechanoidBaseIncidentExtension>();
@@ -56,6 +57,7 @@ namespace VFEM
                     settings.mechShipDistances[def.defName] = incidentExtension.maxDistance;
                 }
             }
+
             settings.DoSettingsWindowContents(inRect);
         }
 

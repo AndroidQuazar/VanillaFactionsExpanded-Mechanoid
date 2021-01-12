@@ -21,7 +21,7 @@
         <baseToPlace>VFEM_Frigate</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
-		<minimumColonistCount>3</minimumColonistCount>
+        <minimumColonistCount>3</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -36,7 +36,7 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>0.1</baseChance>
     <minRefireDays>30</minRefireDays>
-        <letterDef>ThreatBig</letterDef>
+    <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Destroyer</letterLabel>
     <letterText>{0} sent a new ship to land on the planet.\n\nDestroyer is a medium-sized ship usually serving as mechanoid hive defender. It has no short range defenses. When destroyed, mechanoid presence on the surface will be lowered.\n\nIf it's left operational, it will contribute to the size of mechanoid attack parties.</letterText>
     <modExtensions>
@@ -44,7 +44,7 @@
         <baseToPlace>VFEM_Destroyer</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
-		<minimumColonistCount>3</minimumColonistCount>
+        <minimumColonistCount>3</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -59,7 +59,7 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>0.07</baseChance>
     <minRefireDays>60</minRefireDays>
-        <letterDef>ThreatBig</letterDef>
+    <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Cruiser</letterLabel>
     <letterText>{0} sent a new ship to land on the planet.\n\nCruiser is a medium-sized ship usually serving as a bulk of a mechanoid hive fleet. Is has a number of short range defensive measures, but lacks long range weaponry. When destroyed, mechanoid presence on the surface will be lowered.\n\nIf it's left operational, it will contribute to the size of mechanoid attack parties.</letterText>
     <modExtensions>
@@ -67,7 +67,7 @@
         <baseToPlace>VFEM_Cruiser</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
-		<minimumColonistCount>5</minimumColonistCount>
+        <minimumColonistCount>5</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -82,7 +82,7 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>0.05</baseChance>
     <minRefireDays>120</minRefireDays>
-        <letterDef>ThreatBig</letterDef>
+    <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Troopship</letterLabel>
     <letterText>{0} sent a new ship to land on the planet.\n\nTroopship is a large mechanoid factory-ship, capable of producing large amounts of combat-ready mechanoids in very little time. When destroyed, mechanoid presence on the surface will be lowered.\n\nIf it's left operational, it will contribute to the size of mechanoid attack parties.</letterText>
     <modExtensions>
@@ -90,7 +90,7 @@
         <baseToPlace>VFEM_Troopship</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>120</maxDistance>
-		<minimumColonistCount>5</minimumColonistCount>
+        <minimumColonistCount>5</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -105,7 +105,7 @@
     <workerClass>VFEMech.IncidentWorker_ShipLanding</workerClass>
     <baseChance>0.02</baseChance>
     <minRefireDays>180</minRefireDays>
-        <letterDef>ThreatBig</letterDef>
+    <letterDef>ThreatBig</letterDef>
     <letterLabel>Ship Landed: Carrier</letterLabel>
     <letterText>{0} sent a new ship to land on the planet.\n\nCarrier is the biggest ship in the mechanoid hive, heavily defended and with numerous means of producing new, combat-ready mechanoid units. When destroyed, mechanoid presence on the surface will be lowered.\n\nIf it's left operational, it will contribute to the size of mechanoid attack parties.</letterText>
     <modExtensions>
@@ -113,7 +113,7 @@
         <baseToPlace>VFEM_Carrier</baseToPlace>
         <minDistance>5</minDistance>
         <maxDistance>120</maxDistance>
-		<minimumColonistCount>10</minimumColonistCount>
+        <minimumColonistCount>10</minimumColonistCount>
       </li>
     </modExtensions>
   </IncidentDef>

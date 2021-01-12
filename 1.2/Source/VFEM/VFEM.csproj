@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="KCSG">
       <HintPath>..\..\..\..\VanillaExpandedFramework\1.2\Assemblies\KCSG.dll</HintPath>
       <Private>False</Private>
@@ -140,6 +136,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VFEMMod.cs" />
     <Compile Include="VFEMSettings.cs" />
+    <Compile Include="VFEMWorldComponent.cs" />
     <Compile Include="WorkGivers\WorkGiver_RefuelSilo.cs" />
   </ItemGroup>
   <ItemGroup>
