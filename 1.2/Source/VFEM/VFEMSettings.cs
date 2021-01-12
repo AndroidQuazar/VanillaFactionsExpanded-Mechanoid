@@ -9,6 +9,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using VFEMech;
 
 namespace VFEM
 {
@@ -58,11 +59,12 @@ namespace VFEM
             var keys4 = mechShipDistances.Keys.ToList().OrderByDescending(x => x).ToList();
 
             Rect rect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
-            Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30) +100);
+            Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30) + 350);
             Widgets.BeginScrollView(rect, ref scrollPosition, rect2, true);
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(rect2);
             listingStandard.CheckboxLabeled("VFEMech.DisableTotalWarMechanic".Translate(), ref totalWarIsDisabled);
+            listingStandard.GapLine();
             listingStandard.Label("VFEMech.AdjustIncidentChanceLabel".Translate());
             for (int num = keys.Count - 1; num >= 0; num--)
             {
@@ -73,6 +75,15 @@ namespace VFEM
                     listingStandard.SliderLabeled(incidentDef.label, ref incidentChance, incidentChance.ToStringDecimalIfSmall(), 0f, 5f);
                     mechShipIncidentChances[keys[num]] = incidentChance;
                 }
+            }
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+                IncidentDef.Named("VFEM_ShipLandFrigate").baseChance = 0.1f;
+                IncidentDef.Named("VFEM_ShipLandDestroyer").baseChance = 0.1f;
+                IncidentDef.Named("VFEM_ShipLandCruiser").baseChance = 0.07f;
+                IncidentDef.Named("VFEM_ShipLandTroopship").baseChance = 0.05f;
+                IncidentDef.Named("VFEM_ShipLandCarrier").baseChance = 0.02f;
+                mechShipIncidentChances.Clear();
             }
             listingStandard.GapLine();
             listingStandard.Label("VFEMech.AdjustMechPresenceLabel".Translate());
@@ -86,6 +97,15 @@ namespace VFEM
                     mechShipPresences[keys2[num]] = mechPresence;
                 }
             }
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Frigate").GetModExtension<MechanoidBaseExtension>().raisesPresence = 300;
+                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Destroyer").GetModExtension<MechanoidBaseExtension>().raisesPresence = 450;
+                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Cruiser").GetModExtension<MechanoidBaseExtension>().raisesPresence = 600;
+                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Troopship").GetModExtension<MechanoidBaseExtension>().raisesPresence = 1200;
+                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Carrier").GetModExtension<MechanoidBaseExtension>().raisesPresence = 2400;
+                mechShipPresences.Clear();
+            }
             listingStandard.GapLine();
             listingStandard.Label("VFEMech.AdjustMinimunColonistCountLabel".Translate());
             for (int num = keys3.Count - 1; num >= 0; num--)
@@ -97,6 +117,15 @@ namespace VFEM
                     listingStandard.SliderLabeled(incidentDef.label, ref minimumCount, minimumCount.ToString(), 0, 100);
                     mechShipColonistCount[keys3[num]] = minimumCount;
                 }
+            }
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+                IncidentDef.Named("VFEM_ShipLandFrigate").GetModExtension< MechanoidBaseIncidentExtension>().minimumColonistCount = 3;
+                IncidentDef.Named("VFEM_ShipLandDestroyer").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 3;
+                IncidentDef.Named("VFEM_ShipLandCruiser").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 5;
+                IncidentDef.Named("VFEM_ShipLandTroopship").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 5;
+                IncidentDef.Named("VFEM_ShipLandCarrier").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 10;
+                mechShipColonistCount.Clear();
             }
             listingStandard.GapLine();
 
@@ -111,11 +140,29 @@ namespace VFEM
                     mechShipDistances[keys4[num]] = maximumDistance;
                 }
             }
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+                IncidentDef.Named("VFEM_ShipLandFrigate").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 90;
+                IncidentDef.Named("VFEM_ShipLandDestroyer").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 90;
+                IncidentDef.Named("VFEM_ShipLandCruiser").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 90;
+                IncidentDef.Named("VFEM_ShipLandTroopship").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 120;
+                IncidentDef.Named("VFEM_ShipLandCarrier").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 120;
+                mechShipDistances.Clear();
+            }
             listingStandard.GapLine();
             listingStandard.Label("VFEM_factorySpeedMultiplier".Translate() + ": " + VFEM_factorySpeedMultiplier, -1, "VFEM_factorySpeedMultiplierTooltip".Translate());
             VFEM_factorySpeedMultiplier = (float)Math.Round(listingStandard.Slider(VFEM_factorySpeedMultiplier, 0.1f, 5f),2);
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+                VFEM_factorySpeedMultiplier = VFEM_factorySpeedMultiplierBase;
+            }
             listingStandard.GapLine();
-            listingStandard.SliderLabeled("VFEM_SuperComputerResearchPointYield".Translate(), ref VFEM_SuperComputerResearchPointYield, VFEM_SuperComputerResearchPointYield.ToStringDecimalIfSmall(), 1f, 100f);
+            listingStandard.SliderLabeled("VFEM_SuperComputerResearchPointYield".Translate(), ref VFEM_SuperComputerResearchPointYield, 
+                VFEM_SuperComputerResearchPointYield.ToStringDecimalIfSmall(), 1f, 100f);
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+                VFEM_SuperComputerResearchPointYield = 1f;
+            }
             listingStandard.GapLine();
             listingStandard.End();
             Widgets.EndScrollView();
