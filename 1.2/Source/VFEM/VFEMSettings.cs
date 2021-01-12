@@ -15,6 +15,8 @@ namespace VFEM
 {
     public class MechShipsSettings : ModSettings
     {
+        public List<IncidentDef> incidents = new List<IncidentDef>();
+
         public Dictionary<string, float> mechShipIncidentChances = new Dictionary<string, float>();
         public Dictionary<string, int> mechShipPresences = new Dictionary<string, int>();
         public Dictionary<string, int> mechShipColonistCount = new Dictionary<string, int>();

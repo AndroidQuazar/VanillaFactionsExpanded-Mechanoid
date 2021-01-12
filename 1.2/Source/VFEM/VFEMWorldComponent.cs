@@ -24,7 +24,7 @@ namespace VFEMech
         {
             base.WorldComponentTick();
 
-            if (Find.TickManager.TicksGame >= this.nextMechShipSpawn)
+            if (!MechShipsMod.settings.totalWarIsDisabled && Find.TickManager.TicksGame >= this.nextMechShipSpawn)
             {
                 this.lastMechShipSpawn = Find.TickManager.TicksGame;
 
