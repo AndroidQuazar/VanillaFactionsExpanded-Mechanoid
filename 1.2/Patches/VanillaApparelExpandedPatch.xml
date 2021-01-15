@@ -191,7 +191,7 @@
 							</secondItems>
 							<amount>
 								<li>1</li>
-								<li>55</li>
+								<li>20</li>
 							</amount>
 							<result>VAE_Apparel_Apron</result>	
 							<resultUsesStuffed>true</resultUsesStuffed>
@@ -212,7 +212,7 @@
 							</secondItems>
 							<amount>
 								<li>1</li>
-								<li>70</li>
+								<li>20</li>
 							</amount>
 							<result>VAE_Apparel_Hoodie</result>	
 							<resultUsesStuffed>true</resultUsesStuffed>
@@ -233,7 +233,7 @@
 							</secondItems>
 							<amount>
 								<li>1</li>
-								<li>45</li>
+								<li>20</li>
 							</amount>
 							<result>VAE_Apparel_FleeceShirt</result>	
 							<resultUsesStuffed>true</resultUsesStuffed>
@@ -254,7 +254,7 @@
 							</secondItems>
 							<amount>
 								<li>1</li>
-								<li>55</li>
+								<li>20</li>
 							</amount>
 							<result>VAE_Apparel_Jeans</result>	
 							<resultUsesStuffed>true</resultUsesStuffed>
@@ -275,7 +275,7 @@
 							</secondItems>
 							<amount>
 								<li>1</li>
-								<li>80</li>
+								<li>40</li>
 							</amount>
 							<result>VAE_Apparel_Jumpsuit</result>	
 							<resultUsesStuffed>true</resultUsesStuffed>
