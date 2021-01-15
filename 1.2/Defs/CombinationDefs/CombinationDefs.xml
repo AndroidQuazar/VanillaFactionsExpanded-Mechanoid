@@ -610,7 +610,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>25</li>
+			<li>10</li>
 		</amount>
 		<result>Apparel_CowboyHat</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -630,7 +630,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>20</li>
+			<li>10</li>
 		</amount>
 		<result>Apparel_BowlerHat</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -650,7 +650,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>20</li>
+			<li>10</li>
 		</amount>
 		<result>Apparel_Tuque</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -670,7 +670,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>80</li>
+			<li>10</li>
 		</amount>
 		<result>Apparel_Parka</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -690,7 +690,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>40</li>
+			<li>20</li>
 		</amount>
 		<result>Apparel_Pants</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -710,7 +710,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>40</li>
+			<li>20</li>
 		</amount>
 		<result>Apparel_BasicShirt</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -730,7 +730,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>45</li>
+			<li>20</li>
 		</amount>
 		<result>Apparel_CollarShirt</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -750,7 +750,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>80</li>
+			<li>20</li>
 		</amount>
 		<result>Apparel_Duster</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
@@ -770,7 +770,7 @@
 		</secondItems>
 		<amount>
 			<li>1</li>
-			<li>70</li>
+			<li>20</li>
 		</amount>
 		<result>Apparel_Jacket</result>	
 		<resultUsesStuffed>true</resultUsesStuffed>
