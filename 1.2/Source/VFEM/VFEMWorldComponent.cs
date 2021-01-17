@@ -32,7 +32,12 @@ namespace VFEMech
 
                 if (MechShipsMod.settings.mechShipIncidentChances.TryRandomElementByWeight(kvp => kvp.Value, out KeyValuePair<string, float> incident))
                 {
-                    if (IncidentDef.Named(incident.Key).Worker.CanFireNow(parms))
+                    IncidentDef def = DefDatabase<IncidentDef>.GetNamed(incident.Key, false);
+                    if (def is null)
+                    {
+                        MechShipsMod.settings.mechShipIncidentChances.Remove(incident.Key);
+                    }
+                    else if (def.Worker.CanFireNow(parms))
                     {
                         IncidentDef.Named(incident.Key).Worker.TryExecute(parms);
                     }

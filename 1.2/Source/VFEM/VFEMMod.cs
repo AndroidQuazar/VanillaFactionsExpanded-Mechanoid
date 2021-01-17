@@ -47,6 +47,7 @@ namespace VFEM
             {
                 MechShipsMod.settings.mechShipIncidentChances = new Dictionary<string, float>();
             }
+            MechShipsMod.settings.mechShipIncidentChances.RemoveAll(x => DefDatabase<IncidentDef>.GetNamed(x.Key, false) is null);
 
             if (MechShipsMod.settings.mechShipPresences is null)
             {
