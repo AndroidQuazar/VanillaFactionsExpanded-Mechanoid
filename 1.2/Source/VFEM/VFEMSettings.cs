@@ -42,8 +42,8 @@ namespace VFEM
 
             int mechShipTimeIntervalMax = this.mechShipTimeInterval.max;
             int mechShipTimeIntervalMin = this.mechShipTimeInterval.min;
-            Scribe_Values.Look(ref mechShipTimeIntervalMax, "VFEM_" + nameof(mechShipTimeIntervalMax));
-            Scribe_Values.Look(ref mechShipTimeIntervalMin, "VFEM_" + nameof(mechShipTimeIntervalMin));
+            Scribe_Values.Look(ref mechShipTimeIntervalMax, "VFEM_" + nameof(mechShipTimeIntervalMax), GenDate.TicksPerQuadrum);
+            Scribe_Values.Look(ref mechShipTimeIntervalMin, "VFEM_" + nameof(mechShipTimeIntervalMin), GenDate.TicksPerQuadrum/2);
             this.mechShipTimeInterval = new IntRange(mechShipTimeIntervalMin, mechShipTimeIntervalMax);
         }
 
