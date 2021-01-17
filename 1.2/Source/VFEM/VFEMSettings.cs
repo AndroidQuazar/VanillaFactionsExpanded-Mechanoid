@@ -119,12 +119,19 @@ namespace VFEM
             }
             if (listingStandard.ButtonText("Reset".Translate()))
             {
-                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Frigate").GetModExtension<MechanoidBaseExtension>().raisesPresence = 300;
-                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Destroyer").GetModExtension<MechanoidBaseExtension>().raisesPresence = 450;
-                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Cruiser").GetModExtension<MechanoidBaseExtension>().raisesPresence = 600;
-                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Troopship").GetModExtension<MechanoidBaseExtension>().raisesPresence = 1200;
-                DefDatabase<WorldObjectDef>.GetNamed("VFEM_Carrier").GetModExtension<MechanoidBaseExtension>().raisesPresence = 2400;
-                mechShipPresences.Clear();
+                mechShipPresences["VFEM_Frigate"] = 300;
+                mechShipPresences["VFEM_Destroyer"] = 450;
+                mechShipPresences["VFEM_Cruiser"] = 600;
+                mechShipPresences["VFEM_Troopship"] = 1200;
+                mechShipPresences["VFEM_Carrier"] = 2400;
+                foreach (var data in mechShipPresences)
+                {
+                    var def = DefDatabase<WorldObjectDef>.GetNamed(data.Key, false);
+                    if (def != null)
+                    {
+                        def.GetModExtension<MechanoidBaseExtension>().raisesPresence = data.Value;
+                    }
+                }
             }
             listingStandard.GapLine();
             listingStandard.Label("VFEMech.AdjustMinimunColonistCountLabel".Translate());
@@ -140,12 +147,20 @@ namespace VFEM
             }
             if (listingStandard.ButtonText("Reset".Translate()))
             {
-                IncidentDef.Named("VFEM_ShipLandFrigate").GetModExtension< MechanoidBaseIncidentExtension>().minimumColonistCount = 3;
-                IncidentDef.Named("VFEM_ShipLandDestroyer").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 3;
-                IncidentDef.Named("VFEM_ShipLandCruiser").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 5;
-                IncidentDef.Named("VFEM_ShipLandTroopship").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 5;
-                IncidentDef.Named("VFEM_ShipLandCarrier").GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = 10;
-                mechShipColonistCount.Clear();
+
+                mechShipColonistCount["VFEM_ShipLandFrigate"] = 3;
+                mechShipColonistCount["VFEM_ShipLandDestroyer"] = 3;
+                mechShipColonistCount["VFEM_ShipLandCruiser"] = 5;
+                mechShipColonistCount["VFEM_ShipLandTroopship"] = 5;
+                mechShipColonistCount["VFEM_ShipLandCarrier"] = 10;
+                foreach (var data in mechShipColonistCount)
+                {
+                    var def = DefDatabase<IncidentDef>.GetNamed(data.Key, false);
+                    if (def != null)
+                    {
+                        def.GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = data.Value;
+                    }
+                }
             }
             listingStandard.GapLine();
 
@@ -162,12 +177,19 @@ namespace VFEM
             }
             if (listingStandard.ButtonText("Reset".Translate()))
             {
-                IncidentDef.Named("VFEM_ShipLandFrigate").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 90;
-                IncidentDef.Named("VFEM_ShipLandDestroyer").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 90;
-                IncidentDef.Named("VFEM_ShipLandCruiser").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 90;
-                IncidentDef.Named("VFEM_ShipLandTroopship").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 120;
-                IncidentDef.Named("VFEM_ShipLandCarrier").GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = 120;
-                mechShipDistances.Clear();
+                mechShipDistances["VFEM_ShipLandFrigate"] = 90;
+                mechShipDistances["VFEM_ShipLandDestroyer"] = 90;
+                mechShipDistances["VFEM_ShipLandCruiser"] = 90;
+                mechShipDistances["VFEM_ShipLandTroopship"] = 120;
+                mechShipDistances["VFEM_ShipLandCarrier"] = 120;
+                foreach (var data in mechShipDistances)
+                {
+                    var def = DefDatabase<IncidentDef>.GetNamed(data.Key, false);
+                    if (def != null)
+                    {
+                        def.GetModExtension<MechanoidBaseIncidentExtension>().maxDistance = data.Value;
+                    }
+                }
             }
             listingStandard.GapLine();
             listingStandard.Label("VFEM_factorySpeedMultiplier".Translate() + ": " + VFEM_factorySpeedMultiplier, -1, "VFEM_factorySpeedMultiplierTooltip".Translate());
