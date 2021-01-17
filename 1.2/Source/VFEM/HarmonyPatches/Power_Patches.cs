@@ -37,7 +37,11 @@ namespace VFEMech
 							{
 								try
                                 {
-									compPowers.Add(((Building)thingList[i]).PowerComp);
+									var compPower = thingList[i].TryGetComp<CompPower>();
+									if (compPower != null)
+                                    {
+										compPowers.Add(compPower);
+                                    }
 								}
 								catch
                                 {
