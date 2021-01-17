@@ -79,6 +79,7 @@
     <Compile Include="HarmonyPatches\Patch_AffectRelationsOnAttacked.cs" />
     <Compile Include="HarmonyPatches\ShouldRemoveMapNow_Patch.cs" />
     <Compile Include="HarmonyPatches\Thing_Patch.cs" />
+    <Compile Include="Incidents\MechShipDestroyed.cs" />
     <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
     <Compile Include="Letters\ChoiceLetter_AcceptVisitors.cs" />
     <Compile Include="LordJob_VFEMDefendBase.cs" />

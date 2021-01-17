@@ -1,8 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- =========================== Good ============================-->
-
+  <IncidentDef>
+    <defName>VFEM_MechShipDestroyed</defName>
+    <label>Mechanoid ship destroyed</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>VFEMech.IncidentWorker_MechShipDestroyed</workerClass>
+    <baseChance>0.01</baseChance>
+    <minRefireDays>0</minRefireDays>
+    <letterDef>PositiveEvent</letterDef>
+    <letterLabel>{FACTION_name} destroyed {1}</letterLabel>
+    <letterText>Through clever strategies, large number of casualties and incredible perseverance, {FACTION_name} managed to destroy {1}.</letterText>
+  </IncidentDef>
+  
+  
   <IncidentDef>
     <defName>VFEM_ShipLandFrigate</defName>
     <label>ship landing frigate</label>

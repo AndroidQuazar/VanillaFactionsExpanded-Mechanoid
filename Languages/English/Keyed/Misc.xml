@@ -16,5 +16,8 @@
 	<VFEM_factorySpeedMultiplier>Factory speed multiplier</VFEM_factorySpeedMultiplier>
 	<VFEM_factorySpeedMultiplierTooltip>Factory speed multiplier. Default is 1. Lower numbers accelerate factory modules' speed, while higher numbers make them work slower.</VFEM_factorySpeedMultiplierTooltip>
 	<VFEM_SuperComputerResearchPointYield>Supercomputer research point yield value. Default is 1.</VFEM_SuperComputerResearchPointYield>
-
+	
+	<VFEMech.FactionDestroyedShip>{FACTION_name} destroyed {1}</VFEMech.FactionDestroyedShip>
+	<VFEMech.FactionDestroyedShipDesc>Through clever strategies, large number of casualties and incredible perseverance, {FACTION_name} managed to destroy {1}.</VFEMech.FactionDestroyedShipDesc>
+	
 </LanguageData>
