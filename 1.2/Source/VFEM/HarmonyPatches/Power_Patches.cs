@@ -35,7 +35,14 @@ namespace VFEMech
 						{
 							if (thingList[i].def.ConnectToPower && thingList[i].def == VFEMDefOf.VFE_ConduitPylon && thingList[i].TryGetComp<CompFlickable>().SwitchIsOn)
 							{
-								compPowers.Add(((Building)thingList[i]).PowerComp);
+								try
+                                {
+									compPowers.Add(((Building)thingList[i]).PowerComp);
+								}
+								catch
+                                {
+									
+                                }
 							}
 						}
 					}
