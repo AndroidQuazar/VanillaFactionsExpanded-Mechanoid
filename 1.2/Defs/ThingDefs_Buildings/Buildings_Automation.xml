@@ -1632,7 +1632,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFEM_MasonryAndMetallicsFactory_AutomaticDrill</defName>
 		<label>Automatic drill</label>
-		<description>A larger but surface-level automated version of the deep drill. This basic yet powerful drill can mine and extract rock chunks for further processing without human input. Will not antagonize insect hives. The drill will not produce a rock chunk if it detects other one already waiting for retrieval.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
+		<description>A larger but surface-level automated version of the deep drill. This basic yet powerful drill can mine and extract rock chunks for further processing without human input. Will not antagonize insect hives. The drill will not produce a rock chunk if it detects other one already waiting for retrieval or in any of the surrounding tiles.\n\n&lt;color=#33d733&gt;Automation Chain:&lt;/color&gt; Part of the Masonry and Metallics Factory (M.M.F.) chain.</description>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Buildings/AutomaticDrill/AutomaticDrill</texPath>
