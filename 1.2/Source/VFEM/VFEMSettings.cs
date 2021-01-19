@@ -76,7 +76,7 @@ namespace VFEM
             listingStandard.Label("VFEMech.AdjustIncidentTimeInterval".Translate());
             
             listingStandard.Label($"{this.mechShipTimeInterval.min.ToStringTicksToPeriodVerbose(false)} - {this.mechShipTimeInterval.max.ToStringTicksToPeriodVerbose(false)}");
-            listingStandard.IntRange(ref this.mechShipTimeInterval, GenDate.TicksPerDay, GenDate.TicksPerYear);
+            listingStandard.IntRange(ref this.mechShipTimeInterval, GenDate.TicksPerDay, GenDate.TicksPerYear * 5);
 
             if (listingStandard.ButtonText("Reset".Translate()))
             {
