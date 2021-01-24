@@ -45,6 +45,9 @@
       <li Class="CompProperties_Flickable">
 		</li>
       <li Class="CompProperties_Breakdownable"/>
+	  <li>
+			<compClass>VFEMech.CompPylon</compClass>
+	  </li>
     </comps>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <pathCost>14</pathCost>

@@ -70,6 +70,7 @@
     <Compile Include="Buildings\Supercomputer.cs" />
     <Compile Include="Buildings\TrooperStorage.cs" />
     <Compile Include="Buildings\MechanoidUplink.cs" />
+    <Compile Include="Comps\CompPylon.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidShipLanding.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidAttackParty.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidStorage.cs" />

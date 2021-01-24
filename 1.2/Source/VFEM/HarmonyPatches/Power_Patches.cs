@@ -17,42 +17,54 @@ namespace VFEMech
     {
         public static void Postfix(ref IEnumerable<CompPower> __result, CompPower b)
         {
-            if (__result.Count() == 0)
-            {
-				List<CompPower> compPowers = __result.ToList();;
-				if (!b.parent.Spawned)
+			if (CompPylon.compPylons.TryGetValue(b.parent.Map, out List<CompPower> compPylons) && b.parent.Spawned)
+			{
+				var nearbyPylons = compPylons.Where(x => x.parent.Position.DistanceTo(b.parent.Position) <= 18);
+				foreach (var nearbyPylon in nearbyPylons)
 				{
-					Log.Warning(string.Concat("Can't check potential connectors for ", b, " because it's unspawned."));
+					__result.AddItem(nearbyPylon);
 				}
-				CellRect rect = b.parent.OccupiedRect().ExpandedBy(18).ClipInsideMap(b.parent.Map);
-				for (int z = rect.minZ; z <= rect.maxZ; z++)
-				{
-					for (int x = rect.minX; x <= rect.maxX; x++)
-					{
-						IntVec3 c = new IntVec3(x, 0, z);
-						List<Thing> thingList = b.parent.Map.thingGrid.ThingsListAt(c);
-						for (int i = 0; i < thingList.Count; i++)
-						{
-							if (thingList[i].def == VFEMDefOf.VFE_ConduitPylon && thingList[i].TryGetComp<CompFlickable>().SwitchIsOn)
-							{
-								try
-                                {
-									var compPower = thingList[i].TryGetComp<CompPower>();
-									if (compPower != null)
-                                    {
-										compPowers.Add(compPower);
-                                    }
-								}
-								catch
-                                {
-									
-                                }
-							}
-						}
-					}
-				}
-				__result = compPowers;
 			}
+
+			//if (__result.Count() == 0)
+            //{
+			//	List<CompPower> compPowers = __result.ToList();
+			//	if (b.parent.Spawned && CompPylon.compPylons.TryGetValue(b.parent.Map, out List<CompPower> compPylons))
+			//	{
+			//		var nearbyPylons = compPylons.Where(x => x.parent.Position.DistanceTo(b.parent.Position) <= 18);
+			//		if (nearbyPylons.Any())
+			//	    {
+			//			compPowers.AddRange(nearbyPylons);
+			//	    }
+			//	}
+			//
+			//	// old vanilla non-performant code...
+			//	//if (!b.parent.Spawned)
+			//	//{
+			//	//	Log.Warning(string.Concat("Can't check potential connectors for ", b, " because it's unspawned."));
+			//	//}
+			//	//CellRect rect = b.parent.OccupiedRect().ExpandedBy(18).ClipInsideMap(b.parent.Map);
+			//	//for (int z = rect.minZ; z <= rect.maxZ; z++)
+			//	//{
+			//	//	for (int x = rect.minX; x <= rect.maxX; x++)
+			//	//	{
+			//	//		IntVec3 c = new IntVec3(x, 0, z);
+			//	//		List<Thing> thingList = b.parent.Map.thingGrid.ThingsListAt(c);
+			//	//		for (int i = 0; i < thingList.Count; i++)
+			//	//		{
+			//	//			if (thingList[i].def == VFEMDefOf.VFE_ConduitPylon && thingList[i].TryGetComp<CompFlickable>().SwitchIsOn)
+			//	//			{
+			//	//				var compPower = thingList[i].TryGetComp<CompPower>();
+			//	//				if (compPower != null)
+			//	//				{
+			//	//					compPowers.Add(compPower);
+			//	//				}
+			//	//			}
+			//	//		}
+			//	//	}
+			//	//}
+			//	__result = compPowers;
+			//}
 		}
     }
 
@@ -104,27 +116,31 @@ namespace VFEMech
 			if (__instance.parent.def == VFEMDefOf.VFE_ConduitPylon && __instance.parent.Map != null)
 			{
 				var transmitter = __instance.parent.Position.GetTransmitter(__instance.parent.Map);
-				CompPower powerComp = transmitter.PowerComp;
-				for (int num = powerComp.PowerNet.powerComps.Count - 1; num >= 0; num--)
-				{
-					var powerUser = powerComp.PowerNet.powerComps[num];
-					if (powerUser.parent.def != VFEMDefOf.VFE_ConduitPylon && powerUser.connectParent?.parent?.Position == __instance.parent.Position && powerUser.connectParent != null)
+				if (transmitter != null)
+                {
+					CompPower powerComp = transmitter.PowerComp;
+					for (int num = powerComp.PowerNet.powerComps.Count - 1; num >= 0; num--)
 					{
-						PowerConnectionMaker.DisconnectFromPowerNet(powerUser);
-						var flickableComp = powerUser.parent.TryGetComp<CompFlickable>();
-						if (flickableComp != null && !flickableComp.SwitchIsOn)
+						var powerUser = powerComp.PowerNet.powerComps[num];
+						if (powerUser.parent.def != VFEMDefOf.VFE_ConduitPylon && powerUser.connectParent?.parent?.Position == __instance.parent.Position && powerUser.connectParent != null)
 						{
-							powerUser.parent.Map.overlayDrawer.DrawOverlay(powerUser.parent, OverlayTypes.PowerOff);
+							PowerConnectionMaker.DisconnectFromPowerNet(powerUser);
+							var flickableComp = powerUser.parent.TryGetComp<CompFlickable>();
+							if (flickableComp != null && !flickableComp.SwitchIsOn)
+							{
+								powerUser.parent.Map.overlayDrawer.DrawOverlay(powerUser.parent, OverlayTypes.PowerOff);
+							}
+							else if (FlickUtility.WantsToBeOn(powerUser.parent) && !powerUser.PowerOn)
+							{
+								powerUser.parent.Map.overlayDrawer.DrawOverlay(powerUser.parent, OverlayTypes.NeedsPower);
+							}
+							powerUser.PowerOn = false;
+							powerUser.parent.Map.powerNetManager.Notify_ConnectorWantsConnect(powerUser);
+							PowerConnectionMaker.TryConnectToAnyPowerNet(powerUser);
 						}
-						else if (FlickUtility.WantsToBeOn(powerUser.parent) && !powerUser.PowerOn)
-						{
-							powerUser.parent.Map.overlayDrawer.DrawOverlay(powerUser.parent, OverlayTypes.NeedsPower);
-						}
-						powerUser.PowerOn = false;
-						powerUser.parent.Map.powerNetManager.Notify_ConnectorWantsConnect(powerUser);
-						PowerConnectionMaker.TryConnectToAnyPowerNet(powerUser);
 					}
 				}
+
 				if (__instance.PowerOn)
                 {
 					CellRect cellRect = CellRect.SingleCell(__instance.parent.Position).ExpandedBy(18).ClipInsideMap(__instance.parent.Map);
