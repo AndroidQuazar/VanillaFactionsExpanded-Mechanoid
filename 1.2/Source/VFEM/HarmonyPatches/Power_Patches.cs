@@ -33,7 +33,7 @@ namespace VFEMech
 						List<Thing> thingList = b.parent.Map.thingGrid.ThingsListAt(c);
 						for (int i = 0; i < thingList.Count; i++)
 						{
-							if (thingList[i].def.ConnectToPower && thingList[i].def == VFEMDefOf.VFE_ConduitPylon && thingList[i].TryGetComp<CompFlickable>().SwitchIsOn)
+							if (thingList[i].def == VFEMDefOf.VFE_ConduitPylon && thingList[i].def.ConnectToPower && thingList[i].TryGetComp<CompFlickable>().SwitchIsOn)
 							{
 								try
                                 {
