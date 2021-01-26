@@ -18,7 +18,6 @@ namespace VFEMech
         {
             if (this.pawn.Reserve(this.Silo, this.job, 1, -1, null, errorOnFailed))
             {
-                
                 return pawn.Reserve(Fuel, job, 1, -1, null, errorOnFailed);
             }
             return false;
