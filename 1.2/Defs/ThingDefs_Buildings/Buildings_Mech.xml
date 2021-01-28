@@ -1251,10 +1251,10 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<defaultProjectile>Bullet_Shell_HighExplosive</defaultProjectile>
-				<forcedMissRadius>8</forcedMissRadius>
+				<forcedMissRadius>14</forcedMissRadius>
 				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-				<warmupTime>12</warmupTime>
-				<minRange>18.9</minRange>
+				<warmupTime>24</warmupTime>
+				<minRange>22.9</minRange>
 				<range>500</range>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>Mortar_LaunchA</soundCast>
@@ -1356,10 +1356,10 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<defaultProjectile>VFE_Bullet_InfernoArtillery</defaultProjectile>
-				<forcedMissRadius>6</forcedMissRadius>
+				<forcedMissRadius>15</forcedMissRadius>
 				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
-				<warmupTime>20</warmupTime>
-				<minRange>18.9</minRange>
+				<warmupTime>36</warmupTime>
+				<minRange>22.9</minRange>
 				<range>500</range>
 				<burstShotCount>3</burstShotCount>
 				<ticksBetweenBurstShots>16</ticksBetweenBurstShots>
