@@ -25,7 +25,7 @@ namespace VFEMech
                 return false;
             }
             var mechShipToDestroy = mechShips.RandomElement();
-            var humanSettlements = Find.WorldObjects.SettlementBases.Where(x => x.Faction.def.humanlikeFaction);
+            var humanSettlements = Find.WorldObjects.SettlementBases.Where(x => !x.Faction.IsPlayer && x.Faction.def.humanlikeFaction);
             if (!humanSettlements.Any())
             {
                 return false;
@@ -35,7 +35,7 @@ namespace VFEMech
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             var mechShipToDestroy = Find.World.worldObjects.Settlements.Where(s => s.def.GetModExtension<MechanoidBaseExtension>() != null && !s.HasMap).RandomElement();
-            var humanSettlements = Find.WorldObjects.SettlementBases.Where(x => x.Faction.def.humanlikeFaction);
+            var humanSettlements = Find.WorldObjects.SettlementBases.Where(x => !x.Faction.IsPlayer && x.Faction.def.humanlikeFaction);
             if (humanSettlements.Any())
             {
                 var humanFaction = humanSettlements.OrderBy(x => Find.WorldGrid.ApproxDistanceInTiles(mechShipToDestroy.Tile, x.Tile)).First().Faction;
