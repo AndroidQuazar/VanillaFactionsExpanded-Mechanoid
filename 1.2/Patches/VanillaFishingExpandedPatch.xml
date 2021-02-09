@@ -422,11 +422,11 @@
 								<li>20</li>
 							</amount>
 							<result>VCEF_RawLobster</result>	
-							<yield>48</yield>
+							<yield>5</yield>
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 							<resultSpecialIcon>Things/Item/Resource/VCEF_Lobster/VCEF_Lobster_b</resultSpecialIcon>
 							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>300</maxTotalOutput>
+							<maxTotalOutput>100</maxTotalOutput>
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
