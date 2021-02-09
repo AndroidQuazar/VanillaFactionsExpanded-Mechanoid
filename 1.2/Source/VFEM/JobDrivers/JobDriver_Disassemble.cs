@@ -22,6 +22,7 @@ namespace VFEMech
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
+			this.FailOn(() => JobGiver_DisassembleAnyNonMechBuildings.HasDutyAndShouldStayInGroup(pawn));
 			yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
 			Toil doWork = new Toil().FailOnDestroyedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
 			doWork.tickAction = delegate
