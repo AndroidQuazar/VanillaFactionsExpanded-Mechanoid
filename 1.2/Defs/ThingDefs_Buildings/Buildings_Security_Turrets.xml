@@ -37,7 +37,6 @@
       <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
     </statBases>
     <tickerType>Normal</tickerType>
-    <receivesSignals>true</receivesSignals>
     <comps>
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
@@ -48,10 +47,7 @@
       <li Class="CompProperties_Forbiddable"/>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_CanBeDormant" />
-      <li Class="CompProperties_WakeUpDormant">
-        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
-      </li>      <li Class="CompProperties_Refuelable">
+	  <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until out of battery</fuelLabel>
         <fuelGizmoLabel>Battery level</fuelGizmoLabel>
         <outOfFuelMessage>Cannot shoot: Out of battery</outOfFuelMessage>
@@ -171,7 +167,6 @@
       <ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
     </statBases>
     <tickerType>Normal</tickerType>
-    <receivesSignals>true</receivesSignals>
     <comps>
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
@@ -182,10 +177,7 @@
       <li Class="CompProperties_Forbiddable"/>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_CanBeDormant" />
-      <li Class="CompProperties_WakeUpDormant">
-        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
-      </li>      <li Class="CompProperties_Refuelable">
+	  <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until out of battery</fuelLabel>
         <fuelGizmoLabel>Battery level</fuelGizmoLabel>
         <outOfFuelMessage>Cannot shoot: Out of battery</outOfFuelMessage>
@@ -304,7 +296,6 @@
       <ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
     </statBases>
     <tickerType>Normal</tickerType>
-    <receivesSignals>true</receivesSignals>
     <comps>
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
@@ -315,10 +306,6 @@
       <li Class="CompProperties_Forbiddable"/>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_CanBeDormant" />
-      <li Class="CompProperties_WakeUpDormant">
-        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
-      </li>
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Shots until out of battery</fuelLabel>
         <fuelGizmoLabel>Battery level</fuelGizmoLabel>
@@ -461,7 +448,6 @@
     <graphicData>
       <texPath>Things/Buildings/Security/TurretAutoMortar_Base</texPath>
     </graphicData>
-    <receivesSignals>true</receivesSignals>
     <comps>
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
@@ -472,10 +458,6 @@
       <li Class="CompProperties_Forbiddable"/>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_CanBeDormant" />
-      <li Class="CompProperties_WakeUpDormant">
-        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
-      </li>
       <li Class="CompProperties_Refuelable">
         <fuelLabel>Remaining shells</fuelLabel>
         <fuelGizmoLabel>Shells</fuelGizmoLabel>
