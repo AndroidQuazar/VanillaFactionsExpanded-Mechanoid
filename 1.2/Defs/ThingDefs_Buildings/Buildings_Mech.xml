@@ -760,8 +760,13 @@
 			</li>
 		</damageMultipliers>
 		<tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
+
 		<comps>
-			<li Class="CompProperties_Explosive">
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>			<li Class="CompProperties_Explosive">
 				<wickTicks>240</wickTicks>
 				<explosiveRadius>3.9</explosiveRadius>
 				<explosiveDamageType>Bomb</explosiveDamageType>
@@ -860,7 +865,12 @@
 			</li>
 		</damageMultipliers>
 		<tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
 		<comps>
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
 			<li Class="CompProperties_Explosive">
 				<wickTicks>240</wickTicks>
 				<explosiveRadius>3.9</explosiveRadius>
@@ -1203,8 +1213,12 @@
 			</li>
 		</damageMultipliers>
 		<tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_Explosive">
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>			<li Class="CompProperties_Explosive">
 				<wickTicks>320</wickTicks>
 				<explosiveRadius>4.9</explosiveRadius>
 				<explosiveDamageType>Bomb</explosiveDamageType>
@@ -1307,8 +1321,12 @@
 			</li>
 		</damageMultipliers>
 		<tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_Explosive">
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>			<li Class="CompProperties_Explosive">
 				<wickTicks>320</wickTicks>
 				<explosiveRadius>4.9</explosiveRadius>
 				<explosiveDamageType>Bomb</explosiveDamageType>
@@ -1437,8 +1455,12 @@
 			</li>
 		</damageMultipliers>
 		<tickerType>Normal</tickerType>
+    <receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_Explosive">
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>			<li Class="CompProperties_Explosive">
 				<wickTicks>320</wickTicks>
 				<explosiveRadius>7.9</explosiveRadius>
 				<explosiveDamageType>Bomb</explosiveDamageType>
@@ -1566,6 +1588,13 @@
 			<ComponentSpacer>1</ComponentSpacer>
 			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 		</killedLeavings>
+    <receivesSignals>true</receivesSignals>
+
+		<comps>
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>		</comps>
 		<passability>Impassable</passability>
 		<fillPercent>0.8</fillPercent>
 		<hasTooltip>true</hasTooltip>

@@ -13,10 +13,15 @@ namespace VFEM
 
         protected override void SpawnThings()
         {
+            var delayTicks = (int)(GenDate.TicksPerHour * Rand.Range(4f, 8f));
             for (int i = this.innerContainer.Count - 1; i >= 0; i--)
             {
                 if (rot == Rot4.Invalid) rot = this.innerContainer[i].def.defaultPlacingRot;
-
+                var compDormant = this.innerContainer[i].TryGetComp<CompCanBeDormant>();
+                if (compDormant != null)
+                {
+                    compDormant.wokeUpTick = Find.TickManager.TicksGame + delayTicks;
+                }
                 GenPlace.TryPlaceThing(this.innerContainer[i], base.Position, base.Map, ThingPlaceMode.Near, delegate (Thing thing, int count)
                 {
                     PawnUtility.RecoverFromUnwalkablePositionOrKill(thing.Position, thing.Map);
