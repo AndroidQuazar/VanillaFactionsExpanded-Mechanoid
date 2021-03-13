@@ -14,7 +14,8 @@ namespace VFEMech
 		public float radius;
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (pawn.GetComp<CompCanBeDormant>().Awake)
+			var compDormant = pawn.GetComp<CompCanBeDormant>();
+			if (compDormant is null || compDormant.Awake)
 			{
 				var allThings = pawn.Map.listerThings.AllThings.Where(x => x.Faction != pawn.Faction && x.def.building != null);
 				Predicate<Thing> validator = (Thing t) => pawn.CanReserve(t);

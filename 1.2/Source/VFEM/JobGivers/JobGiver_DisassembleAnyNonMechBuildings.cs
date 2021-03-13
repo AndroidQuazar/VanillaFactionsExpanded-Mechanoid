@@ -32,7 +32,8 @@ namespace VFEMech
 		protected override Job TryGiveJob(Pawn pawn)
 		{
 			var lord = pawn.GetLord();
-			if (pawn.GetComp<CompCanBeDormant>().Awake)
+			var compDormant = pawn.GetComp<CompCanBeDormant>();
+			if (compDormant is null || compDormant.Awake)
             {
 				if (HasDutyAndShouldStayInGroup(pawn))
                 {
