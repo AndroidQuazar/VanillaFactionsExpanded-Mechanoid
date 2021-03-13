@@ -37,6 +37,7 @@ namespace VFEM
         static DefsAlterer()
         {
             Setup();
+            DoDefsAlter();
         }
 
         public static void Setup()
