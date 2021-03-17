@@ -16,7 +16,7 @@
     <stackLimit>50</stackLimit>
     <healthAffectsPrice>false</healthAffectsPrice>
     <statBases>
-      <MaxHitPoints>70</MaxHitPoints>
+      <MaxHitPoints>140</MaxHitPoints>
       <MarketValue>350</MarketValue>
       <Mass>0.8</Mass>
       <Flammability>0.2</Flammability>
