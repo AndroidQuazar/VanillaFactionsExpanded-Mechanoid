@@ -257,8 +257,8 @@
 		</race>
 		<comps>
 			<li Class="VFEMech.CompProperties_ShieldMechBubble">
-				<EnergyShieldRechargeRate>0.03</EnergyShieldRechargeRate>
-				<EnergyShieldEnergyMax>50</EnergyShieldEnergyMax>
+				<EnergyShieldRechargeRate>0.003</EnergyShieldRechargeRate>
+				<EnergyShieldEnergyMax>30</EnergyShieldEnergyMax>
 			</li>
 		</comps>
 	</ThingDef>
