@@ -64,6 +64,7 @@
     <Compile Include="Buildings\Building_AutoHarvester.cs" />
     <Compile Include="Buildings\Building_AutoPlant.cs" />
     <Compile Include="Buildings\Building_AutoSower.cs" />
+    <Compile Include="Buildings\Building_IndustrialApiary.cs" />
     <Compile Include="Buildings\MechShipPart.cs" />
     <Compile Include="Buildings\HullRepairModule.cs" />
     <Compile Include="Buildings\CargoHold.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="ModExtensions\UplinkCompatible.cs" />
     <Compile Include="Pawns\VFEMechanoid.cs" />
     <Compile Include="Pawns\Mech_Inquisitor.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_ApiaryAndFactoryFloorAndPath.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_AutoPlant.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnPowerConduit.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloorAndPath.cs" />
@@ -143,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.2.2753</Version>
+      <Version>1.2.2900</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.0.4</Version>
