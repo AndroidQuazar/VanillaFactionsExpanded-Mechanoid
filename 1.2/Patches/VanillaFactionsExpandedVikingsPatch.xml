@@ -91,7 +91,7 @@
 							</researchPrerequisites>
 							<placeWorkers>
 								
-								<li>VFEMech.PlaceWorker_ApiaryAndFactoryFloorAndPath</li>
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
 							</placeWorkers>
 							<comps>
 								<li Class="CompProperties_Power">
