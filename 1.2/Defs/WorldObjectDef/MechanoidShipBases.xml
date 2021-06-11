@@ -59,6 +59,7 @@
           <li>VFEM_FrigateDLC12</li>
         </chooseFromlayouts>
         <symbolResolver>vfem_ships</symbolResolver>
+        <tryFindFreeArea>true</tryFindFreeArea>
       </li>
     </modExtensions>
   </WorldObjectDef>
@@ -103,6 +104,7 @@
           <li>VFEM_DestroyerDLC12</li>
         </chooseFromlayouts>
         <symbolResolver>vfem_ships</symbolResolver>
+        <tryFindFreeArea>true</tryFindFreeArea>
       </li>
     </modExtensions>
   </WorldObjectDef>
@@ -147,6 +149,7 @@
           <li>VFEM_CruiserDLC12</li>
         </chooseFromlayouts>
         <symbolResolver>vfem_ships</symbolResolver>
+        <tryFindFreeArea>true</tryFindFreeArea>
       </li>
     </modExtensions>
   </WorldObjectDef>
@@ -191,6 +194,7 @@
           <li>VFEM_TroopshipDLC12</li>
         </chooseFromlayouts>
         <symbolResolver>vfem_ships</symbolResolver>
+        <tryFindFreeArea>true</tryFindFreeArea>
       </li>
     </modExtensions>
   </WorldObjectDef>
@@ -235,6 +239,7 @@
           <li>VFEM_CarrierDLC12</li>
         </chooseFromlayouts>
         <symbolResolver>vfem_ships</symbolResolver>
+        <tryFindFreeArea>true</tryFindFreeArea>
       </li>
     </modExtensions>
   </WorldObjectDef>
