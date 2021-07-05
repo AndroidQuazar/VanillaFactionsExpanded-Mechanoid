@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GameConditionDef>
+		<defName>VFE_ClimateAdjuster</defName>
+		<conditionClass>VFEMech.GameCondition_ClimateAdjuster</conditionClass>
+		<label>climate adjuster</label>
+		<letterText>climate adjuster</letterText>
+		<description>climate adjuster</description>
+		<descriptionFuture>a front of cold air will cool the area around [map_definite] for [gameConditionDuration_duration], harming crops and any person or animal without adequate protection</descriptionFuture>
+		<endMessage>The cold snap is over.</endMessage>
+		<letterDef>NegativeEvent</letterDef>
+	</GameConditionDef>
+
+	<GameConditionDef>
+		<defName>VFE_EMIDynamo</defName>
+		<conditionClass>VFEMech.GameCondition_EMIDynamo</conditionClass>
+		<label>EMI dynamo</label>
+		<letterText>EMI dynamo</letterText>
+		<description>EMI dynamo</description>
+		<descriptionFuture>EMI dynamo</descriptionFuture>
+		<endMessage>EMI dynamo</endMessage>
+		<letterDef>NegativeEvent</letterDef>
+	</GameConditionDef>
+
+
+</Defs>

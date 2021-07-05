@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RuleDef>
+    <defName>VFEM_Ships</defName>
+    <symbol>vfem_ships</symbol>
+    <resolvers>
+      <li Class="VFEM.SymbolResolverShips" />
+    </resolvers>
+  </RuleDef>
+</Defs>

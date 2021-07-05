@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Pick Up And Haul (Continued)</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationAttributeSet">
+          <xpath>Defs/ThingDef[defName="VFE_Mechanoids_Autohauler"]/comps</xpath>
+          <attribute>Inherit</attribute>
+          <value>False</value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="VFE_Mechanoids_Autohauler"]/comps</xpath>
+          <value>
+            <li>
+              <compClass>CompAttachBase</compClass>
+            </li>
+            <li Class="CompProperties_CanBeDormant" />
+            <li Class="CompProperties_WakeUpDormant">
+              <wakeUpOnDamage>true</wakeUpOnDamage>
+              <anyColonistCloseCheckRadius>30</anyColonistCloseCheckRadius>
+              <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

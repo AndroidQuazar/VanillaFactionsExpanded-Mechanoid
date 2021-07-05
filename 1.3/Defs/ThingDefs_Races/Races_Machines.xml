@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="BaseMechanoid" Name="BaseVFEMachine" Abstract="True">
+	<thingClass>VFEMech.Machine</thingClass>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseVFEMachine">
+    <defName>VFE_Mechanoids_Autocleaner</defName>
+    <label>autocleaner</label>
+    <description>A medium speed, simple-minded, wheeled drone with large scrubbers and an intricate vacuum chamber system. When used in tandem the aforementioned tools result in a drone capable of quickly cleaning up a range of messes, be they wet or dry. Waste collected during cleaning is incinerated within shortly after while the drone is charging.</description>
+    <statBases>
+      <MoveSpeed>1.9</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>VFE_Mechanoids_Machine</thinkTreeMain>
+      <body>MechanicalCentipede</body>
+      <baseBodySize>0.5</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>VFE_Pawn_HandmadeMech_Wounded</soundWounded>
+          <soundDeath>VFE_Pawn_HandmadeMech_Death</soundDeath>
+          <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>3000~20000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>10</Plasteel>
+    </butcherProducts>
+	<comps>
+      <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<hoursActive>72</hoursActive>
+      </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>VFE_Mechanoids_Autocleaner</defName>
+    <label>autocleaner</label>
+    <race>VFE_Mechanoids_Autocleaner</race>
+    <combatPower>99999</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automation/Autocleaner/Autocleaner</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="BaseVFEMachine">
+    <defName>VFE_Mechanoids_Autohauler</defName>
+    <label>autohauler</label>
+    <description>A treaded, simple-minded drone capable of lifting many times its weight with a hydraulic claw, while slow to move it is quite energy efficient compared to most drones.</description>
+    <statBases>
+      <MoveSpeed>1.9</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>VFE_Mechanoids_Machine</thinkTreeMain>
+      <body>MechanicalCentipede</body>
+      <baseBodySize>0.5</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>VFE_Pawn_HandmadeMech_Wounded</soundWounded>
+          <soundDeath>VFE_Pawn_HandmadeMech_Death</soundDeath>
+          <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Steel>25</Steel>
+    </butcherProducts>
+	<comps>
+      <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<hoursActive>72</hoursActive>
+      </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>VFE_Mechanoids_Autohauler</defName>
+    <label>autohauler</label>
+    <race>VFE_Mechanoids_Autohauler</race>
+    <combatPower>99999</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automation/Autohauler/Autohauler</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef ParentName="BaseVFEMachine">
+    <defName>VFE_Mechanoids_Autominer</defName>
+    <label>autominer</label>
+    <description>A fortified, four-wheeled machine with an oversized drill arm and a series of shovel units. This unit moves fast and is able to swiftly cut through rock and stone alike, however its battery life leaves something to be desired. Mined material is not hauled.</description>
+    <statBases>
+      <MoveSpeed>1.9</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>VFE_Mechanoids_Machine</thinkTreeMain>
+      <body>MechanicalCentipede</body>
+      <baseBodySize>0.5</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>VFE_Pawn_HandmadeMech_Wounded</soundWounded>
+          <soundDeath>VFE_Pawn_HandmadeMech_Death</soundDeath>
+          <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>15</Plasteel>
+    </butcherProducts>
+	<comps>
+      <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<hoursActive>24</hoursActive>
+      </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>VFE_Mechanoids_Autominer</defName>
+    <label>autominer</label>
+    <race>VFE_Mechanoids_Autominer</race>
+    <combatPower>99999</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automation/Autominer/Autominer</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <ThingDef ParentName="BaseVFEMachine">
+    <defName>VFE_Mechanoids_Combat</defName>
+    <label>combat mechanoid</label>
+    <description>A simple minded ranged combat drone slightly smaller than a normal human. Patrols designated areas analyzing for nearby threats and will autonomously engage them.</description>
+    <statBases>
+      <MoveSpeed>1.9</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>VFE_Mechanoids_ViolentMachine</thinkTreeMain>
+      <body>Lancer</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>4</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>VFE_Pawn_HandmadeMech_Wounded</soundWounded>
+          <soundDeath>VFE_Pawn_HandmadeMech_Death</soundDeath>
+          <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>25</Plasteel>
+    </butcherProducts>
+	<comps>
+      <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<violent>true</violent>
+		<hoursActive>48</hoursActive>
+      </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>VFE_Mechanoids_Combat</defName>
+    <label>combat mechanoid</label>
+    <race>VFE_Mechanoids_Combat</race>
+    <combatPower>99999</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automation/CombatMechanoid/CombatMechanoid</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.8</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="BaseVFEMachine">
+    <defName>VFE_Mechanoids_Riot</defName>
+    <label>riot mechanoid</label>
+    <description>A simple minded melee combat drone slightly smaller than a normal human. Patrols designated areas analyzing for nearby threats and will autonomously engage them.</description>
+    <statBases>
+      <MoveSpeed>1.9</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+				<label>blade</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>16.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+			<li>
+				<label>shield</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>20.0</power>
+				<cooldownTime>3</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+	  
+    </tools>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>VFE_Mechanoids_ViolentMachine</thinkTreeMain>
+      <body>Lancer</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>4</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>VFE_Pawn_HandmadeMech_Wounded</soundWounded>
+          <soundDeath>VFE_Pawn_HandmadeMech_Death</soundDeath>
+          <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>45</Plasteel>
+    </butcherProducts>
+	<comps>
+      <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<violent>true</violent>
+		<hoursActive>72</hoursActive>
+      </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>VFE_Mechanoids_Riot</defName>
+    <label>riot mechanoid</label>
+    <race>VFE_Mechanoids_Riot</race>
+    <combatPower>99999</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automation/RiotMechanoid/RiotMechanoid</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="BaseVFEMachine">
+    <defName>VFE_Mechanoids_Turret</defName>
+    <label>mobile turret</label>
+    <description>A simple treaded platform with a spot for a turret to be sturdily installed upon it, allowing for mobile firepower without risk.</description>
+    <statBases>
+      <MoveSpeed>1.9</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+      <PsychicSensitivity>0.25</PsychicSensitivity>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <race>
+      <intelligence>ToolUser</intelligence>
+      <thinkTreeMain>VFE_Mechanoids_ViolentMachine</thinkTreeMain>
+      <body>MechanicalCentipede</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>4</baseHealthScale>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>VFE_Pawn_HandmadeMech_Wounded</soundWounded>
+          <soundDeath>VFE_Pawn_HandmadeMech_Death</soundDeath>
+          <soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>3000~8000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+    <butcherProducts>
+	  <VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>55</Plasteel>
+    </butcherProducts>
+	<comps>
+      <li Class="VFE.Mechanoids.CompProperties_Machine">
+		<violent>true</violent>
+		<hoursActive>24</hoursActive>
+      </li>
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>VFE_Mechanoids_Turret</defName>
+    <label>mobile turret</label>
+    <race>VFE_Mechanoids_Turret</race>
+    <combatPower>99999</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automation/MobileTurret/MobileTurret</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

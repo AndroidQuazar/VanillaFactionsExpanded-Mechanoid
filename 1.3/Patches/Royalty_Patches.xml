@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<nomatch Class="PatchOperationSequence">
+			<operations>				
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/ThingDef[defName = "VFE_MechanoidUplink"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/ThingDef[defName = "VFE_ClimateAdjuster"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/ThingDef[defName = "VFE_EMIDynamo"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/ThingDef[defName = "VFE_PsychicSuppressor"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/ThingDef[defName = "VFE_PsychicDroner"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/ThingDef[defName = "VFE_BulletShield"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/ThingDef[defName = "VFE_MortarShield"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_PsychicSuppressor"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_MechanoidUplink"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_MortarShield"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_PsychicDroner"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_EMIDynamo"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_ClimateAdjuster"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">		
+					<xpath>/Defs/KCSG.SymbolDef[defName = "VFE_BulletShield"]</xpath>
+				</li>
+			</operations>		
+		</nomatch>
+	</Operation>  
+</Patch>

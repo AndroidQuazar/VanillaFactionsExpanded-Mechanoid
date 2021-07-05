@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_ConduitPylon</defName>
+    <label>conduit pylon</label>
+	<description>A small device that connects to power networks via conduit to extend the range at which electronics can connect to said conduits. Proper implementation can triple the range at which electric current can be utilized.</description>
+    <graphicData>
+      <texPath>Things/Buildings/PowerPylon/PowerPylon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.2, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>5</Mass>
+    </statBases>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <fillPercent>0.15</fillPercent>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>10</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable">
+		</li>
+      <li Class="CompProperties_Breakdownable"/>
+	  <li>
+			<compClass>VFEMech.CompPylon</compClass>
+	  </li>
+    </comps>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <pathCost>14</pathCost>
+    <designationCategory>VFE_Factory</designationCategory>
+    <rotatable>false</rotatable>
+	<placeWorkers>
+      <li>VFEMech.PlaceWorker_OnPowerConduit</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>VFE_FactoryBasics</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>

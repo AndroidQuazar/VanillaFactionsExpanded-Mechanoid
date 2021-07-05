@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<Defs>
+
+  <ThingSetMakerDef>
+    <defName>VFEMech_MechanoidStorageContent</defName>
+    <root Class="VFEMech.ThingSetMaker_MechanoidStorageContent" />
+  </ThingSetMakerDef>
+  
+</Defs>

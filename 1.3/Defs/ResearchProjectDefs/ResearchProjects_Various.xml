@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>VFE_FactoryBasics</defName>
+		<label>factory basics</label>
+		<description>Gain a basic fundamental understanding of factory utilization and unlock factory hoppers and terrain capable of supporting heavy machinery.</description>
+		<baseCost>3500</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>Fabrication</li>
+		</prerequisites>
+  <researchViewX>5.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFE_ElectronicsFabricationFactory</defName>
+		<label>electronics fabrication factory</label>
+		<description>Research a series of machines that grant the ability to automatically harness small amounts of steel from loose rock chunks and forge them into both simple mechanical components and higher tech electronic components.</description>
+		<baseCost>3000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>6.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFE_MasonryandMetallicsFactory</defName>
+		<label>masonry and metallics factory</label>
+		<description>Research a series of machines that grant the ability to automatically mine surface-level rock chunks as well as process them into bricks and further refine them into an advanced material indistinguishable from plasteel.</description>
+		<baseCost>3000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>7.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFE_MunitionsandArmamentsFactory</defName>
+		<label>munitions and armaments factory</label>
+		<description>Research a series of machines that grant the ability to automatically refine and clarify chemfuel from organic matter as well as process it further into weaponry and large-scale mortar shells.</description>
+		<baseCost>3000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>8.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFE_WearablesandTextilesFactory</defName>
+		<label>wearables and textiles factory</label>
+		<description>Research a series of machines that grant the ability to automatically recycle old apparel into salvaged scrap as well as assemble new apparel from the aforementioned scraps. Additionally unlocks a machine capable of molecularly reconfiguring apparel to mimic the properties of synthread.</description>
+		<baseCost>3000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>5.00</researchViewX>
+  <researchViewY>4.90</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFE_ProvisionsPackagingFactory</defName>
+		<label>provisions packaging factory</label>
+		<description>Research a series of machines that grant the ability to automatically and efficiently harvest animal meat trimmings, cook, and package them into a variety of survival meals, kibble, and canned goods.</description>
+		<baseCost>3000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>9.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFE_MedicinalCompoundingFactory</defName>
+		<label>medicinal compounding factory</label>
+		<description>Research a series of machines that grant the ability to automatically refine a thick glycerol extremely similar to that of neutroamine, also allows the further refining into a variety of medicines or illicit drugs.</description>
+		<baseCost>3000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>6.00</researchViewX>
+  <researchViewY>4.90</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	<ResearchProjectDef>
+		<defName>VFE_BasicDroneAssembly</defName>
+		<label>basic drone assembly</label>
+		<description>Research a machine that allows the assembly of rudimentary automated rechargeable drones capable of hauling, mining, and cleaning.</description>
+		<baseCost>4000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>8.00</researchViewX>
+  <researchViewY>4.90</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>VFE_AutomatedDefensiveMeasures</defName>
+		<label>automated defensive measures</label>
+		<description>Research the ability to weaponize automated drones for a variety of purposes including mobile turret platforms, mortars, riot control and other defensive countermeasures.</description>
+		<baseCost>4000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+  <researchViewX>9.00</researchViewX>
+  <researchViewY>4.90</researchViewY>
+	</ResearchProjectDef>
+</Defs>

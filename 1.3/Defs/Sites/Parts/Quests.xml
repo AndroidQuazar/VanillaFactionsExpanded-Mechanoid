@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>VFEV_AbandonedFactory</defName>
+    <label>abandoned factory</label>
+    <description>An abandoned factory.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/QuestIcons/AbandonedFactory</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <tags>
+      <li>VFEV_AbandonedFactory</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>VFEV_AbandonedFactory</defName>
+    <linkWithSite>VFEV_AbandonedFactory</linkWithSite>
+    <order>460</order>
+    <genStep Class="KCSG.GenStep_CustomStructureGen">
+      <structureLayoutDefs>
+        <li>VFEM_Factory1</li>
+        <li>VFEM_Factory2</li>
+        <li>VFEM_Factory3</li>
+        <li>VFEM_Factory4</li>
+        <li>VFEM_Factory5</li>
+        <li>VFEM_Factory6</li>
+        <li>VFEM_Factory7</li>
+        <li>VFEM_Factory8</li>
+      </structureLayoutDefs>
+    </genStep>
+  </GenStepDef>
+
+  <SitePartDef>
+    <defName>VFEV_BroadcastingStation</defName>
+    <label>abandoned broadcasting station</label>
+    <description>An broadcasting station.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/QuestIcons/BroadcastingStation</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <tags>
+      <li>VFEV_BroadcastingStation</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>VFEV_BroadcastingStation</defName>
+    <linkWithSite>VFEV_BroadcastingStation</linkWithSite>
+    <order>460</order>
+    <genStep Class="KCSG.GenStep_CustomStructureGen">
+      <structureLayoutDefs>
+        <li>VFEM_BroadcastingStation1</li>
+        <li>VFEM_BroadcastingStation2</li>
+        <li>VFEM_BroadcastingStation3</li>
+        <li>VFEM_BroadcastingStation4</li>
+        <li>VFEM_BroadcastingStation5</li>
+        <li>VFEM_BroadcastingStation6</li>
+        <li>VFEM_BroadcastingStation7</li>
+        <li>VFEM_BroadcastingStation8</li>
+        <li>VFEM_BroadcastingStation9</li>
+        <li>VFEM_BroadcastingStation10</li>
+      </structureLayoutDefs>
+    </genStep>
+  </GenStepDef>
+</Defs>

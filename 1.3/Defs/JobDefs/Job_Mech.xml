@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>VFEM_Disassemble</defName>
+    <driverClass>VFEMech.JobDriver_Disassemble</driverClass>
+    <reportString>dissembling TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>VFEM_RefuelSilo</defName>
+    <driverClass>VFEMech.JobDriver_RefuelSilo</driverClass>
+    <reportString>refueling TargetA.</reportString>
+    <suspendable>false</suspendable>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <WorkGiverDef>
+    <defName>VFEM_RefuelSilo</defName>
+    <label>refuel rocket silo</label>
+    <giverClass>VFEMech.WorkGiver_RefuelSilo</giverClass>
+    <workType>Hauling</workType>
+    <verb>refuel</verb>
+    <gerund>refueling</gerund>
+    <priorityInType>180</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>

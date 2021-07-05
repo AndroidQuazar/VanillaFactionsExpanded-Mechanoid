@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Vikings</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+						<ResearchProjectDef>
+							<defName>VFE_IndustrialBeekeeping</defName>
+							<label>industrial beekeeping</label>
+							<description>Research a robot-handled artificial apiary that will allow beekeepers to extract honey from bees much faster than usual.</description>
+							<baseCost>750</baseCost>
+							<tab>VanillaExpanded</tab>
+							<techLevel>Industrial</techLevel>
+							<prerequisites>
+								<li>VFE_FactoryBasics</li>
+							</prerequisites>
+							<researchViewX>12.00</researchViewX>
+							<researchViewY>4.25</researchViewY>
+						</ResearchProjectDef>
+						
+						<ThingDef ParentName="BuildingBase">
+							<defName>VFE_IndustrialApiary</defName>
+							<thingClass>VFEMech.Building_IndustrialApiary</thingClass>
+							<label>industrial apiary</label>
+							<tickerType>Rare</tickerType>
+							<description>A robot-handled artificial apiary that will allow beekeepers to extract honey from bees much faster than usual, and without needing to be manually tended, at the cost of space, a bit of electricity and needing many more flowers nearby. When placed near flowers the industrial apiary will naturally attract wild bees which will make it their new home. Over time these bees will produce honey which will can harvested and eaten directly, or later fermented into mead.</description>
+							<graphicData>
+								<texPath>Things/Buildings/IndustrialApiary/IndustrialApiary</texPath>
+								<graphicClass>Graphic_Multi</graphicClass>
+								<drawSize>(5,5)</drawSize>
+								<shaderType>CutoutComplex</shaderType>
+								<damageData>
+									<cornerTL>Damage/Corner</cornerTL>
+									<cornerTR>Damage/Corner</cornerTR>
+									<cornerBL>Damage/Corner</cornerBL>
+									<cornerBR>Damage/Corner</cornerBR>
+								</damageData>
+							</graphicData>
+							<size>(3,3)</size>
+							<minifiedDef>MinifiedThing</minifiedDef>
+							<thingCategories>
+								<li>BuildingsProduction</li>
+							</thingCategories>
+							<hasInteractionCell>True</hasInteractionCell>
+							<interactionCellOffset>(0,0,-2)</interactionCellOffset>
+							<rotatable>true</rotatable>
+							<altitudeLayer>Building</altitudeLayer>
+							<designationCategory>VFE_Factory</designationCategory>
+							<passability>PassThroughOnly</passability>
+							<pathCost>70</pathCost>
+							<castEdgeShadows>false</castEdgeShadows>
+							<fillPercent>1.0</fillPercent>
+							<canOverlapZones>false</canOverlapZones>
+						
+							<building>
+								<soundAmbient>VFEV_Apiary_Ambience</soundAmbient>
+								<wantsHopperAdjacent>true</wantsHopperAdjacent>
+								<buildingTags>
+									<li>Production</li>
+								</buildingTags>
+								<blueprintGraphicData>
+									<texPath>Things/Buildings/IndustrialApiary/IndustrialApiary_Blueprint</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+								</blueprintGraphicData>
+							</building>
+							<statBases>
+								<MaxHitPoints>200</MaxHitPoints>
+								<WorkToBuild>3000</WorkToBuild>
+								<Flammability>0.5</Flammability>
+								<Mass>20</Mass>
+							</statBases>
+							
+							<costList>
+								<Steel>100</Steel>								
+								<Plasteel>50</Plasteel>
+								<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+							</costList>
+							<holdsRoof>false</holdsRoof>
+							<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+							<uiIconScale>0.6</uiIconScale>
+							<specialDisplayRadius>6.9</specialDisplayRadius>
+							<researchPrerequisites>
+								<li>VFE_IndustrialBeekeeping</li>
+							</researchPrerequisites>
+							<placeWorkers>
+								
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+							</placeWorkers>
+							<comps>
+								<li Class="CompProperties_Power">
+									<compClass>CompPowerTrader</compClass>
+									<shortCircuitInRain>false</shortCircuitInRain>
+									<basePowerConsumption>100</basePowerConsumption>
+								</li>
+								<li Class="CompProperties_Flickable"/>
+								
+							</comps>
+							<modExtensions>
+								<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+									<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+								</li>
+							</modExtensions>
+						</ThingDef>
+						
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
+

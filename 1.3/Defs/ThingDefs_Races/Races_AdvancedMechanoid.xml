@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BasePawn" Name="VFE_AdvancedMechanoid" Abstract="True">
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingClass>VFEMech.VFEMechanoid</thingClass>
+		<statBases>
+			<PsychicSensitivity>0.5</PsychicSensitivity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<Flammability>0</Flammability>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>250</ComfyTemperatureMax>
+			<MeatAmount>0</MeatAmount>
+			<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		</statBases>
+		<race>
+			<fleshType>Mechanoid</fleshType>
+			<needsRest>false</needsRest>
+			<hasGenders>false</hasGenders>
+			<foodType>None</foodType>
+			<lifeExpectancy>2500</lifeExpectancy>
+			<bloodDef>Filth_MachineBits</bloodDef>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef Name="VFE_AdvancedMechanoidKind" Abstract="True">
+		<defaultFactionType>VFE_Mechanoid</defaultFactionType>
+		<aiAvoidCover>false</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
+		<modExtensions>
+			<li Class="VFEMech.UplinkCompatible"/>
+		</modExtensions>
+	</PawnKindDef>
+
+	<!-- Advanced Centipede -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoid">
+		<defName>VFE_Mech_AdvancedCentipede</defName>
+		<label>advanced centipede</label>
+		<description>An even heavier, more armored version of the Centipede mechanoid propelled by hundreds of tiny legs as well. Unlike their more ancient and less advanced relatives this particular unit is much more intelligent and will seek cover before attempting to break lines of defense.</description>
+		<statBases>
+			<MoveSpeed>2.1</MoveSpeed>
+			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.82</ArmorRating_Sharp>
+			<PsychicSensitivity>0.85</PsychicSensitivity>
+		</statBases>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>17</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<race>
+			<intelligence>ToolUser</intelligence>
+			<thinkTreeMain>Mechanoid</thinkTreeMain>
+			<body>MechanicalCentipede</body>
+			<baseBodySize>1.8</baseBodySize>
+			<baseHealthScale>4.32</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>VFE_Pawn_AdvancedMech_Centipede_Wounded</soundWounded>
+					<soundDeath>VFE_Pawn_AdvancedMech_Centipede_Death</soundDeath>
+					<soundCall>VFE_Pawn_AdvancedMech_Centipede_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+		</race>
+		<butcherProducts>
+			<Steel>40</Steel>
+			<Plasteel>20</Plasteel>
+		</butcherProducts>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedCentipede</defName>
+		<label>advanced centipede</label>
+		<race>VFE_Mech_AdvancedCentipede</race>
+		<combatPower>400</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechCentipede</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.8, 0.6)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>VFE_AdvMechanoidGunHeavy</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<!-- Advanced Walker (lancer/scyther) base -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoid" Name="VFE_AdvancedMechanoidWalker" Abstract="True">
+		<statBases>
+			<MoveSpeed>5.1</MoveSpeed>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+		</statBases>
+		<race>
+			<intelligence>ToolUser</intelligence>
+			<thinkTreeMain>Mechanoid</thinkTreeMain>
+			<baseBodySize>1.0</baseBodySize>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>VFE_Pawn_AdvancedMech_Scyther_Wounded</soundWounded>
+					<soundDeath>VFE_Pawn_AdvancedMech_Scyther_Death</soundDeath>
+					<soundCall>VFE_Pawn_AdvancedMech_Scyther_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+		</race>
+		<butcherProducts>
+			<Steel>25</Steel>
+		</butcherProducts>
+	</ThingDef>
+
+	<!-- Advanced Lancer - fast mid-range shooter -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedLancer</defName>
+		<label>advanced lancer</label>
+		<description>A freshly manufactured and heavily upgraded long-range infantry mechanoid. Unlike their more ancient and less advanced relatives this particular unit is much more intelligent and will seek cover and prove to be a much more challenging opponent in melee combat.</description>
+		<tools>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8.5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>Lancer</body>
+			<baseHealthScale>0.72</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedLancer</defName>
+		<label>advanced lancer</label>
+		<race>VFE_Mech_AdvancedLancer</race>
+		<combatPower>150</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechLancer</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.8</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>VFE_AdvMechanoidGunMedium</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<!-- Advanced Knight - slow short-range shooter -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedKnight</defName>
+		<label>advanced knight</label>
+		<description>One of two heavy infantry mechanoids equipped with multiple upgrades. This particular Knight variant appears to have an overclocked power cell, allowing quicker movement and a stronger energy shield. Like it’s unupgraded variant, the Knight comes equipped with a devastating burst-fire charge blaster, although its targeting module appears to be much more advanced.</description>
+		<statBases>
+			<MoveSpeed>4.7</MoveSpeed>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8.5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>Lancer</body>
+			<baseHealthScale>0.72</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+		</race>
+		<comps>
+			<li Class="VFECore.CompProperties_ShieldBubble">
+				<EnergyShieldRechargeRate>0.05</EnergyShieldRechargeRate>
+				<EnergyShieldEnergyMax>70</EnergyShieldEnergyMax>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedKnight</defName>
+		<label>advanced knight</label>
+		<race>VFE_Mech_AdvancedKnight</race>
+		<combatPower>150</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechKnight</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.6</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>VFE_AdvMechanoidGunShort</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<!-- Advanced Inquisitor - armored short-range flamer -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedInquisitor</defName>
+		<label>advanced inquisitor</label>
+		<description>One of two heavy infantry mechanoids equipped with multiple upgrades. Despite much larger chemfuel tanks this variant of the Inquisitor mech is somehow quicker than its counterpart. Less than a dozen encounters with this mechanoid have ever been reported and less than half of those have ended in victory. This Inquisitor not only rushes priority targets with plumes of fire but also is installed with a much more deadly explosive fail-safe system that both detonates the machine but also engulfs targets nearby in chemfuel fire.</description>
+		<statBases>
+			<MoveSpeed>2.3</MoveSpeed>
+			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.88</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>left fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8.5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<deathActionWorkerClass>VFEMech.DeathActionWorker_BigBombExplosion</deathActionWorkerClass>
+			<body>Lancer</body>
+			<baseHealthScale>1.4</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedInquisitor</defName>
+		<label>advanced inquisitor</label>
+		<race>VFE_Mech_AdvancedInquisitor</race>
+		<combatPower>200</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechInquisitor</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>VFE_AdvMechanoidGunFlamer</li>
+		</weaponTags>
+	</PawnKindDef>
+
+
+	<!-- Advanced Scyther - fast melee -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedScyther</defName>
+		<label>advanced scyther</label>
+		<description>A dense, spindly and very intelligent scyther unit that appears to be freshly manufactured with additional upgrades. This unit appears to utilize anti-gravity properties to propel itself much quicker than its ancient versions, as well as superheat its bladed arm attachments to more readily cut through flesh and metal alike.</description>
+		<tools>
+			<li>
+				<label>left blade</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right blade</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<statBases>
+			<MoveSpeed>5.6</MoveSpeed>
+		</statBases>
+		<race>
+			<body>Scyther</body>
+			<baseHealthScale>1.32</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedScyther</defName>
+		<label>advanced scyther</label>
+		<race>VFE_Mech_AdvancedScyther</race>
+		<combatPower>150</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechScyther</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>0~0</weaponMoney>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+		</weaponTags>
+	</PawnKindDef>
+
+	<!-- Advanced Pikeman - slow sniper weak at close range -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedPikeman</defName>
+		<label>advanced pikeman</label>
+		<description>A multi-legged combat mechanoid specialized as a long-range weapons platform. This particular unit appears to have been upgraded with additional limbs for quicker movement as well as a layer of roach-like carapace plates for extra defense against melee combatants.</description>
+		<statBases>
+			<MoveSpeed>2.8</MoveSpeed>
+		</statBases>
+		<tools>
+			<li>
+				<label>front left leg</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>front right leg</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8.5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>Pikeman</body>
+			<baseHealthScale>0.85</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+			<lifeStageAges Inherit="False">
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Pikeman_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Pikeman_Death</soundDeath>
+					<soundCall>Pawn_Mech_Pikeman_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedPikeman</defName>
+		<label>advanced pikeman</label>
+		<labelPlural>advanced pikemen</labelPlural>
+		<race>VFE_Mech_AdvancedPikeman</race>
+		<combatPower>110</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechPikeman</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.4</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>VFE_AdvMechanoidGunLongRange</li>
+		</weaponTags>
+	</PawnKindDef>
+
+
+	<!-- Advanced Carpenter - slow deconstructor -->
+
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvancedCarpenter</defName>
+		<label>advanced carpenter</label>
+		<description>An upgraded version of the utility “Carpenter” mechanoid. Set apart from its prior iterations this version of the carpenter mechanoid not only moves faster but also utilizes plasma torches and omnitools to nearly instantly dissemble all risk-posing structures. Compounded with possibly the heaviest armor of all mechanoids this unit needs to be prioritized before reaching the enemy frontline. Finally, should this mechanoid detect that it is about to cease function an EMP shock is emitted that temporarily disables all nearby electronics in a last-ditch effort to break the frontline for its allies.</description>
+		<statBases>
+			<MoveSpeed>2.8</MoveSpeed>
+			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1</ArmorRating_Sharp>
+			<PsychicSensitivity>0.75</PsychicSensitivity>
+			<PawnTrapSpringChance>0</PawnTrapSpringChance>
+		</statBases>
+		<tools>
+			<li>
+				<label>front left leg</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>front right leg</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8.5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<intelligence>ToolUser</intelligence>
+			<thinkTreeMain>VFE_Mech_Carpenter</thinkTreeMain>
+			<deathActionWorkerClass>DeathActionWorker_BigExplosion</deathActionWorkerClass>
+			<body>Pikeman</body>
+			<baseBodySize>1.8</baseBodySize>
+			<baseHealthScale>5.32</baseHealthScale>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+			<lifeStageAges Inherit="False">
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Pikeman_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Pikeman_Death</soundDeath>
+					<soundCall>Pawn_Mech_Pikeman_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<butcherProducts Inherit='False'>
+			<Steel>40</Steel>
+			<Plasteel>20</Plasteel>
+		</butcherProducts>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvancedCarpenter</defName>
+		<label>advanced carpenter</label>
+		<race>VFE_Mech_AdvancedCarpenter</race>
+		<combatPower>400</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedCarpenter</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3.4</drawSize>
+					<shadowData>
+						<volume>(1.4, 1.8, 1.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+
+
+</Defs>

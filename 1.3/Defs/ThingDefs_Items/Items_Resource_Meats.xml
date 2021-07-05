@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--  Bases  -->
+	<ThingDef Name="VFEM_RawMeatBase" Abstract="True" ParentName="OrganicProductBase">
+		<label>Base meat properties</label>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>True</rotDestroys>
+			</li>
+		</comps>
+		<statBases>
+			<Nutrition>0.05</Nutrition>
+			<Flammability>0.5</Flammability>
+			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+
+		</statBases>
+		<ingestible>
+			<foodType>Meat</foodType>
+			<preferability>DesperateOnly</preferability>
+			<ingestEffect>EatMeat</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>		
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	
+
+	<!--  Processed meat  -->
+
+	<ThingDef ParentName="VFEM_RawMeatBase">
+		<defName>VFEM_ProcessedMeat</defName>
+		<label>processed meat</label>
+		<description>A ground meat product that haphazardly includes the hide, bones, and fur of the creature in question. While the texture is a bit questionable the flavor is surprisingly acceptable.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/VFEM_ProcessedMeat</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+	</ThingDef>
+	
+	
+
+
+
+</Defs>

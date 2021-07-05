@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12B1B7DD-707D-4962-866B-6BE40FC816E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VFEM</RootNamespace>
+    <AssemblyName>VFEM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VFECore">
+      <HintPath>..\..\..\..\VanillaExpandedFramework-Dev\1.3\Assemblies\VFECore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buildings\Building_AutoHarvester.cs" />
+    <Compile Include="Buildings\Building_AutoPlant.cs" />
+    <Compile Include="Buildings\Building_AutoSower.cs" />
+    <Compile Include="Buildings\Building_IndustrialApiary.cs" />
+    <Compile Include="Buildings\MechShipPart.cs" />
+    <Compile Include="Buildings\HullRepairModule.cs" />
+    <Compile Include="Buildings\CargoHold.cs" />
+    <Compile Include="Buildings\Supercomputer.cs" />
+    <Compile Include="Buildings\TrooperStorage.cs" />
+    <Compile Include="Buildings\MechanoidUplink.cs" />
+    <Compile Include="Comps\CompPylon.cs" />
+    <Compile Include="GenSteps\GenStep_MechanoidShipLanding.cs" />
+    <Compile Include="GenSteps\GenStep_MechanoidAttackParty.cs" />
+    <Compile Include="GenSteps\GenStep_MechanoidStorage.cs" />
+    <Compile Include="HarmonyPatches\Explosion_Patch.cs" />
+    <Compile Include="HarmonyPatches\MechSpawn_Patch.cs" />
+    <Compile Include="HarmonyPatches\Patch_AffectRelationsOnAttacked.cs" />
+    <Compile Include="HarmonyPatches\ShouldRemoveMapNow_Patch.cs" />
+    <Compile Include="HarmonyPatches\Thing_Patch.cs" />
+    <Compile Include="Incidents\MechShipDestroyed.cs" />
+    <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
+    <Compile Include="Letters\ChoiceLetter_AcceptVisitors.cs" />
+    <Compile Include="LordJob_VFEMDefendBase.cs" />
+    <Compile Include="Comps\CompActiveGameCondition_PsychicSuppression.cs" />
+    <Compile Include="Comps\CompActiveGameCondition_PsychicEmanation.cs" />
+    <Compile Include="Comps\CompMechProducer.cs" />
+    <Compile Include="Comps\CompActiveGameCondition.cs" />
+    <Compile Include="Damages\DeathActionWorker_BigBombExplosion.cs" />
+    <Compile Include="GameConditions\GameCondition_EMIDynamo.cs" />
+    <Compile Include="GameConditions\GameCondition_ClimateAdjuster.cs" />
+    <Compile Include="HarmonyPatches\Power_Patches.cs" />
+    <Compile Include="HarmonyPatches\Raid_Patches.cs" />
+    <Compile Include="HarmonyPatches\SettlementDefeatedUtility_Patch.cs" />
+    <Compile Include="HarmonyPatches\Terrain_Patches.cs" />
+    <Compile Include="HarmonyPatches\AvoidGrid_Patch.cs" />
+    <Compile Include="HarmonyPatches\HarmonyInit.cs" />
+    <Compile Include="Hediffs\Hediff_FasterMovement.cs" />
+    <Compile Include="Hediffs\Hediff_MechanoidUplink.cs" />
+    <Compile Include="Incidents\MechLandIncidents.cs" />
+    <Compile Include="JobDrivers\JobDriver_Disassemble.cs" />
+    <Compile Include="JobGivers\JobGiver_DisassembleAnyNonMechBuildings.cs" />
+    <Compile Include="JobGivers\JobGiver_DisassembleNonMechBuildings.cs" />
+    <Compile Include="LongRangeMissile.cs" />
+    <Compile Include="MechSettlement.cs" />
+    <Compile Include="MechUpgradeWarningDef.cs" />
+    <Compile Include="ModExtensions\MechanoidBaseExtension.cs" />
+    <Compile Include="ModExtensions\MechanoidBaseIncidentExtension.cs" />
+    <Compile Include="ModExtensions\UplinkCompatible.cs" />
+    <Compile Include="Pawns\VFEMechanoid.cs" />
+    <Compile Include="Pawns\Mech_Inquisitor.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_ApiaryAndFactoryFloorAndPath.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_AutoPlant.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnPowerConduit.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloorAndPath.cs" />
+    <Compile Include="PawnGroupMakerMech.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloor.cs" />
+    <Compile Include="QuestNodes\QuestNode_MechPresenceConditional.cs" />
+    <Compile Include="QuestNodes\QuestNode_ConvertSiteToMechShip.cs" />
+    <Compile Include="QuestNodes\QuestNode_Recruit.cs" />
+    <Compile Include="QuestParts\QuestPart_ConvertSiteToMechShip.cs" />
+    <Compile Include="QuestParts\QuestPart_Recruit.cs" />
+    <Compile Include="ScenPart_StartingPackAnimal.cs" />
+    <Compile Include="SettingsHelper.cs" />
+    <Compile Include="Sites\SitePartWorker_MechanoidShipLanding.cs" />
+    <Compile Include="Sites\SitePartWorker_MechanoidAttackParty.cs" />
+    <Compile Include="Sites\SitePartWorker_MechanoidStorage.cs" />
+    <Compile Include="SymbolResolverShips.cs" />
+    <Compile Include="ThingSetMakers\ThingSetMaker_MechanoidStorageContent.cs" />
+    <Compile Include="Utils\MechUtils.cs" />
+    <Compile Include="MapComponent_MechWarfare.cs" />
+    <Compile Include="VFEMDefOf.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VFEMMod.cs" />
+    <Compile Include="VFEMSettings.cs" />
+    <Compile Include="VFEMWorldComponent.cs" />
+    <Compile Include="WorkGivers\WorkGiver_RefuelSilo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.0.4</Version>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

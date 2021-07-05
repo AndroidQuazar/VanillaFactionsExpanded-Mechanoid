@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <PawnsArrivalModeDef>
+    <defName>VFEM_MechShipArrival</defName>
+    <workerClass>KCSG.FallingStructureArrival</workerClass>
+    <textEnemy>A mechanoid ship from {0} landed nearby.</textEnemy>
+    <selectionWeightCurve>
+      <points>
+        <li>(300,  0)</li>
+        <li>(700,  2)</li>
+        <li>(1400, 3)</li>
+        <li>(2800, 5)</li>
+      </points>
+    </selectionWeightCurve>
+  </PawnsArrivalModeDef>
+
+  <RaidStrategyDef>
+    <defName>VFEM_StrategyMechShipArrival</defName>
+    <workerClass>KCSG.FallingStructureStrategy</workerClass>
+    <minPawns>2</minPawns>
+    <raidLootValueFactor>0</raidLootValueFactor>
+    <arriveModes>
+      <li>VFEM_MechShipArrival</li>
+    </arriveModes>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(300,  0)</li>
+        <li>(700,  2)</li>
+        <li>(1400, 3)</li>
+        <li>(2800, 5)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <letterLabelEnemy>Mechanoid ship</letterLabelEnemy>
+    <arrivalTextEnemy>Mechanoids that landed with it will attack immediately. The ship will lay covering fire and begin the siege as soon as possible.</arrivalTextEnemy>
+    <modExtensions>
+      <li Class="KCSG.FallingStructure">
+        <weightedStruct>
+          <li>VFEM_Frigate1</li>
+          <li>VFEM_Frigate2</li>
+          <li>VFEM_Frigate3</li>
+          <li>VFEM_Frigate4</li>
+          <li>VFEM_Frigate5</li>
+          <li>VFEM_Frigate6</li>
+          <li>VFEM_Frigate7</li>
+          <li>VFEM_Frigate8</li>
+          <li>VFEM_Frigate9</li>
+          <li>VFEM_Frigate10</li>
+          <li>VFEM_Frigate11</li>
+          <li>VFEM_Frigate12</li>
+          <li>VFEM_FrigateDLC1</li>
+          <li>VFEM_FrigateDLC2</li>
+          <li>VFEM_FrigateDLC3</li>
+          <li>VFEM_FrigateDLC4</li>
+          <li>VFEM_FrigateDLC5</li>
+          <li>VFEM_FrigateDLC6</li>
+          <li>VFEM_FrigateDLC7</li>
+          <li>VFEM_FrigateDLC8</li>
+          <li>VFEM_FrigateDLC9</li>
+          <li>VFEM_FrigateDLC10</li>
+          <li>VFEM_FrigateDLC11</li>
+          <li>VFEM_FrigateDLC12</li>
+          <li>VFEM_Destroyer1, 0.7</li>
+          <li>VFEM_Destroyer2, 0.7</li>
+          <li>VFEM_Destroyer3, 0.7</li>
+          <li>VFEM_Destroyer4, 0.7</li>
+          <li>VFEM_Destroyer5, 0.7</li>
+          <li>VFEM_Destroyer6, 0.7</li>
+          <li>VFEM_Destroyer7, 0.7</li>
+          <li>VFEM_Destroyer8, 0.7</li>
+          <li>VFEM_Destroyer9, 0.7</li>
+          <li>VFEM_Destroyer10, 0.7</li>
+          <li>VFEM_Destroyer11, 0.7</li>
+          <li>VFEM_Destroyer12, 0.7</li>
+          <li>VFEM_DestroyerDLC1, 0.7</li>
+          <li>VFEM_DestroyerDLC2, 0.7</li>
+          <li>VFEM_DestroyerDLC3, 0.7</li>
+          <li>VFEM_DestroyerDLC4, 0.7</li>
+          <li>VFEM_DestroyerDLC5, 0.7</li>
+          <li>VFEM_DestroyerDLC6, 0.7</li>
+          <li>VFEM_DestroyerDLC7, 0.7</li>
+          <li>VFEM_DestroyerDLC8, 0.7</li>
+          <li>VFEM_DestroyerDLC9, 0.7</li>
+          <li>VFEM_DestroyerDLC10, 0.7</li>
+          <li>VFEM_DestroyerDLC11, 0.7</li>
+          <li>VFEM_DestroyerDLC12, 0.7</li>
+          <li>VFEM_Cruiser1, 0.5</li>
+          <li>VFEM_Cruiser2, 0.5</li>
+          <li>VFEM_Cruiser3, 0.5</li>
+          <li>VFEM_Cruiser4, 0.5</li>
+          <li>VFEM_Cruiser5, 0.5</li>
+          <li>VFEM_Cruiser6, 0.5</li>
+          <li>VFEM_Cruiser7, 0.5</li>
+          <li>VFEM_Cruiser8, 0.5</li>
+          <li>VFEM_Cruiser9, 0.5</li>
+          <li>VFEM_Cruiser10, 0.5</li>
+          <li>VFEM_Cruiser11, 0.5</li>
+          <li>VFEM_Cruiser12, 0.5</li>
+          <li>VFEM_CruiserDLC1, 0.5</li>
+          <li>VFEM_CruiserDLC2, 0.5</li>
+          <li>VFEM_CruiserDLC3, 0.5</li>
+          <li>VFEM_CruiserDLC4, 0.5</li>
+          <li>VFEM_CruiserDLC5, 0.5</li>
+          <li>VFEM_CruiserDLC6, 0.5</li>
+          <li>VFEM_CruiserDLC7, 0.5</li>
+          <li>VFEM_CruiserDLC8, 0.5</li>
+          <li>VFEM_CruiserDLC9, 0.5</li>
+          <li>VFEM_CruiserDLC10, 0.5</li>
+          <li>VFEM_CruiserDLC11, 0.5</li>
+          <li>VFEM_CruiserDLC12, 0.5</li>
+        </weightedStruct>
+        <canBeUsedBy>
+          <li>VFE_Mechanoid</li>
+        </canBeUsedBy>
+        <spawnDormantWhenPossible>false</spawnDormantWhenPossible>
+      </li>
+    </modExtensions>
+  </RaidStrategyDef>
+</Defs>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Weapons Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+
+
+
+				<li Class="PatchOperationAdd"> 
+					<success>Always</success>
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_VWE_CombatHandgun</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+							<items>
+								<li>Steel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentIndustrial</li>
+							</secondItems>
+
+
+							<amount>
+								<li>30</li>
+								<li>3</li>
+
+							</amount>
+							<result>VWE_CombatHandgun</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_VWE_Gun_BattleRifle</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+							<items>
+								<li>Steel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentIndustrial</li>
+							</secondItems>
+
+
+							<amount>
+								<li>60</li>
+								<li>7</li>
+
+							</amount>
+							<result>VWE_Gun_BattleRifle</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_VWE_Gun_Carbine</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+							<items>
+								<li>Steel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentIndustrial</li>
+							</secondItems>
+
+
+							<amount>
+								<li>60</li>
+								<li>7</li>
+
+							</amount>
+							<result>VWE_Gun_Carbine</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith_VWE_Gun_ServiceRifle</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_MechanizedWeaponsmith</building>
+							<items>
+								<li>Steel</li>
+							</items>	
+							<secondItems>
+								<li>ComponentIndustrial</li>
+							</secondItems>
+
+
+							<amount>
+								<li>60</li>
+								<li>7</li>
+
+							</amount>
+							<result>VWE_Gun_ServiceRifle</result>	
+							<yield>1</yield>		
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+
+					</value>
+				</li>
+
+
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

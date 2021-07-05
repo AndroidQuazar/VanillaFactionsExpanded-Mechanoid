@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Rim War</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs</xpath>
+      <value>
+        <RimWar.RimWarDef Name="RimWarDef_FactionBehavior">
+          <defName>RimWar_FactionBehavior</defName>
+          <defDatas>
+            <li>
+              <factionDefname>VFE_Mechanoid</factionDefname>
+              <behavior>Excluded</behavior>
+              <forceBehavior>true</forceBehavior>
+            </li>
+          </defDatas>
+        </RimWar.RimWarDef>
+      </value>
+    </match>
+  </Operation>
+</Patch>

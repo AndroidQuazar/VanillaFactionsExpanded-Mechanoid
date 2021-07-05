@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef>
+		<defName>VFE_MechanoidUplink</defName>
+		<label>mechanoid uplink</label>
+		<description>mechanoid uplink</description>
+		<hediffClass>VFEMech.Hediff_MechanoidUplink</hediffClass>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>1.5</MoveSpeed>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>
