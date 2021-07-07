@@ -10,6 +10,7 @@ namespace VFEM.HarmonyPatches
     using HarmonyLib;
     using RimWorld;
     using RimWorld.BaseGen;
+    using RimWorld.Planet;
     using Verse;
     using VFEMech;
 

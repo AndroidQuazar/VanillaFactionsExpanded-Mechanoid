@@ -11,6 +11,7 @@ namespace VFEMech
     {
         public int raisesPresence;
         public RulePackDef nameMaker;
+        public bool defeatingGivesOutOtherFactionsGoodwill;
 
         public override IEnumerable<string> ConfigErrors()
         {
