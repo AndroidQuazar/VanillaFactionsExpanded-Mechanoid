@@ -164,6 +164,7 @@
       <li Class="VFEMech.MechanoidBaseExtension">
         <raisesPresence>1200</raisesPresence>
         <nameMaker>VFE_NamerShipTroopship</nameMaker>
+		<defeatingGivesOutOtherFactionsGoodwill>true</defeatingGivesOutOtherFactionsGoodwill>
       </li>
       <li Class="KCSG.FactionSettlement">
         <useStructureLayout>True</useStructureLayout>
@@ -209,6 +210,7 @@
       <li Class="VFEMech.MechanoidBaseExtension">
         <raisesPresence>2400</raisesPresence>
         <nameMaker>VFE_NamerShipCarrier</nameMaker>
+		<defeatingGivesOutOtherFactionsGoodwill>true</defeatingGivesOutOtherFactionsGoodwill>
       </li>
       <li Class="KCSG.FactionSettlement">
         <useStructureLayout>True</useStructureLayout>
