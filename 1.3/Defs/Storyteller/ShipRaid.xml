@@ -108,9 +108,13 @@
           <li>VFEM_CruiserDLC11, 0.5</li>
           <li>VFEM_CruiserDLC12, 0.5</li>
         </weightedStruct>
+        <thingsToSpawnInDropPod>
+          <li>Barricade</li>
+        </thingsToSpawnInDropPod>
         <canBeUsedBy>
           <li>VFE_Mechanoid</li>
         </canBeUsedBy>
+        <needToHaveSettlements>true</needToHaveSettlements>
         <spawnDormantWhenPossible>false</spawnDormantWhenPossible>
       </li>
     </modExtensions>
