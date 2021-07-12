@@ -14,7 +14,7 @@ namespace VFEM.HarmonyPatches
     internal static class SettlementDefeatedUtility_Patch
     {
         [HarmonyPostfix]
-        private static void Postfix(Map map, Faction faction, ref bool __result)
+        public static void Postfix(Map map, Faction faction, ref bool __result)
         {
             if (map.listerThings.ThingsOfDef(VFEMDefOf.VFEM_MissileIncoming).Any()) __result = true;
             else if (map.mapPawns.SpawnedPawnsInFaction(faction).Any(p => p.Faction?.def == VFEMDefOf.VFE_Mechanoid && GenHostility.IsActiveThreatToPlayer(p))) __result = false;
@@ -46,6 +46,12 @@ namespace VFEM.HarmonyPatches
 			{
 				return;
 			}
+			bool defeated = !IsDefeated(map, factionBase.Faction);
+			SettlementDefeatedUtility_Patch.Postfix(map, factionBase.Faction, ref defeated);
+			if (!defeated)
+            {
+				return;
+            }
 			IdeoUtility.Notify_PlayerRaidedSomeone(map.mapPawns.FreeColonistsSpawned);
 			DestroyedSettlement destroyedSettlement = (DestroyedSettlement)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.DestroyedSettlement);
 			destroyedSettlement.Tile = factionBase.Tile;
