@@ -18,7 +18,7 @@
 			</damageData>
 		</graphicData>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
-		<passability>PassThroughOnly</passability>
+		<passability>Standable</passability>
 		<fillPercent>0.5</fillPercent>
 		<pathCost>42</pathCost>
 		<canOverlapZones>false</canOverlapZones>
