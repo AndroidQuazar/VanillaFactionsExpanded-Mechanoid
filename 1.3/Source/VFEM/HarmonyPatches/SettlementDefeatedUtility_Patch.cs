@@ -46,7 +46,7 @@ namespace VFEM.HarmonyPatches
 			{
 				return;
 			}
-			bool defeated = !IsDefeated(map, factionBase.Faction);
+			bool defeated = IsDefeated(map, factionBase.Faction);
 			SettlementDefeatedUtility_Patch.Postfix(map, factionBase.Faction, ref defeated);
 			if (!defeated)
             {
@@ -96,7 +96,7 @@ namespace VFEM.HarmonyPatches
 			for (int i = 0; i < list.Count; i++)
 			{
 				Pawn pawn = list[i];
-				if (pawn.RaceProps.Humanlike && GenHostility.IsActiveThreatToPlayer(pawn))
+				if (pawn.RaceProps.IsMechanoid && GenHostility.IsActiveThreatToPlayer(pawn))
 				{
 					return false;
 				}
