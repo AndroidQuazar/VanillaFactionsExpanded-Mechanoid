@@ -4,7 +4,7 @@
   <SitePartDef>
     <defName>VFE_MechanoidAttackParty</defName>
     <label>a friendly outpost under mech attack</label>
-    <description>A stranded, incapacitated refugee begging for help.</description>
+    <description>A friendly outpost invaded by a mechanoid force, begging for help.</description>
     <workerClass>VFEMech.SitePartWorker_MechanoidAttackParty</workerClass>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/QuestIcons/MechanoidAttackParty</expandingIconTexture>
