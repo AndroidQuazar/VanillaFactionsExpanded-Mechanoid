@@ -80,12 +80,6 @@ namespace VFE.Mechanoids.Buildings
 
             return gizmos;
         }
-
-        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
-        {
-            Log.Message("Destoy " + this);
-            base.Destroy(mode);
-        }
         public override void Tick()
         {
             base.Tick();
@@ -186,7 +180,6 @@ namespace VFE.Mechanoids.Buildings
 
         bool CheckCell(IntVec3 cell)
         {
-            Log.Message(this + " - this.Map: " + this.Map);
             foreach(Thing t in cell.GetThingList(this.Map))
             {
                 if (t!=this && t.def.passability!=Traversability.Standable && (t.def.plant == null || blockedByTree))
@@ -196,16 +189,15 @@ namespace VFE.Mechanoids.Buildings
         }
 
         public override Vector3 DrawPos => base.DrawPos + OffsetDrawPos();
-
         Vector3 OffsetDrawPos()
         {
             if (this.Rotation == Rot4.East)
-                return new Vector3(offset, 0, 0);
+                return new Vector3(offset, 0.1f, 0);
             else if (this.Rotation == Rot4.West)
-                return new Vector3(-offset, 0, 0);
+                return new Vector3(-offset, 0.1f, 0);
             else if (this.Rotation == Rot4.North)
-                return new Vector3(0, 0, offset);
-            return new Vector3(0, 0, -offset);
+                return new Vector3(0, 0.1f, offset);
+            return new Vector3(0, 0.1f, -offset);
         }
 
         public override void Draw()

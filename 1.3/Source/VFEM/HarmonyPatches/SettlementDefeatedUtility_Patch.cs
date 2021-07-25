@@ -6,25 +6,44 @@ using Verse;
 
 namespace VFEM.HarmonyPatches
 {
+    using System;
+    using System.Linq;
     using System.Text;
+    using Verse.AI;
     using VFEMech;
+	[HarmonyPatch(typeof(GenHostility), "AnyHostileActiveThreatTo", 
+		new Type[] { typeof(Map), typeof(Faction), typeof(IAttackTarget), typeof(bool), typeof(bool) },
+		new ArgumentType[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal })]
+	internal static class AnyHostileActiveThreatTo_Patch
+	{
+		[HarmonyPriority(Priority.Last)]
+		public static void Postfix(ref bool __result, Map map, Faction faction, ref IAttackTarget threat, bool countDormantPawnsAsHostile = false, bool countSolitaryInsectsAsHostile = true)
+		{
+			if (!__result && map.ParentFaction?.def == VFEMDefOf.VFE_Mechanoid)
+            {
+				threat = map.listerThings.AllThings.FirstOrDefault(b => b.Faction?.def == VFEMDefOf.VFE_Mechanoid && b.def.defName.Contains("_Turret_")) as IAttackTarget;
+				__result = threat != null;
+            }
+		}
+	}
 
-    [HarmonyPatch(typeof(SettlementDefeatUtility), "IsDefeated")]
+	[HarmonyPatch(typeof(SettlementDefeatUtility), "IsDefeated")]
     [HarmonyAfter("vanillaexpanded.achievements")]
     internal static class SettlementDefeatedUtility_Patch
     {
-        [HarmonyPostfix]
+        [HarmonyPriority(Priority.Last)]
         public static void Postfix(Map map, Faction faction, ref bool __result)
         {
             if (map.listerThings.ThingsOfDef(VFEMDefOf.VFEM_MissileIncoming).Any()) __result = true;
             else if (map.mapPawns.SpawnedPawnsInFaction(faction).Any(p => p.Faction?.def == VFEMDefOf.VFE_Mechanoid && GenHostility.IsActiveThreatToPlayer(p))) __result = false;
-            else if (map.listerBuildings.allBuildingsNonColonist.Any(b => b.Faction?.def == VFEMDefOf.VFE_Mechanoid && b.def.defName.Contains("_Turret_"))) __result     = false;
+            else if (map.listerThings.AllThings.Any(b => b.Faction?.def == VFEMDefOf.VFE_Mechanoid && b.def.defName.Contains("_Turret_"))) __result     = false;
         }
     }
 
 	[HarmonyPatch(typeof(SettlementDefeatUtility), nameof(SettlementDefeatUtility.CheckDefeated))]
 	public class Faction_Patch
 	{
+		[HarmonyPriority(Priority.First)]
 		public static bool Prefix(Settlement factionBase)
 		{
 			if (factionBase.Faction?.def == VFEMDefOf.VFE_Mechanoid)
@@ -90,7 +109,7 @@ namespace VFEM.HarmonyPatches
 			TaleRecorder.RecordTale(TaleDefOf.CaravanAssaultSuccessful, map.mapPawns.FreeColonists.RandomElement());
 		}
 
-		private static bool IsDefeated(Map map, Faction faction)
+		public static bool IsDefeated(Map map, Faction faction)
 		{
 			List<Pawn> list = map.mapPawns.SpawnedPawnsInFaction(faction);
 			for (int i = 0; i < list.Count; i++)
