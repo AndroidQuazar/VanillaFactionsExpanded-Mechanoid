@@ -47,6 +47,7 @@
 				<cooldownTime>2.6</cooldownTime>
 			</li>
 		</tools>
+    <relicChance>0</relicChance>
 	</ThingDef>
 
 	<ThingDef ParentName="VFE_Gun_ChargeBlasterLightBase">
@@ -128,6 +129,7 @@
 				<cooldownTime>2.6</cooldownTime>
 			</li>
 		</tools>
+    <relicChance>0</relicChance>
 	</ThingDef>
 
 	<ThingDef ParentName="VFE_Gun_InfernoSpewerBase">
@@ -187,6 +189,7 @@
 		<weaponTags>
 			<li>VFE_AdvMechanoidGunShort</li>
 		</weaponTags>
+    <relicChance>0</relicChance>
 	</ThingDef>
 
 	<!-- Advanced Inferno Spewer -->
@@ -246,6 +249,7 @@
 				<muzzleFlashScale>14</muzzleFlashScale>
 			</li>
 		</verbs>
+    <relicChance>0</relicChance>
 	</ThingDef>
 
 	<!-- Advanced Charge Blaster -->
@@ -278,6 +282,7 @@
 		<weaponTags>
 			<li>VFE_AdvMechanoidGunHeavy</li>
 		</weaponTags>
+    <relicChance>0</relicChance>
 	</ThingDef>
 
 	<!-- Advanced Inferno cannon -->
@@ -311,6 +316,7 @@
 				<muzzleFlashScale>14</muzzleFlashScale>
 			</li>
 		</verbs>
+    <relicChance>0</relicChance>
 	</ThingDef>
 
 	<!-- Advanced Needlegun -->
@@ -361,6 +367,7 @@
 				<cooldownTime>2.6</cooldownTime>
 			</li>
 		</tools>
+    <relicChance>0</relicChance>
 	</ThingDef>
 
 	<!-- Advanced Charge lance -->
@@ -412,5 +419,6 @@
 				<cooldownTime>2</cooldownTime>
 			</li>
 		</tools>
+    <relicChance>0</relicChance>
 	</ThingDef>
 </Defs>

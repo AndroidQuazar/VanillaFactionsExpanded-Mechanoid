@@ -64,6 +64,7 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
+    <relicChance>0</relicChance>
   </ThingDef>
   
 </Defs>
