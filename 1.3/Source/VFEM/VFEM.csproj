@@ -139,11 +139,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.3.3052-beta</Version>
+      <Version>1.3.3076</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.1.0</Version>
-	  <ExcludeAssets>runtime</ExcludeAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
