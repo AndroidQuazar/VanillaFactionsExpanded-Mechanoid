@@ -34,6 +34,12 @@ namespace VFEMech
 
             Settlement settlement = (Settlement)WorldObjectMaker.MakeWorldObject(objectDef);
             Faction faction = Find.FactionManager.FirstFactionOfDef(VFEMDefOf.VFE_Mechanoid);
+            if (faction is null)
+            {
+                faction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(VFEMDefOf.VFE_Mechanoid));
+                faction.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Hostile, false, null, null);
+                Find.FactionManager.Add(faction);
+            }
             settlement.SetFaction(faction);
 
             try

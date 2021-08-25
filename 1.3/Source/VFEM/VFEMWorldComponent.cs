@@ -20,6 +20,18 @@ namespace VFEMech
         {
         }
 
+        public override void FinalizeInit()
+        {
+            base.FinalizeInit();
+            Faction faction = Find.FactionManager.FirstFactionOfDef(VFEMDefOf.VFE_Mechanoid);
+            if (faction is null)
+            {
+                faction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(VFEMDefOf.VFE_Mechanoid));
+                faction.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Hostile, false, null, null);
+                Find.FactionManager.Add(faction);
+            }
+        }
+
         public override void WorldComponentTick()
         {
             base.WorldComponentTick();
