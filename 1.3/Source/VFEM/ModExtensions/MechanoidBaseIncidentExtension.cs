@@ -12,8 +12,9 @@ namespace VFEMech
     public class MechanoidBaseIncidentExtension : DefModExtension
     {
         public WorldObjectDef baseToPlace;
-        public int minDistance = 5;
-        public int maxDistance = 120;
-        public int minimumColonistCount;
+        public int            minDistance = 5;
+        public int            maxDistance = 120;
+        public int            minimumColonistCount;
+        public int            minimumWealthCount;
     }
 }

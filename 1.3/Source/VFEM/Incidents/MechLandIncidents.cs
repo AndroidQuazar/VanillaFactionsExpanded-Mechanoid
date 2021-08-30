@@ -21,9 +21,11 @@ namespace VFEMech
                 return false;
             }
             MechanoidBaseIncidentExtension incidentExtension = this.def.GetModExtension<MechanoidBaseIncidentExtension>();
-            if (incidentExtension != null && incidentExtension.minimumColonistCount > 0)
+
+            if (incidentExtension != null)
             {
-                return PawnsFinder.AllMaps_FreeColonistsSpawned.Count >= incidentExtension.minimumColonistCount;
+                return (incidentExtension.minimumColonistCount <= 0 || PawnsFinder.AllMaps_FreeColonistsSpawned.Count >= incidentExtension.minimumColonistCount) &&
+                       (incidentExtension.minimumWealthCount   <= 0 || Find.World.PlayerWealthForStoryteller          >= incidentExtension.minimumWealthCount);
             }
             return base.CanFireNowSub(parms);
         }

@@ -17,13 +17,14 @@ namespace VFEM
     {
         public List<IncidentDef> incidents = new List<IncidentDef>();
 
-        public Dictionary<string, float> mechShipIncidentChances = new Dictionary<string, float>();
-        public Dictionary<string, int> mechShipPresences = new Dictionary<string, int>();
-        public Dictionary<string, int> mechShipColonistCount = new Dictionary<string, int>();
-        public Dictionary<string, int> mechShipDistances = new Dictionary<string, int>();
-        public const float VFEM_factorySpeedMultiplierBase = 1;
-        public float VFEM_factorySpeedMultiplier = VFEM_factorySpeedMultiplierBase;
-        public float VFEM_SuperComputerResearchPointYield = 1f;
+        public       Dictionary<string, float> mechShipIncidentChances              = new Dictionary<string, float>();
+        public       Dictionary<string, int>   mechShipPresences                    = new Dictionary<string, int>();
+        public       Dictionary<string, int>   mechShipColonistCount                = new Dictionary<string, int>();
+        public       Dictionary<string, int>   mechShipWealthCount                = new Dictionary<string, int>();
+        public       Dictionary<string, int>   mechShipDistances                    = new Dictionary<string, int>();
+        public const float                     VFEM_factorySpeedMultiplierBase      = 1;
+        public       float                     VFEM_factorySpeedMultiplier          = VFEM_factorySpeedMultiplierBase;
+        public       float                     VFEM_SuperComputerResearchPointYield = 1f;
 
         public IntRange mechShipTimeInterval = new IntRange(GenDate.TicksPerQuadrum/2, GenDate.TicksPerQuadrum);
 
@@ -33,10 +34,11 @@ namespace VFEM
         {
             base.ExposeData();
             Scribe_Values.Look(ref totalWarIsDisabled, "totalWarIsDisabled");
-            Scribe_Collections.Look(ref mechShipIncidentChances, "mechShipStates", LookMode.Value, LookMode.Value, ref mechShipKeys, ref floatValues);
-            Scribe_Collections.Look(ref mechShipPresences, "mechShipPresences", LookMode.Value, LookMode.Value, ref mechShipKeys2, ref intValues2);
-            Scribe_Collections.Look(ref mechShipColonistCount, "mechShipColonistCount", LookMode.Value, LookMode.Value, ref mechShipKeys3, ref intValues3);
-            Scribe_Collections.Look(ref mechShipDistances, "mechShipDistances", LookMode.Value, LookMode.Value, ref mechShipKeys4, ref intValues4);
+            Scribe_Collections.Look(ref mechShipIncidentChances, "mechShipStates",        LookMode.Value, LookMode.Value, ref mechShipKeys,  ref floatValues);
+            Scribe_Collections.Look(ref mechShipPresences,       "mechShipPresences",     LookMode.Value, LookMode.Value, ref mechShipKeys2, ref intValues2);
+            Scribe_Collections.Look(ref mechShipColonistCount,   "mechShipColonistCount", LookMode.Value, LookMode.Value, ref mechShipKeys3, ref intValues3);
+            Scribe_Collections.Look(ref mechShipWealthCount,   "mechShipWealthCount", LookMode.Value, LookMode.Value, ref mechShipKeys5, ref intValues5);
+            Scribe_Collections.Look(ref mechShipDistances,       "mechShipDistances",     LookMode.Value, LookMode.Value, ref mechShipKeys4, ref intValues4);
             Scribe_Values.Look(ref VFEM_factorySpeedMultiplier, "VFEM_factorySpeedMultiplier", VFEM_factorySpeedMultiplierBase, true);
             Scribe_Values.Look(ref VFEM_SuperComputerResearchPointYield, "VFEM_SuperComputerResearchPointYield", 1f, true);
 
@@ -59,15 +61,19 @@ namespace VFEM
         private List<string> mechShipKeys4;
         private List<int> intValues4;
 
+        private List<string> mechShipKeys5;
+        private List<int>    intValues5;
+
         public void DoSettingsWindowContents(Rect inRect)
         {
-            var keys = mechShipIncidentChances.Keys.ToList().OrderByDescending(x => x).ToList();
+            var keys  = mechShipIncidentChances.Keys.ToList().OrderByDescending(x => x).ToList();
             var keys2 = mechShipPresences.Keys.ToList().OrderByDescending(x => x).ToList();
             var keys3 = mechShipColonistCount.Keys.ToList().OrderByDescending(x => x).ToList();
             var keys4 = mechShipDistances.Keys.ToList().OrderByDescending(x => x).ToList();
+            var keys5 = mechShipWealthCount.Keys.ToList().OrderByDescending(x => x).ToList();
 
-            Rect rect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
-            Rect rect2 = new Rect(0f, 0f, inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30) + 450);
+            Rect rect  = new Rect(inRect.x, inRect.y, inRect.width,       inRect.height);
+            Rect rect2 = new Rect(0f,       0f,       inRect.width - 30f, (keys.Count * 30) + (keys2.Count * 30) + (keys3.Count * 30) + (keys4.Count * 30) + (keys5.Count * 30) + 450);
             Widgets.BeginScrollView(rect, ref scrollPosition, rect2, true);
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(rect2);
@@ -159,6 +165,36 @@ namespace VFEM
                     if (def != null)
                     {
                         def.GetModExtension<MechanoidBaseIncidentExtension>().minimumColonistCount = data.Value;
+                    }
+                }
+            }
+            listingStandard.GapLine();
+
+            listingStandard.Label("VFEMech.AdjustMinimunWealthCountLabel".Translate());
+            for (int num = keys5.Count - 1; num >= 0; num--)
+            {
+                var incidentDef = DefDatabase<IncidentDef>.GetNamedSilentFail(keys5[num]);
+                if (incidentDef != null)
+                {
+                    var minimumCount = mechShipWealthCount[keys5[num]];
+                    listingStandard.SliderLabeled(incidentDef.label, ref minimumCount, minimumCount.ToString(), 0, 100);
+                    mechShipWealthCount[keys5[num]] = minimumCount;
+                }
+            }
+            if (listingStandard.ButtonText("Reset".Translate()))
+            {
+
+                mechShipWealthCount["VFEM_ShipLandFrigate"]   =   50000;
+                mechShipWealthCount["VFEM_ShipLandDestroyer"] =  100000;
+                mechShipWealthCount["VFEM_ShipLandCruiser"]   =  250000;
+                mechShipWealthCount["VFEM_ShipLandTroopship"] =  500000;
+                mechShipWealthCount["VFEM_ShipLandCarrier"]   = 1000000;
+                foreach (var data in mechShipWealthCount)
+                {
+                    var def = DefDatabase<IncidentDef>.GetNamed(data.Key, false);
+                    if (def != null)
+                    {
+                        def.GetModExtension<MechanoidBaseIncidentExtension>().minimumWealthCount = data.Value;
                     }
                 }
             }

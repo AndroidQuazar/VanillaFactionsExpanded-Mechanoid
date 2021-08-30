@@ -60,6 +60,11 @@ namespace VFEM
                 MechShipsMod.settings.mechShipColonistCount = new Dictionary<string, int>();
             }
 
+            if (MechShipsMod.settings.mechShipWealthCount is null)
+            {
+                MechShipsMod.settings.mechShipWealthCount = new Dictionary<string, int>();
+            }
+
             if (MechShipsMod.settings.mechShipDistances is null)
             {
                 MechShipsMod.settings.mechShipDistances = new Dictionary<string, int>();
@@ -85,6 +90,11 @@ namespace VFEM
                     MechShipsMod.settings.mechShipColonistCount[mechShip.defName] = incidentExtension.minimumColonistCount;
                 }
 
+                if (!MechShipsMod.settings.mechShipWealthCount.ContainsKey(mechShip.defName))
+                {
+                    MechShipsMod.settings.mechShipWealthCount[mechShip.defName] = incidentExtension.minimumWealthCount;
+                }
+
                 if (!MechShipsMod.settings.mechShipDistances.ContainsKey(mechShip.defName))
                 {
                     MechShipsMod.settings.mechShipDistances[mechShip.defName] = incidentExtension.maxDistance;
@@ -100,7 +110,7 @@ namespace VFEM
 
                 incidentExtension.minimumColonistCount = MechShipsMod.settings.mechShipColonistCount[incidentDef.defName];
                 incidentExtension.maxDistance = MechShipsMod.settings.mechShipDistances[incidentDef.defName];
-
+                incidentExtension.minimumWealthCount = MechShipsMod.settings.mechShipWealthCount[incidentDef.defName];
 
             }
 

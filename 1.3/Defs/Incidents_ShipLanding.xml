@@ -36,6 +36,7 @@
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
         <minimumColonistCount>3</minimumColonistCount>
+        <minimumWealthCount>50000</minimumWealthCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -59,6 +60,7 @@
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
         <minimumColonistCount>3</minimumColonistCount>
+        <minimumWealthCount>100000</minimumWealthCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -82,6 +84,7 @@
         <minDistance>5</minDistance>
         <maxDistance>90</maxDistance>
         <minimumColonistCount>5</minimumColonistCount>
+        <minimumWealthCount>250000</minimumWealthCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -105,6 +108,7 @@
         <minDistance>5</minDistance>
         <maxDistance>120</maxDistance>
         <minimumColonistCount>5</minimumColonistCount>
+        <minimumWealthCount>500000</minimumWealthCount>
       </li>
     </modExtensions>
   </IncidentDef>
@@ -128,6 +132,7 @@
         <minDistance>5</minDistance>
         <maxDistance>120</maxDistance>
         <minimumColonistCount>10</minimumColonistCount>
+        <minimumWealthCount>1000000</minimumWealthCount>
       </li>
     </modExtensions>
   </IncidentDef>
