@@ -177,7 +177,7 @@ namespace VFEM
                 if (incidentDef != null)
                 {
                     var minimumCount = mechShipWealthCount[keys5[num]];
-                    listingStandard.SliderLabeled(incidentDef.label, ref minimumCount, minimumCount.ToString(), 0, 100);
+                    listingStandard.SliderLabeled(incidentDef.label, ref minimumCount, minimumCount.ToString(), 0, 1000000);
                     mechShipWealthCount[keys5[num]] = minimumCount;
                 }
             }
