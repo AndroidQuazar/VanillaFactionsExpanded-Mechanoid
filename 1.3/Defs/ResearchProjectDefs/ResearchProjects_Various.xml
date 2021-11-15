@@ -114,6 +114,20 @@
   <researchViewX>8.00</researchViewX>
   <researchViewY>4.90</researchViewY>
 	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>VFE_AdvancedDroneAssembly</defName>
+		<label>advanced drone assembly</label>
+		<description>Research more advanced drones, capable of analyzing and processing complex information.</description>
+		<baseCost>4000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>VFE_BasicDroneAssembly</li>
+		</prerequisites>
+		<researchViewX>9.00</researchViewX>
+		<researchViewY>4.90</researchViewY>
+	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
 		<defName>VFE_AutomatedDefensiveMeasures</defName>
@@ -128,4 +142,19 @@
   <researchViewX>9.00</researchViewX>
   <researchViewY>4.90</researchViewY>
 	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>VFE_MechanoidStructures</defName>
+		<label>mechanoid structures</label>
+		<description>Research the ability to create powerful mechanoid structures, at a high cost.</description>
+		<baseCost>4000</baseCost>
+		<tab>VanillaExpanded</tab>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>VFE_FactoryBasics</li>
+		</prerequisites>
+		<researchViewX>7.00</researchViewX>
+		<researchViewY>4.90</researchViewY>
+	</ResearchProjectDef>
+	
 </Defs>
