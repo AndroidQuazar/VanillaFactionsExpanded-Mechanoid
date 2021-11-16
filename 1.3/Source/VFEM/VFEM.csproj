@@ -60,6 +60,7 @@
     <Compile Include="HarmonyPatches\MechSpawn_Patch.cs" />
     <Compile Include="HarmonyPatches\Patch_AffectRelationsOnAttacked.cs" />
     <Compile Include="HarmonyPatches\ShouldRemoveMapNow_Patch.cs" />
+    <Compile Include="HarmonyPatches\Building_TurretGun_Patch.cs" />
     <Compile Include="HarmonyPatches\Thing_Patch.cs" />
     <Compile Include="Incidents\MechShipDestroyed.cs" />
     <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Sites\SitePartWorker_MechanoidStorage.cs" />
     <Compile Include="SymbolResolverShips.cs" />
     <Compile Include="ThingSetMakers\ThingSetMaker_MechanoidStorageContent.cs" />
+    <Compile Include="Things\VFEMechanoid.cs" />
     <Compile Include="Utils\MechUtils.cs" />
     <Compile Include="MapComponent_MechWarfare.cs" />
     <Compile Include="VFEMDefOf.cs" />

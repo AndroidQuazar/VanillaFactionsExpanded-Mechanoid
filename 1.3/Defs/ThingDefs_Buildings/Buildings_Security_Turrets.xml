@@ -617,10 +617,10 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <AccuracyTouch>0.18</AccuracyTouch>
-      <AccuracyShort>0.26</AccuracyShort>
-      <AccuracyMedium>0.26</AccuracyMedium>
-      <AccuracyLong>0.18</AccuracyLong>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
       <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
       <DeteriorationRate>0</DeteriorationRate>
       <Mass>5</Mass>
@@ -629,11 +629,11 @@
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>Bullet_ChargeBlasterHeavy</defaultProjectile>
+        <defaultProjectile>VFE_Bullet_TeslaProjectile</defaultProjectile>
         <warmupTime>0</warmupTime>
         <range>26.9</range>
-        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
-        <burstShotCount>12</burstShotCount>
+        <ticksBetweenBurstShots>60</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
         <soundCast>Shot_ChargeBlaster</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -641,4 +641,32 @@
       </li>
     </verbs>
   </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>VFE_Bullet_TeslaProjectile</defName>
+    <label>charge blaster shot</label>
+	<thingClass>VFEMech.TeslaProjectile</thingClass>
+	<graphicData>
+		<texPath>Projectile/Lightning</texPath>
+		<graphicClass>Graphic_Flicker</graphicClass>
+	</graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>5</damageAmountBase>
+      <speed>150</speed>
+    </projectile>
+    <modExtensions>
+      <li Class="VFEMech.TeslaChainingProps">
+        <bounceCount>10</bounceCount>
+        <damageDef>Flame</damageDef>
+        <explosionDamageDef>EMP</explosionDamageDef>
+        <impactRadius>2.9</impactRadius>
+        <targetFriendly>false</targetFriendly>
+        <addFire>true</addFire>
+		<range>20</range>
+		<lifetime>200</lifetime>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
 </Defs>
