@@ -38,5 +38,12 @@ namespace VFEMech
         public static JobDef VFE_Mechanoids_Recharge;
         public static NeedDef VFE_Mechanoids_Power;
 
+        public static HediffDef VFE_BrainWashedNotFully;
+        public static HediffDef VFE_BrainWashedFully;
+
+        public static ThoughtDef VFE_Thought_BrainWashedNotFully;
+        public static ThoughtDef VFE_Thought_BrainWashedFully;
+
+
     }
 }

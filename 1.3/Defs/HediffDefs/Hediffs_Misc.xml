@@ -16,4 +16,15 @@
 		</stages>
 	</HediffDef>
 
+	<HediffDef>
+		<defName>VFE_BrainWashedNotFully</defName>
+		<label>brainwashed (not fully)</label>
+		<description>brainwashed (not fully)</description>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VFE_BrainWashedFully</defName>
+		<label>brainwashed</label>
+		<description>brainwashed</description>
+	</HediffDef>
 </Defs>
