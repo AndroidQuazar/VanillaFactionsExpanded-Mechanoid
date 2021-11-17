@@ -1,0 +1,31 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>LWM's Deep Storage</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VFE_MechanoidLiquidFreezer"]/comps</xpath>
+					<value>
+						<li Class="LWM.DeepStorage.Properties">
+							<maxNumberStacks>3</maxNumberStacks>
+							<minTimeStoringTakes>50</minTimeStoringTakes>
+							<additionalTimeEachStack>150</additionalTimeEachStack>
+							<additionalTimeStackSize>10</additionalTimeStackSize>
+							<maxMassOfStoredItem>75</maxMassOfStoredItem>
+							<maxTotalMass>250</maxTotalMass>
+							<showContents>true</showContents>
+							<overlayType>None</overlayType>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAttributeSet">
+					<xpath>/Defs/ThingDef[defName="VFE_MechanoidLiquidFreezer"]</xpath>
+					<attribute>ParentName</attribute>
+					<value>LWM_DeepStorage</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

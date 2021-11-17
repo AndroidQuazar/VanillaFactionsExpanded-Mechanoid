@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ArmorMachineableBase">
+		<defName>VFE_MechaniteUnderArmor</defName>
+		<label>mechanite under armor</label>
+		<description>A perplexingly thin but durable nanite-infused mesh underarmor. Embedded nanites optimize a users digestive tract, suppressing their hunger. It's theorized that long-forgotten soldiers wore this armor to more easily sustain long-term firefights without the need to eat.</description>
+		<techLevel>Spacer</techLevel>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<researchPrerequisites>
+				<li>VFE_BasicDroneAssembly</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/MechaniteUnderArmor/MechaniteUnderArmor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.1</drawSize>
+		</graphicData>
+		<statBases>
+			<WorkToMake>9000</WorkToMake>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Mass>4</Mass>
+			<Flammability>0.4</Flammability>
+			<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.4</ArmorRating_Heat>
+			<Insulation_Cold>5</Insulation_Cold>
+			<Insulation_Heat>5</Insulation_Heat>
+			<EquipDelay>5</EquipDelay>
+		</statBases>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<costList>
+			<Cloth>70</Cloth>
+			<Steel>50</Steel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/MechaniteUnderArmor/MechaniteUnderArmor</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+			</layers>
+		</apparel>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="VFECore.CompProperties_ApparelHediffs">
+				<hediffDefnames>
+					<li>VFE_MechaniteUnderArmorHediff</li>
+				</hediffDefnames>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThoughtDef>
+		<defName>VFE_MechaniteUnderArmorThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>VFE_MechaniteUnderArmorHediff</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>mechanite under armor</label>
+				<description>I feel strangely comfortable.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<HediffDef>
+		<defName>VFE_MechaniteUnderArmorHediff</defName>
+		<label>Mechanite clothing optimisation</label>
+		<labelNoun>a mechanite optimisation</labelNoun>
+		<description>Embedded mechanites are optimizing this individuals digestive tract, suppressing their need to eat.</description>
+		<descriptionHyperlinks>
+			<ThingDef>VFE_MechaniteUnderArmor</ThingDef>
+		</descriptionHyperlinks>
+		<hediffClass>Hediff_Hangover</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<stages>
+			<li>
+				<hungerRateFactor>0.6</hungerRateFactor>
+				<statOffsets>
+					<ImmunityGainSpeed>+0.40</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	<ThingDef ParentName="ArmorMachineableBase">
+		<defName>VFE_MechanitePants</defName>
+		<label>mechanite pants</label>
+		<techLevel>Spacer</techLevel>
+		<description>>Perplexingly thin but durable nanite-infused pants. Embedded nanites optimizes the oxygen efficiency in the legs. Long-forgotten soldiers used these to walk long marches at incredible speed.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/MechanitePants/MechanitePants</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<recipeMaker>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<researchPrerequisites>
+				<li>VFE_BasicDroneAssembly</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<costList>
+			<Cloth>50</Cloth>
+			<Steel>40</Steel>
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<equippedStatOffsets>
+			<MoveSpeed>+0.2</MoveSpeed>
+		</equippedStatOffsets>
+		<statBases>
+			<WorkToMake>7000</WorkToMake>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Mass>2</Mass>
+			<Flammability>0.4</Flammability>
+			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.10</ArmorRating_Heat>
+			<Insulation_Cold>3</Insulation_Cold>
+			<Insulation_Heat>3</Insulation_Heat>
+			<EquipDelay>3</EquipDelay>
+		</statBases>
+		<apparel>
+			<bodyPartGroups>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<layers>
+				<li>OnSkin</li>
+			</layers>
+		</apparel>
+	</ThingDef>
+</Defs>

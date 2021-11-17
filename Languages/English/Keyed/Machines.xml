@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<SmallFish>Small Fish</SmallFish>
+	<MediumFish>Medium Fish</MediumFish>
+	<LargeFish>Large Fish</LargeFish>
+	<GizmoDescriptionSmall>Have the Fish Taunter catch small fish.</GizmoDescriptionSmall>
+	<GizmoDescriptionMedium>Have the Fish Taunter catch medium fish.</GizmoDescriptionMedium>
+	<GizmoDescriptionLarge>Have the Fish Taunter catch large fish.</GizmoDescriptionLarge>
+	<MAO_FishTaunterGizmoLabelSmall>Small Fish</MAO_FishTaunterGizmoLabelSmall>
+	<MAO_FishTaunterGizmoLabelMedium>Medium Fish</MAO_FishTaunterGizmoLabelMedium>
+	<MAO_FishTaunterGizmoLabelLarge>Large Fish</MAO_FishTaunterGizmoLabelLarge>
+</LanguageData>

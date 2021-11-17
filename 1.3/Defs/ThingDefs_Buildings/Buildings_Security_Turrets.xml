@@ -611,7 +611,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>VFE_Gun_AutoTesla</defName>
     <label>auto tesla blaster</label>
-    <description>turret.</description>
+    <description>Practically part mechanoid in and of itself, the Auto-tesla is a utility turret designed to slow down a Mechanoid without it being able to adapt to the effects. Four capacitors are charged to release a bolt of electricity that is carefully modulated by the internal targeting system before release. Upon impact, the power surge affects the unit’s power module and siphons off any reserves before seeking to jump to a nearby machine, gradually weakening. This can occur twice before the initially modulated current becomes too similar to the hosts, upon which the safety overrides ground the excess power.</description>
     <graphicData>
       <texPath>Things/Buildings/Security/TurretAutoZapper_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>

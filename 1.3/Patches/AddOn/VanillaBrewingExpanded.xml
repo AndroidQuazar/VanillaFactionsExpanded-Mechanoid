@@ -1,0 +1,93 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Brewing Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<!--ThingDef for the machine-->
+						<ThingDef>
+							<defName>VFE_LiquorMixer</defName>
+							<label>Liquor Mixer</label>
+							<description>A wondrous machine that takes the concept of a pressure cooker to an intoxicating level. Inserted ingredients are turned into a fine paste and mixed with a piping hot liquid loaded with catalytic fermentation accelerators. The process is thoroughly mixed and oxygenated as it cools before being transferred to a high pressure tank. As the process is accelerated and thus affects the taste, the fermenting liquid is agitated and stimulated with more chemicals and electrolysis to replicate a taste and alcohol content close to its desired output. Once finished, it is bottled and cooled to a palatable temperature.</description>
+							<thingClass>Building</thingClass>
+							<graphicData>
+								<texPath>Things/Buildings/LiquorMixer/LiquorMixer</texPath>
+								<graphicClass>Graphic_Multi</graphicClass>
+								<drawSize>(5,8)</drawSize>
+								<shaderType>CutoutComplex</shaderType>
+								<damageData>
+									<cornerTL>Damage/Corner</cornerTL>
+									<cornerTR>Damage/Corner</cornerTR>
+									<cornerBL>Damage/Corner</cornerBL>
+									<cornerBR>Damage/Corner</cornerBR>
+								</damageData>
+							</graphicData>
+							<castEdgeShadows>false</castEdgeShadows>
+							<staticSunShadowHeight>0</staticSunShadowHeight>
+							<altitudeLayer>BuildingOnTop</altitudeLayer>
+							<passability>Impassable</passability>
+							<blockWind>true</blockWind>
+							<scatterableOnMapGen>false</scatterableOnMapGen>
+							<fillPercent>1</fillPercent>
+							<blockLight>true</blockLight>
+							<canOverlapZones>false</canOverlapZones>
+							<hasInteractionCell>True</hasInteractionCell>
+							<designationCategory>VFE_Factory</designationCategory>
+							<interactionCellOffset>(0,0,4)</interactionCellOffset>
+							<statBases>
+								<MaxHitPoints>400</MaxHitPoints>
+								<WorkToBuild>2000</WorkToBuild>
+								<Flammability>1.0</Flammability>
+								<Beauty>-20</Beauty>
+								<SellPriceFactor>0.70</SellPriceFactor>
+							</statBases>
+							<tickerType>Normal</tickerType>
+							<size>(3,6)</size>
+							<costList>
+								<Steel>550</Steel>
+								<ComponentIndustrial>15</ComponentIndustrial>
+								<Plasteel>60</Plasteel>
+								<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+							</costList>
+							<uiIconScale>1</uiIconScale>
+							<comps>
+								<li Class="CompProperties_Power">
+									<compClass>CompPowerTrader</compClass>
+									<basePowerConsumption>500</basePowerConsumption>
+									<shortCircuitInRain>false</shortCircuitInRain>
+								</li>
+								<li Class="CompProperties_Flickable"/>
+								<li Class="CompProperties_Breakdownable"/>
+								<li Class="VanillaFurnitureExpanded.CompProperties_ConfigurableSpawner">
+									<spawnForbidden>false</spawnForbidden>
+									<requiresPower>true</requiresPower>
+									<requiresFuel>false</requiresFuel>
+									<spawnCount>10</spawnCount>
+									<writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+									<showMessageIfOwned>false</showMessageIfOwned>
+								</li>
+							</comps>
+							<placeWorkers Inherit="False">
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+							</placeWorkers>
+							<researchPrerequisites>
+								<li>VFE_ProvisionsPackagingFactory</li>
+							</researchPrerequisites>
+							<category>Building</category>
+							<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+							<selectable>true</selectable>
+							<drawerType>MapMeshAndRealTime</drawerType>
+							<repairEffect>Repair</repairEffect>
+							<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+							<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+						</ThingDef>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
