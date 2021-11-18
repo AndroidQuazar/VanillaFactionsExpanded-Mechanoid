@@ -53,7 +53,18 @@
 								<Plasteel>75</Plasteel>
 								<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
 							</costList>
-							<uiIconScale>0.65</uiIconScale>
+							<uiIconScale>0.85</uiIconScale>
+							<building>
+								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+								<wantsHopperAdjacent>true</wantsHopperAdjacent>
+								<buildingTags>
+									<li>Production</li>
+								</buildingTags>
+								<blueprintGraphicData>
+									<texPath>Things/Buildings/FishTrapper/FishTrapper_Blueprint</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+								</blueprintGraphicData>
+							</building>
 							<comps>
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
@@ -84,6 +95,11 @@
 							<repairEffect>Repair</repairEffect>
 							<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 							<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+							<modExtensions>
+								<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+									<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+								</li>
+							</modExtensions>
 						</ThingDef>
 					</value>
 				</li>

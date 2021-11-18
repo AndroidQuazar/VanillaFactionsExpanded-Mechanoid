@@ -9,11 +9,11 @@
 					<xpath>/Defs</xpath>
 					<value>
 						<!--ThingDef for the machine-->
-						<ThingDef>
+						<ThingDef ParentName="BuildingBase">
 							<defName>VFE_LiquorMixer</defName>
 							<label>Liquor Mixer</label>
 							<description>A wondrous machine that takes the concept of a pressure cooker to an intoxicating level. Inserted ingredients are turned into a fine paste and mixed with a piping hot liquid loaded with catalytic fermentation accelerators. The process is thoroughly mixed and oxygenated as it cools before being transferred to a high pressure tank. As the process is accelerated and thus affects the taste, the fermenting liquid is agitated and stimulated with more chemicals and electrolysis to replicate a taste and alcohol content close to its desired output. Once finished, it is bottled and cooled to a palatable temperature.</description>
-							<thingClass>Building</thingClass>
+							<thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
 							<graphicData>
 								<texPath>Things/Buildings/LiquorMixer/LiquorMixer</texPath>
 								<graphicClass>Graphic_Multi</graphicClass>
@@ -26,65 +26,188 @@
 									<cornerBR>Damage/Corner</cornerBR>
 								</damageData>
 							</graphicData>
-							<castEdgeShadows>false</castEdgeShadows>
-							<staticSunShadowHeight>0</staticSunShadowHeight>
-							<altitudeLayer>BuildingOnTop</altitudeLayer>
-							<passability>Impassable</passability>
-							<blockWind>true</blockWind>
-							<scatterableOnMapGen>false</scatterableOnMapGen>
-							<fillPercent>1</fillPercent>
-							<blockLight>true</blockLight>
-							<canOverlapZones>false</canOverlapZones>
-							<hasInteractionCell>True</hasInteractionCell>
-							<designationCategory>VFE_Factory</designationCategory>
-							<interactionCellOffset>(0,0,4)</interactionCellOffset>
-							<statBases>
-								<MaxHitPoints>400</MaxHitPoints>
-								<WorkToBuild>2000</WorkToBuild>
-								<Flammability>1.0</Flammability>
-								<Beauty>-20</Beauty>
-								<SellPriceFactor>0.70</SellPriceFactor>
-							</statBases>
-							<tickerType>Normal</tickerType>
-							<size>(3,6)</size>
+							<thingCategories>
+								<li>BuildingsProduction</li>
+							</thingCategories>
 							<costList>
 								<Steel>550</Steel>
 								<ComponentIndustrial>15</ComponentIndustrial>
 								<Plasteel>60</Plasteel>
-								<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+								<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
 							</costList>
-							<uiIconScale>1</uiIconScale>
+							<placeWorkers>
+								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
+							</placeWorkers>
+							<building>
+								<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+								<wantsHopperAdjacent>true</wantsHopperAdjacent>
+								<buildingTags>
+									<li>Production</li>
+								</buildingTags>
+								<blueprintGraphicData>
+									<texPath>Things/Buildings/LiquorMixer/LiquorMixer_Blueprint</texPath>
+									<graphicClass>Graphic_Multi</graphicClass>
+								</blueprintGraphicData>
+							</building>
+							<altitudeLayer>BuildingOnTop</altitudeLayer>
+							<rotatable>true</rotatable>
+							<neverMultiSelect>true</neverMultiSelect>
+							<uiIconScale>0.8</uiIconScale>
+							<fillPercent>0.5</fillPercent>
+							<useHitPoints>True</useHitPoints>
+							<statBases>
+								<Mass>100</Mass>
+								<WorkToBuild>15000</WorkToBuild>
+								<MaxHitPoints>325</MaxHitPoints>
+								<Flammability>1.0</Flammability>
+							</statBases>
+							<tickerType>Rare</tickerType>
+							<size>(3,6)</size>
+							<designationCategory>VFE_Factory</designationCategory>
+							<passability>PassThroughOnly</passability>
+							<pathCost>70</pathCost>
+							<hasInteractionCell>True</hasInteractionCell>
+							<interactionCellOffset>(0,0,4)</interactionCellOffset>
+							<surfaceType>Item</surfaceType>
 							<comps>
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
-									<basePowerConsumption>500</basePowerConsumption>
 									<shortCircuitInRain>false</shortCircuitInRain>
+									<basePowerConsumption>700</basePowerConsumption>
 								</li>
-								<li Class="CompProperties_Flickable"/>
-								<li Class="CompProperties_Breakdownable"/>
-								<li Class="VanillaFurnitureExpanded.CompProperties_ConfigurableSpawner">
-									<spawnForbidden>false</spawnForbidden>
-									<requiresPower>true</requiresPower>
-									<requiresFuel>false</requiresFuel>
-									<spawnCount>10</spawnCount>
-									<writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
-									<showMessageIfOwned>false</showMessageIfOwned>
+								<li Class="CompProperties_Flickable" />
+								<li Class="ItemProcessor.CompProperties_ItemProcessor">
+									<buildingOnGraphic>Things/Buildings/LiquorMixer/LiquorMixer</buildingOnGraphic>
+									<numberOfInputs>1</numberOfInputs>
+									<acceptsNoneAsInput>false</acceptsNoneAsInput>
+									<transfersIngredientLists>false</transfersIngredientLists>
+									<isAutoMachine>true</isAutoMachine>
+									<isAutoDropper>true</isAutoDropper>
+									<showFactoryProgressBar>true</showFactoryProgressBar>
+									<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
+									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
+									<noPowerDestroysProgress>true</noPowerDestroysProgress>
+									<isMachinePausable>true</isMachinePausable>
+									<rareTicksToDestroy>10</rareTicksToDestroy>
+									<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
+									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
+									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
+									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
+									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
+									<inputSlots>
+										<li>(1,0,-3)</li>
+									</inputSlots>
 								</li>
 							</comps>
-							<placeWorkers Inherit="False">
-								<li>VFEMech.PlaceWorker_OnFactoryFloorAndPath</li>
-							</placeWorkers>
-							<researchPrerequisites>
+							<minifiedDef>MinifiedThing</minifiedDef>
+							<researchPrerequisites Inherit='False'>
 								<li>VFE_ProvisionsPackagingFactory</li>
 							</researchPrerequisites>
-							<category>Building</category>
-							<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-							<selectable>true</selectable>
-							<drawerType>MapMeshAndRealTime</drawerType>
-							<repairEffect>Repair</repairEffect>
-							<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-							<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+							<modExtensions>
+								<li Class="VanillaFurnitureExpanded.ShowBlueprintExtension">
+									<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
+								</li>
+							</modExtensions>
+							<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 						</ThingDef>
+						<!--Combinations-->
+						<ItemProcessor.CombinationDef>
+							<defName>VFE_LiquorMixer_Hops</defName>
+							<building>VFE_LiquorMixer</building>
+							<items>
+								<li>RawHops</li>
+							</items>
+							<amount>
+								<li>50</li>
+							</amount>
+							<result>Beer</result>
+							<yield>12</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFE_LiquorMixer_Ambrosia</defName>
+							<building>VFE_LiquorMixer</building>
+							<items>
+								<li>Ambrosia</li>
+							</items>
+							<amount>
+								<li>100</li>
+							</amount>
+							<result>VBE_AmbrandyNormal</result>
+							<yield>3</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFE_LiquorMixer_Corn</defName>
+							<building>VFE_LiquorMixer</building>
+							<items>
+								<li>RawCorn</li>
+							</items>
+							<amount>
+								<li>50</li>
+							</amount>
+							<result>VBE_Whiskey</result>
+							<yield>12</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFE_LiquorMixer_InsectMeat</defName>
+							<building>VFE_LiquorMixer</building>
+							<items>
+								<li>Meat_Megaspider</li>
+							</items>
+							<amount>
+								<li>50</li>
+							</amount>
+							<result>VBE_Tequila</result>
+							<yield>12</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFE_LiquorMixer_Potatoes</defName>
+							<building>VFE_LiquorMixer</building>
+							<items>
+								<li>RawPotatoes</li>
+							</items>
+							<amount>
+								<li>50</li>
+							</amount>
+							<result>VBE_Vodka</result>
+							<yield>12</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFE_LiquorMixer_Berries</defName>
+							<building>VFE_LiquorMixer</building>
+							<items>
+								<li>RawBerries</li>
+							</items>
+							<amount>
+								<li>50</li>
+							</amount>
+							<result>VBE_Gin</result>
+							<yield>12</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>300</maxTotalOutput>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
 					</value>
 				</li>
 			</operations>
