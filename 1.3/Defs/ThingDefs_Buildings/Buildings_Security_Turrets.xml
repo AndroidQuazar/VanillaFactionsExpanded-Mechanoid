@@ -666,7 +666,7 @@
 				<impactRadius>2.9</impactRadius>
 				<targetFriendly>false</targetFriendly>
 				<addFire>false</addFire>
-				<bounceRange>10</bounceRange>
+				<bounceRange>20</bounceRange>
 				<maxLifetime>100</maxLifetime>
 			</li>
 		</modExtensions>
