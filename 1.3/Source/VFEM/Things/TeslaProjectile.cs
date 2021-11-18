@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,13 @@ namespace VFEMech
     public class TeslaChainingProps : DefModExtension
     {
         public bool addFire;
-        public float range;
-        public int bounceCount;
+        public float bounceRange;
+        public int maxBounceCount;
         public DamageDef damageDef;
         public DamageDef explosionDamageDef;
         public float impactRadius;
         public bool targetFriendly;
-        public int lifetime;
+        public int maxLifetime;
     }
     public class TeslaProjectile : Bullet
     {
@@ -61,7 +62,7 @@ namespace VFEMech
                     GenExplosion.DoExplosion(hitThing.Position, Map, Props.impactRadius, Props.explosionDamageDef, this.Launcher, this.def.projectile.GetDamageAmount(1f));
                 }
                 RegisterHit(hitThing);
-                if (numBounces < Props.bounceCount)
+                if (numBounces < Props.maxBounceCount)
                 {
                     var target = NextTarget();
                     if (target != null)
@@ -107,6 +108,19 @@ namespace VFEMech
                 return null;
             }
         }
+
+        public Verb PrimaryVerb
+        {
+            get
+            {
+                var launcher = PrimaryLauncher;
+                if (launcher is Building_TurretGun turretGun)
+                {
+                    return turretGun.AttackVerb;
+                }
+                return null;
+            }
+        }
         public override void Draw()
         {
             var vec1 = Holder.DrawPos;
@@ -144,10 +158,26 @@ namespace VFEMech
             numBounces++;
         }
 
+        private static readonly Func<Building_TurretGun, Thing, bool> isValidTarget = (Func<Building_TurretGun, Thing, bool>)Delegate.CreateDelegate(typeof(Func<Building_TurretGun, Thing, bool>),
+            AccessTools.Method(typeof(Building_TurretGun), "IsValidTarget"));
+        private bool IsValidTarget(Thing thing)
+        {
+            var launcher = PrimaryLauncher;
+            if (launcher is Building_TurretGun turretGun && !isValidTarget(turretGun, thing))
+            {
+                return false;
+            }
+            var primaryVerb = PrimaryVerb;
+            if (primaryVerb != null && !primaryVerb.targetParams.CanTarget(thing))
+            {
+                return false;
+            }
+            return true;
+        }
         private Thing NextTarget()
         {
-            var things = GenRadial.RadialDistinctThingsAround(Holder.Position, Map, Props.range, false)
-                .Where(t => (Props.targetFriendly || t.HostileTo(this.launcher))).Except(new[] { this, usedTarget.Thing });
+            var things = GenRadial.RadialDistinctThingsAround(Holder.Position, Map, Props.bounceRange, false)
+                .Where(t => (Props.targetFriendly || t.HostileTo(this.launcher)) && IsValidTarget(t)).Except(new[] { this, usedTarget.Thing });
             things = things.Except(prevTargets);
             things = things.OrderBy(t => t.Position.DistanceTo(Holder.Position));
             var target = things.FirstOrDefault();
@@ -177,7 +207,7 @@ namespace VFEMech
         {
             base.Tick();
             this.curLifetime++;
-            if (curLifetime > Props.lifetime)
+            if (curLifetime > Props.maxLifetime)
             {
                 Log.Message("Destroy 1");
                 DestroyAll();

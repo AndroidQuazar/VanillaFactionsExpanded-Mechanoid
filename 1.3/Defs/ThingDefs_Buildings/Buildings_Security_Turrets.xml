@@ -647,7 +647,7 @@
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>VFE_Bullet_TeslaProjectile</defName>
-		<label>charge blaster shot</label>
+		<label>lightning bolt</label>
 		<thingClass>VFEMech.TeslaProjectile</thingClass>
 		<graphicData>
 			<texPath>Projectile/Lightning</texPath>
@@ -660,14 +660,14 @@
 		</projectile>
 		<modExtensions>
 			<li Class="VFEMech.TeslaChainingProps">
-				<bounceCount>10</bounceCount>
+				<maxBounceCount>10</maxBounceCount>
 				<damageDef>Smoke</damageDef> <!--first target only?-->
 				<explosionDamageDef>Smoke</explosionDamageDef>
 				<impactRadius>2.9</impactRadius>
 				<targetFriendly>false</targetFriendly>
 				<addFire>false</addFire>
-				<range>10</range>
-				<lifetime>100</lifetime>
+				<bounceRange>10</bounceRange>
+				<maxLifetime>100</maxLifetime>
 			</li>
 		</modExtensions>
 	</ThingDef>
