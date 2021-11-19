@@ -421,4 +421,78 @@
 		</tools>
     <relicChance>0</relicChance>
 	</ThingDef>
+
+	<!-- Heavy Thump Cannon-->
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>VFE_Bullet_ThumpCannonHeavy</defName>
+		<label>heavy thumb bomb</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Thump</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>Thump</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<explosionRadius>1.9</explosionRadius >
+			<stoppingPower>5</stoppingPower>
+			<speed>60</speed>
+			<soundExplode>ThumpCannon_Impact</soundExplode>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef Abstract="True" ParentName="BaseGunWithQuality">
+		<label>advanced thump cannon</label>
+		<description>An advanced version of the thump cannon used by mechanoids. It fires a concussion bomb that is extremely effective against walls and structures, but does much less damage to small targets.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/AdvancedThumpCannon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1800</MarketValue>
+			<Mass>20</Mass>
+			<AccuracyTouch>0.85</AccuracyTouch>
+			<AccuracyShort>0.89</AccuracyShort>
+			<AccuracyMedium>0.79</AccuracyMedium>
+			<AccuracyLong>0.62</AccuracyLong>
+			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<relicChance>0</relicChance>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_ThumpCannon</defaultProjectile>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<forcedMissRadius>1.9</forcedMissRadius>
+				<warmupTime>0.8</warmupTime>
+				<range>27.9</range>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<soundCast>ThumpCannon_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>10</muzzleFlashScale>
+				<noiseRadius>6</noiseRadius>
+			</li>
+		</verbs>
+		<weaponTags>
+			<li>VFE_MechanoidGunBreachHeavy</li>
+		</weaponTags>
+	</ThingDef>
 </Defs>

@@ -66,5 +66,72 @@
     </tools>
     <relicChance>0</relicChance>
   </ThingDef>
+
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>VFE_Gun_RaiderMechanoidGun</defName>
+		<label>handheld autocannon turret</label>
+		<description>A portable version of the autocannon turret gun. Its large-caliber shells do heavy damage over significant ranges.</description>
+		<graphicData>
+			<texPath>Things/Automation/RaiderMechanoid/MechanoidTurretAutocannon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<recipeMaker Inherit='False' />
+		<statBases>
+			<AccuracyTouch>0.25</AccuracyTouch>
+			<AccuracyShort>0.65</AccuracyShort>
+			<AccuracyMedium>0.60</AccuracyMedium>
+			<AccuracyLong>0.45</AccuracyLong>
+			<RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>40</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<costList>
+			<Steel>350</Steel>
+			<Plasteel>40</Plasteel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<minRange>8.9</minRange>
+				<range>32.9</range>
+				<ticksBetweenBurstShots>17</ticksBetweenBurstShots>
+				<burstShotCount>3</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>12</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+		</verbs>
+		<weaponTags Inherit='False'>
+			<li>IndustrialGunCombatMechanoid</li>
+		</weaponTags>
+		<tradeTags Inherit='False' />
+		<thingCategories Inherit='False' />
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<relicChance>0</relicChance>
+	</ThingDef>
   
 </Defs>

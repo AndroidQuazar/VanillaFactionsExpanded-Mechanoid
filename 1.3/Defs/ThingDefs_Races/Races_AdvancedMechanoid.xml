@@ -615,7 +615,77 @@
 			</li>
 		</lifeStages>
 	</PawnKindDef>
+	
+	<!--Advanced Termite-->
 
+	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
+		<defName>VFE_Mech_AdvTermite</defName>
+		<label>advanced termite</label>
+		<description>A heavy, large-sized mechanoid. Termites specialize in burrowing, digging, and breaking through defensive structures. Defenders need to decide whether to try to eliminate the termite before it can dig through their defenses, or take it where it emerges. Unlike the simple models, advanced termites carry a much more powerful cannon that’s just as effective against structures as it is against organic enemies</description>
+		<statBases>
+			<MoveSpeed>2.3</MoveSpeed>
+		</statBases>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>17</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<race>
+			<intelligence>ToolUser</intelligence>
+			<thinkTreeMain>Mechanoid</thinkTreeMain>
+			<body>MechanicalTermite</body>
+			<baseBodySize>1.6</baseBodySize>
+			<baseHealthScale>2.16</baseHealthScale>
+			<lifeStageAges Inherit="False">
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Termite_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Termite_Death</soundDeath>
+					<soundCall>Pawn_Mech_Termite_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+		</race>
+		<butcherProducts>
+			<Steel>30</Steel>
+			<Plasteel>10</Plasteel>
+		</butcherProducts>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VFE_AdvancedMechanoidKind">
+		<defName>VFE_Mech_AdvTermite</defName>
+		<label>advanced termite</label>
+		<labelPlural>termites</labelPlural>
+		<race>VFE_Mech_AdvTermite</race>
+		<combatPower>110</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechTermite</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.8, 0.6)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>VFE_MechanoidGunBreachHeavy</li>
+		</weaponTags>
+	</PawnKindDef>
 
 
 </Defs>
