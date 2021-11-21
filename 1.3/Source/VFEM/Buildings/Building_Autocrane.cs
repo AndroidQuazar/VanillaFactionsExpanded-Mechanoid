@@ -101,10 +101,20 @@ namespace VFEMech
                         angle = ClampAngle(angle);
                         var anglediff = (CurRotation - angle + 180 + 360) % 360 - 180;
                         turnClockWise = anglediff < 0;
+                        compPower.powerOutputInt = -3000;
+                    }
+                    else
+                    {
+                        compPower.powerOutputInt = -200;
                     }
                 }
                 else if (curTarget != null)
                 {
+                    if (Map.reservationManager.IsReservedByAnyoneOf(curTarget, Faction)) // pawn builders must be prioritized first, so the crane will not work on it
+                    {
+                        curTarget = null;
+                        return;
+                    }
                     var angle = CraneDrawPos.AngleToFlat(curTarget.TrueCenter());
                     angle = ClampAngle(angle);
                     var angleAbs = Mathf.Abs(angle - CurRotation);
@@ -277,7 +287,7 @@ namespace VFEMech
         private Frame NextTarget()
         {
             return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToFrames, true).OfType<Frame>()
-                .Where(x => x.Position.DistanceTo(this.Position) >= MinDistanceFromBase)
+                .Where(x => x.Position.DistanceTo(this.Position) >= MinDistanceFromBase && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction))
                 .OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
         }
 
