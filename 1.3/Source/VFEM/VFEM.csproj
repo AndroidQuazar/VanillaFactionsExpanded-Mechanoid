@@ -48,6 +48,7 @@
     <Compile Include="Buildings\MechShipPart.cs" />
     <Compile Include="Buildings\HullRepairModule.cs" />
     <Compile Include="Buildings\CargoHold.cs" />
+    <Compile Include="Buildings\Building_Autocrane.cs" />
     <Compile Include="Buildings\Supercomputer.cs" />
     <Compile Include="Buildings\TrooperStorage.cs" />
     <Compile Include="Buildings\MechanoidUplink.cs" />

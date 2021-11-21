@@ -2071,5 +2071,66 @@
 		</modExtensions>
    		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFEM_Autocrane</defName>
+		<label>Autocrane</label>
+		<description>An extremely large, immobile crane-like structure mounted on a high pylon. Construction tools, hammers, welders and grinders allow this crane to autonomously construct any designated blueprints in radius, provided that the resources for them have been delivered. Whilst it has a large radius, it can still be uninstalled and moved when a new construction site requires it.</description>
+		<thingClass>VFEMech.Building_Autocrane</thingClass>
+		<drawOffscreen>true</drawOffscreen>
+		<graphicData>
+			<texPath>Things/Automation/AutoCrane/AutoCrane_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>450</Steel>
+			<Plasteel>35</Plasteel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+			<VFE_ComponentMechanoid>2</VFE_ComponentMechanoid>
+		</costList>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<uiIconPath>Things/Automation/AutoCrane/AutoCrane_MenuIcon</uiIconPath>
+		<uiIconScale>0.8</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>100</Mass>
+			<WorkToBuild>15000</WorkToBuild>
+			<MaxHitPoints>350</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(3,3)</size>
+		<designationCategory>VFE_Factory</designationCategory>
+		<pathCost>100</pathCost>
+		<surfaceType>Item</surfaceType>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+		</comps>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_ElectronicsFabricationFactory</li>
+		</researchPrerequisites>
+   		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
 
 </Defs>
