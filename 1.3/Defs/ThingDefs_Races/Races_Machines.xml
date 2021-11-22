@@ -763,4 +763,76 @@
 			</li>
 		</lifeStages>
 	</PawnKindDef>
+
+	<ThingDef ParentName="BaseVFEMachine">
+		<defName>VFE_Mechanoids_Autobroadcaster</defName>
+		<label>autocleaner</label>
+		<description>A medium speed, simple-minded, wheeled drone that patrols designated areas and provides nearby colonists with either a passive form of recreation through quiet and relaxing music, upbeat inspirational music or loud propaganda that increases certainty of anyone that hears it.</description>
+		<statBases>
+			<MoveSpeed>1.9</MoveSpeed>
+			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+			<PsychicSensitivity>0.25</PsychicSensitivity>
+		</statBases>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<race>
+			<intelligence>ToolUser</intelligence>
+			<thinkTreeMain>VFE_Mechanoids_Machine</thinkTreeMain>
+			<body>MechanicalCentipede</body>
+			<baseBodySize>0.5</baseBodySize>
+			<baseHealthScale>1</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>VFE_Pawn_HandmadeMech_Wounded</soundWounded>
+					<soundDeath>VFE_Pawn_HandmadeMech_Death</soundDeath>
+					<soundCall>VFE_Pawn_HandmadeMech_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundCallIntervalRange>3000~20000</soundCallIntervalRange>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+		</race>
+		<butcherProducts>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Plasteel>10</Plasteel>
+		</butcherProducts>
+		<comps>
+			<li Class="VFE.Mechanoids.CompProperties_Machine">
+				<hoursActive>72</hoursActive>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<PawnKindDef ParentName="BaseMechanoidKind">
+		<defName>VFE_Mechanoids_Autobroadcaster</defName>
+		<label>autobroadcaster</label>
+		<race>VFE_Mechanoids_Autobroadcaster</race>
+		<combatPower>99999</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Automation/AutoBroadcaster/AutoBroadcaster</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shadowData>
+						<volume>(0.6, 0.8, 0.6)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
 </Defs>

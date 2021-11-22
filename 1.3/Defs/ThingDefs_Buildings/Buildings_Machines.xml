@@ -608,7 +608,7 @@
 				<cornerBR>Damage/Corner</cornerBR>
 			</damageData>
 		</graphicData>
-		<size>(1,1)</size>
+		<size>(1,2)</size>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
 		<passability>Standable</passability>
@@ -880,6 +880,79 @@
 		<designationCategory>VFE_Factory</designationCategory>
 		<researchPrerequisites>
 			<li>VFE_AdvancedDroneAssembly</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_Mechanoids_AutobroadcasterBase</defName>
+		<thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
+		<label>autobroadcaster charging station</label>
+		<description>A station for assembling and recharging autobroadcasters.</description>
+		<graphicData>
+			<texPath>Things/Automation/AutoBroadcasterChargingStation</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.5,0.3,0.7)</volume>
+				<offset>(0,0,-0.15)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.234375,0,0.515625,0.984375)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<passability>Standable</passability>
+		<blockWind>false</blockWind>
+		<rotatable>false</rotatable>
+		<fillPercent>0.1</fillPercent>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<statBases>
+			<WorkToBuild>1000</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>6</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+			<bed_humanlike>false</bed_humanlike>
+			<bed_showSleeperBody>True</bed_showSleeperBody>
+			<sowTag>SupportPlantsOnly</sowTag>
+			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+			<ai_chillDestination>false</ai_chillDestination>
+			<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+		</building>
+		<costList>
+			<Steel>30</Steel>
+			<Plasteel>20</Plasteel>
+			<VFE_ComponentMechanoid>1</VFE_ComponentMechanoid>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="VFE.Mechanoids.CompProperties_MachineChargingStation">
+				<pawnToSpawn>VFE_Mechanoids_Autobroadcaster</pawnToSpawn>
+				<allowedWorkTypes>
+				</allowedWorkTypes>
+				<extraChargingPower>1400</extraChargingPower>
+				<hoursToRecharge>24</hoursToRecharge>
+			</li>
+		</comps>
+		<designationCategory>VFE_Factory</designationCategory>
+		<researchPrerequisites>
+			<li>VFE_BasicDroneAssembly</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 	</ThingDef>
