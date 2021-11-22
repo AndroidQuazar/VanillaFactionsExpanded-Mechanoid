@@ -77,6 +77,7 @@
 		</graphicData>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<recipeMaker Inherit='False' />
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<statBases>
 			<AccuracyTouch>0.25</AccuracyTouch>
 			<AccuracyShort>0.65</AccuracyShort>
@@ -97,14 +98,13 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
 				<warmupTime>0</warmupTime>
-				<minRange>8.9</minRange>
-				<range>32.9</range>
+				<minRange>2.9</minRange>
+				<range>30.9</range>
 				<ticksBetweenBurstShots>17</ticksBetweenBurstShots>
 				<burstShotCount>3</burstShotCount>
 				<soundCast>Shot_Autocannon</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>12</muzzleFlashScale>
-				<consumeFuelPerShot>1</consumeFuelPerShot>
 			</li>
 		</verbs>
 		<weaponTags Inherit='False'>

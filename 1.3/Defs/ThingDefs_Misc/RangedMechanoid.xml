@@ -426,7 +426,7 @@
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>VFE_Bullet_ThumpCannonHeavy</defName>
-		<label>heavy thumb bomb</label>
+		<label>heavy thump bomb</label>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Thump</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -442,7 +442,8 @@
 		</projectile>
 	</ThingDef>
 
-	<ThingDef Abstract="True" ParentName="BaseGunWithQuality">
+	<ThingDef ParentName="BaseGunWithQuality">
+		<defName>VFE_Gun_AdvancedThumpCannon</defName>
 		<label>advanced thump cannon</label>
 		<description>An advanced version of the thump cannon used by mechanoids. It fires a concussion bomb that is extremely effective against walls and structures, but does much less damage to small targets.</description>
 		<graphicData>
