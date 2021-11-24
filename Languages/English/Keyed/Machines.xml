@@ -9,4 +9,17 @@
 	<MAO_FishTaunterGizmoLabelSmall>Small Fish</MAO_FishTaunterGizmoLabelSmall>
 	<MAO_FishTaunterGizmoLabelMedium>Medium Fish</MAO_FishTaunterGizmoLabelMedium>
 	<MAO_FishTaunterGizmoLabelLarge>Large Fish</MAO_FishTaunterGizmoLabelLarge>
+	<VFEM.PropagandaMode>Mode: {0}</VFEM.PropagandaMode>
+	<VFEM.RelaxingMusic>Relaxing music</VFEM.RelaxingMusic>
+	<VFEM.InspirationalMusic>Inspirational music</VFEM.InspirationalMusic>
+	<VFEM.IdeoPropaganda>Ideology propaganda</VFEM.IdeoPropaganda>
+	<VFEM.Recruitment>Prisoner recruitment</VFEM.Recruitment>
+	
+	<VFEM.RelaxingMusicDesc>Relaxing music PLACEHOLDER</VFEM.RelaxingMusicDesc>
+	<VFEM.InspirationalMusicDesc>Inspirational music PLACEHOLDER</VFEM.InspirationalMusicDesc>
+	<VFEM.IdeoPropagandaDesc>Ideology propaganda PLACEHOLDER</VFEM.IdeoPropagandaDesc>
+	<VFEM.RecruitmentDesc>Prisoner recruitment PLACEHOLDER</VFEM.RecruitmentDesc>
+	<VFEM.SelectIdeology>Select ideology</VFEM.SelectIdeology>
+	<VFEM.SelectIdeologyDesc>Select ideology PLACEHOLDER</VFEM.SelectIdeologyDesc>
+	<VFEM.CurrentIdeology>Current ideology: {0}</VFEM.CurrentIdeology>
 </LanguageData>

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace MechanoidAddon
+namespace VFEMech
 {
 	[HarmonyPatch(typeof(RoofCollapseUtility), "WithinRangeOfRoofHolder")]
 	public static class WithinRangeOfRoofHolder_Patch
@@ -16,7 +16,7 @@ namespace MechanoidAddon
 		{
 			if (!__result)
 			{
-				__result = Comp_RoofHolder.WithinRangeOfRoofHolder(c, map, assumeNonNoRoofCellsAreRoofed);
+				__result = CompRoofHolder.WithinRangeOfRoofHolder(c, map, assumeNonNoRoofCellsAreRoofed);
 			}
 		}
 	}
@@ -41,7 +41,7 @@ namespace MechanoidAddon
 		{
 			if (!__result)
 			{
-				__result = Comp_RoofHolder.AnyRoofHoldersInRange(map, c);
+				__result = CompRoofHolder.AnyRoofHoldersInRange(map, c);
 			}
 		}
 	}

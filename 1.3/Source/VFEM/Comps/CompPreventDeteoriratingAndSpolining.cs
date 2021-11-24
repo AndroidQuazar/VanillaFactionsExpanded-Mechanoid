@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace MechanoidAddon
+namespace VFEMech
 {
 	public class CompProperties_PreventDeteoriratingAndSpolining : CompProperties
 	{
 		public CompProperties_PreventDeteoriratingAndSpolining()
 		{
-			compClass = typeof(Comp_PreventDeteoriratingAndSpolining);
+			compClass = typeof(CompPreventDeteoriratingAndSpolining);
 		}
 	}
-	public class Comp_PreventDeteoriratingAndSpolining : ThingComp
+	public class CompPreventDeteoriratingAndSpolining : ThingComp
     {
 		public static Dictionary<Map, HashSet<IntVec3>> safePlaces = new Dictionary<Map, HashSet<IntVec3>>();
         public override void PostSpawnSetup(bool respawningAfterLoad)

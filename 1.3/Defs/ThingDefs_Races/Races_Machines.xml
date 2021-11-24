@@ -766,7 +766,7 @@
 
 	<ThingDef ParentName="BaseVFEMachine">
 		<defName>VFE_Mechanoids_Autobroadcaster</defName>
-		<label>autocleaner</label>
+		<label>autobroadcaster</label>
 		<description>A medium speed, simple-minded, wheeled drone that patrols designated areas and provides nearby colonists with either a passive form of recreation through quiet and relaxing music, upbeat inspirational music or loud propaganda that increases certainty of anyone that hears it.</description>
 		<statBases>
 			<MoveSpeed>1.9</MoveSpeed>
@@ -788,7 +788,7 @@
 		</tools>
 		<race>
 			<intelligence>ToolUser</intelligence>
-			<thinkTreeMain>VFE_Mechanoids_Machine</thinkTreeMain>
+			<thinkTreeMain>VFE_Mechanoids_MachineWandering</thinkTreeMain>
 			<body>MechanicalCentipede</body>
 			<baseBodySize>0.5</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
@@ -815,6 +815,20 @@
 			<li Class="VFE.Mechanoids.CompProperties_Machine">
 				<hoursActive>72</hoursActive>
 			</li>
+			<li Class="VFEMech.CompProperties_Propaganda">
+				<relaxingMusicRadius>15</relaxingMusicRadius>
+				<relaxingThought>VFE_Mechanoids_RelaxingMusic</relaxingThought>
+		
+				<inspirationalMusicRadius>15</inspirationalMusicRadius>
+				<inspirationalHediff>VFE_Mechanoids_GlobalWorkSpeed</inspirationalHediff>
+		
+				<propagandaRadius>15</propagandaRadius>
+				<propagandaPower>0.01</propagandaPower>
+				<propagandaRate>2500</propagandaRate>
+				
+				<recruitmentRadius>15</recruitmentRadius>
+				<recruitmentPower>0.01</recruitmentPower>
+			</li>
 		</comps>
 	</ThingDef>
 
@@ -835,4 +849,33 @@
 			</li>
 		</lifeStages>
 	</PawnKindDef>
+	
+	<HediffDef>
+		<defName>VFE_Mechanoids_GlobalWorkSpeed</defName>
+		<label>inspired</label>
+		<labelNoun>inspired</labelNoun>
+		<description>inspired</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<hediffClass>VFEMech.Hediff_Propaganda</hediffClass>
+		<stages>
+			<li>
+				<statFactors>
+					<WorkSpeedGlobal>1.1</WorkSpeedGlobal>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<ThoughtDef>
+		<defName>VFE_Mechanoids_RelaxingMusic</defName>
+		<durationDays>0.3</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Relaxing music</label>
+				<description>Propaganda bot is playing my favourite jam.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>

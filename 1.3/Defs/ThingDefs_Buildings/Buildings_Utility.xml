@@ -157,7 +157,7 @@
 				<glowRadius>16</glowRadius>
 				<glowColor>(75,181,213,0)</glowColor>
 			</li>
-			<li Class="MechanoidAddon.CompProperties_RoofHolder">
+			<li Class="VFEMech.CompProperties_RoofHolder">
 				<roofHoldingRadius>8</roofHoldingRadius>
 			</li>
 		</comps>
@@ -209,7 +209,7 @@
 			<li>VFE_MechanoidStructures</li>
 		</researchPrerequisites>
 		<comps>
-			<li Class="MechanoidAddon.CompProperties_PreventDeteoriratingAndSpolining"></li>
+			<li Class="VFEMech.CompProperties_PreventDeteoriratingAndSpolining"></li>
 		</comps>
 	</ThingDef>
 </Defs>

@@ -54,8 +54,9 @@
     <Compile Include="Buildings\MechanoidUplink.cs" />
     <Compile Include="Comps\CompMechaniteReinforcer.cs" />
     <Compile Include="Comps\CompPylon.cs" />
-    <Compile Include="Comps\Comp_PreventDeteoriratingAndSpolining.cs" />
-    <Compile Include="Comps\Comp_RoofHolder.cs" />
+    <Compile Include="Comps\CompPropaganda.cs" />
+    <Compile Include="Comps\CompPreventDeteoriratingAndSpolining.cs" />
+    <Compile Include="Comps\CompRoofHolder.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidShipLanding.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidAttackParty.cs" />
     <Compile Include="GenSteps\GenStep_MechanoidStorage.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="HarmonyPatches\Building_TurretGun_Patch.cs" />
     <Compile Include="HarmonyPatches\Thing_Patch.cs" />
     <Compile Include="HarmonyPatches\TryDoDeteriorate_Patch.cs" />
+    <Compile Include="Hediffs\Hediff_Propaganda.cs" />
     <Compile Include="Incidents\MechShipDestroyed.cs" />
     <Compile Include="JobDrivers\JobDriver_RefuelSilo.cs" />
     <Compile Include="Letters\ChoiceLetter_AcceptVisitors.cs" />

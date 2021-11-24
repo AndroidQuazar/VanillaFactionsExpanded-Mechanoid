@@ -5,26 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace MechanoidAddon
+namespace VFEMech
 {
 	public class CompProperties_RoofHolder : CompProperties
 	{
 		public int roofHoldingRadius;
 		public CompProperties_RoofHolder()
 		{
-			compClass = typeof(Comp_RoofHolder);
+			compClass = typeof(CompRoofHolder);
 		}
 	}
 
 
-	public class Comp_RoofHolder : ThingComp
+	public class CompRoofHolder : ThingComp
     {
-		public static Dictionary<Map, HashSet<Comp_RoofHolder>> roofHolderPlaces = new Dictionary<Map, HashSet<Comp_RoofHolder>>();
+		public static Dictionary<Map, HashSet<CompRoofHolder>> roofHolderPlaces = new Dictionary<Map, HashSet<CompRoofHolder>>();
 		public CompProperties_RoofHolder Props => (CompProperties_RoofHolder)props;
 
 		public static bool AnyRoofHoldersInRange(Map map, IntVec3 cell)
         {
-			if (roofHolderPlaces.TryGetValue(map, out HashSet<Comp_RoofHolder> roofHolders))
+			if (roofHolderPlaces.TryGetValue(map, out HashSet<CompRoofHolder> roofHolders))
             {
 				foreach (var roofHolder in roofHolders)
                 {
@@ -36,7 +36,7 @@ namespace MechanoidAddon
             }
 			return false;
         }
-		private static bool ConnectsToRoofHolder(Comp_RoofHolder supporterRoof, IntVec3 c, Map map)
+		private static bool ConnectsToRoofHolder(CompRoofHolder supporterRoof, IntVec3 c, Map map)
 		{
 			bool connected = false;
 			map.floodFiller.FloodFill(supporterRoof.parent.Position, (IntVec3 x) => x.Roofed(map) && !connected, delegate (IntVec3 x)
@@ -51,7 +51,7 @@ namespace MechanoidAddon
 		public static bool WithinRangeOfRoofHolder(IntVec3 c, Map map, bool assumeNonNoRoofCellsAreRoofed = false)
 		{
 			bool connected = false;
-			if (roofHolderPlaces.TryGetValue(map, out HashSet<Comp_RoofHolder> roofPlaces))
+			if (roofHolderPlaces.TryGetValue(map, out HashSet<CompRoofHolder> roofPlaces))
             {
 				var columnCandidates = roofPlaces.Where(x => x.Props.roofHoldingRadius > x.parent.Position.DistanceTo(c));
 				if (columnCandidates.Any())
@@ -89,7 +89,7 @@ namespace MechanoidAddon
 			}
 			else
 			{
-				roofHolderPlaces[this.parent.Map] = new HashSet<Comp_RoofHolder> { this };
+				roofHolderPlaces[this.parent.Map] = new HashSet<CompRoofHolder> { this };
 			}
 		}
 
