@@ -900,8 +900,10 @@
 				<propagandaPower>0.01</propagandaPower>
 				<propagandaRate>2500</propagandaRate>
 				
+				<recruitmentRate>2500</recruitmentRate>
 				<recruitmentRadius>15</recruitmentRadius>
-				<recruitmentPower>0.01</recruitmentPower>
+				<resistanceSuppressPower>0.5</resistanceSuppressPower>
+				<willSuppressPower>0.5</willSuppressPower>
 			</li>
 		</comps>
 	</ThingDef>
