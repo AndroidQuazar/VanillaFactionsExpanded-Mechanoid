@@ -28,15 +28,20 @@
 		<comps>
 			<li Class="VFEMech.CompProperties_MechaniteReinforcer">
 				<heightRange>1~1</heightRange>
-				<width>3</width>
+				<width>5</width>
 			</li>
+			<!--<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>50</basePowerConsumption>
+			</li>-->
 		</comps>
 		<costList>
 			<Steel>25</Steel>
 			<ComponentSpacer>1</ComponentSpacer>
 			<ComponentIndustrial>15</ComponentIndustrial>
 		</costList>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<researchPrerequisites>
 			<li>VFE_MechanoidStructures</li>
 		</researchPrerequisites>
@@ -113,7 +118,7 @@
 		<defName>VFE_MechanoidConstructionLamp</defName>
 		<label>construction lamp</label>
 		<description>A sturdy utilitarian metal pillar that doubles as a powerful lamp, meant to illuminate otherwise dark factories and support expansive roofing.</description>
-		<designationCategory>Structure</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.25</fillPercent>
@@ -166,7 +171,7 @@
 		</researchPrerequisites>
 	</ThingDef>
 	
-	<ThingDef ParentName="FurnitureWithQualityBase">
+	<ThingDef ParentName="BuildingBase">
 		<defName>VFE_MechanoidLiquidFreezer</defName>
 		<label>liquid freezer</label>
 		<description>A waist-high chest freezer filled with a thin layer of chemically altered neutroamine that seems to remain stagnate at an incredibly low temperature. Requires no power and will prevent any food within from rotting.</description>
@@ -204,7 +209,7 @@
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<surfaceType>Item</surfaceType>
 		<canOverlapZones>false</canOverlapZones>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<researchPrerequisites>
 			<li>VFE_MechanoidStructures</li>
 		</researchPrerequisites>
@@ -217,11 +222,12 @@
 		<defName>VFE_BlightAutoRepeller</defName>
 		<label>blight auto repeller</label>
 		<description>A mechanoid inspired machine that sends out a unique high frequency of waves tuned to the characteristics of blight. This prevents any blight from spawning at plants that are inside the range of the blight auto repeller</description>
-		<designationCategory>Production</designationCategory>
+		<designationCategory>VFE_Factory</designationCategory>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.25</fillPercent>
 		<pathCost>0</pathCost>
+		<uiIconScale>0.8</uiIconScale>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToBuild>1000</WorkToBuild>

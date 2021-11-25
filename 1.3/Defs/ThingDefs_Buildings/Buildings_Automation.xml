@@ -2104,6 +2104,7 @@
 		<uiIconScale>0.8</uiIconScale>
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
+		<specialDisplayRadius>8</specialDisplayRadius>
 		<statBases>
 			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>

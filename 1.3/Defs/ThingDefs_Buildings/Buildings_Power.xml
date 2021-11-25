@@ -30,6 +30,7 @@
     <drawerType>MapMeshAndRealTime</drawerType>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <fillPercent>0.15</fillPercent>
+	<specialDisplayRadius>8</specialDisplayRadius>
     <costList>
       <Steel>40</Steel>
       <ComponentIndustrial>1</ComponentIndustrial>
