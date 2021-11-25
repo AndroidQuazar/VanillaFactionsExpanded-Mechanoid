@@ -30,8 +30,11 @@ namespace VFEMech
         public int propagandaRate;
 
         public float recruitmentRadius;
-        public float recruitmentPower;
-		public CompProperties_Propaganda()
+        public float resistanceSuppressPower;
+        public float willSuppressPower;
+        public int recruitmentRate;
+
+        public CompProperties_Propaganda()
 		{
 			compClass = typeof(CompPropaganda);
 		}
@@ -160,6 +163,9 @@ namespace VFEMech
                     case PropagandaMode.IdeoPropaganda:
                         DoIdeoPropaganda();
                         break;
+                    case PropagandaMode.Recruitment:
+                        DoPrisonerPropaganda();
+                        break;
                 }
             }
             for (var i = givenHediffs.Count - 1; i >= 0; i--)
@@ -184,9 +190,13 @@ namespace VFEMech
             }
         }
 
+        private IEnumerable<Pawn> PawnsAround(float radius)
+        {
+            return GenRadial.RadialDistinctThingsAround(this.parent.Position, this.parent.Map, radius, true).OfType<Pawn>();
+        }
         private void DoRelaxingMusic()
         {
-            foreach (var pawn in GenRadial.RadialDistinctThingsAround(this.parent.Position, this.parent.Map, Props.relaxingMusicRadius, true).OfType<Pawn>())
+            foreach (var pawn in PawnsAround(Props.relaxingMusicRadius))
             {
                 if (pawn.RaceProps.Humanlike && pawn.needs?.mood?.thoughts?.memories != null)
                 {
@@ -196,7 +206,7 @@ namespace VFEMech
         }
         private void DoInspirationalMusic()
         {
-            foreach (var pawn in GenRadial.RadialDistinctThingsAround(this.parent.Position, this.parent.Map, Props.inspirationalMusicRadius, true).OfType<Pawn>())
+            foreach (var pawn in PawnsAround(Props.inspirationalMusicRadius))
             {
                 if (pawn.RaceProps.Humanlike)
                 {
@@ -215,7 +225,7 @@ namespace VFEMech
         {
             if (this.parent.IsHashIntervalTick(Props.propagandaRate))
             {
-                foreach (var pawn in GenRadial.RadialDistinctThingsAround(this.parent.Position, this.parent.Map, Props.relaxingMusicRadius, true).OfType<Pawn>())
+                foreach (var pawn in PawnsAround(Props.propagandaRadius))
                 {
                     if (pawn.RaceProps.Humanlike)
                     {
@@ -231,6 +241,75 @@ namespace VFEMech
                         {
                             pawn.ideo.Reassure(Props.propagandaPower);
                         }
+                    }
+                }
+            }
+        }
+
+        private void DoPrisonerPropaganda()
+        {
+            if (this.parent.IsHashIntervalTick(Props.recruitmentRate))
+            {
+                foreach (var recipient in PawnsAround(Props.recruitmentRadius))
+                {
+                    if (recipient.RaceProps.Humanlike && recipient.guest != null)
+                    {
+                        if (recipient.guest.interactionMode == PrisonerInteractionModeDefOf.ReduceResistance || recipient.guest.interactionMode == PrisonerInteractionModeDefOf.AttemptRecruit)
+                        {
+                            float resistance = recipient.guest.resistance;
+                            if (resistance > 0)
+                            {
+                                float num2 = Props.resistanceSuppressPower;
+                                float resistanceReduce = 0f;
+                                recipient.guest.resistance = Mathf.Max(0f, recipient.guest.resistance - num2);
+                                resistanceReduce = resistance - recipient.guest.resistance;
+                                string text = "TextMote_ResistanceReduced".Translate(resistance.ToString("F1"), recipient.guest.resistance.ToString("F1"));
+                                if (recipient.needs.mood != null && recipient.needs.mood.CurLevelPercentage < 0.4f)
+                                {
+                                    text += "\n(" + "lowMood".Translate() + ")";
+                                }
+                                MoteMaker.ThrowText(recipient.DrawPos, this.parent.Map, text, 8f);
+                                if (recipient.guest.resistance == 0f)
+                                {
+                                    TaggedString taggedString2 = "MessagePrisonerResistanceBroken".Translate(recipient.LabelShort, this.parent.LabelShort, this.parent.Named("WARDEN"), recipient.Named("PRISONER"));
+                                    if (recipient.guest.interactionMode == PrisonerInteractionModeDefOf.AttemptRecruit)
+                                    {
+                                        taggedString2 += " " + "MessagePrisonerResistanceBroken_RecruitAttempsWillBegin".Translate();
+                                    }
+                                    Messages.Message(taggedString2, recipient, MessageTypeDefOf.PositiveEvent);
+                                }
+                                if (this.parent is Pawn pawn)
+                                {
+                                    recipient.guest.SetLastRecruiterData(pawn, resistanceReduce);
+                                }
+                            }
+                        }
+                        else if (recipient.guest.interactionMode == PrisonerInteractionModeDefOf.ReduceWill || recipient.guest.interactionMode == PrisonerInteractionModeDefOf.Enslave)
+                        {
+                            if (recipient.guest.will > 0)
+                            {
+                                float num = Props.willSuppressPower;
+                                num = Mathf.Min(num, recipient.guest.will);
+                                float will = recipient.guest.will;
+                                recipient.guest.will = Mathf.Max(0f, recipient.guest.will - num);
+                                _ = recipient.guest.will;
+                                string text = "TextMote_WillReduced".Translate(will.ToString("F1"), recipient.guest.will.ToString("F1"));
+                                if (recipient.needs.mood != null && recipient.needs.mood.CurLevelPercentage < 0.4f)
+                                {
+                                    text += "\n(" + "lowMood".Translate() + ")";
+                                }
+                                MoteMaker.ThrowText(recipient.DrawPos, parent.Map, text, 8f);
+                                if (recipient.guest.will == 0f)
+                                {
+                                    TaggedString taggedString = "MessagePrisonerWillBroken".Translate(parent, recipient);
+                                    if (recipient.guest.interactionMode == PrisonerInteractionModeDefOf.AttemptRecruit)
+                                    {
+                                        taggedString += " " + "MessagePrisonerWillBroken_RecruitAttempsWillBegin".Translate();
+                                    }
+                                    Messages.Message(taggedString, recipient, MessageTypeDefOf.PositiveEvent);
+                                }
+                            }
+                         }
                     }
                 }
             }
