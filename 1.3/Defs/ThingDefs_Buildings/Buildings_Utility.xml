@@ -212,4 +212,56 @@
 			<li Class="VFEMech.CompProperties_PreventDeteoriratingAndSpolining"></li>
 		</comps>
 	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VFE_BlightAutoRepeller</defName>
+		<label>blight auto repeller</label>
+		<description>A mechanoid inspired machine that sends out a unique high frequency of waves tuned to the characteristics of blight. This prevents any blight from spawning at plants that are inside the range of the blight auto repeller</description>
+		<designationCategory>Production</designationCategory>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.25</fillPercent>
+		<pathCost>0</pathCost>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>1000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+			<Beauty>1</Beauty>
+			<Mass>20</Mass>
+		</statBases>
+		<canOverlapZones>false</canOverlapZones>
+		<rotatable>false</rotatable>
+		<specialDisplayRadius>8</specialDisplayRadius>
+		<building>
+			<isInert>true</isInert>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+		<size>(1,1)</size>
+		<graphicData>
+			<drawSize>(3,2)</drawSize>
+			<drawOffset>(0,0,0.5)</drawOffset>
+			<texPath>Things/Buildings/Misc/BlightAutoRepeller</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.5, 0.3)</volume>
+				<offset>(0,0,-0.23)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentSpacer>1</ComponentSpacer>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<comps>
+			<!--<li Class="VFEMech.CompProperties_BlightDestroyer">
+				<effectiveRadius>8</effectiveRadius>
+			</li>-->
+		</comps>
+		<researchPrerequisites>
+			<li>VFE_MechanoidStructures</li>
+		</researchPrerequisites>
+	</ThingDef>
 </Defs>
