@@ -483,6 +483,7 @@
 		<race>
 			<intelligence>ToolUser</intelligence>
 			<thinkTreeMain>VFE_Mechanoids_Machine_Riddable</thinkTreeMain>
+		<thinkTreeConstant>VFE_Mechanoids_Machine_RiddableConstant</thinkTreeConstant>
 			<body>MechanicalTermite</body>
 			<baseBodySize>3</baseBodySize>
 			<baseHealthScale>4</baseHealthScale>
@@ -708,7 +709,8 @@
 		</tools>
 		<race>
 			<intelligence>ToolUser</intelligence>
-			<thinkTreeMain>VFE_Mechanoids_ViolentMachine</thinkTreeMain>
+			<thinkTreeMain>VFE_Mechanoids_Raider</thinkTreeMain>
+			<thinkTreeConstant>VFE_Mechanoids_Machine_RiddableConstant</thinkTreeConstant>
 			<body>Lancer</body>
 			<baseBodySize>1.5</baseBodySize>
 			<baseHealthScale>4</baseHealthScale>

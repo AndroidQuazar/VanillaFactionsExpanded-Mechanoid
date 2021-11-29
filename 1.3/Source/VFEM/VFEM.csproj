@@ -53,6 +53,7 @@
     <Compile Include="Buildings\TrooperStorage.cs" />
     <Compile Include="Buildings\MechanoidUplink.cs" />
     <Compile Include="Comps\CompMechaniteReinforcer.cs" />
+    <Compile Include="Comps\CompBlightDestroyer.cs" />
     <Compile Include="Comps\CompPylon.cs" />
     <Compile Include="Comps\CompPropaganda.cs" />
     <Compile Include="Comps\CompPreventDeteoriratingAndSpolining.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Pawns\VFEMechanoid.cs" />
     <Compile Include="Pawns\Mech_Inquisitor.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_ApiaryAndFactoryFloorAndPath.cs" />
+    <Compile Include="PlaceWorkers\PlaceWorker_AutoCrane.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_AutoPlant.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnPowerConduit.cs" />
     <Compile Include="PlaceWorkers\PlaceWorker_OnFactoryFloorAndPath.cs" />

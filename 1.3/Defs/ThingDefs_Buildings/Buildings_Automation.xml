@@ -2104,13 +2104,16 @@
 		<uiIconScale>0.8</uiIconScale>
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
-		<specialDisplayRadius>8</specialDisplayRadius>
 		<statBases>
 			<Mass>100</Mass>
 			<WorkToBuild>15000</WorkToBuild>
 			<MaxHitPoints>350</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
+		<placeWorkers>
+			<li>VFE.Mechanoids.PlaceWorkers.PlaceWorker_AutoCrane</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<tickerType>Normal</tickerType>
 		<size>(3,3)</size>
 		<designationCategory>VFE_Factory</designationCategory>

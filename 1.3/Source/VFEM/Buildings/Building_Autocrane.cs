@@ -35,8 +35,8 @@ namespace VFEMech
         [TweakValue("00VFEM", -10, 10)] private static float topDrawOffsetX = -0.02f;
         [TweakValue("00VFEM", -10, 10)] private static float topDrawOffsetZ = 2.23f;
 
-        private const int MaxDistanceToFrames = 20;
-        private const int MinDistanceFromBase = 5;
+        public const int MaxDistanceToTargets = 20;
+        public const int MinDistanceFromBase = 6;
 
         [TweakValue("00VFEM", 0, 1)] private static float rotationSpeed = 0.5f;
         [TweakValue("00VFEM", 0, 1)] private static float craneErectionSpeed = 0.005f;
@@ -75,10 +75,9 @@ namespace VFEMech
 
         private IntVec3 GetStartingEndCranePosition()
         {
-            IntVec3 curCell = this.OccupiedRect().CenterCell;
-            Log.Message("Center: " + curCell);
+            IntVec3 curCell = this.OccupiedRect().CenterCell + (Rot4.North.FacingCell * 2);
             int num = 0;
-            while ((curCell + Rot4.East.FacingCell).InBounds(Map) && num < 5)
+            while ((curCell + Rot4.East.FacingCell).InBounds(Map) && num < 2)
             {
                 curCell = curCell + Rot4.East.FacingCell;
                 num++;
@@ -93,7 +92,10 @@ namespace VFEMech
             topCranePos.y += 5;
             matrix.SetTRS(topCranePos, Quaternion.Euler(0, CurRotation, 0), new Vector3(topDrawSizeX, 1f, topDrawSizeY));
             Graphics.DrawMesh(MeshPool.plane10, matrix, craneTopMat1, 0);
+            topCranePos.y--;
+            matrix.SetTRS(topCranePos, Quaternion.Euler(0, CurRotation, 0), new Vector3(topDrawSizeX, 1f, topDrawSizeY));
             Graphics.DrawMesh(MeshPool.plane10, matrix, craneTopMat2, 0);
+            topCranePos.y--;
             matrix.SetTRS(topCranePos, Quaternion.Euler(0, CurRotation, 0), new Vector3(topDrawSizeX, 1f, topDrawSizeY));
             var mesh = MeshPool.GridPlane(new Vector3(curCraneSize, 1f, 0));
             Graphics.DrawMesh(mesh, matrix, craneTopMat3, 0);
@@ -101,7 +103,7 @@ namespace VFEMech
         public override void Tick()
         {
             base.Tick();
-            if (compPower.PowerOn && this.Faction == Faction.OfPlayer)
+            if (this.Map != null && compPower.PowerOn && this.Faction == Faction.OfPlayer && this.IsHashIntervalTick(30))
             {
                 if (curFrameTarget == null || curFrameTarget.Destroyed)
                 {
@@ -158,8 +160,7 @@ namespace VFEMech
                     }
                     return;
                 }
-
-                TryMoveTo(startingPosition);
+                TryMoveTo(startingPosition, new Vector3(0, 0, 0.2f));
             }
         }
 
@@ -171,9 +172,9 @@ namespace VFEMech
             turnClockWise = anglediff < 0;
         }
 
-        private bool TryMoveTo(LocalTargetInfo target)
+        private bool TryMoveTo(LocalTargetInfo target, Vector3 offset = default)
         {
-            var angle = CraneDrawPos.AngleToFlat(target.CenterVector3);
+            var angle = CraneDrawPos.AngleToFlat(target.CenterVector3 + offset);
             angle = ClampAngle(angle);
             var angleAbs = Mathf.Abs(angle - CurRotation);
             if (angleAbs > 0 && angleAbs < rotationSpeed)
@@ -193,7 +194,7 @@ namespace VFEMech
             }
             else
             {
-                var distance = Vector3.Distance(CraneDrawPos, target.CenterVector3);
+                var distance = Vector3.Distance(CraneDrawPos, target.CenterVector3 + offset);
                 var targetSize = distance / distanceRate;
                 if (targetSize > (curCraneSize + craneErectionSpeed))
                 {
@@ -377,16 +378,17 @@ namespace VFEMech
             return angle;
         }
 
+
         private Frame NextFrameTarget()
         {
-            return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToFrames, true).OfType<Frame>()
+            return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToTargets, true).OfType<Frame>()
                 .Where(x => x.Position.DistanceTo(this.Position) >= MinDistanceFromBase && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction))
                 .OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
         }
 
         private Building NextDamagedBuildingTarget()
         {
-            return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToFrames, true).OfType<Building>()
+            return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToTargets, true).OfType<Building>()
                 .Where(x => x.HitPoints < x.MaxHitPoints && x.Position.DistanceTo(this.Position) >= MinDistanceFromBase && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction))
                 .OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
         }

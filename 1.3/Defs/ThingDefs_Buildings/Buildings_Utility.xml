@@ -246,7 +246,7 @@
 		<graphicData>
 			<drawSize>(3,2)</drawSize>
 			<drawOffset>(0,0,0.5)</drawOffset>
-			<texPath>Things/Buildings/Misc/BlightAutoRepeller</texPath>
+			<texPath>Things/Buildings/Misc/BlightAutorepeller</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shadowData>
 				<volume>(0.3, 0.5, 0.3)</volume>
@@ -261,10 +261,12 @@
 			<ComponentSpacer>1</ComponentSpacer>
 			<ComponentIndustrial>5</ComponentIndustrial>
 		</costList>
+		<tickerType>Normal</tickerType>
 		<comps>
-			<!--<li Class="VFEMech.CompProperties_BlightDestroyer">
+			<li Class="VFEMech.CompProperties_BlightDestroyer">
 				<effectiveRadius>8</effectiveRadius>
-			</li>-->
+				<tickRate>120</tickRate>
+			</li>
 		</comps>
 		<researchPrerequisites>
 			<li>VFE_MechanoidStructures</li>

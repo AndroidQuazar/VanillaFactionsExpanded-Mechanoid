@@ -875,6 +875,7 @@
 				<extraChargingPower>1200</extraChargingPower>
 				<spawnWithWeapon>VFE_Gun_RaiderMechanoidGun</spawnWithWeapon>
 				<hoursToRecharge>48</hoursToRecharge>
+				<showSetArea>false</showSetArea>
 			</li>
 		</comps>
 		<designationCategory>VFE_Factory</designationCategory>
