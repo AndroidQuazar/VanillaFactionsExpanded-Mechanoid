@@ -116,7 +116,7 @@
 
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFE_MechanoidConstructionLamp</defName>
-		<label>construction lamp</label>
+		<label>mechanoid construction lamp</label>
 		<description>A sturdy utilitarian metal pillar that doubles as a powerful lamp, meant to illuminate otherwise dark factories and support expansive roofing.</description>
 		<designationCategory>VFE_Factory</designationCategory>
 		<altitudeLayer>Building</altitudeLayer>
@@ -221,7 +221,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFE_BlightAutoRepeller</defName>
 		<label>blight auto repeller</label>
-		<description>A mechanoid inspired machine that sends out a unique high frequency of waves tuned to the characteristics of blight. This prevents any blight from spawning at plants that are inside the range of the blight auto repeller</description>
+		<description>A mechanoid inspired machine that sends out a unique high frequency of waves tuned to the characteristics of blight. This prevents any blight from spawning at plants that are inside the range of the blight auto repeller.</description>
 		<designationCategory>VFE_Factory</designationCategory>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
