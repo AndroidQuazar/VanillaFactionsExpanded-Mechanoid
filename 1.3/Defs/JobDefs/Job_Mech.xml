@@ -28,4 +28,11 @@
     </requiredCapacities>
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
+  
+  <JobDef>
+    <defName>VFEM_EnterIndoctrinationPod</defName>
+    <driverClass>JobDriver_EnterCryptosleepCasket</driverClass>
+    <reportString>entering indoctrination pod.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

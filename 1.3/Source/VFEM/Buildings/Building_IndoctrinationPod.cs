@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 using Verse.AI.Group;
 
 namespace VFEMech
@@ -56,6 +57,27 @@ namespace VFEMech
             return sb.ToString().TrimEndNewlines();
         }
 
+        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
+        {
+            foreach (var opt in base.GetFloatMenuOptions(myPawn))
+            {
+                if (opt.Label == "EnterCryptosleepCasket".Translate())
+                {
+                    JobDef jobDef = VFEMDefOf.VFEM_EnterIndoctrinationPod;
+                    string label = "VFEMech.EnterIndoctrinationPod".Translate();
+                    Action action = delegate
+                    {
+                        Job job = JobMaker.MakeJob(jobDef, this);
+                        myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    };
+                    yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), myPawn, this);
+                }
+                else
+                {
+                    yield return opt;
+                }
+            }
+        }
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (var g in base.GetGizmos())

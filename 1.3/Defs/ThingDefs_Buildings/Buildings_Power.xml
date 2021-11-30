@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <ThingDef ParentName="BuildingBase">
@@ -30,7 +30,7 @@
     <drawerType>MapMeshAndRealTime</drawerType>
     <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
     <fillPercent>0.15</fillPercent>
-	<specialDisplayRadius>8</specialDisplayRadius>
+	<specialDisplayRadius>18</specialDisplayRadius>
     <costList>
       <Steel>40</Steel>
       <ComponentIndustrial>1</ComponentIndustrial>

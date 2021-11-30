@@ -25,4 +25,5 @@
 	<VFEMech.SetIdeologyConversionTarget>Set ideology conversion target</VFEMech.SetIdeologyConversionTarget>
 	<VFEMech.SetIdeologyConversionTargetDesc>PLACEHOLDER</VFEMech.SetIdeologyConversionTargetDesc>
 	<VFEMech.CurrentCertainty>{PAWN_nameDef}'s certainty in {1} is {2}%</VFEMech.CurrentCertainty>
+	<VFEMech.EnterIndoctrinationPod>Enter indoctrination pod</VFEMech.EnterIndoctrinationPod>
 </LanguageData>
