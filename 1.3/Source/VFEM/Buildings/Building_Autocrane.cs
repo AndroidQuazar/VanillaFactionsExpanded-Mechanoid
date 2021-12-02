@@ -251,6 +251,10 @@ namespace VFEMech
         private void DoConstruction(Frame frame)
         {
             float num = 1.7f;
+            if (ModsConfig.IdeologyActive && this.Faction.ideos.PrimaryIdeo.memes.Any(x => x.defName == "VME_Progressive"))
+            {
+                num *= 1.25f;
+            }
             if (frame.Stuff != null)
             {
                 num *= frame.Stuff.GetStatValueAbstract(StatDefOf.ConstructionSpeedFactor);
@@ -269,7 +273,12 @@ namespace VFEMech
 
         private void DoRepairing(Building building)
         {
-            if (this.IsHashIntervalTick(20))
+            var numTicks = 20;
+            if (ModsConfig.IdeologyActive && this.Faction.ideos.PrimaryIdeo.memes.Any(x => x.defName == "VME_Progressive"))
+            {
+                numTicks /= (int)(numTicks / 1.25f);
+            }
+            if (this.IsHashIntervalTick(numTicks))
             {
                 building.HitPoints++;
                 building.HitPoints = Mathf.Min(building.HitPoints, building.MaxHitPoints);

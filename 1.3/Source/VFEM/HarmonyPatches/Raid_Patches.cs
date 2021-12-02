@@ -22,15 +22,15 @@ namespace VFEM.HarmonyPatches
                 typeof(PawnGroupMakerUtility).GetNestedTypes(AccessTools.all)
                                           .First(t => t.GetMethods(AccessTools.all).Any(mi => mi.Name.Contains(nameof(PawnGroupMakerUtility.TryGetRandomFactionForCombatPawnGroup)) &&
                                                                                               mi.GetParameters()[0].ParameterType == typeof(Faction))).GetMethods(AccessTools.all)
-                                          .First(mi => mi.ReturnType == typeof(bool));
+                                          .First(mi => mi.ReturnType == typeof(float));
 
             [HarmonyPrefix]
-            public static bool Prefix(Faction f, ref bool __result)
+            public static bool Prefix(Faction f, ref float __result)
             {
                 if (f.def == VFEMDefOf.VFE_Mechanoid)
                     if (MechUtils.MechPresence() <= 0)
                     {
-                        __result = false;
+                        __result = 0;
                         return false;
                     }
 
