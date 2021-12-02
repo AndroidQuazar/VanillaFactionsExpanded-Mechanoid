@@ -48,7 +48,7 @@ namespace VFEMech
 		private static List<IntVec3> justRoofedCells = new List<IntVec3>();
 		public static void Postfix(Room room)
 		{
-			if (room.CellCount > 320)
+			if (room.CellCount > 320 && room.Map != null)
 {
 				if (CompRoofHolder.roofHolderPlaces.TryGetValue(room.Map, out HashSet<CompRoofHolder> roofHolders))
 				{
