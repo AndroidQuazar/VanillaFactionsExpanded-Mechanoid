@@ -133,5 +133,50 @@
 		</tools>
 		<relicChance>0</relicChance>
 	</ThingDef>
-  
+	
+	<ThingDef ParentName="VFE_Gun_InfernoSpewerBase">
+		<defName>VFE_Gun_InfernoSpewerSmall</defName>
+		<label>small inferno spewer</label>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VFE_Bullet_InfernoSpewerSmall</defaultProjectile>
+				<ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+				<warmupTime>1.25</warmupTime>
+				<range>9.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>VFE_Shot_InfernoSpewer</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>VFE_Bullet_InfernoSpewerSmall</defName>
+		<label>small inferno spewer shot</label>
+		<thingClass>VFECore.FlamethrowProjectile</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Proj_InfernoSpewer</texPath>
+			<texPathFadeOut>Things/Projectile/Proj_InfernoSpewerFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<speed>30</speed>
+			<damageAmountBase>2</damageAmountBase>
+		</projectile>
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>40</lifeTimeDuration>
+		<widthScaleFactor>0.55</widthScaleFactor>
+		<heightScaleFactor>0.90</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.05</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>2</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
 </Defs>

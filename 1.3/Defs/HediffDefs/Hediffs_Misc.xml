@@ -16,15 +16,60 @@
 		</stages>
 	</HediffDef>
 
-	<HediffDef>
+	<HediffDef ParentName="DiseaseBase">
 		<defName>VFE_BrainWashedNotFully</defName>
-		<label>brainwashed (not fully)</label>
-		<description>brainwashed (not fully)</description>
+		<label>major brainwash</label>
+		<description>I got ejected abruptly in the middle of a conversion. I don't feel too great.</description>
+		<makesSickThought>true</makesSickThought>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>8000~12000</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<vomitMtbDays>0.125</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.8</postFactor>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 	
-	<HediffDef>
+	<HediffDef ParentName="DiseaseBase">
 		<defName>VFE_BrainWashedFully</defName>
-		<label>brainwashed</label>
-		<description>brainwashed</description>
+		<label>minor brainwash</label>
+		<description>My new beliefs are amazing, but the sudden conversion takes some time getting used to.</description>
+		<makesSickThought>true</makesSickThought>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>4000~6000</disappearsAfterTicks>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 </Defs>

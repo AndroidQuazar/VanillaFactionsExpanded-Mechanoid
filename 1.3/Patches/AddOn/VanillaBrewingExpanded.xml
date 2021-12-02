@@ -126,7 +126,7 @@
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFE_LiquorMixer_Ambrosia</defName>
@@ -142,7 +142,9 @@
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
+							<resultUsesSpecialIcon>True</resultUsesSpecialIcon>
+							<resultSpecialIcon>Things/Items/Drinks/VBE_Ambrandy/VBE_Ambrandy_b</resultSpecialIcon>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFE_LiquorMixer_Corn</defName>
@@ -158,7 +160,7 @@
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFE_LiquorMixer_InsectMeat</defName>
@@ -174,7 +176,7 @@
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFE_LiquorMixer_Potatoes</defName>
@@ -190,7 +192,7 @@
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFE_LiquorMixer_Berries</defName>
@@ -206,7 +208,7 @@
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>5</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 					</value>
 				</li>

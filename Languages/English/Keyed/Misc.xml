@@ -22,8 +22,8 @@
 	<VFEMech.FactionDestroyedShipDesc>Through clever strategies, large number of casualties and incredible perseverance, {FACTION_name} managed to destroy {1}.</VFEMech.FactionDestroyedShipDesc>
 	
 	<VFEMech.IdeologyConversionTarget>Ideology conversion target: {0}</VFEMech.IdeologyConversionTarget>
-	<VFEMech.SetIdeologyConversionTarget>Set ideology conversion target</VFEMech.SetIdeologyConversionTarget>
-	<VFEMech.SetIdeologyConversionTargetDesc>PLACEHOLDER</VFEMech.SetIdeologyConversionTargetDesc>
+	<VFEMech.SetIdeologyConversionTarget>Set ideology conversion target.</VFEMech.SetIdeologyConversionTarget>
+	<VFEMech.SetIdeologyConversionTargetDesc>Select the ideology that the selected colonist should be converted to.</VFEMech.SetIdeologyConversionTargetDesc>
 	<VFEMech.CurrentCertainty>{PAWN_nameDef}'s certainty in {1} is {2}%</VFEMech.CurrentCertainty>
 	<VFEMech.EnterIndoctrinationPod>Enter indoctrination pod</VFEMech.EnterIndoctrinationPod>
 </LanguageData>

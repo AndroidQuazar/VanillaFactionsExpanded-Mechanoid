@@ -654,14 +654,14 @@
 			<graphicClass>Graphic_Flicker</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>Bullet</damageDef> <!--continuous-->
+			<damageDef>Stun</damageDef> <!--continuous-->
 			<damageAmountBase>5</damageAmountBase>
 			<speed>150</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="VFEMech.TeslaChainingProps">
 				<maxBounceCount>10</maxBounceCount>
-				<damageDef>Smoke</damageDef> <!--first target only?-->
+				<damageDef>Flame</damageDef> <!--first target only?-->
 				<explosionDamageDef>Smoke</explosionDamageDef>
 				<impactRadius>2.9</impactRadius>
 				<targetFriendly>false</targetFriendly>

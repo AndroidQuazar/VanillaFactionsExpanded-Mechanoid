@@ -735,7 +735,7 @@
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
-	
+	<!--
 	<ThingDef ParentName="BuildingBase">
 		<thingClass>VFE.Mechanoids.Buildings.Building_BedMachine</thingClass>
 		<defName>VFE_Mechanoids_AutobuilderBase</defName>
@@ -809,6 +809,7 @@
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
+	-->
 
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFE_Mechanoids_RaiderBase</defName>
@@ -1022,7 +1023,7 @@
 				<allowedWorkTypes>
 				</allowedWorkTypes>
 				<extraChargingPower>1200</extraChargingPower>
-				<spawnWithWeapon>VFE_Gun_InfernoSpewer</spawnWithWeapon>
+				<spawnWithWeapon>VFE_Gun_InfernoSpewerSmall</spawnWithWeapon>
 				<hoursToRecharge>24</hoursToRecharge>
 			</li>
 		</comps>

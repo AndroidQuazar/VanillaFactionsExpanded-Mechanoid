@@ -15,11 +15,11 @@
 	<VFEM.IdeoPropaganda>Ideology propaganda</VFEM.IdeoPropaganda>
 	<VFEM.Recruitment>Prisoner recruitment</VFEM.Recruitment>
 	
-	<VFEM.RelaxingMusicDesc>Relaxing music PLACEHOLDER</VFEM.RelaxingMusicDesc>
-	<VFEM.InspirationalMusicDesc>Inspirational music PLACEHOLDER</VFEM.InspirationalMusicDesc>
-	<VFEM.IdeoPropagandaDesc>Ideology propaganda PLACEHOLDER</VFEM.IdeoPropagandaDesc>
-	<VFEM.RecruitmentDesc>Prisoner recruitment PLACEHOLDER</VFEM.RecruitmentDesc>
+	<VFEM.RelaxingMusicDesc>Play relaxing music, making anyone that hears it a bit happier.</VFEM.RelaxingMusicDesc>
+	<VFEM.InspirationalMusicDesc>Play inspirational music, motivating pawns to work harder.</VFEM.InspirationalMusicDesc>
+	<VFEM.IdeoPropagandaDesc>Play propaganda music, increasing the certainty of colonists.</VFEM.IdeoPropagandaDesc>
+	<VFEM.RecruitmentDesc>Play music that is liked by prisoners, reducing their resistance.</VFEM.RecruitmentDesc>
 	<VFEM.SelectIdeology>Select ideology</VFEM.SelectIdeology>
-	<VFEM.SelectIdeologyDesc>Select ideology PLACEHOLDER</VFEM.SelectIdeologyDesc>
+	<VFEM.SelectIdeologyDesc>Select ideology the autobroadcaster should tune its music to.</VFEM.SelectIdeologyDesc>
 	<VFEM.CurrentIdeology>Current ideology: {0}</VFEM.CurrentIdeology>
 </LanguageData>
