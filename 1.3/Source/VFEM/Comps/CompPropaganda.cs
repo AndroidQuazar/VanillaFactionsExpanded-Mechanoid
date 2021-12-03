@@ -114,6 +114,7 @@ namespace VFEMech
                             Find.WindowStack.Add(new FloatMenu(floatList));
                         },
                         icon = curIdeo.Icon,
+                        defaultIconColor = curIdeo.Color
                     };
                 }
             }

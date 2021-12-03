@@ -127,7 +127,7 @@ namespace VFEMech
                                 }
                             }
                             Find.WindowStack.Add(new FloatMenu(floatList));
-                        }
+                        },
                     };
                 }
                 else
@@ -155,6 +155,7 @@ namespace VFEMech
                             }
                             Find.WindowStack.Add(new FloatMenu(floatList));
                         };
+                        command.defaultIconColor = this.ideoConversionTarget.Color;
                         yield return command;
                     }
                 }
