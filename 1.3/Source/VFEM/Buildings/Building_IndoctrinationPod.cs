@@ -20,8 +20,10 @@ namespace VFEMech
         public static readonly FloatRange IndoctrinationPower = new FloatRange(0.01f, 0.02f);
         public Pawn InnerPawn => ContainedThing as Pawn;
 
+        public CompPowerTrader compPower;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
+            compPower = this.TryGetComp<CompPowerTrader>();
             base.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad && this.Faction != null)
             {
@@ -36,7 +38,7 @@ namespace VFEMech
             {
                 ideoConversionTarget = null;
             }
-            if (ideoConversionTarget != null && pawn != null && pawn.Ideo != null)
+            if (compPower.PowerOn && ideoConversionTarget != null && pawn != null && pawn.Ideo != null)
             {
                 if (pawn.IsHashIntervalTick(IndocrtinationTickRate))
                 {
