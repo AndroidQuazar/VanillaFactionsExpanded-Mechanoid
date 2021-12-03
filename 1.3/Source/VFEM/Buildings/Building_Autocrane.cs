@@ -41,7 +41,8 @@ namespace VFEMech
         [TweakValue("00VFEM", 0, 1)] private static float craneErectionSpeed = 0.005f;
         [TweakValue("00VFEM", 0, 20)] private static float distanceRate = 14.5f;
 
-        Effecter effecter = null;
+        Effecter constructionEffecter;
+        Effecter repairEffecter;
 
         bool turnClockWise;
         private Vector3 CraneDrawPos => this.DrawPos + Altitudes.AltIncVect + new Vector3(topDrawOffsetX, 0, topDrawOffsetZ);
@@ -103,24 +104,12 @@ namespace VFEMech
             base.Tick();
             if (this.Map != null && compPower.PowerOn && this.Faction == Faction.OfPlayer)
             {
-                if ((curFrameTarget == null || curFrameTarget.Destroyed) && this.IsHashIntervalTick(30))
+                if (this.IsHashIntervalTick(30))
                 {
-                    curFrameTarget = NextFrameTarget();
-                    if (curFrameTarget != null)
-                    {
-                        curBuildingTarget = null;
-                        curCellTarget = IntVec3.Invalid;
-
-                        StartMovingTo(curFrameTarget);
-                        compPower.powerOutputInt = -3000;
-                        return;
-                    }
-                    else
-                    {
-                        compPower.powerOutputInt = -200;
-                    }
+                    TryFindTarget();
                 }
-                else if (curFrameTarget != null)
+
+                if (curFrameTarget != null)
                 {
                     if (Map.reservationManager.IsReservedByAnyoneOf(curFrameTarget, Faction)) // pawn builders must be prioritized first, so the crane will not work on it
                     {
@@ -129,26 +118,10 @@ namespace VFEMech
                     else if (!TryMoveTo(curFrameTarget))
                     {
                         DoConstruction(curFrameTarget);
-                        DoConstructionEffect();
-                    }
-                    return;
-                }
-
-                if ((curBuildingTarget == null || curBuildingTarget.Destroyed || curBuildingTarget.MaxHitPoints == curBuildingTarget.HitPoints) && this.IsHashIntervalTick(30))
-                {
-                    curBuildingTarget = NextDamagedBuildingTarget();
-                    if (curBuildingTarget != null)
-                    {
-                        curFrameTarget = null;
-                        curCellTarget = IntVec3.Invalid;
-
-                        StartMovingTo(curBuildingTarget);
-                        compPower.powerOutputInt = -3000;
-                        return;
-                    }
-                    else
-                    {
-                        compPower.powerOutputInt = -200;
+                        if (curFrameTarget != null)
+                        {
+                            DoConstructionEffect();
+                        }
                     }
                 }
                 else if (curBuildingTarget != null)
@@ -160,25 +133,74 @@ namespace VFEMech
                     else if (!TryMoveTo(curBuildingTarget))
                     {
                         DoRepairing(curBuildingTarget);
-                        DoRepairEffect();
+                        if (curBuildingTarget != null)
+                        {
+                            DoRepairEffect();
+                        }
                     }
-                    return;
                 }
-
-                if (!curCellTarget.IsValid)
+                else
                 {
-                    curFrameTarget = null;
-                    curBuildingTarget = null;
-                    curCellTarget = GetStartingEndCranePosition();
-                    StartMovingTo(curCellTarget);
-                }
-                if (curCellTarget.IsValid)
-                {
-                    TryMoveTo(curCellTarget, new Vector3(0, 0, 0.2f));
+                    if (!curCellTarget.IsValid)
+                    {
+                        curFrameTarget = null;
+                        curBuildingTarget = null;
+                        curCellTarget = GetStartingEndCranePosition();
+                        StartMovingTo(curCellTarget);
+                    }
+                    if (curCellTarget.IsValid)
+                    {
+                        TryMoveTo(curCellTarget, new Vector3(0, 0, 0.2f));
+                    }
                 }
             }
         }
 
+        private bool HasFrameTarget => curFrameTarget != null && !curFrameTarget.Destroyed && BaseValidator(curFrameTarget);
+        private bool HasBuildingTarget => curBuildingTarget != null && !curBuildingTarget.Destroyed && curBuildingTarget.MaxHitPoints > curBuildingTarget.HitPoints && BaseValidator(curBuildingTarget);
+        private void TryFindTarget()
+        {
+            var hasFrameTarget = HasFrameTarget;
+            var hasBuildingTarget = HasBuildingTarget;
+            if (hasFrameTarget || hasBuildingTarget)
+            {
+                return;
+            }
+            if (!hasFrameTarget)
+            {
+                curFrameTarget = NextFrameTarget();
+                if (curFrameTarget != null)
+                {
+                    curBuildingTarget = null;
+                    curCellTarget = IntVec3.Invalid;
+
+                    StartMovingTo(curFrameTarget);
+                    compPower.powerOutputInt = -3000;
+                    return;
+                }
+                else
+                {
+                    compPower.powerOutputInt = -200;
+                }
+            }
+            else if (!hasBuildingTarget)
+            {
+                curBuildingTarget = NextDamagedBuildingTarget();
+                if (curBuildingTarget != null)
+                {
+                    curFrameTarget = null;
+                    curCellTarget = IntVec3.Invalid;
+
+                    StartMovingTo(curBuildingTarget);
+                    compPower.powerOutputInt = -3000;
+                    return;
+                }
+                else
+                {
+                    compPower.powerOutputInt = -200;
+                }
+            }
+        }
         private void StartMovingTo(LocalTargetInfo target)
         {
             var angle = CraneDrawPos.AngleToFlat(target.CenterVector3);
@@ -237,29 +259,18 @@ namespace VFEMech
         }
         private void DoConstructionEffect()
         {
-            if (curFrameTarget.WorkLeft > 0)
+            if (constructionEffecter == null)
             {
-                if (effecter == null)
+                EffecterDef effecterDef = curFrameTarget.ConstructionEffect;
+                if (effecterDef != null)
                 {
-                    EffecterDef effecterDef = curFrameTarget.ConstructionEffect;
-                    if (effecterDef != null)
-                    {
-                        effecter = effecterDef.Spawn();
-                        effecter.Trigger(curFrameTarget, curFrameTarget);
-                    }
-                }
-                else
-                {
-                    effecter.EffectTick(curFrameTarget, curFrameTarget);
+                    constructionEffecter = effecterDef.Spawn();
+                    constructionEffecter.Trigger(curFrameTarget, curFrameTarget);
                 }
             }
             else
             {
-                if (effecter != null)
-                {
-                    effecter.Cleanup();
-                    effecter = null;
-                }
+                constructionEffecter.EffectTick(curFrameTarget, curFrameTarget);
             }
         }
 
@@ -299,33 +310,37 @@ namespace VFEMech
                 building.HitPoints = Mathf.Min(building.HitPoints, building.MaxHitPoints);
                 base.Map.listerBuildingsRepairable.Notify_BuildingRepaired(building);
             }
+            if (building.HitPoints == building.MaxHitPoints)
+            {
+                CompleteRepairing(building);
+            }
+        }
+
+        private void CompleteRepairing(Building building)
+        {
+            curBuildingTarget = null;
+            if (repairEffecter != null)
+            {
+                repairEffecter.Cleanup();
+                repairEffecter = null;
+            }
+            TryFindTarget();
         }
 
         private void DoRepairEffect()
         {
-            if (curBuildingTarget.HitPoints < curBuildingTarget.MaxHitPoints)
+            if (repairEffecter == null)
             {
-                if (effecter == null)
+                EffecterDef effecterDef = curBuildingTarget.def.repairEffect;
+                if (effecterDef != null)
                 {
-                    EffecterDef effecterDef = curBuildingTarget.def.repairEffect;
-                    if (effecterDef != null)
-                    {
-                        effecter = effecterDef.Spawn();
-                        effecter.Trigger(curBuildingTarget, curBuildingTarget);
-                    }
-                }
-                else
-                {
-                    effecter.EffectTick(curBuildingTarget, curBuildingTarget);
+                    repairEffecter = effecterDef.Spawn();
+                    repairEffecter.Trigger(curBuildingTarget, curBuildingTarget);
                 }
             }
             else
             {
-                if (effecter != null)
-                {
-                    effecter.Cleanup();
-                    effecter = null;
-                }
+                repairEffecter.EffectTick(curBuildingTarget, curBuildingTarget);
             }
         }
 
@@ -387,8 +402,14 @@ namespace VFEMech
                 map.terrainGrid.SetTerrain(frame.Position, (TerrainDef)frame.def.entityDefToBuild);
                 FilthMaker.RemoveAllFilth(frame.Position, map);
             }
+            curFrameTarget = null;
+            if (constructionEffecter != null)
+            {
+                constructionEffecter.Cleanup();
+                constructionEffecter = null;
+            }
+            TryFindTarget();
         }
-
         private static float ClampAngle(float angle)
         {
             if (angle > 360f)
@@ -402,7 +423,7 @@ namespace VFEMech
             return angle;
         }
 
-        private bool BaseValidator(Thing x) => x.Faction == this.Faction && x.Position.DistanceTo(this.Position) >= MinDistanceFromBase 
+        private bool BaseValidator(Thing x) => x.Faction == this.Faction && !x.IsBurning() && x.Position.DistanceTo(this.Position) >= MinDistanceFromBase 
             && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction);
 
         private Frame NextFrameTarget()

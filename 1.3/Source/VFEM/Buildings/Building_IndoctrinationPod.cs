@@ -9,6 +9,8 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using static UnityEngine.Random;
+using Verse.Noise;
 
 namespace VFEMech
 {
@@ -64,6 +66,10 @@ namespace VFEMech
                     this.EjectContents();
                 }
             }
+            else if (pawn != null)
+            {
+                this.EjectContents();
+            }
         }
 
         public override string GetInspectString()
@@ -83,14 +89,22 @@ namespace VFEMech
             {
                 if (opt.Label == "EnterCryptosleepCasket".Translate())
                 {
-                    JobDef jobDef = VFEMDefOf.VFEM_EnterIndoctrinationPod;
-                    string label = "VFEMech.EnterIndoctrinationPod".Translate();
-                    Action action = delegate
+                    var reason = CannotUseNowReason(myPawn);
+                    if (reason != null)
                     {
-                        Job job = JobMaker.MakeJob(jobDef, this);
-                        myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-                    };
-                    yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), myPawn, this);
+                        yield return new FloatMenuOption("VFEM.CannotEnter".Translate(reason), null);
+                    }
+                    else
+                    {
+                        JobDef jobDef = VFEMDefOf.VFEM_EnterIndoctrinationPod;
+                        string label = "VFEMech.EnterIndoctrinationPod".Translate();
+                        Action action = delegate
+                        {
+                            Job job = JobMaker.MakeJob(jobDef, this);
+                            myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                        };
+                        yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), myPawn, this);
+                    }
                 }
                 else
                 {
@@ -98,6 +112,20 @@ namespace VFEMech
                 }
             }
         }
+
+        public string CannotUseNowReason(Pawn myPawn)
+        {
+            if (!compPower.PowerOn)
+            {
+                return "NoPower".Translate();
+            }
+            else if (myPawn.Ideo == ideoConversionTarget)
+            {
+                return "VFEM.MustHaveAnotherIdeology".Translate();
+            }
+            return null;
+        }
+
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (var g in base.GetGizmos())
