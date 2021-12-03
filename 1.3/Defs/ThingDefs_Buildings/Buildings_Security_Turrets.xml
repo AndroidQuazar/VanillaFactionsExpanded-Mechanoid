@@ -660,13 +660,13 @@
 		</projectile>
 		<modExtensions>
 			<li Class="VFEMech.TeslaChainingProps">
-				<maxBounceCount>10</maxBounceCount>
+				<maxBounceCount>3</maxBounceCount>
 				<damageDef>Flame</damageDef> <!--first target only?-->
 				<explosionDamageDef>Smoke</explosionDamageDef>
 				<impactRadius>2.9</impactRadius>
 				<targetFriendly>false</targetFriendly>
 				<addFire>false</addFire>
-				<bounceRange>20</bounceRange>
+				<bounceRange>5</bounceRange>
 				<maxLifetime>100</maxLifetime>
 			</li>
 		</modExtensions>

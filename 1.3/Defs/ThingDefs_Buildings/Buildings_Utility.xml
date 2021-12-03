@@ -95,7 +95,7 @@
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>false</shortCircuitInRain>
-				<basePowerConsumption>500</basePowerConsumption>
+				<basePowerConsumption>300</basePowerConsumption>
 			</li>
 		</comps>
 		<placeWorkers>
