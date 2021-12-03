@@ -19,11 +19,10 @@ namespace VFEMech
 
         private Frame curFrameTarget;
         private Building curBuildingTarget;
+        private IntVec3 curCellTarget;
 
         public float curCraneSize;
-
         private IntVec3 endCranePosition;
-
         private float curRotationInt;
 
         private static Material craneTopMat1 = MaterialPool.MatFrom("Things/Automation/AutoCrane/AutoCrane_Crane1");
@@ -67,8 +66,8 @@ namespace VFEMech
             if (!respawningAfterLoad)
             {
                 endCranePosition = startingPosition;
-                CurRotation = CraneDrawPos.AngleToFlat(endCranePosition.ToVector3Shifted());
-                var distance = Vector3.Distance(CraneDrawPos, endCranePosition.ToVector3Shifted());
+                CurRotation = CraneDrawPos.AngleToFlat(endCranePosition.ToVector3Shifted() + new Vector3(0, 0, 0.2f));
+                var distance = Vector3.Distance(CraneDrawPos, endCranePosition.ToVector3Shifted() + new Vector3(0, 0, 0.2f));
                 curCraneSize = distance / distanceRate;
             }
         }
@@ -103,13 +102,16 @@ namespace VFEMech
         public override void Tick()
         {
             base.Tick();
-            if (this.Map != null && compPower.PowerOn && this.Faction == Faction.OfPlayer && this.IsHashIntervalTick(30))
+            if (this.Map != null && compPower.PowerOn && this.Faction == Faction.OfPlayer)
             {
-                if (curFrameTarget == null || curFrameTarget.Destroyed)
+                if ((curFrameTarget == null || curFrameTarget.Destroyed) && this.IsHashIntervalTick(30))
                 {
                     curFrameTarget = NextFrameTarget();
                     if (curFrameTarget != null)
                     {
+                        curBuildingTarget = null;
+                        curCellTarget = IntVec3.Invalid;
+
                         StartMovingTo(curFrameTarget);
                         compPower.powerOutputInt = -3000;
                         return;
@@ -133,11 +135,14 @@ namespace VFEMech
                     return;
                 }
 
-                if (curBuildingTarget == null || curBuildingTarget.Destroyed || curBuildingTarget.MaxHitPoints == curBuildingTarget.HitPoints)
+                if ((curBuildingTarget == null || curBuildingTarget.Destroyed || curBuildingTarget.MaxHitPoints == curBuildingTarget.HitPoints) && this.IsHashIntervalTick(30))
                 {
                     curBuildingTarget = NextDamagedBuildingTarget();
                     if (curBuildingTarget != null)
                     {
+                        curFrameTarget = null;
+                        curCellTarget = IntVec3.Invalid;
+
                         StartMovingTo(curBuildingTarget);
                         compPower.powerOutputInt = -3000;
                         return;
@@ -160,7 +165,15 @@ namespace VFEMech
                     }
                     return;
                 }
-                TryMoveTo(startingPosition, new Vector3(0, 0, 0.2f));
+
+                if (!curCellTarget.IsValid)
+                {
+                    curFrameTarget = null;
+                    curBuildingTarget = null;
+                    curCellTarget = startingPosition;
+                    StartMovingTo(curCellTarget);
+                }
+                TryMoveTo(curCellTarget, new Vector3(0, 0, 0.2f));
             }
         }
 
@@ -387,24 +400,25 @@ namespace VFEMech
             return angle;
         }
 
+        private bool BaseValidator(Thing x) => x.Faction == this.Faction && x.Position.DistanceTo(this.Position) >= MinDistanceFromBase 
+            && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction);
 
         private Frame NextFrameTarget()
         {
             return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToTargets, true).OfType<Frame>()
-                .Where(x => x.Position.DistanceTo(this.Position) >= MinDistanceFromBase && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction))
-                .OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
+                .Where(x => BaseValidator(x)).OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
         }
 
         private Building NextDamagedBuildingTarget()
         {
             return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToTargets, true).OfType<Building>()
-                .Where(x => x.HitPoints < x.MaxHitPoints && x.Position.DistanceTo(this.Position) >= MinDistanceFromBase && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction))
-                .OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
+                .Where(x => x.HitPoints < x.MaxHitPoints && BaseValidator(x)).OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref curCellTarget, "curCellTarget");
             Scribe_References.Look(ref curFrameTarget, "curFrameTarget");
             Scribe_References.Look(ref curBuildingTarget, "curBuildingTarget");
             Scribe_Values.Look(ref curCraneSize, "curCraneSize");

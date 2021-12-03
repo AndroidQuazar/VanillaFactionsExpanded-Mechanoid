@@ -44,7 +44,7 @@ namespace VFEMech
         public override void PostDrawExtraSelectionOverlays()
         {
             base.PostDrawExtraSelectionOverlays();
-            GenDraw.DrawFieldEdges(Utils.GetTotalAffectedCells(this.Props, this.parent.Rotation, this.parent.OccupiedRect(), this.parent.Map).ToList(), new ColorInt(30, 184, 240).ToColor);
+            GenDraw.DrawFieldEdges(Utils.GetTotalAffectedCells(this.Props, this.parent.Rotation, this.parent.OccupiedRect(), this.parent.Map).ToList(), Color.white);
         }
     }
     public class PlaceWorker_ShowReinforcerAffectArea : PlaceWorker
@@ -55,7 +55,7 @@ namespace VFEMech
             if (compProperties != null)
             {
                 var cells = Utils.GetTotalAffectedCells(compProperties, rot, GenAdj.OccupiedRect(center, rot, def.size), Find.CurrentMap);
-                GenDraw.DrawFieldEdges(cells.ToList(), new ColorInt(30, 184, 240).ToColor);
+                GenDraw.DrawFieldEdges(cells.ToList(), Color.white);
             }
         }
     }

@@ -64,7 +64,7 @@ namespace VFEMech
                 RegisterHit(hitThing);
                 if (numBounces < Props.maxBounceCount)
                 {
-                    var target = NextTarget();
+                    var target = NextTarget(hitThing);
                     if (target != null)
                     {
                         FireAt(target);
@@ -123,7 +123,7 @@ namespace VFEMech
         }
         public override void Draw()
         {
-            var vec1 = Holder.DrawPos;
+            var vec1 = Holder.TrueCenter();
             var vec2 = this.DrawPos;
             if (vec2.magnitude > vec1.magnitude)
             {
@@ -174,9 +174,9 @@ namespace VFEMech
             }
             return true;
         }
-        private Thing NextTarget()
+        private Thing NextTarget(Thing currentTarget)
         {
-            var things = GenRadial.RadialDistinctThingsAround(Holder.Position, Map, Props.bounceRange, false)
+            var things = GenRadial.RadialDistinctThingsAround(currentTarget.PositionHeld, Map, Props.bounceRange, false)
                 .Where(t => (Props.targetFriendly || t.HostileTo(this.launcher)) && IsValidTarget(t)).Except(new[] { this, usedTarget.Thing });
             things = things.Except(prevTargets);
             things = things.OrderBy(t => t.Position.DistanceTo(Holder.Position));

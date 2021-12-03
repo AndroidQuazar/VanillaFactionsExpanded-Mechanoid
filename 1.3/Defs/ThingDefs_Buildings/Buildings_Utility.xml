@@ -246,7 +246,7 @@
 		<graphicData>
 			<drawSize>(3,2)</drawSize>
 			<drawOffset>(0,0,0.5)</drawOffset>
-			<texPath>Things/Buildings/Misc/BlightAutoRepeller</texPath>
+			<texPath>Things/Buildings/Misc/BlightAutorepeller</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shadowData>
 				<volume>(0.3, 0.5, 0.3)</volume>

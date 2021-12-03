@@ -49,7 +49,7 @@ namespace VFEMech
 		public static void Postfix(Room room)
 		{
 			if (room.CellCount > 320 && room.Map != null)
-{
+			{
 				if (CompRoofHolder.roofHolderPlaces.TryGetValue(room.Map, out HashSet<CompRoofHolder> roofHolders))
 				{
 					if (roofHolders.Any(x => x.parent.GetRoom() == room))

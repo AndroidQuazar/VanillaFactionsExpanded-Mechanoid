@@ -27,14 +27,11 @@ namespace VFEMech
         public static bool accuracy;
         public static void Prefix(ref ShotReport __result, Thing caster, Verb verb, LocalTargetInfo target)
         {
+            Log.Message("Caster: " + caster?.def);
             if (caster.def == VFEMDefOf.VFE_Turret_AutoTesla)
             {
                 accuracy = true;
             }
-        }
-        public static void Postfix()
-        {
-            accuracy = false;
         }
     }
 
@@ -63,6 +60,7 @@ namespace VFEMech
             {
                 __result = 1f;
             }
+            Log.Message("__result: " + __result);
         }
     }
 }

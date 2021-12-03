@@ -23,7 +23,6 @@ namespace VFEMech
 	public class CompBlightDestroyer : ThingComp
     {
 		public CompProperties_BlightDestroyer Props => base.props as CompProperties_BlightDestroyer;
-
         public override void CompTick()
         {
             base.CompTick();
