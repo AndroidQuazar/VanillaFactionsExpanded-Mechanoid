@@ -19,7 +19,7 @@ namespace VFEMech
 
         private Frame curFrameTarget;
         private Building curBuildingTarget;
-        private IntVec3 curCellTarget;
+        private IntVec3 curCellTarget = IntVec3.Invalid;
 
         public float curCraneSize;
         private IntVec3 endCranePosition;
@@ -57,15 +57,14 @@ namespace VFEMech
             }
         }
 
-        private IntVec3 startingPosition;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             compPower = this.GetComp<CompPowerTrader>();
-            startingPosition = GetStartingEndCranePosition();
             if (!respawningAfterLoad)
             {
-                endCranePosition = startingPosition;
+                curCellTarget = IntVec3.Invalid;
+                endCranePosition = GetStartingEndCranePosition();
                 CurRotation = CraneDrawPos.AngleToFlat(endCranePosition.ToVector3Shifted() + new Vector3(0, 0, 0.2f));
                 var distance = Vector3.Distance(CraneDrawPos, endCranePosition.ToVector3Shifted() + new Vector3(0, 0, 0.2f));
                 curCraneSize = distance / distanceRate;
@@ -170,10 +169,13 @@ namespace VFEMech
                 {
                     curFrameTarget = null;
                     curBuildingTarget = null;
-                    curCellTarget = startingPosition;
+                    curCellTarget = GetStartingEndCranePosition();
                     StartMovingTo(curCellTarget);
                 }
-                TryMoveTo(curCellTarget, new Vector3(0, 0, 0.2f));
+                if (curCellTarget.IsValid)
+                {
+                    TryMoveTo(curCellTarget, new Vector3(0, 0, 0.2f));
+                }
             }
         }
 

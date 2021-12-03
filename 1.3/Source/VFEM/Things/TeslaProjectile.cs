@@ -209,29 +209,16 @@ namespace VFEMech
             this.curLifetime++;
             if (curLifetime > Props.maxLifetime)
             {
-                Log.Message("Destroy 1");
                 DestroyAll();
             }
             else if (this.Holder.Destroyed)
             {
-                Log.Message("Destroy 2");
                 DestroyAll();
             }
             else if (allProjectiles.Any(x => x.Destroyed))
             {
-                Log.Message("Destroy 3");
                 DestroyAll();
             }
-            //else
-            //{
-            //    var primaryLauncher = PrimaryLauncher;
-            //    if (primaryLauncher is Building_TurretGun turretGun && turretGun.AttackVerb.state == VerbState.Idle)
-            //    {
-            //        Log.Message("Destroy 4");
-            //        DestroyAll();
-            //    }
-            //}
-
         }
         public void DestroyAll()
         {
