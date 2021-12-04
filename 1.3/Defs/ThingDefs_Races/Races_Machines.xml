@@ -460,7 +460,7 @@
 	<ThingDef ParentName="BaseVFEMachine">
 		<defName>VFE_Mechanoids_Autostrider</defName>
 		<label>autostrider</label>
-		<description>This drone-like buildable mechanoid is slow, but has a large carrying capacity and very efficient mechanisms, making it perfect as a partner on long caravan trips. Can also be ridden by pawns to increase travel speed. Design includes an Internal Fission Battery that can either be recharged at a Dock or consume Uranium to stay powered over long distances.</description>
+		<description>This drone-like buildable mechanoid is slow, but has a large carrying capacity and very efficient mechanisms, making it perfect as a partner on long caravan trips. Can also be ridden by pawns to increase travel speed. Design includes a High Capacity Internal Fission Battery that can be recharged at a Dock to stay powered over long distances.</description>
 		<statBases>
 			<MoveSpeed>1.9</MoveSpeed>
 			<ArmorRating_Blunt>0.22</ArmorRating_Blunt>
