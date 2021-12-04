@@ -101,7 +101,7 @@
 		<defName>VFE_MechanitePants</defName>
 		<label>mechanite pants</label>
 		<techLevel>Spacer</techLevel>
-		<description>>Perplexingly thin but durable nanite-infused pants. Embedded nanites optimizes the oxygen efficiency in the legs. Long-forgotten soldiers used these to walk long marches at incredible speed.</description>
+		<description>Perplexingly thin but durable nanite-infused pants. Embedded nanites optimizes the oxygen efficiency in the legs. Long-forgotten soldiers used these to walk long marches at incredible speed.</description>
 		<graphicData>
 			<texPath>Things/Pawn/Humanlike/Apparel/MechanitePants/MechanitePants</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

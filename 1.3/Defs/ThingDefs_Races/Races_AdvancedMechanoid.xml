@@ -621,7 +621,7 @@
 	<ThingDef ParentName="VFE_AdvancedMechanoidWalker">
 		<defName>VFE_Mech_AdvTermite</defName>
 		<label>advanced termite</label>
-		<description>A heavy, large-sized mechanoid. Termites specialize in burrowing, digging, and breaking through defensive structures. Defenders need to decide whether to try to eliminate the termite before it can dig through their defenses, or take it where it emerges. Unlike the simple models, advanced termites carry a much more powerful cannon that’s just as effective against structures as it is against organic enemies</description>
+		<description>A heavy, large-sized mechanoid. Termites specialize in burrowing, digging, and breaking through defensive structures. Defenders need to decide whether to try to eliminate the termite before it can dig through their defenses, or take it where it emerges. Unlike the simple models, advanced termites carry a much more powerful cannon that’s just as effective against structures as it is against organic enemies.</description>
 		<statBases>
 			<MoveSpeed>2.3</MoveSpeed>
 		</statBases>
@@ -641,8 +641,8 @@
 			<intelligence>ToolUser</intelligence>
 			<thinkTreeMain>Mechanoid</thinkTreeMain>
 			<body>MechanicalTermite</body>
-			<baseBodySize>1.6</baseBodySize>
-			<baseHealthScale>2.16</baseHealthScale>
+			<baseBodySize>1.9</baseBodySize>
+			<baseHealthScale>2.56</baseHealthScale>
 			<lifeStageAges Inherit="False">
 				<li>
 					<def>MechanoidFullyFormed</def>
@@ -674,7 +674,7 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/MechanoidFaction/AdvancedMechTermite</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>3</drawSize>
+					<drawSize>4</drawSize>
 					<shadowData>
 						<volume>(0.6, 0.8, 0.6)</volume>
 					</shadowData>
