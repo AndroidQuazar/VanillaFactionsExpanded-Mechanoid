@@ -45,7 +45,7 @@
 									<li>Production</li>
 								</buildingTags>
 								<blueprintGraphicData>
-									<texPath>Things/Buildings/LiquorMixer/LiquorMixer_Blueprint</texPath>
+									<texPath>Things/Buildings/LiquorMixer/LiquorMixer_BP</texPath>
 									<graphicClass>Graphic_Multi</graphicClass>
 								</blueprintGraphicData>
 							</building>
