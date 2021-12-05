@@ -725,6 +725,9 @@
 				<allowedWorkTypes>
 					<li>Doctor</li>
 				</allowedWorkTypes>
+				<disallowedWorkGivers>
+					<li>DoBillsMedicalHumanOperation</li>
+				</disallowedWorkGivers>
 				<extraChargingPower>1600</extraChargingPower>
 				<hoursToRecharge>12</hoursToRecharge>
 			</li>

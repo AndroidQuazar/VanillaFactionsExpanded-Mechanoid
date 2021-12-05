@@ -169,6 +169,7 @@ namespace VFEMech
             if (!hasFrameTarget)
             {
                 curFrameTarget = NextFrameTarget();
+
                 if (curFrameTarget != null)
                 {
                     curBuildingTarget = null;
@@ -183,9 +184,10 @@ namespace VFEMech
                     compPower.powerOutputInt = -200;
                 }
             }
-            else if (!hasBuildingTarget)
+            if (!hasBuildingTarget)
             {
                 curBuildingTarget = NextDamagedBuildingTarget();
+
                 if (curBuildingTarget != null)
                 {
                     curFrameTarget = null;
@@ -293,7 +295,7 @@ namespace VFEMech
             frame.workDone += num;
             if (frame.workDone >= workToBuild)
             {
-                CompleteConstruction(frame);
+                CompleteConstruction(this, frame);
             }
         }
 
@@ -344,11 +346,11 @@ namespace VFEMech
             }
         }
 
-        public void CompleteConstruction(Frame frame)
+        public static void CompleteConstruction(Building_Autocrane autoCrane, Frame frame)
         {
-            if (this.Faction != null)
+            if (autoCrane.Faction != null)
             {
-                QuestUtility.SendQuestTargetSignals(Faction.questTags, "BuiltBuilding", frame.Named("SUBJECT"));
+                QuestUtility.SendQuestTargetSignals(autoCrane.questTags, "BuiltBuilding", frame.Named("SUBJECT"));
             }
             List<CompHasSources> list = new List<CompHasSources>();
             for (int i = 0; i < frame.resourceContainer.Count; i++)
@@ -386,7 +388,7 @@ namespace VFEMech
                         list[j].TransferSourcesTo(compHasSources2);
                     }
                 }
-                thing.HitPoints = Mathf.CeilToInt((float)HitPoints / (float)frame.MaxHitPoints * (float)thing.MaxHitPoints);
+                thing.HitPoints = Mathf.CeilToInt((float)frame.HitPoints / (float)frame.MaxHitPoints * (float)thing.MaxHitPoints);
                 GenSpawn.Spawn(thing, frame.Position, map, frame.Rotation, WipeMode.FullRefund);
                 if (thingDef != null)
                 {
@@ -402,13 +404,13 @@ namespace VFEMech
                 map.terrainGrid.SetTerrain(frame.Position, (TerrainDef)frame.def.entityDefToBuild);
                 FilthMaker.RemoveAllFilth(frame.Position, map);
             }
-            curFrameTarget = null;
-            if (constructionEffecter != null)
+            autoCrane.curFrameTarget = null;
+            if (autoCrane.constructionEffecter != null)
             {
-                constructionEffecter.Cleanup();
-                constructionEffecter = null;
+                autoCrane.constructionEffecter.Cleanup();
+                autoCrane.constructionEffecter = null;
             }
-            TryFindTarget();
+            autoCrane.TryFindTarget();
         }
         private static float ClampAngle(float angle)
         {
@@ -423,7 +425,7 @@ namespace VFEMech
             return angle;
         }
 
-        private bool BaseValidator(Thing x) => x.Faction == this.Faction && !x.IsBurning() && x.Position.DistanceTo(this.Position) >= MinDistanceFromBase 
+        private bool BaseValidator(Thing x) =>  x.Faction == this.Faction && !x.IsBurning() && x.Position.DistanceTo(this.Position) >= MinDistanceFromBase 
             && !Map.reservationManager.IsReservedByAnyoneOf(x, Faction);
 
         private Frame NextFrameTarget()
