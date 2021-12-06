@@ -31,8 +31,10 @@
   
   <JobDef>
     <defName>VFEM_EnterIndoctrinationPod</defName>
-    <driverClass>JobDriver_EnterCryptosleepCasket</driverClass>
+    <driverClass>VFEMech.JobDriver_EnterIndoctrinationPod</driverClass>
     <reportString>entering indoctrination pod.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  
+  
 </Defs>

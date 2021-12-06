@@ -11,10 +11,11 @@ using Verse.AI;
 using Verse.AI.Group;
 using static UnityEngine.Random;
 using Verse.Noise;
+using Verse.Sound;
 
 namespace VFEMech
 {
-    public class Building_IndoctrinationPod : Building_CryptosleepCasket
+    public class Building_IndoctrinationPod : Building_Casket
     {
         private Ideo ideoConversionTarget;
 
@@ -85,33 +86,43 @@ namespace VFEMech
 
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
-            foreach (var opt in base.GetFloatMenuOptions(myPawn))
+            if (myPawn.IsQuestLodger())
             {
-                if (opt.Label == "EnterCryptosleepCasket".Translate())
+                yield return new FloatMenuOption("CannotUseReason".Translate("CryptosleepCasketGuestsNotAllowed".Translate()), null);
+                yield break;
+            }
+            foreach (FloatMenuOption floatMenuOption in base.GetFloatMenuOptions(myPawn))
+            {
+                yield return floatMenuOption;
+            }
+            if (innerContainer.Count != 0)
+            {
+                yield break;
+            }
+            if (!myPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Deadly))
+            {
+                yield return new FloatMenuOption("CannotUseNoPath".Translate(), null);
+                yield break;
+            }
+            JobDef jobDef = VFEMDefOf.VFEM_EnterIndoctrinationPod;
+            var reason = CannotUseNowReason(myPawn);
+            if (reason != null)
+            {
+                yield return new FloatMenuOption("VFEM.CannotEnter".Translate(reason), null);
+            }
+            else
+            {
+                string label = "VFEMech.EnterIndoctrinationPod".Translate();
+                Action action = delegate
                 {
-                    var reason = CannotUseNowReason(myPawn);
-                    if (reason != null)
-                    {
-                        yield return new FloatMenuOption("VFEM.CannotEnter".Translate(reason), null);
-                    }
-                    else
-                    {
-                        JobDef jobDef = VFEMDefOf.VFEM_EnterIndoctrinationPod;
-                        string label = "VFEMech.EnterIndoctrinationPod".Translate();
-                        Action action = delegate
-                        {
-                            Job job = JobMaker.MakeJob(jobDef, this);
-                            myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-                        };
-                        yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), myPawn, this);
-                    }
-                }
-                else
-                {
-                    yield return opt;
-                }
+                    Job job = JobMaker.MakeJob(jobDef, this);
+                    myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                };
+                yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), myPawn, this);
             }
         }
+
+
 
         public string CannotUseNowReason(Pawn myPawn)
         {
@@ -128,12 +139,27 @@ namespace VFEMech
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            foreach (var g in base.GetGizmos())
+            foreach (Gizmo gizmo in base.GetGizmos())
             {
-                yield return g;
+                yield return gizmo;
             }
-            if (this.Faction == Faction.OfPlayer)
+            if (base.Faction == Faction.OfPlayer)
             {
+                if (innerContainer.Count > 0 && def.building.isPlayerEjectable)
+                {
+                    Command_Action command_Action = new Command_Action();
+                    command_Action.action = EjectContents;
+                    command_Action.defaultLabel = "CommandPodEject".Translate();
+                    command_Action.defaultDesc = "CommandPodEjectDesc".Translate();
+                    if (innerContainer.Count == 0)
+                    {
+                        command_Action.Disable("CommandPodEjectFailEmpty".Translate());
+                    }
+                    command_Action.hotKey = KeyBindingDefOf.Misc8;
+                    command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/PodEject");
+                    yield return command_Action;
+                }
+
                 if (this.ideoConversionTarget is null)
                 {
                     yield return new Command_Action
@@ -190,8 +216,28 @@ namespace VFEMech
             }
         }
 
+
         public override void EjectContents()
         {
+            ThingDef filth_Slime = ThingDefOf.Filth_Slime;
+            foreach (Thing item in (IEnumerable<Thing>)innerContainer)
+            {
+                Pawn pawn2 = item as Pawn;
+                if (pawn2 != null)
+                {
+                    PawnComponentsUtility.AddComponentsForSpawn(pawn2);
+                    pawn2.filth.GainFilth(filth_Slime);
+                    if (pawn2.RaceProps.IsFlesh)
+                    {
+                        pawn2.health.AddHediff(HediffDefOf.CryptosleepSickness);
+                    }
+                }
+            }
+
+            if (!base.Destroyed)
+            {
+                SoundDefOf.CryptosleepCasket_Eject.PlayOneShot(SoundInfo.InMap(new TargetInfo(base.Position, base.Map)));
+            }
             var pawn = InnerPawn;
             if (pawn != null)
             {
@@ -208,8 +254,10 @@ namespace VFEMech
                     pawn.needs.mood.thoughts.memories.TryGainMemory(VFEMDefOf.VFE_Thought_BrainWashedFully);
                 }
             }
+
             base.EjectContents();
         }
+
         public override void ExposeData()
         {
             base.ExposeData();
