@@ -437,7 +437,7 @@ namespace VFEMech
         private Building NextDamagedBuildingTarget()
         {
             return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToTargets, true).OfType<Building>()
-                .Where(x => x.HitPoints < x.MaxHitPoints && BaseValidator(x)).OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
+                .Where(x => x.def.useHitPoints && x.MaxHitPoints > 0 && x.HitPoints < x.MaxHitPoints && BaseValidator(x)).OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
         }
 
         public override void ExposeData()
