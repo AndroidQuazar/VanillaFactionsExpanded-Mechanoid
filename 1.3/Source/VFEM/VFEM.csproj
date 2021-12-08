@@ -45,6 +45,7 @@
     <Compile Include="Buildings\Building_AutoSower.cs" />
     <Compile Include="Buildings\Building_IndustrialApiary.cs" />
     <Compile Include="Buildings\Building_IndoctrinationPod.cs" />
+    <Compile Include="JobDrivers\JobDriver_EnterIndoctrinationPod.cs" />
     <Compile Include="Buildings\MechShipPart.cs" />
     <Compile Include="Buildings\HullRepairModule.cs" />
     <Compile Include="Buildings\CargoHold.cs" />
