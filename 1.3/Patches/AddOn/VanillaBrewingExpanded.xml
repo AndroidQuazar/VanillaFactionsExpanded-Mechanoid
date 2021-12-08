@@ -122,7 +122,7 @@
 								<li>50</li>
 							</amount>
 							<result>Beer</result>
-							<yield>12</yield>
+							<yield>20</yield>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -138,7 +138,7 @@
 								<li>100</li>
 							</amount>
 							<result>VBE_AmbrandyNormal</result>
-							<yield>3</yield>
+							<yield>5</yield>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -156,7 +156,7 @@
 								<li>50</li>
 							</amount>
 							<result>VBE_Whiskey</result>
-							<yield>12</yield>
+							<yield>20</yield>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -172,7 +172,7 @@
 								<li>50</li>
 							</amount>
 							<result>VBE_Tequila</result>
-							<yield>12</yield>
+							<yield>20</yield>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -188,7 +188,7 @@
 								<li>50</li>
 							</amount>
 							<result>VBE_Vodka</result>
-							<yield>12</yield>
+							<yield>20</yield>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -204,7 +204,7 @@
 								<li>50</li>
 							</amount>
 							<result>VBE_Gin</result>
-							<yield>12</yield>
+							<yield>20</yield>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
