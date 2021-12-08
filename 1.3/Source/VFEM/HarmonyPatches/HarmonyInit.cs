@@ -49,7 +49,19 @@ namespace VFEMech
             AccessTools.Field(typeof(GenRadial), "RadialPatternRadii").SetValue(null, radii);
 
 
-            new Harmony("OskarPotocki.VanillaFactionsExpandedMechanoids").PatchAll();
+            var harmony = new Harmony("OskarPotocki.VanillaFactionsExpandedMechanoids");
+            harmony.PatchAll();
+            var destructivePrefix = AccessTools.Method("TacticalGroups.HarmonyPatches_CaravanSorting:AddPawnsSections");
+            if (destructivePrefix != null)
+            {
+                harmony.Patch(destructivePrefix, new HarmonyMethod(AccessTools.Method(typeof(HarmonyInit), nameof(PreventDestructivePrefix))));
+            }
+        }
+
+        public static bool PreventDestructivePrefix(ref bool __result)
+        {
+            __result = true;
+            return false;
         }
 	}
 }
