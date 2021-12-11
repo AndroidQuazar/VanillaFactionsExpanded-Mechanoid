@@ -24,16 +24,16 @@
 			<drawSize>1.1</drawSize>
 		</graphicData>
 		<statBases>
-			<WorkToMake>9000</WorkToMake>
-			<MaxHitPoints>400</MaxHitPoints>
-			<Mass>4</Mass>
+			<WorkToMake>3000</WorkToMake>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Mass>0.5</Mass>
 			<Flammability>0.4</Flammability>
-			<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.4</ArmorRating_Heat>
 			<Insulation_Cold>5</Insulation_Cold>
 			<Insulation_Heat>5</Insulation_Heat>
-			<EquipDelay>5</EquipDelay>
+			<EquipDelay>2</EquipDelay>
 		</statBases>
 		<thingCategories>
 			<li>ApparelArmor</li>
@@ -41,7 +41,7 @@
 		<costList>
 			<Cloth>70</Cloth>
 			<Steel>50</Steel>
-			<ComponentSpacer>2</ComponentSpacer>
+			<ComponentSpacer>1</ComponentSpacer>
 		</costList>
 		<apparel>
 			<bodyPartGroups>
@@ -90,9 +90,10 @@
 		<initialSeverity>1</initialSeverity>
 		<stages>
 			<li>
-				<hungerRateFactor>0.6</hungerRateFactor>
+				<hungerRateFactor>0.8</hungerRateFactor>
 				<statOffsets>
-					<ImmunityGainSpeed>+0.40</ImmunityGainSpeed>
+					<ImmunityGainSpeed>+0.10</ImmunityGainSpeed>
+					<InjuryHealingFactor>+0.10</InjuryHealingFactor>
 				</statOffsets>
 			</li>
 		</stages>
@@ -131,15 +132,15 @@
 			<MoveSpeed>+0.2</MoveSpeed>
 		</equippedStatOffsets>
 		<statBases>
-			<WorkToMake>7000</WorkToMake>
+			<WorkToMake>2000</WorkToMake>
 			<MaxHitPoints>200</MaxHitPoints>
-			<Mass>2</Mass>
+			<Mass>1</Mass>
 			<Flammability>0.4</Flammability>
-			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
-			<ArmorRating_Heat>0.10</ArmorRating_Heat>
-			<Insulation_Cold>3</Insulation_Cold>
-			<Insulation_Heat>3</Insulation_Heat>
+			<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.4</ArmorRating_Heat>
+			<Insulation_Cold>5</Insulation_Cold>
+			<Insulation_Heat>5</Insulation_Heat>
 			<EquipDelay>3</EquipDelay>
 		</statBases>
 		<apparel>

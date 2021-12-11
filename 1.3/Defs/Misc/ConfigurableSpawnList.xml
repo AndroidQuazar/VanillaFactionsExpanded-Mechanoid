@@ -7,7 +7,7 @@
 		<GizmoIcon>UI/Commands/VCEF_Command_ChooseSmallFish</GizmoIcon>
 		<GizmoDescription>GizmoDescriptionSmall</GizmoDescription>
 		<GizmoLabel>VFE_FishTrapperGizmoLabelSmall</GizmoLabel>
-		<timeInTicks>6000</timeInTicks>
+		<timeInTicks>5000</timeInTicks>
 		<items>
 			<li>VCEF_RawAnchovy</li>
 			<li>VCEF_RawAngelfish</li>
@@ -26,7 +26,7 @@
 		<GizmoIcon>UI/Commands/VCEF_Command_ChooseMediumFish</GizmoIcon>
 		<GizmoDescription>GizmoDescriptionMedium</GizmoDescription>
 		<GizmoLabel>VFE_FishTrapperGizmoLabelMedium</GizmoLabel>
-		<timeInTicks>30000</timeInTicks>
+		<timeInTicks>25000</timeInTicks>
 		<items>
 			<li>VCEF_RawBass</li>
 			<li>VCEF_RawEel</li>
@@ -49,7 +49,7 @@
 		<GizmoIcon>UI/Commands/VCEF_Command_ChooseLargeFish</GizmoIcon>
 		<GizmoDescription>GizmoDescriptionLarge</GizmoDescription>
 		<GizmoLabel>VFE_FishTrapperGizmoLabelLarge</GizmoLabel>
-		<timeInTicks>150000</timeInTicks>
+		<timeInTicks>125000</timeInTicks>
 		<items>
 			<li>VCEF_RawSalmon</li>
 			<li>VCEF_RawCatfish</li>

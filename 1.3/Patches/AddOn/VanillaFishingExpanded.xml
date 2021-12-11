@@ -77,7 +77,7 @@
 									<spawnForbidden>false</spawnForbidden>
 									<requiresPower>true</requiresPower>
 									<requiresFuel>false</requiresFuel>
-									<spawnCount>10</spawnCount>
+									<spawnCount>12</spawnCount>
 									<writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
 									<showMessageIfOwned>false</showMessageIfOwned>
 								</li>
