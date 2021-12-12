@@ -431,7 +431,7 @@ namespace VFEMech
         private Frame NextFrameTarget()
         {
             return GenRadial.RadialDistinctThingsAround(this.Position, Map, MaxDistanceToTargets, true).OfType<Frame>()
-                .Where(x => BaseValidator(x)).OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
+                .Where(x => x.MaterialsNeeded().Count <= 0 && BaseValidator(x)).OrderBy(x => x.Position.DistanceTo(endCranePosition)).FirstOrDefault();
         }
 
         private Building NextDamagedBuildingTarget()
