@@ -245,13 +245,11 @@ namespace VFEMech
                 {
                     var hediff = HediffMaker.MakeHediff(VFEMDefOf.VFE_BrainWashedNotFully, pawn);
                     pawn.health.AddHediff(hediff);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(VFEMDefOf.VFE_Thought_BrainWashedNotFully);
                 }
                 else
                 {
                     var hediff = HediffMaker.MakeHediff(VFEMDefOf.VFE_BrainWashedFully, pawn);
                     pawn.health.AddHediff(hediff);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(VFEMDefOf.VFE_Thought_BrainWashedFully);
                 }
             }
 

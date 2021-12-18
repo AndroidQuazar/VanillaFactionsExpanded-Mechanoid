@@ -41,8 +41,6 @@ namespace VFEMech
         public static HediffDef VFE_BrainWashedNotFully;
         public static HediffDef VFE_BrainWashedFully;
 
-        public static ThoughtDef VFE_Thought_BrainWashedNotFully;
-        public static ThoughtDef VFE_Thought_BrainWashedFully;
         public static ThingDef VFE_Turret_AutoTesla;
         public static JobDef VFEM_EnterIndoctrinationPod;
     }
