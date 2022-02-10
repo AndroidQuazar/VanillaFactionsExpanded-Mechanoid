@@ -121,7 +121,6 @@
     <Compile Include="Sites\SitePartWorker_MechanoidStorage.cs" />
     <Compile Include="SymbolResolverShips.cs" />
     <Compile Include="ThingSetMakers\ThingSetMaker_MechanoidStorageContent.cs" />
-    <Compile Include="Things\TeslaProjectile.cs" />
     <Compile Include="Utils\MechUtils.cs" />
     <Compile Include="MapComponent_MechWarfare.cs" />
     <Compile Include="VFEMDefOf.cs" />
