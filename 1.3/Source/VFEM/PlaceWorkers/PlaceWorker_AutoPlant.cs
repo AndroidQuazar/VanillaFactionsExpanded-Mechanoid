@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RimWorld;
 using UnityEngine;
 using Verse;
 using VFE.Mechanoids.Buildings;
@@ -14,8 +15,22 @@ namespace VFE.Mechanoids.PlaceWorkers
         public override void DrawGhost(ThingDef def, IntVec3 center, Rot4 rot, Color ghostCol, Thing thing = null)
         {
             int range = 7;
-            if (thing != null)
-                range = ((Building_AutoPlant)thing).range;
+            Building_AutoPlant autoPlant;
+
+            // Here in case the ability to uninstall is added by other mods like MinifyEverything
+            if (thing is Blueprint_Install blueprint) 
+            {
+                var toInstall = blueprint.MiniToInstallOrBuildingToReinstall;
+                if (toInstall is MinifiedThing minified)
+                    autoPlant = minified.InnerThing as Building_AutoPlant;
+                else
+                    autoPlant = toInstall as Building_AutoPlant;
+            }
+            else
+                autoPlant = thing as Building_AutoPlant; // Could be Blueprint_Build or Frame, so safe cast here
+
+            if (autoPlant != null)
+                range = autoPlant.range;
 
             List<IntVec3> cells = new List<IntVec3>();
             for(int offset=0;offset<range-1;offset++)
