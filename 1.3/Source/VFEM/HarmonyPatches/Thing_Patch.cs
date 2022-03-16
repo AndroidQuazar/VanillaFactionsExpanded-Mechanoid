@@ -42,12 +42,13 @@ namespace VFEMech
 
         public static bool SpawnSetupHelper(Thing thing, Map map)
         {
-            if (thing.stackCount > thing.def.stackLimit)
-            {
-                Log.Message(string.Join(" | ", thing.Position.GetThingList(map).Select(t => t.def.label)));
-                return false;
-            }
             return true;
+            //if (thing.stackCount > thing.def.stackLimit)
+            //{
+            //    Log.Message(string.Join(" | ", thing.Position.GetThingList(map).Select(t => t.def.label)));
+            //    return false;
+            //}
+            //return true;
         }
     }
 
