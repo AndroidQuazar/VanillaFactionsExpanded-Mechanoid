@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using AnimalBehaviours;
+using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace VFEMech
 			compClass = typeof(CompPropaganda);
 		}
 	}
-	public class CompPropaganda : ThingComp
+	public class CompPropaganda : ThingComp, PawnGizmoProvider
     {
         public Pawn Pawn => this.parent as Pawn;
         public CompProperties_Propaganda Props => base.props as CompProperties_Propaganda;
@@ -63,62 +64,6 @@ namespace VFEMech
         }
 
         public List<Hediff_Propaganda> givenHediffs = new List<Hediff_Propaganda>();
-        public override IEnumerable<Gizmo> CompGetGizmosExtra()
-        {
-            foreach (var g in base.CompGetGizmosExtra())
-            {
-                yield return g;
-            }
-            yield return new Command_Action
-            {
-                defaultLabel = "VFEM.PropagandaMode".Translate(("VFEM." + curPropagandaMode.ToString()).Translate()),
-                defaultDesc = ("VFEM." + curPropagandaMode.ToString() + "Desc").Translate(),
-                action = () =>
-                {
-                    var floatList = new List<FloatMenuOption>();
-                    foreach (var propagandaMode in Enum.GetValues(typeof(PropagandaMode)).Cast<PropagandaMode>())
-                    {
-                        if (propagandaMode != curPropagandaMode)
-                        {
-                            floatList.Add(new FloatMenuOption(("VFEM." + propagandaMode.ToString()).Translate(), delegate
-                            {
-                                curPropagandaMode = propagandaMode;
-                            }));
-                        }
-                    }
-                    Find.WindowStack.Add(new FloatMenu(floatList));
-                },
-                icon = ContentFinder<Texture2D>.Get("UI/Propaganda/" + curPropagandaMode.ToString())
-            };
-            if (curPropagandaMode == PropagandaMode.IdeoPropaganda)
-            {
-                if (this.parent.Faction.ideos.AllIdeos.Count() > 1)
-                {
-                    yield return new Command_Action
-                    {
-                        defaultLabel = "VFEM.SelectIdeology".Translate(),
-                        defaultDesc = "VFEM.SelectIdeologyDesc".Translate(),
-                        action = () =>
-                        {
-                            var floatList = new List<FloatMenuOption>();
-                            foreach (var ideo in this.parent.Faction.ideos.AllIdeos)
-                            {
-                                if (ideo != curIdeo)
-                                {
-                                    floatList.Add(new FloatMenuOption(ideo.name, delegate
-                                    {
-                                        curIdeo = ideo;
-                                    }, ideo.Icon, ideo.Color));
-                                }
-                            }
-                            Find.WindowStack.Add(new FloatMenu(floatList));
-                        },
-                        icon = curIdeo.Icon,
-                        defaultIconColor = curIdeo.Color
-                    };
-                }
-            }
-        }
 
         [HarmonyPatch(typeof(Pawn_IdeoTracker), "SetIdeo")]
         public static class SetIdeo_Patch
@@ -330,6 +275,62 @@ namespace VFEMech
             Scribe_Values.Look(ref curPropagandaMode, "curPropagandaMode");
             Scribe_Collections.Look(ref givenHediffs, "givenHediffs", LookMode.Reference);
             Scribe_References.Look(ref curIdeo, "curIdeo");
+        }
+
+        public IEnumerable<Gizmo> GetGizmos()
+        {
+            if (this.parent.Faction == Faction.OfPlayer)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "VFEM.PropagandaMode".Translate(("VFEM." + curPropagandaMode.ToString()).Translate()),
+                    defaultDesc = ("VFEM." + curPropagandaMode.ToString() + "Desc").Translate(),
+                    action = () =>
+                    {
+                        var floatList = new List<FloatMenuOption>();
+                        foreach (var propagandaMode in Enum.GetValues(typeof(PropagandaMode)).Cast<PropagandaMode>())
+                        {
+                            if (propagandaMode != curPropagandaMode)
+                            {
+                                floatList.Add(new FloatMenuOption(("VFEM." + propagandaMode.ToString()).Translate(), delegate
+                                {
+                                    curPropagandaMode = propagandaMode;
+                                }));
+                            }
+                        }
+                        Find.WindowStack.Add(new FloatMenu(floatList));
+                    },
+                    icon = ContentFinder<Texture2D>.Get("UI/Propaganda/" + curPropagandaMode.ToString())
+                };
+                if (curPropagandaMode == PropagandaMode.IdeoPropaganda)
+                {
+                    if (this.parent.Faction.ideos.AllIdeos.Count() > 1)
+                    {
+                        yield return new Command_Action
+                        {
+                            defaultLabel = "VFEM.SelectIdeology".Translate(),
+                            defaultDesc = "VFEM.SelectIdeologyDesc".Translate(),
+                            action = () =>
+                            {
+                                var floatList = new List<FloatMenuOption>();
+                                foreach (var ideo in this.parent.Faction.ideos.AllIdeos)
+                                {
+                                    if (ideo != curIdeo)
+                                    {
+                                        floatList.Add(new FloatMenuOption(ideo.name, delegate
+                                        {
+                                            curIdeo = ideo;
+                                        }, ideo.Icon, ideo.Color));
+                                    }
+                                }
+                                Find.WindowStack.Add(new FloatMenu(floatList));
+                            },
+                            icon = curIdeo.Icon,
+                            defaultIconColor = curIdeo.Color
+                        };
+                    }
+                }
+            }
         }
     }
 }
