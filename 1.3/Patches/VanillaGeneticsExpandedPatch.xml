@@ -1,70 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-
-
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Genetic Rim</li>
+			<li>Vanilla Genetics Expanded</li>
 		</mods>
-
 		<match Class="PatchOperationSequence">
 			<success>Always</success>
 			<operations>
-
 				<li Class="PatchOperationAdd">
-					<xpath>/Defs/RecipeDef[defName = "GR_ExtractGenesMechanoid"]/ingredients/li/filter/thingDefs</xpath>
-					<value>
-						<li>Corpse_VFE_Mech_AdvancedCentipede</li>
-						<li>Corpse_VFE_Mech_AdvancedLancer</li>
-						<li>Corpse_VFE_Mech_AdvancedKnight</li>
-						<li>Corpse_VFE_Mech_AdvancedInquisitor</li>
-						<li>Corpse_VFE_Mech_AdvancedScyther</li>
-						<li>Corpse_VFE_Mech_AdvancedPikeman</li>
-						<li>Corpse_VFE_Mech_AdvancedCarpenter</li>
-						<li>Corpse_VFE_AncientMech_AncientCarpenter</li>
-						<li>Corpse_VFE_Mech_Centipede</li>
-						<li>Corpse_VFE_Mech_Lancer</li>
-						<li>Corpse_VFE_Mech_Knight</li>
-						<li>Corpse_VFE_Mech_Inquisitor</li>
-						<li>Corpse_VFE_Mech_Scyther</li>
-						<li>Corpse_VFE_Mech_Pikeman</li>
-						<li>Corpse_VFE_Mech_Carpenter</li>					
-					</value>
-				</li>
-
-				<li Class="PatchOperationAdd">
-					<xpath>/Defs/RecipeDef[defName = "GR_ExtractGenesMechanoid"]/fixedIngredientFilter/thingDefs</xpath>
-					<value>
-						<li>Corpse_VFE_Mech_AdvancedCentipede</li>
-						<li>Corpse_VFE_Mech_AdvancedLancer</li>
-						<li>Corpse_VFE_Mech_AdvancedKnight</li>
-						<li>Corpse_VFE_Mech_AdvancedInquisitor</li>
-						<li>Corpse_VFE_Mech_AdvancedScyther</li>
-						<li>Corpse_VFE_Mech_AdvancedPikeman</li>
-						<li>Corpse_VFE_Mech_AdvancedCarpenter</li>
-						<li>Corpse_VFE_AncientMech_AncientCarpenter</li>
-						<li>Corpse_VFE_Mech_Centipede</li>
-						<li>Corpse_VFE_Mech_Lancer</li>
-						<li>Corpse_VFE_Mech_Knight</li>
-						<li>Corpse_VFE_Mech_Inquisitor</li>
-						<li>Corpse_VFE_Mech_Scyther</li>
-						<li>Corpse_VFE_Mech_Pikeman</li>
-						<li>Corpse_VFE_Mech_Carpenter</li>
-					</value>
-				</li>
-
-
-				<li Class="PatchOperationAdd"> 
 					<success>Always</success>
 					<xpath>/Defs</xpath>
 					<value>
-
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ElectronicsFabricationFactory_AdvancedAssembler_MechanoidBioChipRecipe</defName>
 							<building>VFEM_ElectronicsFabricationFactory_AdvancedAssembler</building>
 							<items>
 								<li>Steel</li>
-							</items>	
+							</items>
 							<secondItems>
 								<li>ComponentSpacer</li>
 							</secondItems>
@@ -80,24 +32,23 @@
 								<li>250</li>
 								<li>15</li>
 							</amount>
-							<result>GR_MechanoidInterfaceChip</result>	
-							<yield>1</yield>	
+							<result>GR_MechanoidChip</result>
+							<yield>1</yield>
 							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>20</maxTotalOutput>							
+							<maxTotalOutput>20</maxTotalOutput>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_GRCorpsesRecipe</defName>
 							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
 							<items>
 								<li>GR_Corpses</li>
-							</items>	
+							</items>
 							<amount>
 								<li>1</li>
 							</amount>
-							<result>VFEM_ProcessedMeat</result>	
+							<result>VFEM_ProcessedMeat</result>
 							<isButcheryRecipe>true</isButcheryRecipe>
 							<efficiency>2</efficiency>
 							<outputLimitControlled>true</outputLimitControlled>
@@ -106,79 +57,17 @@
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-
 						<ItemProcessor.CombinationDef>
-							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipe</defName>
-							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
+							<defName>VFEM_VersatileAssembler_BoosterImmuno</defName>
+							<building>VFEM_VersatileAssembler</building>
 							<items>
-								<li>CorpsesAnimal</li>
-							</items>	
-							<amount>
-								<li>1</li>
-							</amount>
-							<result>GR_OrganicPulp</result>	
-							<yield>2</yield>
-							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>200</maxTotalOutput>
-							<isCategoryRecipe>true</isCategoryRecipe>
-							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
-						</ItemProcessor.CombinationDef>
-
-						<ItemProcessor.CombinationDef>
-							<defName>VFEM_ProvisionsPackagingFactory_MeatGrinder_PulpRecipeFromHybrids</defName>
-							<building>VFEM_ProvisionsPackagingFactory_MeatGrinder</building>
-							<items>
-								<li>GR_Corpses</li>
-							</items>	
-							<amount>
-								<li>1</li>
-							</amount>
-							<result>GR_OrganicPulp</result>	
-							<yield>2</yield>
-							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>200</maxTotalOutput>
-							<isCategoryRecipe>true</isCategoryRecipe>
-							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.025</singleTimeIfNotQualityIncreasing>
-						</ItemProcessor.CombinationDef>
-
-						<ItemProcessor.CombinationDef>
-							<defName>VFEM_MedicinalCompoundingFactory_MedicineGranulator_AgePills</defName>
-							<building>VFEM_MedicinalCompoundingFactory_MedicineGranulator</building>
-							<items>
-								<li>MedicineHerbal</li>
-							</items>	
+								<li>Steel</li>
+							</items>
 							<secondItems>
+								<li>Steel</li>
+							</secondItems>
+							<thirdItems>
 								<li>Neutroamine</li>
-							</secondItems>
-							<thirdItems>
-								<li>PsychoidLeaves</li>
-							</thirdItems>
-							<amount>
-								<li>2</li>
-								<li>2</li>
-								<li>5</li>
-							</amount>
-							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>100</maxTotalOutput>
-							<result>GR_AgePills</result>	
-							<yield>2</yield>		
-							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
-						</ItemProcessor.CombinationDef>
-						
-						<ItemProcessor.CombinationDef>
-							<defName>VFEM_VersatileAssembler_Incubators</defName>
-							<building>VFEM_VersatileAssembler</building>
-							<items>
-								<li>Steel</li>
-							</items>	
-							<secondItems>
-								<li>Steel</li>
-							</secondItems>
-							<thirdItems>
-								<li>GR_OrganicPulp</li>
 							</thirdItems>
 							<amount>
 								<li>2</li>
@@ -186,102 +75,176 @@
 								<li>1</li>
 							</amount>
 							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>1</maxTotalOutput>
-							<result>GR_EmptyIncubator</result>	
-							<yield>1</yield>		
+							<maxTotalOutput>75</maxTotalOutput>
+							<result>GR_BoosterImmuno</result>
+							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
-							<defName>VFEM_VersatileAssembler_SteelMesh</defName>
+							<defName>VFEM_VersatileAssembler_BoosterHarmono</defName>
 							<building>VFEM_VersatileAssembler</building>
 							<items>
 								<li>Steel</li>
-							</items>	
+							</items>
 							<secondItems>
 								<li>Steel</li>
 							</secondItems>
 							<thirdItems>
-								<li>Steel</li>
+								<li>Chemfuel</li>
 							</thirdItems>
 							<amount>
-								<li>15</li>
-								<li>15</li>
-								<li>15</li>
-							</amount>
-							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>1</maxTotalOutput>
-							<result>GR_ImplantSteelWireMesh</result>	
-							<yield>1</yield>		
-							<useQualityIncreasing>false</useQualityIncreasing>
-							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
-						</ItemProcessor.CombinationDef>
-						<ItemProcessor.CombinationDef>
-							<defName>VFEM_VersatileAssembler_PlasteelMesh</defName>
-							<building>VFEM_VersatileAssembler</building>
-							<items>
-								<li>Steel</li>
-							</items>	
-							<secondItems>
-								<li>Plasteel</li>
-							</secondItems>
-							<thirdItems>
-								<li>ComponentIndustrial</li>
-							</thirdItems>
-							<amount>
-								<li>40</li>
-								<li>15</li>
 								<li>2</li>
+								<li>2</li>
+								<li>1</li>
 							</amount>
 							<outputLimitControlled>true</outputLimitControlled>
-							<maxTotalOutput>1</maxTotalOutput>
-							<result>GR_ImplantSteelWireMesh</result>	
-							<yield>1</yield>		
+							<maxTotalOutput>75</maxTotalOutput>
+							<result>GR_BoosterHarmono</result>
+							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
 						<ItemProcessor.CombinationDef>
-							<defName>VFEM_VersatileAssembler_UraniumMesh</defName>
+							<defName>VFEM_VersatileAssembler_BoosterTempo</defName>
 							<building>VFEM_VersatileAssembler</building>
 							<items>
-								<li>Uranium</li>
-							</items>	
+								<li>Steel</li>
+							</items>
 							<secondItems>
-								<li>ComponentIndustrial</li>
+								<li>Steel</li>
+							</secondItems>
+							<thirdItems>
+								<li>InsectJelly</li>
+							</thirdItems>
+							<amount>
+								<li>2</li>
+								<li>2</li>
+								<li>1</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>75</maxTotalOutput>
+							<result>GR_BoosterTempo</result>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_VersatileAssembler_BoosterFertility</defName>
+							<building>VFEM_VersatileAssembler</building>
+							<items>
+								<li>Steel</li>
+							</items>
+							<secondItems>
+								<li>Steel</li>
+							</secondItems>
+							<thirdItems>
+								<li>MedicineIndustrial</li>
+							</thirdItems>
+							<amount>
+								<li>2</li>
+								<li>2</li>
+								<li>1</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>75</maxTotalOutput>
+							<result>GR_BoosterFertility</result>
+							<yield>1</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_VersatileAssembler_BoosterStabilizator</defName>
+							<building>VFEM_VersatileAssembler</building>
+							<items>
+								<li>Steel</li>
+							</items>
+							<secondItems>
+								<li>GR_BoosterHarmono</li>
+							</secondItems>
+							<thirdItems>
+								<li>GR_BoosterImmuno</li>
+							</thirdItems>
+							<amount>
+								<li>2</li>
+								<li>1</li>
+								<li>1</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>75</maxTotalOutput>
+							<result>GR_BoosterStabilizator</result>
+							<yield>2</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_VersatileAssembler_BoosterController</defName>
+							<building>VFEM_VersatileAssembler</building>
+							<items>
+								<li>Steel</li>
+							</items>
+							<secondItems>
+								<li>Steel</li>
 							</secondItems>
 							<thirdItems>
 								<li>ComponentSpacer</li>
 							</thirdItems>
 							<amount>
-								<li>50</li>
-								<li>2</li>
+								<li>1</li>
+								<li>1</li>
+								<li>1</li>
+							</amount>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>75</maxTotalOutput>
+							<result>GR_BoosterController</result>
+							<yield>2</yield>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_VersatileAssembler_Excavator</defName>
+							<building>VFEM_VersatileAssembler</building>
+							<items>
+								<li>Steel</li>
+							</items>
+							<secondItems>
+								<li>Steel</li>
+							</secondItems>
+							<thirdItems>
+								<li>ComponentIndustrial</li>
+							</thirdItems>
+							<amount>
+								<li>15</li>
+								<li>15</li>
 								<li>1</li>
 							</amount>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>1</maxTotalOutput>
-							<result>GR_ImplantUraniumWireMesh</result>	
-							<yield>1</yield>		
+							<result>GR_GenomeExcavator</result>
+							<yield>1</yield>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-
-
-
+						<ItemProcessor.CombinationDef>
+							<defName>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier_DeepchemRecipe</defName>
+							<building>VFEM_MunitionsAndArmamentFactory_ChemfuelClarifier</building>
+							<items>
+								<li>GR_CompressedChemfuel</li>
+							</items>
+							<amount>
+								<li>25</li>
+							</amount>
+							<result>Chemfuel</result>
+							<yield>50</yield>
+							<outputLimitControlled>true</outputLimitControlled>
+							<maxTotalOutput>1000</maxTotalOutput>
+							<useQualityIncreasing>false</useQualityIncreasing>
+							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
+						</ItemProcessor.CombinationDef>
 					</value>
 				</li>
-
-
-
-
-
-
-
-
-
 			</operations>
 		</match>
 	</Operation>
-
-
 </Patch>
 

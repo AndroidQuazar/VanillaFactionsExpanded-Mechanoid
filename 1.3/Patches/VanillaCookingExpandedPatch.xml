@@ -1,25 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-
-
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Vanilla Cooking Expanded</li>
 		</mods>
-
 		<match Class="PatchOperationSequence">
 			<success>Always</success>
 			<operations>
-
-
-
-				<li Class="PatchOperationAdd"> 
+				<li Class="PatchOperationAdd">
 					<success>Always</success>
 					<xpath>/Defs</xpath>
 					<value>
-
 						<!--======= Cannery =======-->
-
 						<ThingDef ParentName="BuildingBase">
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery</defName>
 							<label>cannery</label>
@@ -80,7 +72,6 @@
 							<hasInteractionCell>True</hasInteractionCell>
 							<interactionCellOffset>(0,0,3)</interactionCellOffset>
 							<surfaceType>Item</surfaceType>
-
 							<comps>
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
@@ -100,24 +91,18 @@
 									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
 									<noPowerDestroysProgress>true</noPowerDestroysProgress>
 									<isMachinePausable>true</isMachinePausable>
-									<rareTicksToDestroy>10</rareTicksToDestroy>				
+									<rareTicksToDestroy>10</rareTicksToDestroy>
 									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
 									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
 									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
 									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
 									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
 									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
-
 									<inputSlots>
 										<li>(-2,0,-2)</li>
 										<li>(2,0,-2)</li>
-
 									</inputSlots>
-
-
-
 								</li>
-
 							</comps>
 							<researchPrerequisites Inherit='False'>
 								<li>VFE_ProvisionsPackagingFactory</li>
@@ -128,18 +113,17 @@
 									<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 								</li>
 							</modExtensions>
-						</ThingDef>												
-
+						</ThingDef>
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery_Meats</defName>
 							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
 							<items>
 								<li>MeatRaw</li>
-							</items>	
+							</items>
 							<amount>
 								<li>20</li>
 							</amount>
-							<result>VCE_CannedMeat</result>	
+							<result>VCE_CannedMeat</result>
 							<yield>20</yield>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
@@ -147,37 +131,35 @@
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery_Produce</defName>
 							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
 							<items>
 								<li>PlantFoodRaw</li>
-							</items>	
+							</items>
 							<amount>
 								<li>20</li>
 							</amount>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
-							<result>VCE_CannedProduce</result>	
+							<result>VCE_CannedProduce</result>
 							<yield>20</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-
 						<ItemProcessor.CombinationDef>
 							<defName>VFEM_ProvisionsPackagingFactory_Cannery_Eggs</defName>
 							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
 							<items>
 								<li>EggsUnfertilized</li>
-							</items>	
+							</items>
 							<amount>
 								<li>4</li>
 							</amount>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
-							<result>VCE_CannedAP</result>	
+							<result>VCE_CannedAP</result>
 							<yield>20</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
@@ -188,21 +170,19 @@
 							<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
 							<items>
 								<li>EggsFertilized</li>
-							</items>	
+							</items>
 							<amount>
 								<li>4</li>
 							</amount>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
-							<result>VCE_CannedAP</result>	
+							<result>VCE_CannedAP</result>
 							<yield>20</yield>
 							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>0.1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-
 						<!--======= Industrial Cheese Press =======-->
-
 						<ThingDef ParentName="BuildingBase">
 							<defName>VFEM_IndustrialCheesePress</defName>
 							<label>industrial cheese press</label>
@@ -263,7 +243,6 @@
 							<hasInteractionCell>True</hasInteractionCell>
 							<interactionCellOffset>(0,0,4)</interactionCellOffset>
 							<surfaceType>Item</surfaceType>
-
 							<comps>
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
@@ -279,29 +258,23 @@
 									<isMachineSpecifiesOutput>true</isMachineSpecifiesOutput>
 									<ignoresIngredientLists>false</ignoresIngredientLists>
 									<isAutoMachine>true</isAutoMachine>
-									<isAutoDropper>true</isAutoDropper>									
+									<isAutoDropper>true</isAutoDropper>
 									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
 									<noPowerDestroysProgress>true</noPowerDestroysProgress>
 									<isMachinePausable>true</isMachinePausable>
-									<rareTicksToDestroy>10</rareTicksToDestroy>				
+									<rareTicksToDestroy>10</rareTicksToDestroy>
 									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
 									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
 									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
 									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
 									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
 									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
-
 									<inputSlots>
 										<li>(-1,0,-3)</li>
 										<li>(0,0,-3)</li>
 										<li>(1,0,-3)</li>
-
 									</inputSlots>
-
-
-
 								</li>
-
 							</comps>
 							<researchPrerequisites Inherit='False'>
 								<li>VFE_CheeseMaking</li>
@@ -313,7 +286,6 @@
 								</li>
 							</modExtensions>
 						</ThingDef>
-
 						<ResearchProjectDef>
 							<defName>VFE_CheeseMaking</defName>
 							<label>industrial cheesemaking</label>
@@ -332,14 +304,14 @@
 							<building>VFEM_IndustrialCheesePress</building>
 							<items>
 								<li>Milk</li>
-							</items>	
+							</items>
 							<amount>
 								<li>50</li>
 							</amount>
 							<outputLimitControlled>true</outputLimitControlled>
 							<maxTotalOutput>300</maxTotalOutput>
-							<result>VCE_Cheese</result>	
-							<yield>25</yield>							
+							<result>VCE_Cheese</result>
+							<yield>25</yield>
 							<useQualityIncreasing>true</useQualityIncreasing>
 							<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 							<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -349,9 +321,7 @@
 							<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
 							<legendaryQualityAgeDaysThreshold>38</legendaryQualityAgeDaysThreshold>
 						</ItemProcessor.CombinationDef>
-
 						<!--======= Industrial Soup Vat =======-->
-
 						<ThingDef ParentName="BuildingBase">
 							<defName>VFEM_IndustrialSoupVat</defName>
 							<label>industrial soup vat</label>
@@ -412,7 +382,6 @@
 							<hasInteractionCell>True</hasInteractionCell>
 							<interactionCellOffset>(0,0,3)</interactionCellOffset>
 							<surfaceType>Item</surfaceType>
-
 							<comps>
 								<li Class="CompProperties_Power">
 									<compClass>CompPowerTrader</compClass>
@@ -432,24 +401,18 @@
 									<isCompletelyAutoMachine>true</isCompletelyAutoMachine>
 									<noPowerDestroysProgress>true</noPowerDestroysProgress>
 									<isMachinePausable>true</isMachinePausable>
-									<rareTicksToDestroy>10</rareTicksToDestroy>				
+									<rareTicksToDestroy>10</rareTicksToDestroy>
 									<destroyIngredientsAtStartOfProcess>false</destroyIngredientsAtStartOfProcess>
 									<chooseIngredientsIcon>UI/IP_SetOutput</chooseIngredientsIcon>
 									<InsertFirstItemDesc>IP_ChooseOutput</InsertFirstItemDesc>
 									<bringIngredientsText>VFEM_BringIngredients</bringIngredientsText>
 									<bringIngredientsDesc>VFEM_BringIngredientsDesc</bringIngredientsDesc>
 									<bringIngredientsIcon>UI/IP_Begin</bringIngredientsIcon>
-
 									<inputSlots>
 										<li>(-2,0,-2)</li>
 										<li>(2,0,-2)</li>
-
 									</inputSlots>
-
-
-
 								</li>
-
 							</comps>
 							<researchPrerequisites Inherit='False'>
 								<li>VFE_IndustrialSoups</li>
@@ -460,7 +423,7 @@
 									<showBlueprintInGhostMode>true</showBlueprintInGhostMode>
 								</li>
 							</modExtensions>
-						</ThingDef>		
+						</ThingDef>
 						<ResearchProjectDef>
 							<defName>VFE_IndustrialSoups</defName>
 							<label>industrial soups</label>
@@ -479,7 +442,7 @@
 							<building>VFEM_IndustrialSoupVat</building>
 							<items>
 								<li>PlantFoodRaw</li>
-							</items>	
+							</items>
 							<secondItems>
 								<li>PlantFoodRaw</li>
 							</secondItems>
@@ -489,9 +452,9 @@
 							</amount>
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 							<resultSpecialIcon>Things/Meals/VCE_SoupSimple/VCE_SoupSimple_b</resultSpecialIcon>
-							<result>VCE_CookedSoupSimple</result>	
-							<yield>10</yield>	
-							<isCategoryRecipe>true</isCategoryRecipe>							
+							<result>VCE_CookedSoupSimple</result>
+							<yield>10</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
@@ -500,7 +463,7 @@
 							<building>VFEM_IndustrialSoupVat</building>
 							<items>
 								<li>MeatRaw</li>
-							</items>	
+							</items>
 							<secondItems>
 								<li>MeatRaw</li>
 							</secondItems>
@@ -510,9 +473,9 @@
 							</amount>
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 							<resultSpecialIcon>Things/Meals/VCE_SoupSimple/VCE_SoupSimple_b</resultSpecialIcon>
-							<result>VCE_CookedSoupSimple</result>	
-							<yield>10</yield>	
-							<isCategoryRecipe>true</isCategoryRecipe>							
+							<result>VCE_CookedSoupSimple</result>
+							<yield>10</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
@@ -521,7 +484,7 @@
 							<building>VFEM_IndustrialSoupVat</building>
 							<items>
 								<li>MeatRaw</li>
-							</items>	
+							</items>
 							<secondItems>
 								<li>PlantFoodRaw</li>
 							</secondItems>
@@ -531,9 +494,9 @@
 							</amount>
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 							<resultSpecialIcon>Things/Meals/VCE_SoupFine/VCE_SoupFine_b</resultSpecialIcon>
-							<result>VCE_CookedSoupFine</result>	
-							<yield>10</yield>	
-							<isCategoryRecipe>true</isCategoryRecipe>							
+							<result>VCE_CookedSoupFine</result>
+							<yield>10</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
@@ -542,7 +505,7 @@
 							<building>VFEM_IndustrialSoupVat</building>
 							<items>
 								<li>MeatRaw</li>
-							</items>	
+							</items>
 							<secondItems>
 								<li>PlantFoodRaw</li>
 							</secondItems>
@@ -552,39 +515,35 @@
 							</amount>
 							<resultUsesSpecialIcon>true</resultUsesSpecialIcon>
 							<resultSpecialIcon>Things/Meals/VCE_SoupLavish/VCE_SoupLavish_b</resultSpecialIcon>
-							<result>VCE_CookedSoupLavish</result>	
-							<yield>10</yield>	
-							<isCategoryRecipe>true</isCategoryRecipe>							
+							<result>VCE_CookedSoupLavish</result>
+							<yield>10</yield>
+							<isCategoryRecipe>true</isCategoryRecipe>
 							<useQualityIncreasing>false</useQualityIncreasing>
 							<singleTimeIfNotQualityIncreasing>1</singleTimeIfNotQualityIncreasing>
 						</ItemProcessor.CombinationDef>
-
 					</value>
 				</li>
-
 				<li Class="PatchOperationFindMod">
 					<mods>
 						<li>Vanilla Fishing Expanded</li>
 					</mods>
-
 					<match Class="PatchOperationSequence">
 						<success>Always</success>
 						<operations>
-							<li Class="PatchOperationAdd"> 
+							<li Class="PatchOperationAdd">
 								<success>Always</success>
 								<xpath>/Defs</xpath>
 								<value>
-
 									<ItemProcessor.CombinationDef>
 										<defName>VFEM_ProvisionsPackagingFactory_Cannery_Fish</defName>
 										<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
 										<items>
 											<li>VCEF_RawFishCategory</li>
-										</items>	
+										</items>
 										<amount>
 											<li>20</li>
 										</amount>
-										<result>VCE_CannedFish</result>	
+										<result>VCE_CannedFish</result>
 										<yield>20</yield>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
@@ -597,30 +556,27 @@
 						</operations>
 					</match>
 				</li>
-
 				<li Class="PatchOperationFindMod">
 					<mods>
 						<li>Vanilla Plants Expanded</li>
 					</mods>
-
 					<match Class="PatchOperationSequence">
 						<success>Always</success>
 						<operations>
-							<li Class="PatchOperationAdd"> 
+							<li Class="PatchOperationAdd">
 								<success>Always</success>
 								<xpath>/Defs</xpath>
 								<value>
-
 									<ItemProcessor.CombinationDef>
 										<defName>VFEM_ProvisionsPackagingFactory_Cannery_Fruit</defName>
 										<building>VFEM_ProvisionsPackagingFactory_Cannery</building>
 										<items>
 											<li>VCE_Fruit</li>
-										</items>	
+										</items>
 										<amount>
 											<li>20</li>
 										</amount>
-										<result>VCE_CannedFruit</result>	
+										<result>VCE_CannedFruit</result>
 										<yield>20</yield>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
@@ -633,16 +589,14 @@
 						</operations>
 					</match>
 				</li>
-
 				<li Class="PatchOperationFindMod">
 					<mods>
 						<li>Alpha Animals</li>
 					</mods>
-
 					<match Class="PatchOperationSequence">
 						<success>Always</success>
 						<operations>
-							<li Class="PatchOperationAdd"> 
+							<li Class="PatchOperationAdd">
 								<success>Always</success>
 								<xpath>/Defs</xpath>
 								<value>
@@ -651,14 +605,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>AA_BlueMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_BlueCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_BlueCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -673,14 +627,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>AA_GowMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_GowCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_GowCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>6</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -699,11 +653,10 @@
 					<mods>
 						<li>Forsakens: Fauna</li>
 					</mods>
-
 					<match Class="PatchOperationSequence">
 						<success>Always</success>
 						<operations>
-							<li Class="PatchOperationAdd"> 
+							<li Class="PatchOperationAdd">
 								<success>Always</success>
 								<xpath>/Defs</xpath>
 								<value>
@@ -712,14 +665,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>FO_NightMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_NightCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_NightCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -729,22 +682,19 @@
 										<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
 										<legendaryQualityAgeDaysThreshold>37</legendaryQualityAgeDaysThreshold>
 									</ItemProcessor.CombinationDef>
-
 								</value>
 							</li>
 						</operations>
 					</match>
 				</li>
-
 				<li Class="PatchOperationFindMod">
 					<mods>
-						<li>Genetic Rim</li>
+						<li>Vanilla Genetics Expanded</li>
 					</mods>
-
 					<match Class="PatchOperationSequence">
 						<success>Always</success>
 						<operations>
-							<li Class="PatchOperationAdd"> 
+							<li Class="PatchOperationAdd">
 								<success>Always</success>
 								<xpath>/Defs</xpath>
 								<value>
@@ -753,14 +703,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_WeirdMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_WeirdCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_WeirdCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>4</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -775,14 +725,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_MechaMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_MechaCheese</result>	
-										<yield>1</yield>							
+										<result>VCE_MechaCheese</result>
+										<yield>1</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -797,14 +747,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_BearffaloMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_BearffaloCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_BearffaloCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>4</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -819,14 +769,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_ThrumffaloMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>40</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_ThrumffaloGouda</result>	
-										<yield>20</yield>							
+										<result>VCE_ThrumffaloGouda</result>
+										<yield>20</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>4</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -841,14 +791,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_MuffalochickenMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_LumpyCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_LumpyCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>4</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -863,14 +813,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_ChickenffaloMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>70</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_ChickenffaloCheese</result>	
-										<yield>35</yield>							
+										<result>VCE_ChickenffaloCheese</result>
+										<yield>35</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>2</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>5</poorQualityAgeDaysThreshold>
@@ -885,14 +835,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_MuffalobearMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_BrownCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_BrownCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -907,14 +857,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_WolffaloMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_HairyCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_HairyCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -929,14 +879,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>GR_RatMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_RatCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_RatCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -946,165 +896,155 @@
 										<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
 										<legendaryQualityAgeDaysThreshold>37</legendaryQualityAgeDaysThreshold>
 									</ItemProcessor.CombinationDef>
-
 								</value>
+							</li>
+							<li Class="PatchOperationFindMod">
+								<mods>
+									<li>Call of Cthulhu - Cosmic Horrors</li>
+								</mods>
+								<match Class="PatchOperationSequence">
+									<success>Always</success>
+									<operations>
+										<li Class="PatchOperationAdd">
+											<success>Always</success>
+											<xpath>/Defs</xpath>
+											<value>
+												<ItemProcessor.CombinationDef>
+													<defName>VFEM_IndustrialCheesePress_EldritchMilk</defName>
+													<building>VFEM_IndustrialCheesePress</building>
+													<items>
+														<li>GR_EldritchMilk</li>
+													</items>
+													<amount>
+														<li>50</li>
+													</amount>
+													<outputLimitControlled>true</outputLimitControlled>
+													<maxTotalOutput>300</maxTotalOutput>
+													<result>VCE_EldritchCheese</result>
+													<yield>25</yield>
+													<useQualityIncreasing>true</useQualityIncreasing>
+													<awfulQualityAgeDaysThreshold>6</awfulQualityAgeDaysThreshold>
+													<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
+													<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
+													<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
+													<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
+													<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
+													<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
+												</ItemProcessor.CombinationDef>
+											</value>
+										</li>
+									</operations>
+								</match>
+							</li>
+							<li Class="PatchOperationFindMod">
+								<mods>
+									<li>Dinosauria</li>
+								</mods>
+								<match Class="PatchOperationSequence">
+									<success>Always</success>
+									<operations>
+										<li Class="PatchOperationAdd">
+											<success>Always</success>
+											<xpath>/Defs</xpath>
+											<value>
+												<ItemProcessor.CombinationDef>
+													<defName>VFEM_IndustrialCheesePress_DinoMilk</defName>
+													<building>VFEM_IndustrialCheesePress</building>
+													<items>
+														<li>GR_DinoMilk</li>
+													</items>
+													<amount>
+														<li>50</li>
+													</amount>
+													<outputLimitControlled>true</outputLimitControlled>
+													<maxTotalOutput>300</maxTotalOutput>
+													<result>VCE_DinoCheese</result>
+													<yield>25</yield>
+													<useQualityIncreasing>true</useQualityIncreasing>
+													<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
+													<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
+													<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
+													<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
+													<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
+													<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
+													<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
+												</ItemProcessor.CombinationDef>
+											</value>
+										</li>
+									</operations>
+								</match>
+							</li>
+							<li Class="PatchOperationFindMod">
+								<mods>
+									<li>Megafauna</li>
+								</mods>
+								<match Class="PatchOperationSequence">
+									<success>Always</success>
+									<operations>
+										<li Class="PatchOperationAdd">
+											<success>Always</success>
+											<xpath>/Defs</xpath>
+											<value>
+												<ItemProcessor.CombinationDef>
+													<defName>VFEM_IndustrialCheesePress_ParaMilk</defName>
+													<building>VFEM_IndustrialCheesePress</building>
+													<items>
+														<li>GR_ParaMilk</li>
+													</items>
+													<amount>
+														<li>40</li>
+													</amount>
+													<outputLimitControlled>true</outputLimitControlled>
+													<maxTotalOutput>300</maxTotalOutput>
+													<result>VCE_ParaceramuffaloBrie</result>
+													<yield>20</yield>
+													<useQualityIncreasing>true</useQualityIncreasing>
+													<awfulQualityAgeDaysThreshold>7</awfulQualityAgeDaysThreshold>
+													<poorQualityAgeDaysThreshold>9</poorQualityAgeDaysThreshold>
+													<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
+													<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
+													<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
+													<masterworkQualityAgeDaysThreshold>32</masterworkQualityAgeDaysThreshold>
+													<legendaryQualityAgeDaysThreshold>50</legendaryQualityAgeDaysThreshold>
+												</ItemProcessor.CombinationDef>
+												<ItemProcessor.CombinationDef>
+													<defName>VFEM_IndustrialCheesePress_GreenMilk</defName>
+													<building>VFEM_IndustrialCheesePress</building>
+													<items>
+														<li>GR_GreenMilk</li>
+													</items>
+													<amount>
+														<li>50</li>
+													</amount>
+													<outputLimitControlled>true</outputLimitControlled>
+													<maxTotalOutput>300</maxTotalOutput>
+													<result>VCE_GreenCheese</result>
+													<yield>25</yield>
+													<useQualityIncreasing>true</useQualityIncreasing>
+													<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
+													<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
+													<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
+													<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
+													<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
+													<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
+													<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
+												</ItemProcessor.CombinationDef>
+											</value>
+										</li>
+									</operations>
+								</match>
 							</li>
 						</operations>
 					</match>
 				</li>
-
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>GeneticRim Cosmic Horrors Patch</li>
-					</mods>
-
-					<match Class="PatchOperationSequence">
-						<success>Always</success>
-						<operations>
-							<li Class="PatchOperationAdd"> 
-								<success>Always</success>
-								<xpath>/Defs</xpath>
-								<value>
-									<ItemProcessor.CombinationDef>
-										<defName>VFEM_IndustrialCheesePress_EldritchMilk</defName>
-										<building>VFEM_IndustrialCheesePress</building>
-										<items>
-											<li>GR_EldritchMilk</li>
-										</items>	
-										<amount>
-											<li>50</li>
-										</amount>
-										<outputLimitControlled>true</outputLimitControlled>
-										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_EldritchCheese</result>	
-										<yield>25</yield>							
-										<useQualityIncreasing>true</useQualityIncreasing>
-										<awfulQualityAgeDaysThreshold>6</awfulQualityAgeDaysThreshold>
-										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
-										<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
-										<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
-										<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
-										<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
-										<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
-									</ItemProcessor.CombinationDef>
-
-								</value>
-							</li>
-						</operations>
-					</match>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>GeneticRim Dinosauria Patch</li>
-					</mods>
-
-					<match Class="PatchOperationSequence">
-						<success>Always</success>
-						<operations>
-							<li Class="PatchOperationAdd"> 
-								<success>Always</success>
-								<xpath>/Defs</xpath>
-								<value>
-									<ItemProcessor.CombinationDef>
-										<defName>VFEM_IndustrialCheesePress_DinoMilk</defName>
-										<building>VFEM_IndustrialCheesePress</building>
-										<items>
-											<li>GR_DinoMilk</li>
-										</items>	
-										<amount>
-											<li>50</li>
-										</amount>
-										<outputLimitControlled>true</outputLimitControlled>
-										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_DinoCheese</result>	
-										<yield>25</yield>							
-										<useQualityIncreasing>true</useQualityIncreasing>
-										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
-										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
-										<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
-										<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
-										<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
-										<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
-										<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
-									</ItemProcessor.CombinationDef>
-
-								</value>
-							</li>
-						</operations>
-					</match>
-				</li>
-				<li Class="PatchOperationFindMod">
-					<mods>
-						<li>GeneticRim Megafauna Patch</li>
-					</mods>
-
-					<match Class="PatchOperationSequence">
-						<success>Always</success>
-						<operations>
-							<li Class="PatchOperationAdd"> 
-								<success>Always</success>
-								<xpath>/Defs</xpath>
-								<value>
-									<ItemProcessor.CombinationDef>
-										<defName>VFEM_IndustrialCheesePress_ParaMilk</defName>
-										<building>VFEM_IndustrialCheesePress</building>
-										<items>
-											<li>GR_ParaMilk</li>
-										</items>	
-										<amount>
-											<li>40</li>
-										</amount>
-										<outputLimitControlled>true</outputLimitControlled>
-										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_ParaceramuffaloBrie</result>	
-										<yield>20</yield>							
-										<useQualityIncreasing>true</useQualityIncreasing>
-										<awfulQualityAgeDaysThreshold>7</awfulQualityAgeDaysThreshold>
-										<poorQualityAgeDaysThreshold>9</poorQualityAgeDaysThreshold>
-										<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
-										<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
-										<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
-										<masterworkQualityAgeDaysThreshold>32</masterworkQualityAgeDaysThreshold>
-										<legendaryQualityAgeDaysThreshold>50</legendaryQualityAgeDaysThreshold>
-									</ItemProcessor.CombinationDef>
-									<ItemProcessor.CombinationDef>
-										<defName>VFEM_IndustrialCheesePress_GreenMilk</defName>
-										<building>VFEM_IndustrialCheesePress</building>
-										<items>
-											<li>GR_GreenMilk</li>
-										</items>	
-										<amount>
-											<li>50</li>
-										</amount>
-										<outputLimitControlled>true</outputLimitControlled>
-										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_GreenCheese</result>	
-										<yield>25</yield>							
-										<useQualityIncreasing>true</useQualityIncreasing>
-										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
-										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
-										<normalQualityAgeDaysThreshold>12</normalQualityAgeDaysThreshold>
-										<goodQualityAgeDaysThreshold>17</goodQualityAgeDaysThreshold>
-										<excellentQualityAgeDaysThreshold>20</excellentQualityAgeDaysThreshold>
-										<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
-										<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
-									</ItemProcessor.CombinationDef>
-
-								</value>
-							</li>
-						</operations>
-					</match>
-				</li>
-
 				<li Class="PatchOperationFindMod">
 					<mods>
 						<li>RimBees</li>
 					</mods>
-
 					<match Class="PatchOperationSequence">
 						<success>Always</success>
 						<operations>
-							<li Class="PatchOperationAdd"> 
+							<li Class="PatchOperationAdd">
 								<success>Always</success>
 								<xpath>/Defs</xpath>
 								<value>
@@ -1113,14 +1053,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>RB_BeeMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_BeeCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_BeeCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -1130,22 +1070,19 @@
 										<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
 										<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
 									</ItemProcessor.CombinationDef>
-
 								</value>
 							</li>
 						</operations>
 					</match>
 				</li>
-				
 				<li Class="PatchOperationFindMod">
 					<mods>
 						<li>Vanilla Factions Expanded - Insectoids</li>
 					</mods>
-
 					<match Class="PatchOperationSequence">
 						<success>Always</success>
 						<operations>
-							<li Class="PatchOperationAdd"> 
+							<li Class="PatchOperationAdd">
 								<success>Always</success>
 								<xpath>/Defs</xpath>
 								<value>
@@ -1154,14 +1091,14 @@
 										<building>VFEM_IndustrialCheesePress</building>
 										<items>
 											<li>VFEI_InsectMilk</li>
-										</items>	
+										</items>
 										<amount>
 											<li>50</li>
 										</amount>
 										<outputLimitControlled>true</outputLimitControlled>
 										<maxTotalOutput>300</maxTotalOutput>
-										<result>VCE_InsectCheese</result>	
-										<yield>25</yield>							
+										<result>VCE_InsectCheese</result>
+										<yield>25</yield>
 										<useQualityIncreasing>true</useQualityIncreasing>
 										<awfulQualityAgeDaysThreshold>5</awfulQualityAgeDaysThreshold>
 										<poorQualityAgeDaysThreshold>7</poorQualityAgeDaysThreshold>
@@ -1171,18 +1108,13 @@
 										<masterworkQualityAgeDaysThreshold>22</masterworkQualityAgeDaysThreshold>
 										<legendaryQualityAgeDaysThreshold>43</legendaryQualityAgeDaysThreshold>
 									</ItemProcessor.CombinationDef>
-
 								</value>
 							</li>
 						</operations>
 					</match>
 				</li>
-
-
 			</operations>
 		</match>
 	</Operation>
-
-
 </Patch>
 
