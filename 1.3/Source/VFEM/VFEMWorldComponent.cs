@@ -36,25 +36,27 @@ namespace VFEMech
         {
             base.WorldComponentTick();
 
-            if (!MechShipsMod.settings.totalWarIsDisabled && Find.TickManager.TicksGame >= this.nextMechShipSpawn)
+            if (!MechShipsMod.settings.totalWarIsDisabled)
             {
-                this.lastMechShipSpawn = Find.TickManager.TicksGame;
-
-                IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, this.world);
-
-                if (MechShipsMod.settings.mechShipIncidentChances.TryRandomElementByWeight(kvp => kvp.Value, out KeyValuePair<string, float> incident))
+                if (Find.TickManager.TicksGame >= this.nextMechShipSpawn)
                 {
-                    IncidentDef def = DefDatabase<IncidentDef>.GetNamed(incident.Key, false);
-                    if (def is null)
+                    this.lastMechShipSpawn = Find.TickManager.TicksGame;
+
+                    IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, this.world);
+
+                    IEnumerable<KeyValuePair<IncidentDef, float>> incidents = MechShipsMod.settings.mechShipIncidentChances.Select(kvp => KeyValuePair.Create(DefDatabase<IncidentDef>.GetNamed(kvp.Key, false), kvp.Value)).
+                                                                                           Where(kvp => kvp.Key != null && kvp.Key.Worker.CanFireNow(parms));
+
+                    if (incidents.Any() && incidents.TryRandomElementByWeight(kvp => kvp.Value, out KeyValuePair<IncidentDef, float> incident))
                     {
-                        MechShipsMod.settings.mechShipIncidentChances.Remove(incident.Key);
-                    }
-                    else if (def.Worker.CanFireNow(parms))
-                    {
-                        IncidentDef.Named(incident.Key).Worker.TryExecute(parms);
+                        incident.Key.Worker.TryExecute(parms);
+                        this.nextMechShipSpawn = Find.TickManager.TicksGame + MechShipsMod.settings.mechShipTimeInterval.RandomInRange;
                     }
                 }
-                this.nextMechShipSpawn = Find.TickManager.TicksGame + MechShipsMod.settings.mechShipTimeInterval.RandomInRange;
+                else if(Find.TickManager.TicksGame % GenDate.TicksPerDay == 0 && (this.nextMechShipSpawn - this.lastMechShipSpawn) > MechShipsMod.settings.mechShipTimeInterval.max)
+                {
+                    this.nextMechShipSpawn = this.lastMechShipSpawn + MechShipsMod.settings.mechShipTimeInterval.RandomInRange;
+                }
             }
         }
 
