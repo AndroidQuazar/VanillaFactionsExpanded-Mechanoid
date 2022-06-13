@@ -32,6 +32,7 @@ namespace VFEMech
             }
         }
 
+        public static List<KeyValuePair<IncidentDef, float>> cachedIncidents = new List<KeyValuePair<IncidentDef, float>>();
         public override void WorldComponentTick()
         {
             base.WorldComponentTick();
@@ -44,9 +45,14 @@ namespace VFEMech
 
                     IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, this.world);
 
-                    IEnumerable<KeyValuePair<IncidentDef, float>> incidents = MechShipsMod.settings.mechShipIncidentChances.Select(kvp => KeyValuePair.Create(DefDatabase<IncidentDef>.GetNamed(kvp.Key, false), kvp.Value)).
-                                                                                           Where(kvp => kvp.Key != null && kvp.Key.Worker.CanFireNow(parms));
+                    if (cachedIncidents is null)
+                    {
+                        cachedIncidents = MechShipsMod.settings.mechShipIncidentChances
+                            .Select(kvp => KeyValuePair.Create(DefDatabase<IncidentDef>.GetNamed(kvp.Key, false), kvp.Value))
+                            .Where(kvp => kvp.Key != null).ToList();
+                    }
 
+                    IEnumerable<KeyValuePair<IncidentDef, float>> incidents = cachedIncidents.Where(kvp => kvp.Key.Worker.CanFireNow(parms));
                     if (incidents.Any() && incidents.TryRandomElementByWeight(kvp => kvp.Value, out KeyValuePair<IncidentDef, float> incident))
                     {
                         incident.Key.Worker.TryExecute(parms);
