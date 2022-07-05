@@ -45,7 +45,7 @@ namespace VFEMech
 
                     IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, this.world);
 
-                    if (cachedIncidents is null)
+                    if (cachedIncidents.Any())
                     {
                         cachedIncidents = MechShipsMod.settings.mechShipIncidentChances
                             .Select(kvp => KeyValuePair.Create(DefDatabase<IncidentDef>.GetNamed(kvp.Key, false), kvp.Value))
