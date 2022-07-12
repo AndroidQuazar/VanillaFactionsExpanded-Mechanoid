@@ -39,12 +39,11 @@ namespace VFEMech
 
             if (!MechShipsMod.settings.totalWarIsDisabled)
             {
-                if (Find.TickManager.TicksGame >= this.nextMechShipSpawn)
+                if (Find.TickManager.TicksGame >= this.nextMechShipSpawn && Find.TickManager.TicksGame % 60 == 0)
                 {
                     this.lastMechShipSpawn = Find.TickManager.TicksGame;
 
                     IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, this.world);
-
                     if (cachedIncidents.Any() is false)
                     {
                         cachedIncidents = MechShipsMod.settings.mechShipIncidentChances
