@@ -30,8 +30,7 @@
         <raisesPresence>300</raisesPresence>
         <nameMaker>VFE_NamerShipFrigate</nameMaker>
       </li>
-      <li Class="KCSG.FactionSettlement">
-        <useStructureLayout>True</useStructureLayout>
+      <li Class="KCSG.CustomGenOption">
         <chooseFromlayouts>
           <li>VFEM_Frigate1</li>
           <li>VFEM_Frigate2</li>
@@ -75,8 +74,7 @@
         <raisesPresence>450</raisesPresence>
         <nameMaker>VFE_NamerShipDestroyer</nameMaker>
       </li>
-      <li Class="KCSG.FactionSettlement">
-        <useStructureLayout>True</useStructureLayout>
+      <li Class="KCSG.CustomGenOption">
         <chooseFromlayouts>
           <li>VFEM_Destroyer1</li>
           <li>VFEM_Destroyer2</li>
@@ -120,8 +118,7 @@
         <raisesPresence>600</raisesPresence>
         <nameMaker>VFE_NamerShipCruiser</nameMaker>
       </li>
-      <li Class="KCSG.FactionSettlement">
-        <useStructureLayout>True</useStructureLayout>
+      <li Class="KCSG.CustomGenOption">
         <chooseFromlayouts>
           <li>VFEM_Cruiser1</li>
           <li>VFEM_Cruiser2</li>
@@ -166,8 +163,7 @@
         <nameMaker>VFE_NamerShipTroopship</nameMaker>
 		<defeatingGivesOutOtherFactionsGoodwill>true</defeatingGivesOutOtherFactionsGoodwill>
       </li>
-      <li Class="KCSG.FactionSettlement">
-        <useStructureLayout>True</useStructureLayout>
+      <li Class="KCSG.CustomGenOption">
         <chooseFromlayouts>
           <li>VFEM_Troopship1</li>
           <li>VFEM_Troopship2</li>
@@ -212,8 +208,7 @@
         <nameMaker>VFE_NamerShipCarrier</nameMaker>
 		<defeatingGivesOutOtherFactionsGoodwill>true</defeatingGivesOutOtherFactionsGoodwill>
       </li>
-      <li Class="KCSG.FactionSettlement">
-        <useStructureLayout>True</useStructureLayout>
+      <li Class="KCSG.CustomGenOption">
         <chooseFromlayouts>
           <li>VFEM_Carrier1</li>
           <li>VFEM_Carrier2</li>
