@@ -88,7 +88,7 @@ namespace VFE.Mechanoids.Buildings
             {
                 if (running)
                 {
-                    if (sustainer != null)
+                    if (sustainer != null && !sustainer.Ended)
                         sustainer.Maintain();
                     else
                         TryStartSustainer();
@@ -119,13 +119,25 @@ namespace VFE.Mechanoids.Buildings
                 }
                 else if (offset > 0)
                 {
-                    sustainer?.Maintain();
+                    if (sustainer != null && !sustainer.Ended)
+                        sustainer.Maintain();
+                    else
+                        TryStartSustainer(); // Necessary for startups where the machine runs in reverse
+
                     offset -= speedPerTick;
                     if (offset < 0)
                         offset = 0;
                 }
                 else
+                {
                     powerComp.powerOutputInt = -powerComp.Props.basePowerConsumption;
+                    sustainer.End();
+                }
+                    
+            }
+            else if (sustainer != null && !sustainer.Ended)
+            {
+                sustainer.End();
             }
         }
 
