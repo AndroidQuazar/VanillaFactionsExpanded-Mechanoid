@@ -32,6 +32,13 @@ namespace VFEMech
         public const int MaxDistanceToTargets = 20;
         public const int MinDistanceFromBase = 6;
 
+        private enum AlertnessLevel : int
+        {
+            Immediate = 1,
+            Moderate = 30,
+            Asleep = 120
+        }
+
         [TweakValue("00VFEM", 0, 1)] private static float rotationSpeed = 0.5f;
         [TweakValue("00VFEM", 0, 1)] private static float craneErectionSpeed = 0.005f;
         [TweakValue("00VFEM", 0, 20)] private static float distanceRate = 14.5f;
@@ -121,6 +128,7 @@ namespace VFEMech
 
         SafeSustainedEffecter constructionEffecter;
         SafeSustainedEffecter repairEffecter;
+        AlertnessLevel alertnessLevel = AlertnessLevel.Moderate;
 
         bool turnClockWise;
         private Vector3 CraneDrawPos => this.DrawPos + Altitudes.AltIncVect + new Vector3(topDrawOffsetX, 0, topDrawOffsetZ);
@@ -150,6 +158,9 @@ namespace VFEMech
             }
             constructionEffecter = new SafeSustainedEffecter(curFrameTarget?.ConstructionEffect);
             repairEffecter = new SafeSustainedEffecter(curBuildingTarget?.def.repairEffect);
+
+            if (HasAnyTarget)
+                compPower.powerOutputInt = -3000;
         }
 
         private IntVec3 GetStartingEndCranePosition()
@@ -184,9 +195,20 @@ namespace VFEMech
             base.Tick();
             if (this.Map != null && compPower.PowerOn && this.Faction == Faction.OfPlayer)
             {
-                if (this.IsHashIntervalTick(30))
+                if (this.IsHashIntervalTick((int)alertnessLevel) && !HasAnyTarget)
                 {
-                    TryFindTarget();
+                    if (TryFindFirstValidTarget(out LocalTargetInfo targetInfo))
+                    {
+                        curCellTarget = IntVec3.Invalid;
+                        StartMovingTo(targetInfo);
+                        compPower.powerOutputInt = -3000; // Enter power-costly state
+                        alertnessLevel = AlertnessLevel.Moderate;
+                    }
+                    else
+                    {
+                        compPower.powerOutputInt = -200; // Enter low-power state (repeated while no target is found)
+                        alertnessLevel = AlertnessLevel.Asleep;
+                    }
                 }
 
                 if (curFrameTarget != null)
@@ -232,52 +254,37 @@ namespace VFEMech
 
         private bool HasFrameTarget => curFrameTarget != null && !curFrameTarget.Destroyed && BaseValidator(curFrameTarget);
         private bool HasBuildingTarget => curBuildingTarget != null && !curBuildingTarget.Destroyed && curBuildingTarget.MaxHitPoints > curBuildingTarget.HitPoints && BaseValidator(curBuildingTarget);
-        private void TryFindTarget()
+        private bool HasAnyTarget => HasFrameTarget || HasBuildingTarget;
+
+        private bool TryFindFirstValidTarget(out LocalTargetInfo targetInfo)
         {
-            var hasFrameTarget = HasFrameTarget;
-            var hasBuildingTarget = HasBuildingTarget;
-            if (hasFrameTarget || hasBuildingTarget)
+            targetInfo = null;
+
+            if (!HasFrameTarget)
             {
-                return;
-            }
-            if (!hasFrameTarget)
-            {
-                curFrameTarget = NextFrameTarget();
+                targetInfo = curFrameTarget = NextFrameTarget();
 
                 if (curFrameTarget != null)
                 {
                     curBuildingTarget = null;
-                    curCellTarget = IntVec3.Invalid;
-
-                    StartMovingTo(curFrameTarget);
                     constructionEffecter.SetEffecterDef(curFrameTarget.ConstructionEffect);
-                    compPower.powerOutputInt = -3000;
-                    return;
-                }
-                else
-                {
-                    compPower.powerOutputInt = -200;
+                    return true;
                 }
             }
-            if (!hasBuildingTarget)
+
+            if (!HasBuildingTarget)
             {
-                curBuildingTarget = NextDamagedBuildingTarget();
+                targetInfo = curBuildingTarget = NextDamagedBuildingTarget();
 
                 if (curBuildingTarget != null)
                 {
                     curFrameTarget = null;
-                    curCellTarget = IntVec3.Invalid;
-
-                    StartMovingTo(curBuildingTarget);
                     repairEffecter.SetEffecterDef(curBuildingTarget.def.repairEffect);
-                    compPower.powerOutputInt = -3000;
-                    return;
-                }
-                else
-                {
-                    compPower.powerOutputInt = -200;
+                    return true;
                 }
             }
+
+            return false;
         }
         private void StartMovingTo(LocalTargetInfo target)
         {
@@ -355,7 +362,7 @@ namespace VFEMech
             frame.workDone += num;
             if (frame.workDone >= workToBuild)
             {
-                CompleteConstruction(this, frame);
+                CompleteConstruction(frame);
             }
         }
 
@@ -381,14 +388,14 @@ namespace VFEMech
         private void CompleteRepairing(Building building)
         {
             curBuildingTarget = null;
-            TryFindTarget();
+            alertnessLevel = AlertnessLevel.Immediate;
         }
 
-        public static void CompleteConstruction(Building_Autocrane autoCrane, Frame frame)
+        public void CompleteConstruction(Frame frame)
         {
-            if (autoCrane.Faction != null)
+            if (Faction != null)
             {
-                QuestUtility.SendQuestTargetSignals(autoCrane.questTags, "BuiltBuilding", frame.Named("SUBJECT"));
+                QuestUtility.SendQuestTargetSignals(questTags, "BuiltBuilding", frame.Named("SUBJECT"));
             }
             List<CompHasSources> list = new List<CompHasSources>();
             for (int i = 0; i < frame.resourceContainer.Count; i++)
@@ -442,9 +449,10 @@ namespace VFEMech
                 map.terrainGrid.SetTerrain(frame.Position, (TerrainDef)frame.def.entityDefToBuild);
                 FilthMaker.RemoveAllFilth(frame.Position, map);
             }
-            autoCrane.curFrameTarget = null;
-            autoCrane.TryFindTarget();
+            curFrameTarget = null;
+            alertnessLevel = AlertnessLevel.Immediate;
         }
+
         private static float ClampAngle(float angle)
         {
             if (angle > 360f)

@@ -131,8 +131,9 @@ namespace VFE.Mechanoids.Buildings
                 else
                 {
                     powerComp.powerOutputInt = -powerComp.Props.basePowerConsumption;
+                    if (sustainer != null && !sustainer.Ended)
+                        sustainer.End();
                 }
-                    
             }
             else if (sustainer != null && !sustainer.Ended)
             {
