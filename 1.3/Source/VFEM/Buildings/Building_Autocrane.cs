@@ -1,14 +1,8 @@
-﻿using Mono.Unix.Native;
-using RimWorld;
-using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.VFX;
 using Verse;
-using Verse.AI;
-using Verse.AI.Group;
 using Verse.Sound;
 
 namespace VFEMech
