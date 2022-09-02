@@ -269,7 +269,7 @@ namespace VFEMech
                     curCellTarget = IntVec3.Invalid;
 
                     StartMovingTo(curBuildingTarget);
-                    constructionEffecter.SetEffecterDef(curBuildingTarget.def.repairEffect);
+                    repairEffecter.SetEffecterDef(curBuildingTarget.def.repairEffect);
                     compPower.powerOutputInt = -3000;
                     return;
                 }
