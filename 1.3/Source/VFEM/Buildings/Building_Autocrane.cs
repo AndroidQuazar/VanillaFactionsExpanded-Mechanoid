@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.VFX;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -41,8 +42,91 @@ namespace VFEMech
         [TweakValue("00VFEM", 0, 1)] private static float craneErectionSpeed = 0.005f;
         [TweakValue("00VFEM", 0, 20)] private static float distanceRate = 14.5f;
 
-        Effecter constructionEffecter;
-        Effecter repairEffecter;
+        public class SafeSustainedEffecter
+        {
+            EffecterDef def;
+            Effecter visualEffecter;
+            SoundDef[] soundDefs = new SoundDef[0];
+            Sustainer[] sustainers = new Sustainer[0];
+
+            public SafeSustainedEffecter(EffecterDef original)
+            {
+                SetEffecterDef(original);
+            }
+
+            public void SetEffecterDef(EffecterDef original)
+            {
+                if (def != original)
+                {
+                    def = original;
+
+                    Cleanup();
+
+                    if (def != null)
+                    {
+                        visualEffecter = def.Spawn();
+                        
+                        List<SoundDef> soundDefList = new List<SoundDef>();
+                        for (int i = 0; i < visualEffecter.children.Count; i++)
+                        {
+                            if (visualEffecter.children[i] is SubEffecter_Sustainer subeff)
+                            {
+                                if (subeff.def.soundDef != null)
+                                    soundDefList.Add(subeff.def.soundDef);
+                                visualEffecter.children.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                        soundDefs = soundDefList.ToArray();
+                        sustainers = new Sustainer[soundDefs.Length];
+                    }
+                }
+            }
+
+            public void Cleanup()
+            {
+                foreach (var sustainer in sustainers)
+                    sustainer?.End();
+                soundDefs = new SoundDef[0];
+
+                visualEffecter?.Cleanup();
+            }
+
+            /* There are no triggered subeffecters for construction / repairs.
+            public void Trigger(TargetInfo target)
+            {
+                visualEffecter.Trigger(target, target);
+                SustainSounds(target);
+            }*/
+
+            public void EffectTick(TargetInfo target)
+            {
+                visualEffecter?.EffectTick(target, target);
+                SustainSounds(target);
+            }
+
+            private void SustainSounds(TargetInfo target)
+            {
+                for (int i = 0; i < soundDefs.Length; i++)
+                {
+                    if (sustainers[i] is null || sustainers[i].Ended)
+                    {
+                        // Try spawn sustainer can fail when the target is switched out
+                        // or destroyed immediately in god mode.
+                        sustainers[i] = soundDefs[i].TrySpawnSustainer(
+                            SoundInfo.InMap(target, MaintenanceType.PerTick));
+                    }
+                    else
+                    {
+                        sustainers[i].Maintain();
+                    }
+                }
+            }
+
+        }
+
+        SafeSustainedEffecter constructionEffecter;
+        SafeSustainedEffecter repairEffecter;
 
         bool turnClockWise;
         private Vector3 CraneDrawPos => this.DrawPos + Altitudes.AltIncVect + new Vector3(topDrawOffsetX, 0, topDrawOffsetZ);
@@ -70,6 +154,8 @@ namespace VFEMech
                 var distance = Vector3.Distance(CraneDrawPos, endCranePosition.ToVector3Shifted() + new Vector3(0, 0, 0.2f));
                 curCraneSize = distance / distanceRate;
             }
+            constructionEffecter = new SafeSustainedEffecter(curFrameTarget?.ConstructionEffect);
+            repairEffecter = new SafeSustainedEffecter(curBuildingTarget?.def.repairEffect);
         }
 
         private IntVec3 GetStartingEndCranePosition()
@@ -117,11 +203,8 @@ namespace VFEMech
                     }
                     else if (!TryMoveTo(curFrameTarget))
                     {
+                        constructionEffecter.EffectTick(curFrameTarget);
                         DoConstruction(curFrameTarget);
-                        if (curFrameTarget != null)
-                        {
-                            DoConstructionEffect();
-                        }
                     }
                 }
                 else if (curBuildingTarget != null)
@@ -132,11 +215,8 @@ namespace VFEMech
                     }
                     else if (!TryMoveTo(curBuildingTarget))
                     {
+                        repairEffecter.EffectTick(curBuildingTarget);
                         DoRepairing(curBuildingTarget);
-                        if (curBuildingTarget != null)
-                        {
-                            DoRepairEffect();
-                        }
                     }
                 }
                 else
@@ -176,6 +256,7 @@ namespace VFEMech
                     curCellTarget = IntVec3.Invalid;
 
                     StartMovingTo(curFrameTarget);
+                    constructionEffecter.SetEffecterDef(curFrameTarget.ConstructionEffect);
                     compPower.powerOutputInt = -3000;
                     return;
                 }
@@ -194,6 +275,7 @@ namespace VFEMech
                     curCellTarget = IntVec3.Invalid;
 
                     StartMovingTo(curBuildingTarget);
+                    constructionEffecter.SetEffecterDef(curBuildingTarget.def.repairEffect);
                     compPower.powerOutputInt = -3000;
                     return;
                 }
@@ -259,22 +341,6 @@ namespace VFEMech
             }
             return true;
         }
-        private void DoConstructionEffect()
-        {
-            if (constructionEffecter == null)
-            {
-                EffecterDef effecterDef = curFrameTarget.ConstructionEffect;
-                if (effecterDef != null)
-                {
-                    constructionEffecter = effecterDef.Spawn();
-                    constructionEffecter.Trigger(curFrameTarget, curFrameTarget);
-                }
-            }
-            else
-            {
-                constructionEffecter.EffectTick(curFrameTarget, curFrameTarget);
-            }
-        }
 
         private void DoConstruction(Frame frame)
         {
@@ -321,29 +387,7 @@ namespace VFEMech
         private void CompleteRepairing(Building building)
         {
             curBuildingTarget = null;
-            if (repairEffecter != null)
-            {
-                repairEffecter.Cleanup();
-                repairEffecter = null;
-            }
             TryFindTarget();
-        }
-
-        private void DoRepairEffect()
-        {
-            if (repairEffecter == null)
-            {
-                EffecterDef effecterDef = curBuildingTarget.def.repairEffect;
-                if (effecterDef != null)
-                {
-                    repairEffecter = effecterDef.Spawn();
-                    repairEffecter.Trigger(curBuildingTarget, curBuildingTarget);
-                }
-            }
-            else
-            {
-                repairEffecter.EffectTick(curBuildingTarget, curBuildingTarget);
-            }
         }
 
         public static void CompleteConstruction(Building_Autocrane autoCrane, Frame frame)
@@ -405,11 +449,6 @@ namespace VFEMech
                 FilthMaker.RemoveAllFilth(frame.Position, map);
             }
             autoCrane.curFrameTarget = null;
-            if (autoCrane.constructionEffecter != null)
-            {
-                autoCrane.constructionEffecter.Cleanup();
-                autoCrane.constructionEffecter = null;
-            }
             autoCrane.TryFindTarget();
         }
         private static float ClampAngle(float angle)
