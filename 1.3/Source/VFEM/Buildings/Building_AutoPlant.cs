@@ -74,7 +74,7 @@ namespace VFE.Mechanoids.Buildings
                 initiate.defaultDesc = "VFEMechStartMachineDesc".Translate();
                 initiate.icon = ContentFinder<Texture2D>.Get("UI/MachineryOn");
             }
-            initiate.toggleAction = delegate { running = !running;  if (running) { StartSustainer(); } };
+            initiate.toggleAction = delegate { running = !running;  if (running) { TryStartSustainer(); } };
             initiate.isActive = ()=>running;
             gizmos.Add(initiate);
 
@@ -88,11 +88,11 @@ namespace VFE.Mechanoids.Buildings
             {
                 if (running)
                 {
-                    if (sustainer is null)
-                    {
-                        StartSustainer();
-                    }
-                    sustainer.Maintain();
+                    if (sustainer != null && !sustainer.Ended)
+                        sustainer.Maintain();
+                    else
+                        TryStartSustainer();
+
                     powerComp.powerOutputInt = -1900;
                     bool shouldCheck = false;
                     if (offset == 0)
@@ -119,13 +119,25 @@ namespace VFE.Mechanoids.Buildings
                 }
                 else if (offset > 0)
                 {
-                    sustainer.Maintain();
+                    if (sustainer != null && !sustainer.Ended)
+                        sustainer.Maintain();
+                    else
+                        TryStartSustainer(); // Necessary for startups where the machine runs in reverse
+
                     offset -= speedPerTick;
                     if (offset < 0)
                         offset = 0;
                 }
                 else
+                {
                     powerComp.powerOutputInt = -powerComp.Props.basePowerConsumption;
+                    if (sustainer != null && !sustainer.Ended)
+                        sustainer.End();
+                }
+            }
+            else if (sustainer != null && !sustainer.Ended)
+            {
+                sustainer.End();
             }
         }
 
@@ -219,12 +231,13 @@ namespace VFE.Mechanoids.Buildings
             Scribe_Values.Look<float>(ref offset, "offset");
         }
 
-        void StartSustainer()
+        bool TryStartSustainer()
         {
             if (sustainer != null)
                 sustainer.End();
             SoundInfo soundInfo = SoundInfo.InMap(this);
             sustainer = SoundDef.Named("GeothermalPlant_Ambience").TrySpawnSustainer(soundInfo);
+            return sustainer != null;
         }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
