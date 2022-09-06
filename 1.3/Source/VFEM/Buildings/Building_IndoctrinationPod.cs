@@ -15,7 +15,7 @@ using Verse.Sound;
 
 namespace VFEMech
 {
-    public class Building_IndoctrinationPod : Building_Casket
+    public class Building_IndoctrinationPod : Building_Casket, ISuspendableThingHolder
     {
         private Ideo ideoConversionTarget;
 
@@ -24,6 +24,7 @@ namespace VFEMech
         public Pawn InnerPawn => ContainedThing as Pawn;
 
         public CompPowerTrader compPower;
+        public bool IsContentsSuspended => InnerPawn != null;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             compPower = this.TryGetComp<CompPowerTrader>();
