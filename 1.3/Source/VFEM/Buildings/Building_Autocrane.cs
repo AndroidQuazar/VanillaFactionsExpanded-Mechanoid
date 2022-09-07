@@ -1,13 +1,8 @@
-﻿using Mono.Unix.Native;
-using RimWorld;
-using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using System.IO.Ports;
 using System.Linq;
 using UnityEngine;
 using Verse;
-using Verse.AI;
-using Verse.AI.Group;
 using Verse.Sound;
 
 namespace VFEMech
@@ -37,12 +32,103 @@ namespace VFEMech
         public const int MaxDistanceToTargets = 20;
         public const int MinDistanceFromBase = 6;
 
+        private enum AlertnessLevel : int
+        {
+            Immediate = 1,
+            Moderate = 30,
+            Asleep = 120
+        }
+
         [TweakValue("00VFEM", 0, 1)] private static float rotationSpeed = 0.5f;
         [TweakValue("00VFEM", 0, 1)] private static float craneErectionSpeed = 0.005f;
         [TweakValue("00VFEM", 0, 20)] private static float distanceRate = 14.5f;
 
-        Effecter constructionEffecter;
-        Effecter repairEffecter;
+        public class SafeSustainedEffecter
+        {
+            EffecterDef def;
+            Effecter visualEffecter;
+            SoundDef[] soundDefs = new SoundDef[0];
+            Sustainer[] sustainers = new Sustainer[0];
+
+            public SafeSustainedEffecter(EffecterDef original)
+            {
+                SetEffecterDef(original);
+            }
+
+            public void SetEffecterDef(EffecterDef original)
+            {
+                if (def != original)
+                {
+                    def = original;
+
+                    Cleanup();
+
+                    if (def != null)
+                    {
+                        visualEffecter = def.Spawn();
+                        
+                        List<SoundDef> soundDefList = new List<SoundDef>();
+                        for (int i = 0; i < visualEffecter.children.Count; i++)
+                        {
+                            if (visualEffecter.children[i] is SubEffecter_Sustainer subeff)
+                            {
+                                if (subeff.def.soundDef != null)
+                                    soundDefList.Add(subeff.def.soundDef);
+                                visualEffecter.children.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                        soundDefs = soundDefList.ToArray();
+                        sustainers = new Sustainer[soundDefs.Length];
+                    }
+                }
+            }
+
+            public void Cleanup()
+            {
+                foreach (var sustainer in sustainers)
+                    sustainer?.End();
+                soundDefs = new SoundDef[0];
+
+                visualEffecter?.Cleanup();
+            }
+
+            /* There are no triggered subeffecters for construction / repairs.
+            public void Trigger(TargetInfo target)
+            {
+                visualEffecter.Trigger(target, target);
+                SustainSounds(target);
+            }*/
+
+            public void EffectTick(TargetInfo target)
+            {
+                visualEffecter?.EffectTick(target, target);
+                SustainSounds(target);
+            }
+
+            private void SustainSounds(TargetInfo target)
+            {
+                for (int i = 0; i < soundDefs.Length; i++)
+                {
+                    if (sustainers[i] is null || sustainers[i].Ended)
+                    {
+                        // Try spawn sustainer can fail when the target is switched out
+                        // or destroyed immediately in god mode.
+                        sustainers[i] = soundDefs[i].TrySpawnSustainer(
+                            SoundInfo.InMap(target, MaintenanceType.PerTick));
+                    }
+                    else
+                    {
+                        sustainers[i].Maintain();
+                    }
+                }
+            }
+
+        }
+
+        SafeSustainedEffecter constructionEffecter;
+        SafeSustainedEffecter repairEffecter;
+        AlertnessLevel alertnessLevel = AlertnessLevel.Moderate;
 
         bool turnClockWise;
         private Vector3 CraneDrawPos => this.DrawPos + Altitudes.AltIncVect + new Vector3(topDrawOffsetX, 0, topDrawOffsetZ);
@@ -70,6 +156,11 @@ namespace VFEMech
                 var distance = Vector3.Distance(CraneDrawPos, endCranePosition.ToVector3Shifted() + new Vector3(0, 0, 0.2f));
                 curCraneSize = distance / distanceRate;
             }
+            constructionEffecter = new SafeSustainedEffecter(curFrameTarget?.ConstructionEffect);
+            repairEffecter = new SafeSustainedEffecter(curBuildingTarget?.def.repairEffect);
+
+            if (HasAnyTarget)
+                compPower.powerOutputInt = -3000;
         }
 
         private IntVec3 GetStartingEndCranePosition()
@@ -104,9 +195,20 @@ namespace VFEMech
             base.Tick();
             if (this.Map != null && compPower.PowerOn && this.Faction == Faction.OfPlayer)
             {
-                if (this.IsHashIntervalTick(30))
+                if (this.IsHashIntervalTick((int)alertnessLevel) && !HasAnyTarget)
                 {
-                    TryFindTarget();
+                    if (TryFindFirstValidTarget(out LocalTargetInfo targetInfo))
+                    {
+                        curCellTarget = IntVec3.Invalid;
+                        StartMovingTo(targetInfo);
+                        compPower.powerOutputInt = -3000; // Enter power-costly state
+                        alertnessLevel = AlertnessLevel.Moderate;
+                    }
+                    else
+                    {
+                        compPower.powerOutputInt = -200; // Enter low-power state (repeated while no target is found)
+                        alertnessLevel = AlertnessLevel.Asleep;
+                    }
                 }
 
                 if (curFrameTarget != null)
@@ -117,11 +219,8 @@ namespace VFEMech
                     }
                     else if (!TryMoveTo(curFrameTarget))
                     {
+                        constructionEffecter.EffectTick(curFrameTarget);
                         DoConstruction(curFrameTarget);
-                        if (curFrameTarget != null)
-                        {
-                            DoConstructionEffect();
-                        }
                     }
                 }
                 else if (curBuildingTarget != null)
@@ -132,11 +231,8 @@ namespace VFEMech
                     }
                     else if (!TryMoveTo(curBuildingTarget))
                     {
+                        repairEffecter.EffectTick(curBuildingTarget);
                         DoRepairing(curBuildingTarget);
-                        if (curBuildingTarget != null)
-                        {
-                            DoRepairEffect();
-                        }
                     }
                 }
                 else
@@ -158,50 +254,37 @@ namespace VFEMech
 
         private bool HasFrameTarget => curFrameTarget != null && !curFrameTarget.Destroyed && BaseValidator(curFrameTarget);
         private bool HasBuildingTarget => curBuildingTarget != null && !curBuildingTarget.Destroyed && curBuildingTarget.MaxHitPoints > curBuildingTarget.HitPoints && BaseValidator(curBuildingTarget);
-        private void TryFindTarget()
+        private bool HasAnyTarget => HasFrameTarget || HasBuildingTarget;
+
+        private bool TryFindFirstValidTarget(out LocalTargetInfo targetInfo)
         {
-            var hasFrameTarget = HasFrameTarget;
-            var hasBuildingTarget = HasBuildingTarget;
-            if (hasFrameTarget || hasBuildingTarget)
+            targetInfo = null;
+
+            if (!HasFrameTarget)
             {
-                return;
-            }
-            if (!hasFrameTarget)
-            {
-                curFrameTarget = NextFrameTarget();
+                targetInfo = curFrameTarget = NextFrameTarget();
 
                 if (curFrameTarget != null)
                 {
                     curBuildingTarget = null;
-                    curCellTarget = IntVec3.Invalid;
-
-                    StartMovingTo(curFrameTarget);
-                    compPower.powerOutputInt = -3000;
-                    return;
-                }
-                else
-                {
-                    compPower.powerOutputInt = -200;
+                    constructionEffecter.SetEffecterDef(curFrameTarget.ConstructionEffect);
+                    return true;
                 }
             }
-            if (!hasBuildingTarget)
+
+            if (!HasBuildingTarget)
             {
-                curBuildingTarget = NextDamagedBuildingTarget();
+                targetInfo = curBuildingTarget = NextDamagedBuildingTarget();
 
                 if (curBuildingTarget != null)
                 {
                     curFrameTarget = null;
-                    curCellTarget = IntVec3.Invalid;
-
-                    StartMovingTo(curBuildingTarget);
-                    compPower.powerOutputInt = -3000;
-                    return;
-                }
-                else
-                {
-                    compPower.powerOutputInt = -200;
+                    repairEffecter.SetEffecterDef(curBuildingTarget.def.repairEffect);
+                    return true;
                 }
             }
+
+            return false;
         }
         private void StartMovingTo(LocalTargetInfo target)
         {
@@ -259,22 +342,6 @@ namespace VFEMech
             }
             return true;
         }
-        private void DoConstructionEffect()
-        {
-            if (constructionEffecter == null)
-            {
-                EffecterDef effecterDef = curFrameTarget.ConstructionEffect;
-                if (effecterDef != null)
-                {
-                    constructionEffecter = effecterDef.Spawn();
-                    constructionEffecter.Trigger(curFrameTarget, curFrameTarget);
-                }
-            }
-            else
-            {
-                constructionEffecter.EffectTick(curFrameTarget, curFrameTarget);
-            }
-        }
 
         private void DoConstruction(Frame frame)
         {
@@ -295,7 +362,7 @@ namespace VFEMech
             frame.workDone += num;
             if (frame.workDone >= workToBuild)
             {
-                CompleteConstruction(this, frame);
+                CompleteConstruction(frame);
             }
         }
 
@@ -321,36 +388,14 @@ namespace VFEMech
         private void CompleteRepairing(Building building)
         {
             curBuildingTarget = null;
-            if (repairEffecter != null)
-            {
-                repairEffecter.Cleanup();
-                repairEffecter = null;
-            }
-            TryFindTarget();
+            alertnessLevel = AlertnessLevel.Immediate;
         }
 
-        private void DoRepairEffect()
+        public void CompleteConstruction(Frame frame)
         {
-            if (repairEffecter == null)
+            if (Faction != null)
             {
-                EffecterDef effecterDef = curBuildingTarget.def.repairEffect;
-                if (effecterDef != null)
-                {
-                    repairEffecter = effecterDef.Spawn();
-                    repairEffecter.Trigger(curBuildingTarget, curBuildingTarget);
-                }
-            }
-            else
-            {
-                repairEffecter.EffectTick(curBuildingTarget, curBuildingTarget);
-            }
-        }
-
-        public static void CompleteConstruction(Building_Autocrane autoCrane, Frame frame)
-        {
-            if (autoCrane.Faction != null)
-            {
-                QuestUtility.SendQuestTargetSignals(autoCrane.questTags, "BuiltBuilding", frame.Named("SUBJECT"));
+                QuestUtility.SendQuestTargetSignals(questTags, "BuiltBuilding", frame.Named("SUBJECT"));
             }
             List<CompHasSources> list = new List<CompHasSources>();
             for (int i = 0; i < frame.resourceContainer.Count; i++)
@@ -404,14 +449,10 @@ namespace VFEMech
                 map.terrainGrid.SetTerrain(frame.Position, (TerrainDef)frame.def.entityDefToBuild);
                 FilthMaker.RemoveAllFilth(frame.Position, map);
             }
-            autoCrane.curFrameTarget = null;
-            if (autoCrane.constructionEffecter != null)
-            {
-                autoCrane.constructionEffecter.Cleanup();
-                autoCrane.constructionEffecter = null;
-            }
-            autoCrane.TryFindTarget();
+            curFrameTarget = null;
+            alertnessLevel = AlertnessLevel.Immediate;
         }
+
         private static float ClampAngle(float angle)
         {
             if (angle > 360f)

@@ -397,6 +397,23 @@ namespace VFEMech
 
 		public override bool ExpandingIconFlipHorizontal => GenWorldUI.WorldToUIPosition(this.Start).x > GenWorldUI.WorldToUIPosition(this.End).x;
 
+		public override void Draw()
+		{
+			Vector3 currentPos = DrawPos;
+			// Calculate the rotation required to make the missile face its target.
+			float rotationAngle = Find.WorldGrid.GetHeadingFromTo(currentPos, End) - 90f;
+			Matrix4x4 rotationMatrix = Matrix4x4.Rotate(Quaternion.AngleAxis(rotationAngle, Vector3.up));
+			// WorldObject.Draw and WorldRendererUtility.DrawQuadTangentialToPlanet lack support for rotating textures.
+			// Re-implement the required parts of DrawQuadTangentialToPlanet while adding rotating support.
+			float size =  0.7f * Find.WorldGrid.averageTileSize;
+			float altOffset = 0.015f;
+			Vector3 normalizedPos = currentPos.normalized;
+			Quaternion offsetRotation = Quaternion.LookRotation(Vector3.Cross(normalizedPos, Vector3.up), normalizedPos);
+			Vector3 scale = new Vector3(size, 1f, size);
+			Matrix4x4 matrix = Matrix4x4.TRS(currentPos + normalizedPos * altOffset, offsetRotation, scale);
+			Graphics.DrawMesh(MeshPool.plane10, matrix * rotationMatrix, Material, WorldCameraManager.WorldLayer);
+		}
+
 		public override float ExpandingIconRotation
 		{
 			get
